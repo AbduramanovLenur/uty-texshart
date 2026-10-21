@@ -1,5 +1,5 @@
 import { RouterProvider } from 'react-router-dom';
-import { Suspense } from 'react';
+import { Suspense, useEffect } from 'react';
 
 import { AppProvider } from './providers';
 import { router } from './routes';
@@ -7,6 +7,10 @@ import { router } from './routes';
 import { ErrorBoundary } from '@shared/ui';
 
 const App = () => {
+  useEffect(() => {
+    document.body.classList.add('is-loaded');
+  }, []);
+
   return (
     <ErrorBoundary>
       <Suspense

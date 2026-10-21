@@ -1,0 +1,8 @@
+.auth {
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    height: calc(100vh - var(--grid-padding) * 2);
+  }
+}
