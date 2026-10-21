@@ -24,6 +24,7 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] }),
     eslint({
       lintOnStart: true,
+      fix: true,
       include: ['**/*.{ts,tsx,js,jsx}'],
       customOverlay: false,
       cache: false,
