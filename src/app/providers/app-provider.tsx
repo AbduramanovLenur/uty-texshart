@@ -1,16 +1,22 @@
 import type { FC, ReactNode } from 'react';
 import { App, ConfigProvider } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 import QueryProvider from './query-client';
 import StoreProvider from './store-provider';
+
+import { antdLocales } from '@shared/config';
 
 interface IProps {
   children: ReactNode;
 }
 
 const AppProvider: FC<IProps> = ({ children }) => {
+  const { i18n } = useTranslation();
+  const locale = antdLocales[i18n.language] || antdLocales.uz;
+
   return (
-    <ConfigProvider>
+    <ConfigProvider locale={locale}>
       <StoreProvider>
         <QueryProvider>
           <App>
