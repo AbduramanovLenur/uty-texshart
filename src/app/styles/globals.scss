@@ -119,11 +119,28 @@ textarea {
 
 main {
   flex: 1;
-  padding: var(--grid-padding);
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+.horizontal {
+  display: flex;
+  flex: 1;
+}
+
+.content {
+  flex: 1;
+  min-width: 0;
+}
+
+.default-padded {
+  padding: var(--grid-padding);
+}
+
+.padded {
+  padding: var(--primary-grid-padding);
 }

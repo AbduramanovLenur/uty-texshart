@@ -4,9 +4,11 @@ import { Outlet } from 'react-router-dom';
 const DefaultLayout: FC = () => {
   return (
     <div className='wrapper'>
-      <main>
-        <Outlet />
-      </main>
+      <div className='content default-padded'>
+        <main>
+          <Outlet />
+        </main>
+      </div>
     </div>
   );
 };
