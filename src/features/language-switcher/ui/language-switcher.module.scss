@@ -1,0 +1,14 @@
+.language-switcher {
+  border-radius: var(--ant-size-xs);
+  &:global(.ant-segmented) &__item {
+    border-radius: 6px;
+    padding: 7px 12px;
+  }
+  &:global(.ant-segmented) &__label {
+    font-size: var(--ant-font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    min-height: auto;
+    padding: 0;
+  }
+}

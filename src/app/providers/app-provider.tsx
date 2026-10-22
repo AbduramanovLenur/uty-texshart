@@ -16,7 +16,10 @@ const AppProvider: FC<IProps> = ({ children }) => {
   const locale = antdLocales[i18n.language] || antdLocales.uz;
 
   return (
-    <ConfigProvider locale={locale}>
+    <ConfigProvider
+      locale={locale}
+      theme={{ token: { fontFamily: 'inherit' } }}
+    >
       <StoreProvider>
         <QueryProvider>
           <App>

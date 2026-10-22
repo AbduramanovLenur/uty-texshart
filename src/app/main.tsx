@@ -5,6 +5,8 @@ import App from './app';
 
 import { initI18n } from '@shared/config';
 
+import './index.scss';
+
 initI18n();
 
 createRoot(document.getElementById('root')!).render(

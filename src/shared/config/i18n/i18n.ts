@@ -23,6 +23,7 @@ export function initI18n(): typeof i18n {
         ru: { translation: ru },
       },
       fallbackLng: 'uz',
+      supportedLngs: ['uz', 'ru'],
       debug: false,
       interpolation: {
         escapeValue: false,

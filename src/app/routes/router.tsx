@@ -1,21 +1,39 @@
 import { createBrowserRouter } from 'react-router-dom';
 
+import { AuthPage } from './pages';
+
 import RequireGuest from './guards/require-guest';
 import RequireAuth from './guards/require-auth';
+import { DefaultLayout } from '../layouts/default-layout';
 
 import { ErrorBoundary } from '@shared/ui';
+import { routes } from '@shared/config';
+
+const routeFallback = <div>Loading...</div>;
 
 const router = createBrowserRouter([
-    {
-        element: <RequireGuest />,
-        errorElement: <ErrorBoundary />,
-        children: [],
-    },
-    {
-        element: <RequireAuth />,
-        errorElement: <ErrorBoundary />,
-        children: [],
-    },
+  {
+    element: <RequireGuest />,
+    errorElement: <ErrorBoundary><span /></ErrorBoundary>,
+    hydrateFallbackElement: routeFallback,
+    children: [
+      {
+        element: <DefaultLayout />,
+        children: [
+          {
+            path: routes.AUTH,
+            element: <AuthPage />,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    element: <RequireAuth />,
+    errorElement: <ErrorBoundary><span /></ErrorBoundary>,
+    hydrateFallbackElement: routeFallback,
+    children: [],
+  },
 ]);
 
 export default router;
