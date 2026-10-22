@@ -1,12 +1,12 @@
 import { RouterProvider } from 'react-router-dom';
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, type FC } from 'react';
 
 import { AppProvider } from './providers';
 import { router } from './routes';
 
 import { ErrorBoundary } from '@shared/ui';
 
-const App = () => {
+const App: FC = () => {
   useEffect(() => {
     document.body.classList.add('is-loaded');
   }, []);

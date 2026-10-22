@@ -1,10 +1,11 @@
 import { Typography } from 'antd';
+import type { FC } from 'react';
 
 import styles from './auth-promo.module.scss';
 
 const { Title } = Typography;
 
-const AuthPromo = () => {
+const AuthPromo: FC = () => {
   return (
     <div className={styles['auth-promo']}>
       <div className={styles['auth-promo__logo']}>
