@@ -1,20 +1,26 @@
 .menu {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  background-color: transparent;
-  max-width: 250px;
-  &::after,
-  &::before {
-    display: none;
-  }
-  &:global(.ant-menu-light.ant-menu-root.ant-menu-vertical) {
-    border-inline-end: none;
-  }
-  &:global(.ant-menu) {
-    :global(.ant-menu-item-icon + span),
-    :global(.anticon + span) {
-      margin-inline-start: 12px;
+  flex: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background-color: transparent;
+    max-width: 250px;
+    &::after,
+    &::before {
+      display: none;
+    }
+    &:global(.ant-menu-light.ant-menu-root.ant-menu-vertical) {
+      border-inline-end: none;
+    }
+    &:global(.ant-menu) {
+      :global(.ant-menu-item-icon + span),
+      :global(.anticon + span) {
+        margin-inline-start: 12px;
+      }
     }
   }
   &__item {

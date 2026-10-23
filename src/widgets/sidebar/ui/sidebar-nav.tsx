@@ -15,17 +15,19 @@ const SidebarNav: FC = () => {
   };
 
   return (
-    <Menu
-      classNames={{
-        root: styles['menu'],
-        item: styles['menu__item'],
-        itemIcon: styles['menu__item-icon'],
-        itemContent: styles['menu__item-content'],
-      }}
-      items={items}
-      selectedKeys={[pathname]}
-      onClick={handleMenuClick}
-    />
+    <nav className={styles['menu']}>
+      <Menu
+        classNames={{
+          root: styles['menu__list'],
+          item: styles['menu__item'],
+          itemIcon: styles['menu__item-icon'],
+          itemContent: styles['menu__item-content'],
+        }}
+        items={items}
+        selectedKeys={[pathname]}
+        onClick={handleMenuClick}
+      />
+    </nav>
   );
 };
 
