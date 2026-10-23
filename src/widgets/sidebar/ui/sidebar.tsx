@@ -1,5 +1,9 @@
 import type { FC } from 'react';
 
+import SidebarNav from './sidebar-nav';
+
+import { ProfileInfo } from '@entities/profile';
+
 import styles from './sidebar.module.scss';
 
 const Sidebar: FC = () => {
@@ -14,7 +18,8 @@ const Sidebar: FC = () => {
           height={43}
         />
       </div>
-
+      <SidebarNav />
+      <ProfileInfo />
     </aside>
   );
 };

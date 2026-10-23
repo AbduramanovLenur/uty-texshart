@@ -1,0 +1,41 @@
+.profile-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  &__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  &__name {
+    font-size: var(--ant-font-size);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    &:global(.ant-popover-open) {
+      border: var(--ant-btn-border-width) var(--ant-btn-border-style) var(--ant-btn-border-color-hover);
+      color: var(--ant-btn-text-color-hover);
+      background-color: var(--ant-btn-bg-color-hover);
+    }
+  }
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+  }
+}
