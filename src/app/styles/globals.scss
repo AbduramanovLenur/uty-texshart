@@ -144,3 +144,12 @@ main {
 .padded {
   padding: var(--primary-grid-padding);
 }
+
+.ant-popover {
+  filter: none;
+  &-container {
+    box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.1216);
+    border-radius: var(--ant-border-radius-lg);
+    border: 1px solid var(--border-secondary);
+  }
+}
