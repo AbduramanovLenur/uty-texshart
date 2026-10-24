@@ -1,6 +1,7 @@
 import { Outlet } from 'react-router-dom';
 import type { FC } from 'react';
 
+import { Header } from '@widgets/header';
 import { Sidebar } from '@widgets/sidebar';
 
 const RootLayout: FC = () => {
@@ -9,6 +10,7 @@ const RootLayout: FC = () => {
       <div className='horizontal padded'>
         <Sidebar />
         <div className='content'>
+          <Header />
           <main>
             <Outlet />
           </main>
