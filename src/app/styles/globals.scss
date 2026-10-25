@@ -133,6 +133,9 @@ main {
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   flex: 1;
   min-width: 0;
 }
@@ -152,4 +155,10 @@ main {
     border-radius: var(--ant-border-radius-lg);
     border: 1px solid var(--border-secondary);
   }
+}
+
+.ant-tag {
+  font-size: var(--ant-font-size-sm);
+  line-height: 1.6;
+  padding-inline: var(--ant-padding-xs);
 }

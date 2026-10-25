@@ -19,13 +19,13 @@
     left: 32px;
   }
   &__decor {
-    margin-bottom: 32px;
+    margin-bottom: var(--ant-margin-xl);
   }
   &__slogan {
     --ant-color-text-heading: var(--ant-color-bg-elevated);
 
     text-align: center;
-    margin-bottom: 8px;
+    margin-bottom: var(--ant-margin-xs);
   }
   &__name {
     font-size: var(--ant-font-size);

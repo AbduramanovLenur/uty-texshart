@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
+import { UserApplications } from '@widgets/user-applications';
+
 const ApplicationsPage: FC = () => {
-  return (
-    <></>
-  );
+  return <UserApplications />;
 };
 
 export default ApplicationsPage;

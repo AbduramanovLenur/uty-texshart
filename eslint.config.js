@@ -122,6 +122,12 @@ export default defineConfig([
             },
             {
               allow: {
+                from: { element: { type: 'shared' } },
+                to: { element: { type: 'shared' } },
+              },
+            },
+            {
+              allow: {
                 to: {
                   element: { type: 'shared', captured: { slice: 'assets' } },
                 },

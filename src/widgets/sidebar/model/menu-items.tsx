@@ -6,7 +6,7 @@ export const items: TMenuItem[] = [
         key: '/dashboard',
         label: 'Bosh sahifa',
         icon: (
-            <svg width='24' height='24'>
+            <svg width='24' height='24' viewBox='0 0 24 24'>
                 <use href='/images/svg/sprite.svg#icon-home' />
             </svg>
         ),
@@ -16,7 +16,7 @@ export const items: TMenuItem[] = [
         key: '/applications',
         label: 'Arizalarim',
         icon: (
-            <svg width='24' height='24'>
+            <svg width='24' height='24' viewBox='0 0 24 24'>
                 <use href='/images/svg/sprite.svg#icon-file-upload' />
             </svg>
         ),
