@@ -25,57 +25,6 @@
       border-bottom: 1px solid var(--border-secondary);
     }
   }
-  &__box {
-    padding: 12px 16px;
-  }
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 4px;
-  }
-  &__label {
-    font-size: var(--ant-font-size);
-    font-weight: 600;
-    line-height: 1.5;
-  }
-  &__circle {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background-color: var(--ant-blue);
-  }
-  &__description {
-    font-size: var(--ant-font-size);
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--dark-65);
-    margin-bottom: 4px;
-  }
-  &__inner {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
-  &__record {
-    font-size: var(--ant-font-size-sm);
-    font-weight: 600;
-    line-height: 1.6;
-    color: var(--ant-blue);
-    text-decoration: none;
-  }
-  &__decor {
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background-color: var(--dark-45);
-  }
-  &__timestamp {
-    font-size: var(--ant-font-size-sm);
-    font-weight: 400;
-    line-height: 1.6;
-    color: var(--dark-45);
-  }
   &__bottom {
     display: flex;
     align-items: center;

@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 
+import { NotificationCard } from '@entities/notifications';
 import { routes } from '@shared/config';
 
 import styles from './notification-popover.module.scss';
@@ -9,6 +10,23 @@ import styles from './notification-popover.module.scss';
 const { Title } = Typography;
 
 const NotificationPopover: FC = () => {
+  const notifications = [
+    {
+      id: 1,
+      label: 'Texnik-shart berildi',
+      description: 'Suv quvuri uchun texnik-shart tayyor.',
+      record: 'ARZ-1345',
+      timestamp: 'Bugun, 10:45',
+    },
+    {
+      id: 2,
+      label: 'Ma’lumotlarni to‘ldirish talab etiladi',
+      description: 'Arizaga kesishuv sxemasini ilova qiling.',
+      record: 'ARZ-0923',
+      timestamp: 'Bugun, 09:30',
+    },
+  ];
+
   return (
     <div className={styles['notification-popover']}>
       <div className={styles['notification-popover__header']}>
@@ -21,56 +39,11 @@ const NotificationPopover: FC = () => {
       </div>
       <div className={styles['notification-popover__body']}>
         <ul className={styles['notification-popover__list']}>
-          <li className={styles['notification-popover__item']}>
-            <div className={styles['notification-popover__box']}>
-              <div className={styles['notification-popover__wrapper']}>
-                <div className={styles['notification-popover__label']}>
-                  Texnik-shart berildi
-                </div>
-                <div className={styles['notification-popover__circle']}></div>
-              </div>
-              <div className={styles['notification-popover__description']}>
-                Suv quvuri uchun texnik-shart tayyor.
-              </div>
-              <div className={styles['notification-popover__inner']}>
-                <Link
-                  to={routes.NOTIFICATIONS}
-                  className={styles['notification-popover__record']}
-                >
-                  ARZ-1345
-                </Link>
-                <div className={styles['notification-popover__decor']}></div>
-                <div className={styles['notification-popover__timestamp']}>
-                  Bugun, 10:45
-                </div>
-              </div>
-            </div>
-          </li>
-          <li className={styles['notification-popover__item']}>
-            <div className={styles['notification-popover__box']}>
-              <div className={styles['notification-popover__wrapper']}>
-                <div className={styles['notification-popover__label']}>
-                  Ma’lumotlarni to‘ldirish talab etiladi
-                </div>
-                <div className={styles['notification-popover__circle']}></div>
-              </div>
-              <div className={styles['notification-popover__description']}>
-                Arizaga kesishuv sxemasini ilova qiling.
-              </div>
-              <div className={styles['notification-popover__inner']}>
-                <Link
-                  to={routes.NOTIFICATIONS}
-                  className={styles['notification-popover__record']}
-                >
-                  ARZ-0923
-                </Link>
-                <div className={styles['notification-popover__decor']}></div>
-                <div className={styles['notification-popover__timestamp']}>
-                  Bugun, 09:30
-                </div>
-              </div>
-            </div>
-          </li>
+          {notifications.map((item) => (
+            <li className={styles['notification-popover__item']} key={item.id}>
+              <NotificationCard item={item} />
+            </li>
+          ))}
         </ul>
       </div>
       <div className={styles['notification-popover__bottom']}>
