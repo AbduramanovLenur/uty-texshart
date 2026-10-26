@@ -1,19 +1,9 @@
 import type { FC } from 'react';
 
-import { AuthPromo } from '@widgets/auth-promo';
-import { AuthPanel } from '@widgets/auth-panel';
-
-import styles from './auth-page.module.scss';
+import { Auth } from '@widgets/auth';
 
 const AuthPage: FC = () => {
-  return (
-    <section className={styles['auth']}>
-      <div className={styles['auth__inner']}>
-        <AuthPromo />
-        <AuthPanel />
-      </div>
-    </section>
-  );
+  return <Auth />;
 };
 
 export default AuthPage;
