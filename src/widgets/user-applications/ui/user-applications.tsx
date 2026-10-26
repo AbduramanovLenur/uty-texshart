@@ -1,21 +1,19 @@
+import { useState } from 'react';
 import type { FC, ReactNode } from 'react';
-import { Typography, Button, Table, Tag, Input, DatePicker } from 'antd';
+import { Typography, Button, Table, Tag } from 'antd';
 import type { TableProps } from 'antd';
 import { Link } from 'react-router-dom';
-import dayjs, { type Dayjs } from 'dayjs';
 import { SearchOutlined } from '@ant-design/icons';
 
+import { TableDateRangeFilter } from '@features/table-date-range-filter';
+import { TableSearchFilter } from '@features/table-search-filter';
+import { defaultValues, filterKeys } from '@shared/config';
 import { Paginator } from '@shared/ui';
-import { useQueryParams } from '@shared/lib';
-import { queries } from '@shared/config';
+import type { TTableFilters } from '@shared/types';
 
 import styles from './user-applications.module.scss';
-import type { FilterDropdownProps } from 'antd/es/table/interface';
 
 const { Title } = Typography;
-const { RangePicker } = DatePicker;
-
-type RangeValue = [Dayjs | null, Dayjs | null] | null;
 
 interface IApplication {
   key: string;
@@ -30,13 +28,22 @@ interface IApplication {
 const UserApplications: FC = () => {
   const total = 125;
 
-  const { getAll, setMany } = useQueryParams();
+  const [filters, setFilters] = useState<TTableFilters>({
+    page: defaultValues.PAGE,
+    limit: defaultValues.LIMIT,
+  });
 
-  const applicationIdFilters = getAll(queries.APPLICATION_ID);
-  const networkFilters = getAll(queries.NETWORK);
-  const peregonFilters = getAll(queries.PEREGON);
-  const statusFilters = getAll(queries.STATUS);
-  const dateFilters = getAll(queries.DATE);
+  const handleTableChange: TableProps<IApplication>['onChange'] = (_, nextFilters) => {
+    setFilters(({ page, limit }) => ({
+      ...nextFilters,
+      page,
+      limit,
+    }));
+  };
+
+  const handlePaginationChange = (page: number, limit: number) => {
+    setFilters((prev) => ({ ...prev, page, limit }));
+  };
 
   const dataSource: IApplication[] = [
     {
@@ -272,46 +279,24 @@ const UserApplications: FC = () => {
   const columns: TableProps<IApplication>['columns'] = [
     {
       title: 'Ariza ID',
-      key: 'applicationId',
+      key: filterKeys.APPLICATION_ID,
       width: 160,
       render: (_, record) => (
         <Link className={styles['user-applications__table-link']} to=''>
           {record.id}
         </Link>
       ),
-      filteredValue: applicationIdFilters,
+      filteredValue: filters.applicationId,
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
-        <div className={styles['user-applications__table-search-wrapper']}>
-          <Input
-            className={styles['user-applications__table-search-input']}
-            placeholder='Hujjat ID raqamini kiriting'
-            value={selectedKeys[0]}
-            onChange={(e) => setSelectedKeys(e.target.value ? [e.target.value] : [])}
-            onPressEnter={() => confirm()}
-            style={{ display: 'block' }}
-          />
-          <div className={styles['user-applications__table-search-buttons']}>
-            <Button
-              onClick={() => {
-                clearFilters?.();
-                confirm();
-              }}
-              size='small'
-              style={{ width: 90 }}
-            >
-              Tozalash
-            </Button>
-            <Button
-              type='primary'
-              onClick={() => confirm()}
-              icon={<SearchOutlined />}
-              size='small'
-              style={{ width: 90 }}
-            >
-              Qidirish
-            </Button>
-          </div>
-        </div>
+        <TableSearchFilter
+          setSelectedKeys={setSelectedKeys}
+          selectedKeys={selectedKeys}
+          confirm={confirm}
+          clearFilters={clearFilters}
+          placeholder='Hujjat ID raqamini kiriting'
+          clearLabel='Tozalash'
+          searchLabel='Qidirish'
+        />
       ),
       filterIcon: (filtered: boolean) => (
         <SearchOutlined style={{ color: filtered ? 'var(--ant-blue)' : undefined }} />
@@ -319,10 +304,10 @@ const UserApplications: FC = () => {
     },
     {
       title: 'Tarmoq',
-      key: 'network',
-      minWidth: 240,
+      key: filterKeys.NETWORK,
+      minWidth: 235,
       render: (_, record) => record.network,
-      filteredValue: networkFilters,
+      filteredValue: filters.network,
       filters: [
         {
           text: 'Category 1',
@@ -341,10 +326,10 @@ const UserApplications: FC = () => {
     },
     {
       title: 'Peregon',
-      key: 'peregon',
-      width: 290,
+      key: filterKeys.PEREGON,
+      minWidth: 250,
       render: (_, record) => record.peregon,
-      filteredValue: peregonFilters,
+      filteredValue: filters.peregon,
       filters: [
         {
           text: 'Category 1',
@@ -363,10 +348,10 @@ const UserApplications: FC = () => {
     },
     {
       title: 'Status',
-      key: 'status',
+      key: filterKeys.STATUS,
       width: 160,
       render: (_, record) => record.status,
-      filteredValue: statusFilters,
+      filteredValue: filters.status,
       filters: [
         {
           text: 'Category 1',
@@ -385,42 +370,21 @@ const UserApplications: FC = () => {
     },
     {
       title: 'Sana / Yangilanish',
-      key: 'date',
+      key: filterKeys.DATE,
       width: 200,
-      filteredValue: dateFilters,
-      filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => {
-        const [from, to] = selectedKeys as string[];
-
-        return (
-          <div className={styles['user-applications__table-range-wrapper']}>
-            <RangePicker
-              className={styles['user-applications__table-range-picker']}
-              format='DD.MM.YYYY'
-              value={from && to ? [dayjs(from), dayjs(to)] : null}
-              onChange={() => handleDateRangeChange(setSelectedKeys)}
-            />
-            <div className={styles['user-applications__table-range-buttons']}>
-              <Button
-                onClick={() => {
-                  clearFilters?.();
-                  confirm();
-                }}
-                size='small'
-              >
-                Tozalash
-              </Button>
-              <Button
-                type='primary'
-                onClick={() => confirm()}
-                icon={<SearchOutlined />}
-                size='small'
-              >
-                Qidirish
-              </Button>
-            </div>
-          </div>
-        );
-      },
+      filteredValue: filters.date,
+      filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+        <TableDateRangeFilter
+          setSelectedKeys={setSelectedKeys}
+          selectedKeys={selectedKeys}
+          confirm={confirm}
+          clearFilters={clearFilters}
+          displayFormat='DD.MM.YYYY'
+          valueFormat='YYYY-MM-DD'
+          clearLabel='Tozalash'
+          searchLabel='Qidirish'
+        />
+      ),
       render: (_, record) => (
         <div className={styles['user-applications__table-date']}>
           <div className={styles['user-applications__table-date-create']}>
@@ -433,28 +397,6 @@ const UserApplications: FC = () => {
       ),
     },
   ];
-
-  const handleTableChange: TableProps<IApplication>['onChange'] = (_, filters) => {
-    setMany({
-      [queries.APPLICATION_ID]: filters.applicationId?.map(String),
-      [queries.NETWORK]: filters.network?.map(String),
-      [queries.PEREGON]: filters.peregon?.map(String),
-      [queries.STATUS]: filters.status?.map(String),
-      [queries.DATE]: filters.date?.map(String),
-    });
-  };
-
-  const handleDateRangeChange = (setSelectedKeys: FilterDropdownProps['setSelectedKeys']) => (dates: RangeValue) => {
-    if (dates?.[0] && dates?.[1]) {
-      setSelectedKeys([
-        dates[0].format('YYYY-MM-DD'),
-        dates[1].format('YYYY-MM-DD'),
-      ]);
-      return;
-    }
-
-    setSelectedKeys([]);
-  };
 
   return (
     <section className={styles['user-applications']}>
@@ -494,23 +436,33 @@ const UserApplications: FC = () => {
             Yangi ariza yaratish
           </Button>
         </div>
-        <Table<IApplication>
-          classNames={{
-            root: styles['user-applications__table'],
-            header: {
-              cell: styles['user-applications__table-header-cell'],
-            },
-            body: {
-              row: styles['user-applications__table-body-row'],
-            },
-          }}
-          dataSource={dataSource}
-          columns={columns}
-          pagination={false}
-          scroll={{ x: 'max-content' }}
-          onChange={handleTableChange}
-        />
-        <Paginator total={total} summary={`${total} ta ariza topildi`} />
+        <div className={styles['user-applications__body']}>
+          <Table<IApplication>
+            classNames={{
+              root: styles['user-applications__table'],
+              header: {
+                cell: styles['user-applications__table-header-cell'],
+              },
+              body: {
+                row: styles['user-applications__table-body-row'],
+              },
+            }}
+            dataSource={dataSource}
+            columns={columns}
+            pagination={false}
+            scroll={{ x: 'max-content' }}
+            onChange={handleTableChange}
+          />
+        </div>
+        <div className={styles['user-applications__pagination']}>
+          <Paginator
+            total={total}
+            page={filters.page}
+            limit={filters.limit}
+            onChange={handlePaginationChange}
+            summary={`${total} ta ariza topildi`}
+          />
+        </div>
       </div>
     </section>
   );

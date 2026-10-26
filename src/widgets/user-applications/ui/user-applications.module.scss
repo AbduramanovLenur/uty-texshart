@@ -1,11 +1,22 @@
 .user-applications {
+  display: flex;
+  flex-direction: column;
   background-color: var(--ant-color-bg-container);
-  padding: var(--ant-padding-lg);
   border-bottom-left-radius: var(--ant-border-radius-lg);
   border-bottom-right-radius: var(--ant-border-radius-lg);
   height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    padding: var(--ant-padding-lg);
+  }
   &__top {
     display: flex;
+    flex-shrink: 0;
     justify-content: space-between;
     align-items: center;
     gap: 12px;
@@ -23,11 +34,30 @@
       border: 1px solid var(--default-border);
     }
   }
-  &__table {
+  &__body {
+    flex: 0 1 auto;
+    min-height: 0;
     margin-bottom: var(--ant-margin);
+    overflow: auto;
     border-radius: 8px;
-    overflow: hidden;
 
+    :global(.ant-table-content) {
+      overflow: visible !important;
+    }
+    :global(.ant-table-container)::before,
+    :global(.ant-table-container)::after {
+      display: none;
+    }
+    :global(.ant-table-thead > tr > th) {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+  }
+  &__pagination {
+    flex-shrink: 0;
+  }
+  &__table {
     :global(.ant-table-thead > tr > th.ant-table-cell) {
       background-color: var(--ant-blue-2);
       color: var(--dark-88);
@@ -86,34 +116,6 @@
         gap: 4px;
         font-size: var(--ant-font-size-sm);
         color: var(--dark-65);
-      }
-    }
-    &-search {
-      &-wrapper {
-        padding: var(--ant-table-cell-padding-inline-sm);
-      }
-      &-input {
-        margin-bottom: var(--ant-margin-xs);
-      }
-      &-buttons {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--ant-margin-xs);
-      }
-    }
-    &-range {
-      &-wrapper {
-        display: flex;
-        flex-direction: column;
-        padding: var(--ant-table-cell-padding-inline-sm);
-      }
-      &-picker {
-        margin-bottom: var(--ant-margin-xs);
-      }
-      &-buttons {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--ant-margin-xs);
       }
     }
   }

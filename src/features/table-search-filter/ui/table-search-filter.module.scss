@@ -1,0 +1,11 @@
+.table-search-filter {
+  padding: var(--ant-table-cell-padding-inline-sm);
+  &__input {
+    margin-bottom: var(--ant-margin-xs);
+  }
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--ant-margin-xs);
+  }
+}
