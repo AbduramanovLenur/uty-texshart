@@ -1,0 +1,13 @@
+.table-date-range-filter {
+  display: flex;
+  flex-direction: column;
+  padding: var(--ant-table-cell-padding-inline-sm);
+  &__picker {
+    margin-bottom: var(--ant-margin-xs);
+  }
+  &__buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--ant-margin-xs);
+  }
+}

@@ -20,11 +20,11 @@ const AuthPromo: FC = () => {
       <div className={styles['auth-promo__wrapper']}>
         <div className={styles['auth-promo__decor']}>
           <img
-            src='/images/svg/train.svg'
+            src='/images/pictures/train.png'
             alt='logo'
             loading='lazy'
-            width={468}
-            height={468}
+            width={616}
+            height={462}
           />
         </div>
         <Title level={3} className={styles['auth-promo__slogan']}>

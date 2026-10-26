@@ -1,0 +1,28 @@
+.notification-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--default-border);
+  &__badge {
+    :global(.ant-badge-count) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 14px;
+      width: 22px;
+      background-color: var(--ant-red-5);
+    }
+  }
+  &__popover {
+    max-width: 456px;
+    width: 100%;
+    &-container {
+      &:global(.ant-popover-container) {
+        padding: 0;
+      }
+    }
+  }
+}

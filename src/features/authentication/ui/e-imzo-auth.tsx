@@ -255,13 +255,9 @@ const EImzoAuth: FC = () => {
       options={options}
       optionRender={(option) => option.data.card}
       suffixIcon={
-        <img
-          src='/images/svg/down-arrow.svg'
-          alt='arrow'
-          loading='lazy'
-          width={12}
-          height={12}
-        />
+        <svg width='12' height='12' viewBox='0 0 12 12'>
+          <use href='/images/svg/sprite.svg#icon-down-arrow' />
+        </svg>
       }
       placeholder='E-imzo kalitingizni tanlang'
       virtual={false}

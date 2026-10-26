@@ -14,11 +14,11 @@ const AuthPanel: FC = () => {
       <div className={styles['auth-panel__top']}>
         <div className='auth-panel__logo-project'>
           <img
-            src='/images/svg/logo-project.svg'
+            src='/images/svg/logo-primary.svg'
             alt='logo'
             loading='lazy'
-            width={200}
-            height={50}
+            width={160}
+            height={40}
           />
         </div>
         <LanguageSwitcher />

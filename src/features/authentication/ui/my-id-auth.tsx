@@ -7,7 +7,7 @@ const MyIdAuth: FC = () => {
     <a className={styles['my-id-auth']} href='#'>
       <span>
         <img
-          src='/images/icons/my-id.png'
+          src='/images/pictures/my-id.png'
           alt='one-id'
           loading='lazy'
           width={87}

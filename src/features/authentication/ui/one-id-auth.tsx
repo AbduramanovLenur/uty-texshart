@@ -7,7 +7,7 @@ const OneIdAuth: FC = () => {
     <a className={styles['one-id-auth']} href='#'>
       <span>
         <img
-          src='/images/icons/one-id.png'
+          src='/images/pictures/one-id.png'
           alt='one-id'
           loading='lazy'
           width={24}

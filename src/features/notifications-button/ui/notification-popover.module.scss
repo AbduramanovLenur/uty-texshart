@@ -1,0 +1,41 @@
+.notification-popover {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid var(--border-secondary);
+  }
+  &__title {
+    &:global(.ant-typography) {
+      margin: 0;
+    }
+  }
+  &__count-records {
+    font-size: var(--ant-font-size-sm);
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--ant-blue);
+  }
+  &__body {
+    border-bottom: 1px solid var(--border-secondary);
+  }
+  &__item {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--border-secondary);
+    }
+  }
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 17px;
+  }
+  &__link {
+    font-size: var(--ant-font-size);
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--ant-blue);
+    text-decoration: none;
+  }
+}

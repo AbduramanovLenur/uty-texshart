@@ -1,0 +1,35 @@
+.profile-info-popover {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin-xxs);
+  }
+  &__link,
+  &__button {
+    padding: var(--ant-padding-xs) var(--ant-padding);
+  }
+  &__list,
+  &__item,
+  &__link,
+  &__button {
+    height: auto;
+    width: 100%;
+    border-radius: var(--ant-border-radius-sm);
+  }
+  &__link,
+  &__button {
+    font-size: var(--ant-font-size);
+    line-height: 1.5;
+    display: block;
+    transition: 0.5s;
+    &:hover {
+      background-color: var(--ant-blue-1) !important;
+      color: var(--ant-blue) !important;
+    }
+  }
+  &__button {
+    display: flex;
+    justify-content: flex-start;
+    color: var(--ant-color-error-text);
+  }
+}

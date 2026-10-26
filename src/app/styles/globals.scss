@@ -9,6 +9,12 @@ html {
   // margin-right: calc(-1 * (100vw - 100%));
 }
 
+html,
+body,
+#root {
+  height: 100%;
+}
+
 body {
   font-family: var(--default-ff), sans-serif;
   font-size: var(--default-fz);
@@ -18,12 +24,11 @@ body {
   background-color: var(--page-bc);
   position: relative;
   transition: opacity 0.5s ease;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   opacity: 0;
 
   &.is-loaded {
-    overflow-y: auto;
+    overflow-y: hidden;
     opacity: 1;
   }
 }
@@ -119,11 +124,51 @@ textarea {
 
 main {
   flex: 1;
-  padding: var(--grid-padding);
+  min-height: 0;
+  overflow: hidden;
 }
 
 .wrapper {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.horizontal {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+}
+
+.default-padded {
+  padding: var(--grid-padding);
+}
+
+.padded {
+  padding: var(--primary-grid-padding);
+}
+
+.ant-popover {
+  filter: none;
+  &-container {
+    box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.1216);
+    border-radius: var(--ant-border-radius-lg);
+    border: 1px solid var(--border-secondary);
+  }
+}
+
+.ant-tag {
+  font-size: var(--ant-font-size-sm);
+  line-height: 1.6;
+  padding-inline: var(--ant-padding-xs);
 }

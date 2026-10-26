@@ -1,0 +1,43 @@
+.paginator {
+  color: red;
+  :global(.ant-pagination-total-text) {
+    color: var(--ant-color-text-secondary);
+  }
+  :global(.ant-pagination-item) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    min-width: 32px;
+    height: 32px;
+  }
+  :global(.ant-pagination-prev),
+  :global(.ant-pagination-next) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.5;
+    min-width: 32px;
+    height: 32px;
+    &:hover {
+      transition: all var(--ant-motion-duration-mid);
+      background-color: var(--ant-color-bg-text-hover);
+    }
+  }
+  :global(.ant-pagination-disabled) {
+    color: var(--ant-color-text-disabled);
+    cursor: not-allowed;
+    user-select: none;
+    &:hover {
+      background-color: transparent;
+      border-color: transparent;
+      color: var(--ant-color-text-disabled);
+    }
+  }
+  :global(.ant-pagination-total-text) {
+    line-height: 1.5;
+    height: auto;
+    margin-inline-end: var(--ant-margin);
+    color: var(--dark-88);
+  }
+}

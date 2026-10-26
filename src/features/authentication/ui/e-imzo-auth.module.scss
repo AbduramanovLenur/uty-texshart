@@ -4,7 +4,7 @@
     height: 40px;
     background-color: var(--dark-04);
     border: none;
-    margin-bottom: 16px;
+    margin-bottom: var(--ant-margin);
     &:global(.ant-select) {
       font-size: var(--ant-font-size-lg);
       font-weight: 400;
@@ -35,7 +35,7 @@
   }
   &__name {
     &:global(.ant-typography) {
-      margin-bottom: 4px;
+      margin-bottom: var(--ant-margin-xxs);
       color: var(--dark-88);
     }
   }

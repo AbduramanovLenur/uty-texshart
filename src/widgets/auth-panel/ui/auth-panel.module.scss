@@ -26,14 +26,14 @@
   }
   &__title {
     &:global(.ant-typography) {
-      margin-bottom: 4px;
+      margin-bottom: var(--ant-margin-xxs);
       color: var(--dark-88);
     }
   }
   &__subtitle {
     &:global(.ant-typography) {
       font-weight: 400;
-      margin-bottom: 32px;
+      margin-bottom: var(--ant-margin-xl);
       --ant-typography-title-margin-top: 0;
       color: var(--dark-65);
     }
