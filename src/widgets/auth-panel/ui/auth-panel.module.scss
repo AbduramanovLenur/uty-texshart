@@ -1,28 +1,26 @@
 .auth-panel {
-  --auth-padding-x: 67px;
-  --auth-padding-y: 48px;
-
   position: relative;
   display: flex;
   flex-direction: column;
   border-radius: var(--ant-size-lg);
   background-color: var(--ant-color-bg-container);
-  padding: var(--auth-padding-y) var(--auth-padding-x) 32px;
+  padding: 48px 92px 32px;
   &__top {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 500px;
     position: absolute;
-    top: var(--auth-padding-y);
-    left: var(--auth-padding-x);
-    right: var(--auth-padding-x);
+    top: 48px;
+    left: 50%;
+    transform: translateX(-50%);
   }
   &__body {
     margin: auto;
     width: 100%;
-    background-color: var(--ant-color-fill-quaternary);
+    max-width: 500px;
     border-radius: var(--ant-size-xs);
-    padding: 48px;
   }
   &__title {
     &:global(.ant-typography) {
@@ -40,9 +38,10 @@
   }
   &__divider {
     margin: 0 0 16px !important;
-    &:global(.ant-divider-inner-text) {
+    :global(.ant-divider-inner-text) {
       font-size: var(--ant-font-size);
       line-height: 1.5;
+      color: var(--dark-65);
     }
   }
   &__services {
@@ -56,6 +55,6 @@
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: rgba(10, 10, 10, 0.45);
+    color: var(--dark-65);
   }
 }
