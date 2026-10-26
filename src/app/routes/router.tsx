@@ -3,6 +3,7 @@ import { createBrowserRouter } from 'react-router-dom';
 import {
   AuthPage,
   ApplicationsPage,
+  NotificationsPage,
 } from './pages';
 
 import RequireGuest from './guards/require-guest';
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
           {
             path: routes.APPLICATIONS,
             element: <ApplicationsPage />,
+          },
+          {
+            path: routes.NOTIFICATIONS,
+            element: <NotificationsPage />,
           },
         ],
       },
