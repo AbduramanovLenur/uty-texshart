@@ -32,6 +32,8 @@
     min-height: 0;
     overflow-y: auto;
     scrollbar-width: none;
+    border-radius: var(--ant-border-radius-lg);
+    border: 1px solid var(--border-secondary);
     &::-webkit-scrollbar {
       display: none;
     }
