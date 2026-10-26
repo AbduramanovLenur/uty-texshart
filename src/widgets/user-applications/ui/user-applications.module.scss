@@ -40,6 +40,12 @@
     margin-bottom: var(--ant-margin);
     overflow: auto;
     border-radius: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
 
     :global(.ant-table-content) {
       overflow: visible !important;
