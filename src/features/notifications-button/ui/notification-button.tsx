@@ -18,14 +18,10 @@ const NotificationButton: FC = () => {
       placement='bottomRight'
     >
       <Button className={styles['notification-button']} type='default'>
-        <Badge className={styles['notification-button__badge']} count={'+9'}>
-          <img
-            src='/images/svg/bell.svg'
-            alt='notification'
-            loading='lazy'
-            width={18}
-            height={18}
-          />
+        <Badge className={styles['notification-button__badge']} count={'9'}>
+          <svg width='18' height='18' viewBox='0 0 18 18'>
+            <use href='/images/svg/sprite.svg#icon-bell' />
+          </svg>
         </Badge>
       </Button>
     </Popover>

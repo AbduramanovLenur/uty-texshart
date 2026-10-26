@@ -6,7 +6,7 @@
   &__list {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: var(--ant-padding-xxs);
     background-color: transparent;
     max-width: 250px;
     &::after,

@@ -14,8 +14,8 @@ const Sidebar: FC = () => {
           src='/images/svg/logo-primary.svg'
           alt='logo'
           loading='lazy'
-          width={187}
-          height={43}
+          width={160}
+          height={40}
         />
       </div>
       <SidebarNav />

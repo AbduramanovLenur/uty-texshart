@@ -64,11 +64,16 @@
     flex-shrink: 0;
   }
   &__table {
+    :global(.ant-table-thead th.ant-table-column-has-sorters:hover) {
+      background-color: var(--ant-blue-2) !important;
+      color: var(--dark-88) !important;
+    }
     :global(.ant-table-thead > tr > th.ant-table-cell) {
       background-color: var(--ant-blue-2);
       color: var(--dark-88);
     }
-    :global(.ant-table-filter-trigger) {
+    :global(.ant-table-filter-trigger),
+    :global(.ant-table-column-sorter) {
       color: var(--dark-88);
       margin: 0;
       &:hover {
@@ -95,6 +100,7 @@
     }
     &-link {
       position: relative;
+      font-weight: 600;
       color: var(--dark-88);
       &::after {
         content: '';
@@ -103,7 +109,7 @@
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: var(--ant-blue);
+        background-color: var(--dark-88);
         transition: 0.5s;
       }
       &:hover::after {

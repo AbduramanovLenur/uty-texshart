@@ -2,14 +2,9 @@ import { useEffect, useState } from 'react';
 import { Avatar, Button, Popover } from 'antd';
 import { MoreOutlined } from '@ant-design/icons';
 
-import styles from './profile-info.module.scss';
+import ProfileInfoPopover from './profile-info-popover';
 
-const content = (
-  <div>
-    <p style={{ margin: 0 }}>Content</p>
-    <p style={{ margin: 0 }}>Content</p>
-  </div>
-);
+import styles from './profile-info.module.scss';
 
 const ProfileInfo = () => {
   const [open, setOpen] = useState(false);
@@ -44,7 +39,10 @@ const ProfileInfo = () => {
       </div>
 
       <Popover
-        content={content}
+        classNames={{
+          root: styles['profile-info__popover'],
+        }}
+        content={<ProfileInfoPopover />}
         arrow={false}
         placement='topRight'
         trigger='click'

@@ -6,9 +6,13 @@ import type { filterKeys } from '@shared/config';
 
 export type TFilterKey = (typeof filterKeys)[keyof typeof filterKeys];
 
+export type TTableSortOrder = 'ascend' | 'descend';
+
 export type TTableFilters = Partial<Record<TFilterKey, FilterValue | null>> & {
   page: number;
   limit: number;
+  sortBy?: TFilterKey | null;
+  sortOrder?: TTableSortOrder | null;
 };
 
 export type TRangeValue = [Dayjs | null, Dayjs | null] | null;

@@ -33,13 +33,9 @@ const Paginator: FC<IProps> = ({
       align={align}
       showSizeChanger={{
         suffixIcon: (
-          <img
-            src='/images/svg/down-arrow.svg'
-            alt='prev'
-            loading='lazy'
-            width={12}
-            height={12}
-          />
+          <svg width='12' height='12' viewBox='0 0 12 12'>
+            <use href='/images/svg/sprite.svg#icon-down-arrow' />
+          </svg>
         ),
       }}
     />

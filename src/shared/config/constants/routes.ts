@@ -3,4 +3,5 @@ export const routes = {
   AUTH: '/auth',
   APPLICATIONS: '/applications',
   NOTIFICATIONS: '/notifications',
+  PROFILE: '/profile',
 };
