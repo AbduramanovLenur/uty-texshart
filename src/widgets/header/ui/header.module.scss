@@ -1,12 +1,14 @@
 .header {
   background-color: var(--ant-color-bg-container);
-  padding: 12px 16px;
-  border-radius: var(--ant-border-radius-lg);
+  border-top-left-radius: var(--ant-border-radius-lg);
+  border-top-right-radius: var(--ant-border-radius-lg);
   &__inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 8px;
+    padding-inline: var(--ant-padding-lg);
+    padding-top: var(--ant-padding-lg);
   }
   &__name {
     margin-right: auto;

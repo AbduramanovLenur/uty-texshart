@@ -40,7 +40,7 @@
       height: initial;
       width: initial;
       line-height: initial;
-      padding: 12px 16px;
+      padding: var(--ant-padding-xs) var(--ant-padding);
       .menu {
         &__item {
           &-icon {
@@ -50,14 +50,14 @@
       }
     }
     &:global(.ant-menu-item-selected) {
-      background-color: var(--ant-blue-2);
+      background-color: var(--ant-color-bg-base);
       .menu {
         &__item {
           &-icon {
-            color: var(--ant-blue-6);
+            color: var(--ant-blue);
           }
           &-content {
-            color: var(--dark-88);
+            color: var(--ant-blue);
           }
         }
       }

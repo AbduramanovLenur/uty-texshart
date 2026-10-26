@@ -507,7 +507,7 @@ const UserApplications: FC = () => {
           dataSource={dataSource}
           columns={columns}
           pagination={false}
-          scroll={{ x: 'max-content', y: 500 }}
+          scroll={{ x: 'max-content' }}
           onChange={handleTableChange}
         />
         <Paginator total={total} summary={`${total} ta ariza topildi`} />
