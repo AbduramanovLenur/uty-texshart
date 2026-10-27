@@ -1,6 +1,82 @@
 {
+  "authentication": {
+    "authPanel": {
+      "welcome": "Xush kelibsiz",
+      "signInPrompt": "Ishni boshlash uchun tizimga kiring",
+      "or": "Yoki",
+      "copyright": "© 2026 O‘zbekiston temir yo‘llari Tex-Shart"
+    },
+    "authPromo": {
+      "slogan": "Barcha jarayonlar — bir joyda",
+      "name": "O‘zbekiston temir yo‘llari Tex-Shart boshqaruv tizimi"
+    },
+    "eImzo": {
+      "chooseKey": "E-IMZO kalitingizni tanlang",
+      "director": "Direktor",
+      "pinfl": "JShShIR",
+      "type": "Turi",
+      "legalEntity": "Yuridik shaxs",
+      "individual": "Jismoniy shaxs",
+      "certificate": "Sertifikat",
+      "validityPeriod": "Amal qilish muddati",
+      "expired": "Muddati tugagan"
+    },
+    "myId": {
+      "signIn": "MyID orqali kirish"
+    },
+    "oneId": {
+      "signIn": "One ID orqali kirish"
+    }
+  },
   "language": {
     "uz": "O‘zbekcha",
     "ru": "Русский"
+  },
+  "notifications": {
+    "page": {
+      "title": "Bildirishnomalar",
+      "markAllRead": "Barchasini o‘qilgan deb belgilash"
+    },
+    "popover": {
+      "title": "Bildirishnomalar",
+      "newCount_other": "{{count}} ta yangi bildirishnoma",
+      "viewAll": "Barchasini ko‘rish"
+    }
+  },
+  "profile": {
+    "page": "Profil sahifasi",
+    "logout": "Chiqish"
+  },
+  "sidebar": {
+    "dashboard": "Bosh sahifa",
+    "applications": "Arizalarim"
+  },
+  "userApplications": {
+    "title": "Arizalarim",
+    "download": "Yuklab olish",
+    "create": "Yangi ariza yaratish",
+    "summary_other": "Jami {{count}} ta ariza topildi",
+    "status": {
+      "accepted": "Qabul qilindi",
+      "forwarded": "Yo‘naltirildi",
+      "actCreated": "Dalolatnoma tuzildi",
+      "technicalConditionsIssued": "Texnik-shart berildi",
+      "rejected": "Rad etildi",
+      "draft": "Qoralama",
+      "constructionStarted": "Qurilish boshlandi",
+      "completed": "Yakunlandi"
+    },
+    "columns": {
+      "applicationId": "Ariza ID",
+      "network": "Muhandislik tarmog‘i",
+      "peregon": "Peregon",
+      "status": "Holati",
+      "dateUpdate": "Sana / yangilanish"
+    },
+    "filters": {
+      "applicationIdPlaceholder": "Ariza ID raqamini kiriting",
+      "clear": "Tozalash",
+      "search": "Qidirish"
+    }
   }
 }

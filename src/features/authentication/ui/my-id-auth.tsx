@@ -1,8 +1,11 @@
 import { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import styles from './my-id-auth.module.scss';
 
 const MyIdAuth: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <a className={styles['my-id-auth']} href='#'>
       <span>
@@ -15,7 +18,7 @@ const MyIdAuth: FC = () => {
         />
       </span>
       <span>
-        My ID orqali
+        {t('authentication.myId.signIn')}
       </span>
     </a>
   );

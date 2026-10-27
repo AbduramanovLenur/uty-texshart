@@ -1,11 +1,14 @@
 import { Typography } from 'antd';
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import styles from './auth-promo.module.scss';
 
 const { Title } = Typography;
 
 const AuthPromo: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles['auth-promo']}>
       <div className={styles['auth-promo__logo']}>
@@ -28,10 +31,10 @@ const AuthPromo: FC = () => {
           />
         </div>
         <Title level={3} className={styles['auth-promo__slogan']}>
-          Barcha jarayonlar — bir joyda
+          {t('authentication.authPromo.slogan')}
         </Title>
         <div className={styles['auth-promo__name']}>
-          O’zbekiston Temir Yo‘llari Tex-Shart boshqaruv tizimi
+          {t('authentication.authPromo.name')}
         </div>
       </div>
     </div>

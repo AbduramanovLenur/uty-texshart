@@ -1,5 +1,6 @@
 import { useState, type FC } from 'react';
 import { Typography, Button, Table, Tag, type TableProps } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 import { getColumns } from './columns';
 import type { IApplication } from './columns';
@@ -13,6 +14,7 @@ import styles from './user-applications.module.scss';
 const { Title } = Typography;
 
 const UserApplications: FC = () => {
+  const { t: translate } = useTranslation();
   const total = 125;
 
   const [filters, setFilters] = useState<TTableFilters>({
@@ -50,7 +52,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Qabul qilindi
+          {translate('userApplications.status.accepted')}
         </Tag>
       ),
       date: '05.12.2025, 14:30',
@@ -69,7 +71,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Yo’naltirildi
+          {translate('userApplications.status.forwarded')}
         </Tag>
       ),
       date: '27.05.2023, 13:50',
@@ -88,7 +90,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Dalolatnoma tuzildi
+          {translate('userApplications.status.actCreated')}
         </Tag>
       ),
       date: '22.02.2028, 11:45',
@@ -107,7 +109,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Texnik-shart berildi
+          {translate('userApplications.status.technicalConditionsIssued')}
         </Tag>
       ),
       date: '04.08.2028, 10:10',
@@ -126,7 +128,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Rad etildi
+          {translate('userApplications.status.rejected')}
         </Tag>
       ),
       date: '15.01.2027, 09:15',
@@ -145,7 +147,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Qoralama
+          {translate('userApplications.status.draft')}
         </Tag>
       ),
       date: '12.04.2026, 08:00',
@@ -164,7 +166,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Qabul qilindi
+          {translate('userApplications.status.accepted')}
         </Tag>
       ),
       date: '19.07.2023, 21:35',
@@ -183,7 +185,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Qabul qilindi
+          {translate('userApplications.status.accepted')}
         </Tag>
       ),
       date: '11.09.2025, 15:25',
@@ -202,7 +204,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Texnik-shart berildi
+          {translate('userApplications.status.technicalConditionsIssued')}
         </Tag>
       ),
       date: '23.10.2026, 17:40',
@@ -221,7 +223,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Qurilish boshlandi
+          {translate('userApplications.status.constructionStarted')}
         </Tag>
       ),
       date: '28.11.2024, 12:05',
@@ -240,7 +242,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Yakunlandi
+          {translate('userApplications.status.completed')}
         </Tag>
       ),
       date: '30.03.2024, 16:00',
@@ -259,7 +261,7 @@ const UserApplications: FC = () => {
             border: 'none',
           }}
         >
-          Texnik-shart berildi
+          {translate('userApplications.status.technicalConditionsIssued')}
         </Tag>
       ),
       date: '03.06.2022, 18:20',
@@ -267,14 +269,14 @@ const UserApplications: FC = () => {
     },
   ];
 
-  const columns = getColumns(filters);
+  const columns = getColumns(filters, translate);
 
   return (
     <section className={styles['user-applications']}>
       <div className={styles['user-applications__inner']}>
         <div className={styles['user-applications__top']}>
           <Title className={styles['user-applications__title']} level={3}>
-            Arizalarim
+            {translate('userApplications.title')}
           </Title>
           <Button
             className={styles['user-applications__download']}
@@ -289,7 +291,7 @@ const UserApplications: FC = () => {
               </svg>
             }
           >
-            Yuklab olish
+            {translate('userApplications.download')}
           </Button>
           <Button
             className={styles['user-applications__create']}
@@ -304,7 +306,7 @@ const UserApplications: FC = () => {
               </svg>
             }
           >
-            Yangi ariza yaratish
+            {translate('userApplications.create')}
           </Button>
         </div>
         <div className={styles['user-applications__body']}>
@@ -331,7 +333,7 @@ const UserApplications: FC = () => {
             page={filters.page}
             limit={filters.limit}
             onChange={handlePaginationChange}
-            summary={`${total} ta ariza topildi`}
+            summary={translate('userApplications.summary', { count: total })}
           />
         </div>
       </div>

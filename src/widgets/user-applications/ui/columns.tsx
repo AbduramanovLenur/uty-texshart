@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import type { TableProps } from 'antd';
+import type { TFunction } from 'i18next';
 import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 
@@ -21,9 +22,12 @@ export interface IApplication {
   updatedAt: string;
 }
 
-export const getColumns = (filters: TTableFilters): TableProps<IApplication>['columns'] => [
+export const getColumns = (
+  filters: TTableFilters,
+  translate: TFunction,
+): TableProps<IApplication>['columns'] => [
   {
-    title: 'Ariza ID',
+    title: translate('userApplications.columns.applicationId'),
     key: filterKeys.APPLICATION_ID,
     width: 160,
     sorter: true,
@@ -40,9 +44,9 @@ export const getColumns = (filters: TTableFilters): TableProps<IApplication>['co
         selectedKeys={selectedKeys}
         confirm={confirm}
         clearFilters={clearFilters}
-        placeholder='Hujjat ID raqamini kiriting'
-        clearLabel='Tozalash'
-        searchLabel='Qidirish'
+        placeholder={translate('userApplications.filters.applicationIdPlaceholder')}
+        clearLabel={translate('userApplications.filters.clear')}
+        searchLabel={translate('userApplications.filters.search')}
       />
     ),
     filterIcon: (filtered: boolean) => (
@@ -50,7 +54,7 @@ export const getColumns = (filters: TTableFilters): TableProps<IApplication>['co
     ),
   },
   {
-    title: 'Tarmoq',
+    title: translate('userApplications.columns.network'),
     key: filterKeys.NETWORK,
     minWidth: 235,
     render: (_, record) => record.network,
@@ -72,7 +76,7 @@ export const getColumns = (filters: TTableFilters): TableProps<IApplication>['co
     filterSearch: true,
   },
   {
-    title: 'Peregon',
+    title: translate('userApplications.columns.peregon'),
     key: filterKeys.PEREGON,
     minWidth: 250,
     render: (_, record) => record.peregon,
@@ -94,7 +98,7 @@ export const getColumns = (filters: TTableFilters): TableProps<IApplication>['co
     filterSearch: true,
   },
   {
-    title: 'Status',
+    title: translate('userApplications.columns.status'),
     key: filterKeys.STATUS,
     width: 160,
     render: (_, record) => record.status,
@@ -116,7 +120,7 @@ export const getColumns = (filters: TTableFilters): TableProps<IApplication>['co
     filterSearch: true,
   },
   {
-    title: 'Sana / Yangilanish',
+    title: translate('userApplications.columns.dateUpdate'),
     key: filterKeys.DATE,
     width: 200,
     sorter: true,
@@ -130,8 +134,8 @@ export const getColumns = (filters: TTableFilters): TableProps<IApplication>['co
         clearFilters={clearFilters}
         displayFormat='DD.MM.YYYY'
         valueFormat='YYYY-MM-DD'
-        clearLabel='Tozalash'
-        searchLabel='Qidirish'
+        clearLabel={translate('userApplications.filters.clear')}
+        searchLabel={translate('userApplications.filters.search')}
       />
     ),
     render: (_, record) => (
