@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Typography, Button } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 import { NotificationItem } from '@entities/notifications';
 
@@ -8,6 +9,8 @@ import styles from './notifications.module.scss';
 const { Title } = Typography;
 
 const Notifications: FC = () => {
+  const { t } = useTranslation();
+
   const notifications = [
     {
       date: 'Bugun, 22-oktabr',
@@ -80,7 +83,7 @@ const Notifications: FC = () => {
       <div className={styles['notifications__inner']}>
         <div className={styles['notifications__top']}>
           <Title className={styles['notifications__title']} level={3}>
-            Bildirishnomalar
+            {t('notifications.page.title')}
           </Title>
           <Button
             className={styles['notifications__btn']}
@@ -90,7 +93,7 @@ const Notifications: FC = () => {
                 <use href='/images/svg/sprite.svg#icon-check' />
               </svg>
             }>
-            Barchasini o‘qilgan deb belgilash
+            {t('notifications.page.markAllRead')}
           </Button>
         </div>
         <div className={styles['notifications__content']}>

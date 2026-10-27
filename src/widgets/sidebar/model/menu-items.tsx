@@ -4,7 +4,7 @@ import { roles } from '@shared/config';
 export const items: TMenuItem[] = [
     {
         key: '/dashboard',
-        label: 'Bosh sahifa',
+        label: 'sidebar.dashboard',
         icon: (
             <svg width='24' height='24' viewBox='0 0 24 24'>
                 <use href='/images/svg/sprite.svg#icon-home' />
@@ -14,7 +14,7 @@ export const items: TMenuItem[] = [
     },
     {
         key: '/applications',
-        label: 'Arizalarim',
+        label: 'sidebar.applications',
         icon: (
             <svg width='24' height='24' viewBox='0 0 24 24'>
                 <use href='/images/svg/sprite.svg#icon-file-upload' />

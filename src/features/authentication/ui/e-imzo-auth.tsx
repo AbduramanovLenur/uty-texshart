@@ -1,6 +1,7 @@
 import { Select, Typography } from 'antd';
 import type { FC, ReactNode } from 'react';
 import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
 
 import styles from './e-imzo-auth.module.scss';
 
@@ -13,6 +14,7 @@ type CertificateOption = {
 };
 
 const EImzoAuth: FC = () => {
+  const { t } = useTranslation();
   const state = true;
 
   const options: CertificateOption[] = [
@@ -27,7 +29,7 @@ const EImzoAuth: FC = () => {
             <div className={styles['e-imzo-auth__column']}>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Директор:&nbsp;
+                  {t('authentication.eImzo.director')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   Khamidov R.
@@ -35,7 +37,7 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  PINFL:&nbsp;
+                  {t('authentication.eImzo.pinfl')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   321 654 987 012
@@ -43,17 +45,17 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Тип:&nbsp;
+                  {t('authentication.eImzo.type')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
-                  Юридическое лицо
+                  {t('authentication.eImzo.legalEntity')}
                 </div>
               </div>
             </div>
             <div className={styles['e-imzo-auth__column']}>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Сертификат:&nbsp;
+                  {t('authentication.eImzo.certificate')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   EF32165498700
@@ -61,14 +63,14 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Срок действия:&nbsp;
+                  {t('authentication.eImzo.validityPeriod')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   30.12.2025
                 </div>
               </div>
               <div className={styles['e-imzo-auth__status']}>
-                (Истек)
+                ({t('authentication.eImzo.expired')})
               </div>
             </div>
           </div>
@@ -87,7 +89,7 @@ const EImzoAuth: FC = () => {
             <div className={styles['e-imzo-auth__column']}>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Директор:&nbsp;
+                  {t('authentication.eImzo.director')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   Saidov B.
@@ -95,7 +97,7 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  PINFL:&nbsp;
+                  {t('authentication.eImzo.pinfl')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   123 456 789 012
@@ -103,17 +105,17 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Тип:&nbsp;
+                  {t('authentication.eImzo.type')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
-                  Юридическое лицо
+                  {t('authentication.eImzo.legalEntity')}
                 </div>
               </div>
             </div>
             <div className={styles['e-imzo-auth__column']}>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Сертификат:&nbsp;
+                  {t('authentication.eImzo.certificate')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   CD98765432100
@@ -121,14 +123,14 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Срок действия:&nbsp;
+                  {t('authentication.eImzo.validityPeriod')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   30.12.2025
                 </div>
               </div>
               <div className={styles['e-imzo-auth__status']}>
-                (Истек)
+                ({t('authentication.eImzo.expired')})
               </div>
             </div>
           </div>
@@ -147,7 +149,7 @@ const EImzoAuth: FC = () => {
             <div className={styles['e-imzo-auth__column']}>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Директор:&nbsp;
+                  {t('authentication.eImzo.director')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   Khamidov R.
@@ -155,7 +157,7 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  PINFL:&nbsp;
+                  {t('authentication.eImzo.pinfl')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   321 654 987 012
@@ -163,17 +165,17 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Тип:&nbsp;
+                  {t('authentication.eImzo.type')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
-                  Юридическое лицо
+                  {t('authentication.eImzo.legalEntity')}
                 </div>
               </div>
             </div>
             <div className={styles['e-imzo-auth__column']}>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Сертификат:&nbsp;
+                  {t('authentication.eImzo.certificate')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   EF32165498700
@@ -181,14 +183,14 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Срок действия:&nbsp;
+                  {t('authentication.eImzo.validityPeriod')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   30.12.2025
                 </div>
               </div>
               <div className={styles['e-imzo-auth__status']}>
-                (Истек)
+                ({t('authentication.eImzo.expired')})
               </div>
             </div>
           </div>
@@ -207,7 +209,7 @@ const EImzoAuth: FC = () => {
             <div className={styles['e-imzo-auth__column']}>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  PINFL:&nbsp;
+                  {t('authentication.eImzo.pinfl')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   1234 5678 9012 3456 78
@@ -215,24 +217,24 @@ const EImzoAuth: FC = () => {
               </div>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Тип:&nbsp;
+                  {t('authentication.eImzo.type')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
-                  Физическое лицо
+                  {t('authentication.eImzo.individual')}
                 </div>
               </div>
             </div>
             <div className={styles['e-imzo-auth__column']}>
               <div className={styles['e-imzo-auth__item']}>
                 <div className={styles['e-imzo-auth__title']}>
-                  Срок действия:&nbsp;
+                  {t('authentication.eImzo.validityPeriod')}:&nbsp;
                 </div>
                 <div className={styles['e-imzo-auth__value']}>
                   30.12.2025
                 </div>
               </div>
               <div className={styles['e-imzo-auth__status']}>
-                (Истек)
+                ({t('authentication.eImzo.expired')})
               </div>
             </div>
           </div>
@@ -259,7 +261,7 @@ const EImzoAuth: FC = () => {
           <use href='/images/svg/sprite.svg#icon-down-arrow' />
         </svg>
       }
-      placeholder='E-imzo kalitingizni tanlang'
+      placeholder={t('authentication.eImzo.chooseKey')}
       virtual={false}
       allowClear
     />

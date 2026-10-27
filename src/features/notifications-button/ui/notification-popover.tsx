@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { NotificationCard } from '@entities/notifications';
 import { routes } from '@shared/config';
@@ -10,6 +11,8 @@ import styles from './notification-popover.module.scss';
 const { Title } = Typography;
 
 const NotificationPopover: FC = () => {
+  const { t } = useTranslation();
+
   const notifications = [
     {
       id: 1,
@@ -26,15 +29,16 @@ const NotificationPopover: FC = () => {
       timestamp: 'Bugun, 09:30',
     },
   ];
+  const newCount = notifications.length;
 
   return (
     <div className={styles['notification-popover']}>
       <div className={styles['notification-popover__header']}>
         <Title className={styles['notification-popover__title']} level={5}>
-          Bildirishnomalar
+          {t('notifications.popover.title')}
         </Title>
         <div className={styles['notification-popover__count-records']}>
-          3 ta yangi
+          {t('notifications.popover.newCount', { count: newCount })}
         </div>
       </div>
       <div className={styles['notification-popover__body']}>
@@ -51,7 +55,7 @@ const NotificationPopover: FC = () => {
           to={routes.NOTIFICATIONS}
           className={styles['notification-popover__link']}
         >
-          Barchasini ko‘rish
+          {t('notifications.popover.viewAll')}
         </Link>
       </div>
     </div>

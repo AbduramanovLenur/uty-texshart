@@ -1,6 +1,88 @@
 {
+  "authentication": {
+    "authPanel": {
+      "welcome": "Добро пожаловать",
+      "signInPrompt": "Войдите в систему, чтобы начать работу",
+      "or": "Или",
+      "copyright": "© 2026 Железные дороги Узбекистана Tex-Shart"
+    },
+    "authPromo": {
+      "slogan": "Все процессы — в одном месте",
+      "name": "Система управления Tex-Shart железных дорог Узбекистана"
+    },
+    "eImzo": {
+      "chooseKey": "Выберите ключ E-IMZO",
+      "director": "Директор",
+      "pinfl": "ПИНФЛ",
+      "type": "Тип",
+      "legalEntity": "Юридическое лицо",
+      "individual": "Физическое лицо",
+      "certificate": "Сертификат",
+      "validityPeriod": "Срок действия",
+      "expired": "Истёк"
+    },
+    "myId": {
+      "signIn": "Войти через MyID"
+    },
+    "oneId": {
+      "signIn": "Войти через OneID"
+    }
+  },
   "language": {
     "uz": "O‘zbekcha",
     "ru": "Русский"
+  },
+  "notifications": {
+    "page": {
+      "title": "Уведомления",
+      "markAllRead": "Отметить все как прочитанные"
+    },
+    "popover": {
+      "title": "Уведомления",
+      "newCount_one": "{{count}} новое уведомление",
+      "newCount_few": "{{count}} новых уведомления",
+      "newCount_many": "{{count}} новых уведомлений",
+      "newCount_other": "{{count}} новых уведомлений",
+      "viewAll": "Посмотреть все"
+    }
+  },
+  "profile": {
+    "page": "Страница профиля",
+    "logout": "Выйти"
+  },
+  "sidebar": {
+    "dashboard": "Главная",
+    "applications": "Мои заявки"
+  },
+  "userApplications": {
+    "title": "Мои заявки",
+    "download": "Скачать",
+    "create": "Создать заявку",
+    "summary_one": "Найдена {{count}} заявка",
+    "summary_few": "Найдено {{count}} заявки",
+    "summary_many": "Найдено {{count}} заявок",
+    "summary_other": "Найдено {{count}} заявки",
+    "status": {
+      "accepted": "Принята",
+      "forwarded": "Передана",
+      "actCreated": "Акт составлен",
+      "technicalConditionsIssued": "Технические условия выданы",
+      "rejected": "Отклонена",
+      "draft": "Черновик",
+      "constructionStarted": "Строительство начато",
+      "completed": "Завершена"
+    },
+    "columns": {
+      "applicationId": "ID заявки",
+      "network": "Инженерная сеть",
+      "peregon": "Перегон",
+      "status": "Статус",
+      "dateUpdate": "Дата / обновление"
+    },
+    "filters": {
+      "applicationIdPlaceholder": "Введите ID заявки",
+      "clear": "Очистить",
+      "search": "Поиск"
+    }
   }
 }

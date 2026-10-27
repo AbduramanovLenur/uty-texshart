@@ -1,5 +1,6 @@
 import { Divider, Typography } from 'antd';
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { LanguageSwitcher } from '@features/language-switcher';
 import { EImzoAuth, MyIdAuth, OneIdAuth } from '@features/authentication';
@@ -9,6 +10,8 @@ import styles from './auth-panel.module.scss';
 const { Title } = Typography;
 
 const AuthPanel: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles['auth-panel']}>
       <div className={styles['auth-panel__top']}>
@@ -25,10 +28,10 @@ const AuthPanel: FC = () => {
       </div>
       <div className={styles['auth-panel__body']}>
         <Title className={styles['auth-panel__title']} level={3}>
-          Xush kelibsiz
+          {t('authentication.authPanel.welcome')}
         </Title>
         <Title className={styles['auth-panel__subtitle']} level={5}>
-          Ishni boshlash uchun tizimga kiring
+          {t('authentication.authPanel.signInPrompt')}
         </Title>
 
         <EImzoAuth />
@@ -36,7 +39,7 @@ const AuthPanel: FC = () => {
           className={styles['auth-panel__divider']}
           titlePlacement='center'
         >
-          Yoki
+          {t('authentication.authPanel.or')}
         </Divider>
         <div className={styles['auth-panel__services']}>
           <OneIdAuth />
@@ -44,7 +47,7 @@ const AuthPanel: FC = () => {
         </div>
       </div>
       <div className={styles['auth-panel__copyright']}>
-        © 2026 O’zbekiston Temir Yo‘llari Tex-Shart
+        {t('authentication.authPanel.copyright')}
       </div>
     </div>
   );
