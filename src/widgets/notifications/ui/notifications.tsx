@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Typography, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { NotificationItem } from '@entities/notifications';
 import { IconCheck } from '@shared/assets';
@@ -80,8 +81,8 @@ const Notifications: FC = () => {
   ];
 
   return (
-    <section className={styles['notifications']}>
-      <div className={styles['notifications__inner']}>
+    <section className={cn(styles['notifications'], 'section')}>
+      <div className={cn(styles['notifications__inner'], 'section-inner')}>
         <div className={styles['notifications__top']}>
           <Title className={styles['notifications__title']} level={3}>
             {t('notifications.page.title')}

@@ -1,0 +1,25 @@
+.status-card {
+  display: flex;
+  align-items: center;
+  gap: var(--ant-margin);
+  background-color: var(--ant-color-fill-quaternary);
+  border: 1px solid var(--border-secondary);
+  border-radius: var(--ant-border-radius-lg);
+  padding: var(--ant-padding-md) var(--ant-padding) var(--ant-padding);
+  transition: 0.5s;
+  &:hover {
+    background-color: var(--ant-blue-1);
+    border: 1px solid var(--ant-blue-2);
+  }
+  &__title {
+    font-size: var(--ant-font-size-sm);
+    color: var(--dark-65);
+    line-height: 1.6;
+  }
+  &__count {
+    font-size: var(--ant-font-size-xl);
+    line-height: 1.4;
+    font-weight: 600;
+    color: var(--dark-88);
+  }
+}

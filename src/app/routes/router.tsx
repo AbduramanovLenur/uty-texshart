@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import {
   AuthPage,
+  DashboardPage,
   ApplicationsPage,
   NotificationsPage,
 } from './pages';
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         element: <RootLayout />,
         children: [
+          {
+            path: routes.DASHBOARD,
+            element: <DashboardPage />,
+          },
           {
             path: routes.APPLICATIONS,
             element: <ApplicationsPage />,

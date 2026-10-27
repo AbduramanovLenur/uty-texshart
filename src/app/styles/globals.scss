@@ -186,6 +186,7 @@ main {
   .ant-table-column-sorter {
     color: var(--dark-88);
     margin: 0;
+    margin-right: var(--ant-margin-xs);
     &:hover {
       color: var(--dark-88);
     }
@@ -239,5 +240,23 @@ main {
       font-size: var(--ant-font-size-sm);
       color: var(--dark-65);
     }
+  }
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--ant-color-bg-container);
+  border-bottom-left-radius: var(--ant-border-radius-lg);
+  border-bottom-right-radius: var(--ant-border-radius-lg);
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  &-inner {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    padding: var(--ant-padding-lg);
   }
 }
