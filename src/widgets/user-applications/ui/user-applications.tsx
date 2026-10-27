@@ -8,6 +8,7 @@ import type { IApplication } from './columns';
 import { defaultValues } from '@shared/config';
 import { Paginator } from '@shared/ui';
 import type { TFilterKey, TTableFilters } from '@shared/types';
+import { IconDownload, IconPlus } from '@shared/assets';
 
 import styles from './user-applications.module.scss';
 
@@ -281,30 +282,14 @@ const UserApplications: FC = () => {
           <Button
             className={styles['user-applications__download']}
             type='default'
-            icon={
-              <svg
-                width='16'
-                height='16'
-                viewBox='0 0 16 16'
-              >
-                <use href='/images/svg/sprite.svg#icon-download' />
-              </svg>
-            }
+            icon={<IconDownload />}
           >
             {translate('userApplications.download')}
           </Button>
           <Button
             className={styles['user-applications__create']}
             type='primary'
-            icon={
-              <svg
-                width='16'
-                height='16'
-                viewBox='0 0 16 16'
-              >
-                <use href='/images/svg/sprite.svg#icon-plus' />
-              </svg>
-            }
+            icon={<IconPlus />}
           >
             {translate('userApplications.create')}
           </Button>
@@ -312,12 +297,12 @@ const UserApplications: FC = () => {
         <div className={styles['user-applications__body']}>
           <Table<IApplication>
             classNames={{
-              root: styles['user-applications__table'],
+              root: 'table',
               header: {
-                cell: styles['user-applications__table-header-cell'],
+                cell: 'table-header-cell',
               },
               body: {
-                row: styles['user-applications__table-body-row'],
+                row: 'table-body-row',
               },
             }}
             dataSource={dataSource}

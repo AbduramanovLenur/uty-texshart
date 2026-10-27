@@ -2,6 +2,9 @@ import { Pagination } from 'antd';
 import type { FC } from 'react';
 
 import { itemRender } from './item-render';
+
+import { IconDownArrow } from '@shared/assets';
+
 import styles from './paginator.module.scss';
 
 interface IProps {
@@ -32,11 +35,7 @@ const Paginator: FC<IProps> = ({
       itemRender={itemRender}
       align={align}
       showSizeChanger={{
-        suffixIcon: (
-          <svg width='12' height='12' viewBox='0 0 12 12'>
-            <use href='/images/svg/sprite.svg#icon-down-arrow' />
-          </svg>
-        ),
+        suffixIcon: <IconDownArrow />,
       }}
     />
   );

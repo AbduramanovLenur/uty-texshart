@@ -24,6 +24,9 @@
     }
   }
   &__item {
+    display: flex;
+    align-items: center;
+    gap: var(--ant-margin-sm);
     &-content {
       font-size: var(--ant-font-size);
       font-weight: 600;

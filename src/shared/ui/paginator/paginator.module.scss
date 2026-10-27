@@ -40,4 +40,9 @@
     margin-inline-end: var(--ant-margin);
     color: var(--dark-88);
   }
+  :global(.ant-select-suffix) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

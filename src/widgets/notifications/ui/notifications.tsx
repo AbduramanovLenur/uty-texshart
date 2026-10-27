@@ -3,6 +3,7 @@ import { Typography, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import { NotificationItem } from '@entities/notifications';
+import { IconCheck } from '@shared/assets';
 
 import styles from './notifications.module.scss';
 
@@ -88,11 +89,8 @@ const Notifications: FC = () => {
           <Button
             className={styles['notifications__btn']}
             type='default'
-            icon={
-              <svg width='16' height='16' viewBox='0 0 16 16'>
-                <use href='/images/svg/sprite.svg#icon-check' />
-              </svg>
-            }>
+            icon={<IconCheck />}
+          >
             {t('notifications.page.markAllRead')}
           </Button>
         </div>

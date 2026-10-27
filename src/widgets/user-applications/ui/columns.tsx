@@ -9,8 +9,7 @@ import { TableSearchFilter } from '@features/table-search-filter';
 import { filterKeys } from '@shared/config';
 import type { TTableFilters } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
-
-import styles from './user-applications.module.scss';
+import { IconRetry } from '@shared/assets';
 
 export interface IApplication {
   key: string;
@@ -22,10 +21,7 @@ export interface IApplication {
   updatedAt: string;
 }
 
-export const getColumns = (
-  filters: TTableFilters,
-  translate: TFunction,
-): TableProps<IApplication>['columns'] => [
+export const getColumns = (filters: TTableFilters, translate: TFunction): TableProps<IApplication>['columns'] => [
   {
     title: translate('userApplications.columns.applicationId'),
     key: filterKeys.APPLICATION_ID,
@@ -33,7 +29,7 @@ export const getColumns = (
     sorter: true,
     sortOrder: getSortOrder(filters, filterKeys.APPLICATION_ID),
     render: (_, record) => (
-      <Link className={styles['user-applications__table-link']} to=''>
+      <Link className='table-link' to=''>
         {record.id}
       </Link>
     ),
@@ -139,14 +135,12 @@ export const getColumns = (
       />
     ),
     render: (_, record) => (
-      <div className={styles['user-applications__table-date']}>
-        <div className={styles['user-applications__table-date-create']}>
+      <div className='table-date'>
+        <div className='table-date-create'>
           {record.date}
         </div>
-        <div className={styles['user-applications__table-date-update']}>
-          <svg width='12' height='12' viewBox='0 0 12 12'>
-            <use href='/images/svg/sprite.svg#icon-retry' />
-          </svg>
+        <div className='table-date-update'>
+          <IconRetry />
           {record.updatedAt}
         </div>
       </div>

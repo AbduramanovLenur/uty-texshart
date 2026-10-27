@@ -28,6 +28,9 @@
       "signIn": "Войти через OneID"
     }
   },
+  "header": {
+    "searchPlaceholder": "Поиск"
+  },
   "language": {
     "uz": "O‘zbekcha",
     "ru": "Русский"
