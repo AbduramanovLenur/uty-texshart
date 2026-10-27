@@ -28,6 +28,9 @@
       "signIn": "One ID orqali kirish"
     }
   },
+  "header": {
+    "searchPlaceholder": "Qidiruv"
+  },
   "language": {
     "uz": "O‘zbekcha",
     "ru": "Русский"

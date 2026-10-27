@@ -18,6 +18,8 @@ const SidebarNav: FC = () => {
     label: typeof item.label === 'string' ? translate(item.label) : item.label,
   }));
 
+  const activeKey = items.find((item) => pathname === item.key || pathname.startsWith(`${item.key}/`))?.key;
+
   const handleMenuClick = ({ key }: { key: string }) => {
     navigate(key);
   };
@@ -32,7 +34,7 @@ const SidebarNav: FC = () => {
           itemContent: styles['menu__item-content'],
         }}
         items={menuItems}
-        selectedKeys={[pathname]}
+        selectedKeys={activeKey ? [String(activeKey)] : []}
         onClick={handleMenuClick}
       />
     </nav>

@@ -3,6 +3,8 @@ import type { FC, ReactNode } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
+import { IconDownArrow } from '@shared/assets';
+
 import styles from './e-imzo-auth.module.scss';
 
 const { Title } = Typography;
@@ -256,11 +258,7 @@ const EImzoAuth: FC = () => {
       }}
       options={options}
       optionRender={(option) => option.data.card}
-      suffixIcon={
-        <svg width='12' height='12' viewBox='0 0 12 12'>
-          <use href='/images/svg/sprite.svg#icon-down-arrow' />
-        </svg>
-      }
+      suffixIcon={<IconDownArrow />}
       placeholder={t('authentication.eImzo.chooseKey')}
       virtual={false}
       allowClear
