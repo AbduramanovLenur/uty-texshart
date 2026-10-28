@@ -263,16 +263,13 @@ main {
 
 .tabs {
   width: 100%;
-
   .ant-tabs-nav-list {
     width: 100%;
   }
-
   .ant-tabs-tab,
   .ant-tabs-tab + .ant-tabs-tab {
     margin: 0;
   }
-
   &__header {
     &.ant-tabs-nav {
       margin: 0;
@@ -286,7 +283,6 @@ main {
       }
     }
   }
-
   &__item {
     &.ant-tabs-tab {
       font-weight: 400;
@@ -296,7 +292,6 @@ main {
       justify-content: center;
       width: 100%;
     }
-
     &.ant-tabs-tab-active {
       font-weight: 600;
       color: var(--ant-blue);

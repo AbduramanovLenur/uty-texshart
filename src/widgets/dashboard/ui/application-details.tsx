@@ -32,7 +32,7 @@ const ApplicationDetails: FC = () => {
           header: 'tabs__header',
           item: 'tabs__item',
         }}
-        defaultActiveKey='2'
+        defaultActiveKey='1'
         items={items}
       />
     </div>
