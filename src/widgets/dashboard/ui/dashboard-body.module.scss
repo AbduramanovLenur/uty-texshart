@@ -1,0 +1,7 @@
+.dashboard-body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-radius: var(--ant-border-radius-lg);
+  flex: 1;
+  min-height: 0;
+}

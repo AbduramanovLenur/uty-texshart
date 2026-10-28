@@ -1,0 +1,10 @@
+.application-details {
+  background-color: var(--ant-blue-1);
+  padding: var(--ant-padding-lg);
+  &__title {
+    &:global(.ant-typography) {
+      margin-bottom: var(--ant-margin-xs);
+      color: var(--dark-88);
+    }
+  }
+}

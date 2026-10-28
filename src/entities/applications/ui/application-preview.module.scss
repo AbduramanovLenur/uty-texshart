@@ -1,0 +1,69 @@
+.application-preview {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ant-margin);
+  padding: var(--ant-padding-sm) var(--ant-padding);
+  border-radius: var(--ant-border-radius-lg);
+  transition: 0.5s;
+  &.is-active {
+    background-color: var(--ant-blue);
+    .application-preview {
+      &__number,
+      &__label,
+      &__sublabel,
+      &__button {
+        color: var(--white);
+      }
+    }
+  }
+  &:hover {
+    background-color: var(--ant-blue);
+    .application-preview {
+      &__number,
+      &__label,
+      &__sublabel,
+      &__button {
+        color: var(--white);
+      }
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: var(--ant-margin);
+  }
+  &__image {
+    flex-shrink: 0;
+  }
+  &__number {
+    font-size: var(--ant-font-size-sm);
+    font-weight: 600;
+    color: var(--dark-65);
+    line-height: 1.6;
+    transition: 0.5s;
+  }
+  &__label {
+    font-size: var(--ant-font-size);
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--dark-88);
+    transition: 0.5s;
+  }
+  &__sublabel {
+    font-size: var(--ant-font-size-sm);
+    color: var(--dark-65);
+    line-height: 1.6;
+    transition: 0.5s;
+  }
+  &__button {
+    color: var(--dark-45);
+    transition: 0.5s;
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+    }
+  }
+}

@@ -14,3 +14,4 @@ export { default as IconBook } from './icons/icon-book';
 export { default as IconConstruction } from './icons/icon-construction';
 export { default as IconTrophy } from './icons/icon-trophy';
 export { default as IconDataWrong } from './icons/icon-data-wrong';
+export { default as IconPrimaryRightArrow } from './icons/icon-primary-right-arrow';
