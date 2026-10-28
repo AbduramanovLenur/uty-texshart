@@ -1,8 +1,22 @@
 .application-details {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
   background-color: var(--ant-blue-1);
   padding: var(--ant-padding-lg);
+  :global(.ant-tabs) {
+    flex: 1;
+    min-height: 0;
+  }
+
+  :global(.ant-tabs-body),
+  :global(.ant-tabs-content) {
+    height: 100%;
+  }
+
   &__title {
     &:global(.ant-typography) {
+      flex-shrink: 0;
       margin-bottom: var(--ant-margin-xs);
       color: var(--dark-88);
     }

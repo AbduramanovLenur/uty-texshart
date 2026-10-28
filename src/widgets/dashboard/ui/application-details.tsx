@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import { Tabs, Typography, type TabsProps } from 'antd';
 
-import { ApplicationInfo } from '@entities/applications';
+import { ApplicationInfo, ApplicationsTimeline } from '@entities/applications';
 
 import styles from './application-details.module.scss';
 
@@ -12,7 +12,7 @@ const ApplicationDetails: FC = () => {
     {
       key: '1',
       label: 'Jarayon',
-      children: 'Content of Tab Pane 1',
+      children: <ApplicationsTimeline />,
     },
     {
       key: '2',
