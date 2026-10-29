@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Typography, Button } from 'antd';
 
 import { ApplicationPreview, type IApplicationPreview } from '@entities/applications';
@@ -9,6 +10,8 @@ import styles from './recent-applications.module.scss';
 const { Title } = Typography;
 
 const RecentApplications: FC = () => {
+  const { t } = useTranslation();
+
   const applications: IApplicationPreview[] = [
     {
       id: 1,
@@ -65,10 +68,10 @@ const RecentApplications: FC = () => {
     <div className={styles['recent-applications']}>
       <div className={styles['recent-applications__top']}>
         <Title className={styles['recent-applications__title']} level={4}>
-          Oxirgi arizalar
+          {t('dashboard.recentApplications.title')}
         </Title>
         <Button className={styles['recent-applications__button']} icon={<IconPlus />}>
-          Yangi ariza
+          {t('dashboard.recentApplications.create')}
         </Button>
       </div>
       <ul className={styles['recent-applications__list']}>

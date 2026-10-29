@@ -1,4 +1,5 @@
 import { type FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Tabs, Typography, type TabsProps } from 'antd';
 
 import { ApplicationInfo, ApplicationsTimeline } from '@entities/applications';
@@ -8,15 +9,17 @@ import styles from './application-details.module.scss';
 const { Title } = Typography;
 
 const ApplicationDetails: FC = () => {
+  const { t } = useTranslation();
+
   const items: TabsProps['items'] = [
     {
       key: '1',
-      label: 'Jarayon',
+      label: t('dashboard.applicationDetails.process'),
       children: <ApplicationsTimeline />,
     },
     {
       key: '2',
-      label: 'Batafsil',
+      label: t('dashboard.applicationDetails.details'),
       children: <ApplicationInfo />,
     },
   ];
@@ -24,7 +27,7 @@ const ApplicationDetails: FC = () => {
   return (
     <div className={styles['application-details']}>
       <Title className={styles['application-details__title']} level={4}>
-        Ariza ma’lumotlari
+        {t('dashboard.applicationDetails.title')}
       </Title>
       <Tabs
         classNames={{

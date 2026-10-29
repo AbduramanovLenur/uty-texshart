@@ -1,4 +1,32 @@
 {
+  "applicationInfo": {
+    "applicationNumber": "Ariza raqami",
+    "comment": "Izoh",
+    "communicationType": "O‘tkazilishi rejalashtirilayotgan kommunikatsiya turi",
+    "crossingMethod": "O‘tkazish usuli",
+    "locationPhotos": "Kommunikatsiya o‘tkazilishi rejalashtirilayotgan joy rasmi",
+    "projectGoal": "Loyihaning maqsadi",
+    "technicalParameters": "Muhandislik-texnik parametrlari"
+  },
+  "applicationsTimeline": {
+    "comment": "Izoh",
+    "pending": "Kutilmoqda",
+    "steps": {
+      "actCreated": "Dalolatnoma shakllantirildi",
+      "applicationAccepted": "Ariza qabul qilindi",
+      "completedSuccessfully": "Muvaffaqiyatli yakunlandi",
+      "constructionStarted": "Qurilish boshlandi",
+      "deficienciesFound": "Hujjatlarda kamchilik topildi",
+      "downloadAct": "Dalolatnomani yuklash ({{size}})",
+      "expired": "Muddati o‘tgan",
+      "forwardedToRegional": "Hududiy bo‘limga yo‘naltirildi",
+      "rejectionReason": "Rad etish sababi ({{size}})",
+      "rejected": "Rad etildi",
+      "tashkentRegionDistance": "Toshkent viloyati yo‘l distansiyasi",
+      "technicalConditionsIssued": "Texnik-shart berildi",
+      "technicalConditionsNotIssued": "Texnik shart berilmadi"
+    }
+  },
   "authentication": {
     "authPanel": {
       "welcome": "Xush kelibsiz",
@@ -26,6 +54,28 @@
     },
     "oneId": {
       "signIn": "One ID orqali kirish"
+    }
+  },
+  "dashboard": {
+    "title": "Asosiy sahifa",
+    "applicationDetails": {
+      "title": "Ariza ma’lumotlari",
+      "process": "Jarayon",
+      "details": "Batafsil"
+    },
+    "recentApplications": {
+      "title": "Oxirgi arizalar",
+      "create": "Yangi ariza"
+    },
+    "statistics": {
+      "draft": "Qoralama",
+      "accepted": "Qabul qilindi",
+      "forwarded": "Yo‘naltirildi",
+      "actCreated": "Dalolatnoma tuzildi",
+      "technicalConditionsIssued": "Texnik shart berildi",
+      "inConstruction": "Qurilish jarayonida",
+      "successful": "Muvaffaqiyatli",
+      "rejected": "Rad qilindi"
     }
   },
   "header": {

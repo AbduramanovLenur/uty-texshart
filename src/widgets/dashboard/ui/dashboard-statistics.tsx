@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import { StatusCard, type IStatusCard } from '@entities/statistics';
 import {
@@ -15,44 +16,46 @@ import {
 import styles from './dashboard-statistics.module.scss';
 
 const DashboardStatistics: FC = () => {
+  const { t } = useTranslation();
+
   const stats: IStatusCard[] = [
     {
-      title: 'Qoralama',
+      title: t('dashboard.statistics.draft'),
       count: 45,
       icon: <IconEdit />,
     },
     {
-      title: 'Qabul qilindi',
+      title: t('dashboard.statistics.accepted'),
       count: 8,
       icon: <IconDone />,
     },
     {
-      title: 'Yo‘naltirildi',
+      title: t('dashboard.statistics.forwarded'),
       count: 23,
       icon: <IconCircleArrow />,
     },
     {
-      title: 'Dalolatnoma tuzildi',
+      title: t('dashboard.statistics.actCreated'),
       count: 31,
       icon: <IconCheckFile />,
     },
     {
-      title: 'Texnik shart berildi',
+      title: t('dashboard.statistics.technicalConditionsIssued'),
       count: 124,
       icon: <IconBook />,
     },
     {
-      title: 'Qurilish jarayonida',
+      title: t('dashboard.statistics.inConstruction'),
       count: 65,
       icon: <IconConstruction />,
     },
     {
-      title: 'Muvaffaqiyatli',
+      title: t('dashboard.statistics.successful'),
       count: 25,
       icon: <IconTrophy />,
     },
     {
-      title: 'Rad qilindi',
+      title: t('dashboard.statistics.rejected'),
       count: 11,
       icon: <IconDataWrong />,
     },

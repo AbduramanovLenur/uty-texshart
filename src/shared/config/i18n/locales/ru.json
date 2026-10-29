@@ -1,4 +1,32 @@
 {
+  "applicationInfo": {
+    "applicationNumber": "Номер заявки",
+    "comment": "Примечание",
+    "communicationType": "Планируемый к прокладке тип коммуникации",
+    "crossingMethod": "Способ прокладки",
+    "locationPhotos": "Фотография планируемого места прокладки коммуникаций",
+    "projectGoal": "Цель проекта",
+    "technicalParameters": "Инженерно-технические параметры"
+  },
+  "applicationsTimeline": {
+    "comment": "Примечание",
+    "pending": "Ожидается",
+    "steps": {
+      "actCreated": "Акт сформирован",
+      "applicationAccepted": "Заявка принята",
+      "completedSuccessfully": "Успешно завершена",
+      "constructionStarted": "Строительство начато",
+      "deficienciesFound": "В документах обнаружены недостатки",
+      "downloadAct": "Скачать акт ({{size}})",
+      "expired": "Срок действия истёк",
+      "forwardedToRegional": "Направлена в региональный отдел",
+      "rejectionReason": "Причина отклонения ({{size}})",
+      "rejected": "Отклонена",
+      "tashkentRegionDistance": "Дистанция пути Ташкентской области",
+      "technicalConditionsIssued": "Технические условия выданы",
+      "technicalConditionsNotIssued": "Технические условия не выданы"
+    }
+  },
   "authentication": {
     "authPanel": {
       "welcome": "Добро пожаловать",
@@ -26,6 +54,28 @@
     },
     "oneId": {
       "signIn": "Войти через OneID"
+    }
+  },
+  "dashboard": {
+    "title": "Главная страница",
+    "applicationDetails": {
+      "title": "Информация о заявке",
+      "process": "Процесс",
+      "details": "Подробно"
+    },
+    "recentApplications": {
+      "title": "Последние заявки",
+      "create": "Новая заявка"
+    },
+    "statistics": {
+      "draft": "Черновик",
+      "accepted": "Принята",
+      "forwarded": "Передана",
+      "actCreated": "Акт составлен",
+      "technicalConditionsIssued": "Технические условия выданы",
+      "inConstruction": "В процессе строительства",
+      "successful": "Успешно",
+      "rejected": "Отклонена"
     }
   },
   "header": {

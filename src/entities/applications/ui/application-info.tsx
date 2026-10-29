@@ -1,14 +1,17 @@
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import styles from './application-info.module.scss';
 
 const ApplicationInfo: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles['application-info']}>
       <div className={styles['application-info__wrapper']}>
         <div className={styles['application-info__item']}>
           <div className={styles['application-info__title']}>
-            Ariza raqami
+            {t('applicationInfo.applicationNumber')}
           </div>
           <div className={styles['application-info__value']}>
             ARZ-31234123
@@ -16,7 +19,7 @@ const ApplicationInfo: FC = () => {
         </div>
         <div className={styles['application-info__item']}>
           <div className={styles['application-info__title']}>
-            O’tkazilishi rejalashtirilayotgan kommunikatsiya turi
+            {t('applicationInfo.communicationType')}
           </div>
           <div className={styles['application-info__value']}>
             Havo elektr uzatish liniyasi
@@ -24,7 +27,7 @@ const ApplicationInfo: FC = () => {
         </div>
         <div className={styles['application-info__item']}>
           <div className={styles['application-info__title']}>
-            O'tkazish usuli
+            {t('applicationInfo.crossingMethod')}
           </div>
           <div className={styles['application-info__value']}>
             Temir yo'l izlari ostidan
@@ -32,7 +35,7 @@ const ApplicationInfo: FC = () => {
         </div>
         <div className={styles['application-info__item']}>
           <div className={styles['application-info__title']}>
-            Muhandislik-texnik parametrlari
+            {t('applicationInfo.technicalParameters')}
           </div>
           <ul className={styles['application-info__list']}>
             <li className={styles['application-info__item']}>
@@ -54,7 +57,7 @@ const ApplicationInfo: FC = () => {
         </div>
         <div className={styles['application-info__item']}>
           <div className={styles['application-info__title']}>
-            Kommunikatsiya o’tqazilishi rejalashtirilayotgan joy rasmi
+            {t('applicationInfo.locationPhotos')}
           </div>
           <ul className={styles['application-info__pictures']}>
             <li className={styles['application-info__picture']}>
@@ -94,7 +97,7 @@ const ApplicationInfo: FC = () => {
         </div>
         <div className={styles['application-info__item']}>
           <div className={styles['application-info__title']}>
-            Loyihaning maqsadi
+            {t('applicationInfo.projectGoal')}
           </div>
           <div className={styles['application-info__value']}>
             Elektr ta’minotini yaxshilash
@@ -102,7 +105,7 @@ const ApplicationInfo: FC = () => {
         </div>
         <div className={styles['application-info__item']}>
           <div className={styles['application-info__title']}>
-            Izoh
+            {t('applicationInfo.comment')}
           </div>
           <div className={styles['application-info__value']}>
             Yangi zavod qurilmoqda

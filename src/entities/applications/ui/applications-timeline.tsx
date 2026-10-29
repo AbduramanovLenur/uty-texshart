@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { statuses } from '../model/stutuses';
@@ -20,99 +21,98 @@ interface ITimelineStep {
 }
 
 const ApplicationsTimeline: FC = () => {
+  const { t } = useTranslation();
 
   const timelineSteps: ITimelineStep[] = [
     {
       step: 1,
-      title: 'Ariza qabul qilindi',
+      title: t('applicationsTimeline.steps.applicationAccepted'),
       status: statuses.PENDING,
     },
     {
       step: 1,
-      title: 'Ariza qabul qilindi',
+      title: t('applicationsTimeline.steps.applicationAccepted'),
       status: statuses.ACTIVE,
     },
     {
       step: 1,
-      title: 'Ariza qabul qilindi',
+      title: t('applicationsTimeline.steps.applicationAccepted'),
       subtitle: '12:32, 12.01.2026',
       status: statuses.DONE,
     },
     {
       step: 2,
-      title: "Hududiy bo'limga yo'naltirildi",
+      title: t('applicationsTimeline.steps.forwardedToRegional'),
       status: statuses.ACTIVE,
     },
     {
       step: 2,
-      title: "Hududiy bo'limga yo'naltirildi",
+      title: t('applicationsTimeline.steps.forwardedToRegional'),
       status: statuses.PENDING,
     },
     {
       step: 2,
-      title: "Hududiy bo'limga yo'naltirildi",
-      subtitle: "Toshkent viloyati yo'l distansiyasi",
+      title: t('applicationsTimeline.steps.forwardedToRegional'),
+      subtitle: t('applicationsTimeline.steps.tashkentRegionDistance'),
       status: statuses.DONE,
     },
     {
       step: 2,
-      title: 'Rad etildi',
-      error: 'Xujjatlarda kamchilik topildi',
-      comment: 'Muddati o’tkan',
+      title: t('applicationsTimeline.steps.rejected'),
+      error: t('applicationsTimeline.steps.deficienciesFound'),
+      comment: t('applicationsTimeline.steps.expired'),
       status: statuses.ERROR,
     },
     {
       step: 3,
-      title: 'Dalolatnoma shakllantirildi',
+      title: t('applicationsTimeline.steps.actCreated'),
       status: statuses.ACTIVE,
     },
     {
       step: 3,
-      title: 'Dalolatnoma shakllantirildi',
+      title: t('applicationsTimeline.steps.actCreated'),
       file: true,
-      button: 'Dalolatnomani yuklash',
+      button: t('applicationsTimeline.steps.downloadAct', { size: '1.2 MB' }),
       status: statuses.DONE,
     },
     {
       step: 3,
-      title: 'Dalolatnoma shakllantirildi',
+      title: t('applicationsTimeline.steps.actCreated'),
       status: statuses.PENDING,
     },
     {
       step: 4,
-      title: 'Texnik-shart berildi',
+      title: t('applicationsTimeline.steps.technicalConditionsIssued'),
       status: statuses.ACTIVE,
     },
     {
       step: 4,
-      title: 'Texnik-shart berildi',
+      title: t('applicationsTimeline.steps.technicalConditionsIssued'),
       subtitle: 'Lorem',
       status: statuses.DONE,
     },
     {
       step: 4,
-      title: 'Texnik-shart berildi',
+      title: t('applicationsTimeline.steps.technicalConditionsIssued'),
       status: statuses.PENDING,
     },
     {
       step: 4,
-      title: 'Rad etildi',
-      error: 'Texnik shart berilmadi',
-      button: 'Rad etish sababi (2.4 MB)',
+      title: t('applicationsTimeline.steps.rejected'),
+      error: t('applicationsTimeline.steps.technicalConditionsNotIssued'),
+      button: t('applicationsTimeline.steps.rejectionReason', { size: '2.4 MB' }),
       file: true,
       status: statuses.ERROR,
     },
     {
       step: 5,
-      title: 'Qurilish boshlandi',
-      subtitle: 'Kutilmoqda',
-      status: 'pending',
+      title: t('applicationsTimeline.steps.constructionStarted'),
+      status: statuses.PENDING,
     },
     {
       step: 6,
-      title: 'Muvaffaqiyatli yakunlandi',
-      subtitle: 'Kutilmoqda',
-      status: 'pending',
+      title: t('applicationsTimeline.steps.completedSuccessfully'),
+      status: statuses.PENDING,
     },
   ];
 
@@ -122,7 +122,7 @@ const ApplicationsTimeline: FC = () => {
         <ul className={styles['applications-timeline__list']}>
           {timelineSteps.map((item, index) => (
             <li
-              key={item.step}
+              key={`${item.step}`}
               className={
                 cn(
                   styles['applications-timeline__item'],
@@ -163,7 +163,7 @@ const ApplicationsTimeline: FC = () => {
                         <IconClock />
                       </div>
                       <div className={styles['applications-timeline__pending-label']}>
-                        Kutilmoqda
+                        {t('applicationsTimeline.pending')}
                       </div>
                     </div>
                   )}
@@ -174,7 +174,7 @@ const ApplicationsTimeline: FC = () => {
                   )}
                   {item?.comment && (
                     <div className={styles['applications-timeline__comment']}>
-                      Izoh: {item.comment}
+                      {t('applicationsTimeline.comment')}: {item.comment}
                     </div>
                   )}
                   {item?.file && (
