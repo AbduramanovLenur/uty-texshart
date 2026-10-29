@@ -23,6 +23,44 @@
     display: flex;
     align-items: stretch;
     gap: 16px;
+    &.status-active {
+      .applications-timeline {
+        &__step {
+          background-color: var(--ant-blue);
+          color: var(--white);
+          border: none;
+        }
+        &__pending {
+          &-icon,
+          &-label {
+            color: var(--ant-blue);
+          }
+        }
+        &__subtitle {
+          color: var(--ant-blue);
+        }
+      }
+    }
+    &.status-done {
+      .applications-timeline {
+        &__line {
+          background-color: var(--ant-color-primary);
+          background-image: none;
+        }
+      }
+    }
+    &.status-error {
+      .applications-timeline {
+        &__step {
+          background-color: var(--ant-blue);
+          color: var(--white);
+          border: none;
+        }
+        &__title {
+          color: var(--ant-color-error);
+        }
+      }
+    }
   }
   &__indicator {
     display: flex;
@@ -30,7 +68,7 @@
     align-items: center;
     flex-shrink: 0;
   }
-  &__dot-number {
+  &__step {
     font-size: var(--ant-font-size);
     line-height: 1.5;
     display: flex;
@@ -44,68 +82,16 @@
     line-height: 1;
   }
   &__line {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      var(--ant-color-primary-border) 0px,
+      var(--ant-color-primary-border) 4px,
+      transparent 4px,
+      transparent 8px
+    );
     width: 1px;
     flex: 1;
     margin-top: var(--ant-margin-xs);
-  }
-  &__item {
-    &--done {
-      .applications-timeline {
-        &__line {
-          background-color: var(--ant-color-primary);
-        }
-        &__title {
-          color: var(--ant-color-text);
-        }
-        &__subtitle {
-          color: var(--ant-color-text-secondary);
-        }
-      }
-    }
-    &--active {
-      .applications-timeline {
-        &__line {
-          background-image: repeating-linear-gradient(
-            to bottom,
-            var(--ant-color-primary-border) 0px,
-            var(--ant-color-primary-border) 4px,
-            transparent 4px,
-            transparent 8px
-          );
-        }
-        &__title {
-          color: var(--ant-color-text);
-        }
-        &__info-icon {
-          color: var(--ant-color-primary);
-        }
-        &__subtitle {
-          color: var(--ant-color-primary);
-        }
-      }
-    }
-    &--pending {
-      .applications-timeline {
-        &__line {
-          background-image: repeating-linear-gradient(
-            to bottom,
-            var(--ant-color-border) 0px,
-            var(--ant-color-border) 4px,
-            transparent 4px,
-            transparent 8px
-          );
-        }
-        &__title {
-          color: var(--ant-color-text-tertiary);
-        }
-        &__info-icon {
-          color: var(--ant-color-text-quaternary);
-        }
-        &__subtitle {
-          color: var(--ant-color-text-quaternary);
-        }
-      }
-    }
   }
   &__content {
     padding-bottom: var(--ant-padding-sm);
@@ -116,17 +102,69 @@
     font-size: var(--ant-font-size);
     font-weight: 600;
     line-height: 1.5;
+    color: var(--ant-color-text);
     min-height: 32px;
   }
-  &__subtitle-row {
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin-xxs);
+  }
+  &__error {
     display: flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--ant-padding-xxs);
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-label {
+      font-size: var(--ant-font-size-sm);
+      line-height: 1.6;
+      font-weight: 600;
+      color: var(--ant-color-error);
+    }
   }
-  &__info-icon {
-    font-size: 13px;
+  &__pending {
+    display: flex;
+    align-items: center;
+    gap: var(--ant-margin-xxs);
+    &-icon {
+      display: flex;
+      align-items: center;
+      color: var(--dark-45);
+    }
+    &-label {
+      font-size: var(--ant-font-size-sm);
+      line-height: 1.6;
+      color: var(--dark-45);
+    }
   }
   &__subtitle {
-    font-size: 13px;
+    font-size: var(--ant-font-size-sm);
+    line-height: 1.6;
+    color: var(--dark-45);
+  }
+  &__comment {
+    font-size: var(--ant-font-size-sm);
+    line-height: 1.6;
+    color: var(--dark-65);
+  }
+  &__file {
+    display: flex;
+    align-items: center;
+    gap: var(--ant-margin-xxs);
+    color: var(--ant-blue);
+    span {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &:last-child {
+        font-size: var(--ant-font-size-sm);
+        font-weight: 600;
+        line-height: 1.6;
+      }
+    }
   }
 }

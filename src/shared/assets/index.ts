@@ -17,3 +17,5 @@ export { default as IconDataWrong } from './icons/icon-data-wrong';
 export { default as IconPrimaryRightArrow } from './icons/icon-primary-right-arrow';
 export { default as IconPrimaryCheck } from './icons/icon-primary-check';
 export { default as IconClock } from './icons/icon-clock';
+export { default as IconXMark } from './icons/icon-x-mark';
+export { default as IconArrowDownBracket } from './icons/icon-arrow-down-to-bracket';
