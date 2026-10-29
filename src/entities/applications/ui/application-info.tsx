@@ -1,13 +1,18 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import styles from './application-info.module.scss';
 
-const ApplicationInfo: FC = () => {
+interface IProps {
+  className?: string;
+};
+
+const ApplicationInfo: FC<IProps> = ({ className }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles['application-info']}>
+    <div className={cn(styles['application-info'], className)}>
       <div className={styles['application-info__wrapper']}>
         <div className={styles['application-info__item']}>
           <div className={styles['application-info__title']}>

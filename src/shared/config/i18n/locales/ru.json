@@ -64,8 +64,9 @@
       "details": "Подробно"
     },
     "recentApplications": {
+      "create": "Новая заявка",
       "title": "Последние заявки",
-      "create": "Новая заявка"
+      "viewAll": "Посмотреть все заявки"
     },
     "statistics": {
       "draft": "Черновик",
@@ -106,6 +107,16 @@
   "sidebar": {
     "dashboard": "Главная",
     "applications": "Мои заявки"
+  },
+  "userApplication": {
+    "breadcrumbs": {
+      "applications": "Мои заявки",
+      "details": "Информация о заявке"
+    },
+    "tabs": {
+      "info": "Информация о заявке",
+      "map": "Посмотреть на карте"
+    }
   },
   "userApplications": {
     "title": "Мои заявки",

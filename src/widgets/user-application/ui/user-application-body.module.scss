@@ -1,0 +1,21 @@
+.user-application-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+
+  :global(.ant-tabs) {
+    flex: 1;
+    min-height: 0;
+  }
+
+  :global(.ant-tabs-body),
+  :global(.ant-tabs-content) {
+    height: 100%;
+  }
+
+  &__tabs {
+    max-width: 524px;
+    width: 100%;
+  }
+}

@@ -1,8 +1,10 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Typography, Button } from 'antd';
+import { Link } from 'react-router-dom';
 
 import { ApplicationPreview, type IApplicationPreview } from '@entities/applications';
+import { routes } from '@shared/config';
 import { IconPlus } from '@shared/assets';
 
 import styles from './recent-applications.module.scss';
@@ -81,6 +83,14 @@ const RecentApplications: FC = () => {
           </li>
         ))}
       </ul>
+      <div className={styles['recent-applications__bottom']}>
+        <Link
+          className={styles['recent-applications__link']}
+          to={routes.APPLICATIONS}
+        >
+          {t('dashboard.recentApplications.viewAll')}
+        </Link>
+      </div>
     </div>
   );
 };

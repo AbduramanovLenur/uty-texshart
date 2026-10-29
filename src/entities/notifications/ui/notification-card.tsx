@@ -25,7 +25,7 @@ const NotificationCard: FC<IProps> = ({ item }) => {
       </div>
       <div className={styles['notification-card__inner']}>
         <Link
-          to={routes.NOTIFICATIONS}
+          to={routes.SINGLE_APPLICATION(item.record)}
           className={styles['notification-card__record']}
         >
           {item.record}
