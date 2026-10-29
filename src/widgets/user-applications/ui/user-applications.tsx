@@ -1,6 +1,7 @@
 import { useState, type FC } from 'react';
 import { Typography, Button, Table, Tag, type TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { getColumns } from './columns';
 import type { IApplication } from './columns';
@@ -273,8 +274,8 @@ const UserApplications: FC = () => {
   const columns = getColumns(filters, translate);
 
   return (
-    <section className={styles['user-applications']}>
-      <div className={styles['user-applications__inner']}>
+    <section className={cn(styles['user-applications'], 'section')}>
+      <div className={cn(styles['user-applications__inner'], 'section-inner')}>
         <div className={styles['user-applications__top']}>
           <Title className={styles['user-applications__title']} level={3}>
             {translate('userApplications.title')}

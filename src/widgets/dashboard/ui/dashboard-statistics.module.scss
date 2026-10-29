@@ -1,0 +1,7 @@
+.dashboard-statistics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--ant-margin-xs);
+  margin-bottom: var(--ant-margin);
+  flex-shrink: 0;
+}

@@ -1,0 +1,37 @@
+.recent-applications {
+  background-color: var(--ant-color-fill-quaternary);
+  padding: var(--ant-padding-lg);
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--ant-margin-lg);
+    flex-shrink: 0;
+  }
+  &__title {
+    &:global(.ant-typography) {
+      margin-bottom: 0;
+      color: var(--dark-88);
+    }
+  }
+  &__button {
+    line-height: 1.5;
+    color: var(--dark-88);
+    border: 1px solid var(--default-border)
+  }
+  &__list {
+    overflow-y: auto;
+    flex: 1;
+    min-height: 0;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__item {
+    border-bottom: 1px solid var(--border-secondary);
+  }
+}
