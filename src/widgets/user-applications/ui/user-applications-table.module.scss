@@ -1,0 +1,36 @@
+.user-applications-table {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
+
+  &__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin-bottom: var(--ant-margin);
+    overflow: auto;
+    border-radius: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    :global(.ant-table-content) {
+      overflow: visible !important;
+    }
+    :global(.ant-table-container)::before,
+    :global(.ant-table-container)::after {
+      display: none;
+    }
+    :global(.ant-table-thead > tr > th) {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+  }
+  &__pagination {
+    flex-shrink: 0;
+  }
+}
