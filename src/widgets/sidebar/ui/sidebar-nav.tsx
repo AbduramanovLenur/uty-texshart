@@ -10,12 +10,12 @@ import { items } from '../model/menu-items';
 import styles from './sidebar-nav.module.scss';
 
 const SidebarNav: FC = () => {
-  const { t: translate } = useTranslation();
+  const { t } = useTranslation();
   const { pathname } = useLocation();
   const navigate = useNavigate();
   const menuItems: TMenuItem[] = items.map((item) => ({
     ...item,
-    label: typeof item.label === 'string' ? translate(item.label) : item.label,
+    label: typeof item.label === 'string' ? t(item.label) : item.label,
   }));
 
   const activeKey = items.find((item) => pathname === item.key || pathname.startsWith(`${item.key}/`))?.key;

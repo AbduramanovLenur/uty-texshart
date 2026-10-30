@@ -21,9 +21,9 @@ export interface IApplication {
   updatedAt: string;
 }
 
-export const getColumns = (filters: TTableFilters, translate: TFunction): TableProps<IApplication>['columns'] => [
+export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IApplication>['columns'] => [
   {
-    title: translate('userApplications.columns.applicationId'),
+    title: t('userApplications.columns.applicationId'),
     key: filterKeys.APPLICATION_ID,
     width: 160,
     sorter: true,
@@ -40,9 +40,9 @@ export const getColumns = (filters: TTableFilters, translate: TFunction): TableP
         selectedKeys={selectedKeys}
         confirm={confirm}
         clearFilters={clearFilters}
-        placeholder={translate('userApplications.filters.applicationIdPlaceholder')}
-        clearLabel={translate('userApplications.filters.clear')}
-        searchLabel={translate('userApplications.filters.search')}
+        placeholder={t('userApplications.filters.applicationIdPlaceholder')}
+        clearLabel={t('userApplications.filters.clear')}
+        searchLabel={t('userApplications.filters.search')}
       />
     ),
     filterIcon: (filtered: boolean) => (
@@ -50,7 +50,7 @@ export const getColumns = (filters: TTableFilters, translate: TFunction): TableP
     ),
   },
   {
-    title: translate('userApplications.columns.network'),
+    title: t('userApplications.columns.network'),
     key: filterKeys.NETWORK,
     minWidth: 235,
     render: (_, record) => record.network,
@@ -72,7 +72,7 @@ export const getColumns = (filters: TTableFilters, translate: TFunction): TableP
     filterSearch: true,
   },
   {
-    title: translate('userApplications.columns.peregon'),
+    title: t('userApplications.columns.peregon'),
     key: filterKeys.PEREGON,
     minWidth: 250,
     render: (_, record) => record.peregon,
@@ -94,7 +94,7 @@ export const getColumns = (filters: TTableFilters, translate: TFunction): TableP
     filterSearch: true,
   },
   {
-    title: translate('userApplications.columns.status'),
+    title: t('userApplications.columns.status'),
     key: filterKeys.STATUS,
     width: 160,
     render: (_, record) => record.status,
@@ -116,7 +116,7 @@ export const getColumns = (filters: TTableFilters, translate: TFunction): TableP
     filterSearch: true,
   },
   {
-    title: translate('userApplications.columns.dateUpdate'),
+    title: t('userApplications.columns.dateUpdate'),
     key: filterKeys.DATE,
     width: 200,
     sorter: true,
@@ -130,8 +130,8 @@ export const getColumns = (filters: TTableFilters, translate: TFunction): TableP
         clearFilters={clearFilters}
         displayFormat='DD.MM.YYYY'
         valueFormat='YYYY-MM-DD'
-        clearLabel={translate('userApplications.filters.clear')}
-        searchLabel={translate('userApplications.filters.search')}
+        clearLabel={t('userApplications.filters.clear')}
+        searchLabel={t('userApplications.filters.search')}
       />
     ),
     render: (_, record) => (
