@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
-import ApplicationDetails from './application-details';
 import RecentApplications from './recent-applications';
+import ApplicationDetails from './application-details';
 
 import styles from './dashboard-body.module.scss';
 

@@ -1,0 +1,17 @@
+.create-application-bottom {
+  display: flex;
+  align-items: center;
+  gap: var(--ant-margin-xs);
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: var(--ant-margin);
+
+  &__reset,
+  &__next {
+    font-size: var(--ant-font-size-lg);
+    font-weight: 500;
+    line-height: 1.5;
+    height: 40px;
+    border-radius: var(--ant-border-radius-lg);
+  }
+}

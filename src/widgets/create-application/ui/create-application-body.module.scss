@@ -1,0 +1,22 @@
+.create-application-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--ant-padding-lg);
+    background-color: var(--ant-color-fill-quaternary);
+    flex: 1;
+    min-height: 0;
+    border-radius: var(--ant-border-radius-lg);
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+  }
+}

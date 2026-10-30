@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Typography, Button } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import { ApplicationPreview, type IApplicationPreview } from '@entities/applications';
 import { routes } from '@shared/config';
@@ -12,6 +12,7 @@ import styles from './recent-applications.module.scss';
 const { Title } = Typography;
 
 const RecentApplications: FC = () => {
+  const navigate = useNavigate();
   const { t } = useTranslation();
 
   const applications: IApplicationPreview[] = [
@@ -66,13 +67,21 @@ const RecentApplications: FC = () => {
     },
   ];
 
+  const handleCreateApplication = () => {
+    navigate(routes.CREATE_APPLICATION());
+  };
+
   return (
     <div className={styles['recent-applications']}>
       <div className={styles['recent-applications__top']}>
         <Title className={styles['recent-applications__title']} level={4}>
           {t('dashboard.recentApplications.title')}
         </Title>
-        <Button className={styles['recent-applications__button']} icon={<IconPlus />}>
+        <Button
+          className={styles['recent-applications__button']}
+          icon={<IconPlus />}
+          onClick={handleCreateApplication}
+        >
           {t('dashboard.recentApplications.create')}
         </Button>
       </div>

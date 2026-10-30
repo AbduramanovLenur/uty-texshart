@@ -6,4 +6,5 @@ export const routes = {
   NOTIFICATIONS: '/notifications',
   PROFILE: '/profile',
   SINGLE_APPLICATION: (id: string) => `${routes.APPLICATIONS}/${id}`,
-};
+  CREATE_APPLICATION: () => `${routes.APPLICATIONS}/create`,
+} as const;

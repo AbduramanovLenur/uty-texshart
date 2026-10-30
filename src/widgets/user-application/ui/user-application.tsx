@@ -1,18 +1,16 @@
 import { type FC } from 'react';
 import cn from 'classnames';
-import { Breadcrumb, Button, Typography } from 'antd';
+import { Breadcrumb } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import UserApplicationBody from './user-application-body';
 import { getBreadcrumbs } from '../model/breadcrumbs';
 
+import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
-import { IconLeftChevron } from '@shared/assets';
 
 import styles from './user-application.module.scss';
-
-const { Title } = Typography;
 
 const UserApplication: FC = () => {
   const { t } = useTranslation();
@@ -33,18 +31,9 @@ const UserApplication: FC = () => {
           }}
           items={breadcrumbs}
         />
-        <div className={styles['user-application__top']}>
-          <Button
-            className={styles['user-application__back']}
-            type='default'
-            onClick={handleBack}
-          >
-            <IconLeftChevron />
-          </Button>
-          <Title className={styles['user-application__title']} level={3}>
-            ARZ-31234123
-          </Title>
-        </div>
+        <PageHeader onClick={handleBack}>
+          ARZ-31234123
+        </PageHeader>
         <UserApplicationBody />
       </div>
     </section>
