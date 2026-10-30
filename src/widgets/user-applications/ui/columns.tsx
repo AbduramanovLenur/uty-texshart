@@ -6,7 +6,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { filterKeys } from '@shared/config';
+import { filterKeys, routes } from '@shared/config';
 import type { TTableFilters } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
@@ -29,7 +29,7 @@ export const getColumns = (filters: TTableFilters, translate: TFunction): TableP
     sorter: true,
     sortOrder: getSortOrder(filters, filterKeys.APPLICATION_ID),
     render: (_, record) => (
-      <Link className='table-link' to=''>
+      <Link className='table-link' to={routes.SINGLE_APPLICATION(record.id)}>
         {record.id}
       </Link>
     ),

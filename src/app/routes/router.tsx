@@ -4,6 +4,7 @@ import {
   AuthPage,
   DashboardPage,
   ApplicationsPage,
+  ApplicationPage,
   NotificationsPage,
 } from './pages';
 
@@ -49,6 +50,10 @@ const router = createBrowserRouter([
           {
             path: routes.APPLICATIONS,
             element: <ApplicationsPage />,
+          },
+          {
+            path: routes.SINGLE_APPLICATION(':id'),
+            element: <ApplicationPage />,
           },
           {
             path: routes.NOTIFICATIONS,

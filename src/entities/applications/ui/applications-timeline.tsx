@@ -20,7 +20,11 @@ interface ITimelineStep {
   status: string;
 }
 
-const ApplicationsTimeline: FC = () => {
+interface IProps {
+  className?: string;
+}
+
+const ApplicationsTimeline: FC<IProps> = ({ className }) => {
   const { t } = useTranslation();
 
   const timelineSteps: ITimelineStep[] = [
@@ -117,7 +121,7 @@ const ApplicationsTimeline: FC = () => {
   ];
 
   return (
-    <div className={styles['applications-timeline']}>
+    <div className={cn(styles['applications-timeline'], className)}>
       <div className={styles['applications-timeline__wrapper']}>
         <ul className={styles['applications-timeline__list']}>
           {timelineSteps.map((item, index) => (

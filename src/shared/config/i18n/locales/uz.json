@@ -64,8 +64,9 @@
       "details": "Batafsil"
     },
     "recentApplications": {
+      "create": "Yangi ariza",
       "title": "Oxirgi arizalar",
-      "create": "Yangi ariza"
+      "viewAll": "Barcha arizalarni ko’rish"
     },
     "statistics": {
       "draft": "Qoralama",
@@ -103,6 +104,16 @@
   "sidebar": {
     "dashboard": "Bosh sahifa",
     "applications": "Arizalarim"
+  },
+  "userApplication": {
+    "breadcrumbs": {
+      "applications": "Arizalarim",
+      "details": "Ariza ma’lumotlari"
+    },
+    "tabs": {
+      "info": "Ariza ma’lumotlari",
+      "map": "Xaritadan ko’rish"
+    }
   },
   "userApplications": {
     "title": "Arizalarim",

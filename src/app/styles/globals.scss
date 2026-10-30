@@ -298,3 +298,13 @@ main {
     }
   }
 }
+
+.breadcrumbs {
+  margin-bottom: var(--ant-margin);
+  &__item {
+    color: var(--dark-45);
+    &:last-child {
+      color: var(--dark-88);
+    }
+  }
+}

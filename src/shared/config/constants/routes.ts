@@ -5,4 +5,5 @@ export const routes = {
   APPLICATIONS: '/applications',
   NOTIFICATIONS: '/notifications',
   PROFILE: '/profile',
+  SINGLE_APPLICATION: (id: string) => `${routes.APPLICATIONS}/${id}`,
 };

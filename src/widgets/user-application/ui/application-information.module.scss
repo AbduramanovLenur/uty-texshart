@@ -1,0 +1,12 @@
+.application-information {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  gap: var(--ant-margin-lg);
+  padding: var(--ant-padding-lg);
+  background-color: var(--ant-color-fill-quaternary);
+  border-radius: 0 0 var(--ant-border-radius-lg) var(--ant-border-radius-lg);
+  &__content {
+    border-radius: var(--ant-border-radius-lg);
+  }
+}

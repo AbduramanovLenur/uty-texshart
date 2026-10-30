@@ -35,13 +35,16 @@ const NotificationItem: FC<IProps> = ({ item }) => {
                   <Title className={styles['notification-item__collection-title']} level={5}>
                     {collection.title}
                   </Title>
-                  {collection.read && <div className={styles['notification-item__collection-circle']}></div>}
+                  {collection.read && <div className={styles['notification-item__collection-circle']} />}
                 </div>
                 <div className={styles['notification-item__collection-description']}>
                   {collection.description}
                 </div>
                 <div className={styles['notification-item__collection-bottom']}>
-                  <Link to={routes.NOTIFICATIONS} className={styles['notification-item__collection-link']}>
+                  <Link
+                    className={styles['notification-item__collection-link']}
+                    to={routes.SINGLE_APPLICATION(collection.applicationId)}
+                  >
                     {collection.applicationId}
                   </Link>
                   <div className={styles['notification-item__collection-decor']}></div>
