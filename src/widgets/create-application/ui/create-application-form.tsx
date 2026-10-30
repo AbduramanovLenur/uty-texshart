@@ -42,6 +42,67 @@ const CreateApplicationForm: FC = () => {
             suffixIcon={<IconDownArrow />}
           />
         </Item>
+        <div className={styles['create-application-form__parameters']}>
+          <div className={styles['create-application-form__parameters-title']}>
+            Muhandislik-texnik parametrlari
+          </div>
+          <div className={styles['create-application-form__parameters-grid']}>
+            <Item
+              className={styles['create-application-form__parameters-item']}
+              label='Kuchlanish (kV)'
+              name='voltage'
+              rules={[{
+                required: true,
+              }]}
+            >
+              <Select
+                className={styles['create-application-form__parameters-select']}
+                placeholder='Tanlang'
+                suffixIcon={<IconDownArrow />}
+              />
+            </Item>
+            <Item
+              className={styles['create-application-form__parameters-item']}
+              label='Kabellar soni'
+              name='cablesCount'
+              rules={[{
+                required: true,
+              }]}
+            >
+              <Input
+                className={styles['create-application-form__parameters-input']}
+                placeholder='Kabellar sonini kiriting'
+              />
+            </Item>
+            <Item
+              className={styles['create-application-form__parameters-item']}
+              label='Kabel markasi'
+              name='cableBrand'
+              rules={[{
+                required: true,
+              }]}
+            >
+              <Input
+                className={styles['create-application-form__parameters-input']}
+                placeholder='Kabel markasini kiriting'
+              />
+            </Item>
+            <Item
+              className={styles['create-application-form__parameters-item']}
+              label='Ishlarni bajarish usuli'
+              name='workMethod'
+              rules={[{
+                required: true,
+              }]}
+            >
+              <Select
+                className={styles['create-application-form__parameters-select']}
+                placeholder='Tanlang'
+                suffixIcon={<IconDownArrow />}
+              />
+            </Item>
+          </div>
+        </div>
         <Item
           className={styles['create-application-form__item']}
           label='Kommunikatsiyani o’tqazish maqsadi'

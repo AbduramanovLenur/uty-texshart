@@ -22,7 +22,67 @@
       }
     }
   }
+  &__parameters {
+    background-color: var(--ant-color-fill-quaternary);
+    border-radius: var(--ant-border-radius-lg);
+    border: 1px solid var(--border-secondary);
+    padding: var(--ant-padding);
+    &-title {
+      font-size: var(--ant-font-size-sm);
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--dark-88);
+      margin-bottom: var(--ant-margin);
+    }
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--ant-margin);
+    }
+    &-item {
+      :global {
+        .ant-form-item-row > .ant-form-item-label {
+          padding: 0;
+          margin-bottom: var(--ant-margin-xxs);
+        }
+        .ant-form-item-label > label {
+          color: var(--dark-88);
+          font-size: var(--ant-font-size);
+          line-height: 1.5;
+          height: auto;
+        }
+      }
+    }
+    &-select {
+      width: 100%;
+      font-size: var(--ant-font-size);
+      line-height: 1.5;
+      color: var(--dark-88);
+      height: 32px;
+      border-radius: 6px;
+      padding: 0 var(--ant-padding-sm);
+      :global(.ant-select-placeholder) {
+        color: var(--dark-88);
+      }
+    }
+    &-input {
+      width: 100%;
+      height: 32px;
+      border-radius: 6px;
+      font-size: var(--ant-font-size);
+      line-height: 1.5;
+      padding: 0 var(--ant-padding-sm);
+      color: var(--dark-88);
+
+      &::placeholder {
+        color: var(--dark-45);
+        font-size: var(--ant-font-size);
+      }
+    }
+  }
+  
   &__select {
+    width: 100%;
     font-size: var(--ant-font-size-lg);
     line-height: 1.5;
     color: var(--dark-88);
@@ -31,6 +91,20 @@
     padding: 0 var(--ant-padding-sm);
     :global(.ant-select-placeholder) {
       color: var(--dark-88);
+    }
+  }
+  &__input {
+    width: 100%;
+    height: 40px;
+    border-radius: var(--ant-border-radius-lg);
+    font-size: var(--ant-font-size);
+    line-height: 1.5;
+    padding: 0 var(--ant-padding-sm);
+    color: var(--dark-88);
+
+    &::placeholder {
+      color: var(--dark-45);
+      font-size: var(--ant-font-size);
     }
   }
   &__textarea {
