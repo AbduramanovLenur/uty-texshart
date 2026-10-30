@@ -343,4 +343,29 @@
       stroke="white"
     />
   </symbol>
+  <symbol id="icon-big-plus" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path 
+      d="M9.19922 0H10.957C11.1133 0 11.1914 0.078125 11.1914 0.234375V20.8594C11.1914 21.0156 11.1133 21.0938 10.957 21.0938H9.19922C9.04297 21.0938 8.96484 21.0156 8.96484 20.8594V0.234375C8.96484 0.078125 9.04297 0 9.19922 0Z" 
+      fill="#0A0A0A" 
+      fill-opacity="0.45"
+    />
+    <path 
+      d="M0.234375 9.43359H19.9219C20.0781 9.43359 20.1562 9.51172 20.1562 9.66797V11.4258C20.1562 11.582 20.0781 11.6602 19.9219 11.6602H0.234375C0.078125 11.6602 0 11.582 0 11.4258V9.66797C0 9.51172 0.078125 9.43359 0.234375 9.43359Z" 
+      fill="#0A0A0A" 
+      fill-opacity="0.45"
+    />
+  </symbol>
+  <symbol
+    id="icon-small-close"
+    fill='none'
+    xmlns='http://www.w3.org/2000/svg'
+  >
+    <path
+      d='M1 1L4 4M4 1L1 4'
+      stroke='white'
+      strokeWidth='1.8'
+      strokeLinecap='round'
+      strokeLinejoin='round'
+    />
+  </symbol>
 </svg>

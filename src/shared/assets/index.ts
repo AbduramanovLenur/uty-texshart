@@ -22,4 +22,6 @@ export { default as IconArrowDownBracket } from './icons/icon-arrow-down-to-brac
 export { default as IconLeftChevron } from './icons/icon-left-chevron';
 export { default as IconFilePlus } from './icons/icon-file-plus';
 export { default as IconUpload } from './icons/icon-upload';
-export { default as IconPlusIamge } from './icons/icon-plus-image';
+export { default as IconPlusImage } from './icons/icon-plus-image';
+export { default as IconBigPlus } from './icons/icon-big-plus';
+export { default as IconSmallClose } from './icons/icon-small-close';

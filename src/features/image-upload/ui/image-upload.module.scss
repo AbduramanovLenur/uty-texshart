@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    margin-bottom: var(--ant-margin-sm);
+    margin-bottom: var(--ant-margin);
     transition: background-color 0.2s, border-color 0.2s;
     border: 1px solid transparent;
 
@@ -30,30 +30,31 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: var(--ant-margin-xs);
+    margin-bottom: 2px;
   }
 
   &__title {
     font-size: var(--ant-font-size);
-    font-weight: 500;
+    font-weight: 600;
+    line-height: 1.5;
     color: var(--dark-88);
-    line-height: 1.4;
-    margin-bottom: var(--ant-margin-xxs);
+    margin-bottom: 2px;
     text-align: center;
   }
 
   &__subtitle {
     font-size: var(--ant-font-size-sm);
-    color: var(--dark-45);
-    line-height: 1.4;
+    color: var(--dark-65);
+    line-height: 1.6;
     text-align: center;
   }
 
   &__button {
     width: 100%;
     height: 40px;
-    font-size: var(--ant-font-size);
+    font-size: var(--ant-font-size-lg);
     font-weight: 500;
+    line-height: 1.5;
     border-radius: var(--ant-border-radius-lg);
     display: flex;
     align-items: center;
@@ -72,8 +73,8 @@
 
   &__item {
     position: relative;
-    width: 64px;
-    height: 64px;
+    width: 68px;
+    height: 68px;
     flex-shrink: 0;
 
     &--error {
@@ -88,7 +89,7 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    border-radius: var(--ant-border-radius-md);
+    border-radius: var(--ant-border-radius-lg);
   }
 
   &__overlay {
@@ -100,32 +101,6 @@
     justify-content: center;
     border-radius: var(--ant-border-radius-md);
     z-index: 5;
-  }
-
-  &__progress-wrap {
-    position: relative;
-    width: 52px;
-    height: 52px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      display: block;
-    }
-  }
-
-  &__progress-text {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1;
-    user-select: none;
   }
 
   &__overlay-error {
@@ -180,11 +155,10 @@
   }
 
   &__add {
-    width: 64px;
-    height: 64px;
-    border-radius: var(--ant-border-radius-md);
+    width: 68px;
+    height: 68px;
+    border-radius: 5px;
     border: 1px dashed var(--default-border);
-    background-color: var(--ant-color-bg-container);
     display: flex;
     align-items: center;
     justify-content: center;

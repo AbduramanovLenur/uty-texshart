@@ -2,80 +2,21 @@ import { useState, useRef, useEffect, type FC } from 'react';
 import { Button, type UploadFile } from 'antd';
 import cn from 'classnames';
 
-import { IconPlus, IconPlusIamge, IconUpload } from '@shared/assets';
-
+import CircleProgress from './circle-progress';
 import { uploadStatus } from '../model/status';
+
+import { IconBigPlus, IconPlusImage, IconSmallClose, IconUpload } from '@shared/assets';
 
 import styles from './image-upload.module.scss';
 
-export interface IImageUploadProps {
+export interface IProps {
   value?: UploadFile[];
   onChange?: (fileList: UploadFile[]) => void;
   accept?: string;
   className?: string;
 }
 
-interface ICircleProgressProps {
-  percent: number;
-}
-
-const IconRemoveX: FC = () => (
-  <svg
-    width='5'
-    height='5'
-    viewBox='0 0 5 5'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <path
-      d='M1.75 1.75L8.25 8.25M8.25 1.75L1.75 8.25'
-      stroke='white'
-      strokeWidth='1.8'
-      strokeLinecap='round'
-      strokeLinejoin='round'
-    />
-  </svg>
-);
-
-const CircleProgress: FC<ICircleProgressProps> = ({ percent }) => {
-  const size = 52;
-  const strokeWidth = 5;
-  const trailStrokeWidth = 3;
-  const radius = (size - strokeWidth) / 2;
-  const circumference = 2 * Math.PI * radius;
-  const offset = circumference - (Math.min(Math.max(percent, 0), 100) / 100) * circumference;
-
-  return (
-    <div className={styles['image-upload__progress-wrap']}>
-      <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill='none'
-          stroke='rgba(255, 255, 255, 0.35)'
-          strokeWidth={trailStrokeWidth}
-        />
-        <circle
-          cx={size / 2}
-          cy={size / 2}
-          r={radius}
-          fill='none'
-          stroke='#ffffff'
-          strokeWidth={strokeWidth}
-          strokeDasharray={circumference}
-          strokeDashoffset={offset}
-          strokeLinecap='round'
-          transform={`rotate(-90 ${size / 2} ${size / 2})`}
-          style={{ transition: 'stroke-dashoffset 0.25s ease' }}
-        />
-      </svg>
-      <span className={styles['image-upload__progress-text']}>{percent}%</span>
-    </div>
-  );
-};
-
-const ImageUpload: FC<IImageUploadProps> = ({
+const ImageUpload: FC<IProps> = ({
   value,
   onChange,
   accept = '.jpg,.jpeg,.png',
@@ -235,7 +176,7 @@ const ImageUpload: FC<IImageUploadProps> = ({
             className={styles['image-upload__button']}
             type='primary'
             htmlType='button'
-            icon={<IconPlusIamge />}
+            icon={<IconPlusImage />}
             onClick={handleOpenFileDialog}
           >
             Rasm qo’shish
@@ -282,7 +223,7 @@ const ImageUpload: FC<IImageUploadProps> = ({
                     }}
                     title='O‘chirish'
                   >
-                    <IconRemoveX />
+                    <IconSmallClose />
                   </button>
                 )}
               </div>
@@ -295,7 +236,7 @@ const ImageUpload: FC<IImageUploadProps> = ({
             onClick={handleOpenFileDialog}
             title='Rasm qo‘shish'
           >
-            <IconPlus />
+            <IconBigPlus />
           </button>
         </div>
       )}
