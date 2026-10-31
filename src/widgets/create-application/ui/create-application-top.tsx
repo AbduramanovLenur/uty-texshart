@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Typography, Button } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 import { IconFilePlus } from '@shared/assets';
 
@@ -13,13 +14,16 @@ interface ICreateApplicationTopProps {
 }
 
 const CreateApplicationTop: FC<ICreateApplicationTopProps> = ({
-  title = 'Ariza ma’lumotlarini to’ldiring',
+  title,
   onSaveDraft,
 }) => {
+  const { t } = useTranslation();
+  const displayTitle = title ?? t('createApplication.top.title');
+
   return (
     <div className={styles['create-application-top']}>
       <Title className={styles['create-application-top__label']} level={5}>
-        {title}
+        {displayTitle}
       </Title>
       <Button
         className={styles['create-application-top__draft']}
@@ -27,7 +31,7 @@ const CreateApplicationTop: FC<ICreateApplicationTopProps> = ({
         icon={<IconFilePlus />}
         onClick={onSaveDraft}
       >
-        Qoralamalarga qo’shish
+        {t('createApplication.top.saveDraft')}
       </Button>
     </div>
   );

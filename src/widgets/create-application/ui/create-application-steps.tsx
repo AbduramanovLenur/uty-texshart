@@ -1,7 +1,8 @@
 import type { FC } from 'react';
 import { Steps } from 'antd';
+import { useTranslation } from 'react-i18next';
 
-import { steps } from '../model/steps';
+import { getSteps } from '../model/steps';
 
 import styles from './create-application-steps.module.scss';
 
@@ -14,6 +15,9 @@ const CreateApplicationSteps: FC<ICreateApplicationStepsProps> = ({
   current,
   onChange,
 }) => {
+  const { t } = useTranslation();
+  const items = getSteps(t);
+
   return (
     <Steps
       classNames={{
@@ -23,7 +27,7 @@ const CreateApplicationSteps: FC<ICreateApplicationStepsProps> = ({
       type='panel'
       current={current}
       onChange={onChange}
-      items={steps}
+      items={items}
     />
   );
 };

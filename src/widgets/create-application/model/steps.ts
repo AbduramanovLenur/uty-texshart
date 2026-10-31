@@ -1,12 +1,13 @@
 import type { StepsProps } from 'antd';
+import type { TFunction } from 'i18next';
 
-export const steps: StepsProps['items'] = [
+export const getSteps = (t: TFunction): StepsProps['items'] => [
   {
-    title: '1-qadam',
-    content: 'Ariza ma’lumotlarini to’ldiring',
+    title: t('createApplication.steps.step1.title'),
+    content: t('createApplication.steps.step1.content'),
   },
   {
-    title: '2-qadam',
-    content: 'Xaritada belgilang',
+    title: t('createApplication.steps.step2.title'),
+    content: t('createApplication.steps.step2.content'),
   },
 ];

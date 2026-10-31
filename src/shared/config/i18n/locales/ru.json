@@ -56,6 +56,37 @@
       "signIn": "Войти через OneID"
     }
   },
+  "createApplication": {
+    "bottom": {
+      "cancel": "Отмена",
+      "continue": "Продолжить"
+    },
+    "form": {
+      "comment": "Примечание",
+      "commentPlaceholder": "Напишите",
+      "communicationType": "Планируемый к прокладке тип коммуникации",
+      "crossingMethod": "Способ пересечения железной дороги",
+      "locationPhotos": "Фотография планируемого места прокладки коммуникаций",
+      "parametersTitle": "Инженерно-технические параметры",
+      "projectGoal": "Цель прокладки коммуникации",
+      "selectPlaceholder": "Выберите"
+    },
+    "steps": {
+      "step1": {
+        "content": "Заполните данные заявки",
+        "title": "Шаг 1"
+      },
+      "step2": {
+        "content": "Укажите на карте",
+        "title": "Шаг 2"
+      }
+    },
+    "title": "Создать заявку",
+    "top": {
+      "saveDraft": "Сохранить в черновики",
+      "title": "Заполните данные заявки"
+    }
+  },
   "dashboard": {
     "title": "Главная страница",
     "applicationDetails": {
@@ -81,6 +112,12 @@
   },
   "header": {
     "searchPlaceholder": "Поиск"
+  },
+  "imageUpload": {
+    "add": "Добавить фото",
+    "dropzoneSubtitle": "Поддерживаются форматы JPG, PNG",
+    "dropzoneTitle": "Нажмите сюда или перетащите изображения сюда",
+    "remove": "Удалить"
   },
   "language": {
     "uz": "O‘zbekcha",

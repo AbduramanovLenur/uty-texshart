@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Button } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 import styles from './create-application-bottom.module.scss';
 
@@ -14,10 +15,14 @@ interface ICreateApplicationBottomProps {
 const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
   onReset,
   onNext,
-  resetText = 'Bekor qilish',
-  nextText = 'Davom etish',
+  resetText,
+  nextText,
   isLoading = false,
 }) => {
+  const { t } = useTranslation();
+  const currentResetText = resetText ?? t('createApplication.bottom.cancel');
+  const currentNextText = nextText ?? t('createApplication.bottom.continue');
+
   return (
     <div className={styles['create-application-bottom']}>
       <Button
@@ -25,7 +30,7 @@ const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
         type='default'
         onClick={onReset}
       >
-        {resetText}
+        {currentResetText}
       </Button>
       <Button
         className={styles['create-application-bottom__next']}
@@ -33,7 +38,7 @@ const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
         loading={isLoading}
         onClick={onNext}
       >
-        {nextText}
+        {currentNextText}
       </Button>
     </div>
   );

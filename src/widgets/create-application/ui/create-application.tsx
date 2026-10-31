@@ -32,7 +32,7 @@ const CreateApplication: FC = () => {
           items={breadcrumbs}
         />
         <PageHeader onClick={handleBack}>
-          Yangi ariza yaratish
+          {t('createApplication.title')}
         </PageHeader>
         <CreateApplicationBody />
       </div>

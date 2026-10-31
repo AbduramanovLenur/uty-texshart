@@ -56,6 +56,37 @@
       "signIn": "One ID orqali kirish"
     }
   },
+  "createApplication": {
+    "bottom": {
+      "cancel": "Bekor qilish",
+      "continue": "Davom etish"
+    },
+    "form": {
+      "comment": "Izoh",
+      "commentPlaceholder": "Yozing",
+      "communicationType": "O’tkazilishi rejalashtirilayotgan komunikatsiya turi",
+      "crossingMethod": "Temir yo’ldan o’tkazish turi",
+      "locationPhotos": "Kommunikatsiya rejalashtirilayotgan joy rasmi",
+      "parametersTitle": "Muhandislik-texnik parametrlari",
+      "projectGoal": "Kommunikatsiyani o’tqazish maqsadi",
+      "selectPlaceholder": "Tanlang"
+    },
+    "steps": {
+      "step1": {
+        "content": "Ariza ma’lumotlarini to’ldiring",
+        "title": "1-qadam"
+      },
+      "step2": {
+        "content": "Xaritada belgilang",
+        "title": "2-qadam"
+      }
+    },
+    "title": "Yangi ariza yaratish",
+    "top": {
+      "saveDraft": "Qoralamalarga qo’shish",
+      "title": "Ariza ma’lumotlarini to’ldiring"
+    }
+  },
   "dashboard": {
     "title": "Asosiy sahifa",
     "applicationDetails": {
@@ -81,6 +112,12 @@
   },
   "header": {
     "searchPlaceholder": "Qidiruv"
+  },
+  "imageUpload": {
+    "add": "Rasm qo’shish",
+    "dropzoneSubtitle": "JPG, PNG formatlar qabul qilinadi",
+    "dropzoneTitle": "Bu yerga bosing yoki rasmlarni shu yerga tashlang",
+    "remove": "O‘chirish"
   },
   "language": {
     "uz": "O‘zbekcha",

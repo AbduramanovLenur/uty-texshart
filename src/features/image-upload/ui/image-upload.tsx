@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect, type FC } from 'react';
 import { Button, type UploadFile } from 'antd';
+import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import CircleProgress from './circle-progress';
@@ -22,6 +23,7 @@ const ImageUpload: FC<IProps> = ({
   accept = '.jpg,.jpeg,.png',
   className,
 }) => {
+  const { t } = useTranslation();
   const [internalFileList, setInternalFileList] = useState<UploadFile[]>([]);
   const [isDragging, setIsDragging] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
@@ -165,10 +167,10 @@ const ImageUpload: FC<IProps> = ({
               <IconUpload />
             </div>
             <div className={styles['image-upload__title']}>
-              Bu yerga bosing yoki rasmlarni shu yerga tashlang
+              {t('imageUpload.dropzoneTitle')}
             </div>
             <div className={styles['image-upload__subtitle']}>
-              JPG, PNG formatlar qabul qilinadi
+              {t('imageUpload.dropzoneSubtitle')}
             </div>
           </div>
 
@@ -179,7 +181,7 @@ const ImageUpload: FC<IProps> = ({
             icon={<IconPlusImage />}
             onClick={handleOpenFileDialog}
           >
-            Rasm qo’shish
+            {t('imageUpload.add')}
           </Button>
         </>
       ) : (
@@ -221,7 +223,7 @@ const ImageUpload: FC<IProps> = ({
                       e.stopPropagation();
                       handleRemove(file);
                     }}
-                    title='O‘chirish'
+                    title={t('imageUpload.remove')}
                   >
                     <IconSmallClose />
                   </button>
@@ -234,7 +236,7 @@ const ImageUpload: FC<IProps> = ({
             type='button'
             className={styles['image-upload__add']}
             onClick={handleOpenFileDialog}
-            title='Rasm qo‘shish'
+            title={t('imageUpload.add')}
           >
             <IconBigPlus />
           </button>

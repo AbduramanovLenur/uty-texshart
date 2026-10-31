@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Form, Select, Input } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 import { IconDownArrow } from '@shared/assets';
 
@@ -11,12 +12,14 @@ const { Item } = Form;
 const { TextArea } = Input;
 
 const CreateApplicationForm: FC = () => {
+  const { t } = useTranslation();
+
   return (
     <div className={styles['create-application-form']}>
       <div className={styles['create-application-form__left']}>
         <Item
           className={styles['create-application-form__item']}
-          label='O’tkazilishi rejalashtirilayotgan komunikatsiya turi'
+          label={t('createApplication.form.communicationType')}
           name='field1'
           rules={[{
             required: true,
@@ -24,13 +27,13 @@ const CreateApplicationForm: FC = () => {
         >
           <Select
             className={styles['create-application-form__select']}
-            placeholder='Tanlang'
+            placeholder={t('createApplication.form.selectPlaceholder')}
             suffixIcon={<IconDownArrow />}
           />
         </Item>
         <Item
           className={styles['create-application-form__item']}
-          label='Temir yo’ldan o’tkazish turi'
+          label={t('createApplication.form.crossingMethod')}
           name='field2'
           rules={[{
             required: true,
@@ -38,13 +41,13 @@ const CreateApplicationForm: FC = () => {
         >
           <Select
             className={styles['create-application-form__select']}
-            placeholder='Tanlang'
+            placeholder={t('createApplication.form.selectPlaceholder')}
             suffixIcon={<IconDownArrow />}
           />
         </Item>
         <div className={styles['create-application-form__parameters']}>
           <div className={styles['create-application-form__parameters-title']}>
-            Muhandislik-texnik parametrlari
+            {t('createApplication.form.parametersTitle')}
           </div>
           <div className={styles['create-application-form__parameters-grid']}>
             <Item
@@ -105,7 +108,7 @@ const CreateApplicationForm: FC = () => {
         </div>
         <Item
           className={styles['create-application-form__item']}
-          label='Kommunikatsiyani o’tqazish maqsadi'
+          label={t('createApplication.form.projectGoal')}
           name='field3'
           rules={[{
             required: true,
@@ -113,7 +116,7 @@ const CreateApplicationForm: FC = () => {
         >
           <Select
             className={styles['create-application-form__select']}
-            placeholder='Tanlang'
+            placeholder={t('createApplication.form.selectPlaceholder')}
             suffixIcon={<IconDownArrow />}
           />
         </Item>
@@ -121,19 +124,19 @@ const CreateApplicationForm: FC = () => {
       <div className={styles['create-application-form__right']}>
         <Item
           className={styles['create-application-form__item']}
-          label='Kommunikatsiya rejalashtirilayotgan joy rasmi'
+          label={t('createApplication.form.locationPhotos')}
           name='locationPhotos'
         >
           <ImageUpload />
         </Item>
         <Item
           className={styles['create-application-form__item']}
-          label='Izoh'
+          label={t('createApplication.form.comment')}
           name='comment'
         >
           <TextArea
             className={styles['create-application-form__textarea']}
-            placeholder='Yozing'
+            placeholder={t('createApplication.form.commentPlaceholder')}
             maxLength={240}
             showCount
           />
