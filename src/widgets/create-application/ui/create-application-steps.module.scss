@@ -1,0 +1,30 @@
+.create-application-steps {
+  margin-bottom: var(--ant-margin);
+
+  &__item {
+    max-width: 264px;
+    width: 100%;
+
+    &:last-child {
+      max-width: 320px;
+    }
+
+    &:global(.ant-steps-item.ant-steps-item) {
+      background: var(--ant-blue-1);
+    }
+
+    &:global(.ant-steps-item.ant-steps-item-active) {
+      background: var(--ant-blue);
+    }
+
+    :global(.ant-steps-item-title) {
+      color: var(--dark-88);
+      line-height: 1.5;
+    }
+
+    :global(.ant-steps-item-content) {
+      color: var(--dark-88);
+      line-height: 1.5;
+    }
+  }
+}

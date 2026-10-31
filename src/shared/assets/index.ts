@@ -20,3 +20,8 @@ export { default as IconClock } from './icons/icon-clock';
 export { default as IconXMark } from './icons/icon-x-mark';
 export { default as IconArrowDownBracket } from './icons/icon-arrow-down-to-bracket';
 export { default as IconLeftChevron } from './icons/icon-left-chevron';
+export { default as IconFilePlus } from './icons/icon-file-plus';
+export { default as IconUpload } from './icons/icon-upload';
+export { default as IconPlusImage } from './icons/icon-plus-image';
+export { default as IconBigPlus } from './icons/icon-big-plus';
+export { default as IconSmallClose } from './icons/icon-small-close';

@@ -1,0 +1,22 @@
+.create-application-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  margin-bottom: var(--ant-margin);
+
+  &__label {
+    &:global(.ant-typography) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__draft {
+    font-size: var(--ant-font-size-lg);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--dark-88);
+    border-radius: var(--ant-border-radius-lg);
+    height: 40px;
+  }
+}
