@@ -7,3 +7,15 @@ export interface IApplicationPreview {
   icon: string;
   active?: boolean;
 }
+
+export interface ITimelineStep {
+  step?: number;
+  title?: string;
+  time?: string;
+  error?: string;
+  comment?: string;
+  file?: boolean;
+  button?: string;
+  status: string;
+  employee?: string;
+}

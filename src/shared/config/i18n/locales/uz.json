@@ -12,19 +12,22 @@
     "comment": "Izoh",
     "pending": "Kutilmoqda",
     "steps": {
-      "actCreated": "Dalolatnoma shakllantirildi",
       "applicationAccepted": "Ariza qabul qilindi",
-      "completedSuccessfully": "Muvaffaqiyatli yakunlandi",
-      "constructionStarted": "Qurilish boshlandi",
-      "deficienciesFound": "Hujjatlarda kamchilik topildi",
-      "downloadAct": "Dalolatnomani yuklash ({{size}})",
-      "expired": "Muddati o‘tgan",
       "forwardedToRegional": "Hududiy bo‘limga yo‘naltirildi",
-      "rejectionReason": "Rad etish sababi ({{size}})",
-      "rejected": "Rad etildi",
-      "tashkentRegionDistance": "Toshkent viloyati yo‘l distansiyasi",
+      "actCreated": "Dalolatnoma shakllantirildi",
       "technicalConditionsIssued": "Texnik-shart berildi",
-      "technicalConditionsNotIssued": "Texnik shart berilmadi"
+      "constructionStarted": "Qurilishga ruxsat berildi",
+      "completedSuccessfully": "Muvaffaqiyatli yakunlandi",
+      "downloadAct": "Dalolatnomani yuklash ({{size}})",
+      "downloadRejectionReason": "Rad etish sababi ({{size}})",
+      "downloadTechnicalSpecs": "Texnik shartlarni yuklash ({{size}})",
+      "downloadConstructionEstimate": "Qurilish smetasi ({{size}})",
+      "downloadFinalAct": "Yakuniy dalolatnoma ({{size}})",
+      "deficienciesFound": "Xujjatlarda kamchilik topildi",
+      "expired": "Muddati o‘tgan",
+      "rejected": "Ariza rad etildi",
+      "technicalConditionsNotIssued": "Texnik shart berilmadi",
+      "technicalConditionsDenied": "Qurilish qilishni imkoni yo’q"
     }
   },
   "authentication": {
