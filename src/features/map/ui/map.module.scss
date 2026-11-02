@@ -1,0 +1,98 @@
+.map {
+  height: 100%;
+  border-radius: var(--ant-border-radius-lg);
+  overflow: hidden;
+
+  &__track-hitbox {
+    cursor: pointer;
+    stroke: #000000 !important;
+    stroke-opacity: 0.01 !important;
+    stroke-width: 18px !important;
+    pointer-events: stroke !important;
+  }
+
+  &__station-marker {
+    cursor: pointer;
+    transition: r 0.15s ease, stroke-width 0.15s ease;
+
+    &:hover {
+      r: 7px;
+      stroke-width: 2.5px;
+    }
+  }
+
+  &__selected-marker {
+    cursor: pointer;
+    filter: drop-shadow(0 0 6px rgba(255, 77, 79, 0.7));
+  }
+
+  &__track-popup {
+    pointer-events: none;
+
+    :global(.leaflet-popup-content-wrapper) {
+      padding: 8px 12px;
+      background-color: var(--ant-color-bg-elevated, #ffffff);
+      border: 1px solid var(--ant-color-border-secondary, #f0f0f0);
+      border-radius: var(--ant-border-radius-base, 6px);
+      box-shadow: var(--ant-box-shadow-secondary, 0 6px 16px 0 rgba(0, 0, 0, 0.08));
+      color: var(--ant-color-text, #262626);
+    }
+
+    :global(.leaflet-popup-content) {
+      margin: 0;
+      line-height: 1.5;
+    }
+
+    :global(.leaflet-popup-tip-container) {
+      display: none;
+    }
+  }
+}
+
+:global(.leaflet-tooltip) {
+  padding: 8px 12px;
+  background-color: var(--ant-color-bg-elevated, #ffffff);
+  border: 1px solid var(--ant-color-border-secondary, #f0f0f0);
+  border-radius: var(--ant-border-radius-base, 6px);
+  box-shadow: var(--ant-box-shadow-secondary, 0 6px 16px 0 rgba(0, 0, 0, 0.08));
+  color: var(--ant-color-text, #262626);
+  pointer-events: none;
+}
+
+:global(.leaflet-tooltip-top:before) {
+  border-top-color: var(--ant-color-bg-elevated, #ffffff);
+}
+
+:global(.leaflet-tooltip-bottom:before) {
+  border-bottom-color: var(--ant-color-bg-elevated, #ffffff);
+}
+
+.map-popup {
+  font-size: 13px;
+  line-height: 1.5;
+  min-width: 180px;
+
+  &__title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 6px;
+
+    &--track {
+      color: var(--ant-color-text-heading, #1f1f1f);
+    }
+  }
+
+  &__row {
+    margin-bottom: 2px;
+  }
+
+  &__label {
+    font-weight: 600;
+    margin-right: 4px;
+    color: var(--ant-color-text, #262626);
+  }
+
+  &__value {
+    color: var(--ant-color-text-secondary, #595959);
+  }
+}
