@@ -20,6 +20,15 @@
         font-weight: 500;
         height: auto;
       }
+      .ant-form-item-control-input-content {
+        width: 100%;
+      }
+    }
+
+    &:global(.ant-form-item-has-error) {
+      [class*='image-upload__dropzone'] {
+        border-color: var(--ant-color-error);
+      }
     }
   }
   &__parameters {

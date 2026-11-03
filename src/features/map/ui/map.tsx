@@ -1,5 +1,5 @@
-import { useState, type FC } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import { useState, useEffect, type FC } from 'react';
+import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import type { GeoJsonObject } from 'geojson';
 
 import {
@@ -27,23 +27,64 @@ interface IProps {
   readOnly?: boolean;
 }
 
-const defaultChangeHandler = (coordinates: [number, number]) => {
-  console.log('Selected coordinates:', coordinates);
+const isValidCoords = (coords: unknown): coords is [number, number] => {
+  return (
+    Array.isArray(coords) &&
+    coords.length === 2 &&
+    typeof coords[0] === 'number' &&
+    typeof coords[1] === 'number' &&
+    !Number.isNaN(coords[0]) &&
+    !Number.isNaN(coords[1])
+  );
+};
+
+const MapResizeHandler: FC = () => {
+  const map = useMap();
+
+  useEffect(() => {
+    const triggerInvalidate = () => {
+      map.invalidateSize();
+    };
+
+    triggerInvalidate();
+
+    const container = map.getContainer();
+    let observer: ResizeObserver | null = null;
+
+    if (typeof ResizeObserver !== 'undefined' && container) {
+      observer = new ResizeObserver(() => {
+        triggerInvalidate();
+      });
+      observer.observe(container);
+    }
+
+    const timer = setTimeout(triggerInvalidate, 200);
+    return () => {
+      clearTimeout(timer);
+      observer?.disconnect();
+    };
+  }, [map]);
+
+  return null;
 };
 
 const Map: FC<IProps> = ({
   value,
   defaultValue = null,
-  onChange = defaultChangeHandler,
+  onChange,
   readOnly = false,
 }) => {
   const [internalPoint, setInternalPoint] = useState<[number, number] | null>(
     defaultValue,
   );
 
-  const selectedPoint = value !== undefined ? value : internalPoint;
+  const rawPoint = value !== undefined ? value : internalPoint;
+  const selectedPoint = isValidCoords(rawPoint) ? rawPoint : null;
 
   const handleSelectPoint = (coordinates: [number, number]) => {
+    if (!isValidCoords(coordinates)) {
+      return;
+    }
     if (value === undefined) {
       setInternalPoint(coordinates);
     }
@@ -68,6 +109,7 @@ const Map: FC<IProps> = ({
           url={MAP_TILE_LAYER.url}
         />
 
+        <MapResizeHandler />
         <MapFocus coords={selectedPoint} />
         <MapClickHandler
           onSelectPoint={handleSelectPoint}

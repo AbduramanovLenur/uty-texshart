@@ -1,0 +1,38 @@
+.create-application-map {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  height: 100%;
+  width: 100%;
+  margin-bottom: 0;
+
+  :global {
+    .ant-form-item-row,
+    .ant-form-item-control,
+    .ant-form-item-control-input,
+    .ant-form-item-control-input-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      height: 100%;
+      width: 100%;
+      min-height: 0;
+    }
+
+    .ant-form-item-control-input-content {
+      width: 100%;
+    }
+
+    .ant-form-item-explain {
+      margin-top: var(--ant-margin-xs, 8px);
+      font-size: var(--ant-font-size, 14px);
+    }
+  }
+
+  &:global(.ant-form-item-has-error) {
+    [class*='map'] {
+      border: 1px solid var(--ant-color-error);
+    }
+  }
+}

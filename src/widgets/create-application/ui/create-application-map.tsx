@@ -1,11 +1,42 @@
 import type { FC } from 'react';
+import { Form } from 'antd';
+import { useTranslation } from 'react-i18next';
 
 import { Map } from '@features/map';
 
-const TEST_COORDINATES: [number, number] = [41.294663, 69.120467];
+import { validateCoordinates } from '../model/validators';
 
-const CreateApplicationMap: FC = () => {
-  return <Map defaultValue={TEST_COORDINATES} />;
+import styles from './create-application-map.module.scss';
+
+const { Item } = Form;
+
+interface ICreateApplicationMapProps {
+  isActive?: boolean;
+}
+
+const CreateApplicationMap: FC<ICreateApplicationMapProps> = ({
+  isActive = true,
+}) => {
+  const { t } = useTranslation();
+
+  return (
+    <Item
+      className={styles['create-application-map']}
+      name='coordinates'
+      rules={
+        isActive
+          ? [
+              {
+                required: true,
+                validator: validateCoordinates(t),
+              },
+            ]
+          : []
+      }
+    >
+      <Map />
+    </Item>
+  );
 };
 
 export default CreateApplicationMap;

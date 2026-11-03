@@ -12,7 +12,19 @@ const MapFocus: FC<IProps> = ({ coords }) => {
   const prevCoordsRef = useRef<[number, number] | null>(null);
 
   useEffect(() => {
-    if (!coords) {
+    if (
+      !coords ||
+      !Array.isArray(coords) ||
+      typeof coords[0] !== 'number' ||
+      typeof coords[1] !== 'number' ||
+      Number.isNaN(coords[0]) ||
+      Number.isNaN(coords[1])
+    ) {
+      return;
+    }
+
+    const size = map.getSize();
+    if (size.x === 0 || size.y === 0) {
       return;
     }
 

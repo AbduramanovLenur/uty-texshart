@@ -62,7 +62,9 @@
   "createApplication": {
     "bottom": {
       "cancel": "Bekor qilish",
-      "continue": "Davom etish"
+      "continue": "Davom etish",
+      "submit": "Arizani jo’natish",
+      "back": "1-qadamga qaytish"
     },
     "form": {
       "comment": "Izoh",
@@ -76,7 +78,10 @@
       "validation": {
         "communicationType": "Kommunikatsiya turini tanlang",
         "crossingMethod": "O’tkazish turini tanlang",
-        "projectGoal": "O’tkazish maqsadini tanlang"
+        "projectGoal": "O’tkazish maqsadini tanlang",
+        "locationPhotos": "Joy rasmini yuklang",
+        "comment": "Izoh kiriting",
+        "coordinates": "Xaritada joyni belgilang"
       }
     },
     "steps": {

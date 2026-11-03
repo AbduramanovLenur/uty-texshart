@@ -62,7 +62,9 @@
   "createApplication": {
     "bottom": {
       "cancel": "Отмена",
-      "continue": "Продолжить"
+      "continue": "Продолжить",
+      "submit": "Отправить заявку",
+      "back": "Вернуться к шагу 1"
     },
     "form": {
       "comment": "Примечание",
@@ -76,7 +78,10 @@
       "validation": {
         "communicationType": "Выберите тип коммуникации",
         "crossingMethod": "Выберите способ пересечения",
-        "projectGoal": "Выберите цель прокладки"
+        "projectGoal": "Выберите цель прокладки",
+        "locationPhotos": "Загрузите фото",
+        "comment": "Введите примечание",
+        "coordinates": "Укажите точку на карте"
       }
     },
     "steps": {
