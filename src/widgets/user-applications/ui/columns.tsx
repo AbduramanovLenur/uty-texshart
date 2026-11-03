@@ -1,4 +1,3 @@
-import type { ReactNode } from 'react';
 import type { TableProps } from 'antd';
 import type { TFunction } from 'i18next';
 import { Link } from 'react-router-dom';
@@ -6,20 +5,11 @@ import { SearchOutlined } from '@ant-design/icons';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
+import { ApplicationStatusTag, applicationStatusTagConfig, type IApplication, type TApplicationStatus } from '@entities/applications';
 import { filterKeys, routes } from '@shared/config';
 import type { TTableFilters } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
-
-export interface IApplication {
-  key: string;
-  id: string;
-  network: string;
-  peregon: string;
-  status: ReactNode;
-  date: string;
-  updatedAt: string;
-}
 
 export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IApplication>['columns'] => [
   {
@@ -97,22 +87,12 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
     title: t('userApplications.columns.status'),
     key: filterKeys.STATUS,
     width: 160,
-    render: (_, record) => record.status,
+    render: (_, record) => <ApplicationStatusTag status={record.status as TApplicationStatus} />,
     filteredValue: filters.status,
-    filters: [
-      {
-        text: 'Category 1',
-        value: 'Category 1',
-      },
-      {
-        text: 'Category 2',
-        value: 'Category 2',
-      },
-      {
-        text: 'Category 3',
-        value: 'Category 3',
-      },
-    ],
+    filters: Object.entries(applicationStatusTagConfig).map(([key, config]) => ({
+      text: t(config.labelKey),
+      value: key,
+    })),
     filterSearch: true,
   },
   {
