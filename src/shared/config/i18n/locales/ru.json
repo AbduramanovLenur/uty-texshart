@@ -162,7 +162,18 @@
   },
   "sidebar": {
     "dashboard": "Главная",
-    "applications": "Мои заявки"
+    "applications": "Заявки",
+    "workflow": "Рабочий процесс",
+    "technical_specs": "Технические условия",
+    "gis_and_registry": "ГИС и реестр",
+    "internal_gis": "Внутренний ГИС",
+    "comm_registry": "Реестр коммуникаций",
+    "administration": "Администрация",
+    "users": "Пользователи",
+    "roles": "Роли",
+    "references": "Справочники",
+    "regions_mtu": "Регионы и МТУ",
+    "settings": "Настройки"
   },
   "userApplication": {
     "breadcrumbs": {

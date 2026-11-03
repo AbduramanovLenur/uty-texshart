@@ -158,8 +158,19 @@
     "logout": "Chiqish"
   },
   "sidebar": {
-    "dashboard": "Bosh sahifa",
-    "applications": "Arizalarim"
+    "dashboard": "Asosiy sahifa",
+    "applications": "Arizalar",
+    "workflow": "Ish jarayoni",
+    "technical_specs": "Texnik shartlar",
+    "gis_and_registry": "GIS va reestr",
+    "internal_gis": "Ichki GIS",
+    "comm_registry": "Kommunikatsiya reestri",
+    "administration": "Ma'muriyat",
+    "users": "Foydalanuvchilar",
+    "roles": "Rollar",
+    "references": "Ma'lumotnomalar",
+    "regions_mtu": "Hududlar va MTU",
+    "settings": "Sozlamalar"
   },
   "userApplication": {
     "breadcrumbs": {

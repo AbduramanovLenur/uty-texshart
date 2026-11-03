@@ -1,8 +1,27 @@
 .menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ant-margin-lg, 24px);
   flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: block;
+    font-size: var(--ant-font-size-sm);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: var(--ant-margin-xs);
+    text-transform: uppercase;
+    color: var(--dark-88);
+  }
+
   &__list {
     display: flex;
     flex-direction: column;

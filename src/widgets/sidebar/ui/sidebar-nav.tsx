@@ -3,22 +3,58 @@ import { Menu } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import type { TMenuItem } from '@shared/types';
+import type { Role, TMenuGroup } from '@shared/types';
+import { roles } from '@shared/config';
+import { hasRoleAccess } from '@shared/utils';
 
-import { items } from '../model/menu-items';
+import { items as defaultItems } from '../model/menu-items';
 
 import styles from './sidebar-nav.module.scss';
 
-const SidebarNav: FC = () => {
+interface IProps {
+  items?: TMenuGroup[];
+  userRoles?: Role | Role[];
+}
+
+const SidebarNav: FC<IProps> = ({
+  items = defaultItems,
+  userRoles = [roles.APPLICANT],
+}) => {
   const { t } = useTranslation();
   const { pathname } = useLocation();
   const navigate = useNavigate();
-  const menuItems: TMenuItem[] = items.map((item) => ({
-    ...item,
-    label: typeof item.label === 'string' ? t(item.label) : item.label,
+
+  const activeRoles = Array.isArray(userRoles) ? userRoles : [userRoles];
+
+  const accessibleGroups = items.reduce<TMenuGroup[]>((acc, group) => {
+    if (!hasRoleAccess(group.roles, activeRoles)) return acc;
+
+    const visibleItems = group.items.filter((item) => hasRoleAccess(item.roles, activeRoles));
+    if (visibleItems.length > 0) {
+      acc.push({ ...group, items: visibleItems });
+    }
+
+    return acc;
+  }, []);
+
+  const visibleGroups = accessibleGroups.map((group) => ({
+    key: group.key ?? (typeof group.label === 'string' ? group.label : String(group.items[0]?.key ?? '')),
+    label:
+      accessibleGroups.length > 1 && typeof group.label === 'string'
+        ? t(group.label)
+        : accessibleGroups.length > 1
+          ? group.label
+          : undefined,
+    items: group.items.map((item) => ({
+      ...item,
+      label: typeof item.label === 'string' ? t(item.label) : item.label,
+    })),
   }));
 
-  const activeKey = items.find((item) => pathname === item.key || pathname.startsWith(`${item.key}/`))?.key;
+  const activeKey = visibleGroups
+    .flatMap((group) => group.items)
+    .find((item) => item.key && (pathname === item.key || pathname.startsWith(`${item.key}/`)))
+    ?.key;
 
   const handleMenuClick = ({ key }: { key: string }) => {
     navigate(key);
@@ -26,17 +62,22 @@ const SidebarNav: FC = () => {
 
   return (
     <nav className={styles['menu']}>
-      <Menu
-        classNames={{
-          root: styles['menu__list'],
-          item: styles['menu__item'],
-          itemIcon: styles['menu__item-icon'],
-          itemContent: styles['menu__item-content'],
-        }}
-        items={menuItems}
-        selectedKeys={activeKey ? [String(activeKey)] : []}
-        onClick={handleMenuClick}
-      />
+      {visibleGroups.map((group) => (
+        <div key={group.key} className={styles['menu__group']}>
+          {group.label && <span className={styles['menu__label']}>{group.label}</span>}
+          <Menu
+            classNames={{
+              root: styles['menu__list'],
+              item: styles['menu__item'],
+              itemIcon: styles['menu__item-icon'],
+              itemContent: styles['menu__item-content'],
+            }}
+            items={group.items}
+            selectedKeys={activeKey ? [String(activeKey)] : []}
+            onClick={handleMenuClick}
+          />
+        </div>
+      ))}
     </nav>
   );
 };
