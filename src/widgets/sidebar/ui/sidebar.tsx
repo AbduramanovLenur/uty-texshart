@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 
 import SidebarNav from './sidebar-nav';
+import ProfileInfoPopover from './profile-info-popover';
 
 import { ProfileInfo } from '@entities/profile';
 
@@ -19,7 +20,9 @@ const Sidebar: FC = () => {
         />
       </div>
       <SidebarNav />
-      <ProfileInfo />
+      <ProfileInfo>
+        <ProfileInfoPopover />
+      </ProfileInfo>
     </aside>
   );
 };
