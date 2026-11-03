@@ -7,4 +7,12 @@ export const routes = {
   PROFILE: '/profile',
   SINGLE_APPLICATION: (id: string) => `${routes.APPLICATIONS}/${id}`,
   CREATE_APPLICATION: () => `${routes.APPLICATIONS}/create`,
+  TECHNICAL_SPECIFICATIONS: '/technical-specifications',
+  INTERNAL_GIS: '/internal-gis',
+  COMMUNICATIONS_REGISTER: '/communications-register',
+  USERS: '/users',
+  ROLES: '/roles',
+  REFERENCE_DATA: '/reference-data',
+  REGIONS_AND_MTU: '/regions-and-mtu',
+  SETTINGS: '/settings',
 } as const;

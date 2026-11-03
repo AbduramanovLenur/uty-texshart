@@ -1,23 +1,41 @@
 import type { FC } from 'react';
-import { MapContainer, TileLayer } from 'react-leaflet';
+import { Form } from 'antd';
+import { useTranslation } from 'react-i18next';
+
+import { Map } from '@features/map';
+
+import { validateCoordinates } from '../model/validators';
 
 import styles from './create-application-map.module.scss';
-import 'leaflet/dist/leaflet.css';
 
-const CreateApplicationMap: FC = () => {
+const { Item } = Form;
+
+interface ICreateApplicationMapProps {
+  isActive?: boolean;
+}
+
+const CreateApplicationMap: FC<ICreateApplicationMapProps> = ({
+  isActive = true,
+}) => {
+  const { t } = useTranslation();
+
   return (
-    <div className={styles['create-application-map']}>
-      <MapContainer
-        center={[41.2995, 69.2401]}
-        zoom={13}
-        style={{ width: '100%', height: '100%' }}
-      >
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-          url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-        />
-      </MapContainer>
-    </div>
+    <Item
+      className={styles['create-application-map']}
+      name='coordinates'
+      rules={
+        isActive
+          ? [
+              {
+                required: true,
+                validator: validateCoordinates(t),
+              },
+            ]
+          : []
+      }
+    >
+      <Map />
+    </Item>
   );
 };
 

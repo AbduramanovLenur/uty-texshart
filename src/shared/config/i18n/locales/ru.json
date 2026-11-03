@@ -12,19 +12,22 @@
     "comment": "Примечание",
     "pending": "Ожидается",
     "steps": {
-      "actCreated": "Акт сформирован",
       "applicationAccepted": "Заявка принята",
-      "completedSuccessfully": "Успешно завершена",
-      "constructionStarted": "Строительство начато",
-      "deficienciesFound": "В документах обнаружены недостатки",
-      "downloadAct": "Скачать акт ({{size}})",
-      "expired": "Срок действия истёк",
       "forwardedToRegional": "Направлена в региональный отдел",
-      "rejectionReason": "Причина отклонения ({{size}})",
-      "rejected": "Отклонена",
-      "tashkentRegionDistance": "Дистанция пути Ташкентской области",
+      "actCreated": "Акт сформирован",
       "technicalConditionsIssued": "Технические условия выданы",
-      "technicalConditionsNotIssued": "Технические условия не выданы"
+      "constructionStarted": "Разрешение на строительство выдано",
+      "completedSuccessfully": "Успешно завершена",
+      "downloadAct": "Скачать акт ({{size}})",
+      "downloadRejectionReason": "Причина отклонения ({{size}})",
+      "downloadTechnicalSpecs": "Скачать технические условия ({{size}})",
+      "downloadConstructionEstimate": "Строительная смета ({{size}})",
+      "downloadFinalAct": "Итоговый акт ({{size}})",
+      "deficienciesFound": "В документах обнаружены недостатки",
+      "expired": "Срок действия истёк",
+      "rejected": "Заявление отклонено",
+      "technicalConditionsNotIssued": "Технические условия не выданы",
+      "technicalConditionsDenied": "Строительство невозможн"
     }
   },
   "authentication": {
@@ -59,7 +62,9 @@
   "createApplication": {
     "bottom": {
       "cancel": "Отмена",
-      "continue": "Продолжить"
+      "continue": "Продолжить",
+      "submit": "Отправить заявку",
+      "back": "Вернуться к шагу 1"
     },
     "form": {
       "comment": "Примечание",
@@ -69,7 +74,15 @@
       "locationPhotos": "Фотография планируемого места прокладки коммуникаций",
       "parametersTitle": "Инженерно-технические параметры",
       "projectGoal": "Цель прокладки коммуникации",
-      "selectPlaceholder": "Выберите"
+      "selectPlaceholder": "Выберите",
+      "validation": {
+        "communicationType": "Выберите тип коммуникации",
+        "crossingMethod": "Выберите способ пересечения",
+        "projectGoal": "Выберите цель прокладки",
+        "locationPhotos": "Загрузите фото",
+        "comment": "Введите примечание",
+        "coordinates": "Укажите точку на карте"
+      }
     },
     "steps": {
       "step1": {
@@ -123,6 +136,12 @@
     "uz": "O‘zbekcha",
     "ru": "Русский"
   },
+  "leaveConfirmModal": {
+    "title": "Chiqmoqchimisiz?",
+    "description": "Arizada siz to'ldirgan ma'lumotlaringiz o'chib ketadi",
+    "close": "Yopish",
+    "continue": "Davom etish"
+  },
   "notifications": {
     "page": {
       "title": "Уведомления",
@@ -143,7 +162,18 @@
   },
   "sidebar": {
     "dashboard": "Главная",
-    "applications": "Мои заявки"
+    "applications": "Заявки",
+    "workflow": "Рабочий процесс",
+    "technical_specs": "Технические условия",
+    "gis_and_registry": "ГИС и реестр",
+    "internal_gis": "Внутренний ГИС",
+    "comm_registry": "Реестр коммуникаций",
+    "administration": "Администрация",
+    "users": "Пользователи",
+    "roles": "Роли",
+    "references": "Справочники",
+    "regions_mtu": "Регионы и МТУ",
+    "settings": "Настройки"
   },
   "userApplication": {
     "breadcrumbs": {
@@ -170,7 +200,7 @@
       "technicalConditionsIssued": "Технические условия выданы",
       "rejected": "Отклонена",
       "draft": "Черновик",
-      "constructionStarted": "Строительство начато",
+      "constructionStarted": "Разрешение на строительство выдано",
       "completed": "Завершена"
     },
     "columns": {

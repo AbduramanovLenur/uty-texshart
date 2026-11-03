@@ -12,19 +12,22 @@
     "comment": "Izoh",
     "pending": "Kutilmoqda",
     "steps": {
-      "actCreated": "Dalolatnoma shakllantirildi",
       "applicationAccepted": "Ariza qabul qilindi",
-      "completedSuccessfully": "Muvaffaqiyatli yakunlandi",
-      "constructionStarted": "Qurilish boshlandi",
-      "deficienciesFound": "Hujjatlarda kamchilik topildi",
-      "downloadAct": "Dalolatnomani yuklash ({{size}})",
-      "expired": "Muddati o‘tgan",
       "forwardedToRegional": "Hududiy bo‘limga yo‘naltirildi",
-      "rejectionReason": "Rad etish sababi ({{size}})",
-      "rejected": "Rad etildi",
-      "tashkentRegionDistance": "Toshkent viloyati yo‘l distansiyasi",
+      "actCreated": "Dalolatnoma shakllantirildi",
       "technicalConditionsIssued": "Texnik-shart berildi",
-      "technicalConditionsNotIssued": "Texnik shart berilmadi"
+      "constructionStarted": "Qurilishga ruxsat berildi",
+      "completedSuccessfully": "Muvaffaqiyatli yakunlandi",
+      "downloadAct": "Dalolatnomani yuklash ({{size}})",
+      "downloadRejectionReason": "Rad etish sababi ({{size}})",
+      "downloadTechnicalSpecs": "Texnik shartlarni yuklash ({{size}})",
+      "downloadConstructionEstimate": "Qurilish smetasi ({{size}})",
+      "downloadFinalAct": "Yakuniy dalolatnoma ({{size}})",
+      "deficienciesFound": "Xujjatlarda kamchilik topildi",
+      "expired": "Muddati o‘tgan",
+      "rejected": "Ariza rad etildi",
+      "technicalConditionsNotIssued": "Texnik shart berilmadi",
+      "technicalConditionsDenied": "Qurilish qilishni imkoni yo’q"
     }
   },
   "authentication": {
@@ -59,7 +62,9 @@
   "createApplication": {
     "bottom": {
       "cancel": "Bekor qilish",
-      "continue": "Davom etish"
+      "continue": "Davom etish",
+      "submit": "Arizani jo’natish",
+      "back": "1-qadamga qaytish"
     },
     "form": {
       "comment": "Izoh",
@@ -69,7 +74,15 @@
       "locationPhotos": "Kommunikatsiya rejalashtirilayotgan joy rasmi",
       "parametersTitle": "Muhandislik-texnik parametrlari",
       "projectGoal": "Kommunikatsiyani o’tqazish maqsadi",
-      "selectPlaceholder": "Tanlang"
+      "selectPlaceholder": "Tanlang",
+      "validation": {
+        "communicationType": "Kommunikatsiya turini tanlang",
+        "crossingMethod": "O’tkazish turini tanlang",
+        "projectGoal": "O’tkazish maqsadini tanlang",
+        "locationPhotos": "Joy rasmini yuklang",
+        "comment": "Izoh kiriting",
+        "coordinates": "Xaritada joyni belgilang"
+      }
     },
     "steps": {
       "step1": {
@@ -123,6 +136,12 @@
     "uz": "O‘zbekcha",
     "ru": "Русский"
   },
+  "leaveConfirmModal": {
+    "title": "Chiqmoqchimisiz?",
+    "description": "Arizada siz to'ldirgan ma'lumotlaringiz o'chib ketadi",
+    "close": "Yopish",
+    "continue": "Davom etish"
+  },
   "notifications": {
     "page": {
       "title": "Bildirishnomalar",
@@ -139,8 +158,19 @@
     "logout": "Chiqish"
   },
   "sidebar": {
-    "dashboard": "Bosh sahifa",
-    "applications": "Arizalarim"
+    "dashboard": "Asosiy sahifa",
+    "applications": "Arizalar",
+    "workflow": "Ish jarayoni",
+    "technical_specs": "Texnik shartlar",
+    "gis_and_registry": "GIS va reestr",
+    "internal_gis": "Ichki GIS",
+    "comm_registry": "Kommunikatsiya reestri",
+    "administration": "Ma'muriyat",
+    "users": "Foydalanuvchilar",
+    "roles": "Rollar",
+    "references": "Ma'lumotnomalar",
+    "regions_mtu": "Hududlar va MTU",
+    "settings": "Sozlamalar"
   },
   "userApplication": {
     "breadcrumbs": {
@@ -164,7 +194,7 @@
       "technicalConditionsIssued": "Texnik-shart berildi",
       "rejected": "Rad etildi",
       "draft": "Qoralama",
-      "constructionStarted": "Qurilish boshlandi",
+      "constructionStarted": "Qurilishga ruxsat berildi",
       "completed": "Yakunlandi"
     },
     "columns": {

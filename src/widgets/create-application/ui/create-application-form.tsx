@@ -6,6 +6,8 @@ import { IconDownArrow } from '@shared/assets';
 
 import { ImageUpload } from '@features/image-upload';
 
+import { validateLocationPhotos } from '../model/validators';
+
 import styles from './create-application-form.module.scss';
 
 const { Item } = Form;
@@ -13,6 +15,12 @@ const { TextArea } = Input;
 
 const CreateApplicationForm: FC = () => {
   const { t } = useTranslation();
+
+  const testOptions = [
+    { value: '1', label: 'Option 1' },
+    { value: '2', label: 'Option 2' },
+    { value: '3', label: 'Option 3' },
+  ];
 
   return (
     <div className={styles['create-application-form']}>
@@ -23,10 +31,12 @@ const CreateApplicationForm: FC = () => {
           name='field1'
           rules={[{
             required: true,
+            message: t('createApplication.form.validation.communicationType'),
           }]}
         >
           <Select
             className={styles['create-application-form__select']}
+            options={testOptions}
             placeholder={t('createApplication.form.selectPlaceholder')}
             suffixIcon={<IconDownArrow />}
           />
@@ -37,10 +47,12 @@ const CreateApplicationForm: FC = () => {
           name='field2'
           rules={[{
             required: true,
+            message: t('createApplication.form.validation.crossingMethod'),
           }]}
         >
           <Select
             className={styles['create-application-form__select']}
+            options={testOptions}
             placeholder={t('createApplication.form.selectPlaceholder')}
             suffixIcon={<IconDownArrow />}
           />
@@ -53,13 +65,14 @@ const CreateApplicationForm: FC = () => {
             <Item
               className={styles['create-application-form__parameters-item']}
               label='Kuchlanish (kV)'
-              name='voltage'
+              name='field3'
               rules={[{
                 required: true,
               }]}
             >
               <Select
                 className={styles['create-application-form__parameters-select']}
+                options={testOptions}
                 placeholder='Tanlang'
                 suffixIcon={<IconDownArrow />}
               />
@@ -67,7 +80,7 @@ const CreateApplicationForm: FC = () => {
             <Item
               className={styles['create-application-form__parameters-item']}
               label='Kabellar soni'
-              name='cablesCount'
+              name='field4'
               rules={[{
                 required: true,
               }]}
@@ -80,7 +93,7 @@ const CreateApplicationForm: FC = () => {
             <Item
               className={styles['create-application-form__parameters-item']}
               label='Kabel markasi'
-              name='cableBrand'
+              name='field5'
               rules={[{
                 required: true,
               }]}
@@ -93,13 +106,14 @@ const CreateApplicationForm: FC = () => {
             <Item
               className={styles['create-application-form__parameters-item']}
               label='Ishlarni bajarish usuli'
-              name='workMethod'
+              name='field6'
               rules={[{
                 required: true,
               }]}
             >
               <Select
                 className={styles['create-application-form__parameters-select']}
+                options={testOptions}
                 placeholder='Tanlang'
                 suffixIcon={<IconDownArrow />}
               />
@@ -109,13 +123,15 @@ const CreateApplicationForm: FC = () => {
         <Item
           className={styles['create-application-form__item']}
           label={t('createApplication.form.projectGoal')}
-          name='field3'
+          name='field7'
           rules={[{
             required: true,
+            message: t('createApplication.form.validation.projectGoal'),
           }]}
         >
           <Select
             className={styles['create-application-form__select']}
+            options={testOptions}
             placeholder={t('createApplication.form.selectPlaceholder')}
             suffixIcon={<IconDownArrow />}
           />
@@ -125,14 +141,27 @@ const CreateApplicationForm: FC = () => {
         <Item
           className={styles['create-application-form__item']}
           label={t('createApplication.form.locationPhotos')}
-          name='locationPhotos'
+          name='field8'
+          rules={[
+            {
+              required: true,
+              validator: validateLocationPhotos(t),
+            },
+          ]}
         >
           <ImageUpload />
         </Item>
         <Item
           className={styles['create-application-form__item']}
           label={t('createApplication.form.comment')}
-          name='comment'
+          name='field9'
+          rules={[
+            {
+              required: true,
+              whitespace: true,
+              message: t('createApplication.form.validation.comment'),
+            },
+          ]}
         >
           <TextArea
             className={styles['create-application-form__textarea']}

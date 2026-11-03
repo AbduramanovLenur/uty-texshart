@@ -1,12 +1,14 @@
-import { useEffect, useState } from 'react';
+import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { Avatar, Button, Popover } from 'antd';
 import { MoreOutlined } from '@ant-design/icons';
 
-import ProfileInfoPopover from './profile-info-popover';
-
 import styles from './profile-info.module.scss';
 
-const ProfileInfo = () => {
+interface IProps {
+  children?: ReactNode;
+}
+
+const ProfileInfo: FC<IProps> = ({ children }) => {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -42,7 +44,7 @@ const ProfileInfo = () => {
         classNames={{
           root: styles['profile-info__popover'],
         }}
-        content={<ProfileInfoPopover />}
+        content={children}
         arrow={false}
         placement='topRight'
         trigger='click'

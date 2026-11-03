@@ -1,5 +1,6 @@
-import { useState, type FC, type ReactElement } from 'react';
+import { useState, type FC } from 'react';
 import { Form } from 'antd';
+import { useNavigate } from 'react-router-dom';
 
 import { stepList } from '../model/step-list';
 
@@ -9,15 +10,16 @@ import CreateApplicationForm from './create-application-form';
 import CreateApplicationMap from './create-application-map';
 import CreateApplicationBottom from './create-application-bottom';
 
+import { SKIP_LEAVE_CONFIRM } from '@features/leave-confirm-modal';
+import { routes } from '@shared/config';
+
 import styles from './create-application-body.module.scss';
 
-const component: Record<number, ReactElement> = {
-  [stepList.FORM]: <CreateApplicationForm />,
-  [stepList.MAP]: <CreateApplicationMap />,
-};
+const { useForm } = Form;
 
 const CreateApplicationBody: FC = () => {
-  const [form] = Form.useForm();
+  const navigate = useNavigate();
+  const [form] = useForm();
   const [step, setStep] = useState(stepList.FORM);
 
   const onChangeStep = (value: number) => {
@@ -26,21 +28,31 @@ const CreateApplicationBody: FC = () => {
 
   const handleReset = () => {
     form.resetFields();
+    navigate(routes.APPLICATIONS);
+  };
+
+  const handleBack = () => {
+    setStep(stepList.FORM);
   };
 
   const handleNext = async () => {
-    try {
-      await form.validateFields();
-      if (step === stepList.FORM) {
-        setStep(stepList.MAP);
-      }
-    } catch {
-      // Ant Design автоматически подсветит поля с ошибками
-    }
+    await form.validateFields().then(() => {
+      setStep(stepList.MAP);
+    });
+  };
+
+  const handleSubmit = () => {
+    form.submit();
+  };
+
+  const handleFinish = (values: Record<string, unknown>) => {
+    console.log('Form submit values:', values);
   };
 
   const handleSaveDraft = () => {
-    // TODO: implement draft saving logic
+    const draftValues = form.getFieldsValue(true);
+    console.log('Draft values:', draftValues);
+    navigate(routes.APPLICATIONS, { state: SKIP_LEAVE_CONFIRM });
   };
 
   return (
@@ -50,18 +62,35 @@ const CreateApplicationBody: FC = () => {
         onChange={onChangeStep}
       />
       <div className={styles['create-application-body__content']}>
-        <CreateApplicationTop onSaveDraft={handleSaveDraft} />
+        <CreateApplicationTop
+          onSaveDraft={handleSaveDraft}
+        />
         <Form
           form={form}
           className={styles['create-application-body__form']}
           layout='vertical'
           preserve
+          onFinish={handleFinish}
         >
-          {component[step]}
+          <div
+            className={styles['create-application-body__step']}
+            hidden={step !== stepList.FORM}
+          >
+            <CreateApplicationForm />
+          </div>
+          <div
+            className={styles['create-application-body__step']}
+            hidden={step !== stepList.MAP}
+          >
+            <CreateApplicationMap isActive={step === stepList.MAP} />
+          </div>
         </Form>
         <CreateApplicationBottom
+          isLastStep={step === stepList.MAP}
           onReset={handleReset}
+          onBack={handleBack}
           onNext={handleNext}
+          onSubmit={handleSubmit}
         />
       </div>
     </div>

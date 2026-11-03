@@ -1,8 +1,27 @@
 .menu {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ant-margin-lg, 24px);
   flex: 1;
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
+
+  &__group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__label {
+    display: block;
+    font-size: var(--ant-font-size-sm);
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: var(--ant-margin-xs);
+    text-transform: uppercase;
+    color: var(--dark-88);
+  }
+
   &__list {
     display: flex;
     flex-direction: column;
@@ -31,6 +50,7 @@
       font-size: var(--ant-font-size);
       font-weight: 600;
       line-height: 1.5;
+      color: var(--dark-88);
       &:global(.ant-menu-title-content) {
         margin-inline-end: 0;
       }
@@ -44,21 +64,19 @@
       width: initial;
       line-height: initial;
       padding: var(--ant-padding-xs) var(--ant-padding);
-      .menu {
-        &__item {
-          &-icon {
-            color: var(--dark-45);
-          }
-        }
+      svg {
+        color: var(--dark-45);
       }
     }
     &:global(.ant-menu-item-selected) {
       background-color: var(--ant-color-bg-base);
+      &:global(.ant-menu-item) {
+        svg {
+          color: var(--ant-blue);
+        }
+      }
       .menu {
         &__item {
-          &-icon {
-            color: var(--ant-blue);
-          }
           &-content {
             color: var(--ant-blue);
           }

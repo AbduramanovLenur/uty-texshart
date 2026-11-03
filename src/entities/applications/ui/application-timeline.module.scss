@@ -30,13 +30,16 @@
           color: var(--white);
           border: none;
         }
+        &__title {
+          color: var(--dark-88);
+        }
         &__pending {
           &-icon,
           &-label {
             color: var(--ant-blue);
           }
         }
-        &__subtitle {
+        &__time {
           color: var(--ant-blue);
         }
       }
@@ -46,6 +49,9 @@
         &__line {
           background-color: var(--ant-color-primary);
           background-image: none;
+        }
+        &__title {
+          color: var(--dark-88);
         }
       }
     }
@@ -94,7 +100,12 @@
     margin-top: var(--ant-margin-xs);
   }
   &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ant-margin-xs);
     padding-bottom: var(--ant-padding-sm);
+    width: 100%;
   }
   &__title {
     display: flex;
@@ -102,13 +113,12 @@
     font-size: var(--ant-font-size);
     font-weight: 600;
     line-height: 1.5;
-    color: var(--ant-color-text);
+    color: var(--dark-45);
     min-height: 32px;
   }
   &__info {
     display: flex;
     flex-direction: column;
-    gap: var(--ant-margin-xxs);
   }
   &__error {
     display: flex;
@@ -141,7 +151,7 @@
       color: var(--dark-45);
     }
   }
-  &__subtitle {
+  &__time {
     font-size: var(--ant-font-size-sm);
     line-height: 1.6;
     color: var(--dark-45);
@@ -150,12 +160,14 @@
     font-size: var(--ant-font-size-sm);
     line-height: 1.6;
     color: var(--dark-65);
+    margin-top: 6px;
   }
   &__file {
     display: flex;
     align-items: center;
     gap: var(--ant-margin-xxs);
     color: var(--ant-blue);
+    padding: 6px 0;
     span {
       display: flex;
       align-items: center;
@@ -164,7 +176,15 @@
         font-size: var(--ant-font-size-sm);
         font-weight: 600;
         line-height: 1.6;
+        text-decoration: underline;
       }
     }
+  }
+  &__employee {
+    font-size: var(--ant-font-size-sm);
+    line-height: 1.6;
+    font-weight: 600;
+    color: var(--dark-88);
+    text-decoration: underline;
   }
 }

@@ -1,0 +1,2160 @@
+[
+  {
+    "mtu": "Toshkent MTU",
+    "distances": [
+      {
+        "pch": "ПЧ-1 Саларская",
+        "mtu_confidence": "high",
+        "station_count": 16,
+        "stations": [
+          {
+            "station": "Хамза",
+            "km": 6,
+            "picket": 1,
+            "code": "722504",
+            "position_km": 6.1
+          },
+          {
+            "station": "Нурҳаёт",
+            "km": 9,
+            "picket": 8,
+            "code": "721107",
+            "position_km": 9.8
+          },
+          {
+            "station": "Тошкент",
+            "km": 11,
+            "picket": 3,
+            "code": "722400",
+            "position_km": 11.3
+          },
+          {
+            "station": "Кадырья",
+            "km": 13,
+            "picket": 5,
+            "code": "721200",
+            "position_km": 13.5
+          },
+          {
+            "station": "Байтқўрғон",
+            "km": 22,
+            "picket": 7,
+            "code": "721304",
+            "position_km": 22.7
+          },
+          {
+            "station": "Боз-су",
+            "km": 28,
+            "picket": 5,
+            "code": "721408",
+            "position_km": 28.5
+          },
+          {
+            "station": "Чирчик",
+            "km": 32,
+            "picket": 7,
+            "code": "721501",
+            "position_km": 32.7
+          },
+          {
+            "station": "Аранчи",
+            "km": 39,
+            "picket": 9,
+            "code": "721605",
+            "position_km": 39.9
+          },
+          {
+            "station": "Барраж",
+            "km": 47,
+            "picket": 9,
+            "code": "721802",
+            "position_km": 47.9
+          },
+          {
+            "station": "Ходжикент",
+            "km": 65,
+            "picket": 7,
+            "code": "722006",
+            "position_km": 65.7
+          },
+          {
+            "station": "Келес",
+            "km": 3350,
+            "picket": 8,
+            "code": "720104",
+            "position_km": 3350.8
+          },
+          {
+            "station": "Чукурсай",
+            "km": 3355,
+            "picket": 10,
+            "code": "720000",
+            "position_km": 3356.0
+          },
+          {
+            "station": "Назарбек",
+            "km": 3364,
+            "picket": 4,
+            "code": "722203",
+            "position_km": 3364.4
+          },
+          {
+            "station": "Салар",
+            "km": 3364,
+            "picket": 6,
+            "code": "720903",
+            "position_km": 3364.6
+          },
+          {
+            "station": "Ташкент-пасс",
+            "km": 3368,
+            "picket": 2,
+            "code": "720918",
+            "position_km": 3368.2
+          },
+          {
+            "station": "Далагузар",
+            "km": 3375,
+            "picket": 9,
+            "code": "722307",
+            "position_km": 3375.9
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-2 Ташкентская",
+        "mtu_confidence": "high",
+        "station_count": 19,
+        "stations": [
+          {
+            "station": "Сергели",
+            "km": 8,
+            "picket": 5,
+            "code": "723507",
+            "position_km": 8.5
+          },
+          {
+            "station": "Жалоир",
+            "km": 11,
+            "picket": 7,
+            "code": "723403",
+            "position_km": 11.7
+          },
+          {
+            "station": "Кучлук",
+            "km": 30,
+            "picket": 4,
+            "code": "723307",
+            "position_km": 30.4
+          },
+          {
+            "station": "Той-тепа",
+            "km": 41,
+            "picket": 10,
+            "code": "723206",
+            "position_km": 42.0
+          },
+          {
+            "station": "Озодлик",
+            "km": 57,
+            "picket": 2,
+            "code": "723102",
+            "position_km": 57.2
+          },
+          {
+            "station": "Ахангаран",
+            "km": 69,
+            "picket": 7,
+            "code": "723009",
+            "position_km": 69.7
+          },
+          {
+            "station": "Акча",
+            "km": 87,
+            "picket": 8,
+            "code": "722805",
+            "position_km": 87.8
+          },
+          {
+            "station": "Аблык",
+            "km": 104,
+            "picket": 4,
+            "code": "722701",
+            "position_km": 104.4
+          },
+          {
+            "station": "Ангрен",
+            "km": 114,
+            "picket": 10,
+            "code": "722608",
+            "position_km": 115.0
+          },
+          {
+            "station": "Тукимачи",
+            "km": 3372,
+            "picket": 2,
+            "code": "723600",
+            "position_km": 3372.2
+          },
+          {
+            "station": "Южный",
+            "km": 3375,
+            "picket": 2,
+            "code": "723615",
+            "position_km": 3375.2
+          },
+          {
+            "station": "Рахимова",
+            "km": 3377,
+            "picket": 1,
+            "code": "723704",
+            "position_km": 3377.1
+          },
+          {
+            "station": "Урта-аул",
+            "km": 3385,
+            "picket": 9,
+            "code": "723808",
+            "position_km": 3385.9
+          },
+          {
+            "station": "Узбекистан",
+            "km": 3389,
+            "picket": 4,
+            "code": "723827",
+            "position_km": 3389.4
+          },
+          {
+            "station": "Янгиюль",
+            "km": 3396,
+            "picket": 6,
+            "code": "724001",
+            "position_km": 3396.6
+          },
+          {
+            "station": "Пахта",
+            "km": 3411,
+            "picket": 6,
+            "code": "724209",
+            "position_km": 3411.6
+          },
+          {
+            "station": "Алмазар",
+            "km": 3420,
+            "picket": 10,
+            "code": "724302",
+            "position_km": 3421.0
+          },
+          {
+            "station": "Чиназ",
+            "km": 3430,
+            "picket": 3,
+            "code": "724406",
+            "position_km": 3430.3
+          },
+          {
+            "station": "Новый Чиназ",
+            "km": 3436,
+            "picket": 5,
+            "code": "724502",
+            "position_km": 3436.5
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-4 Хавастская",
+        "mtu_confidence": "boundary",
+        "station_count": 10,
+        "stations": [
+          {
+            "station": "Фархад",
+            "km": 22,
+            "picket": 3,
+            "code": "726007",
+            "position_km": 22.3
+          },
+          {
+            "station": "Бекабад",
+            "km": 35,
+            "picket": 6,
+            "code": "726100",
+            "position_km": 35.6
+          },
+          {
+            "station": "Сырдарьинская",
+            "km": 3449,
+            "picket": 9,
+            "code": "724707",
+            "position_km": 3449.9
+          },
+          {
+            "station": "Бахт",
+            "km": 3462,
+            "picket": 3,
+            "code": "724800",
+            "position_km": 3462.3
+          },
+          {
+            "station": "Акалтын",
+            "km": 3475,
+            "picket": 4,
+            "code": "724904",
+            "position_km": 3475.4
+          },
+          {
+            "station": "Гулистан",
+            "km": 3487,
+            "picket": 9,
+            "code": "725004",
+            "position_km": 3487.9
+          },
+          {
+            "station": "Баяуд",
+            "km": 3493,
+            "picket": 1,
+            "code": "725108",
+            "position_km": 3493.1
+          },
+          {
+            "station": "Блок пост",
+            "km": 3505,
+            "picket": 10,
+            "code": null,
+            "position_km": 3506.0
+          },
+          {
+            "station": "Янгиер",
+            "km": 3509,
+            "picket": 7,
+            "code": "725201",
+            "position_km": 3509.7
+          },
+          {
+            "station": "Хаваст",
+            "km": 3520,
+            "picket": 5,
+            "code": "725803",
+            "position_km": 3520.5
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-3 Камчиқ",
+        "mtu_confidence": "boundary",
+        "station_count": 7,
+        "stations": [
+          {
+            "station": "Ko‘l",
+            "km": 16,
+            "picket": 10,
+            "code": "722646",
+            "position_km": 17.0
+          },
+          {
+            "station": "Orzu",
+            "km": 37,
+            "picket": 2,
+            "code": "722650",
+            "position_km": 37.2
+          },
+          {
+            "station": "Chodak",
+            "km": 60,
+            "picket": 10,
+            "code": "741740",
+            "position_km": 61.0
+          },
+          {
+            "station": "Kon",
+            "km": 74,
+            "picket": 3,
+            "code": "741721",
+            "position_km": 74.3
+          },
+          {
+            "station": "Temiryo’lobod",
+            "km": 87,
+            "picket": 6,
+            "code": "741702",
+            "position_km": 87.6
+          },
+          {
+            "station": "Koshminor",
+            "km": 103,
+            "picket": 3,
+            "code": "741736",
+            "position_km": 103.3
+          },
+          {
+            "station": "Pop-2 (park-A)",
+            "km": 121,
+            "picket": 2,
+            "code": "740702",
+            "position_km": 121.2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "mtu": "Buxoro MTU",
+    "distances": [
+      {
+        "pch": "ПЧ-5 Джизакская",
+        "mtu_confidence": "confirmed",
+        "station_count": 14,
+        "stations": [
+          {
+            "station": "Работ (Рзд 3)",
+            "km": 15,
+            "picket": 8,
+            "code": "726505",
+            "position_km": 15.8
+          },
+          {
+            "station": "Байтаг (Рзд.22)",
+            "km": 21,
+            "picket": 10,
+            "code": "726806",
+            "position_km": 22.0
+          },
+          {
+            "station": "Чимкурган (Рзд.41)",
+            "km": 41,
+            "picket": 9,
+            "code": "726401",
+            "position_km": 41.9
+          },
+          {
+            "station": "Учкулач (Рзд.71)",
+            "km": 71,
+            "picket": 8,
+            "code": null,
+            "position_km": 71.8
+          },
+          {
+            "station": "Ирджарская",
+            "km": 3488,
+            "picket": 8,
+            "code": "725502",
+            "position_km": 3488.8
+          },
+          {
+            "station": "Дустлик",
+            "km": 3508,
+            "picket": 8,
+            "code": "725606",
+            "position_km": 3508.8
+          },
+          {
+            "station": "Пахтакор",
+            "km": 3532,
+            "picket": 8,
+            "code": "725708",
+            "position_km": 3532.8
+          },
+          {
+            "station": "Чаманзор (Рзд.205)",
+            "km": 3540,
+            "picket": 9,
+            "code": "726308",
+            "position_km": 3540.9
+          },
+          {
+            "station": "Даштабад",
+            "km": 3550,
+            "picket": 5,
+            "code": "726609",
+            "position_km": 3550.5
+          },
+          {
+            "station": "Джизак-2",
+            "km": 3555,
+            "picket": 8,
+            "code": "726903",
+            "position_km": 3555.8
+          },
+          {
+            "station": "Зомин (Рзд6)",
+            "km": 3566,
+            "picket": 5,
+            "code": "726613",
+            "position_km": 3566.5
+          },
+          {
+            "station": "Зарбдар",
+            "km": 3581,
+            "picket": 6,
+            "code": "726702",
+            "position_km": 3581.6
+          },
+          {
+            "station": "Сайхун (Рзд.9)",
+            "km": 3592,
+            "picket": 6,
+            "code": "726810",
+            "position_km": 3592.6
+          },
+          {
+            "station": "Джизак-1",
+            "km": 3609,
+            "picket": 8,
+            "code": "726903",
+            "position_km": 3609.8
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-8 Самаркандская",
+        "mtu_confidence": "confirmed",
+        "station_count": 11,
+        "stations": [
+          {
+            "station": "Сангзор (Рзд.13)",
+            "km": 3621,
+            "picket": 7,
+            "code": "727226",
+            "position_km": 3621.7
+          },
+          {
+            "station": "Галлаорол",
+            "km": 3634,
+            "picket": 10,
+            "code": "727207",
+            "position_km": 3635.0
+          },
+          {
+            "station": "Нурлидон (Раз№16)",
+            "km": 3647,
+            "picket": 6,
+            "code": "727300",
+            "position_km": 3647.6
+          },
+          {
+            "station": "Маржонбулак",
+            "km": 3661,
+            "picket": 8,
+            "code": "727404",
+            "position_km": 3661.8
+          },
+          {
+            "station": "Булунгур",
+            "km": 3691,
+            "picket": 5,
+            "code": "727508",
+            "position_km": 3691.5
+          },
+          {
+            "station": "Джамбай",
+            "km": 3707,
+            "picket": 8,
+            "code": "727601",
+            "position_km": 3707.8
+          },
+          {
+            "station": "Зеравшан",
+            "km": 3715,
+            "picket": 4,
+            "code": "727705",
+            "position_km": 3715.4
+          },
+          {
+            "station": "Самарканд",
+            "km": 3722,
+            "picket": 1,
+            "code": "727809",
+            "position_km": 3722.1
+          },
+          {
+            "station": "Улугбек",
+            "km": 3731,
+            "picket": 1,
+            "code": "727902",
+            "position_km": 3731.1
+          },
+          {
+            "station": "Мараканд",
+            "km": 3738,
+            "picket": 6,
+            "code": "728002",
+            "position_km": 3738.6
+          },
+          {
+            "station": "Джума",
+            "km": 3746,
+            "picket": 8,
+            "code": "728106",
+            "position_km": 3746.8
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-9 Учкудукская (Наваийская)",
+        "mtu_confidence": "confirmed",
+        "station_count": 21,
+        "stations": [
+          {
+            "station": "Тинчлик",
+            "km": 7,
+            "picket": 7,
+            "code": "731407",
+            "position_km": 7.7
+          },
+          {
+            "station": "Кармана (Рзд.301)",
+            "km": 17,
+            "picket": 3,
+            "code": "730905",
+            "position_km": 17.3
+          },
+          {
+            "station": "Кенимех",
+            "km": 39,
+            "picket": 8,
+            "code": "731503",
+            "position_km": 39.8
+          },
+          {
+            "station": "Зафарабад",
+            "km": 78,
+            "picket": 7,
+            "code": "731607",
+            "position_km": 78.7
+          },
+          {
+            "station": "Гулобод (Рзд.139)",
+            "km": 112,
+            "picket": 9,
+            "code": "731611",
+            "position_km": 112.9
+          },
+          {
+            "station": "Тарраққиёт (Рзд.305)",
+            "km": 127,
+            "picket": 2,
+            "code": "731630",
+            "position_km": 127.2
+          },
+          {
+            "station": "Кара-Катта",
+            "km": 138,
+            "picket": 7,
+            "code": "731700",
+            "position_km": 138.7
+          },
+          {
+            "station": "Юксалиш (Рзд.306)",
+            "km": 152,
+            "picket": 8,
+            "code": "731734",
+            "position_km": 152.8
+          },
+          {
+            "station": "Мустакиллик",
+            "km": 167,
+            "picket": 8,
+            "code": "730201",
+            "position_km": 167.8
+          },
+          {
+            "station": "Нурота (Рзд.307)",
+            "km": 181,
+            "picket": 2,
+            "code": "728303",
+            "position_km": 181.2
+          },
+          {
+            "station": "Аджибугут (Рзд.141)",
+            "km": 195,
+            "picket": 9,
+            "code": "732402",
+            "position_km": 195.9
+          },
+          {
+            "station": "Тошработ (Рзд.311)",
+            "km": 204,
+            "picket": 4,
+            "code": "731749",
+            "position_km": 204.4
+          },
+          {
+            "station": "Томди (Рзд.308)",
+            "km": 215,
+            "picket": 8,
+            "code": "731768",
+            "position_km": 215.8
+          },
+          {
+            "station": "Кизил-кудук",
+            "km": 227,
+            "picket": 1,
+            "code": "731804",
+            "position_km": 227.1
+          },
+          {
+            "station": "Ҳузурчўл (Рзд.309)",
+            "km": 242,
+            "picket": 4,
+            "code": "731787",
+            "position_km": 242.4
+          },
+          {
+            "station": "Қизилқум (Рзд.142)",
+            "km": 257,
+            "picket": 10,
+            "code": "731819",
+            "position_km": 258.0
+          },
+          {
+            "station": "Учкудук-2",
+            "km": 276,
+            "picket": 6,
+            "code": "732205",
+            "position_km": 276.6
+          },
+          {
+            "station": "Учкудук-1",
+            "km": 289,
+            "picket": 9,
+            "code": "732101",
+            "position_km": 289.9
+          },
+          {
+            "station": "Майлисай",
+            "km": 303,
+            "picket": 5,
+            "code": "732309",
+            "position_km": 303.5
+          },
+          {
+            "station": "Шўрбулоқ (Курали)",
+            "km": 344,
+            "picket": 6,
+            "code": "739844",
+            "position_km": 344.6
+          },
+          {
+            "station": "Бузаубай",
+            "km": 389,
+            "picket": 6,
+            "code": "739834",
+            "position_km": 389.6
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-10 Бухарская",
+        "mtu_confidence": "confirmed",
+        "station_count": 24,
+        "stations": [
+          {
+            "station": "Бухара-2",
+            "km": 10,
+            "picket": 2,
+            "code": "730106",
+            "position_km": 10.2
+          },
+          {
+            "station": "Азизобод",
+            "km": 3953,
+            "picket": 9,
+            "code": "730445",
+            "position_km": 3953.9
+          },
+          {
+            "station": "Фаровон (Рзд.42)",
+            "km": 3965,
+            "picket": 3,
+            "code": "730411",
+            "position_km": 3965.3
+          },
+          {
+            "station": "Бухара-1",
+            "km": 3970,
+            "picket": 0,
+            "code": "730002",
+            "position_km": 3970.0
+          },
+          {
+            "station": "Когон",
+            "km": 3973,
+            "picket": 5,
+            "code": "740606",
+            "position_km": 3973.5
+          },
+          {
+            "station": "Пойкент (Рзд.43)",
+            "km": 3975,
+            "picket": 9,
+            "code": "730454",
+            "position_km": 3975.9
+          },
+          {
+            "station": "Амиробод (Рзд.143)",
+            "km": 3985,
+            "picket": 1,
+            "code": "730214",
+            "position_km": 3985.1
+          },
+          {
+            "station": "Мургак",
+            "km": 3994,
+            "picket": 7,
+            "code": "730407",
+            "position_km": 3994.7
+          },
+          {
+            "station": "Ҳамкорлик (Рзд.144)",
+            "km": 3996,
+            "picket": 5,
+            "code": "730229",
+            "position_km": 3996.5
+          },
+          {
+            "station": "Караул-базар (парк «Б»)",
+            "km": 4005,
+            "picket": 2,
+            "code": "730303",
+            "position_km": 4005.2
+          },
+          {
+            "station": "Караул-базар (парк «А»)",
+            "km": 4007,
+            "picket": 10,
+            "code": "730303",
+            "position_km": 4008.0
+          },
+          {
+            "station": "Янгиобод",
+            "km": 4009,
+            "picket": 5,
+            "code": "729908",
+            "position_km": 4009.5
+          },
+          {
+            "station": "Якатут",
+            "km": 4013,
+            "picket": 8,
+            "code": "730500",
+            "position_km": 4013.8
+          },
+          {
+            "station": "Блок пост",
+            "km": 4022,
+            "picket": 1,
+            "code": null,
+            "position_km": 4022.1
+          },
+          {
+            "station": "Ёшлик (Рзд.145)",
+            "km": 4022,
+            "picket": 8,
+            "code": "730318",
+            "position_km": 4022.8
+          },
+          {
+            "station": "Навбахор",
+            "km": 4035,
+            "picket": 8,
+            "code": "731109",
+            "position_km": 4035.8
+          },
+          {
+            "station": "Каракуль",
+            "km": 4039,
+            "picket": 8,
+            "code": "730604",
+            "position_km": 4039.8
+          },
+          {
+            "station": "Алат",
+            "km": 4050,
+            "picket": 1,
+            "code": "730708",
+            "position_km": 4050.1
+          },
+          {
+            "station": "Ходжадавлет",
+            "km": 4060,
+            "picket": 4,
+            "code": "730712",
+            "position_km": 4060.4
+          },
+          {
+            "station": "Яхшилик",
+            "km": 4066,
+            "picket": 9,
+            "code": "729804",
+            "position_km": 4066.9
+          },
+          {
+            "station": "Парвоз",
+            "km": 4098,
+            "picket": 2,
+            "code": "729819",
+            "position_km": 4098.2
+          },
+          {
+            "station": "Қорлитоғ",
+            "km": 4137,
+            "picket": 2,
+            "code": "729700",
+            "position_km": 4137.2
+          },
+          {
+            "station": "Кийикли",
+            "km": 4168,
+            "picket": 5,
+            "code": "729715",
+            "position_km": 4168.5
+          },
+          {
+            "station": "Хизирбобо",
+            "km": 4200,
+            "picket": 2,
+            "code": "729607",
+            "position_km": 4200.2
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-11 Зиадинская",
+        "mtu_confidence": "confirmed",
+        "station_count": 15,
+        "stations": [
+          {
+            "station": "Дўстобод (Рзд.24)",
+            "km": 3765,
+            "picket": 1,
+            "code": "728125",
+            "position_km": 3765.1
+          },
+          {
+            "station": "Нурбулак",
+            "km": 3774,
+            "picket": 6,
+            "code": "728204",
+            "position_km": 3774.6
+          },
+          {
+            "station": "3789 км пк 9",
+            "km": 3789,
+            "picket": 9,
+            "code": null,
+            "position_km": 3789.9
+          },
+          {
+            "station": "Каттакурган",
+            "km": 3798,
+            "picket": 10,
+            "code": "728407",
+            "position_km": 3799.0
+          },
+          {
+            "station": "Соҳибкор (Рзд.28)",
+            "km": 3810,
+            "picket": 2,
+            "code": "728500",
+            "position_km": 3810.2
+          },
+          {
+            "station": "Зирабулак",
+            "km": 3827,
+            "picket": 8,
+            "code": "728604",
+            "position_km": 3827.8
+          },
+          {
+            "station": "Нарпай (Рзд.30)",
+            "km": 3836,
+            "picket": 5,
+            "code": "728727",
+            "position_km": 3836.5
+          },
+          {
+            "station": "Зиадин",
+            "km": 3854,
+            "picket": 8,
+            "code": "728708",
+            "position_km": 3854.8
+          },
+          {
+            "station": "Навои",
+            "km": 3878,
+            "picket": 10,
+            "code": "731306",
+            "position_km": 3879.0
+          },
+          {
+            "station": "Бинокор",
+            "km": 3887,
+            "picket": 9,
+            "code": "731202",
+            "position_km": 3887.9
+          },
+          {
+            "station": "Малик",
+            "km": 3904,
+            "picket": 1,
+            "code": "731221",
+            "position_km": 3904.1
+          },
+          {
+            "station": "Маликобод (Рзд38)",
+            "km": 3917,
+            "picket": 5,
+            "code": "731113",
+            "position_km": 3917.5
+          },
+          {
+            "station": "Кизил-тепо",
+            "km": 3927,
+            "picket": 4,
+            "code": "731005",
+            "position_km": 3927.4
+          },
+          {
+            "station": "Элобод (Рзд39)",
+            "km": 3936,
+            "picket": 5,
+            "code": "731011",
+            "position_km": 3936.5
+          },
+          {
+            "station": "Тўдакўл",
+            "km": 3945,
+            "picket": 10,
+            "code": "730430",
+            "position_km": 3946.0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "mtu": "Qo'qon MTU",
+    "distances": [
+      {
+        "pch": "ПЧ-6 Кокандская",
+        "mtu_confidence": "high",
+        "station_count": 18,
+        "stations": [
+          {
+            "station": "Коканд-2 (Нам.парк)",
+            "km": 2,
+            "picket": 9,
+            "code": "740004",
+            "position_km": 2.9
+          },
+          {
+            "station": "Халкабад (Пап нал.)",
+            "km": 4,
+            "picket": 5,
+            "code": "741609",
+            "position_km": 4.5
+          },
+          {
+            "station": "Бувайда",
+            "km": 24,
+            "picket": 7,
+            "code": "740502",
+            "position_km": 24.7
+          },
+          {
+            "station": "Пап1",
+            "km": 46,
+            "picket": 3,
+            "code": "740702",
+            "position_km": 46.3
+          },
+          {
+            "station": "Чуст",
+            "km": 54,
+            "picket": 6,
+            "code": "740803",
+            "position_km": 54.6
+          },
+          {
+            "station": "Туракурган",
+            "km": 77,
+            "picket": 6,
+            "code": "740907",
+            "position_km": 77.6
+          },
+          {
+            "station": "Раустан",
+            "km": 86,
+            "picket": 6,
+            "code": "741007",
+            "position_km": 86.6
+          },
+          {
+            "station": "Наманган",
+            "km": 91,
+            "picket": 9,
+            "code": "741100",
+            "position_km": 91.9
+          },
+          {
+            "station": "Чартак",
+            "km": 109,
+            "picket": 4,
+            "code": "741204",
+            "position_km": 109.4
+          },
+          {
+            "station": "Уйчи",
+            "km": 121,
+            "picket": 8,
+            "code": "741308",
+            "position_km": 121.8
+          },
+          {
+            "station": "Сувонобод",
+            "km": 146,
+            "picket": 7,
+            "code": "740112",
+            "position_km": 146.7
+          },
+          {
+            "station": "Рапкан",
+            "km": 164,
+            "picket": 4,
+            "code": "740305",
+            "position_km": 164.4
+          },
+          {
+            "station": "Яйпан",
+            "km": 176,
+            "picket": 8,
+            "code": "744306",
+            "position_km": 176.8
+          },
+          {
+            "station": "Коканд-1 (цент)",
+            "km": 191,
+            "picket": 4,
+            "code": "740004",
+            "position_km": 191.4
+          },
+          {
+            "station": "Какир",
+            "km": 202,
+            "picket": 4,
+            "code": "742207",
+            "position_km": 202.4
+          },
+          {
+            "station": "Фуркат",
+            "km": 216,
+            "picket": 7,
+            "code": "742300",
+            "position_km": 216.7
+          },
+          {
+            "station": "Мехнатабад",
+            "km": 229,
+            "picket": 1,
+            "code": "742315",
+            "position_km": 229.1
+          },
+          {
+            "station": "Алты-арык",
+            "km": 242,
+            "picket": 1,
+            "code": "742404",
+            "position_km": 242.1
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-7 Андижанская",
+        "mtu_confidence": "high",
+        "station_count": 23,
+        "stations": [
+          {
+            "station": "Киргили",
+            "km": 7,
+            "picket": 7,
+            "code": "742705",
+            "position_km": 7.7
+          },
+          {
+            "station": "Фергана-1",
+            "km": 8,
+            "picket": 8,
+            "code": "742601",
+            "position_km": 8.8
+          },
+          {
+            "station": "Фергана-2",
+            "km": 14,
+            "picket": 4,
+            "code": "742809",
+            "position_km": 14.4
+          },
+          {
+            "station": "Шахрихан",
+            "km": 15,
+            "picket": 5,
+            "code": "743500",
+            "position_km": 15.5
+          },
+          {
+            "station": "Пахтаабад",
+            "km": 19,
+            "picket": 2,
+            "code": "742103",
+            "position_km": 19.2
+          },
+          {
+            "station": "Кувасай",
+            "km": 31,
+            "picket": 5,
+            "code": "742902",
+            "position_km": 31.5
+          },
+          {
+            "station": "Мехнатобод",
+            "km": 137,
+            "picket": 8,
+            "code": "741435",
+            "position_km": 137.8
+          },
+          {
+            "station": "Хакулабад",
+            "km": 156,
+            "picket": 7,
+            "code": "741806",
+            "position_km": 156.7
+          },
+          {
+            "station": "Пайтуг",
+            "km": 166,
+            "picket": 8,
+            "code": "741908",
+            "position_km": 166.8
+          },
+          {
+            "station": "Корадарё",
+            "km": 175,
+            "picket": 6,
+            "code": "741914",
+            "position_km": 175.6
+          },
+          {
+            "station": "Андижан-2",
+            "km": 183,
+            "picket": 3,
+            "code": "742003",
+            "position_km": 183.3
+          },
+          {
+            "station": "Маргилан",
+            "km": 260,
+            "picket": 8,
+            "code": "742508",
+            "position_km": 260.8
+          },
+          {
+            "station": "Ахунбабаева",
+            "km": 263,
+            "picket": 8,
+            "code": "743209",
+            "position_km": 263.8
+          },
+          {
+            "station": "Акбарабад",
+            "km": 278,
+            "picket": 5,
+            "code": "743214",
+            "position_km": 278.5
+          },
+          {
+            "station": "Кува",
+            "km": 294,
+            "picket": 6,
+            "code": "743303",
+            "position_km": 294.6
+          },
+          {
+            "station": "Ассака",
+            "km": 309,
+            "picket": 9,
+            "code": "743407",
+            "position_km": 309.9
+          },
+          {
+            "station": "Ахтачи",
+            "km": 317,
+            "picket": 10,
+            "code": "743708",
+            "position_km": 318.0
+          },
+          {
+            "station": "Андижан-1",
+            "km": 327,
+            "picket": 1,
+            "code": "743604",
+            "position_km": 327.1
+          },
+          {
+            "station": "Учкургон",
+            "km": 333,
+            "picket": 10,
+            "code": "741401",
+            "position_km": 334.0
+          },
+          {
+            "station": "Янги Андижон",
+            "km": 339,
+            "picket": 1,
+            "code": "743623",
+            "position_km": 339.1
+          },
+          {
+            "station": "Жалакудук",
+            "km": 356,
+            "picket": 6,
+            "code": "743801",
+            "position_km": 356.6
+          },
+          {
+            "station": "Савай",
+            "km": 367,
+            "picket": 1,
+            "code": "743905",
+            "position_km": 367.1
+          },
+          {
+            "station": "Ханабад",
+            "km": 391,
+            "picket": 7,
+            "code": "744109",
+            "position_km": 391.7
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "mtu": "Qarshi MTU",
+    "distances": [
+      {
+        "pch": "ПЧ-12 Каршинская",
+        "mtu_confidence": "high",
+        "station_count": 21,
+        "stations": [
+          {
+            "station": "Дашт",
+            "km": 8,
+            "picket": 3,
+            "code": "733509",
+            "position_km": 8.3
+          },
+          {
+            "station": "Кайирма",
+            "km": 16,
+            "picket": 4,
+            "code": "728816",
+            "position_km": 16.4
+          },
+          {
+            "station": "Кенгсой",
+            "km": 19,
+            "picket": 5,
+            "code": "732602",
+            "position_km": 19.5
+          },
+          {
+            "station": "Шуртан",
+            "km": 20,
+            "picket": 6,
+            "code": "733602",
+            "position_km": 20.6
+          },
+          {
+            "station": "Бузахур",
+            "km": 30,
+            "picket": 2,
+            "code": "728820",
+            "position_km": 30.2
+          },
+          {
+            "station": "Ташгузар",
+            "km": 30,
+            "picket": 7,
+            "code": "728801",
+            "position_km": 30.7
+          },
+          {
+            "station": "Джаркудук",
+            "km": 45,
+            "picket": 7,
+            "code": "728835",
+            "position_km": 45.7
+          },
+          {
+            "station": "Гузар",
+            "km": 48,
+            "picket": 1,
+            "code": "733706",
+            "position_km": 48.1
+          },
+          {
+            "station": "Дехканабад",
+            "km": 58,
+            "picket": 1,
+            "code": "728905",
+            "position_km": 58.1
+          },
+          {
+            "station": "Камаши",
+            "km": 75,
+            "picket": 5,
+            "code": "733808",
+            "position_km": 75.5
+          },
+          {
+            "station": "Карадахна",
+            "km": 80,
+            "picket": 10,
+            "code": "728919",
+            "position_km": 81.0
+          },
+          {
+            "station": "Чашма",
+            "km": 91,
+            "picket": 1,
+            "code": "728924",
+            "position_km": 91.1
+          },
+          {
+            "station": "Яккабаг",
+            "km": 101,
+            "picket": 9,
+            "code": "733903",
+            "position_km": 101.9
+          },
+          {
+            "station": "Акрабад",
+            "km": 109,
+            "picket": 8,
+            "code": "729005",
+            "position_km": 109.8
+          },
+          {
+            "station": "Танхоз",
+            "km": 110,
+            "picket": 5,
+            "code": "734003",
+            "position_km": 110.5
+          },
+          {
+            "station": "Китаб",
+            "km": 121,
+            "picket": 7,
+            "code": "734107",
+            "position_km": 121.7
+          },
+          {
+            "station": "Карши",
+            "km": 4127,
+            "picket": 4,
+            "code": "733104",
+            "position_km": 4127.4
+          },
+          {
+            "station": "Туморчи (Рзд-151)",
+            "km": 4137,
+            "picket": 7,
+            "code": "733123",
+            "position_km": 4137.7
+          },
+          {
+            "station": "Нишан",
+            "km": 4151,
+            "picket": 4,
+            "code": "734200",
+            "position_km": 4151.4
+          },
+          {
+            "station": "Джайран",
+            "km": 4172,
+            "picket": 1,
+            "code": "734304",
+            "position_km": 4172.1
+          },
+          {
+            "station": "Карвон (Рзд.154)",
+            "km": 4181,
+            "picket": 4,
+            "code": "734319",
+            "position_km": 4181.4
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-14 Кашкадарьинская",
+        "mtu_confidence": "boundary",
+        "station_count": 11,
+        "stations": [
+          {
+            "station": "Гумбаз",
+            "km": 3758,
+            "picket": 6,
+            "code": "728017",
+            "position_km": 3758.6
+          },
+          {
+            "station": "Улус",
+            "km": 3774,
+            "picket": 7,
+            "code": "728021",
+            "position_km": 3774.7
+          },
+          {
+            "station": "Джам",
+            "km": 3788,
+            "picket": 1,
+            "code": "728036",
+            "position_km": 3788.1
+          },
+          {
+            "station": "Айрытам",
+            "km": 3803,
+            "picket": 2,
+            "code": "733405",
+            "position_km": 3803.2
+          },
+          {
+            "station": "Алатун",
+            "km": 3825,
+            "picket": 1,
+            "code": "733301",
+            "position_km": 3825.1
+          },
+          {
+            "station": "Негуз",
+            "km": 3846,
+            "picket": 3,
+            "code": "733316",
+            "position_km": 3846.3
+          },
+          {
+            "station": "Мубарек",
+            "km": 4050,
+            "picket": 8,
+            "code": "732703",
+            "position_km": 4050.8
+          },
+          {
+            "station": "Машъал (Серный з-д)",
+            "km": 4062,
+            "picket": 8,
+            "code": "732807",
+            "position_km": 4062.8
+          },
+          {
+            "station": "Касан",
+            "km": 4093,
+            "picket": 5,
+            "code": "733000",
+            "position_km": 4093.5
+          },
+          {
+            "station": "Суғдиёна (Рзд. 149)",
+            "km": 4104,
+            "picket": 9,
+            "code": "733212",
+            "position_km": 4104.9
+          },
+          {
+            "station": "Кашкадарья",
+            "km": 4114,
+            "picket": 9,
+            "code": "733208",
+            "position_km": 4114.9
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-15 Дарбандская",
+        "mtu_confidence": "boundary",
+        "station_count": 14,
+        "stations": [
+          {
+            "station": "Акназар",
+            "km": 126,
+            "picket": 10,
+            "code": "729014",
+            "position_km": 127.0
+          },
+          {
+            "station": "Шураб",
+            "km": 137,
+            "picket": 5,
+            "code": "729024",
+            "position_km": 137.5
+          },
+          {
+            "station": "Дарбанд",
+            "km": 146,
+            "picket": 1,
+            "code": "729109",
+            "position_km": 146.1
+          },
+          {
+            "station": "Бойсун",
+            "km": 165,
+            "picket": 4,
+            "code": "729202",
+            "position_km": 165.4
+          },
+          {
+            "station": "Пульхаким",
+            "km": 180,
+            "picket": 2,
+            "code": "729217",
+            "position_km": 180.2
+          },
+          {
+            "station": "Тангимуш",
+            "km": 199,
+            "picket": 7,
+            "code": "729306",
+            "position_km": 199.7
+          },
+          {
+            "station": "Акджар",
+            "km": 213,
+            "picket": 5,
+            "code": "729400",
+            "position_km": 213.5
+          },
+          {
+            "station": "Кумкурган",
+            "km": 4532,
+            "picket": 9,
+            "code": "735608",
+            "position_km": 4532.9
+          },
+          {
+            "station": "Эльбаян",
+            "km": 4549,
+            "picket": 2,
+            "code": "735701",
+            "position_km": 4549.2
+          },
+          {
+            "station": "Шурчи",
+            "km": 4560,
+            "picket": 2,
+            "code": "735805",
+            "position_km": 4560.2
+          },
+          {
+            "station": "Хайрабад",
+            "km": 4580,
+            "picket": 5,
+            "code": "735909",
+            "position_km": 4580.5
+          },
+          {
+            "station": "Денау",
+            "km": 4592,
+            "picket": 1,
+            "code": "736009",
+            "position_km": 4592.1
+          },
+          {
+            "station": "Сары-ассия",
+            "km": 4606,
+            "picket": 2,
+            "code": "736102",
+            "position_km": 4606.2
+          },
+          {
+            "station": "Кудукли",
+            "km": 4611,
+            "picket": 5,
+            "code": "736121",
+            "position_km": 4611.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "mtu": "Termiz MTU",
+    "distances": [
+      {
+        "pch": "ПЧ-13 Термезская",
+        "mtu_confidence": "high",
+        "station_count": 12,
+        "stations": [
+          {
+            "station": "Галаба",
+            "km": 9,
+            "picket": 4,
+            "code": "736304",
+            "position_km": 9.4
+          },
+          {
+            "station": "Амузанг",
+            "km": 51,
+            "picket": 8,
+            "code": "736600",
+            "position_km": 51.8
+          },
+          {
+            "station": "Сурхонобод",
+            "km": 4383,
+            "picket": 9,
+            "code": "734713",
+            "position_km": 4383.9
+          },
+          {
+            "station": "Болдыр",
+            "km": 4403,
+            "picket": 2,
+            "code": "739401",
+            "position_km": 4403.2
+          },
+          {
+            "station": "Шерабад",
+            "km": 4426,
+            "picket": 7,
+            "code": "734802",
+            "position_km": 4426.7
+          },
+          {
+            "station": "Наушахар",
+            "km": 4436,
+            "picket": 8,
+            "code": "734906",
+            "position_km": 4436.8
+          },
+          {
+            "station": "Уч-Кизил",
+            "km": 4449,
+            "picket": 3,
+            "code": "735006",
+            "position_km": 4449.3
+          },
+          {
+            "station": "Термез",
+            "km": 4459,
+            "picket": 9,
+            "code": "735109",
+            "position_km": 4459.9
+          },
+          {
+            "station": "Бактрия",
+            "km": 4473,
+            "picket": 9,
+            "code": "735307",
+            "position_km": 4473.9
+          },
+          {
+            "station": "Джаркурган",
+            "km": 4491,
+            "picket": 7,
+            "code": "735400",
+            "position_km": 4491.7
+          },
+          {
+            "station": "Зартепа (Рзд. 165)",
+            "km": 4504,
+            "picket": 4,
+            "code": "735415",
+            "position_km": 4504.4
+          },
+          {
+            "station": "Сурхан",
+            "km": 4519,
+            "picket": 5,
+            "code": "735504",
+            "position_km": 4519.5
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "mtu": "Qo'ng'irot MTU",
+    "distances": [
+      {
+        "pch": "ПЧ-18 Ургенчская",
+        "mtu_confidence": "high",
+        "station_count": 18,
+        "stations": [
+          {
+            "station": "Джумуртау",
+            "km": 39,
+            "picket": 4,
+            "code": "737904",
+            "position_km": 39.4
+          },
+          {
+            "station": "Питняк",
+            "km": 329,
+            "picket": 4,
+            "code": "738705",
+            "position_km": 329.4
+          },
+          {
+            "station": "Истиклол",
+            "km": 344,
+            "picket": 2,
+            "code": "739900",
+            "position_km": 344.2
+          },
+          {
+            "station": "Хазарасп",
+            "km": 354,
+            "picket": 9,
+            "code": "738606",
+            "position_km": 354.9
+          },
+          {
+            "station": "Багат",
+            "km": 370,
+            "picket": 5,
+            "code": "738502",
+            "position_km": 370.5
+          },
+          {
+            "station": "Ханки",
+            "km": 384,
+            "picket": 10,
+            "code": "738409",
+            "position_km": 385.0
+          },
+          {
+            "station": "Ургенч",
+            "km": 399,
+            "picket": 1,
+            "code": "738305",
+            "position_km": 399.1
+          },
+          {
+            "station": "Дунгулюк",
+            "km": 426,
+            "picket": 8,
+            "code": "739825",
+            "position_km": 426.8
+          },
+          {
+            "station": "Хива",
+            "km": 432,
+            "picket": 4,
+            "code": "738339",
+            "position_km": 432.4
+          },
+          {
+            "station": "Шават",
+            "km": 434,
+            "picket": 10,
+            "code": "738108",
+            "position_km": 435.0
+          },
+          {
+            "station": "Обод",
+            "km": 449,
+            "picket": 7,
+            "code": "738112",
+            "position_km": 449.7
+          },
+          {
+            "station": "Каскатау",
+            "km": 449,
+            "picket": 9,
+            "code": "739859",
+            "position_km": 449.9
+          },
+          {
+            "station": "Бургутли",
+            "km": 477,
+            "picket": 1,
+            "code": "739810",
+            "position_km": 477.1
+          },
+          {
+            "station": "Мискен",
+            "km": 499,
+            "picket": 10,
+            "code": "739806",
+            "position_km": 500.0
+          },
+          {
+            "station": "Турткуль",
+            "km": 529,
+            "picket": 9,
+            "code": "739609",
+            "position_km": 529.9
+          },
+          {
+            "station": "Жайхун",
+            "km": 4232,
+            "picket": 5,
+            "code": "744518",
+            "position_km": 4232.5
+          },
+          {
+            "station": "Даутепа",
+            "km": 4262,
+            "picket": 5,
+            "code": "744503",
+            "position_km": 4262.5
+          },
+          {
+            "station": "Турон",
+            "km": 4298,
+            "picket": 6,
+            "code": "744522",
+            "position_km": 4298.6
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-25 Кунградская",
+        "mtu_confidence": "high",
+        "station_count": 20,
+        "stations": [
+          {
+            "station": "Тахыркуль",
+            "km": 18,
+            "picket": 6,
+            "code": "739100",
+            "position_km": 18.6
+          },
+          {
+            "station": "Кумшунгуль",
+            "km": 30,
+            "picket": 7,
+            "code": "739204",
+            "position_km": 30.7
+          },
+          {
+            "station": "Чимбай",
+            "km": 57,
+            "picket": 5,
+            "code": "739308",
+            "position_km": 57.5
+          },
+          {
+            "station": "Найманкуль",
+            "km": 525,
+            "picket": 6,
+            "code": "737707",
+            "position_km": 525.6
+          },
+          {
+            "station": "Ходжейли",
+            "km": 540,
+            "picket": 10,
+            "code": "737603",
+            "position_km": 541.0
+          },
+          {
+            "station": "Хатеп",
+            "km": 555,
+            "picket": 3,
+            "code": "737500",
+            "position_km": 555.3
+          },
+          {
+            "station": "Элликкала",
+            "km": 556,
+            "picket": 9,
+            "code": "734501",
+            "position_km": 556.9
+          },
+          {
+            "station": "Шуманай",
+            "km": 570,
+            "picket": 6,
+            "code": "737406",
+            "position_km": 570.6
+          },
+          {
+            "station": "Болғали (Рзд. 180)",
+            "km": 585,
+            "picket": 3,
+            "code": "737425",
+            "position_km": 585.3
+          },
+          {
+            "station": "Беруний",
+            "km": 588,
+            "picket": 9,
+            "code": "734605",
+            "position_km": 588.9
+          },
+          {
+            "station": "Қонликўл (Алтынкуль)",
+            "km": 600,
+            "picket": 9,
+            "code": "737302",
+            "position_km": 600.9
+          },
+          {
+            "station": "Бадай",
+            "km": 605,
+            "picket": 8,
+            "code": "744700",
+            "position_km": 605.8
+          },
+          {
+            "station": "Караузяк",
+            "km": 616,
+            "picket": 9,
+            "code": "732506",
+            "position_km": 616.9
+          },
+          {
+            "station": "Кунград",
+            "km": 627,
+            "picket": 6,
+            "code": "737209",
+            "position_km": 627.6
+          },
+          {
+            "station": "Койбаклы",
+            "km": 642,
+            "picket": 3,
+            "code": "739647",
+            "position_km": 642.3
+          },
+          {
+            "station": "Раушан",
+            "km": 647,
+            "picket": 6,
+            "code": "737213",
+            "position_km": 647.6
+          },
+          {
+            "station": "Назархан",
+            "km": 664,
+            "picket": 6,
+            "code": "739505",
+            "position_km": 664.6
+          },
+          {
+            "station": "Кунходжа",
+            "km": 672,
+            "picket": 6,
+            "code": "739702",
+            "position_km": 672.6
+          },
+          {
+            "station": "Нукус",
+            "km": 697,
+            "picket": 3,
+            "code": "739007",
+            "position_km": 697.3
+          },
+          {
+            "station": "Тахиаташ-п",
+            "km": 708,
+            "picket": 5,
+            "code": "738907",
+            "position_km": 708.5
+          }
+        ]
+      },
+      {
+        "pch": "ПЧ-26 Каракалпакская",
+        "mtu_confidence": "high",
+        "station_count": 12,
+        "stations": [
+          {
+            "station": "Кырк-кыз",
+            "km": 689,
+            "picket": 2,
+            "code": "737105",
+            "position_km": 689.2
+          },
+          {
+            "station": "Барсакелмес",
+            "km": 713,
+            "picket": 5,
+            "code": "744607",
+            "position_km": 713.5
+          },
+          {
+            "station": "Ажнияз",
+            "km": 735,
+            "picket": 1,
+            "code": "737124",
+            "position_km": 735.1
+          },
+          {
+            "station": "Абадан",
+            "km": 758,
+            "picket": 1,
+            "code": "744804",
+            "position_km": 758.1
+          },
+          {
+            "station": "Куаныш",
+            "km": 779,
+            "picket": 7,
+            "code": "737143",
+            "position_km": 779.7
+          },
+          {
+            "station": "Жаслык",
+            "km": 798,
+            "picket": 4,
+            "code": "737001",
+            "position_km": 798.4
+          },
+          {
+            "station": "Аяпберген",
+            "km": 823,
+            "picket": 1,
+            "code": "737069",
+            "position_km": 823.1
+          },
+          {
+            "station": "Бердах",
+            "km": 847,
+            "picket": 5,
+            "code": "737020",
+            "position_km": 847.5
+          },
+          {
+            "station": "Бостан",
+            "km": 872,
+            "picket": 1,
+            "code": "744908",
+            "position_km": 872.1
+          },
+          {
+            "station": "Актобе",
+            "km": 893,
+            "picket": 8,
+            "code": "737048",
+            "position_km": 893.8
+          },
+          {
+            "station": "Кийиксай",
+            "km": 914,
+            "picket": 5,
+            "code": "737054",
+            "position_km": 914.5
+          },
+          {
+            "station": "Каракалпакия",
+            "km": 934,
+            "picket": 4,
+            "code": "736901",
+            "position_km": 934.4
+          }
+        ]
+      }
+    ]
+  }
+]

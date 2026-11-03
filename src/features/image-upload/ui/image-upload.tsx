@@ -29,7 +29,6 @@ const ImageUpload: FC<IProps> = ({
   const inputRef = useRef<HTMLInputElement>(null);
   const activeIntervalsRef = useRef<Set<ReturnType<typeof setInterval>>>(new Set());
 
-  // Всегда используем актуальный список файлов
   const fileList = value ?? internalFileList;
   const filesRef = useRef<UploadFile[]>(fileList);
 
@@ -37,7 +36,6 @@ const ImageUpload: FC<IProps> = ({
     filesRef.current = fileList;
   }, [fileList]);
 
-  // Очистка таймеров при размонтировании
   useEffect(() => {
     const intervals = activeIntervalsRef.current;
     return () => {
@@ -81,10 +79,8 @@ const ImageUpload: FC<IProps> = ({
       };
     });
 
-    // Сразу добавляем новые файлы к актуальному списку
     updateFiles((prev) => [...prev, ...newUploadFiles]);
 
-    // Имитация прогресса загрузки от 0% до 100%
     newUploadFiles.forEach((uploadFile) => {
       let currentPercent = 0;
       const intervalId = setInterval(() => {

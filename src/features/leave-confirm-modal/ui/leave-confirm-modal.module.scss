@@ -1,0 +1,51 @@
+.leave-confirm-modal {
+  :global {
+    .ant-modal-close {
+      top: 16px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+    }
+    .ant-modal-header {
+      padding-bottom: var(--ant-margin-xs);
+      margin-bottom: 0;
+    }
+    .ant-modal-title {
+      font-size: var(--ant-size);
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--dark-88);
+    }
+    .ant-modal-body {
+      font-size: var(--ant-font-size);
+      line-height: 1.5;
+    }
+  }
+  &__description {
+    font-size: var(--ant-font-size);
+    line-height: 1.5;
+    color: var(--dark-88);
+    margin: 0;
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: var(--ant-margin-xs);
+    width: 100%;
+  }
+  &__btn-continue {
+    background-color: var(--ant-red-5);
+    border-color: #ff4d4f;
+    color: var(--white);
+
+    &:hover {
+      background-color: #ff7875 !important;
+      border-color: #ff7875 !important;
+      color: var(--white) !important;
+    }
+  }
+}
