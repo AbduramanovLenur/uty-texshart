@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import CreateApplicationBody from './create-application-body';
 import { getBreadcrumbs } from '../model/breadcrumbs';
 
+import { LeaveConfirmModal } from '@features/leave-confirm-modal';
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
 
@@ -35,6 +36,7 @@ const CreateApplication: FC = () => {
           {t('createApplication.title')}
         </PageHeader>
         <CreateApplicationBody />
+        <LeaveConfirmModal />
       </div>
     </section>
   );

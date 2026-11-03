@@ -136,6 +136,12 @@
     "uz": "O‘zbekcha",
     "ru": "Русский"
   },
+  "leaveConfirmModal": {
+    "title": "Chiqmoqchimisiz?",
+    "description": "Arizada siz to'ldirgan ma'lumotlaringiz o'chib ketadi",
+    "close": "Yopish",
+    "continue": "Davom etish"
+  },
   "notifications": {
     "page": {
       "title": "Bildirishnomalar",
