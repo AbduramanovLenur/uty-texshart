@@ -69,7 +69,6 @@ const SidebarNav: FC<IProps> = ({
             classNames={{
               root: styles['menu__list'],
               item: styles['menu__item'],
-              itemIcon: styles['menu__item-icon'],
               itemContent: styles['menu__item-content'],
             }}
             items={group.items}
