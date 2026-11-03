@@ -23,6 +23,7 @@ const CreateApplicationForm: FC = () => {
           name='field1'
           rules={[{
             required: true,
+            message: t('createApplication.form.validation.communicationType'),
           }]}
         >
           <Select
@@ -37,6 +38,7 @@ const CreateApplicationForm: FC = () => {
           name='field2'
           rules={[{
             required: true,
+            message: t('createApplication.form.validation.crossingMethod'),
           }]}
         >
           <Select
@@ -112,6 +114,7 @@ const CreateApplicationForm: FC = () => {
           name='field3'
           rules={[{
             required: true,
+            message: t('createApplication.form.validation.projectGoal'),
           }]}
         >
           <Select

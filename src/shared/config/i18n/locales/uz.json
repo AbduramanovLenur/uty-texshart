@@ -72,7 +72,12 @@
       "locationPhotos": "Kommunikatsiya rejalashtirilayotgan joy rasmi",
       "parametersTitle": "Muhandislik-texnik parametrlari",
       "projectGoal": "Kommunikatsiyani o’tqazish maqsadi",
-      "selectPlaceholder": "Tanlang"
+      "selectPlaceholder": "Tanlang",
+      "validation": {
+        "communicationType": "Kommunikatsiya turini tanlang",
+        "crossingMethod": "O’tkazish turini tanlang",
+        "projectGoal": "O’tkazish maqsadini tanlang"
+      }
     },
     "steps": {
       "step1": {

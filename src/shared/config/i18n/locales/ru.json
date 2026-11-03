@@ -72,7 +72,12 @@
       "locationPhotos": "Фотография планируемого места прокладки коммуникаций",
       "parametersTitle": "Инженерно-технические параметры",
       "projectGoal": "Цель прокладки коммуникации",
-      "selectPlaceholder": "Выберите"
+      "selectPlaceholder": "Выберите",
+      "validation": {
+        "communicationType": "Выберите тип коммуникации",
+        "crossingMethod": "Выберите способ пересечения",
+        "projectGoal": "Выберите цель прокладки"
+      }
     },
     "steps": {
       "step1": {
