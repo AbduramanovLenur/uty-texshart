@@ -1,6 +1,6 @@
 import { stationsData, railwayTracksData } from './data';
 
-const LAT_TO_METERS = 111139;
+const latToMeters = 111139;
 
 function getClosestPointOnSegment(
   point: [number, number],
@@ -13,9 +13,9 @@ function getClosestPointOnSegment(
   const [bLat, bLng] = b;
 
   const px = (pLng - aLng) * lngToMeters;
-  const py = (pLat - aLat) * LAT_TO_METERS;
+  const py = (pLat - aLat) * latToMeters;
   const bx = (bLng - aLng) * lngToMeters;
-  const by = (bLat - aLat) * LAT_TO_METERS;
+  const by = (bLat - aLat) * latToMeters;
 
   const l2 = bx * bx + by * by;
 
@@ -47,7 +47,7 @@ export function snapToNearestRailway(
   const [lat, lng] = coords;
 
   const radLat = (lat * Math.PI) / 180;
-  const lngToMeters = LAT_TO_METERS * Math.cos(radLat);
+  const lngToMeters = latToMeters * Math.cos(radLat);
 
   let minDistanceSq = Number.POSITIVE_INFINITY;
   let nearestCoords: [number, number] = coords;
@@ -55,7 +55,7 @@ export function snapToNearestRailway(
   for (const station of stationsData.features) {
     const [stLng, stLat] = station.geometry.coordinates;
     const dx = (lng - stLng) * lngToMeters;
-    const dy = (lat - stLat) * LAT_TO_METERS;
+    const dy = (lat - stLat) * latToMeters;
     const distSq = dx * dx + dy * dy;
 
     if (distSq < minDistanceSq) {

@@ -3,8 +3,8 @@ import { CircleMarker, Tooltip, useMap } from 'react-leaflet';
 
 import type { IStationProperties, ITrackProperties } from '../model/types';
 import {
-  STATION_MARKER_CONFIG,
-  STATION_CLICK_ZOOM,
+  stationMarkerConfig,
+  stationClickZoom,
 } from '../model/constants';
 
 import TrackPopup from './track-popup';
@@ -31,7 +31,7 @@ const StationMarker: FC<IProps> = ({
     }
 
     const currentZoom = map.getZoom();
-    const targetZoom = Math.max(currentZoom, STATION_CLICK_ZOOM);
+    const targetZoom = Math.max(currentZoom, stationClickZoom);
     map.flyTo(position, targetZoom, { duration: 1 });
   };
 
@@ -45,13 +45,13 @@ const StationMarker: FC<IProps> = ({
   return (
     <CircleMarker
       center={position}
-      radius={STATION_MARKER_CONFIG.defaultRadius}
+      radius={stationMarkerConfig.defaultRadius}
       pathOptions={{
         className: styles['map__station-marker'],
-        fillColor: STATION_MARKER_CONFIG.fillColor,
-        color: STATION_MARKER_CONFIG.color,
-        weight: STATION_MARKER_CONFIG.weight,
-        fillOpacity: STATION_MARKER_CONFIG.fillOpacity,
+        fillColor: stationMarkerConfig.fillColor,
+        color: stationMarkerConfig.color,
+        weight: stationMarkerConfig.weight,
+        fillOpacity: stationMarkerConfig.fillOpacity,
       }}
       eventHandlers={{
         click: handleClick,
