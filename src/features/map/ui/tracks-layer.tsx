@@ -5,9 +5,9 @@ import type { Layer, LeafletMouseEvent } from 'leaflet';
 
 import { railwayTracksData } from '../model/data';
 import {
-  TRACK_LAYER_STYLE,
-  TRACK_HITBOX_STYLE,
-  TRACK_CLICK_ZOOM,
+  trackHitboxStyle,
+  trackLayerStyle,
+  trackClickZoom,
 } from '../model/constants';
 import type { ITrackProperties } from '../model/types';
 import { snapToNearestRailway } from '../model/railway-proximity';
@@ -55,7 +55,7 @@ const TracksLayer: FC<IProps> = ({ onSelectPoint, readOnly = false }) => {
     }
 
     const currentZoom = map.getZoom();
-    const targetZoom = Math.max(currentZoom, TRACK_CLICK_ZOOM);
+    const targetZoom = Math.max(currentZoom, trackClickZoom);
     map.flyTo(snappedCoords, targetZoom, { duration: 0.8 });
   };
 
@@ -78,7 +78,7 @@ const TracksLayer: FC<IProps> = ({ onSelectPoint, readOnly = false }) => {
       <GeoJSON
         data={railwayTracksData as GeoJsonObject}
         style={() => ({
-          ...TRACK_LAYER_STYLE,
+          ...trackLayerStyle,
           interactive: true,
         })}
         onEachFeature={(feature, layer: Layer) => {
@@ -89,7 +89,7 @@ const TracksLayer: FC<IProps> = ({ onSelectPoint, readOnly = false }) => {
       <GeoJSON
         data={railwayTracksData as GeoJsonObject}
         style={() => ({
-          ...TRACK_HITBOX_STYLE,
+          ...trackHitboxStyle,
           className: styles['map__track-hitbox'],
         })}
         onEachFeature={(feature, layer: Layer) => {
