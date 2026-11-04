@@ -5,21 +5,21 @@ import { SearchOutlined } from '@ant-design/icons';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { ApplicationStatusTag, applicationStatusTagConfig, type IApplication, type TApplicationStatus } from '@entities/applications';
+import { ApplicationStatusTag, applicationStatusTagConfig, type IIncomingApplication, type TApplicationStatus } from '@entities/applications';
 import { filterKeys, routes } from '@shared/config';
 import type { TTableFilters } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
 
-export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IApplication>['columns'] => [
+export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IIncomingApplication>['columns'] => [
   {
-    title: t('userApplications.columns.applicationId'),
+    title: t('headers.applicationId'),
     key: filterKeys.APPLICATION_ID,
-    width: 160,
+    width: 120,
     sorter: true,
     sortOrder: getSortOrder(filters, filterKeys.APPLICATION_ID),
     render: (_, record) => (
-      <Link className='table-link' to={routes.SINGLE_APPLICATION(record.id)}>
+      <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.id)}>
         {record.id}
       </Link>
     ),
@@ -30,9 +30,9 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
         selectedKeys={selectedKeys}
         confirm={confirm}
         clearFilters={clearFilters}
-        placeholder={t('userApplications.filters.applicationIdPlaceholder')}
-        clearLabel={t('userApplications.filters.clear')}
-        searchLabel={t('userApplications.filters.search')}
+        placeholder={t('placeholders.applicationId')}
+        clearLabel={t('placeholders.clear')}
+        searchLabel={t('placeholders.search')}
       />
     ),
     filterIcon: (filtered: boolean) => (
@@ -40,9 +40,44 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
     ),
   },
   {
-    title: t('userApplications.columns.network'),
+    title: t('headers.action'),
+    width: 120,
+    render: (_, record) => (
+      <button className='table-trigger' type='button'>
+        {t('actions.view')}
+      </button>
+    ),
+  },
+  {
+    title: t('headers.user'),
+    key: filterKeys.USER,
+    minWidth: 140,
+    render: (_, record) => (
+      <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.id)}>
+        {record.user}
+      </Link>
+    ),
+    filteredValue: filters.user,
+    filters: [
+      {
+        text: 'Category 1',
+        value: 'Category 1',
+      },
+      {
+        text: 'Category 2',
+        value: 'Category 2',
+      },
+      {
+        text: 'Category 3',
+        value: 'Category 3',
+      },
+    ],
+    filterSearch: true,
+  },
+  {
+    title: t('headers.network'),
     key: filterKeys.NETWORK,
-    minWidth: 235,
+    minWidth: 160,
     render: (_, record) => record.network,
     filteredValue: filters.network,
     filters: [
@@ -62,9 +97,9 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
     filterSearch: true,
   },
   {
-    title: t('userApplications.columns.mtu'),
-    key: filterKeys.PEREGON,
-    minWidth: 250,
+    title: t('headers.mtu'),
+    key: filterKeys.MTU,
+    minWidth: 190,
     render: (_, record) => (
       <div className='table-info'>
         <div className='table-info-value'>
@@ -75,7 +110,7 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
         </div>
       </div>
     ),
-    filteredValue: filters.peregon,
+    filteredValue: filters.mtu,
     filters: [
       {
         text: 'Category 1',
@@ -93,9 +128,9 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
     filterSearch: true,
   },
   {
-    title: t('userApplications.columns.status'),
+    title: t('headers.status'),
     key: filterKeys.STATUS,
-    width: 160,
+    minWidth: 120,
     render: (_, record) => <ApplicationStatusTag status={record.status as TApplicationStatus} />,
     filteredValue: filters.status,
     filters: Object.entries(applicationStatusTagConfig).map(([key, config]) => ({
@@ -105,7 +140,7 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
     filterSearch: true,
   },
   {
-    title: t('userApplications.columns.dateUpdate'),
+    title: t('headers.dateUpdate'),
     key: filterKeys.DATE,
     width: 200,
     sorter: true,
@@ -119,8 +154,8 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
         clearFilters={clearFilters}
         displayFormat='DD.MM.YYYY'
         valueFormat='YYYY-MM-DD'
-        clearLabel={t('userApplications.filters.clear')}
-        searchLabel={t('userApplications.filters.search')}
+        clearLabel={t('placeholders.clear')}
+        searchLabel={t('placeholders.search')}
       />
     ),
     render: (_, record) => (

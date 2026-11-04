@@ -1,7 +1,8 @@
 export const filterKeys = {
   APPLICATION_ID: 'applicationId',
   NETWORK: 'network',
-  PEREGON: 'peregon',
+  MTU: 'mtu',
   STATUS: 'status',
   DATE: 'date',
+  USER: 'user',
 } as const;

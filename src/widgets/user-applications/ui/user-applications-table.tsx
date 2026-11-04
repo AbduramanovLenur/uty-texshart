@@ -187,7 +187,7 @@ const UserApplicationTable: FC = () => {
           page={filters.page}
           limit={filters.limit}
           onChange={handlePaginationChange}
-          summary={t('userApplications.summary', { count: total })}
+          summary={t('summary', { count: total })}
         />
       </div>
     </div>

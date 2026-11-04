@@ -199,7 +199,7 @@ const IncomingApplicationsTable: FC = () => {
           page={filters.page}
           limit={filters.limit}
           onChange={handlePaginationChange}
-          summary={'125 ta ariza topildi'}
+          summary={t('summary', { count: total })}
         />
       </div>
     </div>

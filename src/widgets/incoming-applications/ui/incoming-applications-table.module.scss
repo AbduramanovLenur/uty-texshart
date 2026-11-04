@@ -3,7 +3,6 @@
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
-
   &__body {
     flex: 1 1 auto;
     min-height: 0;
@@ -28,6 +27,9 @@
       position: sticky;
       top: 0;
       z-index: 2;
+    }
+    :global(.ant-table-wrapper .ant-table-cell) {
+      padding: var(--ant-padding) var(--ant-padding-sm);
     }
   }
   &__pagination {
