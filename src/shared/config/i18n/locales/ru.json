@@ -137,10 +137,10 @@
     "ru": "Русский"
   },
   "leaveConfirmModal": {
-    "title": "Chiqmoqchimisiz?",
-    "description": "Arizada siz to'ldirgan ma'lumotlaringiz o'chib ketadi",
-    "close": "Yopish",
-    "continue": "Davom etish"
+    "title": "Хотите выйти?",
+    "description": "Заполненные вами данные в заявке будут удалены",
+    "close": "Закрыть",
+    "continue": "Продолжить"
   },
   "notifications": {
     "page": {
