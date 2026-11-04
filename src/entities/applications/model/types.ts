@@ -37,8 +37,13 @@ export interface IApplication {
   key: string;
   id: string;
   network: string;
-  peregon: string;
+  mtu: string;
+  km: string;
   status: TApplicationStatus | ReactNode;
   date: string;
   updatedAt: string;
+}
+
+export interface IIncomingApplication extends IApplication {
+  user: string;
 }

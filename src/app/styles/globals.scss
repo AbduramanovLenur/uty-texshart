@@ -227,6 +227,18 @@ main {
       background-color: var(--ant-color-link-hover);
     }
   }
+  &-info {
+    &-value {
+      font-size: var(--ant-font-size);
+      line-height: 1.5;
+      &:first-child {
+        color: var(--dark-88);
+      }
+      &:last-child {
+        color: var(--dark-65);
+      }
+    }
+  }
   &-date {
     &-create {
       font-size: var(--ant-table-cell-font-size);

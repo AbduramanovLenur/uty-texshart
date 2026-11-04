@@ -2,6 +2,8 @@ import type { FC } from 'react';
 import cn from 'classnames';
 import { Button, Typography } from 'antd';
 
+import IncomingApplicationsTable from './incoming-applications-table';
+
 import { IconDownload } from '@shared/assets';
 
 import styles from './incoming-applications.module.scss';
@@ -24,6 +26,7 @@ const IncomingApplications: FC = () => {
             Yuklab olish
           </Button>
         </div>
+        <IncomingApplicationsTable />
       </div>
     </section>
   );

@@ -62,10 +62,19 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IAp
     filterSearch: true,
   },
   {
-    title: t('userApplications.columns.peregon'),
+    title: t('userApplications.columns.mtu'),
     key: filterKeys.PEREGON,
     minWidth: 250,
-    render: (_, record) => record.peregon,
+    render: (_, record) => (
+      <div className='table-info'>
+        <div className='table-info-value'>
+          {record.mtu}
+        </div>
+        <div className='table-info-value'>
+          {record.km}
+        </div>
+      </div>
+    ),
     filteredValue: filters.peregon,
     filters: [
       {

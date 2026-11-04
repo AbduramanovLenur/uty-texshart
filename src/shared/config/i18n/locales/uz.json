@@ -200,7 +200,7 @@
     "columns": {
       "applicationId": "Ariza ID",
       "network": "Muhandislik tarmog‘i",
-      "peregon": "Peregon",
+      "mtu": "MTU / km, pk",
       "status": "Holati",
       "dateUpdate": "Sana / yangilanish"
     },

@@ -206,7 +206,7 @@
     "columns": {
       "applicationId": "ID заявки",
       "network": "Инженерная сеть",
-      "peregon": "Перегон",
+      "mtu": "MTU / km, pk",
       "status": "Статус",
       "dateUpdate": "Дата / обновление"
     },
