@@ -10,7 +10,7 @@ import CreateApplicationForm from './create-application-form';
 import CreateApplicationMap from './create-application-map';
 import CreateApplicationBottom from './create-application-bottom';
 
-import { SKIP_LEAVE_CONFIRM } from '@features/leave-confirm-modal';
+import { skipLeaveConfirmState } from '@features/leave-confirm-modal';
 import { routes } from '@shared/config';
 
 import styles from './create-application-body.module.scss';
@@ -52,7 +52,7 @@ const CreateApplicationBody: FC = () => {
   const handleSaveDraft = () => {
     const draftValues = form.getFieldsValue(true);
     console.log('Draft values:', draftValues);
-    navigate(routes.APPLICATIONS, { state: SKIP_LEAVE_CONFIRM });
+    navigate(routes.APPLICATIONS, { state: skipLeaveConfirmState });
   };
 
   return (
