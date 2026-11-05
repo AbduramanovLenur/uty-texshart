@@ -185,29 +185,38 @@
   "userApplications": {
     "title": "Arizalarim",
     "download": "Yuklab olish",
-    "create": "Yangi ariza yaratish",
-    "summary_other": "Jami {{count}} ta ariza topildi",
-    "status": {
-      "accepted": "Qabul qilindi",
-      "forwarded": "Yo‘naltirildi",
-      "actCreated": "Dalolatnoma tuzildi",
-      "technicalConditionsIssued": "Texnik-shart berildi",
-      "rejected": "Rad etildi",
-      "draft": "Qoralama",
-      "constructionStarted": "Qurilishga ruxsat berildi",
-      "completed": "Yakunlandi"
-    },
-    "columns": {
-      "applicationId": "Ariza ID",
-      "network": "Muhandislik tarmog‘i",
-      "peregon": "Peregon",
-      "status": "Holati",
-      "dateUpdate": "Sana / yangilanish"
-    },
-    "filters": {
-      "applicationIdPlaceholder": "Ariza ID raqamini kiriting",
-      "clear": "Tozalash",
-      "search": "Qidirish"
-    }
+    "create": "Yangi ariza yaratish"
+  },
+  "statuses": {
+    "accepted": "Qabul qilindi",
+    "forwarded": "Yo‘naltirildi",
+    "actCreated": "Dalolatnoma tuzildi",
+    "technicalConditionsIssued": "Texnik-shart berildi",
+    "rejected": "Rad etildi",
+    "draft": "Qoralama",
+    "constructionStarted": "Qurilishga ruxsat berildi",
+    "completed": "Yakunlandi"
+  },
+  "placeholders": {
+    "applicationId": "Ariza ID raqamini kiriting",
+    "clear": "Tozalash",
+    "search": "Qidirish"
+  },
+  "actions": {
+    "view": "Ko‘rish"
+  },
+  "headers": {
+    "applicationId": "Ariza ID",
+    "user": "Arizachi",
+    "network": "Muhandislik tarmog‘i",
+    "mtu": "MTU / km, pk",
+    "status": "Holati",
+    "dateUpdate": "Sana / yangilanish",
+    "action": "Harakat"
+  },
+  "summary_other": "Jami {{count}} ta ariza topildi",
+  "incomingApplications": {
+    "title": "Arizalar",
+    "download": "Yuklab olish"
   }
 }

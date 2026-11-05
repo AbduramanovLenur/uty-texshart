@@ -1,0 +1,22 @@
+.incoming-applications {
+  &__top {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: var(--ant-margin);
+  }
+  &__title {
+    &:global(.ant-typography) {
+      margin-bottom: 0;
+      color: var(--dark-88);
+      margin-right: auto;
+    }
+  }
+  &__download {
+    &:global(.ant-btn) {
+      border: 1px solid var(--default-border);
+    }
+  }
+}

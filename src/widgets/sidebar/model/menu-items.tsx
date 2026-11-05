@@ -52,7 +52,7 @@ export const items: TMenuGroup[] = [
             },
             {
                 key: routes.COMMUNICATIONS_REGISTER,
-                label: 'sidebar.communications_register',
+                label: 'sidebar.comm_registry',
                 icon: <IconDiagramNested />,
                 roles: [roles.APPLICANT],
             },

@@ -7,10 +7,9 @@ import { useNavigate } from 'react-router-dom';
 import UserApplicationTable from './user-applications-table';
 
 import { IconDownload, IconPlus } from '@shared/assets';
+import { routes } from '@shared/config';
 
 import styles from './user-applications.module.scss';
-
-import { routes } from '@shared/config';
 
 const { Title } = Typography;
 

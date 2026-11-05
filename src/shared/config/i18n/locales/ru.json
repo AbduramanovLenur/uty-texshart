@@ -137,10 +137,10 @@
     "ru": "Русский"
   },
   "leaveConfirmModal": {
-    "title": "Chiqmoqchimisiz?",
-    "description": "Arizada siz to'ldirgan ma'lumotlaringiz o'chib ketadi",
-    "close": "Yopish",
-    "continue": "Davom etish"
+    "title": "Хотите выйти?",
+    "description": "Заполненные вами данные в заявке будут удалены",
+    "close": "Закрыть",
+    "continue": "Продолжить"
   },
   "notifications": {
     "page": {
@@ -188,32 +188,41 @@
   "userApplications": {
     "title": "Мои заявки",
     "download": "Скачать",
-    "create": "Создать заявку",
-    "summary_one": "Найдена {{count}} заявка",
-    "summary_few": "Найдено {{count}} заявки",
-    "summary_many": "Найдено {{count}} заявок",
-    "summary_other": "Найдено {{count}} заявки",
-    "status": {
-      "accepted": "Принята",
-      "forwarded": "Передана",
-      "actCreated": "Акт составлен",
-      "technicalConditionsIssued": "Технические условия выданы",
-      "rejected": "Отклонена",
-      "draft": "Черновик",
-      "constructionStarted": "Разрешение на строительство выдано",
-      "completed": "Завершена"
-    },
-    "columns": {
-      "applicationId": "ID заявки",
-      "network": "Инженерная сеть",
-      "peregon": "Перегон",
-      "status": "Статус",
-      "dateUpdate": "Дата / обновление"
-    },
-    "filters": {
-      "applicationIdPlaceholder": "Введите ID заявки",
-      "clear": "Очистить",
-      "search": "Поиск"
-    }
+    "create": "Создать заявку"
+  },
+  "statuses": {
+    "accepted": "Принята",
+    "forwarded": "Передана",
+    "actCreated": "Акт составлен",
+    "technicalConditionsIssued": "Технические условия выданы",
+    "rejected": "Отклонена",
+    "draft": "Черновик",
+    "constructionStarted": "Разрешение на строительство выдано",
+    "completed": "Завершена"
+  },
+  "placeholders": {
+    "applicationId": "Введите ID заявки",
+    "clear": "Очистить",
+    "search": "Поиск"
+  },
+  "actions": {
+    "view": "Посмотреть"
+  },
+  "headers": {
+    "applicationId": "ID заявки",
+    "user": "Заявитель",
+    "network": "Инженерная сеть",
+    "mtu": "MTU / км, pk",
+    "status": "Статус",
+    "dateUpdate": "Дата / обновление",
+    "action": "Действие"
+  },
+  "summary_one": "Найдена {{count}} заявка",
+  "summary_few": "Найдено {{count}} заявки",
+  "summary_many": "Найдено {{count}} заявок",
+  "summary_other": "Найдено {{count}} заявки",
+  "incomingApplications": {
+    "title": "Входящие заявки",
+    "download": "Скачать"
   }
 }

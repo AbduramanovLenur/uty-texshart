@@ -6,4 +6,11 @@ export { default as ApplicationStatusTag } from './ui/application-status-tag';
 export { applicationStatuses } from './model/application-statuses';
 export { applicationStatusTagConfig } from './model/application-status-config';
 
-export type { IApplicationPreview, ITimelineStep, TApplicationStatus, IApplicationStatusTagConfig, IApplication } from './model/types';
+export type {
+  IApplicationPreview,
+  ITimelineStep,
+  TApplicationStatus,
+  IApplicationStatusTagConfig,
+  IApplication,
+  IIncomingApplication,
+} from './model/types';

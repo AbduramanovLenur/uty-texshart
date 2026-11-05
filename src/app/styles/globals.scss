@@ -186,7 +186,7 @@ main {
   .ant-table-column-sorter {
     color: var(--dark-88);
     margin: 0;
-    margin-right: var(--ant-margin-xs);
+    margin-left: var(--ant-margin-xs);
     &:hover {
       color: var(--dark-88);
     }
@@ -209,10 +209,11 @@ main {
       }
     }
   }
-  &-link {
+  &-trigger {
     position: relative;
     font-weight: 600;
     color: var(--dark-88);
+    transition: 0.5s;
     &::after {
       content: '';
       position: absolute;
@@ -223,8 +224,23 @@ main {
       background-color: var(--dark-88);
       transition: 0.5s;
     }
-    &:hover::after {
-      background-color: var(--ant-color-link-hover);
+    &:hover {
+      color: var(--ant-color-link-hover);
+      &::after {
+        background-color: var(--ant-color-link-hover);
+      }
+    }
+  }
+  &-info {
+    &-value {
+      font-size: var(--ant-font-size);
+      line-height: 1.5;
+      &:first-child {
+        color: var(--dark-88);
+      }
+      &:last-child {
+        color: var(--dark-65);
+      }
     }
   }
   &-date {
@@ -311,4 +327,8 @@ main {
 
 .ant-form-item {
   margin-bottom: 0;
+}
+
+.ant-table-column-sorter-inner {
+  width: 8px;
 }
