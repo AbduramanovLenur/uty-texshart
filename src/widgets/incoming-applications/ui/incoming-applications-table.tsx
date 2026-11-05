@@ -1,9 +1,11 @@
 import { useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import { Table, type TableProps } from 'antd';
 
 import { getColumns } from './columns';
 
+import { ViewUserModal, open as openViewUserModal } from '@features/view-user-modal';
 import { applicationStatuses, type IIncomingApplication } from '@entities/applications';
 import { Paginator } from '@shared/ui';
 import { defaultValues } from '@shared/config';
@@ -171,7 +173,13 @@ const IncomingApplicationsTable: FC = () => {
     setFilters((prev) => ({ ...prev, page, limit }));
   };
 
-  const columns = getColumns(filters, t);
+  const dispatch = useDispatch();
+
+  const handleOpenViewModal = (record: IIncomingApplication) => {
+    dispatch(openViewUserModal(record.id));
+  };
+
+  const columns = getColumns(filters, t, handleOpenViewModal);
 
   return (
     <div className={styles['incoming-applications-table']}>
@@ -202,6 +210,7 @@ const IncomingApplicationsTable: FC = () => {
           summary={t('summary', { count: total })}
         />
       </div>
+      <ViewUserModal />
     </div>
   );
 };

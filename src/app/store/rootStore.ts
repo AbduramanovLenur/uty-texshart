@@ -1,5 +1,9 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
-const rootReducer = combineReducers({});
+import { reducer as viewUserModalReducer } from '@features/view-user-modal';
+
+const rootReducer = combineReducers({
+  viewUserModalSlice: viewUserModalReducer,
+});
 
 export default rootReducer;

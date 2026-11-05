@@ -11,7 +11,11 @@ import type { TTableFilters } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
 
-export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IIncomingApplication>['columns'] => [
+export const getColumns = (
+  filters: TTableFilters,
+  t: TFunction,
+  onUserClick: (record: IIncomingApplication) => void,
+): TableProps<IIncomingApplication>['columns'] => [
   {
     title: t('headers.applicationId'),
     key: filterKeys.APPLICATION_ID,
@@ -53,7 +57,11 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IIn
     key: filterKeys.USER,
     minWidth: 140,
     render: (_, record) => (
-      <button className='table-trigger' type='button'>
+      <button
+        className='table-trigger'
+        type='button'
+        onClick={() => onUserClick(record)}
+      >
         {record.user}
       </button>
     ),

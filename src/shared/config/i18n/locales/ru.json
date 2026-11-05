@@ -139,7 +139,6 @@
   "leaveConfirmModal": {
     "title": "Хотите выйти?",
     "description": "Заполненные вами данные в заявке будут удалены",
-    "close": "Закрыть",
     "continue": "Продолжить"
   },
   "notifications": {
@@ -187,7 +186,6 @@
   },
   "applications": {
     "title": "Мои заявки",
-    "download": "Скачать",
     "create": "Создать заявку"
   },
   "statuses": {
@@ -206,7 +204,11 @@
     "search": "Поиск"
   },
   "actions": {
-    "view": "Посмотреть"
+    "view": "Посмотреть",
+    "close": "Закрыть",
+    "download": "Скачать",
+    "downloadFile": "Скачать",
+    "confirm": "Подтвердить"
   },
   "headers": {
     "applicationId": "ID заявки",
@@ -222,7 +224,17 @@
   "summary_many": "Найдено {{count}} заявок",
   "summary_other": "Найдено {{count}} заявки",
   "incomingApplications": {
-    "title": "Входящие заявки",
-    "download": "Скачать"
+    "title": "Входящие заявки"
+  }
+,
+  "userInfo": {
+    "title": "Информация о заявителе",
+    "name": "Заявитель",
+    "inn": "ИНН",
+    "director": "Ф.И.О. руководителя",
+    "phone": "Контактный номер",
+    "address": "Адрес",
+    "idCard": "ID карта",
+    "license": "Лицензия на предпринимательскую деятельность"
   }
 }

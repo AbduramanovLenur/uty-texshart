@@ -139,7 +139,6 @@
   "leaveConfirmModal": {
     "title": "Chiqmoqchimisiz?",
     "description": "Arizada siz to'ldirgan ma'lumotlaringiz o'chib ketadi",
-    "close": "Yopish",
     "continue": "Davom etish"
   },
   "notifications": {
@@ -184,7 +183,6 @@
   },
   "applications": {
     "title": "Arizalarim",
-    "download": "Yuklab olish",
     "create": "Yangi ariza yaratish"
   },
   "statuses": {
@@ -203,7 +201,11 @@
     "search": "Qidirish"
   },
   "actions": {
-    "view": "Ko‘rish"
+    "view": "Ko‘rish",
+    "close": "Yopish",
+    "download": "Yuklab olish",
+    "downloadFile": "Yuklash",
+    "confirm": "Tasdiqlsh"
   },
   "headers": {
     "applicationId": "Ariza ID",
@@ -216,7 +218,16 @@
   },
   "summary_other": "Jami {{count}} ta ariza topildi",
   "incomingApplications": {
-    "title": "Arizalar",
-    "download": "Yuklab olish"
+    "title": "Arizalar"
+  },
+  "userInfo": {
+    "title": "Arizachi ma'lumotlari",
+    "name": "Arizachi",
+    "inn": "INN",
+    "director": "Rahbar ism-sharifi",
+    "phone": "Kontakt raqami",
+    "address": "Manzil",
+    "idCard": "ID karta",
+    "license": "Tadbirkorlik litsenziyasi"
   }
 }

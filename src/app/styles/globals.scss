@@ -192,6 +192,11 @@ main {
       color: var(--dark-88);
     }
   }
+  .ant-table-tbody {
+    > tr > td {
+      padding: var(--ant-padding-xs) var(--ant-padding-sm) !important;
+    }
+  }
   &-header {
     &-cell {
       .ant-table-cell {
@@ -347,4 +352,57 @@ main {
 
 .ant-table-column-sorter-inner {
   width: 8px;
+}
+
+.modal {
+  .ant-modal-container {
+    padding: 0;
+  }
+  .ant-modal-close {
+    top: 24px;
+    right: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    color: var(--dark-65);
+    svg {
+      width: 8px;
+      height: 8px;
+    }
+  }
+  .ant-modal-header {
+    padding: var(--ant-padding-md) var(--ant-padding-lg) var(--ant-padding-xs);
+    margin-bottom: 0;
+  }
+  .ant-modal-title {
+    font-size: var(--ant-font-size-lg);
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--dark-88);
+  }
+  .ant-modal-body {
+    padding: var(--ant-padding-lg);
+  }
+  .ant-modal-footer {
+    padding: var(--ant-padding) var(--ant-padding-lg) var(--ant-padding-md);
+  }
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--ant-margin-xs);
+    width: 100%;
+  }
+  &__button {
+    &-close,
+    &-confirm {
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    &-close {
+      color: var(--dark-88);
+      border: 1px solid var(--default-border);
+    }
+  }
 }

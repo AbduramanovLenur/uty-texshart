@@ -5,7 +5,7 @@ export {
   skipLeaveConfirmState,
 } from './model/navigation-state';
 export type {
-  LeaveConfirmModalProps,
+  ILeaveConfirmModalProps,
   TLeaveConfirmState,
   TSkipLeaveConfirmState,
   UseLeaveConfirmOptions,

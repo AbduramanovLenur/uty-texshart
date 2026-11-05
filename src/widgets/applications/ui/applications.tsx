@@ -33,7 +33,7 @@ const Applications: FC = () => {
             type='default'
             icon={<IconDownload />}
           >
-            {t('applications.download')}
+            {t('actions.download')}
           </Button>
           <Button
             className={styles['applications__create']}

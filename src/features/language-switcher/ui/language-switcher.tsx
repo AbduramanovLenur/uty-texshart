@@ -12,6 +12,16 @@ const LanguageSwitcher: FC = () => {
   const { i18n } = useTranslation();
   const options = useLanguageOptions();
 
+  const handleChange = (value: string | number) => {
+    const language = String(value);
+
+    if (language === i18n.language) {
+      return;
+    }
+
+    i18n.changeLanguage(language).then(() => window.location.reload());
+  };
+
   return (
     <Segmented
       classNames={{
@@ -21,7 +31,7 @@ const LanguageSwitcher: FC = () => {
       }}
       options={options}
       value={i18n.language || defaultLanguage}
-      onChange={(value) => void i18n.changeLanguage(String(value))}
+      onChange={handleChange}
     />
   );
 };
