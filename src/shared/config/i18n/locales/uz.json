@@ -11,6 +11,8 @@
   "applicationsTimeline": {
     "comment": "Izoh",
     "pending": "Kutilmoqda",
+    "formed": "Shakllantirdi - {{date}}",
+    "confirmed": "Tasdiqladi - {{date}}",
     "steps": {
       "applicationAccepted": "Ariza qabul qilindi",
       "forwardedToRegional": "Hududiy bo‘limga yo‘naltirildi",
@@ -205,7 +207,8 @@
     "close": "Yopish",
     "download": "Yuklab olish",
     "downloadFile": "Yuklash",
-    "confirm": "Tasdiqlsh"
+    "confirm": "Tasdiqlsh",
+    "more": "Batafsil"
   },
   "headers": {
     "applicationId": "Ariza ID",
@@ -229,5 +232,10 @@
     "address": "Manzil",
     "idCard": "ID karta",
     "license": "Tadbirkorlik litsenziyasi"
+  }
+,
+  "processModal": {
+    "title": "Jarayon",
+    "viewDetails": "Batafsil ko'rish"
   }
 }

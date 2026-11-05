@@ -406,3 +406,27 @@ main {
     }
   }
 }
+
+.scrollbar {
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ant-color-text-quaternary) transparent;
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 2px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--ant-color-text-quaternary);
+    border-radius: 2px;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: var(--ant-color-text-secondary);
+  }
+}
+
+.ant-select .ant-select-suffix {
+  color: var(--dark-45);
+}

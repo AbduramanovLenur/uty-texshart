@@ -4,14 +4,13 @@ import { useTranslation } from 'react-i18next';
 import { Button, Modal } from 'antd';
 
 import { close, stateViewUserModal } from '../model/slice';
+
 import { UserInfo } from '@entities/user';
 
 const ViewUserModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, userId } = useSelector(stateViewUserModal);
-
-  console.log(userId);
+  const { isOpen } = useSelector(stateViewUserModal);
 
   const handleClose = () => {
     dispatch(close());

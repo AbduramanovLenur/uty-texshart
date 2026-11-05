@@ -15,6 +15,7 @@ export const getColumns = (
   filters: TTableFilters,
   t: TFunction,
   onUserClick: (record: IIncomingApplication) => void,
+  onActionClick?: (record: IIncomingApplication) => void,
 ): TableProps<IIncomingApplication>['columns'] => [
   {
     title: t('headers.applicationId'),
@@ -47,7 +48,11 @@ export const getColumns = (
     title: t('headers.action'),
     width: 120,
     render: (_, record) => (
-      <button className='table-trigger' type='button'>
+      <button
+        className='table-trigger'
+        type='button'
+        onClick={() => onActionClick?.(record)}
+      >
         {t('actions.view')}
       </button>
     ),

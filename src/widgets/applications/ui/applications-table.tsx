@@ -1,6 +1,7 @@
 import { useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Table, type TableProps } from 'antd';
+import cn from 'classnames';
 
 import { getColumns } from './columns';
 
@@ -163,7 +164,7 @@ const ApplicationTable: FC = () => {
 
   return (
     <div className={styles['applications-table']}>
-      <div className={styles['applications-table__body']}>
+      <div className={cn(styles['applications-table__body'], 'scrollbar')}>
         <Table<IApplication>
           classNames={{
             root: 'table',

@@ -1,16 +1,24 @@
 export { default as ApplicationPreview } from './ui/application-preview';
 export { default as ApplicationsTimeline } from './ui/applications-timeline';
+export { default as TimelineActApprovals } from './ui/timeline-act-approvals';
 export { default as ApplicationInfo } from './ui/application-info';
 export { default as ApplicationStatusTag } from './ui/application-status-tag';
 
 export { applicationStatuses } from './model/application-statuses';
+export { approvalStatuses } from './model/approval-statuses';
+export { networkTypes } from './model/network-types';
 export { applicationStatusTagConfig } from './model/application-status-config';
 
 export type {
   IApplicationPreview,
   ITimelineStep,
+  ITimelineApproval,
   TApplicationStatus,
+  TApprovalStatus,
   IApplicationStatusTagConfig,
   IApplication,
   IIncomingApplication,
 } from './model/types';
+
+export type { TNetworkType } from './model/types';
+

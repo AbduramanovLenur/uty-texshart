@@ -11,6 +11,8 @@
   "applicationsTimeline": {
     "comment": "Примечание",
     "pending": "Ожидается",
+    "formed": "Сформировал - {{date}}",
+    "confirmed": "Подтвердил - {{date}}",
     "steps": {
       "applicationAccepted": "Заявка принята",
       "forwardedToRegional": "Направлена в региональный отдел",
@@ -208,7 +210,8 @@
     "close": "Закрыть",
     "download": "Скачать",
     "downloadFile": "Скачать",
-    "confirm": "Подтвердить"
+    "confirm": "Подтвердить",
+    "more": "Подробнее"
   },
   "headers": {
     "applicationId": "ID заявки",
@@ -236,5 +239,10 @@
     "address": "Адрес",
     "idCard": "ID карта",
     "license": "Лицензия на предпринимательскую деятельность"
+  }
+,
+  "processModal": {
+    "title": "Процесс",
+    "viewDetails": "Подробнее"
   }
 }

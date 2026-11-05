@@ -33,3 +33,4 @@ export { default as IconUserShield } from './icons/icon-user-shield';
 export { default as IconCircleInformation } from './icons/icon-circle-information';
 export { default as IconMapPin } from './icons/icon-map-pin';
 export { default as IconGear } from './icons/icon-gear';
+export { default as IconChecked } from './icons/icon-checked';
