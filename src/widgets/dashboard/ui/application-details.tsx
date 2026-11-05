@@ -1,6 +1,9 @@
 import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Tabs, Typography, type TabsProps } from 'antd';
+import cn from 'classnames';
+
+import { tabKeys } from '../model/tabKeys';
 
 import { ApplicationInfo, ApplicationsTimeline } from '@entities/applications';
 
@@ -13,29 +16,29 @@ const ApplicationDetails: FC = () => {
 
   const items: TabsProps['items'] = [
     {
-      key: '1',
+      key: tabKeys.FIRST_TAB,
       label: t('dashboard.applicationDetails.process'),
       children: <ApplicationsTimeline />,
     },
     {
-      key: '2',
+      key: tabKeys.SECOND_TAB,
       label: t('dashboard.applicationDetails.details'),
       children: <ApplicationInfo />,
     },
   ];
 
   return (
-    <div className={styles['application-details']}>
+    <div className={cn(styles['application-details'], 'tabs')}>
       <Title className={styles['application-details__title']} level={4}>
         {t('dashboard.applicationDetails.title')}
       </Title>
       <Tabs
         classNames={{
-          root: 'tabs',
+          root: 'tabs__root',
           header: 'tabs__header',
           item: 'tabs__item',
         }}
-        defaultActiveKey='1'
+        defaultActiveKey={tabKeys.FIRST_TAB}
         items={items}
       />
     </div>

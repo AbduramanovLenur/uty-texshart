@@ -15,7 +15,7 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IIn
   {
     title: t('headers.applicationId'),
     key: filterKeys.APPLICATION_ID,
-    width: 120,
+    width: 140,
     sorter: true,
     sortOrder: getSortOrder(filters, filterKeys.APPLICATION_ID),
     render: (_, record) => (
@@ -53,9 +53,9 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IIn
     key: filterKeys.USER,
     minWidth: 140,
     render: (_, record) => (
-      <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.id)}>
+      <button className='table-trigger' type='button'>
         {record.user}
-      </Link>
+      </button>
     ),
     filteredValue: filters.user,
     filters: [

@@ -175,7 +175,7 @@
     "regions_mtu": "Регионы и МТУ",
     "settings": "Настройки"
   },
-  "userApplication": {
+  "application": {
     "breadcrumbs": {
       "applications": "Мои заявки",
       "details": "Информация о заявке"
@@ -185,7 +185,7 @@
       "map": "Посмотреть на карте"
     }
   },
-  "userApplications": {
+  "applications": {
     "title": "Мои заявки",
     "download": "Скачать",
     "create": "Создать заявку"

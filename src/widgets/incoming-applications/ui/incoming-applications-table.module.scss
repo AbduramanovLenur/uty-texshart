@@ -28,9 +28,6 @@
       top: 0;
       z-index: 2;
     }
-    :global(.ant-table-wrapper .ant-table-cell) {
-      padding: var(--ant-padding) var(--ant-padding-sm);
-    }
   }
   &__pagination {
     flex-shrink: 0;

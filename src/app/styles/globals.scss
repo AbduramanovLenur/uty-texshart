@@ -181,6 +181,7 @@ main {
   .ant-table-thead > tr > th.ant-table-cell {
     background-color: var(--ant-blue-2);
     color: var(--dark-88);
+    padding: var(--ant-padding) var(--ant-padding-sm);
   }
   .ant-table-filter-trigger,
   .ant-table-column-sorter {
@@ -278,13 +279,28 @@ main {
 }
 
 .tabs {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
   width: 100%;
+  .ant-tabs {
+    flex: 1;
+    min-height: 0;
+  }
+  .ant-tabs-body,
+  .ant-tabs-content {
+    height: 100%;
+  }
   .ant-tabs-nav-list {
     width: 100%;
   }
   .ant-tabs-tab,
   .ant-tabs-tab + .ant-tabs-tab {
     margin: 0;
+  }
+  &__root {
+    width: 100%;
   }
   &__header {
     &.ant-tabs-nav {

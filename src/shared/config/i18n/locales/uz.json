@@ -182,7 +182,7 @@
       "map": "Xaritadan ko’rish"
     }
   },
-  "userApplications": {
+  "applications": {
     "title": "Arizalarim",
     "download": "Yuklab olish",
     "create": "Yangi ariza yaratish"

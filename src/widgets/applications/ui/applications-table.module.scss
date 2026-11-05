@@ -1,9 +1,8 @@
-.user-applications-table {
+.applications-table {
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
   min-height: 0;
-
   &__body {
     flex: 1 1 auto;
     min-height: 0;
@@ -12,11 +11,9 @@
     border-radius: 8px;
     scrollbar-width: none;
     -ms-overflow-style: none;
-
     &::-webkit-scrollbar {
       display: none;
     }
-
     :global(.ant-table-content) {
       overflow: visible !important;
     }
