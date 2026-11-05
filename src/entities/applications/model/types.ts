@@ -1,29 +1,50 @@
 import type { ReactNode } from 'react';
 import type { applicationStatuses } from './application-statuses';
+import type { approvalStatuses } from './approval-statuses';
+import type { networkTypes } from './network-types';
 
 export type TApplicationStatus =
   (typeof applicationStatuses)[keyof typeof applicationStatuses];
 
+export type TApprovalStatus =
+  (typeof approvalStatuses)[keyof typeof approvalStatuses];
+
+export type TNetworkType =
+  (typeof networkTypes)[keyof typeof networkTypes];
+
 export interface IApplicationPreview {
   id: number;
   code: string;
-  type: 'oil_pipeline' | 'power_line' | 'fiber_optic' | 'gas_pipeline' | 'sewage_pipeline';
+  type: TNetworkType;
   title: string;
   subtitle: string;
   icon: string;
   active?: boolean;
 }
 
+export interface ITimelineApproval {
+  id?: string | number;
+  title: string;
+  subtitle?: string;
+  status: TApprovalStatus;
+  date?: string;
+  person: string;
+}
+
 export interface ITimelineStep {
+  id?: string | number;
   step?: number;
   title?: string;
+  subtitle?: string;
   time?: string;
   error?: string;
   comment?: string;
+  info?: string;
   file?: boolean;
   button?: string;
   status: string;
   employee?: string;
+  approvals?: ITimelineApproval[];
 }
 
 export interface IApplicationStatusTagConfig {

@@ -4,16 +4,16 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 import { useNavigate } from 'react-router-dom';
 
-import UserApplicationTable from './user-applications-table';
+import ApplicationTable from './applications-table';
 
 import { IconDownload, IconPlus } from '@shared/assets';
 import { routes } from '@shared/config';
 
-import styles from './user-applications.module.scss';
+import styles from './applications.module.scss';
 
 const { Title } = Typography;
 
-const UserApplications: FC = () => {
+const Applications: FC = () => {
   const navigate = useNavigate();
   const { t } = useTranslation();
 
@@ -22,32 +22,32 @@ const UserApplications: FC = () => {
   };
 
   return (
-    <section className={cn(styles['user-applications'], 'section')}>
-      <div className={cn(styles['user-applications__inner'], 'section-inner')}>
-        <div className={styles['user-applications__top']}>
-          <Title className={styles['user-applications__title']} level={3}>
-            {t('userApplications.title')}
+    <section className={cn(styles['applications'], 'section')}>
+      <div className={cn(styles['applications__inner'], 'section-inner')}>
+        <div className={styles['applications__top']}>
+          <Title className={styles['applications__title']} level={3}>
+            {t('applications.title')}
           </Title>
           <Button
-            className={styles['user-applications__download']}
+            className={styles['applications__download']}
             type='default'
             icon={<IconDownload />}
           >
-            {t('userApplications.download')}
+            {t('actions.download')}
           </Button>
           <Button
-            className={styles['user-applications__create']}
+            className={styles['applications__create']}
             type='primary'
             icon={<IconPlus />}
             onClick={handleCreateApplication}
           >
-            {t('userApplications.create')}
+            {t('applications.create')}
           </Button>
         </div>
-        <UserApplicationTable />
+        <ApplicationTable />
       </div>
     </section>
   );
 };
 
-export default UserApplications;
+export default Applications;

@@ -1,9 +1,13 @@
 import { useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import { Table, type TableProps } from 'antd';
+import cn from 'classnames';
 
 import { getColumns } from './columns';
 
+import { ViewUserModal, open as openViewUserModal } from '@features/view-user-modal';
+import { ViewProcessModal, open as openViewProcessModal } from '@features/view-process-modal';
 import { applicationStatuses, type IIncomingApplication } from '@entities/applications';
 import { Paginator } from '@shared/ui';
 import { defaultValues } from '@shared/config';
@@ -171,11 +175,21 @@ const IncomingApplicationsTable: FC = () => {
     setFilters((prev) => ({ ...prev, page, limit }));
   };
 
-  const columns = getColumns(filters, t);
+  const dispatch = useDispatch();
+
+  const handleOpenViewModal = (record: IIncomingApplication) => {
+    dispatch(openViewUserModal(record.id));
+  };
+
+  const handleOpenProcessModal = (record: IIncomingApplication) => {
+    dispatch(openViewProcessModal(record.id));
+  };
+
+  const columns = getColumns(filters, t, handleOpenViewModal, handleOpenProcessModal);
 
   return (
     <div className={styles['incoming-applications-table']}>
-      <div className={styles['incoming-applications-table__body']}>
+      <div className={cn(styles['incoming-applications-table__body'], 'scrollbar')}>
         <Table<IIncomingApplication>
           classNames={{
             root: 'table',
@@ -202,6 +216,8 @@ const IncomingApplicationsTable: FC = () => {
           summary={t('summary', { count: total })}
         />
       </div>
+      <ViewUserModal />
+      <ViewProcessModal />
     </div>
   );
 };

@@ -3,7 +3,11 @@ import { useTranslation } from 'react-i18next';
 import { Typography, Button } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
 
-import { ApplicationPreview, type IApplicationPreview } from '@entities/applications';
+import {
+  ApplicationPreview,
+  networkTypes,
+  type IApplicationPreview,
+} from '@entities/applications';
 import { routes } from '@shared/config';
 import { IconPlus } from '@shared/assets';
 
@@ -19,7 +23,7 @@ const RecentApplications: FC = () => {
     {
       id: 1,
       code: 'AR-2026-000008',
-      type: 'oil_pipeline',
+      type: networkTypes.OIL_PIPELINE,
       title: 'Neft / neft mahsulotlari quvuri',
       subtitle: 'Samarkand-3-Kushbegi, 5230 km, 5pk',
       icon: '/images/test/oil.svg',
@@ -28,7 +32,7 @@ const RecentApplications: FC = () => {
     {
       id: 2,
       code: 'AR-2026-000009',
-      type: 'power_line',
+      type: networkTypes.POWER_LINE,
       title: 'Havo elektr uzatish liniyasi',
       subtitle: 'Samarkand-Bukhara, 120 km, 2pk',
       icon: '/images/test/oil.svg',
@@ -36,7 +40,7 @@ const RecentApplications: FC = () => {
     {
       id: 3,
       code: 'AR-2026-000012',
-      type: 'fiber_optic',
+      type: networkTypes.FIBER_OPTIC,
       title: 'Optik tolali aloqa kabeli',
       subtitle: 'Tashkent-Khiva, 600 km, 1pk',
       icon: '/images/test/oil.svg',
@@ -44,7 +48,7 @@ const RecentApplications: FC = () => {
     {
       id: 4,
       code: 'AR-2026-000010',
-      type: 'gas_pipeline',
+      type: networkTypes.GAS_PIPELINE,
       title: 'Gaz quvuri',
       subtitle: 'Tashkent-Samarkand, 300 km, 5pk',
       icon: '/images/test/oil.svg',
@@ -52,7 +56,7 @@ const RecentApplications: FC = () => {
     {
       id: 5,
       code: 'AR-2026-000011',
-      type: 'sewage_pipeline',
+      type: networkTypes.SEWAGE_PIPELINE,
       title: 'Kanalizatsiya quvuri',
       subtitle: 'Bukhara-Nukus, 540 km, 4pk',
       icon: '/images/test/oil.svg',
@@ -60,7 +64,7 @@ const RecentApplications: FC = () => {
     {
       id: 6,
       code: 'AR-2026-000011',
-      type: 'oil_pipeline',
+      type: networkTypes.OIL_PIPELINE,
       title: 'Neft / neft mahsulotlari quvuri',
       subtitle: 'Samarkand-3-Kushbegi, 5230 km, 5pk',
       icon: '/images/test/oil.svg',

@@ -3,12 +3,10 @@ import type { BlockerFunction } from 'react-router-dom';
 
 import type { leaveConfirmState } from './navigation-state';
 
-export type TLeaveConfirmState =
-  (typeof leaveConfirmState)[keyof typeof leaveConfirmState];
-
+export type TLeaveConfirmState = (typeof leaveConfirmState)[keyof typeof leaveConfirmState];
 export type TSkipLeaveConfirmState = Record<TLeaveConfirmState, true>;
 
-export interface LeaveConfirmModalProps {
+export interface ILeaveConfirmModalProps {
   when?: boolean | BlockerFunction;
   open?: boolean;
   title?: ReactNode;

@@ -1,6 +1,7 @@
 import { useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Table, type TableProps } from 'antd';
+import cn from 'classnames';
 
 import { getColumns } from './columns';
 
@@ -9,7 +10,7 @@ import { defaultValues } from '@shared/config';
 import { Paginator } from '@shared/ui';
 import type { TFilterKey, TTableFilters } from '@shared/types';
 
-import styles from './user-applications-table.module.scss';
+import styles from './applications-table.module.scss';
 
 const mockApplications: IApplication[] = [
   {
@@ -134,7 +135,7 @@ const mockApplications: IApplication[] = [
   },
 ];
 
-const UserApplicationTable: FC = () => {
+const ApplicationTable: FC = () => {
   const { t } = useTranslation();
   const total = 125;
 
@@ -162,8 +163,8 @@ const UserApplicationTable: FC = () => {
   const columns = getColumns(filters, t);
 
   return (
-    <div className={styles['user-applications-table']}>
-      <div className={styles['user-applications-table__body']}>
+    <div className={styles['applications-table']}>
+      <div className={cn(styles['applications-table__body'], 'scrollbar')}>
         <Table<IApplication>
           classNames={{
             root: 'table',
@@ -181,7 +182,7 @@ const UserApplicationTable: FC = () => {
           onChange={handleTableChange}
         />
       </div>
-      <div className={styles['user-applications-table__pagination']}>
+      <div className={styles['applications-table__pagination']}>
         <Paginator
           total={total}
           page={filters.page}
@@ -194,4 +195,4 @@ const UserApplicationTable: FC = () => {
   );
 };
 
-export default UserApplicationTable;
+export default ApplicationTable;

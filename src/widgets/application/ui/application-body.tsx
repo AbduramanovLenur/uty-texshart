@@ -6,37 +6,39 @@ import cn from 'classnames';
 import ApplicationInformation from './application-information';
 import ApplicationMap from './application-map';
 
-import styles from './user-application-body.module.scss';
+import { tabKeys } from '../model/tab-keys';
 
-const UserApplicationBody: FC = () => {
+import styles from './application-body.module.scss';
+
+const ApplicationBody: FC = () => {
   const { t } = useTranslation();
 
   const items: TabsProps['items'] = [
     {
-      key: '1',
-      label: t('userApplication.tabs.info'),
+      key: tabKeys.FIRST_TAB,
+      label: t('application.tabs.info'),
       children: <ApplicationInformation />,
     },
     {
-      key: '2',
-      label: t('userApplication.tabs.map'),
+      key: tabKeys.SECOND_TAB,
+      label: t('application.tabs.map'),
       children: <ApplicationMap />,
     },
   ];
 
   return (
-    <div className={styles['user-application-body']}>
+    <div className={cn(styles['application-body'], 'tabs')}>
       <Tabs
         classNames={{
-          root: 'tabs',
-          header: cn(styles['user-application-body__tabs'], 'tabs__header'),
+          root: 'tabs__root',
+          header: cn(styles['application-body__tabs'], 'tabs__header'),
           item: 'tabs__item',
         }}
-        defaultActiveKey='1'
+        defaultActiveKey={tabKeys.FIRST_TAB}
         items={items}
       />
     </div>
   );
 };
 
-export default UserApplicationBody;
+export default ApplicationBody;

@@ -11,11 +11,16 @@ import type { TTableFilters } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
 
-export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IIncomingApplication>['columns'] => [
+export const getColumns = (
+  filters: TTableFilters,
+  t: TFunction,
+  onUserClick: (record: IIncomingApplication) => void,
+  onActionClick?: (record: IIncomingApplication) => void,
+): TableProps<IIncomingApplication>['columns'] => [
   {
     title: t('headers.applicationId'),
     key: filterKeys.APPLICATION_ID,
-    width: 120,
+    width: 140,
     sorter: true,
     sortOrder: getSortOrder(filters, filterKeys.APPLICATION_ID),
     render: (_, record) => (
@@ -43,7 +48,11 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IIn
     title: t('headers.action'),
     width: 120,
     render: (_, record) => (
-      <button className='table-trigger' type='button'>
+      <button
+        className='table-trigger'
+        type='button'
+        onClick={() => onActionClick?.(record)}
+      >
         {t('actions.view')}
       </button>
     ),
@@ -53,9 +62,13 @@ export const getColumns = (filters: TTableFilters, t: TFunction): TableProps<IIn
     key: filterKeys.USER,
     minWidth: 140,
     render: (_, record) => (
-      <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.id)}>
+      <button
+        className='table-trigger'
+        type='button'
+        onClick={() => onUserClick(record)}
+      >
         {record.user}
-      </Link>
+      </button>
     ),
     filteredValue: filters.user,
     filters: [

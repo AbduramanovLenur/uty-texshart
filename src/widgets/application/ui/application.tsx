@@ -4,15 +4,15 @@ import { Breadcrumb } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import UserApplicationBody from './user-application-body';
+import ApplicationBody from './application-body';
 import { getBreadcrumbs } from '../model/breadcrumbs';
 
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
 
-import styles from './user-application.module.scss';
+import styles from './application.module.scss';
 
-const UserApplication: FC = () => {
+const Application: FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
   const breadcrumbs = getBreadcrumbs(t);
@@ -22,8 +22,8 @@ const UserApplication: FC = () => {
   };
 
   return (
-    <section className={cn(styles['user-applications'], 'section')}>
-      <div className={cn(styles['user-application__inner'], 'section-inner')}>
+    <section className={cn(styles['application'], 'section')}>
+      <div className={cn(styles['application__inner'], 'section-inner')}>
         <Breadcrumb
           classNames={{
             root: 'breadcrumbs',
@@ -34,10 +34,10 @@ const UserApplication: FC = () => {
         <PageHeader onClick={handleBack}>
           ARZ-31234123
         </PageHeader>
-        <UserApplicationBody />
+        <ApplicationBody />
       </div>
     </section>
   );
 };
 
-export default UserApplication;
+export default Application;

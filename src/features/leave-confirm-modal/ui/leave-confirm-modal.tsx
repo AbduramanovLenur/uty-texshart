@@ -3,11 +3,11 @@ import { Modal, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import { useLeaveConfirm } from '../model/use-leave-confirm';
-import type { LeaveConfirmModalProps } from '../model/types';
+import type { ILeaveConfirmModalProps } from '../model/types';
 
 import styles from './leave-confirm-modal.module.scss';
 
-export const LeaveConfirmModal: FC<LeaveConfirmModalProps> = ({
+export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
   when = true,
   open,
   title,
@@ -24,7 +24,7 @@ export const LeaveConfirmModal: FC<LeaveConfirmModalProps> = ({
 
   const displayTitle = title ?? t('leaveConfirmModal.title');
   const displayDescription = description ?? t('leaveConfirmModal.description');
-  const displayLeaveText = leaveText ?? t('leaveConfirmModal.close');
+  const displayLeaveText = leaveText ?? t('actions.close');
   const displayContinueText = continueText ?? t('leaveConfirmModal.continue');
 
   return (

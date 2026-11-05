@@ -9,13 +9,6 @@
     margin-bottom: var(--ant-margin);
     overflow: auto;
     border-radius: 8px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-
-    &::-webkit-scrollbar {
-      display: none;
-    }
-
     :global(.ant-table-content) {
       overflow: visible !important;
     }
@@ -27,9 +20,6 @@
       position: sticky;
       top: 0;
       z-index: 2;
-    }
-    :global(.ant-table-wrapper .ant-table-cell) {
-      padding: var(--ant-padding) var(--ant-padding-sm);
     }
   }
   &__pagination {

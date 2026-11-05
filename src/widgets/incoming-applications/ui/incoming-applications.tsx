@@ -25,7 +25,7 @@ const IncomingApplications: FC = () => {
             type='default'
             icon={<IconDownload />}
           >
-            {t('incomingApplications.download')}
+            {t('actions.download')}
           </Button>
         </div>
         <IncomingApplicationsTable />

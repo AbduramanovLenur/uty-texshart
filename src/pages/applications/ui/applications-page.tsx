@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { UserApplications } from '@widgets/user-applications';
+import { Applications } from '@widgets/applications';
 import { IncomingApplications } from '@widgets/incoming-applications';
 
 const ApplicationsPage: FC = () => {
@@ -10,7 +10,7 @@ const ApplicationsPage: FC = () => {
     return <IncomingApplications />;
   }
 
-  return <UserApplications />;
+  return <Applications />;
 };
 
 export default ApplicationsPage;
