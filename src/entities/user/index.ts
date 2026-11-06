@@ -1,4 +1,5 @@
-export { default as UserInfo, default as ApplicantInfo } from './ui/user-info';
+export { default as UserInfo } from './ui/user-info';
+export { default as UserDocuments } from './ui/user-documents';
 
 export { userMock, applicantMock } from './model/mock';
-export type { IUser, IUserFile } from './model/types';
+export type { IUser, IUserFile, IUserDocuments } from './model/types';

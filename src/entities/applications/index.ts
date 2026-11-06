@@ -18,6 +18,7 @@ export type {
   IApplicationStatusTagConfig,
   IApplication,
   IIncomingApplication,
+  IPreviewFile,
 } from './model/types';
 
 export type { TNetworkType } from './model/types';

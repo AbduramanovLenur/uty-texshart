@@ -1,0 +1,14 @@
+.incoming-application-applicant {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+  min-height: 0;
+  gap: var(--ant-margin-lg);
+  padding: var(--ant-padding-lg);
+  background-color: var(--ant-color-fill-quaternary);
+  border-radius: 0 0 var(--ant-border-radius-lg) var(--ant-border-radius-lg);
+  overflow: hidden;
+  &__content {
+    border-radius: var(--ant-border-radius-lg);
+  }
+}

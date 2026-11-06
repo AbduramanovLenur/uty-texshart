@@ -7,11 +7,12 @@ import { userMock } from '../model/mock';
 import type { IUser } from '../model/types';
 
 import { IconArrowDownBracket } from '@shared/assets';
+import { downloadFile } from '@shared/utils';
 
 import styles from './user-info.module.scss';
 
 interface IProps {
-  user?: IUser | null;
+  user?: IUser;
   className?: string;
 }
 
@@ -19,17 +20,11 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
   const { t } = useTranslation();
   const data = user ?? userMock;
 
-  const handleDownload = (url?: string, filename?: string) => {
-    if (!url || url === '#') {
-      return;
-    }
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename || 'download';
-    link.target = '_blank';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+  const handleDownload = (url: string, name: string) => {
+
+    if (!url || !name) return;
+
+    downloadFile(url, name);
   };
 
   return (
@@ -90,7 +85,7 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
             <Button
               className={styles['user-info__file-btn']}
               icon={<IconArrowDownBracket />}
-              onClick={() => handleDownload(data.idCard?.url, data.idCard?.name)}
+              onClick={() => handleDownload(data.idCard!.url, data.idCard!.name)}
             >
               {t('actions.downloadFile')} ({data.idCard.size})
             </Button>
@@ -105,7 +100,7 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
             <Button
               className={styles['user-info__file-btn']}
               icon={<IconArrowDownBracket />}
-              onClick={() => handleDownload(data.license?.url, data.license?.name)}
+              onClick={() => handleDownload(data.license!.url, data.license!.name)}
             >
               {t('actions.downloadFile')} ({data.license.size})
             </Button>

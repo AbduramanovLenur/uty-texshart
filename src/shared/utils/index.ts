@@ -3,3 +3,4 @@ export { getPositiveInt } from './get-positive-int';
 export { parsePositiveInt } from './parse-positive-int';
 export { getSortOrder } from './get-sort-order';
 export { hasRoleAccess } from './has-role-access';
+export { downloadFile } from './download-file';

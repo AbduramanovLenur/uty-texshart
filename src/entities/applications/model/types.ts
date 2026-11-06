@@ -68,3 +68,10 @@ export interface IApplication {
 export interface IIncomingApplication extends IApplication {
   user: string;
 }
+
+export interface IPreviewFile {
+  url: string;
+  name: string;
+  size: string;
+  extensionFile: string;
+}
