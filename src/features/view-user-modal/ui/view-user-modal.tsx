@@ -7,6 +7,8 @@ import { close, stateViewUserModal } from '../model/slice';
 
 import { UserInfo } from '@entities/user';
 
+import styles from './view-user-modal.module.scss';
+
 const ViewUserModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -37,7 +39,7 @@ const ViewUserModal: FC = () => {
         </div>
       }
     >
-      <UserInfo />
+      <UserInfo className={styles['view-user-modal__info']} />
     </Modal>
   );
 };

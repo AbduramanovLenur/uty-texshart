@@ -173,14 +173,16 @@
     "regions_mtu": "Hududlar va MTU",
     "settings": "Sozlamalar"
   },
-  "userApplication": {
+  "application": {
     "breadcrumbs": {
       "applications": "Arizalarim",
-      "details": "Ariza ma’lumotlari"
+      "details": "Ariza haqida ma'lumot"
     },
     "tabs": {
-      "info": "Ariza ma’lumotlari",
-      "map": "Xaritadan ko’rish"
+      "info": "Ariza haqida ma'lumot",
+      "map": "Xaritada ko'rish",
+      "applicantInfo": "Arizachi ma'lumotlari",
+      "documents": "Xujjatlar"
     }
   },
   "applications": {
@@ -230,6 +232,10 @@
     "director": "Rahbar ism-sharifi",
     "phone": "Kontakt raqami",
     "address": "Manzil",
+    "idCard": "ID karta",
+    "license": "Tadbirkorlik litsenziyasi"
+  },
+  "userDocuments": {
     "idCard": "ID karta",
     "license": "Tadbirkorlik litsenziyasi"
   }

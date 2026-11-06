@@ -1,0 +1,92 @@
+.user-documents {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--white);
+  padding: var(--ant-padding-lg);
+  border-radius: var(--ant-border-radius-lg);
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &__content {
+    &:not(:last-child) {
+      margin-bottom: var(--ant-margin-xl);
+      padding-bottom: var(--ant-padding-xl);
+      border-bottom: 1px solid var(--border-secondary);
+    }
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ant-padding-xs);
+    margin-bottom: var(--ant-margin);
+  }
+  &__title {
+    &:global(.ant-typography) {
+      margin-bottom: var(--ant-margin-xxs);
+      color: var(--dark-88);
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--ant-padding-xs);
+    max-height: 145px;
+  }
+  &__item {
+    :global {
+      .ant-image {
+        width: 100%;
+        max-height: 145px;
+        border-radius: var(--ant-border-radius-sm);
+        overflow: hidden;
+        img {
+          width: 100%;
+          max-height: 145px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  &__file-btn {
+    height: 24px;
+    line-height: 1.5;
+    font-weight: 500;
+    padding: 0 7px;
+    :global(.ant-btn-icon) {
+      > svg {
+        width: 14px;
+        height: 14px;
+        color: var(--dark-45);
+        transition: color 0.5s;
+      }
+    }
+    &:hover {
+      :global(.ant-btn-icon) {
+        > svg {
+          color: var(--ant-btn-text-color-hover);
+        }
+      }
+    }
+  }
+  &__preview {
+    :global {
+      .ant-image {
+        width: 100%;
+        max-height: 350px;
+        border-radius: var(--ant-border-radius-sm);
+        overflow: hidden;
+        img {
+          width: 100%;
+          max-height: 350px;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

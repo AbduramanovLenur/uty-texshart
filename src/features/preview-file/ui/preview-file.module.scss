@@ -1,0 +1,32 @@
+.preview-file {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ant-margin);
+  background-color: var(--ant-blue-1);
+  border-radius: var(--ant-border-radius-lg);
+  padding: var(--ant-padding-lg) var(--ant-padding);
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: var(--ant-margin);
+  }
+  &__icon {
+    display: flex;
+    align-items: center;
+  }
+  &__name {
+    font-size: var(--ant-font-size);
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  &__info {
+    font-size: var(--ant-font-size-sm);
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--dark-65)
+  }
+  &__button {
+    color: var(--dark-88);
+  }
+}
