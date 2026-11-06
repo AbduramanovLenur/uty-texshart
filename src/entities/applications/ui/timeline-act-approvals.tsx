@@ -25,7 +25,7 @@ const TimelineActApprovals: FC<IProps> = ({
         <div key={approval.id} className={styles['timeline-act-approvals__item']}>
           <div className={styles['timeline-act-approvals__left']}>
             <div className={styles['timeline-act-approvals__title']}>
-              {approval.title}
+              {t(approval.title, approval.title)}
             </div>
             {approval.subtitle && (
               <div className={styles['timeline-act-approvals__subtitle']}>

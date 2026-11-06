@@ -14,22 +14,46 @@
     "formed": "Shakllantirdi - {{date}}",
     "confirmed": "Tasdiqladi - {{date}}",
     "steps": {
-      "applicationAccepted": "Ariza qabul qilindi",
-      "forwardedToRegional": "Hududiy bo‘limga yo‘naltirildi",
-      "actCreated": "Dalolatnoma shakllantirildi",
-      "technicalConditionsIssued": "Texnik-shart berildi",
-      "constructionStarted": "Qurilishga ruxsat berildi",
-      "completedSuccessfully": "Muvaffaqiyatli yakunlandi",
-      "downloadAct": "Dalolatnomani yuklash ({{size}})",
-      "downloadRejectionReason": "Rad etish sababi ({{size}})",
-      "downloadTechnicalSpecs": "Texnik shartlarni yuklash ({{size}})",
-      "downloadConstructionEstimate": "Qurilish smetasi ({{size}})",
-      "downloadFinalAct": "Yakuniy dalolatnoma ({{size}})",
-      "deficienciesFound": "Xujjatlarda kamchilik topildi",
-      "expired": "Muddati o‘tgan",
-      "rejected": "Ariza rad etildi",
-      "technicalConditionsNotIssued": "Texnik shart berilmadi",
-      "technicalConditionsDenied": "Qurilish qilishni imkoni yo’q"
+      "title": {
+        "submitted": "Ariza topshirildi",
+        "paymentDone": "To‘lov qilindi",
+        "applicationAccepted": "Ariza qabul qilindi",
+        "forwardedToRegional": "Hududiy bo‘limga yo‘naltirildi",
+        "actCreated": "Dalolatnoma shakllantirildi",
+        "actConfirmed": "Dalolatnoma tasdiqlandi",
+        "technicalConditionsIssued": "Texnik shart berildi",
+        "projectDocumentsUploaded": "Loyiha xujjatlari yuklandi",
+        "constructionPermitIssued": "Qurilishga ruxsat berildi",
+        "constructionStarted": "Qurilish boshlandi",
+        "constructionCompleted": "Qurilish yakunlandi",
+        "constructionActUploaded": "Qurilish bo‘yicha dalolatnoma yuklandi",
+        "constructionCompletionConfirmed": "Qurilish yakunlanishi tasdiqlandi",
+        "completedSuccessfully": "Muvaffaqiyatli yakunlandi"
+      },
+      "triggers": {
+        "downloadAct": "Dalolatnomani yuklash ({{size}})",
+        "downloadRejectionReason": "Rad etish sababi ({{size}})",
+        "downloadTechnicalSpecs": "Texnik shartlarni yuklash ({{size}})",
+        "downloadConstructionEstimate": "Qurilish smetasi ({{size}})",
+        "downloadFinalAct": "Yakuniy dalolatnoma ({{size}})",
+        "downloadProjectDocuments": "Loyiha hujjatlarini yuklash ({{size}})",
+        "downloadConstructionPermit": "Qurilish ruxsatnomasini yuklash ({{size}})",
+        "downloadConstructionAct": "Qurilish dalolatnomasini yuklash ({{size}})"
+      },
+      "rejects": {
+        "rejected": "Ariza rad etildi",
+        "deficienciesFound": "Xujjatlarda kamchilik topildi",
+        "expired": "Muddati o‘tgan",
+        "technicalConditionsNotIssued": "Texnik shart berilmadi",
+        "technicalConditionsDenied": "Qurilish qilishni imkoni yo’q"
+      }
+    },
+    "approvals": {
+      "regionalHead": "Hududiy bo‘lim boshlig‘i",
+      "pch": "PCH",
+      "ech": "ECH",
+      "shch": "SHCH",
+      "applicant": "Arizachi"
     }
   },
   "authentication": {
@@ -238,8 +262,7 @@
   "userDocuments": {
     "idCard": "ID karta",
     "license": "Tadbirkorlik litsenziyasi"
-  }
-,
+  },
   "processModal": {
     "title": "Jarayon",
     "viewDetails": "Batafsil ko'rish"

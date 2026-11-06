@@ -38,7 +38,6 @@ export interface ITimelineStep {
   subtitle?: string;
   time?: string;
   error?: string;
-  comment?: string;
   info?: string;
   file?: boolean;
   button?: string;

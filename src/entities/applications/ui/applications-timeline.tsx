@@ -22,41 +22,6 @@ interface IProps {
   className?: string;
 }
 
-const defaultActApprovals: ITimelineApproval[] = [
-  {
-    title: "Hududiy bo'lim boshlig'i",
-    subtitle: 'Qarshi MTU',
-    status: approvalStatuses.FORMED,
-    date: '20.01.2026',
-    person: "Yo'ldoshev Akrom",
-  },
-  {
-    title: 'PCH',
-    subtitle: "Salar Temiryo'l masofasi",
-    status: approvalStatuses.CONFIRMED,
-    date: '20.01.2026',
-    person: 'Usmonov Hamdam',
-  },
-  {
-    title: 'ECH',
-    subtitle: 'Toshkent signalizatsiya va aloqa masofasi',
-    status: approvalStatuses.CONFIRMED,
-    date: '20.01.2026',
-    person: 'Yunusov Temur',
-  },
-  {
-    title: 'SHCH',
-    subtitle: "Toshkent elektr ma'lumot masofasi",
-    status: approvalStatuses.PENDING,
-    person: 'Temirov Komil',
-  },
-  {
-    title: 'Arizachi',
-    status: approvalStatuses.PENDING,
-    person: 'New World MCHJ',
-  },
-];
-
 const ApplicationsTimeline: FC<IProps> = ({ className }) => {
   const { t } = useTranslation();
   const [isAccordionOpen, setIsAccordionOpen] = useState(false);
@@ -65,147 +30,132 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
     setIsAccordionOpen((prev) => !prev);
   };
 
+  const defaultActApprovals: ITimelineApproval[] = [
+    {
+      id: 1,
+      title: t('applicationsTimeline.approvals.regionalHead'),
+      subtitle: 'Qarshi MTU',
+      status: approvalStatuses.FORMED,
+      date: '20.01.2026',
+      person: "Yo'ldoshev Akrom",
+    },
+    {
+      id: 2,
+      title: t('applicationsTimeline.approvals.pch'),
+      subtitle: "Salar Temiryo'l masofasi",
+      status: approvalStatuses.CONFIRMED,
+      date: '20.01.2026',
+      person: 'Usmonov Hamdam',
+    },
+    {
+      id: 3,
+      title: t('applicationsTimeline.approvals.ech'),
+      subtitle: 'Toshkent signalizatsiya va aloqa masofasi',
+      status: approvalStatuses.CONFIRMED,
+      date: '20.01.2026',
+      person: 'Yunusov Temur',
+    },
+    {
+      id: 4,
+      title: t('applicationsTimeline.approvals.shch'),
+      subtitle: "Toshkent elektr ma'lumot masofasi",
+      status: approvalStatuses.PENDING,
+      person: 'Temirov Komil',
+    },
+    {
+      id: 5,
+      title: t('applicationsTimeline.approvals.applicant'),
+      status: approvalStatuses.PENDING,
+      person: 'New World MCHJ',
+    },
+  ];
+
   const timelineSteps: ITimelineStep[] = [
     {
-      id: '1-pending',
+      id: 'step-1',
       step: 1,
-      title: t('applicationsTimeline.steps.applicationAccepted'),
+      title: t('applicationsTimeline.steps.title.submitted'),
+      time: '12:32, 12.01.2026',
+      status: statuses.DONE,
+    },
+    {
+      id: 'step-2',
+      step: 2,
+      title: t('applicationsTimeline.steps.title.paymentDone'),
+      status: statuses.ACTIVE,
+    },
+    {
+      id: 'step-3',
+      step: 3,
+      title: t('applicationsTimeline.steps.title.applicationAccepted'),
       status: statuses.PENDING,
     },
     {
-      id: '1-active',
-      step: 1,
-      title: t('applicationsTimeline.steps.applicationAccepted'),
-      status: statuses.ACTIVE,
-    },
-    {
-      id: '1-done',
-      step: 1,
-      title: t('applicationsTimeline.steps.applicationAccepted'),
-      time: '12:32, 12.01.2026',
-      status: statuses.DONE,
-      employee: 'Bosh boshqarma',
-    },
-    {
-      id: '2-active',
-      step: 2,
-      title: t('applicationsTimeline.steps.forwardedToRegional'),
-      status: statuses.ACTIVE,
-    },
-    {
-      id: '2-pending',
-      step: 2,
-      title: t('applicationsTimeline.steps.forwardedToRegional'),
+      id: 'step-4',
+      step: 4,
+      title: t('applicationsTimeline.steps.title.forwardedToRegional'),
       status: statuses.PENDING,
     },
     {
-      id: '2-done',
-      step: 2,
-      title: t('applicationsTimeline.steps.forwardedToRegional'),
-      info: 'Qarshi MTU',
-      time: '12:32, 12.01.2026',
-      status: statuses.DONE,
-      employee: 'Bosh boshqarma',
-    },
-    {
-      id: '2-error',
-      step: 2,
-      title: t('applicationsTimeline.steps.rejected'),
-      error: t('applicationsTimeline.steps.deficienciesFound'),
-      comment: t('applicationsTimeline.steps.expired'),
-      status: statuses.ERROR,
-    },
-    {
-      id: '3-active',
-      step: 3,
-      title: t('applicationsTimeline.steps.actCreated'),
-      status: statuses.ACTIVE,
-    },
-    {
-      id: '3-done',
-      step: 3,
-      title: t('applicationsTimeline.steps.actCreated'),
-      button: t('applicationsTimeline.steps.downloadAct', { size: '1.2 MB' }),
-      status: statuses.DONE,
-      time: '12:32, 12.01.2026',
+      id: 'step-5',
+      step: 5,
+      title: t('applicationsTimeline.steps.title.actCreated'),
+      status: statuses.PENDING,
+      button: t('applicationsTimeline.steps.triggers.downloadAct', { size: '1.2 MB' }),
       approvals: defaultActApprovals,
     },
     {
-      id: '3-pending',
-      step: 3,
-      title: t('applicationsTimeline.steps.actCreated'),
-      status: statuses.PENDING,
-    },
-    {
-      id: '4-active',
-      step: 4,
-      title: t('applicationsTimeline.steps.technicalConditionsIssued'),
-      status: statuses.ACTIVE,
-    },
-    {
-      id: '4-done',
-      step: 4,
-      title: t('applicationsTimeline.steps.technicalConditionsIssued'),
-      status: statuses.DONE,
-      employee: 'Bosh boshqarma',
-      button: t('applicationsTimeline.steps.downloadTechnicalSpecs', { size: '2.4 MB' }),
-      time: '12:32, 12.01.2026',
-    },
-    {
-      id: '4-pending',
-      step: 4,
-      title: t('applicationsTimeline.steps.technicalConditionsIssued'),
-      status: statuses.PENDING,
-    },
-    {
-      id: '4-error',
-      step: 4,
-      title: t('applicationsTimeline.steps.technicalConditionsNotIssued'),
-      error: t('applicationsTimeline.steps.technicalConditionsDenied'),
-      button: t('applicationsTimeline.steps.downloadRejectionReason', { size: '2.4 MB' }),
-      status: statuses.ERROR,
-    },
-    {
-      id: '5-active',
-      step: 5,
-      title: t('applicationsTimeline.steps.constructionStarted'),
-      status: statuses.ACTIVE,
-    },
-    {
-      id: '5-pending',
-      step: 5,
-      title: t('applicationsTimeline.steps.constructionStarted'),
-      status: statuses.PENDING,
-    },
-    {
-      id: '5-done',
-      step: 5,
-      title: t('applicationsTimeline.steps.constructionStarted'),
-      button: t('applicationsTimeline.steps.downloadConstructionEstimate', { size: '3.0 MB' }),
-      employee: 'Bosh boshqarma',
-      time: '12:32, 12.01.2026',
-      status: statuses.DONE,
-    },
-    {
-      id: '6-active',
+      id: 'step-6',
       step: 6,
-      title: t('applicationsTimeline.steps.completedSuccessfully'),
-      status: statuses.ACTIVE,
-    },
-    {
-      id: '6-pending',
-      step: 6,
-      title: t('applicationsTimeline.steps.completedSuccessfully'),
+      title: t('applicationsTimeline.steps.title.actConfirmed'),
       status: statuses.PENDING,
     },
     {
-      id: '6-done',
-      step: 6,
-      title: t('applicationsTimeline.steps.completedSuccessfully'),
-      button: t('applicationsTimeline.steps.downloadFinalAct', { size: '2.0 MB' }),
-      employee: 'Bosh boshqarma',
-      time: '12:32, 12.01.2026',
-      status: statuses.DONE,
+      id: 'step-7',
+      step: 7,
+      title: t('applicationsTimeline.steps.title.technicalConditionsIssued'),
+      status: statuses.PENDING,
+      button: t('applicationsTimeline.steps.triggers.downloadTechnicalSpecs', { size: '2.4 MB' }),
+    },
+    {
+      id: 'step-8',
+      step: 8,
+      title: t('applicationsTimeline.steps.title.projectDocumentsUploaded'),
+      status: statuses.PENDING,
+      button: t('applicationsTimeline.steps.triggers.downloadProjectDocuments', { size: '1.5 MB' }),
+    },
+    {
+      id: 'step-9',
+      step: 9,
+      title: t('applicationsTimeline.steps.title.constructionPermitIssued'),
+      status: statuses.PENDING,
+      button: t('applicationsTimeline.steps.triggers.downloadConstructionPermit', { size: '3.0 MB' }),
+    },
+    {
+      id: 'step-10',
+      step: 10,
+      title: t('applicationsTimeline.steps.title.constructionStarted'),
+      status: statuses.PENDING,
+    },
+    {
+      id: 'step-11',
+      step: 11,
+      title: t('applicationsTimeline.steps.title.constructionCompleted'),
+      status: statuses.PENDING,
+    },
+    {
+      id: 'step-12',
+      step: 12,
+      title: t('applicationsTimeline.steps.title.constructionActUploaded'),
+      status: statuses.PENDING,
+      button: t('applicationsTimeline.steps.triggers.downloadConstructionAct', { size: '1.8 MB' }),
+    },
+    {
+      id: 'step-13',
+      step: 13,
+      title: t('applicationsTimeline.steps.title.constructionCompletionConfirmed'),
+      status: statuses.PENDING,
+      button: t('applicationsTimeline.steps.triggers.downloadFinalAct', { size: '2.0 MB' }),
     },
   ];
 
@@ -259,16 +209,18 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
                         </div>
                       </div>
                     )}
-                    {item?.button && (
+                    {(item?.button || item?.approvals?.length) && (
                       <div className={styles['applications-timeline__actions-row']}>
-                        <a className={styles['applications-timeline__file']} href='' download>
-                          <span className={styles['applications-timeline__file-icon']}>
-                            <IconArrowDownBracket />
-                          </span>
-                          <span className={styles['applications-timeline__file-text']}>
-                            {item.button}
-                          </span>
-                        </a>
+                        {item?.button && (
+                          <a className={styles['applications-timeline__file']} href='' download>
+                            <span className={styles['applications-timeline__file-icon']}>
+                              <IconArrowDownBracket />
+                            </span>
+                            <span className={styles['applications-timeline__file-text']}>
+                              {item.button}
+                            </span>
+                          </a>
+                        )}
                         {item?.approvals?.length && (
                           <button
                             type='button'
@@ -299,11 +251,6 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
                     {item?.time && (
                       <div className={styles['applications-timeline__time']}>
                         {item.time}
-                      </div>
-                    )}
-                    {item?.comment && (
-                      <div className={styles['applications-timeline__comment']}>
-                        {t('applicationsTimeline.comment')}: {item.comment}
                       </div>
                     )}
                   </div>
