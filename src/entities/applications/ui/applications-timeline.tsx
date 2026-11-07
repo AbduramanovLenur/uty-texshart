@@ -6,7 +6,7 @@ import { statuses } from '../model/stutuses';
 import { approvalStatuses } from '../model/approval-statuses';
 import { statusClasses } from '../model/status-classes';
 import type { ITimelineApproval, ITimelineStep } from '../model/types';
-import TimelineActApprovals from './timeline-act-approvals';
+import ApplicationApprovals from './application-approvals';
 
 import {
   IconArrowDownBracket,
@@ -52,7 +52,7 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
       title: t('applicationsTimeline.approvals.ech'),
       person: 'Salimov Erkin',
       text: 'Toshkent signalizatsiya va aloqa masofasi',
-      status: approvalStatuses.CONFIRMED,
+      status: approvalStatuses.REJECTED,
       date: '20.01.2026',
     },
     {
@@ -474,7 +474,7 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
                     )}
                   </div>
                   {item?.approvals && isAccordionOpen && (
-                    <TimelineActApprovals approvals={item.approvals} />
+                    <ApplicationApprovals approvals={item.approvals} />
                   )}
                 </div>
               </div>

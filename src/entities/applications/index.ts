@@ -1,6 +1,6 @@
 export { default as ApplicationPreview } from './ui/application-preview';
 export { default as ApplicationsTimeline } from './ui/applications-timeline';
-export { default as TimelineActApprovals } from './ui/timeline-act-approvals';
+export { default as TimelineActApprovals } from './ui/application-approvals';
 export { default as ApplicationInfo } from './ui/application-info';
 export { default as ApplicationStatusTag } from './ui/application-status-tag';
 
