@@ -3,8 +3,7 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import type { ITimelineApproval } from '../model/types';
-import { approvalStatuses } from '../model/approval-statuses';
-import { IconChecked, IconClock } from '@shared/assets';
+import { approvalStatusConfig } from '../model/approval-status-config';
 
 import styles from './timeline-act-approvals.module.scss';
 
@@ -13,57 +12,45 @@ interface IProps {
   className?: string;
 }
 
-const TimelineActApprovals: FC<IProps> = ({
-  approvals,
-  className,
-}) => {
+const TimelineActApprovals: FC<IProps> = ({ approvals, className }) => {
   const { t } = useTranslation();
 
   return (
     <div className={cn(styles['timeline-act-approvals'], className)}>
-      {approvals.map((approval) => (
-        <div key={approval.id} className={styles['timeline-act-approvals__item']}>
-          <div className={styles['timeline-act-approvals__left']}>
-            <div className={styles['timeline-act-approvals__title']}>
-              {t(approval.title, approval.title)}
-            </div>
-            {approval.subtitle && (
-              <div className={styles['timeline-act-approvals__subtitle']}>
-                {approval.subtitle}
+      {approvals.map((approval) => {
+        const config = approvalStatusConfig[approval.status];
+
+        return (
+          <div key={approval.id} className={styles['timeline-act-approvals__item']}>
+            <div className={styles['timeline-act-approvals__left']}>
+              <div className={styles['timeline-act-approvals__title']}>
+                {t(approval.title, approval.title)}
               </div>
-            )}
-            <div className={styles['timeline-act-approvals__status']}>
-              {approval.status === approvalStatuses.FORMED && (
-                <>
-                  <span className={styles['timeline-act-approvals__check-icon']}>
-                    <IconChecked />
+              <div className={styles['timeline-act-approvals__person']}>
+                {approval.person}
+              </div>
+              <div className={styles['timeline-act-approvals__text']}>
+                {approval.text}
+              </div>
+            </div>
+            <div className={styles['timeline-act-approvals__right']}>
+              {config && (
+                <div className={styles[config.className]}>
+                  <span>
+                    <config.icon />
                   </span>
-                  <span>{t('applicationsTimeline.formed', { date: approval.date })}</span>
-                </>
-              )}
-              {approval.status === approvalStatuses.CONFIRMED && (
-                <>
-                  <span className={styles['timeline-act-approvals__check-icon']}>
-                    <IconChecked />
+                  <span>
+                    {t(config.labelKey)}
                   </span>
-                  <span>{t('applicationsTimeline.confirmed', { date: approval.date })}</span>
-                </>
+                </div>
               )}
-              {approval.status === approvalStatuses.PENDING && (
-                <>
-                  <span className={styles['timeline-act-approvals__clock-icon']}>
-                    <IconClock />
-                  </span>
-                  <span>{t('applicationsTimeline.pending')}</span>
-                </>
-              )}
+              <div className={styles['timeline-act-approvals__date']}>
+                {approval.date}
+              </div>
             </div>
           </div>
-          <div className={styles['timeline-act-approvals__person']}>
-            {approval.person}
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };

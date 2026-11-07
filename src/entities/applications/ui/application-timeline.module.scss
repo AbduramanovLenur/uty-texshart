@@ -20,9 +20,6 @@
     gap: var(--ant-margin-xs);
   }
   &__item {
-    display: flex;
-    align-items: stretch;
-    gap: 16px;
     &.status-active {
       .applications-timeline {
         &__step {
@@ -63,10 +60,15 @@
           border: none;
         }
         &__title {
-          color: var(--ant-color-error);
+          color: var(--dark-88);
         }
       }
     }
+  }
+  &__box {
+    display: flex;
+    align-items: stretch;
+    gap: 16px;
   }
   &__indicator {
     display: flex;
@@ -99,6 +101,9 @@
     flex: 1;
     margin-top: var(--ant-margin-xs);
   }
+  &__info-wrapper {
+    width: 100%;
+  }
   &__content {
     display: flex;
     align-items: center;
@@ -106,6 +111,9 @@
     gap: var(--ant-margin-xs);
     padding-bottom: var(--ant-padding-sm);
     width: 100%;
+    &.is-active {
+      padding-bottom: 0;
+    }
   }
   &__overlay {
     width: 100%;
@@ -154,21 +162,15 @@
       color: var(--dark-45);
     }
   }
-  &__information {
-    font-size: var(--ant-font-size-sm);
-    line-height: 1.6;
-    color: var(--dark-88);
-  }
-  &__time {
+  &__date {
     font-size: var(--ant-font-size-sm);
     line-height: 1.6;
     color: var(--dark-45);
   }
-  &__comment {
+  &__text {
     font-size: var(--ant-font-size-sm);
     line-height: 1.6;
-    color: var(--dark-65);
-    margin-top: 6px;
+    color: var(--dark-88);
   }
   &__file {
     display: flex;
@@ -187,13 +189,6 @@
         text-decoration: underline;
       }
     }
-  }
-  &__actions-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    width: 100%;
   }
   &__accordion {
     &-toggle {
@@ -222,6 +217,13 @@
         transform: rotate(180deg);
       }
     }
+  }
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--ant-margin-xs);
+    flex-shrink: 0;
   }
   &__employee {
     font-size: var(--ant-font-size-sm);

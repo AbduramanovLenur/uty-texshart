@@ -9,10 +9,6 @@
     "technicalParameters": "Muhandislik-texnik parametrlari"
   },
   "applicationsTimeline": {
-    "comment": "Izoh",
-    "pending": "Kutilmoqda",
-    "formed": "Shakllantirdi - {{date}}",
-    "confirmed": "Tasdiqladi - {{date}}",
     "steps": {
       "title": {
         "submitted": "Ariza topshirildi",
@@ -31,21 +27,15 @@
         "completedSuccessfully": "Muvaffaqiyatli yakunlandi"
       },
       "triggers": {
-        "downloadAct": "Dalolatnomani yuklash ({{size}})",
-        "downloadRejectionReason": "Rad etish sababi ({{size}})",
-        "downloadTechnicalSpecs": "Texnik shartlarni yuklash ({{size}})",
-        "downloadConstructionEstimate": "Qurilish smetasi ({{size}})",
-        "downloadFinalAct": "Yakuniy dalolatnoma ({{size}})",
-        "downloadProjectDocuments": "Loyiha hujjatlarini yuklash ({{size}})",
-        "downloadConstructionPermit": "Qurilish ruxsatnomasini yuklash ({{size}})",
-        "downloadConstructionAct": "Qurilish dalolatnomasini yuklash ({{size}})"
+        "downloadRejectionReason": "Rad etish dalolatnomasi ({{size}})",
+
+        "downloadAct": "Dalolatnoma ({{size}})",
+        "downloadTechnicalSpecs": "Texnik shart ({{size}})",
+        "downloadProjectDocuments": "Loyiha xujjatlari ({{size}})",
+        "downloadConstructionAct": "Qurilish yakunida dalolatnomasi ({{size}})"
       },
       "rejects": {
-        "rejected": "Ariza rad etildi",
-        "deficienciesFound": "Xujjatlarda kamchilik topildi",
-        "expired": "Muddati o‘tgan",
-        "technicalConditionsNotIssued": "Texnik shart berilmadi",
-        "technicalConditionsDenied": "Qurilish qilishni imkoni yo’q"
+        "rejected": "Rad etildi"
       }
     },
     "approvals": {
@@ -54,7 +44,11 @@
       "ech": "ECH",
       "shch": "SHCH",
       "applicant": "Arizachi"
-    }
+    },
+    "pending": "Kutilmoqda",
+    "formed": "Shakllantirdi",
+    "confirmed": "Tasdiqladi",
+    "rejected": "Rad etildi"
   },
   "authentication": {
     "authPanel": {

@@ -1,7 +1,8 @@
-import type { ReactNode } from 'react';
+import type { ReactNode, ComponentType } from 'react';
 import type { applicationStatuses } from './application-statuses';
 import type { approvalStatuses } from './approval-statuses';
 import type { networkTypes } from './network-types';
+import type { statuses } from './stutuses';
 
 export type TApplicationStatus =
   (typeof applicationStatuses)[keyof typeof applicationStatuses];
@@ -11,6 +12,9 @@ export type TApprovalStatus =
 
 export type TNetworkType =
   (typeof networkTypes)[keyof typeof networkTypes];
+
+export type TApplicationTimelineStatus =
+  (typeof statuses)[keyof typeof statuses];
 
 export interface IApplicationPreview {
   id: number;
@@ -25,24 +29,22 @@ export interface IApplicationPreview {
 export interface ITimelineApproval {
   id?: string | number;
   title: string;
-  subtitle?: string;
+  person: string;
+  text?: string;
   status: TApprovalStatus;
   date?: string;
-  person: string;
 }
 
 export interface ITimelineStep {
-  id?: string | number;
-  step?: number;
-  title?: string;
-  subtitle?: string;
-  time?: string;
-  error?: string;
-  info?: string;
-  file?: boolean;
-  button?: string;
-  status: string;
+  id: string | number;
+  step: number;
+  title: string;
+  status: TApplicationTimelineStatus;
+  date?: string;
+  text?: string;
   employee?: string;
+  buttonText?: string;
+  fileUrl?: string;
   approvals?: ITimelineApproval[];
 }
 
@@ -73,4 +75,10 @@ export interface IPreviewFile {
   name: string;
   size: string;
   extensionFile: string;
+}
+
+export interface IApprovalStatusConfig {
+  className: string;
+  icon: ComponentType;
+  labelKey: string;
 }

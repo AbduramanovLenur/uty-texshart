@@ -9,10 +9,6 @@
     "technicalParameters": "Инженерно-технические параметры"
   },
   "applicationsTimeline": {
-    "comment": "Примечание",
-    "pending": "Ожидается",
-    "formed": "Сформировал - {{date}}",
-    "confirmed": "Подтвердил - {{date}}",
     "steps": {
       "title": {
         "submitted": "Заявка подана",
@@ -31,17 +27,15 @@
         "completedSuccessfully": "Успешно завершена"
       },
       "triggers": {
-        "downloadAct": "Скачать акт ({{size}})",
-        "downloadRejectionReason": "Причина отклонения ({{size}})",
-        "downloadTechnicalSpecs": "Скачать технические условия ({{size}})",
-        "downloadConstructionEstimate": "Строительная смета ({{size}})",
-        "downloadFinalAct": "Итоговый акт ({{size}})",
-        "downloadProjectDocuments": "Скачать проектные документы ({{size}})",
-        "downloadConstructionPermit": "Скачать разрешение на строительство ({{size}})",
-        "downloadConstructionAct": "Скачать акт строительства ({{size}})"
+        "downloadRejectionReason": "Акт об отклонении ({{size}})",
+        
+        "downloadAct": "Акт ({{size}})",
+        "downloadTechnicalSpecs": "Технические условия ({{size}})",
+        "downloadProjectDocuments": "Проектные документы ({{size}})",
+        "downloadConstructionAct": "Акт по завершении строительства ({{size}})"
       },
       "rejects": {
-        "rejected": "Заявление отклонено",
+        "rejected": "Отклонено",
         "deficienciesFound": "В документах обнаружены недостатки",
         "expired": "Срок действия истёк",
         "technicalConditionsNotIssued": "Технические условия не выданы",
@@ -54,7 +48,11 @@
       "ech": "ЭЧ",
       "shch": "ШЧ",
       "applicant": "Заявитель"
-    }
+    },
+    "pending": "Ожидается",
+    "formed": "Сформировал",
+    "confirmed": "Подтвердил",
+    "rejected": "Отклонил"
   },
   "authentication": {
     "authPanel": {
