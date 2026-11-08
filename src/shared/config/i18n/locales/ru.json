@@ -9,28 +9,50 @@
     "technicalParameters": "Инженерно-технические параметры"
   },
   "applicationsTimeline": {
-    "comment": "Примечание",
-    "pending": "Ожидается",
-    "formed": "Сформировал - {{date}}",
-    "confirmed": "Подтвердил - {{date}}",
     "steps": {
-      "applicationAccepted": "Заявка принята",
-      "forwardedToRegional": "Направлена в региональный отдел",
-      "actCreated": "Акт сформирован",
-      "technicalConditionsIssued": "Технические условия выданы",
-      "constructionStarted": "Разрешение на строительство выдано",
-      "completedSuccessfully": "Успешно завершена",
-      "downloadAct": "Скачать акт ({{size}})",
-      "downloadRejectionReason": "Причина отклонения ({{size}})",
-      "downloadTechnicalSpecs": "Скачать технические условия ({{size}})",
-      "downloadConstructionEstimate": "Строительная смета ({{size}})",
-      "downloadFinalAct": "Итоговый акт ({{size}})",
-      "deficienciesFound": "В документах обнаружены недостатки",
-      "expired": "Срок действия истёк",
-      "rejected": "Заявление отклонено",
-      "technicalConditionsNotIssued": "Технические условия не выданы",
-      "technicalConditionsDenied": "Строительство невозможн"
-    }
+      "title": {
+        "submitted": "Заявка подана",
+        "paymentDone": "Оплата произведена",
+        "applicationAccepted": "Заявка принята",
+        "forwardedToRegional": "Направлена в региональный отдел",
+        "actCreated": "Акт сформирован",
+        "actConfirmed": "Акт подтвержден",
+        "technicalConditionsIssued": "Технические условия выданы",
+        "projectDocumentsUploaded": "Проектная документация загружена",
+        "constructionPermitIssued": "Разрешение на строительство выдано",
+        "constructionStarted": "Строительство начато",
+        "constructionCompleted": "Строительство завершено",
+        "constructionActUploaded": "Акт по строительству загружен",
+        "constructionCompletionConfirmed": "Завершение строительства подтверждено",
+        "completedSuccessfully": "Успешно завершена"
+      },
+      "triggers": {
+        "downloadRejectionReason": "Акт об отклонении ({{size}})",
+        
+        "downloadAct": "Акт ({{size}})",
+        "downloadTechnicalSpecs": "Технические условия ({{size}})",
+        "downloadProjectDocuments": "Проектные документы ({{size}})",
+        "downloadConstructionAct": "Акт по завершении строительства ({{size}})"
+      },
+      "rejects": {
+        "rejected": "Отклонено",
+        "deficienciesFound": "В документах обнаружены недостатки",
+        "expired": "Срок действия истёк",
+        "technicalConditionsNotIssued": "Технические условия не выданы",
+        "technicalConditionsDenied": "Строительство невозможно"
+      }
+    },
+    "approvals": {
+      "regionalHead": "Начальник регионального отдела",
+      "pch": "ПЧ",
+      "ech": "ЭЧ",
+      "shch": "ШЧ",
+      "applicant": "Заявитель"
+    },
+    "pending": "Ожидается",
+    "formed": "Сформировал",
+    "confirmed": "Подтвердил",
+    "rejected": "Отклонил"
   },
   "authentication": {
     "authPanel": {
@@ -230,8 +252,7 @@
   "summary_other": "Найдено {{count}} заявки",
   "incomingApplications": {
     "title": "Входящие заявки"
-  }
-,
+  },
   "userInfo": {
     "title": "Информация о заявителе",
     "name": "Заявитель",
@@ -245,8 +266,7 @@
   "userDocuments": {
     "idCard": "ID карта",
     "license": "Лицензия на предпринимательскую деятельность"
-  }
-,
+  },
   "processModal": {
     "title": "Процесс",
     "viewDetails": "Подробнее"

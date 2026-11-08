@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { IStatusCard } from '../model/types';
+import type { IStatusCard } from '../model/types/statistics';
 
 import styles from './status-card.module.scss';
 

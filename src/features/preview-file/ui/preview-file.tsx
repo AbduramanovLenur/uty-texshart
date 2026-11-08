@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'antd';
 
-import type { IPreviewFile } from '@entities/applications';
+import type { IPreviewFile } from '@/entities/application';
 import { IconDownload, IconFile } from '@shared/assets';
 import { downloadFile } from '@shared/utils';
 

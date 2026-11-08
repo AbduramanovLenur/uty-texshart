@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { Steps } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-import { getSteps } from '../model/steps';
+import { getSteps } from '../model/lib/get-steps';
 
 import styles from './create-application-steps.module.scss';
 

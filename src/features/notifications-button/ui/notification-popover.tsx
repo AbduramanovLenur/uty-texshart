@@ -3,7 +3,7 @@ import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { NotificationCard } from '@entities/notifications';
+import { NotificationCard } from '@/entities/notification';
 import { routes } from '@shared/config';
 
 import styles from './notification-popover.module.scss';

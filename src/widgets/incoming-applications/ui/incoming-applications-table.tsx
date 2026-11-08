@@ -8,7 +8,7 @@ import { getColumns } from './columns';
 
 import { ViewUserModal, open as openViewUserModal } from '@features/view-user-modal';
 import { ViewProcessModal, open as openViewProcessModal } from '@features/view-process-modal';
-import { applicationStatuses, type IIncomingApplication } from '@entities/applications';
+import { ApplicationStatuses, type IIncomingApplication } from '@/entities/application';
 import { Paginator } from '@shared/ui';
 import { defaultValues } from '@shared/config';
 import type { TFilterKey, TTableFilters } from '@shared/types';
@@ -23,7 +23,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Elektr kabeli (yer osti)',
     mtu: 'Qarshi',
     km: '4823-9',
-    status: applicationStatuses.ACCEPTED,
+    status: ApplicationStatuses.ACCEPTED,
     date: '05.12.2025, 14:30',
     updatedAt: '12.11.2026, 16:45',
   },
@@ -34,7 +34,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Havo elektr uzatish liniyasi',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.FORWARDED,
+    status: ApplicationStatuses.FORWARDED,
     date: '27.05.2023, 13:50',
     updatedAt: '15.08.2024, 12:50',
   },
@@ -45,7 +45,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Gaz quvuri',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.ACT_CREATED,
+    status: ApplicationStatuses.ACT_CREATED,
     date: '22.02.2028, 11:45',
     updatedAt: '18.09.2027, 14:15',
   },
@@ -56,7 +56,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Suv quvuri',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
+    status: ApplicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
     date: '04.08.2028, 10:10',
     updatedAt: '22.04.2029, 08:40',
   },
@@ -67,7 +67,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Kanalizatsiya quvuri',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.REJECTED,
+    status: ApplicationStatuses.REJECTED,
     date: '15.01.2027, 09:15',
     updatedAt: '07.03.2025, 10:30',
   },
@@ -78,7 +78,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Issiqlik tarmog‘i',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.DRAFT,
+    status: ApplicationStatuses.DRAFT,
     date: '12.04.2026, 08:00',
     updatedAt: '05.05.2026, 11:20',
   },
@@ -89,7 +89,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Aloqa kabeli (mis)',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.ACCEPTED,
+    status: ApplicationStatuses.ACCEPTED,
     date: '19.07.2023, 21:35',
     updatedAt: '10.10.2025, 19:30',
   },
@@ -100,7 +100,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Optik tolali aloqa kabeli',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.ACCEPTED,
+    status: ApplicationStatuses.ACCEPTED,
     date: '11.09.2025, 15:25',
     updatedAt: '30.06.2026, 13:15',
   },
@@ -111,7 +111,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Optik tolali aloqa kabeli',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
+    status: ApplicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
     date: '23.10.2026, 17:40',
     updatedAt: '14.02.2027, 15:55',
   },
@@ -122,7 +122,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Neft / neft mahsulotlari quvuri',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.CONSTRUCTION_STARTED,
+    status: ApplicationStatuses.CONSTRUCTION_STARTED,
     date: '28.11.2024, 12:05',
     updatedAt: '09.11.2025, 11:10',
   },
@@ -133,7 +133,7 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Boshqa muhandislik tarmog‘i',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.COMPLETED,
+    status: ApplicationStatuses.COMPLETED,
     date: '30.03.2024, 16:00',
     updatedAt: '25.12.2023, 09:00',
   },
@@ -144,13 +144,14 @@ const incomingApplicationsMock: IIncomingApplication[] = [
     network: 'Aloqa kabeli (mis)',
     mtu: 'Qarshi MTU',
     km: '1298-4',
-    status: applicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
+    status: ApplicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
     date: '03.06.2022, 18:20',
     updatedAt: '29.01.2023, 17:05',
   },
 ];
 
 const IncomingApplicationsTable: FC = () => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const total = 125;
 
@@ -174,8 +175,6 @@ const IncomingApplicationsTable: FC = () => {
   const handlePaginationChange = (page: number, limit: number) => {
     setFilters((prev) => ({ ...prev, page, limit }));
   };
-
-  const dispatch = useDispatch();
 
   const handleOpenViewModal = (record: IIncomingApplication) => {
     dispatch(openViewUserModal(record.id));

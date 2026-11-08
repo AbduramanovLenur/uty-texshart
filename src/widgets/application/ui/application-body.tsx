@@ -6,7 +6,7 @@ import cn from 'classnames';
 import ApplicationInformation from './application-information';
 import ApplicationMap from './application-map';
 
-import { tabKeys } from '../model/tab-keys';
+import { TabKeys } from '../model/constants/tab-keys';
 
 import styles from './application-body.module.scss';
 
@@ -15,12 +15,12 @@ const ApplicationBody: FC = () => {
 
   const items: TabsProps['items'] = [
     {
-      key: tabKeys.FIRST_TAB,
+      key: TabKeys.FIRST_TAB,
       label: t('application.tabs.info'),
       children: <ApplicationInformation />,
     },
     {
-      key: tabKeys.SECOND_TAB,
+      key: TabKeys.SECOND_TAB,
       label: t('application.tabs.map'),
       children: <ApplicationMap />,
     },
@@ -34,7 +34,7 @@ const ApplicationBody: FC = () => {
           header: cn(styles['application-body__tabs'], 'tabs__header'),
           item: 'tabs__item',
         }}
-        defaultActiveKey={tabKeys.FIRST_TAB}
+        defaultActiveKey={TabKeys.FIRST_TAB}
         items={items}
       />
     </div>

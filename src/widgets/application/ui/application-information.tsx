@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import { ApplicationInfo, ApplicationsTimeline } from '@entities/applications';
+import { ApplicationInfo, ApplicationsTimeline } from '@/entities/application';
 
 import styles from './application-information.module.scss';
 

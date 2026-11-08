@@ -5,7 +5,7 @@ import { Breadcrumb } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
 import CreateApplicationBody from './create-application-body';
-import { getBreadcrumbs } from '../model/breadcrumbs';
+import { getBreadcrumbs } from '../model/lib/get-breadcrumbs';
 
 import { LeaveConfirmModal } from '@features/leave-confirm-modal';
 import { PageHeader } from '@shared/ui';

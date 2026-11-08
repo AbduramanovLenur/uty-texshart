@@ -4,7 +4,7 @@ import { Button } from 'antd';
 import cn from 'classnames';
 
 import { userMock } from '../model/mock';
-import type { IUser } from '../model/types';
+import type { IUser } from '../model/types/user';
 
 import { IconArrowDownBracket } from '@shared/assets';
 import { downloadFile } from '@shared/utils';

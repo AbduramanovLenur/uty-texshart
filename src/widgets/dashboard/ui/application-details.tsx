@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Tabs, Typography, type TabsProps } from 'antd';
 import cn from 'classnames';
 
-import { tabKeys } from '../model/tabKeys';
+import { TabKeys } from '../model/constants/tab-keys';
 
-import { ApplicationInfo, ApplicationsTimeline } from '@entities/applications';
+import { ApplicationInfo, ApplicationsTimeline } from '@/entities/application';
 
 import styles from './application-details.module.scss';
 
@@ -16,12 +16,12 @@ const ApplicationDetails: FC = () => {
 
   const items: TabsProps['items'] = [
     {
-      key: tabKeys.FIRST_TAB,
+      key: TabKeys.FIRST_TAB,
       label: t('dashboard.applicationDetails.process'),
       children: <ApplicationsTimeline />,
     },
     {
-      key: tabKeys.SECOND_TAB,
+      key: TabKeys.SECOND_TAB,
       label: t('dashboard.applicationDetails.details'),
       children: <ApplicationInfo />,
     },
@@ -38,7 +38,7 @@ const ApplicationDetails: FC = () => {
           header: 'tabs__header',
           item: 'tabs__item',
         }}
-        defaultActiveKey={tabKeys.FIRST_TAB}
+        defaultActiveKey={TabKeys.FIRST_TAB}
         items={items}
       />
     </div>

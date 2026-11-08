@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 
 import IncomingApplicationBody from './incoming-application-body';
-import { getBreadcrumbs } from '../model/breadcrumbs';
+import { getBreadcrumbs } from '../model/lib/get-breadcrumbs';
 
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
