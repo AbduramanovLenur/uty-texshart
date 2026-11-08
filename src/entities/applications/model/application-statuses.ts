@@ -1,4 +1,4 @@
-export const applicationStatuses = {
+export const ApplicationStatuses = {
   ACCEPTED: 'accepted',
   FORWARDED: 'forwarded',
   ACT_CREATED: 'actCreated',

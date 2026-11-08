@@ -1,4 +1,4 @@
-export const statuses = {
+export const Statuses = {
   ACTIVE: 'ACTIVE',
   PENDING: 'PENDING',
   DONE: 'DONE',

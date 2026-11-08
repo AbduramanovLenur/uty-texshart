@@ -2,7 +2,7 @@ import { useState, type FC } from 'react';
 import { Form } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
-import { stepList } from '../model/step-list';
+import { StepList } from '../model/step-list';
 
 import CreateApplicationSteps from './create-application-steps';
 import CreateApplicationTop from './create-application-top';
@@ -20,7 +20,7 @@ const { useForm } = Form;
 const CreateApplicationBody: FC = () => {
   const navigate = useNavigate();
   const [form] = useForm();
-  const [step, setStep] = useState(stepList.FORM);
+  const [step, setStep] = useState(StepList.FORM);
 
   const onChangeStep = (value: number) => {
     setStep(value);
@@ -32,12 +32,12 @@ const CreateApplicationBody: FC = () => {
   };
 
   const handleBack = () => {
-    setStep(stepList.FORM);
+    setStep(StepList.FORM);
   };
 
   const handleNext = async () => {
     await form.validateFields().then(() => {
-      setStep(stepList.MAP);
+      setStep(StepList.MAP);
     });
   };
 
@@ -74,19 +74,19 @@ const CreateApplicationBody: FC = () => {
         >
           <div
             className={styles['create-application-body__step']}
-            hidden={step !== stepList.FORM}
+            hidden={step !== StepList.FORM}
           >
             <CreateApplicationForm />
           </div>
           <div
             className={styles['create-application-body__step']}
-            hidden={step !== stepList.MAP}
+            hidden={step !== StepList.MAP}
           >
-            <CreateApplicationMap isActive={step === stepList.MAP} />
+            <CreateApplicationMap isActive={step === StepList.MAP} />
           </div>
         </Form>
         <CreateApplicationBottom
-          isLastStep={step === stepList.MAP}
+          isLastStep={step === StepList.MAP}
           onReset={handleReset}
           onBack={handleBack}
           onNext={handleNext}

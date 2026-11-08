@@ -24,7 +24,7 @@
     :global(.ant-table-thead > tr > th) {
       position: sticky;
       top: 0;
-      z-index: 2;
+      z-index: 100;
     }
   }
   &__pagination {

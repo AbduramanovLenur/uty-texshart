@@ -1,4 +1,4 @@
-export const networkTypes = {
+export const NetworkTypes = {
   OIL_PIPELINE: 'oil_pipeline',
   POWER_LINE: 'power_line',
   FIBER_OPTIC: 'fiber_optic',

@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import {
   ApplicationPreview,
-  networkTypes,
+  NetworkTypes,
   type IApplicationPreview,
 } from '@entities/applications';
 import { routes } from '@shared/config';
@@ -23,7 +23,7 @@ const RecentApplications: FC = () => {
     {
       id: 1,
       code: 'AR-2026-000008',
-      type: networkTypes.OIL_PIPELINE,
+      type: NetworkTypes.OIL_PIPELINE,
       title: 'Neft / neft mahsulotlari quvuri',
       subtitle: 'Samarkand-3-Kushbegi, 5230 km, 5pk',
       icon: '/images/test/oil.svg',
@@ -32,7 +32,7 @@ const RecentApplications: FC = () => {
     {
       id: 2,
       code: 'AR-2026-000009',
-      type: networkTypes.POWER_LINE,
+      type: NetworkTypes.POWER_LINE,
       title: 'Havo elektr uzatish liniyasi',
       subtitle: 'Samarkand-Bukhara, 120 km, 2pk',
       icon: '/images/test/oil.svg',
@@ -40,7 +40,7 @@ const RecentApplications: FC = () => {
     {
       id: 3,
       code: 'AR-2026-000012',
-      type: networkTypes.FIBER_OPTIC,
+      type: NetworkTypes.FIBER_OPTIC,
       title: 'Optik tolali aloqa kabeli',
       subtitle: 'Tashkent-Khiva, 600 km, 1pk',
       icon: '/images/test/oil.svg',
@@ -48,7 +48,7 @@ const RecentApplications: FC = () => {
     {
       id: 4,
       code: 'AR-2026-000010',
-      type: networkTypes.GAS_PIPELINE,
+      type: NetworkTypes.GAS_PIPELINE,
       title: 'Gaz quvuri',
       subtitle: 'Tashkent-Samarkand, 300 km, 5pk',
       icon: '/images/test/oil.svg',
@@ -56,7 +56,7 @@ const RecentApplications: FC = () => {
     {
       id: 5,
       code: 'AR-2026-000011',
-      type: networkTypes.SEWAGE_PIPELINE,
+      type: NetworkTypes.SEWAGE_PIPELINE,
       title: 'Kanalizatsiya quvuri',
       subtitle: 'Bukhara-Nukus, 540 km, 4pk',
       icon: '/images/test/oil.svg',
@@ -64,7 +64,7 @@ const RecentApplications: FC = () => {
     {
       id: 6,
       code: 'AR-2026-000011',
-      type: networkTypes.OIL_PIPELINE,
+      type: NetworkTypes.OIL_PIPELINE,
       title: 'Neft / neft mahsulotlari quvuri',
       subtitle: 'Samarkand-3-Kushbegi, 5230 km, 5pk',
       icon: '/images/test/oil.svg',

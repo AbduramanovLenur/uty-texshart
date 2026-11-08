@@ -7,29 +7,29 @@ import IncomingApplicationMap from './incoming-application-map';
 import IncomingApplicationApplicant from './incoming-application-applicant';
 import IncomingApplicationFiles from './incoming-application-files';
 
-import { tabKeys } from '../model/tab-keys';
+import { TabKeys } from '../model/tab-keys';
 
 const ApplicationBody: FC = () => {
   const { t } = useTranslation();
 
   const items: TabsProps['items'] = [
     {
-      key: tabKeys.FIRST_TAB,
+      key: TabKeys.FIRST_TAB,
       label: t('application.tabs.info'),
       children: <IncomingApplicationInformation />,
     },
     {
-      key: tabKeys.SECOND_TAB,
+      key: TabKeys.SECOND_TAB,
       label: t('application.tabs.map'),
       children: <IncomingApplicationMap />,
     },
     {
-      key: tabKeys.THIRD,
+      key: TabKeys.THIRD,
       label: t('application.tabs.applicantInfo'),
       children: <IncomingApplicationApplicant />,
     },
     {
-      key: tabKeys.FOURTH,
+      key: TabKeys.FOURTH,
       label: t('application.tabs.documents'),
       children: <IncomingApplicationFiles />,
     },
@@ -43,7 +43,7 @@ const ApplicationBody: FC = () => {
           header: 'tabs__header',
           item: 'tabs__item',
         }}
-        defaultActiveKey={tabKeys.FIRST_TAB}
+        defaultActiveKey={TabKeys.FIRST_TAB}
         items={items}
       />
     </div>

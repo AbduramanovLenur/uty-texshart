@@ -4,9 +4,9 @@ export { default as TimelineActApprovals } from './ui/application-approvals';
 export { default as ApplicationInfo } from './ui/application-info';
 export { default as ApplicationStatusTag } from './ui/application-status-tag';
 
-export { applicationStatuses } from './model/application-statuses';
-export { approvalStatuses } from './model/approval-statuses';
-export { networkTypes } from './model/network-types';
+export { ApplicationStatuses } from './model/application-statuses';
+export { ApprovalStatuses } from './model/approval-statuses';
+export { NetworkTypes } from './model/network-types';
 export { applicationStatusTagConfig } from './model/application-status-config';
 
 export type {

@@ -1,4 +1,4 @@
-export const approvalStatuses = {
+export const ApprovalStatuses = {
   FORMED: 'formed',
   CONFIRMED: 'confirmed',
   PENDING: 'pending',

@@ -1,20 +1,20 @@
 import type { ReactNode, ComponentType } from 'react';
-import type { applicationStatuses } from './application-statuses';
-import type { approvalStatuses } from './approval-statuses';
-import type { networkTypes } from './network-types';
-import type { statuses } from './stutuses';
+import type { ApplicationStatuses } from './application-statuses';
+import type { ApprovalStatuses } from './approval-statuses';
+import type { NetworkTypes } from './network-types';
+import type { Statuses } from './stutuses';
 
 export type TApplicationStatus =
-  (typeof applicationStatuses)[keyof typeof applicationStatuses];
+  (typeof ApplicationStatuses)[keyof typeof ApplicationStatuses];
 
 export type TApprovalStatus =
-  (typeof approvalStatuses)[keyof typeof approvalStatuses];
+  (typeof ApprovalStatuses)[keyof typeof ApprovalStatuses];
 
 export type TNetworkType =
-  (typeof networkTypes)[keyof typeof networkTypes];
+  (typeof NetworkTypes)[keyof typeof NetworkTypes];
 
 export type TApplicationTimelineStatus =
-  (typeof statuses)[keyof typeof statuses];
+  (typeof Statuses)[keyof typeof Statuses];
 
 export interface IApplicationPreview {
   id: number;

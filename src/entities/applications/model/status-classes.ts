@@ -1,9 +1,9 @@
-import { statuses } from './stutuses';
+import { Statuses } from './stutuses';
 
 export const statusClasses = {
-  [statuses.ACTIVE]: 'status-active',
-  [statuses.PENDING]: 'status-pending',
-  [statuses.DONE]: 'status-done',
-  [statuses.ERROR]: 'status-error',
-  [statuses.SKIPPED]: 'status-skipped',
-};
+  [Statuses.ACTIVE]: 'status-active',
+  [Statuses.PENDING]: 'status-pending',
+  [Statuses.DONE]: 'status-done',
+  [Statuses.ERROR]: 'status-error',
+  [Statuses.SKIPPED]: 'status-skipped',
+} as const;

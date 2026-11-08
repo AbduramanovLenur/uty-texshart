@@ -1,27 +1,27 @@
 import { IconChecked, IconClock, IconXMark } from '@shared/assets';
 
-import { approvalStatuses } from './approval-statuses';
+import { ApprovalStatuses } from './approval-statuses';
 import type { IApprovalStatusConfig, TApprovalStatus } from './types';
 
 export const approvalStatusConfig: Partial<Record<TApprovalStatus, IApprovalStatusConfig>> = {
-  [approvalStatuses.FORMED]: {
+  [ApprovalStatuses.FORMED]: {
     className: 'application-approvals__status-formed',
     icon: IconChecked,
     labelKey: 'applicationsTimeline.formed',
   },
-  [approvalStatuses.CONFIRMED]: {
+  [ApprovalStatuses.CONFIRMED]: {
     className: 'application-approvals__status-confirmed',
     icon: IconChecked,
     labelKey: 'applicationsTimeline.confirmed',
   },
-  [approvalStatuses.PENDING]: {
+  [ApprovalStatuses.PENDING]: {
     className: 'application-approvals__status-pending',
     icon: IconClock,
     labelKey: 'applicationsTimeline.pending',
   },
-  [approvalStatuses.REJECTED]: {
+  [ApprovalStatuses.REJECTED]: {
     className: 'application-approvals__status-rejected',
     icon: IconXMark,
     labelKey: 'applicationsTimeline.rejected',
   },
-};
+} as const;
