@@ -193,7 +193,7 @@ main {
     }
   }
   .ant-table-tbody {
-    > tr > td {
+    > tr:not(:first-child) > td {
       padding: var(--ant-padding-xs) var(--ant-padding-sm) !important;
     }
   }

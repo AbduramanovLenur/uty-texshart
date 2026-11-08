@@ -5,7 +5,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { ApplicationStatusTag, applicationStatusTagConfig, type IIncomingApplication, type TApplicationStatus } from '@entities/applications';
+import { ApplicationStatusTag, type IIncomingApplication, type TApplicationStatus } from '@entities/applications';
 import { filterKeys, routes } from '@shared/config';
 import type { TTableFilters } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
@@ -16,172 +16,184 @@ export const getColumns = (
   t: TFunction,
   onUserClick: (record: IIncomingApplication) => void,
   onActionClick?: (record: IIncomingApplication) => void,
-): TableProps<IIncomingApplication>['columns'] => [
-  {
-    title: t('headers.applicationId'),
-    key: filterKeys.APPLICATION_ID,
-    width: 140,
-    sorter: true,
-    sortOrder: getSortOrder(filters, filterKeys.APPLICATION_ID),
-    render: (_, record) => (
-      <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.id)}>
-        {record.id}
-      </Link>
-    ),
-    filteredValue: filters.applicationId,
-    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
-      <TableSearchFilter
-        setSelectedKeys={setSelectedKeys}
-        selectedKeys={selectedKeys}
-        confirm={confirm}
-        clearFilters={clearFilters}
-        placeholder={t('placeholders.applicationId')}
-        clearLabel={t('placeholders.clear')}
-        searchLabel={t('placeholders.search')}
-      />
-    ),
-    filterIcon: (filtered: boolean) => (
-      <SearchOutlined style={{ color: filtered ? 'var(--ant-blue)' : undefined }} />
-    ),
-  },
-  {
-    title: t('headers.action'),
-    width: 120,
-    render: (_, record) => (
-      <button
-        className='table-trigger'
-        type='button'
-        onClick={() => onActionClick?.(record)}
-      >
-        {t('actions.view')}
-      </button>
-    ),
-  },
-  {
-    title: t('headers.user'),
-    key: filterKeys.USER,
-    minWidth: 140,
-    render: (_, record) => (
-      <button
-        className='table-trigger'
-        type='button'
-        onClick={() => onUserClick(record)}
-      >
-        {record.user}
-      </button>
-    ),
-    filteredValue: filters.user,
-    filters: [
-      {
-        text: 'Category 1',
-        value: 'Category 1',
-      },
-      {
-        text: 'Category 2',
-        value: 'Category 2',
-      },
-      {
-        text: 'Category 3',
-        value: 'Category 3',
-      },
-    ],
-    filterSearch: true,
-  },
-  {
-    title: t('headers.network'),
-    key: filterKeys.NETWORK,
-    minWidth: 160,
-    render: (_, record) => record.network,
-    filteredValue: filters.network,
-    filters: [
-      {
-        text: 'Category 1',
-        value: 'Category 1',
-      },
-      {
-        text: 'Category 2',
-        value: 'Category 2',
-      },
-      {
-        text: 'Category 3',
-        value: 'Category 3',
-      },
-    ],
-    filterSearch: true,
-  },
-  {
-    title: t('headers.mtu'),
-    key: filterKeys.MTU,
-    minWidth: 190,
-    render: (_, record) => (
-      <div className='table-info'>
-        <div className='table-info-value'>
-          {record.mtu}
+): TableProps<IIncomingApplication>['columns'] => {
+  return [
+    {
+      title: t('headers.applicationId'),
+      key: filterKeys.APPLICATION_ID,
+      width: 140,
+      sorter: true,
+      sortOrder: getSortOrder(filters, filterKeys.APPLICATION_ID),
+      render: (_, record) => (
+        <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.id)}>
+          {record.id}
+        </Link>
+      ),
+      filteredValue: filters.applicationId,
+      filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+        <TableSearchFilter
+          setSelectedKeys={setSelectedKeys}
+          selectedKeys={selectedKeys}
+          confirm={confirm}
+          clearFilters={clearFilters}
+          placeholder={t('placeholders.applicationId')}
+          clearLabel={t('placeholders.clear')}
+          searchLabel={t('placeholders.search')}
+        />
+      ),
+      filterIcon: (filtered: boolean) => (
+        <SearchOutlined style={{ color: filtered ? 'var(--ant-blue)' : undefined }} />
+      ),
+    },
+    {
+      title: t('headers.action'),
+      width: 120,
+      render: (_, record) => (
+        <button
+          className='table-trigger'
+          type='button'
+          onClick={() => onActionClick?.(record)}
+        >
+          {t('actions.view')}
+        </button>
+      ),
+    },
+    {
+      title: t('headers.user'),
+      key: filterKeys.USER,
+      minWidth: 140,
+      render: (_, record) => (
+        <button
+          className='table-trigger'
+          type='button'
+          onClick={() => onUserClick(record)}
+        >
+          {record.user}
+        </button>
+      ),
+      filteredValue: filters.user,
+      filters: [
+        {
+          text: 'Category 1',
+          value: 'Category 1',
+        },
+        {
+          text: 'Category 2',
+          value: 'Category 2',
+        },
+        {
+          text: 'Category 3',
+          value: 'Category 3',
+        },
+      ],
+      filterSearch: true,
+    },
+    {
+      title: t('headers.network'),
+      key: filterKeys.NETWORK,
+      minWidth: 160,
+      render: (_, record) => record.network,
+      filteredValue: filters.network,
+      filters: [
+        {
+          text: 'Category 1',
+          value: 'Category 1',
+        },
+        {
+          text: 'Category 2',
+          value: 'Category 2',
+        },
+        {
+          text: 'Category 3',
+          value: 'Category 3',
+        },
+      ],
+      filterSearch: true,
+    },
+    {
+      title: t('headers.mtu'),
+      key: filterKeys.MTU,
+      minWidth: 190,
+      render: (_, record) => (
+        <div className='table-info'>
+          <div className='table-info-value'>
+            {record.mtu}
+          </div>
+          <div className='table-info-value'>
+            {record.km}
+          </div>
         </div>
-        <div className='table-info-value'>
-          {record.km}
+      ),
+      filteredValue: filters.mtu,
+      filters: [
+        {
+          text: 'Category 1',
+          value: 'Category 1',
+        },
+        {
+          text: 'Category 2',
+          value: 'Category 2',
+        },
+        {
+          text: 'Category 3',
+          value: 'Category 3',
+        },
+      ],
+      filterSearch: true,
+    },
+    {
+      title: t('headers.status'),
+      key: filterKeys.STATUS,
+      minWidth: 120,
+      render: (_, record) => <ApplicationStatusTag status={record.status as TApplicationStatus} />,
+      filteredValue: filters.status,
+      filters: [
+        {
+          text: 'Category 1',
+          value: 'Category 1',
+        },
+        {
+          text: 'Category 2',
+          value: 'Category 2',
+        },
+        {
+          text: 'Category 3',
+          value: 'Category 3',
+        },
+      ],
+      filterSearch: true,
+    },
+    {
+      title: t('headers.dateUpdate'),
+      key: filterKeys.DATE,
+      width: 200,
+      sorter: true,
+      fixed: 'right',
+      sortOrder: getSortOrder(filters, filterKeys.DATE),
+      filteredValue: filters.date,
+      filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+        <TableDateRangeFilter
+          setSelectedKeys={setSelectedKeys}
+          selectedKeys={selectedKeys}
+          confirm={confirm}
+          clearFilters={clearFilters}
+          displayFormat='DD.MM.YYYY'
+          valueFormat='YYYY-MM-DD'
+          clearLabel={t('placeholders.clear')}
+          searchLabel={t('placeholders.search')}
+        />
+      ),
+      render: (_, record) => (
+        <div className='table-date'>
+          <div className='table-date-create'>
+            {record.date}
+          </div>
+          <div className='table-date-update'>
+            <IconRetry />
+            {record.updatedAt}
+          </div>
         </div>
-      </div>
-    ),
-    filteredValue: filters.mtu,
-    filters: [
-      {
-        text: 'Category 1',
-        value: 'Category 1',
-      },
-      {
-        text: 'Category 2',
-        value: 'Category 2',
-      },
-      {
-        text: 'Category 3',
-        value: 'Category 3',
-      },
-    ],
-    filterSearch: true,
-  },
-  {
-    title: t('headers.status'),
-    key: filterKeys.STATUS,
-    minWidth: 120,
-    render: (_, record) => <ApplicationStatusTag status={record.status as TApplicationStatus} />,
-    filteredValue: filters.status,
-    filters: Object.entries(applicationStatusTagConfig).map(([key, config]) => ({
-      text: t(config.labelKey),
-      value: key,
-    })),
-    filterSearch: true,
-  },
-  {
-    title: t('headers.dateUpdate'),
-    key: filterKeys.DATE,
-    width: 200,
-    sorter: true,
-    fixed: 'right',
-    sortOrder: getSortOrder(filters, filterKeys.DATE),
-    filteredValue: filters.date,
-    filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
-      <TableDateRangeFilter
-        setSelectedKeys={setSelectedKeys}
-        selectedKeys={selectedKeys}
-        confirm={confirm}
-        clearFilters={clearFilters}
-        displayFormat='DD.MM.YYYY'
-        valueFormat='YYYY-MM-DD'
-        clearLabel={t('placeholders.clear')}
-        searchLabel={t('placeholders.search')}
-      />
-    ),
-    render: (_, record) => (
-      <div className='table-date'>
-        <div className='table-date-create'>
-          {record.date}
-        </div>
-        <div className='table-date-update'>
-          <IconRetry />
-          {record.updatedAt}
-        </div>
-      </div>
-    ),
-  },
-];
+      ),
+    },
+  ];
+};
