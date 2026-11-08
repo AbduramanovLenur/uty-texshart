@@ -2,10 +2,10 @@ import { useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import { Statuses } from '../model/stutuses';
-import { ApprovalStatuses } from '../model/approval-statuses';
-import { statusClasses } from '../model/status-classes';
-import type { ITimelineApproval, ITimelineStep } from '../model/types';
+import { Statuses } from '../model/constants/stutuses';
+import { ApprovalStatuses } from '../model/constants/approval-statuses';
+import { statusClasses } from '../model/config/status-classes';
+import type { ITimelineApproval, ITimelineStep } from '../model/types/application';
 import ApplicationApprovals from './application-approvals';
 
 import {

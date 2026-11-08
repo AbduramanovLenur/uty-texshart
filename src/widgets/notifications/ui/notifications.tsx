@@ -3,7 +3,7 @@ import { Typography, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import { NotificationItem } from '@entities/notifications';
+import { NotificationItem } from '@/entities/notification';
 import { IconCheck } from '@shared/assets';
 
 import styles from './notifications.module.scss';

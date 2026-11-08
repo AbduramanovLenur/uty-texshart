@@ -1,4 +1,4 @@
-import { Statuses } from './stutuses';
+import { Statuses } from '../constants/stutuses';
 
 export const statusClasses = {
   [Statuses.ACTIVE]: 'status-active',

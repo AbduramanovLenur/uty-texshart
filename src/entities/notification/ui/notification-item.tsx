@@ -3,7 +3,7 @@ import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
 
-import type { INotificationGroup } from '../model/types';
+import type { INotificationGroup } from '../model/types/notification';
 
 import { routes } from '@shared/config';
 

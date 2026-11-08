@@ -6,7 +6,7 @@ import { IconDownArrow } from '@shared/assets';
 
 import { ImageUpload } from '@features/image-upload';
 
-import { validateLocationPhotos } from '../model/validators';
+import { validateLocationPhotos } from '../model/lib/validators';
 
 import styles from './create-application-form.module.scss';
 

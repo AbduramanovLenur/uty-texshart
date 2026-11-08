@@ -2,7 +2,7 @@ import { useState, type FC } from 'react';
 import { Form } from 'antd';
 import { useNavigate } from 'react-router-dom';
 
-import { StepList } from '../model/step-list';
+import { StepList } from '../model/constants/step-list';
 
 import CreateApplicationSteps from './create-application-steps';
 import CreateApplicationTop from './create-application-top';

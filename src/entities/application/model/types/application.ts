@@ -1,8 +1,8 @@
 import type { ReactNode, ComponentType } from 'react';
-import type { ApplicationStatuses } from './application-statuses';
-import type { ApprovalStatuses } from './approval-statuses';
-import type { NetworkTypes } from './network-types';
-import type { Statuses } from './stutuses';
+import type { ApplicationStatuses } from '../constants/application-statuses';
+import type { ApprovalStatuses } from '../constants/approval-statuses';
+import type { NetworkTypes } from '../constants/network-types';
+import type { Statuses } from '../constants/stutuses';
 
 export type TApplicationStatus =
   (typeof ApplicationStatuses)[keyof typeof ApplicationStatuses];

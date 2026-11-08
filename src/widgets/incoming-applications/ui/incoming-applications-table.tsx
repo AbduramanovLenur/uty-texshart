@@ -8,7 +8,7 @@ import { getColumns } from './columns';
 
 import { ViewUserModal, open as openViewUserModal } from '@features/view-user-modal';
 import { ViewProcessModal, open as openViewProcessModal } from '@features/view-process-modal';
-import { ApplicationStatuses, type IIncomingApplication } from '@entities/applications';
+import { ApplicationStatuses, type IIncomingApplication } from '@/entities/application';
 import { Paginator } from '@shared/ui';
 import { defaultValues } from '@shared/config';
 import type { TFilterKey, TTableFilters } from '@shared/types';

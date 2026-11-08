@@ -1,7 +1,7 @@
 import { IconChecked, IconClock, IconXMark } from '@shared/assets';
 
-import { ApprovalStatuses } from './approval-statuses';
-import type { IApprovalStatusConfig, TApprovalStatus } from './types';
+import { ApprovalStatuses } from '../constants/approval-statuses';
+import type { IApprovalStatusConfig, TApprovalStatus } from '../types/application';
 
 export const approvalStatusConfig: Partial<Record<TApprovalStatus, IApprovalStatusConfig>> = {
   [ApprovalStatuses.FORMED]: {

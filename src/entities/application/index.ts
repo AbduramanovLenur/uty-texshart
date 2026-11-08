@@ -4,10 +4,10 @@ export { default as TimelineActApprovals } from './ui/application-approvals';
 export { default as ApplicationInfo } from './ui/application-info';
 export { default as ApplicationStatusTag } from './ui/application-status-tag';
 
-export { ApplicationStatuses } from './model/application-statuses';
-export { ApprovalStatuses } from './model/approval-statuses';
-export { NetworkTypes } from './model/network-types';
-export { applicationStatusTagConfig } from './model/application-status-config';
+export { ApplicationStatuses } from './model/constants/application-statuses';
+export { ApprovalStatuses } from './model/constants/approval-statuses';
+export { NetworkTypes } from './model/constants/network-types';
+export { applicationStatusTagConfig } from './model/config/application-status';
 
 export type {
   IApplicationPreview,
@@ -19,7 +19,7 @@ export type {
   IApplication,
   IIncomingApplication,
   IPreviewFile,
-} from './model/types';
+} from './model/types/application';
 
-export type { TNetworkType } from './model/types';
+export type { TNetworkType } from './model/types/application';
 

@@ -3,7 +3,7 @@ import { Button, Image, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import type { IUserDocuments } from '../model/types';
+import type { IUserDocuments } from '../model/types/user';
 
 import { IconArrowDownBracket } from '@shared/assets';
 import { downloadFile } from '@shared/utils';

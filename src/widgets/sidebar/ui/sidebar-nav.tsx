@@ -7,7 +7,7 @@ import type { Role, TMenuGroup } from '@shared/types';
 import { roles } from '@shared/config';
 import { hasRoleAccess } from '@shared/utils';
 
-import { items as defaultItems } from '../model/menu-items';
+import { items as defaultItems } from '../model/config/menu-items';
 
 import styles from './sidebar-nav.module.scss';
 

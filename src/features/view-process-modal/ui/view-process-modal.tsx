@@ -6,7 +6,7 @@ import { Button, Modal } from 'antd';
 import cn from 'classnames';
 
 import { close, stateViewProcessModal } from '../model/slice';
-import { ApplicationsTimeline } from '@entities/applications';
+import { ApplicationsTimeline } from '@/entities/application';
 // import { routes } from '@shared/config';
 
 import styles from './view-process-modal.module.scss';

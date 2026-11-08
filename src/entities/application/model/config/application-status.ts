@@ -1,5 +1,5 @@
-import { ApplicationStatuses } from './application-statuses';
-import type { IApplicationStatusTagConfig, TApplicationStatus } from './types';
+import { ApplicationStatuses } from '../constants/application-statuses';
+import type { IApplicationStatusTagConfig, TApplicationStatus } from '../types/application';
 
 export const applicationStatusTagConfig: Record<TApplicationStatus, IApplicationStatusTagConfig> = {
   [ApplicationStatuses.ACCEPTED]: {

@@ -2,8 +2,8 @@ import type { FC } from 'react';
 import { Tag } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-import { applicationStatusTagConfig } from '../model/application-status-config';
-import type { TApplicationStatus } from '../model/types';
+import { applicationStatusTagConfig } from '../model/config/application-status';
+import type { TApplicationStatus } from '../model/types/application';
 
 export interface IProps {
   status: TApplicationStatus;

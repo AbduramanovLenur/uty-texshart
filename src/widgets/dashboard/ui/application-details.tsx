@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import { Tabs, Typography, type TabsProps } from 'antd';
 import cn from 'classnames';
 
-import { TabKeys } from '../model/tab-keys';
+import { TabKeys } from '../model/constants/tab-keys';
 
-import { ApplicationInfo, ApplicationsTimeline } from '@entities/applications';
+import { ApplicationInfo, ApplicationsTimeline } from '@/entities/application';
 
 import styles from './application-details.module.scss';
 

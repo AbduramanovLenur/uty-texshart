@@ -6,7 +6,7 @@ import cn from 'classnames';
 import ApplicationInformation from './application-information';
 import ApplicationMap from './application-map';
 
-import { TabKeys } from '../model/tab-keys';
+import { TabKeys } from '../model/constants/tab-keys';
 
 import styles from './application-body.module.scss';
 

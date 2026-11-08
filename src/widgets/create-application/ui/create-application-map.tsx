@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 
 import { Map } from '@features/map';
 
-import { validateCoordinates } from '../model/validators';
+import { validateCoordinates } from '../model/lib/validators';
 
 import styles from './create-application-map.module.scss';
 

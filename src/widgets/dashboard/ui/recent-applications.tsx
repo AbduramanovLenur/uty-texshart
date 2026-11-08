@@ -7,7 +7,7 @@ import {
   ApplicationPreview,
   NetworkTypes,
   type IApplicationPreview,
-} from '@entities/applications';
+} from '@/entities/application';
 import { routes } from '@shared/config';
 import { IconPlus } from '@shared/assets';
 

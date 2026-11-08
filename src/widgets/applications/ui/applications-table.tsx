@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 import { getColumns } from './columns';
 
-import { ApplicationStatuses, type IApplication } from '@entities/applications';
+import { ApplicationStatuses, type IApplication } from '@/entities/application';
 import { defaultValues } from '@shared/config';
 import { Paginator } from '@shared/ui';
 import type { TFilterKey, TTableFilters } from '@shared/types';

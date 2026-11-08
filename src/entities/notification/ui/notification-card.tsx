@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import type { INotificationCard } from '../model/types';
+import type { INotificationCard } from '../model/types/notification';
 
 import { routes } from '@shared/config';
 

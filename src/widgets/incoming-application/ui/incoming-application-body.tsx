@@ -7,7 +7,7 @@ import IncomingApplicationMap from './incoming-application-map';
 import IncomingApplicationApplicant from './incoming-application-applicant';
 import IncomingApplicationFiles from './incoming-application-files';
 
-import { TabKeys } from '../model/tab-keys';
+import { TabKeys } from '../model/constants/tab-keys';
 
 const ApplicationBody: FC = () => {
   const { t } = useTranslation();

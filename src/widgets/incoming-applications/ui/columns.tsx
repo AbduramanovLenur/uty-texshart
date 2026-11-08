@@ -5,7 +5,7 @@ import { SearchOutlined } from '@ant-design/icons';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { ApplicationStatusTag, type IIncomingApplication, type TApplicationStatus } from '@entities/applications';
+import { ApplicationStatusTag, type IIncomingApplication, type TApplicationStatus } from '@/entities/application';
 import { filterKeys, routes } from '@shared/config';
 import type { TTableFilters } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
