@@ -6,7 +6,6 @@ import cn from 'classnames';
 
 import { AvatarUpload } from '@features/avatar-upload';
 import { IconLogout } from '@shared/assets';
-import { clearTokens } from '@shared/api/token-storage';
 import { routes } from '@shared/config';
 
 import styles from './profile.module.scss';
@@ -28,7 +27,6 @@ const Profile: FC = () => {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    clearTokens();
     navigate(routes.AUTH);
   };
 
@@ -36,7 +34,7 @@ const Profile: FC = () => {
     <section className={cn(styles['profile'], 'section')}>
       <div className={styles['profile__inner']}>
         <Title className={styles['profile__title']} level={3}>
-          {t('profile.page', 'Profil sahifasi')}
+          {t('profile.page')}
         </Title>
 
         <div className={styles['profile__card']}>
@@ -49,7 +47,7 @@ const Profile: FC = () => {
             <div className={styles['profile__info']}>
               <div className={styles['profile__field']}>
                 <span className={styles['profile__label']}>
-                  {t('profile.company', 'Profil')}
+                  {t('profile.company')}
                 </span>
                 <span className={styles['profile__value']}>
                   {PROFILE_DATA.companyName}
@@ -58,7 +56,7 @@ const Profile: FC = () => {
 
               <div className={styles['profile__field']}>
                 <span className={styles['profile__label']}>
-                  {t('profile.pinfl', 'JSHSHR')}
+                  {t('profile.pinfl')}
                 </span>
                 <span className={styles['profile__value']}>
                   {PROFILE_DATA.pinfl}
@@ -67,7 +65,7 @@ const Profile: FC = () => {
 
               <div className={styles['profile__field']}>
                 <span className={styles['profile__label']}>
-                  {t('profile.director', 'Rahbar ism-sharifi')}
+                  {t('profile.director')}
                 </span>
                 <span className={styles['profile__value']}>
                   {PROFILE_DATA.directorName}
@@ -76,7 +74,7 @@ const Profile: FC = () => {
 
               <div className={styles['profile__field']}>
                 <span className={styles['profile__label']}>
-                  {t('profile.phone', 'Kontakt raqami')}
+                  {t('profile.phone')}
                 </span>
                 <span className={styles['profile__value']}>
                   {PROFILE_DATA.phone}
@@ -85,7 +83,7 @@ const Profile: FC = () => {
 
               <div className={styles['profile__field']}>
                 <span className={styles['profile__label']}>
-                  {t('profile.address', 'Manzil')}
+                  {t('profile.address')}
                 </span>
                 <span className={styles['profile__value']}>
                   {PROFILE_DATA.address}

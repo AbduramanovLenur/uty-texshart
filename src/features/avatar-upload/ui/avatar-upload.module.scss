@@ -1,9 +1,9 @@
 .avatar-upload {
   position: relative;
-  width: 112px;
-  height: 112px;
+  width: 102px;
+  height: 102px;
   border-radius: 50%;
-  padding: 4px;
+  padding: var(--ant-padding-xs);
   background-color: var(--white, #ffffff);
   box-sizing: border-box;
   display: inline-flex;
@@ -20,6 +20,7 @@
     &.avatar-upload--dragging {
       border: 1.5px dashed #2E75E8;
       padding: 3.5px;
+      padding: 0;
       background-color: #FFFFFF;
 
       .avatar-upload__initials {
@@ -73,6 +74,7 @@
     justify-content: center;
     gap: 2px;
     background-color: transparent;
+    background-color: var(--dark-04);
     user-select: none;
   }
 
@@ -84,9 +86,9 @@
   }
 
   &__text {
-    font-size: 13px;
-    font-weight: 500;
-    line-height: 1.2;
+    font-size: var(--ant-font-size);
+    font-weight: 400;
+    line-height: 1.5;
     color: #262626;
   }
 
