@@ -1,6 +1,7 @@
 import {
   useState,
   useRef,
+  useEffect,
   type FC,
   type ChangeEvent,
   type MouseEvent,
@@ -20,7 +21,6 @@ export interface IAvatarUploadProps {
   onChange?: (value: string | null) => void;
   initials?: string;
   className?: string;
-  size?: number;
 }
 
 const AvatarUpload: FC<IAvatarUploadProps> = ({
@@ -29,16 +29,37 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
   onChange,
   initials = 'NW',
   className,
-  size,
 }) => {
   const { t } = useTranslation();
   const [internalImage, setInternalImage] = useState<string | null>(defaultValue);
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const blobUrlRef = useRef<string | null>(null);
+  const prevDefaultValueRef = useRef(defaultValue);
 
   const isControlled = value !== undefined;
   const currentImage = isControlled ? value : internalImage;
+  const hasImage = Boolean(currentImage);
+
+  const revokeBlobUrl = () => {
+    if (blobUrlRef.current) {
+      URL.revokeObjectURL(blobUrlRef.current);
+      blobUrlRef.current = null;
+    }
+  };
+
+  useEffect(() => {
+    return revokeBlobUrl;
+  }, []);
+
+  useEffect(() => {
+    if (!isControlled && defaultValue !== prevDefaultValueRef.current) {
+      prevDefaultValueRef.current = defaultValue;
+      setInternalImage(defaultValue);
+    }
+  }, [defaultValue, isControlled]);
 
   const updateImage = (nextImage: string | null) => {
     if (!isControlled) {
@@ -47,42 +68,53 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
     onChange?.(nextImage);
   };
 
+  const handleUpload = (file: File) => {
+    if (!file.type.startsWith('image/')) return;
+
+    console.log('file', file);
+
+    revokeBlobUrl();
+    const nextUrl = URL.createObjectURL(file);
+    blobUrlRef.current = nextUrl;
+    updateImage(nextUrl);
+  };
+
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const url = URL.createObjectURL(file);
-      updateImage(url);
+      handleUpload(file);
     }
     e.target.value = '';
   };
 
-  const handleClick = () => {
-    if (!currentImage) {
+  const handleOpenFileDialog = () => {
+    if (!hasImage) {
       fileInputRef.current?.click();
     }
   };
 
   const handleKeyDown = (e: KeyboardEvent<HTMLDivElement>) => {
-    if (!currentImage && (e.key === 'Enter' || e.key === ' ')) {
+    if (!hasImage && (e.key === 'Enter' || e.key === ' ')) {
       e.preventDefault();
-      fileInputRef.current?.click();
+      handleOpenFileDialog();
     }
   };
 
   const handlePreview = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
-    if (currentImage) {
+    if (hasImage) {
       setIsPreviewOpen(true);
     }
   };
 
   const handleDelete = (e: MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
+    revokeBlobUrl();
     updateImage(null);
   };
 
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
-    if (currentImage) return;
+    if (hasImage) return;
     e.preventDefault();
     setIsDragging(true);
   };
@@ -92,18 +124,15 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
   };
 
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
-    if (currentImage) return;
     e.preventDefault();
     setIsDragging(false);
+    if (hasImage) return;
 
     const file = e.dataTransfer.files?.[0];
-    if (file && file.type.startsWith('image/')) {
-      const url = URL.createObjectURL(file);
-      updateImage(url);
+    if (file) {
+      handleUpload(file);
     }
   };
-
-  const containerStyle = size ? { width: size, height: size } : undefined;
 
   return (
     <>
@@ -111,24 +140,23 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
         className={cn(
           styles['avatar-upload'],
           {
-            [styles['avatar-upload--uploaded']]: Boolean(currentImage),
-            [styles['avatar-upload--unloaded']]: !currentImage,
+            [styles['avatar-upload--uploaded']]: hasImage,
+            [styles['avatar-upload--empty']]: !hasImage,
             [styles['avatar-upload--dragging']]: isDragging,
           },
           className,
         )}
-        style={containerStyle}
-        onClick={handleClick}
+        onClick={handleOpenFileDialog}
         onKeyDown={handleKeyDown}
         onDragOver={handleDragOver}
         onDragLeave={handleDragLeave}
         onDrop={handleDrop}
-        role={!currentImage ? 'button' : undefined}
-        tabIndex={!currentImage ? 0 : undefined}
-        aria-label={!currentImage ? t('profile.upload', 'Yuklash') : undefined}
+        role={!hasImage ? 'button' : undefined}
+        tabIndex={!hasImage ? 0 : undefined}
+        aria-label={!hasImage ? t('profile.upload', 'Yuklash') : undefined}
       >
         <div className={styles['avatar-upload__inner']}>
-          {currentImage ? (
+          {hasImage && currentImage ? (
             <>
               <img
                 src={currentImage}
@@ -175,19 +203,18 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
           ref={fileInputRef}
           type='file'
           accept='image/png,image/jpeg,image/webp,image/jpg'
-          style={{ display: 'none' }}
+          hidden
           onChange={handleFileChange}
         />
       </div>
 
-      {currentImage && (
-        <div className={styles['avatar-upload__preview-hidden']}>
+      {hasImage && currentImage && (
+        <div className={styles['avatar-upload__preview']}>
           <Image
             src={currentImage}
             preview={{
               visible: isPreviewOpen,
-              src: currentImage,
-              onVisibleChange: (visible) => setIsPreviewOpen(visible),
+              onVisibleChange: setIsPreviewOpen,
             }}
           />
         </div>
