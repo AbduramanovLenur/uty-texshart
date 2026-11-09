@@ -1,0 +1,24 @@
+.application {
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__btn {
+    font-size: var(--ant-font-size-lg);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--dark-88);
+    height: 40px;
+    border-radius: var(--ant-border-radius-lg);
+    :global(.ant-btn-icon) {
+      color: var(--dark-45);
+      transition: 0.5s;
+    }
+    &:hover {
+      :global(.ant-btn-icon) {
+        color: var(--ant-blue);
+      }
+    }
+  }
+}
