@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import cn from 'classnames';
-import { Breadcrumb } from 'antd';
+import { Breadcrumb, Button } from 'antd';
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -9,6 +9,7 @@ import { getBreadcrumbs } from '../model/lib/get-breadcrumbs';
 
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
+import { IconPen } from '@shared/assets';
 
 import styles from './application.module.scss';
 
@@ -31,9 +32,14 @@ const Application: FC = () => {
           }}
           items={breadcrumbs}
         />
-        <PageHeader onClick={handleBack}>
-          ARZ-31234123
-        </PageHeader>
+        <div className={styles['application__top']}>
+          <PageHeader onClick={handleBack}>
+            ARZ-31234123
+          </PageHeader>
+          <Button className={styles['application__btn']} type='default' icon={<IconPen />}>
+            Arizani o’zgaritish
+          </Button>
+        </div>
         <ApplicationBody />
       </div>
     </section>
