@@ -19,7 +19,7 @@ const PROFILE_DATA = {
   phone: '+99899 888 77 22',
   address: "Buxoro viloyati, Buxoro shaxri, Turkiston ko'chasi 44/12",
   avatarUrl: '/images/test/picture.png',
-  initials: 'NW',
+  initials: 'L',
 };
 
 const Profile: FC = () => {
@@ -100,7 +100,7 @@ const Profile: FC = () => {
             icon={<IconLogout />}
             onClick={handleLogout}
           >
-            {t('profile.logout', 'Chiqish')}
+            {t('profile.logout')}
           </Button>
         </div>
       </div>

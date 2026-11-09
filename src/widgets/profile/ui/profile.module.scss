@@ -64,7 +64,7 @@
   }
 
   &__logout-btn {
-    &:global(.ant-btn) {
+    &:global(.ant-btn.ant-btn) {
       color: var(--ant-red-5);
       border: 1px solid var(--ant-red-5);
       font-weight: 500;
