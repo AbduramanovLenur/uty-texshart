@@ -180,16 +180,17 @@
     "dashboard": "Asosiy sahifa",
     "applications": "Arizalar",
     "workflow": "Ish jarayoni",
-    "technical_specs": "Texnik shartlar",
-    "gis_and_registry": "GIS va reestr",
-    "internal_gis": "Ichki GIS",
+    "technicalSpecs": "Texnik shartlar",
+    "gisAndRegistry": "GIS va reestr",
+    "internalGis": "Ichki GIS",
     "comm_registry": "Kommunikatsiya reestri",
     "administration": "Ma'muriyat",
     "users": "Foydalanuvchilar",
     "roles": "Rollar",
     "references": "Ma'lumotnomalar",
-    "regions_mtu": "Hududlar va MTU",
-    "settings": "Sozlamalar"
+    "regionsMtu": "Hududlar va MTU",
+    "settings": "Sozlamalar",
+    "paymentHistory": "To’lovlar tarixi"
   },
   "application": {
     "breadcrumbs": {
@@ -219,6 +220,7 @@
   },
   "placeholders": {
     "applicationId": "Ariza ID raqamini kiriting",
+    "paymentId": "To‘lov ID raqamini kiriting",
     "clear": "Tozalash",
     "search": "Qidirish"
   },
@@ -232,6 +234,9 @@
   },
   "headers": {
     "applicationId": "Ariza ID",
+    "paymentId": "To‘lov ID",
+    "invoice": "Invoice raqami",
+    "date": "Sana",
     "user": "Arizachi",
     "network": "Muhandislik tarmog‘i",
     "mtu": "MTU / km, pk",
@@ -242,6 +247,9 @@
   "summary_other": "Jami {{count}} ta ariza topildi",
   "incomingApplications": {
     "title": "Arizalar"
+  },
+  "paymentHistory": {
+    "title": "To’lovlar tarixi"
   },
   "userInfo": {
     "title": "Arizachi ma'lumotlari",

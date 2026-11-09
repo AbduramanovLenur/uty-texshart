@@ -6,3 +6,4 @@ export const ApplicationsPage = lazyPage(() => import('@pages/applications').the
 export const ApplicationPage = lazyPage(() => import('@pages/application').then((module) => ({ default: module.ApplicationPage })));
 export const CreateApplicationPage = lazyPage(() => import('@pages/create-application').then((module) => ({ default: module.CreateApplicationPage })));
 export const NotificationsPage = lazyPage(() => import('@pages/notifications').then((module) => ({ default: module.NotificationsPage })));
+export const PaymentHistoryPage = lazyPage(() => import('@pages/payment-history').then((module) => ({ default: module.PaymentHistoryPage })));

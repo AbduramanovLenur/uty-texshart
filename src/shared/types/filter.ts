@@ -1,21 +1,18 @@
-import type { FilterValue } from 'antd/es/table/interface';
 import type { Dayjs } from 'dayjs';
 import type { FilterDropdownProps } from 'antd/es/table/interface';
 
-import type { filterKeys } from '@shared/config';
+import type { FilterDropdownKeys, SortOrders } from '@shared/config';
 
-export type TFilterKey = (typeof filterKeys)[keyof typeof filterKeys];
+export type TTableSortOrder = (typeof SortOrders)[keyof typeof SortOrders];
 
-export type TTableSortOrder = 'ascend' | 'descend';
+export type TFilterDropdownKey = (typeof FilterDropdownKeys)[keyof typeof FilterDropdownKeys];
 
-export type TTableFilters = Partial<Record<TFilterKey, FilterValue | null>> & {
+export interface IBaseTableFilters<T> {
   page: number;
   limit: number;
-  sortBy?: TFilterKey | null;
+  sortBy?: T | null;
   sortOrder?: TTableSortOrder | null;
-};
-
+}
 export type TRangeValue = [Dayjs | null, Dayjs | null] | null;
 
-export type TFilterDropdownControls = Pick<FilterDropdownProps, 'setSelectedKeys' | 'selectedKeys' | 'confirm' | 'clearFilters'>;
-
+export type TFilterDropdownControls = Pick<FilterDropdownProps, TFilterDropdownKey>;

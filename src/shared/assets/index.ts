@@ -35,3 +35,4 @@ export { default as IconMapPin } from './icons/icon-map-pin';
 export { default as IconGear } from './icons/icon-gear';
 export { default as IconChecked } from './icons/icon-checked';
 export { default as IconFile } from './icons/icon-file';
+export { default as IconInvoice } from './icons/icon-invoice';

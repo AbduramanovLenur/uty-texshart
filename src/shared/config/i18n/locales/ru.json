@@ -187,16 +187,17 @@
     "dashboard": "Главная",
     "applications": "Заявки",
     "workflow": "Рабочий процесс",
-    "technical_specs": "Технические условия",
-    "gis_and_registry": "ГИС и реестр",
-    "internal_gis": "Внутренний ГИС",
+    "technicalSpecs": "Технические условия",
+    "gisAndRegistry": "ГИС и реестр",
+    "internalGis": "Внутренний ГИС",
     "comm_registry": "Реестр коммуникаций",
     "administration": "Администрация",
     "users": "Пользователи",
     "roles": "Роли",
     "references": "Справочники",
-    "regions_mtu": "Регионы и МТУ",
-    "settings": "Настройки"
+    "regionsMtu": "Регионы и МТУ",
+    "settings": "Настройки",
+    "paymentHistory": "История платежей"
   },
   "application": {
     "breadcrumbs": {
@@ -226,6 +227,7 @@
   },
   "placeholders": {
     "applicationId": "Введите ID заявки",
+    "paymentId": "Введите ID платежа",
     "clear": "Очистить",
     "search": "Поиск"
   },
@@ -239,6 +241,9 @@
   },
   "headers": {
     "applicationId": "ID заявки",
+    "paymentId": "ID платежа",
+    "invoice": "Номер инвойса",
+    "date": "Дата",
     "user": "Заявитель",
     "network": "Инженерная сеть",
     "mtu": "MTU / км, pk",
@@ -252,6 +257,9 @@
   "summary_other": "Найдено {{count}} заявки",
   "incomingApplications": {
     "title": "Входящие заявки"
+  },
+  "paymentHistory": {
+    "title": "История платежей"
   },
   "userInfo": {
     "title": "Информация о заявителе",

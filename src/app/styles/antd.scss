@@ -1,0 +1,26 @@
+.ant-popover {
+  filter: none;
+  &-container {
+    box-shadow: 0 6px 24px 0 rgba(0, 0, 0, 0.1216);
+    border-radius: var(--ant-border-radius-lg);
+    border: 1px solid var(--border-secondary);
+  }
+}
+
+.ant-tag {
+  font-size: var(--ant-font-size-sm);
+  line-height: 1.6;
+  padding-inline: var(--ant-padding-xs);
+}
+
+.ant-form-item {
+  margin-bottom: 0;
+}
+
+.ant-table-column-sorter-inner {
+  width: 8px;
+}
+
+.ant-select .ant-select-suffix {
+  color: var(--dark-45);
+}

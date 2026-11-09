@@ -13,15 +13,16 @@ const { Title } = Typography;
 
 const IncomingApplications: FC = () => {
   const { t } = useTranslation();
+
   return (
     <section className={cn(styles['incoming-applications'], 'section')}>
       <div className={cn(styles['incoming-applications__inner'], 'section-inner')}>
-        <div className={styles['incoming-applications__top']}>
-          <Title className={styles['incoming-applications__title']} level={3}>
+        <div className={cn(styles['incoming-applications__top'], 'section-top')}>
+          <Title className={cn(styles['incoming-applications__title'], 'section-title')} level={3}>
             {t('incomingApplications.title')}
           </Title>
           <Button
-            className={styles['user-applications__download']}
+            className={cn(styles['user-applications__download'], 'section-btn-download')}
             type='default'
             icon={<IconDownload />}
           >
