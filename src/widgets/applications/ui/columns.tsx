@@ -1,28 +1,28 @@
 import type { TableProps } from 'antd';
-import type { TFunction } from 'i18next';
 import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
+
+import { FilterKeys } from '../model/constants/filter-keys';
+import type { TTableFilters } from '../model/types/applications';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
 import { ApplicationStatusTag, type IApplication, type TApplicationStatus } from '@/entities/application';
-import { filterKeys, routes } from '@shared/config';
-import type { TTableFilters } from '@shared/types';
+import { routes } from '@shared/config';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
+import { useTranslation } from 'react-i18next';
 
-export const getColumns = (
-  filters: TTableFilters,
-  t: TFunction,
-): TableProps<IApplication>['columns'] => {
+export const useGetColumns = (filters: TTableFilters): TableProps<IApplication>['columns'] => {
+  const { t } = useTranslation();
+
   return [
     {
       title: t('headers.applicationId'),
-      key: filterKeys.APPLICATION_ID,
+      key: FilterKeys.APPLICATION_ID,
       width: 160,
       sorter: true,
-      fixed: 'left',
-      sortOrder: getSortOrder(filters, filterKeys.APPLICATION_ID),
+      sortOrder: getSortOrder(filters, FilterKeys.APPLICATION_ID),
       render: (_, record) => (
         <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.id)}>
           {record.id}
@@ -46,7 +46,7 @@ export const getColumns = (
     },
     {
       title: t('headers.network'),
-      key: filterKeys.NETWORK,
+      key: FilterKeys.NETWORK,
       minWidth: 235,
       render: (_, record) => record.network,
       filteredValue: filters.network,
@@ -68,7 +68,7 @@ export const getColumns = (
     },
     {
       title: t('headers.mtu'),
-      key: filterKeys.MTU,
+      key: FilterKeys.MTU,
       minWidth: 250,
       render: (_, record) => (
         <div className='table-info'>
@@ -99,7 +99,7 @@ export const getColumns = (
     },
     {
       title: t('headers.status'),
-      key: filterKeys.STATUS,
+      key: FilterKeys.STATUS,
       width: 160,
       render: (_, record) => <ApplicationStatusTag status={record.status as TApplicationStatus} />,
       filteredValue: filters.status,
@@ -121,10 +121,10 @@ export const getColumns = (
     },
     {
       title: t('headers.dateUpdate'),
-      key: filterKeys.DATE,
+      key: FilterKeys.DATE,
       width: 200,
       sorter: true,
-      sortOrder: getSortOrder(filters, filterKeys.DATE),
+      sortOrder: getSortOrder(filters, FilterKeys.DATE),
       filteredValue: filters.date,
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
         <TableDateRangeFilter

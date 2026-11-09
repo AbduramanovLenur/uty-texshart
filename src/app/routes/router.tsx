@@ -7,6 +7,7 @@ import {
   ApplicationPage,
   CreateApplicationPage,
   NotificationsPage,
+  PaymentHistoryPage,
 } from './pages';
 
 import RequireGuest from './guards/require-guest';
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
           {
             path: routes.NOTIFICATIONS,
             element: <NotificationsPage />,
+          },
+          {
+            path: routes.PAYMENT_HISTORY,
+            element: <PaymentHistoryPage />,
           },
         ],
       },

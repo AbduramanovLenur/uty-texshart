@@ -6,6 +6,7 @@ import {
     IconFileUpload,
     IconGear,
     IconHome,
+    IconInvoice,
     IconMap,
     IconMapPin,
     IconNotebook,
@@ -32,21 +33,27 @@ export const items: TMenuGroup[] = [
                 roles: [roles.APPLICANT],
             },
             {
+                key: routes.PAYMENT_HISTORY,
+                label: 'sidebar.paymentHistory',
+                icon: <IconInvoice />,
+                roles: [roles.APPLICANT],
+            },
+            {
                 key: routes.TECHNICAL_SPECIFICATIONS,
-                label: 'sidebar.technical_specs',
+                label: 'sidebar.technicalSpecs',
                 icon: <IconNotebook />,
                 roles: [roles.APPLICANT],
             },
         ],
     },
     {
-        key: 'gis_and_registry',
-        label: 'sidebar.gis_and_registry',
+        key: 'gisAndRegistry',
+        label: 'sidebar.gisAndRegistry',
         roles: [roles.APPLICANT],
         items: [
             {
                 key: routes.INTERNAL_GIS,
-                label: 'sidebar.internal_gis',
+                label: 'sidebar.internalGis',
                 icon: <IconMap />,
                 roles: [roles.APPLICANT],
             },
@@ -83,7 +90,7 @@ export const items: TMenuGroup[] = [
             },
             {
                 key: routes.REGIONS_AND_MTU,
-                label: 'sidebar.regions_mtu',
+                label: 'sidebar.regionsMtu',
                 icon: <IconMapPin />,
                 roles: [roles.APPLICANT],
             },

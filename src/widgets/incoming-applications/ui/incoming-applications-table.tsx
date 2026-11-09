@@ -4,163 +4,30 @@ import { useDispatch } from 'react-redux';
 import { Table, type TableProps } from 'antd';
 import cn from 'classnames';
 
-import { getColumns } from './columns';
+import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/incoming-applications';
+import { useGetColumns } from './columns';
+import { incomingApplicationsMock } from '../model/mock';
 
 import { ViewUserModal, open as openViewUserModal } from '@features/view-user-modal';
 import { ViewProcessModal, open as openViewProcessModal } from '@features/view-process-modal';
-import { ApplicationStatuses, type IIncomingApplication } from '@/entities/application';
+import { type IIncomingApplication } from '@entities/application';
 import { Paginator } from '@shared/ui';
 import { defaultValues } from '@shared/config';
-import type { TFilterKey, TTableFilters } from '@shared/types';
-
-import styles from './incoming-applications-table.module.scss';
-
-const incomingApplicationsMock: IIncomingApplication[] = [
-  {
-    key: '1',
-    id: 'ARZ-0142',
-    user: 'Aliyev Alisher',
-    network: 'Elektr kabeli (yer osti)',
-    mtu: 'Qarshi',
-    km: '4823-9',
-    status: ApplicationStatuses.ACCEPTED,
-    date: '05.12.2025, 14:30',
-    updatedAt: '12.11.2026, 16:45',
-  },
-  {
-    key: '2',
-    id: 'ARZ-0923',
-    user: 'Karimov Aziz',
-    network: 'Havo elektr uzatish liniyasi',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.FORWARDED,
-    date: '27.05.2023, 13:50',
-    updatedAt: '15.08.2024, 12:50',
-  },
-  {
-    key: '3',
-    id: 'ARZ-0587',
-    user: 'Ismoilov Bekzod',
-    network: 'Gaz quvuri',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.ACT_CREATED,
-    date: '22.02.2028, 11:45',
-    updatedAt: '18.09.2027, 14:15',
-  },
-  {
-    key: '4',
-    id: 'ARZ-1345',
-    user: 'Rasulov Sardor',
-    network: 'Suv quvuri',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
-    date: '04.08.2028, 10:10',
-    updatedAt: '22.04.2029, 08:40',
-  },
-  {
-    key: '5',
-    id: 'ARZ-0761',
-    user: 'Tursunov Jamshid',
-    network: 'Kanalizatsiya quvuri',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.REJECTED,
-    date: '15.01.2027, 09:15',
-    updatedAt: '07.03.2025, 10:30',
-  },
-  {
-    key: '6',
-    id: 'ARZ-0482',
-    user: 'Nazarov Diyor',
-    network: 'Issiqlik tarmog‘i',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.DRAFT,
-    date: '12.04.2026, 08:00',
-    updatedAt: '05.05.2026, 11:20',
-  },
-  {
-    key: '7',
-    id: 'ARZ-0910',
-    user: 'Abdullayev Akmal',
-    network: 'Aloqa kabeli (mis)',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.ACCEPTED,
-    date: '19.07.2023, 21:35',
-    updatedAt: '10.10.2025, 19:30',
-  },
-  {
-    key: '8',
-    id: 'ARZ-0678',
-    user: 'Mamadaliyev Shoxrux',
-    network: 'Optik tolali aloqa kabeli',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.ACCEPTED,
-    date: '11.09.2025, 15:25',
-    updatedAt: '30.06.2026, 13:15',
-  },
-  {
-    key: '9',
-    id: 'ARZ-1234',
-    user: 'Yusupov Javohir',
-    network: 'Optik tolali aloqa kabeli',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
-    date: '23.10.2026, 17:40',
-    updatedAt: '14.02.2027, 15:55',
-  },
-  {
-    key: '10',
-    id: 'ARZ-0456',
-    user: 'Saidov Oybek',
-    network: 'Neft / neft mahsulotlari quvuri',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.CONSTRUCTION_STARTED,
-    date: '28.11.2024, 12:05',
-    updatedAt: '09.11.2025, 11:10',
-  },
-  {
-    key: '11',
-    id: 'ARZ-0987',
-    user: 'Ergashev Bobur',
-    network: 'Boshqa muhandislik tarmog‘i',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.COMPLETED,
-    date: '30.03.2024, 16:00',
-    updatedAt: '25.12.2023, 09:00',
-  },
-  {
-    key: '12',
-    id: 'ARZ-0321',
-    user: 'Olimov Sardor',
-    network: 'Aloqa kabeli (mis)',
-    mtu: 'Qarshi MTU',
-    km: '1298-4',
-    status: ApplicationStatuses.TECHNICAL_CONDITIONS_ISSUED,
-    date: '03.06.2022, 18:20',
-    updatedAt: '29.01.2023, 17:05',
-  },
-];
 
 const IncomingApplicationsTable: FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const total = 125;
-
   const [filters, setFilters] = useState<TTableFilters>({
     page: defaultValues.PAGE,
     limit: defaultValues.LIMIT,
   });
 
-  const handleTableChange: TableProps<IIncomingApplication>['onChange'] = (_, nextFilters, sorter) => {
+  const handleTableChange: TableProps<IIncomingApplication>['onChange'] = (
+    _,
+    nextFilters: TColumnFilters,
+    sorter,
+  ) => {
     const activeSorter = Array.isArray(sorter) ? sorter[0] : sorter;
 
     setFilters(({ page, limit }) => ({
@@ -184,11 +51,11 @@ const IncomingApplicationsTable: FC = () => {
     dispatch(openViewProcessModal(record.id));
   };
 
-  const columns = getColumns(filters, t, handleOpenViewModal, handleOpenProcessModal);
+  const columns = useGetColumns(filters, handleOpenViewModal, handleOpenProcessModal);
 
   return (
-    <div className={styles['incoming-applications-table']}>
-      <div className={cn(styles['incoming-applications-table__body'], 'scrollbar')}>
+    <div className={cn('table-wrapper')}>
+      <div className={cn('table-wrapper-body', 'scrollbar')}>
         <Table<IIncomingApplication>
           classNames={{
             root: 'table',
@@ -206,7 +73,7 @@ const IncomingApplicationsTable: FC = () => {
           onChange={handleTableChange}
         />
       </div>
-      <div className={styles['incoming-applications-table__pagination']}>
+      <div className={cn('table-wrapper-pagination')}>
         <Paginator
           total={total}
           page={filters.page}
