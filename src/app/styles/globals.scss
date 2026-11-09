@@ -212,6 +212,9 @@ main {
     &-row {
       &:nth-child(odd) {
         background-color: var(--ant-color-fill-quaternary);
+        .ant-table-cell-fix {
+          background-color: #FAFAFA;
+        }
       }
     }
   }

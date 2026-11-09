@@ -1,6 +1,6 @@
 export const ApprovalStatuses = {
-  FORMED: 'formed',
-  CONFIRMED: 'confirmed',
-  PENDING: 'pending',
-  REJECTED: 'rejected',
+  FORMED: 'FORMED',
+  CONFIRMED: 'CONFIRMED',
+  PENDING: 'PENDING',
+  REJECTED: 'REJECTED',
 } as const;

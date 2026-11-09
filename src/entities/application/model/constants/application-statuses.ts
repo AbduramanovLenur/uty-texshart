@@ -1,10 +1,10 @@
 export const ApplicationStatuses = {
-  ACCEPTED: 'accepted',
-  FORWARDED: 'forwarded',
-  ACT_CREATED: 'actCreated',
-  TECHNICAL_CONDITIONS_ISSUED: 'technicalConditionsIssued',
-  REJECTED: 'rejected',
-  DRAFT: 'draft',
-  CONSTRUCTION_STARTED: 'constructionStarted',
-  COMPLETED: 'completed',
+  ACCEPTED: 'ACCEPTED',
+  FORWARDED: 'FORWARDED',
+  ACT_CREATED: 'ACT_CREATED',
+  TECHNICAL_CONDITIONS_ISSUED: 'TECHNICAL_CONDITIONS_ISSUED',
+  REJECTED: 'REJECTED',
+  DRAFT: 'DRAFT',
+  CONSTRUCTION_STARTED: 'CONSTRUCTION_STARTED',
+  COMPLETED: 'COMPLETED',
 } as const;

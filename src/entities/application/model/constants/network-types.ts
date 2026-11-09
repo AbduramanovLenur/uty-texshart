@@ -1,7 +1,7 @@
 export const NetworkTypes = {
-  OIL_PIPELINE: 'oil_pipeline',
-  POWER_LINE: 'power_line',
-  FIBER_OPTIC: 'fiber_optic',
-  GAS_PIPELINE: 'gas_pipeline',
-  SEWAGE_PIPELINE: 'sewage_pipeline',
+  OIL_PIPELINE: 'OIL_PIPELINE',
+  POWER_LINE: 'POWER_LINE',
+  FIBER_OPTIC: 'FIBER_OPTIC',
+  GAS_PIPELINE: 'GAS_PIPELINE',
+  SEWAGE_PIPELINE: 'SEWAGE_PIPELINE',
 } as const;
