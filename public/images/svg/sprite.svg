@@ -475,4 +475,13 @@
       stroke="currentColor"
     />
   </symbol>
+  <symbol id="icon-logout" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path 
+      d="M8 14H5.2C4.0799 14 3.51984 14 3.09202 13.782C2.7157 13.5903 2.40973 13.2843 2.21799 12.908C2 12.4802 2 11.9201 2 10.8V5.2C2 4.0799 2 3.51984 2.21799 3.09202C2.40973 2.71569 2.7157 2.40973 3.09202 2.21799C3.51984 2 4.0799 2 5.2 2H8M11.3333 5.33333L14 8L11.3333 10.6667M14 8H7.33333" 
+      stroke-width="1.5" 
+      stroke-linecap="round" 
+      stroke-linejoin="round" 
+      stroke="#FF4D4F"
+    />
+  </symbol>
 </svg>

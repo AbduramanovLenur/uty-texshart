@@ -8,6 +8,7 @@ import {
   CreateApplicationPage,
   NotificationsPage,
   PaymentHistoryPage,
+  ProfilePage,
 } from './pages';
 
 import RequireGuest from './guards/require-guest';
@@ -68,6 +69,10 @@ const router = createBrowserRouter([
           {
             path: routes.PAYMENT_HISTORY,
             element: <PaymentHistoryPage />,
+          },
+          {
+            path: routes.PROFILE,
+            element: <ProfilePage />,
           },
         ],
       },
