@@ -227,6 +227,8 @@
   "placeholders": {
     "applicationId": "Ariza ID raqamini kiriting",
     "paymentId": "To‘lov ID raqamini kiriting",
+    "technicalSpecificationId": "Texnik shart ID raqamini kiriting",
+    "applicant": "Arizachini kiriting",
     "clear": "Tozalash",
     "search": "Qidirish"
   },
@@ -246,9 +248,13 @@
     "user": "Arizachi",
     "network": "Muhandislik tarmog‘i",
     "mtu": "MTU / km, pk",
-    "status": "Holati",
+    "status": "Status",
     "dateUpdate": "Sana / yangilanish",
-    "action": "Harakat"
+    "action": "Harakat",
+    "technicalSpecificationId": "Texnik shart ID",
+    "applicant": "Arizachi",
+    "validUntil": "Amal qilish",
+    "signedAt": "Imzolangan"
   },
   "summary_other": "Jami {{count}} ta ariza topildi",
   "incomingApplications": {
@@ -274,5 +280,8 @@
   "processModal": {
     "title": "Jarayon",
     "viewDetails": "Batafsil ko'rish"
+  },
+  "technicalSpecifications": {
+    "title": "Texnik shartlar"
   }
 }

@@ -8,7 +8,7 @@ import type { TTableFilters } from '../model/types/incoming-applications';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { ApplicationStatusTag, type IIncomingApplication, type TApplicationStatus } from '@/entities/application';
+import { ApplicationStatusTag, type IIncomingApplication } from '@/entities/application';
 import { routes } from '@shared/config';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
@@ -61,34 +61,33 @@ export const useGetColumns = (
       ),
     },
     {
-      title: t('headers.user'),
-      key: FilterKeys.USER,
+      title: t('headers.applicant'),
+      key: FilterKeys.APPLICANT,
       minWidth: 140,
       render: (_, record) => (
         <button
           className='table-trigger'
           type='button'
-          onClick={() => onUserClick(record)}
+          onClick={() => onUserClick?.(record)}
         >
           {record.user}
         </button>
       ),
-      filteredValue: filters.user,
-      filters: [
-        {
-          text: 'Category 1',
-          value: 'Category 1',
-        },
-        {
-          text: 'Category 2',
-          value: 'Category 2',
-        },
-        {
-          text: 'Category 3',
-          value: 'Category 3',
-        },
-      ],
-      filterSearch: true,
+      filteredValue: filters.applicant,
+      filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
+        <TableSearchFilter
+          setSelectedKeys={setSelectedKeys}
+          selectedKeys={selectedKeys}
+          confirm={confirm}
+          clearFilters={clearFilters}
+          placeholder={t('placeholders.applicant')}
+          clearLabel={t('placeholders.clear')}
+          searchLabel={t('placeholders.search')}
+        />
+      ),
+      filterIcon: (filtered: boolean) => (
+        <SearchOutlined style={{ color: filtered ? 'var(--ant-blue)' : undefined }} />
+      ),
     },
     {
       title: t('headers.network'),
@@ -147,7 +146,7 @@ export const useGetColumns = (
       title: t('headers.status'),
       key: FilterKeys.STATUS,
       minWidth: 120,
-      render: (_, record) => <ApplicationStatusTag status={record.status as TApplicationStatus} />,
+      render: (_, record) => <ApplicationStatusTag status={record.status} />,
       filteredValue: filters.status,
       filters: [
         {

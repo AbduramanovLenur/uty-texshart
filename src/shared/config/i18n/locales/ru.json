@@ -234,6 +234,8 @@
   "placeholders": {
     "applicationId": "Введите ID заявки",
     "paymentId": "Введите ID платежа",
+    "technicalSpecificationId": "Введите ID техусловий",
+    "applicant": "Введите заявителя",
     "clear": "Очистить",
     "search": "Поиск"
   },
@@ -250,12 +252,15 @@
     "paymentId": "ID платежа",
     "invoice": "Номер инвойса",
     "date": "Дата",
-    "user": "Заявитель",
+    "applicant": "Заявитель",
     "network": "Инженерная сеть",
     "mtu": "MTU / км, pk",
     "status": "Статус",
     "dateUpdate": "Дата / обновление",
-    "action": "Действие"
+    "action": "Действие",
+    "technicalSpecificationId": "ID техусловий",
+    "validUntil": "Срок действия",
+    "signedAt": "Подписан"
   },
   "summary_one": "Найдена {{count}} заявка",
   "summary_few": "Найдено {{count}} заявки",
@@ -284,5 +289,8 @@
   "processModal": {
     "title": "Процесс",
     "viewDetails": "Подробнее"
+  },
+  "technicalSpecifications": {
+    "title": "Технические условия"
   }
 }

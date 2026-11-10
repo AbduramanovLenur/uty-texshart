@@ -34,7 +34,7 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
           <div className={styles['user-info__details']}>
             <div className={styles['user-info__item']}>
               <div className={styles['user-info__label']}>
-                {t('userInfo.name', t('headers.user'))}
+                {t('userInfo.name')}
               </div>
               <div className={styles['user-info__value']}>{data.name}</div>
             </div>
