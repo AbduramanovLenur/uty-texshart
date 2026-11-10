@@ -1,12 +1,11 @@
 import type { FC } from 'react';
 import { Typography, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
-import { useNavigate } from 'react-router-dom';
 import cn from 'classnames';
 
 import { AvatarUpload } from '@features/avatar-upload';
+import { useLogoutConfirm } from '@features/logout';
 import { IconLogout } from '@shared/assets';
-import { routes } from '@shared/config';
 
 import styles from './profile.module.scss';
 
@@ -24,11 +23,7 @@ const PROFILE_DATA = {
 
 const Profile: FC = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
-
-  const handleLogout = () => {
-    navigate(routes.AUTH);
-  };
+  const { confirmLogout } = useLogoutConfirm();
 
   return (
     <section className={cn(styles['profile'], 'section')}>
@@ -98,7 +93,7 @@ const Profile: FC = () => {
             className={styles['profile__logout-btn']}
             type='default'
             icon={<IconLogout />}
-            onClick={handleLogout}
+            onClick={confirmLogout}
           >
             {t('profile.logout')}
           </Button>

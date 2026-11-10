@@ -3,20 +3,18 @@ import { Link } from 'react-router-dom';
 import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 
+import { useLogoutConfirm } from '@features/logout';
 import { routes } from '@shared/config';
 
 import styles from './profile-info-popover.module.scss';
 
 interface IProps {
   profileTo?: string;
-  onLogout?: () => void;
 }
 
-const ProfileInfoPopover: FC<IProps> = ({
-  profileTo = routes.PROFILE,
-  onLogout,
-}) => {
+const ProfileInfoPopover: FC<IProps> = ({ profileTo = routes.PROFILE }) => {
   const { t } = useTranslation();
+  const { confirmLogout } = useLogoutConfirm();
 
   return (
     <div className={styles['profile-info-popover']}>
@@ -31,7 +29,7 @@ const ProfileInfoPopover: FC<IProps> = ({
             className={styles['profile-info-popover__button']}
             type='text'
             size='small'
-            onClick={onLogout}
+            onClick={confirmLogout}
           >
             {t('profile.logout')}
           </Button>

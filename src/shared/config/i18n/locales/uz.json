@@ -161,6 +161,12 @@
     "description": "Arizada siz to'ldirgan ma'lumotlaringiz o'chib ketadi",
     "continue": "Davom etish"
   },
+  "logoutConfirm": {
+    "title": "Hisobdan chiqmoqchimisiz?",
+    "description": "Haqiqatan ham hisobdan chiqmoqchimisiz?",
+    "confirm": "Chiqish",
+    "cancel": "Bekor qilish"
+  },
   "notifications": {
     "page": {
       "title": "Bildirishnomalar",
