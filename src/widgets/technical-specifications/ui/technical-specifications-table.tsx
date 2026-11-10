@@ -1,5 +1,6 @@
 import { useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import { Table, type TableProps } from 'antd';
 import cn from 'classnames';
 
@@ -7,26 +8,31 @@ import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/t
 import { mockTechnicalSpecifications } from '../model/mock';
 import { useGetColumns } from './columns';
 
+import { ViewApplicantModal, open as openViewApplicantModal } from '@features/view-applicant-modal';
 import type { ITechnicalSpecification } from '@entities/technical-specification';
 import { defaultValues } from '@shared/config';
 import { Paginator } from '@shared/ui';
 
 interface IProps {
   onTechnicalSpecificationClick?: (record: ITechnicalSpecification) => void;
-  onApplicantClick?: (record: ITechnicalSpecification) => void;
 }
 
 const TechnicalSpecificationsTable: FC<IProps> = ({
   onTechnicalSpecificationClick,
-  onApplicantClick,
 }) => {
+  const dispatch = useDispatch();
   const { t } = useTranslation();
   const total = 125;
   const [filters, setFilters] = useState<TTableFilters>({
     page: defaultValues.PAGE,
     limit: defaultValues.LIMIT,
   });
-  const columns = useGetColumns(filters, onTechnicalSpecificationClick, onApplicantClick);
+
+  const handleOpenApplicantModal = (record: ITechnicalSpecification) => {
+    dispatch(openViewApplicantModal(record.id));
+  };
+
+  const columns = useGetColumns(filters, onTechnicalSpecificationClick, handleOpenApplicantModal);
 
   const handleTableChange: TableProps<ITechnicalSpecification>['onChange'] = (
     _,
@@ -77,6 +83,7 @@ const TechnicalSpecificationsTable: FC<IProps> = ({
           summary={t('summary', { count: total })}
         />
       </div>
+      <ViewApplicantModal />
     </div>
   );
 };

@@ -3,16 +3,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, Modal } from 'antd';
 
-import { close, stateViewUserModal } from '../model/slice';
+import { close, stateViewApplicantModal } from '../model/slice';
 
 import { UserInfo } from '@entities/user';
 
-import styles from './view-user-modal.module.scss';
+import styles from './view-applicant-modal.module.scss';
 
-const ViewUserModal: FC = () => {
+const ViewApplicantModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen } = useSelector(stateViewUserModal);
+  const { isOpen } = useSelector(stateViewApplicantModal);
 
   const handleClose = () => {
     dispatch(close());
@@ -44,4 +44,4 @@ const ViewUserModal: FC = () => {
   );
 };
 
-export default ViewUserModal;
+export default ViewApplicantModal;

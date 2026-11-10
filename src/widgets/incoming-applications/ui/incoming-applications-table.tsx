@@ -8,7 +8,7 @@ import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/i
 import { useGetColumns } from './columns';
 import { incomingApplicationsMock } from '../model/mock';
 
-import { ViewUserModal, open as openViewUserModal } from '@features/view-user-modal';
+import { ViewApplicantModal, open as openViewApplicantModal } from '@features/view-applicant-modal';
 import { ViewProcessModal, open as openViewProcessModal } from '@features/view-process-modal';
 import { type IIncomingApplication } from '@entities/application';
 import { Paginator } from '@shared/ui';
@@ -43,15 +43,15 @@ const IncomingApplicationsTable: FC = () => {
     setFilters((prev) => ({ ...prev, page, limit }));
   };
 
-  const handleOpenViewModal = (record: IIncomingApplication) => {
-    dispatch(openViewUserModal(record.id));
+  const handleOpenApplicantModal = (record: IIncomingApplication) => {
+    dispatch(openViewApplicantModal(record.id));
   };
 
   const handleOpenProcessModal = (record: IIncomingApplication) => {
     dispatch(openViewProcessModal(record.id));
   };
 
-  const columns = useGetColumns(filters, handleOpenViewModal, handleOpenProcessModal);
+  const columns = useGetColumns(filters, handleOpenApplicantModal, handleOpenProcessModal);
 
   return (
     <div className={cn('table-wrapper')}>
@@ -82,7 +82,7 @@ const IncomingApplicationsTable: FC = () => {
           summary={t('summary', { count: total })}
         />
       </div>
-      <ViewUserModal />
+      <ViewApplicantModal />
       <ViewProcessModal />
     </div>
   );

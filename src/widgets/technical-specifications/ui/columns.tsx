@@ -16,7 +16,7 @@ import { getSortOrder } from '@shared/utils';
 export const useGetColumns = (
   filters: TTableFilters,
   onTechnicalSpecificationClick?: (record: ITechnicalSpecification) => void,
-  onUserClick?: (record: ITechnicalSpecification) => void,
+  onApplicantClick?: (record: ITechnicalSpecification) => void,
 ): TableProps<ITechnicalSpecification>['columns'] => {
   const { t } = useTranslation();
 
@@ -102,7 +102,7 @@ export const useGetColumns = (
         <button
           className='table-trigger'
           type='button'
-          onClick={() => onUserClick?.(record)}
+          onClick={() => onApplicantClick?.(record)}
         >
           {record.applicant}
         </button>

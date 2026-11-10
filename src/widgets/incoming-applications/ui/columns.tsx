@@ -15,7 +15,7 @@ import { IconRetry } from '@shared/assets';
 
 export const useGetColumns = (
   filters: TTableFilters,
-  onUserClick: (record: IIncomingApplication) => void,
+  onApplicantClick?: (record: IIncomingApplication) => void,
   onActionClick?: (record: IIncomingApplication) => void,
 ): TableProps<IIncomingApplication>['columns'] => {
   const { t } = useTranslation();
@@ -68,7 +68,7 @@ export const useGetColumns = (
         <button
           className='table-trigger'
           type='button'
-          onClick={() => onUserClick?.(record)}
+          onClick={() => onApplicantClick?.(record)}
         >
           {record.user}
         </button>
