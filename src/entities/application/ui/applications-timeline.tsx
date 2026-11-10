@@ -5,7 +5,7 @@ import cn from 'classnames';
 import { Statuses } from '../model/constants/stutuses';
 import { ApprovalStatuses } from '../model/constants/approval-statuses';
 import { statusClasses } from '../model/config/status-classes';
-import type { ITimelineApproval, ITimelineStep } from '../model/types/application';
+import type { ITimelineApproval, ITimelineStep } from '../model/types/timeline';
 import ApplicationApprovals from './application-approvals';
 
 import {

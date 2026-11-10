@@ -3,7 +3,7 @@ import { useState, type FC } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
-import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/payment-history';
+import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/filters';
 import { useGetColumns } from './columns';
 import { mockPayments } from '../model/mock';
 

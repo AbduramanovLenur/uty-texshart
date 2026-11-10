@@ -1,3 +1,3 @@
 export { default as ImageUpload } from './ui/image-upload';
-export { uploadStatus } from './model/status';
-export type { TUploadStatus } from './model/types';
+export { UploadStatus } from './model/constants/status';
+export type { TUploadStatus } from './model/types/upload-status';

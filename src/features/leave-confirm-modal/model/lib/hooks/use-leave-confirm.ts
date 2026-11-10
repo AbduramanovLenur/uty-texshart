@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useBlocker, type BlockerFunction } from 'react-router-dom';
 
-import { blockerState } from './blocker-state';
-import { leaveConfirmState } from './navigation-state';
-import type { TSkipLeaveConfirmState, UseLeaveConfirmOptions } from './types';
+import { blockerState } from '../../constants/blocker-state';
+import { LeaveConfirmState } from '../../constants/leave-confirm-state';
+import type { TSkipLeaveConfirmState } from '../../types/state';
+import type { IUseLeaveConfirmOptions } from '../../types/options';
 
 const isSkipLeaveConfirmState = (
   state: unknown,
@@ -12,10 +13,10 @@ const isSkipLeaveConfirmState = (
     return false;
   }
 
-  return (state as Partial<TSkipLeaveConfirmState>)[leaveConfirmState.SKIP] === true;
+  return (state as Partial<TSkipLeaveConfirmState>)[LeaveConfirmState.SKIP] === true;
 };
 
-export const useLeaveConfirm = (options: UseLeaveConfirmOptions = {}) => {
+export const useLeaveConfirm = (options: IUseLeaveConfirmOptions = {}) => {
   const { when = true, onLeave, onStay } = options;
 
   const shouldBlock: BlockerFunction = (args) => {

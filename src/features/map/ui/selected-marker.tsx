@@ -1,10 +1,8 @@
 import type { FC } from 'react';
 import { CircleMarker, useMap } from 'react-leaflet';
 
-import {
-  selectedMarkerConfig,
-  focusPointZoom,
-} from '../model/constants';
+import { selectedMarkerConfig } from '../model/config/markers';
+import { focusPointZoom } from '../model/constants/zoom';
 
 import styles from './map.module.scss';
 

@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { useMapEvents } from 'react-leaflet';
 import type { LeafletMouseEvent } from 'leaflet';
 
-import { snapToNearestRailway } from '../model/railway-proximity';
+import { snapToNearestRailway } from '../model/lib/utils/railway-proximity';
 
 interface IProps {
   onSelectPoint?: (coords: [number, number]) => void;

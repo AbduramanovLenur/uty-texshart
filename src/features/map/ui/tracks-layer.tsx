@@ -3,14 +3,14 @@ import { GeoJSON, Popup, useMap } from 'react-leaflet';
 import type { GeoJsonObject } from 'geojson';
 import type { Layer, LeafletMouseEvent } from 'leaflet';
 
-import { railwayTracksData } from '../model/data';
 import {
   trackHitboxStyle,
   trackLayerStyle,
-  trackClickZoom,
-} from '../model/constants';
-import type { ITrackProperties } from '../model/types';
-import { snapToNearestRailway } from '../model/railway-proximity';
+} from '../model/config/layer-styles';
+import { trackClickZoom } from '../model/constants/zoom';
+import { railwayTracksData } from '../model/data';
+import { snapToNearestRailway } from '../model/lib/utils/railway-proximity';
+import type { ITrackProperties } from '../model/types/track';
 
 import TrackPopup from './track-popup';
 import styles from './map.module.scss';

@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import cn from 'classnames';
 
-import type { IApplicationPreview } from '../model/types/application';
+import type { IApplicationPreview } from '../model/types/application-preview';
 
 import { IconPrimaryRightArrow } from '@shared/assets';
 

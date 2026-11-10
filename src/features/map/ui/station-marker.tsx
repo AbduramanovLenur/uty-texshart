@@ -1,11 +1,10 @@
 import type { FC } from 'react';
 import { CircleMarker, Tooltip, useMap } from 'react-leaflet';
 
-import type { IStationProperties, ITrackProperties } from '../model/types';
-import {
-  stationMarkerConfig,
-  stationClickZoom,
-} from '../model/constants';
+import { stationMarkerConfig } from '../model/config/markers';
+import { stationClickZoom } from '../model/constants/zoom';
+import type { IStationProperties } from '../model/types/station';
+import type { ITrackProperties } from '../model/types/track';
 
 import TrackPopup from './track-popup';
 import styles from './map.module.scss';

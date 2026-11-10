@@ -1,7 +1,7 @@
 import { useEffect, useRef, type FC } from 'react';
 import { useMap } from 'react-leaflet';
 
-import { focusPointZoom } from '../model/constants';
+import { focusPointZoom } from '../model/constants/zoom';
 
 interface IProps {
   coords: [number, number] | null;

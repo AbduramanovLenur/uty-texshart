@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Table, type TableProps } from 'antd';
 import cn from 'classnames';
 
-import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/applications';
+import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/filter';
 import { mockApplications } from '../model/mock';
 import { useGetColumns } from './columns';
 

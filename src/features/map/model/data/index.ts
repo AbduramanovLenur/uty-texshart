@@ -4,7 +4,7 @@ import regionsData from './json/regions.json';
 import stationsData from './json/stations.json';
 import trackDistancesData from './json/track-distances.json';
 
-import type { IMtuDistance, IStationDistanceInfo } from './types';
+import type { IMtuDistance, IStationDistanceInfo } from '../types/distance';
 
 export const trackDistances = trackDistancesData as IMtuDistance[];
 

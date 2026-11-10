@@ -3,15 +3,17 @@ import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import type { GeoJsonObject } from 'geojson';
 
 import {
-  focusPointZoom,
   mapDefaultCenter,
   mapDefaultZoom,
   mapTileLayer,
+} from '../model/config/map';
+import {
   railwayRegionStyle,
   regionLayerStyle,
-} from '../model/constants';
+} from '../model/config/layer-styles';
+import { focusPointZoom } from '../model/constants/zoom';
 import { regionsData, railwayRegionsData } from '../model/data';
-import { isValidCoords } from '../model/is-valid-coords';
+import { isValidCoords } from '../model/lib/utils/is-valid-coords';
 
 import TracksLayer from './tracks-layer';
 import StationsLayer from './stations-layer';

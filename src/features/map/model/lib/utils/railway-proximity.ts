@@ -1,4 +1,4 @@
-import { stationsData, railwayTracksData } from './data';
+import { stationsData, railwayTracksData } from '../../data';
 
 const latToMeters = 111139;
 

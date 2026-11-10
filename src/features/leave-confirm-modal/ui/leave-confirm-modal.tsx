@@ -2,8 +2,8 @@ import type { FC } from 'react';
 import { Modal, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-import { useLeaveConfirm } from '../model/use-leave-confirm';
-import type { ILeaveConfirmModalProps } from '../model/types';
+import { useLeaveConfirm } from '../model/lib/hooks/use-leave-confirm';
+import type { ILeaveConfirmModalProps } from '../model/types/props';
 
 import styles from './leave-confirm-modal.module.scss';
 

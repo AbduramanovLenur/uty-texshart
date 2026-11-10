@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 
 import { stationsData } from '../model/data';
-import type { IStationProperties } from '../model/types';
+import type { IStationProperties } from '../model/types/station';
 
 import StationMarker from './station-marker';
 

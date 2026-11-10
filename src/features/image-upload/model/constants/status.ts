@@ -1,4 +1,4 @@
-export const uploadStatus = {
+export const UploadStatus = {
   UPLOADING: 'uploading',
   DONE: 'done',
   ERROR: 'error',
