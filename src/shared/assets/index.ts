@@ -37,3 +37,4 @@ export { default as IconChecked } from './icons/icon-checked';
 export { default as IconFile } from './icons/icon-file';
 export { default as IconInvoice } from './icons/icon-invoice';
 export { default as IconPen } from './icons/icon-pen';
+export { default as IconLogout } from './icons/icon-logout';

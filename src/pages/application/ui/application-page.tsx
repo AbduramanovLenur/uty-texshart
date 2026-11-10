@@ -6,9 +6,9 @@ import { IncomingApplication } from '@widgets/incoming-application';
 const ApplicationPage: FC = () => {
   const userRole = 'ADMIN';
 
-  // if (userRole) {
-  //   return <IncomingApplication />;
-  // }
+  if (userRole) {
+    return <IncomingApplication />;
+  }
 
   return <Application />;
 };
