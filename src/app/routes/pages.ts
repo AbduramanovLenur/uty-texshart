@@ -9,3 +9,4 @@ export const NotificationsPage = lazyPage(() => import('@pages/notifications').t
 export const PaymentHistoryPage = lazyPage(() => import('@pages/payment-history').then((module) => ({ default: module.PaymentHistoryPage })));
 export const TechnicalSpecificationsPage = lazyPage(() => import('@pages/technical-specifications').then((module) => ({ default: module.TechnicalSpecificationsPage })));
 export const ProfilePage = lazyPage(() => import('@pages/profile').then((module) => ({ default: module.ProfilePage })));
+export const UsersPage = lazyPage(() => import('@pages/users').then((module) => ({ default: module.UsersPage })));

@@ -4,3 +4,4 @@ export { parsePositiveInt } from './parse-positive-int';
 export { getSortOrder } from './get-sort-order';
 export { hasRoleAccess } from './has-role-access';
 export { downloadFile } from './download-file';
+export { maskPinfl } from './mask-pinfl';

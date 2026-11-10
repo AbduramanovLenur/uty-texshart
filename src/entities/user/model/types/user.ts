@@ -1,7 +1,19 @@
+import type { TUserStatus } from './user-status';
+
 export interface IUserFile {
   name: string;
   size: string;
   url: string;
+}
+
+export interface IUserTableRow {
+  id: number | string;
+  name: string;
+  role: string;
+  mtu: string;
+  pinfl: string;
+  status: TUserStatus;
+  lastLogin: string;
 }
 
 export interface IUser {
