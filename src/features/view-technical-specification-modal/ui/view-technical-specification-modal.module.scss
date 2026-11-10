@@ -1,0 +1,192 @@
+.view-technical-specification-modal {
+  top: 0;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 0;
+  height: min(973px, calc(100vh - calc(var(--ant-padding-lg) * 2)));
+  max-height: min(973px, calc(100vh - calc(var(--ant-padding-lg) * 2)));
+  display: flex;
+  flex-direction: column;
+  :global {
+    .ant-modal-content,
+    .ant-modal-container {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      max-height: min(973px, calc(100vh - calc(var(--ant-padding-lg) * 2)));
+      overflow: hidden;
+      border-radius: var(--ant-border-radius-lg);
+      flex: 1 1 auto;
+      min-height: 0;
+    }
+    .ant-modal-body {
+      display: flex;
+      flex-direction: column;
+      flex: 1 1 auto;
+      min-height: 0;
+      overflow: hidden;
+      height: 100%;
+      padding: var(--ant-padding-lg);
+    }
+  }
+  &__wrap {
+    padding: var(--ant-padding-lg);
+    overflow: hidden;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &::before {
+      display: none;
+    }
+    :global {
+      .ant-modal {
+        width: 80% !important;
+      }
+    }
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow: hidden;
+    height: 100%;
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+    min-height: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: var(--ant-color-fill-quaternary);
+    padding: var(--ant-padding-lg);
+    border-radius: var(--ant-border-radius-lg);
+  }
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+    margin-bottom: var(--ant-margin-lg);
+    &-left {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--ant-margin);
+    }
+    &-right {
+      display: flex;
+      align-items: center;
+    }
+  }
+  &__badge {
+    font-size: var(--ant-font-size-heading-3);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--dark-88);
+    background-color: var(--ant-color-fill-secondary);
+    padding: 10px var(--ant-padding-lg);
+    border-radius: var(--ant-border-radius-lg);
+  }
+  &__meta {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin-xxs);
+    line-height: 1.5;
+    color: var(--dark-65);
+  }
+  &__label {
+    font-size: var(--ant-font-size);
+    line-height: 1.5;
+    color: var(--dark-65);
+  }
+  &__link {
+    font-size: var(--ant-font-size-lg);
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--ant-blue);
+    padding: 8px 15px;
+    span {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 4px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: var(--ant-blue);
+        transition: 0.5s;
+      }
+    }
+    &:hover {
+      color: var(--ant-blue-hover);
+      &::after {
+        background-color: var(--ant-blue-hover);
+      }
+    }
+  }
+  &__document {
+    flex: 1 1 auto;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: var(--ant-border-radius-lg);
+    margin-bottom: var(--ant-margin-lg);
+  }
+  &__iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    flex: 1 1 auto;
+    border: none;
+    display: block;
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0;
+  }
+  &__actions {
+    display: flex;
+    gap: var(--ant-margin);
+  }
+  &__download,
+  &__print,
+  &__close {
+    font-size: var(--ant-font-size-lg);
+    font-weight: 500;
+    line-height: 1.5;
+    height: 40px;
+    border-radius: var(--ant-border-radius-lg);
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+  &__print {
+    color: var(--dark-88);
+    :global {
+      .ant-btn-icon {
+        > svg {
+          color: var(--dark-45);
+          transition: 0.5s;
+        }
+      }
+    }
+    &:hover {
+      :global {
+        .ant-btn-icon {
+          > svg {
+            color: var(--ant-blue-hover);
+          }
+        }
+      }
+    }
+  }
+}

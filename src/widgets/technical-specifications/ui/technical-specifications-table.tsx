@@ -9,17 +9,12 @@ import { mockTechnicalSpecifications } from '../model/mock';
 import { useGetColumns } from './columns';
 
 import { ViewApplicantModal, open as openViewApplicantModal } from '@features/view-applicant-modal';
+import { ViewTechnicalSpecificationModal, open as openViewTechnicalSpecificationModal } from '@features/view-technical-specification-modal';
 import type { ITechnicalSpecification } from '@entities/technical-specification';
 import { defaultValues } from '@shared/config';
 import { Paginator } from '@shared/ui';
 
-interface IProps {
-  onTechnicalSpecificationClick?: (record: ITechnicalSpecification) => void;
-}
-
-const TechnicalSpecificationsTable: FC<IProps> = ({
-  onTechnicalSpecificationClick,
-}) => {
+const TechnicalSpecificationsTable: FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const total = 125;
@@ -32,7 +27,15 @@ const TechnicalSpecificationsTable: FC<IProps> = ({
     dispatch(openViewApplicantModal(record.id));
   };
 
-  const columns = useGetColumns(filters, onTechnicalSpecificationClick, handleOpenApplicantModal);
+  const handleOpenTechnicalSpecificationModal = (record: ITechnicalSpecification) => {
+    dispatch(openViewTechnicalSpecificationModal(record.id));
+  };
+
+  const columns = useGetColumns(
+    filters,
+    handleOpenTechnicalSpecificationModal,
+    handleOpenApplicantModal,
+  );
 
   const handleTableChange: TableProps<ITechnicalSpecification>['onChange'] = (
     _,
@@ -84,6 +87,7 @@ const TechnicalSpecificationsTable: FC<IProps> = ({
         />
       </div>
       <ViewApplicantModal />
+      <ViewTechnicalSpecificationModal />
     </div>
   );
 };

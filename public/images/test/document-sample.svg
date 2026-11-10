@@ -1,0 +1,109 @@
+<svg width="800" height="1130" viewBox="0 0 800 1130" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1130" fill="#FFFFFF"/>
+  <rect x="0.5" y="0.5" width="799" height="1129" stroke="#E5E7EB"/>
+
+  <!-- ERI notice -->
+  <text x="400" y="45" font-family="sans-serif" font-size="12" font-weight="600" fill="#D32F2F" text-anchor="middle">
+    IJRO.GOV.UZ tizimi orqali ERI bilan tasdiqlangan, Hujjat kodi: MM15229589
+  </text>
+
+  <!-- Emblem of Uzbekistan -->
+  <g transform="translate(140, 75) scale(0.65)">
+    <circle cx="60" cy="60" r="58" stroke="#2E7D32" stroke-width="4" fill="#F9FBE7" />
+    <circle cx="60" cy="60" r="50" fill="#E8F5E9" />
+    <circle cx="60" cy="60" r="22" fill="#FBC02D" />
+    <path d="M60 25 L60 38 M60 82 L60 95 M25 60 L38 60 M82 60 L95 60 M35 35 L44 44 M76 76 L85 85 M35 85 L44 76 M76 44 L85 35" stroke="#F57F17" stroke-width="2.5" />
+    <path d="M30 75 Q60 55 90 75 L90 85 L30 85 Z" fill="#81D4FA" />
+    <path d="M40 70 L50 62 L60 70 L70 62 L80 70 L80 75 L40 75 Z" fill="#4FC3F7" />
+    <path d="M60 42 C54 48 48 55 46 62 C50 60 56 62 60 67 C64 62 70 60 74 62 C72 55 66 48 60 42 Z" fill="#FFFFFF" stroke="#0288D1" stroke-width="2" />
+    <path d="M22 65 C20 40 35 24 50 18" stroke="#FBC02D" stroke-width="5" stroke-linecap="round" fill="none" />
+    <path d="M98 65 C100 40 85 24 70 18" stroke="#2E7D32" stroke-width="5" stroke-linecap="round" fill="none" />
+    <polygon points="60,10 63,16 70,16 65,20 67,27 60,23 53,27 55,20 50,16 57,16" fill="#0288D1" stroke="#FBC02D" stroke-width="1" />
+    <path d="M32 92 Q60 82 88 92 L84 100 Q60 92 36 100 Z" fill="#0288D1" />
+    <path d="M42 94 Q60 87 78 94 L76 98 Q60 92 44 98 Z" fill="#FFFFFF" />
+    <path d="M48 95 Q60 90 72 95 L71 97 Q60 93 49 97 Z" fill="#2E7D32" />
+  </g>
+
+  <!-- Ministry Title Block -->
+  <g font-family="sans-serif" text-anchor="middle" fill="#111827">
+    <text x="470" y="82" font-size="11" font-weight="700">O‘ZBEKISTON RESPUBLIKASI</text>
+    <text x="470" y="98" font-size="11" font-weight="700">IQTISODIYOT VA MOLIYA VAZIRLIGI</text>
+    <text x="470" y="114" font-size="10" font-weight="700">HUZURIDAGI</text>
+    <text x="470" y="130" font-size="11" font-weight="700">JAHON BANKI VA OSIYO INFRATUZILMAVIY</text>
+    <text x="470" y="146" font-size="11" font-weight="700">INVESTITSIYALAR BANKI ISHTIROKIDAGI</text>
+    <text x="470" y="162" font-size="11" font-weight="700">“O‘RTA SHAHARLARNI KOMPLEKS RIVOJLANTIRISH”</text>
+    <text x="470" y="178" font-size="11" font-weight="700">LOYIHASINI AMALGA OSHIRISH GURUHI</text>
+    <text x="470" y="196" font-size="9" fill="#6B7280">100017, Toshkent sh., Taras Shevchenko ko‘chasi, 34-uy, Tel.: (998 71) 252-42-20</text>
+    <text x="470" y="210" font-size="9" fill="#2563EB">www.imv.uz, info@imv.uz, E-mail: mscuzb@gmail.com, grpmift@exat.uz</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="60" y1="225" x2="740" y2="225" stroke="#111827" stroke-width="1.5" />
+
+  <!-- Date and Number -->
+  <g font-family="sans-serif" font-size="13" font-weight="600" fill="#111827">
+    <text x="60" y="255">2026 y. “9” sentabr</text>
+    <text x="740" y="255" text-anchor="end">02/77-01-02-573-son</text>
+  </g>
+
+  <!-- Receiver Block -->
+  <g font-family="sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="middle">
+    <text x="560" y="300">“O‘zbekiston Temir yo‘llari”</text>
+    <text x="560" y="320">boshqaruv raisi</text>
+    <text x="560" y="340">Z. G‘. Narzullayevga</text>
+  </g>
+
+  <!-- Salutation -->
+  <text x="60" y="390" font-family="sans-serif" font-size="14" font-weight="600" fill="#111827">
+    Hurmatli Zufar G‘iyasovich,
+  </text>
+
+  <!-- Paragraph 1 -->
+  <g font-family="sans-serif" font-size="13" fill="#1F2937">
+    <text x="90" y="425">O‘zbekiston Respublikasi Prezidentining 2024-yil 31-yanvardagi “Xalqaro taraqqiyot uyushmasi va Osiyo</text>
+    <text x="60" y="447">infratuzilmaviy investitsiyalar banki ishtirokida “O‘rta shaharlarni kompleks rivojlantirish” loyihasini amalga</text>
+    <text x="60" y="469">oshirishga doir chora-tadbirlar to‘g‘risida”gi PQ-47-son qaroriga muvofiq, Surxondaryo viloyatining Jarqo‘rg‘on</text>
+    <text x="60" y="491">tumanida ichimlik suv tarmoqlarini qurish va rekonstruksiya qilish ishlari belgilangan.</text>
+
+    <!-- Paragraph 2 -->
+    <text x="90" y="530">Mazkur loyiha doirasida hozirgi kunda Jarqo‘rg‘on tumanida ichimlik suv tarmoqlarini loyihalashtirish ishlari</text>
+    <text x="60" y="552">amalga oshirilmoqda.</text>
+
+    <!-- Paragraph 3 -->
+    <text x="90" y="590">Yuqoridagilardan kelib chiqib, Jarqo‘rg‘on tumanida ichimlik suv tarmoqlarini temir yo‘l kesishuvidan o‘tkazish</text>
+    <text x="60" y="612">bo‘yicha texnik shartlarni taqdim etishingizni so‘raymiz.</text>
+
+    <!-- Paragraph 4 -->
+    <text x="90" y="650">Loyiha doirasida temir yo‘l izlari ostidan o‘tkaziladigan barcha muhandislik tarmoqlari amaldagi shaharsozlik</text>
+    <text x="60" y="672">normalari va temir yo‘l xavfsizligi talablariga to‘liq javob berishi kafolatlanadi. Trassa yo‘nalishi bo‘yicha</text>
+    <text x="60" y="694">topografik xaritalar va muhandislik-geologik qidiruv materiallari ilova qilinmoqda.</text>
+
+    <!-- Attachment -->
+    <text x="90" y="735" font-weight="600">Ilova: Loyiha taklifi va chizmalari 12 varaqda.</text>
+  </g>
+
+  <!-- Signature Section -->
+  <line x1="60" y1="810" x2="740" y2="810" stroke="#E5E7EB" stroke-dasharray="4 4" />
+
+  <text x="60" y="855" font-family="sans-serif" font-size="13" font-weight="600" fill="#111827">
+    Loyiha guruhi direktori
+  </text>
+
+  <!-- E-IMZO verification stamp box -->
+  <g transform="translate(280, 825)">
+    <rect width="240" height="60" rx="4" fill="#F0FDF4" stroke="#16A34A" stroke-width="1.5" stroke-dasharray="4 3"/>
+    <text x="120" y="20" font-family="sans-serif" font-size="9" font-weight="700" fill="#15803D" text-anchor="middle">
+      IJRO.GOV.UZ E-IMZO BILAN TASDIQLANGAN
+    </text>
+    <text x="120" y="36" font-family="sans-serif" font-size="8.5" fill="#166534" text-anchor="middle">
+      Sertifikat: 5C82 1B94 00E2 3F01
+    </text>
+    <text x="120" y="50" font-family="sans-serif" font-size="8.5" fill="#166534" text-anchor="middle">
+      Sana: 29.01.2024 16:34:21
+    </text>
+  </g>
+
+  <text x="740" y="855" font-family="sans-serif" font-size="13" font-weight="700" fill="#111827" text-anchor="end">
+    M. K. Usmonov
+  </text>
+</svg>

@@ -236,9 +236,11 @@
     "view": "Ko‘rish",
     "close": "Yopish",
     "download": "Yuklab olish",
+    "downloadSize": "Yuklab olish {{size}}",
     "downloadFile": "Yuklash",
     "confirm": "Tasdiqlsh",
-    "more": "Batafsil"
+    "more": "Batafsil",
+    "print": "Chop etish"
   },
   "headers": {
     "applicationId": "Ariza ID",
@@ -282,6 +284,11 @@
     "viewDetails": "Batafsil ko'rish"
   },
   "technicalSpecifications": {
-    "title": "Texnik shartlar"
+    "title": "Texnik shartlar",
+    "modal": {
+      "applicationNumber": "Ariza raqami",
+      "signedAt": "{{date}} da imzolangan",
+      "validUntil": "{{date}} gacha amal qiladi"
+    }
   }
 }

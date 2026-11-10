@@ -243,9 +243,11 @@
     "view": "Посмотреть",
     "close": "Закрыть",
     "download": "Скачать",
+    "downloadSize": "Скачать {{size}}",
     "downloadFile": "Скачать",
     "confirm": "Подтвердить",
-    "more": "Подробнее"
+    "more": "Подробнее",
+    "print": "Печать"
   },
   "headers": {
     "applicationId": "ID заявки",
@@ -291,6 +293,11 @@
     "viewDetails": "Подробнее"
   },
   "technicalSpecifications": {
-    "title": "Технические условия"
+    "title": "Технические условия",
+    "modal": {
+      "applicationNumber": "Номер заявки",
+      "signedAt": "Подписано {{date}}",
+      "validUntil": "Действует до {{date}}"
+    }
   }
 }
