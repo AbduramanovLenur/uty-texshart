@@ -2,7 +2,7 @@ import type { FC } from 'react';
 import { Segmented } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-import { useLanguageOptions } from '../model/useLanguageOptions';
+import { useLanguageOptions } from '../model/config/language-options';
 
 import { defaultLanguage } from '@shared/config';
 

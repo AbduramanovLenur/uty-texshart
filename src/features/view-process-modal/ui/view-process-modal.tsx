@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Modal } from 'antd';
 import cn from 'classnames';
 
-import { close, stateViewProcessModal } from '../model/slice';
+import { close, stateViewProcessModal } from '../model/store/slice';
 import { ApplicationsTimeline } from '@/entities/application';
 // import { routes } from '@shared/config';
 

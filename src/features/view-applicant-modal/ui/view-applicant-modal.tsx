@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, Modal } from 'antd';
 
-import { close, stateViewApplicantModal } from '../model/slice';
+import { close, stateViewApplicantModal } from '../model/store/slice';
 
 import { UserInfo } from '@entities/user';
 

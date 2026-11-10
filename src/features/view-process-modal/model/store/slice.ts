@@ -1,24 +1,24 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-import type { IState } from './types';
+import type { IState } from '../types/state';
 
 const initialState: IState = {
   isOpen: false,
-  userId: null,
+  applicationId: null,
 };
 
 const slice = createSlice({
-  name: 'viewApplicantModalSlice',
+  name: 'viewProcessModalSlice',
   initialState,
   reducers: {
     open: (state, action: PayloadAction<number | string | null>) => {
       state.isOpen = true;
-      state.userId = action.payload;
+      state.applicationId = action.payload;
     },
 
     close: (state) => {
       state.isOpen = false;
-      state.userId = null;
+      state.applicationId = null;
     },
   },
 });
@@ -26,4 +26,4 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateViewApplicantModal = (state: { viewApplicantModalSlice: IState }) => state.viewApplicantModalSlice;
+export const stateViewProcessModal = (state: { viewProcessModalSlice: IState }) => state.viewProcessModalSlice;

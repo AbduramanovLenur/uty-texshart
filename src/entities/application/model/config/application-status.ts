@@ -1,6 +1,6 @@
 import { Statuses } from '@shared/config';
 import type { TStatus } from '@shared/types';
-import type { IApplicationStatusTagConfig } from '../types/application';
+import type { IApplicationStatusTagConfig } from '../types/application-status-tag';
 
 export const applicationStatusTagConfig: Record<TStatus, IApplicationStatusTagConfig> = {
   [Statuses.ACCEPTED]: {

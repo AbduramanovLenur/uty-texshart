@@ -3,7 +3,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import type { TTableFilters } from '../model/types/payment-history';
+import type { TTableFilters } from '../model/types/filters';
 import { FilterKeys } from '../model/constants/filter-keys';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';

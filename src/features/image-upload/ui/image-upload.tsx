@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import CircleProgress from './circle-progress';
-import { uploadStatus } from '../model/status';
+import { UploadStatus } from '../model/constants/status';
 
 import { IconBigPlus, IconPlusImage, IconSmallClose, IconUpload } from '@shared/assets';
 
@@ -72,7 +72,7 @@ const ImageUpload: FC<IProps> = ({
       return {
         uid,
         name: file.name,
-        status: uploadStatus.UPLOADING,
+        status: UploadStatus.UPLOADING,
         percent: 0,
         thumbUrl: URL.createObjectURL(file),
         originFileObj: rcFile as unknown as UploadFile['originFileObj'],
@@ -91,7 +91,7 @@ const ImageUpload: FC<IProps> = ({
           updateFiles((prev) =>
             prev.map((item) =>
               item.uid === uploadFile.uid
-                ? { ...item, status: uploadStatus.DONE, percent: 100 }
+                ? { ...item, status: UploadStatus.DONE, percent: 100 }
                 : item,
             ),
           );
@@ -183,8 +183,8 @@ const ImageUpload: FC<IProps> = ({
       ) : (
         <div className={styles['image-upload__list']}>
           {fileList.map((file) => {
-            const isUploading = file.status === uploadStatus.UPLOADING;
-            const isError = file.status === uploadStatus.ERROR;
+            const isUploading = file.status === UploadStatus.UPLOADING;
+            const isError = file.status === UploadStatus.ERROR;
 
             return (
               <div

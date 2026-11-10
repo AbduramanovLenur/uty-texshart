@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 
-import type { ITrackProperties } from '../model/types';
+import type { ITrackProperties } from '../model/types/track';
 
 import styles from './map.module.scss';
 

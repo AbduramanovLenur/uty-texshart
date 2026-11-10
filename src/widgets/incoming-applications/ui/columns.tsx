@@ -4,7 +4,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 
 import { FilterKeys } from '../model/constants/filter-keys';
-import type { TTableFilters } from '../model/types/incoming-applications';
+import type { TTableFilters } from '../model/types/filters';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
