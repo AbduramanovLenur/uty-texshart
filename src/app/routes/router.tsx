@@ -10,6 +10,7 @@ import {
   PaymentHistoryPage,
   TechnicalSpecificationsPage,
   ProfilePage,
+  UsersPage,
 } from './pages';
 
 import RequireGuest from './guards/require-guest';
@@ -74,6 +75,10 @@ const router = createBrowserRouter([
           {
             path: routes.TECHNICAL_SPECIFICATIONS,
             element: <TechnicalSpecificationsPage />,
+          },
+          {
+            path: routes.USERS,
+            element: <UsersPage />,
           },
           {
             path: routes.PROFILE,

@@ -1,300 +1,313 @@
-{
-  "applicationInfo": {
-    "applicationNumber": "Ariza raqami",
-    "comment": "Izoh",
-    "communicationType": "O‘tkazilishi rejalashtirilayotgan kommunikatsiya turi",
-    "crossingMethod": "O‘tkazish usuli",
-    "locationPhotos": "Kommunikatsiya o‘tkazilishi rejalashtirilayotgan joy rasmi",
-    "projectGoal": "Loyihaning maqsadi",
-    "technicalParameters": "Muhandislik-texnik parametrlari"
-  },
-  "applicationsTimeline": {
-    "steps": {
-      "title": {
-        "submitted": "Ariza topshirildi",
-        "paymentDone": "To‘lov qilindi",
-        "applicationAccepted": "Ariza qabul qilindi",
-        "forwardedToRegional": "Hududiy bo‘limga yo‘naltirildi",
-        "actCreated": "Dalolatnoma shakllantirildi",
-        "actConfirmed": "Dalolatnoma tasdiqlandi",
-        "technicalConditionsIssued": "Texnik shart berildi",
-        "projectDocumentsUploaded": "Loyiha xujjatlari yuklandi",
-        "constructionPermitIssued": "Qurilishga ruxsat berildi",
-        "constructionStarted": "Qurilish boshlandi",
-        "constructionCompleted": "Qurilish yakunlandi",
-        "constructionActUploaded": "Qurilish bo‘yicha dalolatnoma yuklandi",
-        "constructionCompletionConfirmed": "Qurilish yakunlanishi tasdiqlandi",
-        "completedSuccessfully": "Muvaffaqiyatli yakunlandi"
-      },
-      "triggers": {
-        "downloadRejectionReason": "Rad etish dalolatnomasi ({{size}})",
-
-        "downloadAct": "Dalolatnoma ({{size}})",
-        "downloadTechnicalSpecs": "Texnik shart ({{size}})",
-        "downloadProjectDocuments": "Loyiha xujjatlari ({{size}})",
-        "downloadConstructionAct": "Qurilish yakunida dalolatnomasi ({{size}})"
-      },
-      "rejects": {
-        "rejected": "Rad etildi"
-      }
-    },
-    "approvals": {
-      "regionalHead": "Hududiy bo‘lim boshlig‘i",
-      "pch": "PCH",
-      "ech": "ECH",
-      "shch": "SHCH",
-      "applicant": "Arizachi"
-    },
-    "pending": "Kutilmoqda",
-    "formed": "Shakllantirdi",
-    "confirmed": "Tasdiqladi",
-    "rejected": "Rad etildi"
-  },
-  "authentication": {
-    "authPanel": {
-      "welcome": "Xush kelibsiz",
-      "signInPrompt": "Ishni boshlash uchun tizimga kiring",
-      "or": "Yoki",
-      "copyright": "© 2026 O‘zbekiston temir yo‘llari Tex-Shart"
-    },
-    "authPromo": {
-      "slogan": "Barcha jarayonlar — bir joyda",
-      "name": "O‘zbekiston temir yo‘llari Tex-Shart boshqaruv tizimi"
-    },
-    "eImzo": {
-      "chooseKey": "E-IMZO kalitingizni tanlang",
-      "director": "Direktor",
-      "pinfl": "JShShIR",
-      "type": "Turi",
-      "legalEntity": "Yuridik shaxs",
-      "individual": "Jismoniy shaxs",
-      "certificate": "Sertifikat",
-      "validityPeriod": "Amal qilish muddati",
-      "expired": "Muddati tugagan"
-    },
-    "myId": {
-      "signIn": "MyID orqali kirish"
-    },
-    "oneId": {
-      "signIn": "One ID orqali kirish"
-    }
-  },
-  "createApplication": {
-    "bottom": {
-      "cancel": "Bekor qilish",
-      "continue": "Davom etish",
-      "submit": "Arizani jo’natish",
-      "back": "1-qadamga qaytish"
-    },
-    "form": {
-      "comment": "Izoh",
-      "commentPlaceholder": "Yozing",
-      "communicationType": "O’tkazilishi rejalashtirilayotgan komunikatsiya turi",
-      "crossingMethod": "Temir yo’ldan o’tkazish turi",
-      "locationPhotos": "Kommunikatsiya rejalashtirilayotgan joy rasmi",
-      "parametersTitle": "Muhandislik-texnik parametrlari",
-      "projectGoal": "Kommunikatsiyani o’tqazish maqsadi",
-      "selectPlaceholder": "Tanlang",
-      "validation": {
-        "communicationType": "Kommunikatsiya turini tanlang",
-        "crossingMethod": "O’tkazish turini tanlang",
-        "projectGoal": "O’tkazish maqsadini tanlang",
-        "locationPhotos": "Joy rasmini yuklang",
-        "comment": "Izoh kiriting",
-        "coordinates": "Xaritada joyni belgilang"
-      }
-    },
-    "steps": {
-      "step1": {
-        "content": "Ariza ma’lumotlarini to’ldiring",
-        "title": "1-qadam"
-      },
-      "step2": {
-        "content": "Xaritada belgilang",
-        "title": "2-qadam"
-      }
-    },
-    "title": "Yangi ariza yaratish",
-    "top": {
-      "saveDraft": "Qoralamalarga qo’shish",
-      "title": "Ariza ma’lumotlarini to’ldiring"
-    }
-  },
-  "dashboard": {
-    "title": "Asosiy sahifa",
-    "applicationDetails": {
-      "title": "Ariza ma’lumotlari",
-      "process": "Jarayon",
-      "details": "Batafsil"
-    },
-    "recentApplications": {
-      "create": "Yangi ariza",
-      "title": "Oxirgi arizalar",
-      "viewAll": "Barcha arizalarni ko’rish"
-    },
-    "statistics": {
-      "draft": "Qoralama",
-      "accepted": "Qabul qilindi",
-      "forwarded": "Yo‘naltirildi",
-      "actCreated": "Dalolatnoma tuzildi",
-      "technicalConditionsIssued": "Texnik shart berildi",
-      "inConstruction": "Qurilish jarayonida",
-      "successful": "Muvaffaqiyatli",
-      "rejected": "Rad qilindi"
-    }
-  },
-  "header": {
-    "searchPlaceholder": "Qidiruv"
-  },
-  "imageUpload": {
-    "add": "Rasm qo’shish",
-    "dropzoneSubtitle": "JPG, PNG formatlar qabul qilinadi",
-    "dropzoneTitle": "Bu yerga bosing yoki rasmlarni shu yerga tashlang",
-    "remove": "O‘chirish"
-  },
-  "language": {
-    "uz": "O‘zbekcha",
-    "ru": "Русский"
-  },
-  "leaveConfirmModal": {
-    "title": "Chiqmoqchimisiz?",
-    "description": "Arizada siz to'ldirgan ma'lumotlaringiz o'chib ketadi",
-    "continue": "Davom etish"
-  },
-  "logoutConfirm": {
-    "title": "Hisobdan chiqmoqchimisiz?",
-    "description": "Haqiqatan ham hisobdan chiqmoqchimisiz?",
-    "confirm": "Chiqish",
-    "cancel": "Bekor qilish"
-  },
-  "notifications": {
-    "page": {
-      "title": "Bildirishnomalar",
-      "markAllRead": "Barchasini o‘qilgan deb belgilash"
-    },
-    "popover": {
-      "title": "Bildirishnomalar",
-      "newCount_other": "{{count}} ta yangi bildirishnoma",
-      "viewAll": "Barchasini ko‘rish"
-    }
-  },
-  "profile": {
-    "page": "Profil sahifasi",
-    "company": "Profil",
-    "pinfl": "JSHSHR",
-    "director": "Rahbar ism-sharifi",
-    "phone": "Kontakt raqami",
-    "address": "Manzil",
-    "upload": "Yuklash",
-    "logout": "Chiqish"
-  },
-  "sidebar": {
-    "dashboard": "Asosiy sahifa",
-    "applications": "Arizalar",
-    "workflow": "Ish jarayoni",
-    "technicalSpecs": "Texnik shartlar",
-    "gisAndRegistry": "GIS va reestr",
-    "internalGis": "Ichki GIS",
-    "comm_registry": "Kommunikatsiya reestri",
-    "administration": "Ma'muriyat",
-    "users": "Foydalanuvchilar",
-    "roles": "Rollar",
-    "references": "Ma'lumotnomalar",
-    "regionsMtu": "Hududlar va MTU",
-    "settings": "Sozlamalar",
-    "paymentHistory": "To’lovlar tarixi"
-  },
-  "application": {
-    "breadcrumbs": {
-      "applications": "Arizalarim",
-      "details": "Ariza haqida ma'lumot"
-    },
-    "tabs": {
-      "info": "Ariza haqida ma'lumot",
-      "map": "Xaritada ko'rish",
-      "applicantInfo": "Arizachi ma'lumotlari",
-      "documents": "Xujjatlar"
-    }
-  },
-  "applications": {
-    "title": "Arizalarim",
-    "create": "Yangi ariza yaratish"
-  },
-  "statuses": {
-    "accepted": "Qabul qilindi",
-    "forwarded": "Yo‘naltirildi",
-    "actCreated": "Dalolatnoma tuzildi",
-    "technicalConditionsIssued": "Texnik-shart berildi",
-    "rejected": "Rad etildi",
-    "draft": "Qoralama",
-    "constructionStarted": "Qurilishga ruxsat berildi",
-    "completed": "Yakunlandi"
-  },
-  "placeholders": {
-    "applicationId": "Ariza ID raqamini kiriting",
-    "paymentId": "To‘lov ID raqamini kiriting",
-    "technicalSpecificationId": "Texnik shart ID raqamini kiriting",
-    "applicant": "Arizachini kiriting",
-    "clear": "Tozalash",
-    "search": "Qidirish"
-  },
-  "actions": {
-    "view": "Ko‘rish",
-    "close": "Yopish",
-    "download": "Yuklab olish",
-    "downloadSize": "Yuklab olish {{size}}",
-    "downloadFile": "Yuklash",
-    "confirm": "Tasdiqlsh",
-    "more": "Batafsil",
-    "print": "Chop etish"
-  },
-  "headers": {
-    "applicationId": "Ariza ID",
-    "paymentId": "To‘lov ID",
-    "invoice": "Invoice raqami",
-    "date": "Sana",
-    "user": "Arizachi",
-    "network": "Muhandislik tarmog‘i",
-    "mtu": "MTU / km, pk",
-    "status": "Status",
-    "dateUpdate": "Sana / yangilanish",
-    "action": "Harakat",
-    "technicalSpecificationId": "Texnik shart ID",
-    "applicant": "Arizachi",
-    "validUntil": "Amal qilish",
-    "signedAt": "Imzolangan"
-  },
-  "summary_other": "Jami {{count}} ta ariza topildi",
-  "incomingApplications": {
-    "title": "Arizalar"
-  },
-  "paymentHistory": {
-    "title": "To’lovlar tarixi"
-  },
-  "userInfo": {
-    "title": "Arizachi ma'lumotlari",
-    "name": "Arizachi",
-    "inn": "INN",
-    "director": "Rahbar ism-sharifi",
-    "phone": "Kontakt raqami",
-    "address": "Manzil",
-    "idCard": "ID karta",
-    "license": "Tadbirkorlik litsenziyasi"
-  },
-  "userDocuments": {
-    "idCard": "ID karta",
-    "license": "Tadbirkorlik litsenziyasi"
-  },
-  "processModal": {
-    "title": "Jarayon",
-    "viewDetails": "Batafsil ko'rish"
-  },
-  "technicalSpecifications": {
-    "title": "Texnik shartlar",
-    "modal": {
-      "applicationNumber": "Ariza raqami",
-      "signedAt": "{{date}} da imzolangan",
-      "validUntil": "{{date}} gacha amal qiladi"
-    }
-  }
+﻿{
+    "applicationInfo":  {
+                            "applicationNumber":  "Ariza raqami",
+                            "comment":  "Izoh",
+                            "communicationType":  "O‘tkazilishi rejalashtirilayotgan kommunikatsiya turi",
+                            "crossingMethod":  "O‘tkazish usuli",
+                            "locationPhotos":  "Kommunikatsiya o‘tkazilishi rejalashtirilayotgan joy rasmi",
+                            "projectGoal":  "Loyihaning maqsadi",
+                            "technicalParameters":  "Muhandislik-texnik parametrlari"
+                        },
+    "applicationsTimeline":  {
+                                 "steps":  {
+                                               "title":  {
+                                                             "submitted":  "Ariza topshirildi",
+                                                             "paymentDone":  "To‘lov qilindi",
+                                                             "applicationAccepted":  "Ariza qabul qilindi",
+                                                             "forwardedToRegional":  "Hududiy bo‘limga yo‘naltirildi",
+                                                             "actCreated":  "Dalolatnoma shakllantirildi",
+                                                             "actConfirmed":  "Dalolatnoma tasdiqlandi",
+                                                             "technicalConditionsIssued":  "Texnik shart berildi",
+                                                             "projectDocumentsUploaded":  "Loyiha xujjatlari yuklandi",
+                                                             "constructionPermitIssued":  "Qurilishga ruxsat berildi",
+                                                             "constructionStarted":  "Qurilish boshlandi",
+                                                             "constructionCompleted":  "Qurilish yakunlandi",
+                                                             "constructionActUploaded":  "Qurilish bo‘yicha dalolatnoma yuklandi",
+                                                             "constructionCompletionConfirmed":  "Qurilish yakunlanishi tasdiqlandi",
+                                                             "completedSuccessfully":  "Muvaffaqiyatli yakunlandi"
+                                                         },
+                                               "triggers":  {
+                                                                "downloadRejectionReason":  "Rad etish dalolatnomasi ({{size}})",
+                                                                "downloadAct":  "Dalolatnoma ({{size}})",
+                                                                "downloadTechnicalSpecs":  "Texnik shart ({{size}})",
+                                                                "downloadProjectDocuments":  "Loyiha xujjatlari ({{size}})",
+                                                                "downloadConstructionAct":  "Qurilish yakunida dalolatnomasi ({{size}})"
+                                                            },
+                                               "rejects":  {
+                                                               "rejected":  "Rad etildi"
+                                                           }
+                                           },
+                                 "approvals":  {
+                                                   "regionalHead":  "Hududiy bo‘lim boshlig‘i",
+                                                   "pch":  "PCH",
+                                                   "ech":  "ECH",
+                                                   "shch":  "SHCH",
+                                                   "applicant":  "Arizachi"
+                                               },
+                                 "pending":  "Kutilmoqda",
+                                 "formed":  "Shakllantirdi",
+                                 "confirmed":  "Tasdiqladi",
+                                 "rejected":  "Rad etildi"
+                             },
+    "authentication":  {
+                           "authPanel":  {
+                                             "welcome":  "Xush kelibsiz",
+                                             "signInPrompt":  "Ishni boshlash uchun tizimga kiring",
+                                             "or":  "Yoki",
+                                             "copyright":  "© 2026 O‘zbekiston temir yo‘llari Tex-Shart"
+                                         },
+                           "authPromo":  {
+                                             "slogan":  "Barcha jarayonlar — bir joyda",
+                                             "name":  "O‘zbekiston temir yo‘llari Tex-Shart boshqaruv tizimi"
+                                         },
+                           "eImzo":  {
+                                         "chooseKey":  "E-IMZO kalitingizni tanlang",
+                                         "director":  "Direktor",
+                                         "pinfl":  "JShShIR",
+                                         "type":  "Turi",
+                                         "legalEntity":  "Yuridik shaxs",
+                                         "individual":  "Jismoniy shaxs",
+                                         "certificate":  "Sertifikat",
+                                         "validityPeriod":  "Amal qilish muddati",
+                                         "expired":  "Muddati tugagan"
+                                     },
+                           "myId":  {
+                                        "signIn":  "MyID orqali kirish"
+                                    },
+                           "oneId":  {
+                                         "signIn":  "One ID orqali kirish"
+                                     }
+                       },
+    "createApplication":  {
+                              "bottom":  {
+                                             "cancel":  "Bekor qilish",
+                                             "continue":  "Davom etish",
+                                             "submit":  "Arizani jo’natish",
+                                             "back":  "1-qadamga qaytish"
+                                         },
+                              "form":  {
+                                           "comment":  "Izoh",
+                                           "commentPlaceholder":  "Yozing",
+                                           "communicationType":  "O’tkazilishi rejalashtirilayotgan komunikatsiya turi",
+                                           "crossingMethod":  "Temir yo’ldan o’tkazish turi",
+                                           "locationPhotos":  "Kommunikatsiya rejalashtirilayotgan joy rasmi",
+                                           "parametersTitle":  "Muhandislik-texnik parametrlari",
+                                           "projectGoal":  "Kommunikatsiyani o’tqazish maqsadi",
+                                           "selectPlaceholder":  "Tanlang",
+                                           "validation":  {
+                                                              "communicationType":  "Kommunikatsiya turini tanlang",
+                                                              "crossingMethod":  "O’tkazish turini tanlang",
+                                                              "projectGoal":  "O’tkazish maqsadini tanlang",
+                                                              "locationPhotos":  "Joy rasmini yuklang",
+                                                              "comment":  "Izoh kiriting",
+                                                              "coordinates":  "Xaritada joyni belgilang"
+                                                          }
+                                       },
+                              "steps":  {
+                                            "step1":  {
+                                                          "content":  "Ariza ma’lumotlarini to’ldiring",
+                                                          "title":  "1-qadam"
+                                                      },
+                                            "step2":  {
+                                                          "content":  "Xaritada belgilang",
+                                                          "title":  "2-qadam"
+                                                      }
+                                        },
+                              "title":  "Yangi ariza yaratish",
+                              "top":  {
+                                          "saveDraft":  "Qoralamalarga qo’shish",
+                                          "title":  "Ariza ma’lumotlarini to’ldiring"
+                                      }
+                          },
+    "dashboard":  {
+                      "title":  "Asosiy sahifa",
+                      "applicationDetails":  {
+                                                 "title":  "Ariza ma’lumotlari",
+                                                 "process":  "Jarayon",
+                                                 "details":  "Batafsil"
+                                             },
+                      "recentApplications":  {
+                                                 "create":  "Yangi ariza",
+                                                 "title":  "Oxirgi arizalar",
+                                                 "viewAll":  "Barcha arizalarni ko’rish"
+                                             },
+                      "statistics":  {
+                                         "draft":  "Qoralama",
+                                         "accepted":  "Qabul qilindi",
+                                         "forwarded":  "Yo‘naltirildi",
+                                         "actCreated":  "Dalolatnoma tuzildi",
+                                         "technicalConditionsIssued":  "Texnik shart berildi",
+                                         "inConstruction":  "Qurilish jarayonida",
+                                         "successful":  "Muvaffaqiyatli",
+                                         "rejected":  "Rad qilindi"
+                                     }
+                  },
+    "header":  {
+                   "searchPlaceholder":  "Qidiruv"
+               },
+    "imageUpload":  {
+                        "add":  "Rasm qo’shish",
+                        "dropzoneSubtitle":  "JPG, PNG formatlar qabul qilinadi",
+                        "dropzoneTitle":  "Bu yerga bosing yoki rasmlarni shu yerga tashlang",
+                        "remove":  "O‘chirish"
+                    },
+    "language":  {
+                     "uz":  "O‘zbekcha",
+                     "ru":  "Русский"
+                 },
+    "leaveConfirmModal":  {
+                              "title":  "Chiqmoqchimisiz?",
+                              "description":  "Arizada siz to\u0027ldirgan ma\u0027lumotlaringiz o\u0027chib ketadi",
+                              "continue":  "Davom etish"
+                          },
+    "logoutConfirm":  {
+                          "title":  "Hisobdan chiqmoqchimisiz?",
+                          "description":  "Haqiqatan ham hisobdan chiqmoqchimisiz?",
+                          "confirm":  "Chiqish",
+                          "cancel":  "Bekor qilish"
+                      },
+    "notifications":  {
+                          "page":  {
+                                       "title":  "Bildirishnomalar",
+                                       "markAllRead":  "Barchasini o‘qilgan deb belgilash"
+                                   },
+                          "popover":  {
+                                          "title":  "Bildirishnomalar",
+                                          "newCount_other":  "{{count}} ta yangi bildirishnoma",
+                                          "viewAll":  "Barchasini ko‘rish"
+                                      }
+                      },
+    "profile":  {
+                    "page":  "Profil sahifasi",
+                    "company":  "Profil",
+                    "pinfl":  "JSHSHR",
+                    "director":  "Rahbar ism-sharifi",
+                    "phone":  "Kontakt raqami",
+                    "address":  "Manzil",
+                    "upload":  "Yuklash",
+                    "logout":  "Chiqish"
+                },
+    "sidebar":  {
+                    "dashboard":  "Asosiy sahifa",
+                    "applications":  "Arizalar",
+                    "workflow":  "Ish jarayoni",
+                    "technicalSpecs":  "Texnik shartlar",
+                    "gisAndRegistry":  "GIS va reestr",
+                    "internalGis":  "Ichki GIS",
+                    "comm_registry":  "Kommunikatsiya reestri",
+                    "administration":  "Ma\u0027muriyat",
+                    "users":  "Foydalanuvchilar",
+                    "roles":  "Rollar",
+                    "references":  "Ma\u0027lumotnomalar",
+                    "regionsMtu":  "Hududlar va MTU",
+                    "settings":  "Sozlamalar",
+                    "paymentHistory":  "To’lovlar tarixi"
+                },
+    "application":  {
+                        "breadcrumbs":  {
+                                            "applications":  "Arizalarim",
+                                            "details":  "Ariza haqida ma\u0027lumot"
+                                        },
+                        "tabs":  {
+                                     "info":  "Ariza haqida ma\u0027lumot",
+                                     "map":  "Xaritada ko\u0027rish",
+                                     "applicantInfo":  "Arizachi ma\u0027lumotlari",
+                                     "documents":  "Xujjatlar"
+                                 }
+                    },
+    "applications":  {
+                         "title":  "Arizalarim",
+                         "create":  "Yangi ariza yaratish"
+                     },
+    "statuses":  {
+                     "accepted":  "Qabul qilindi",
+                     "forwarded":  "Yo‘naltirildi",
+                     "actCreated":  "Dalolatnoma tuzildi",
+                     "technicalConditionsIssued":  "Texnik-shart berildi",
+                     "rejected":  "Rad etildi",
+                     "draft":  "Qoralama",
+                     "constructionStarted":  "Qurilishga ruxsat berildi",
+                     "completed":  "Yakunlandi"
+                 },
+    "placeholders":  {
+                         "applicationId":  "Ariza ID raqamini kiriting",
+                         "paymentId":  "To‘lov ID raqamini kiriting",
+                         "technicalSpecificationId":  "Texnik shart ID raqamini kiriting",
+                         "applicant":  "Arizachini kiriting",
+                         "clear":  "Tozalash",
+                         "search":  "Qidirish",
+                         "user":  "Foydalanuvchini kiriting",
+                         "pinfl":  "JSHSHIRni kiriting"
+                     },
+    "actions":  {
+                    "view":  "Ko‘rish",
+                    "close":  "Yopish",
+                    "download":  "Yuklab olish",
+                    "downloadSize":  "Yuklab olish {{size}}",
+                    "downloadFile":  "Yuklash",
+                    "confirm":  "Tasdiqlsh",
+                    "more":  "Batafsil",
+                    "print":  "Chop etish"
+                },
+    "headers":  {
+                    "applicationId":  "Ariza ID",
+                    "paymentId":  "To‘lov ID",
+                    "invoice":  "Invoice raqami",
+                    "date":  "Sana",
+                    "user":  "Foydalanuvchi",
+                    "network":  "Muhandislik tarmog‘i",
+                    "mtu":  "MTU / km, pk",
+                    "status":  "Status",
+                    "dateUpdate":  "Sana / yangilanish",
+                    "action":  "Harakat",
+                    "technicalSpecificationId":  "Texnik shart ID",
+                    "applicant":  "Arizachi",
+                    "validUntil":  "Amal qilish",
+                    "signedAt":  "Imzolangan",
+                    "role":  "Roli",
+                    "userMtu":  "MTU",
+                    "pinfl":  "JSHSHIR",
+                    "lastLogin":  "Oxirgi kirish"
+                },
+    "summary_other":  "Jami {{count}} ta ariza topildi",
+    "incomingApplications":  {
+                                 "title":  "Arizalar"
+                             },
+    "paymentHistory":  {
+                           "title":  "To’lovlar tarixi"
+                       },
+    "userInfo":  {
+                     "title":  "Arizachi ma\u0027lumotlari",
+                     "name":  "Arizachi",
+                     "inn":  "INN",
+                     "director":  "Rahbar ism-sharifi",
+                     "phone":  "Kontakt raqami",
+                     "address":  "Manzil",
+                     "idCard":  "ID karta",
+                     "license":  "Tadbirkorlik litsenziyasi"
+                 },
+    "userDocuments":  {
+                          "idCard":  "ID karta",
+                          "license":  "Tadbirkorlik litsenziyasi"
+                      },
+    "processModal":  {
+                         "title":  "Jarayon",
+                         "viewDetails":  "Batafsil ko\u0027rish"
+                     },
+    "technicalSpecifications":  {
+                                    "title":  "Texnik shartlar",
+                                    "modal":  {
+                                                  "applicationNumber":  "Ariza raqami",
+                                                  "signedAt":  "{{date}} da imzolangan",
+                                                  "validUntil":  "{{date}} gacha amal qiladi"
+                                              }
+                                },
+    "users":  {
+                  "title":  "Foydalanuvchilar",
+                  "create":  "Yangi foydalanuvchi"
+              },
+    "userStatuses":  {
+                         "active":  "Faol",
+                         "inactive":  "Nofaol"
+                     }
 }
