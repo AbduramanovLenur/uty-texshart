@@ -9,6 +9,7 @@ import { mockTechnicalSpecificationDetails } from '../model/mock';
 
 import { IconDownload, IconPrint } from '@shared/assets';
 import { routes } from '@shared/config';
+import { downloadFile } from '@shared/utils';
 
 import styles from './view-technical-specification-modal.module.scss';
 
@@ -28,10 +29,6 @@ const ViewTechnicalSpecificationModal: FC = () => {
   };
 
   const handlePrint = () => {
-    window.print();
-  };
-
-  const handleDownload = () => {
     const printWindow = window.open(documentUrl, '_blank');
 
     if (!printWindow) {
@@ -41,6 +38,10 @@ const ViewTechnicalSpecificationModal: FC = () => {
     printWindow.addEventListener('load', () => {
       printWindow.print();
     });
+  };
+
+  const handleDownload = () => {
+    downloadFile(documentUrl);
   };
 
   return (
