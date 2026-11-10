@@ -1,11 +1,10 @@
-import type { ReactNode, ComponentType } from 'react';
-import type { ApplicationStatuses } from '../constants/application-statuses';
+import type { ComponentType } from 'react';
+
 import type { ApprovalStatuses } from '../constants/approval-statuses';
 import type { NetworkTypes } from '../constants/network-types';
 import type { Statuses } from '../constants/stutuses';
 
-export type TApplicationStatus =
-  (typeof ApplicationStatuses)[keyof typeof ApplicationStatuses];
+import type { TStatus } from '@shared/types';
 
 export type TApprovalStatus =
   (typeof ApprovalStatuses)[keyof typeof ApprovalStatuses];
@@ -61,7 +60,7 @@ export interface IApplication {
   network: string;
   mtu: string;
   km: string;
-  status: TApplicationStatus | ReactNode;
+  status: TStatus;
   date: string;
   updatedAt: string;
 }

@@ -7,7 +7,7 @@ import type { TTableFilters } from '../model/types/applications';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { ApplicationStatusTag, type IApplication, type TApplicationStatus } from '@/entities/application';
+import { ApplicationStatusTag, type IApplication } from '@/entities/application';
 import { routes } from '@shared/config';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
@@ -101,7 +101,7 @@ export const useGetColumns = (filters: TTableFilters): TableProps<IApplication>[
       title: t('headers.status'),
       key: FilterKeys.STATUS,
       width: 160,
-      render: (_, record) => <ApplicationStatusTag status={record.status as TApplicationStatus} />,
+      render: (_, record) => <ApplicationStatusTag status={record.status} />,
       filteredValue: filters.status,
       filters: [
         {

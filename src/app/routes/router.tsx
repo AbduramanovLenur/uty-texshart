@@ -8,6 +8,7 @@ import {
   CreateApplicationPage,
   NotificationsPage,
   PaymentHistoryPage,
+  TechnicalSpecificationsPage,
   ProfilePage,
 } from './pages';
 
@@ -69,6 +70,10 @@ const router = createBrowserRouter([
           {
             path: routes.PAYMENT_HISTORY,
             element: <PaymentHistoryPage />,
+          },
+          {
+            path: routes.TECHNICAL_SPECIFICATIONS,
+            element: <TechnicalSpecificationsPage />,
           },
           {
             path: routes.PROFILE,

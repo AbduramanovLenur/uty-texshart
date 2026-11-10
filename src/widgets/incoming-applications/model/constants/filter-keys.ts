@@ -1,6 +1,6 @@
 export const FilterKeys = {
   APPLICATION_ID: 'applicationId',
-  USER: 'user',
+  APPLICANT: 'applicant',
   NETWORK: 'network',
   MTU: 'mtu',
   STATUS: 'status',

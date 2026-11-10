@@ -8,7 +8,7 @@ const initialState: IState = {
 };
 
 const slice = createSlice({
-  name: 'viewUserModalSlice',
+  name: 'viewApplicantModalSlice',
   initialState,
   reducers: {
     open: (state, action: PayloadAction<number | string | null>) => {
@@ -26,4 +26,4 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateViewUserModal = (state: { viewUserModalSlice: IState }) => state.viewUserModalSlice;
+export const stateViewApplicantModal = (state: { viewApplicantModalSlice: IState }) => state.viewApplicantModalSlice;

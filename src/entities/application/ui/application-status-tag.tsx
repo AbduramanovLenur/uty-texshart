@@ -3,10 +3,11 @@ import { Tag } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import { applicationStatusTagConfig } from '../model/config/application-status';
-import type { TApplicationStatus } from '../model/types/application';
+
+import type { TStatus } from '@shared/types';
 
 export interface IProps {
-  status: TApplicationStatus;
+  status: TStatus;
   className?: string;
 }
 

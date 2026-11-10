@@ -11,3 +11,4 @@ export type {
   IBaseTableFilters,
 } from './filter';
 export type { Role } from './role';
+export type { TStatus } from './status';

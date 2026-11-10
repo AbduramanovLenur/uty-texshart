@@ -9,3 +9,4 @@ export { defaultValues } from './constants/default-values';
 export { queries } from './constants/queries';
 export { FilterDropdownKeys } from './constants/filter-dropdown-keys';
 export { SortOrders } from './constants/sort-orders';
+export { Statuses } from './constants/statuses';
