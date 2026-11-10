@@ -27,6 +27,10 @@ const ProfileInfo: FC<IProps> = ({ children }) => {
     setOpen(nextOpen);
   };
 
+  const handleContentClick = () => {
+    setOpen(false);
+  };
+
   return (
     <div className={styles['profile-info']}>
       <div className={styles['profile-info__wrapper']}>
@@ -44,7 +48,11 @@ const ProfileInfo: FC<IProps> = ({ children }) => {
         classNames={{
           root: styles['profile-info__popover'],
         }}
-        content={children}
+        content={
+          <div onClick={handleContentClick}>
+            {children}
+          </div>
+        }
         arrow={false}
         placement='topRight'
         trigger='click'
