@@ -1,0 +1,15 @@
+.register-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ant-margin-sm);
+  margin-top: var(--ant-margin-xl);
+  &__button {
+    font-size: var(--ant-font-size);
+    font-weight: 500;
+    line-height: 1.5;
+    height: 40px;
+    padding-inline: var(--ant-padding);
+    border-radius: var(--ant-border-radius-lg);
+  }
+}

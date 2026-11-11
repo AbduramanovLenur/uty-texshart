@@ -2,6 +2,7 @@ import { createBrowserRouter } from 'react-router-dom';
 
 import {
   AuthPage,
+  RegisterPage,
   DashboardPage,
   ApplicationsPage,
   ApplicationPage,
@@ -45,6 +46,15 @@ const router = createBrowserRouter([
     errorElement: <ErrorBoundary><span /></ErrorBoundary>,
     hydrateFallbackElement: routeFallback,
     children: [
+      {
+        element: <DefaultLayout />,
+        children: [
+          {
+            path: routes.REGISTER,
+            element: <RegisterPage />,
+          },
+        ],
+      },
       {
         element: <RootLayout />,
         children: [

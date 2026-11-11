@@ -317,5 +317,42 @@
   "userStatuses": {
     "active": "Faol",
     "inactive": "Nofaol"
+  },
+  "register": {
+    "illustration": "Illustratsiya",
+    "contacts": {
+      "title": "Xush kelibsiz,\n{{name}}",
+      "subtitle": "Davom etish uchun shartlarga rozilik\nbildiring va telefon raqamingizni tasdiqlang",
+      "phoneLabel": "Telefon raqamingiz",
+      "phonePlaceholder": "00 000 00 00",
+      "emailLabel": "Email manzilingiz",
+      "emailPlaceholder": "Email pochtangiz",
+      "termsLink": "Platforma shartlariga",
+      "termsAgreement": "rozilik bildiraman"
+    },
+    "sms": {
+      "title": "Raqamingizni tasdiqlang",
+      "subtitle": "{{phone}} raqamiga SMS kod jo‘natdik",
+      "codeLabel": "SMS kod",
+      "codePlaceholder": "Kodni kiriting"
+    },
+    "success": {
+      "title": "Raqamingiz tasdiqlandi",
+      "subtitle": "Asosiy sahifa ochilmoqda...."
+    },
+    "actions": {
+      "back": "Orqaga qaytish",
+      "continue": "Davom etish"
+    },
+    "termsModal": {
+      "title": "Platforma shartlari"
+    },
+    "validation": {
+      "phoneRequired": "Telefon raqamingizni kiriting",
+      "phoneInvalid": "Telefon raqamini to‘liq kiriting",
+      "emailInvalid": "Email manzilini to‘g‘ri kiriting",
+      "agreed": "Platforma shartlariga rozilik bildiring",
+      "smsRequired": "SMS kodni kiriting"
+    }
   }
 }
