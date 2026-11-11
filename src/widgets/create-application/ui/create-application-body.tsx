@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 import { StepList } from '../model/constants/step-list';
 import { FormFields } from '../model/constants/form-fields';
-import type { TFormValues } from '../model/types/form';
+import type { IFormValues } from '../model/types/form';
 
 import CreateApplicationSteps from './create-application-steps';
 import CreateApplicationTop from './create-application-top';
@@ -25,7 +25,7 @@ const { useForm, useWatch, Item } = Form;
 const CreateApplicationBody: FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [form] = useForm<TFormValues>();
+  const [form] = useForm<IFormValues>();
   const [step, setStep] = useState(StepList.FORM);
   const certificate = useWatch<string | undefined>(FormFields.CERTIFICATE, form);
 
@@ -52,12 +52,12 @@ const CreateApplicationBody: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: TFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Form submit values:', values);
     dispatch(openSignApplicationModal());
   };
 
-  const handleFinishFailed: NonNullable<FormProps<TFormValues>['onFinishFailed']> = ({ errorFields }) => {
+  const handleFinishFailed: NonNullable<FormProps<IFormValues>['onFinishFailed']> = ({ errorFields }) => {
     const hasFormErrors = errorFields.some(({ name }) => name[0] !== FormFields.COORDINATES);
 
     if (step === StepList.MAP && hasFormErrors) {
