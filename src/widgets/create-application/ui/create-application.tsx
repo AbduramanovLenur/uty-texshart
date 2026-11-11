@@ -8,6 +8,7 @@ import CreateApplicationBody from './create-application-body';
 import { getBreadcrumbs } from '../model/lib/utils/get-breadcrumbs';
 
 import { LeaveConfirmModal } from '@features/leave-confirm-modal';
+import { ViewInvoiceModal } from '@features/view-invoice-modal';
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
 
@@ -37,6 +38,7 @@ const CreateApplication: FC = () => {
         </PageHeader>
         <CreateApplicationBody />
         <LeaveConfirmModal />
+        <ViewInvoiceModal />
       </div>
     </section>
   );

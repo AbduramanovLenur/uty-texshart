@@ -1,0 +1,33 @@
+.sign-application-modal {
+  :global {
+    .ant-modal-container {
+      padding: 0;
+    }
+    .ant-modal-header {
+      padding: 20px var(--ant-padding-lg) 0;
+      margin-bottom: 0;
+    }
+
+    .ant-modal-close {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 16px;
+      height: 16px;
+      svg {
+        width: 8px;
+        height: 8px;
+      }
+    }
+
+    .ant-modal-body {
+      padding: var(--ant-padding) var(--ant-padding-lg);
+    }
+  }
+
+  &__body {
+    :global(.ant-select) {
+      margin-bottom: 0;
+    }
+  }
+}

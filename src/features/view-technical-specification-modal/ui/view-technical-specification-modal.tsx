@@ -9,7 +9,7 @@ import { mockTechnicalSpecificationDetails } from '../model/mock';
 
 import { IconDownload, IconPrint } from '@shared/assets';
 import { routes } from '@shared/config';
-import { downloadFile } from '@shared/utils';
+import { downloadFile, printFile } from '@shared/utils';
 
 import styles from './view-technical-specification-modal.module.scss';
 
@@ -29,15 +29,7 @@ const ViewTechnicalSpecificationModal: FC = () => {
   };
 
   const handlePrint = () => {
-    const printWindow = window.open(documentUrl, '_blank');
-
-    if (!printWindow) {
-      return;
-    }
-
-    printWindow.addEventListener('load', () => {
-      printWindow.print();
-    });
+    printFile(documentUrl);
   };
 
   const handleDownload = () => {

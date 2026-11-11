@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Map } from '@features/map';
 
 import { validateCoordinates } from '../model/lib/helpers/validators';
+import { FormFields } from '../model/constants/form-fields';
 
 import styles from './create-application-map.module.scss';
 
@@ -22,7 +23,7 @@ const CreateApplicationMap: FC<ICreateApplicationMapProps> = ({
   return (
     <Item
       className={styles['create-application-map']}
-      name='coordinates'
+      name={FormFields.COORDINATES}
       rules={
         isActive
           ? [

@@ -41,7 +41,7 @@ export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
           <Button
             className={styles['leave-confirm-modal__btn-leave']}
             type='default'
-            onClick={handleLeave}
+            onClick={handleStay}
           >
             {displayLeaveText}
           </Button>
@@ -49,7 +49,7 @@ export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
             className={styles['leave-confirm-modal__btn-continue']}
             type='primary'
             danger
-            onClick={handleStay}
+            onClick={handleLeave}
           >
             {displayContinueText}
           </Button>

@@ -1,4 +1,4 @@
-﻿{
+{
   "applicationInfo": {
     "applicationNumber": "Номер заявки",
     "comment": "Примечание",
@@ -162,7 +162,10 @@
   "leaveConfirmModal": {
     "title": "Хотите выйти?",
     "description": "Заполненные вами данные в заявке будут удалены",
-    "continue": "Продолжить"
+    "continue": "Да, выйти"
+  },
+  "signApplicationModal": {
+    "title": "Подтвердите подачу заявки через E-IMZO"
   },
   "logoutConfirm": {
     "title": "Выйти из аккаунта?",
@@ -254,7 +257,8 @@
     "downloadFile": "Скачать",
     "confirm": "Подтвердить",
     "more": "Подробнее",
-    "print": "Печать"
+    "print": "Печать",
+    "share": "Поделиться"
   },
   "headers": {
     "applicationId": "ID заявки",
@@ -303,6 +307,10 @@
   "processModal": {
     "title": "Процесс",
     "viewDetails": "Подробнее"
+  },
+  "invoiceModal": {
+    "title": "Инвойс",
+    "backToMain": "Вернуться на главную"
   },
   "technicalSpecifications": {
     "title": "Технические условия",

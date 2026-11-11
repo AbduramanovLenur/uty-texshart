@@ -1,4 +1,4 @@
-.e-imzo-auth {
+.e-imzo {
   &__select {
     width: 100%;
     height: 40px;
@@ -42,8 +42,9 @@
   &__information {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--ant-margin-lg);
     &-disabled {
-      .e-imzo-auth {
+      .e-imzo {
         &__title,
         &__value {
           color: var(--dark-25);
