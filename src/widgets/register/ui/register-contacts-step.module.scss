@@ -1,0 +1,46 @@
+.register-contacts-step {
+  :global {
+    .ant-form-item .ant-form-item-control-input {
+      min-height: auto;
+    }
+    .ant-form-item-row > .ant-form-item-label {
+      padding: 0;
+      margin-bottom: var(--ant-margin-xs);
+    }
+    .ant-form-item-label > label {
+      color: var(--dark-88);
+      font-size: var(--ant-font-size);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .ant-space-addon-large {
+      font-size: var(--ant-font-size);
+      background-color: var(--ant-color-fill-quaternary);
+    }
+    .ant-input {
+      border: 1px solid var(--default-border)
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin);
+    margin-bottom: var(--ant-margin-lg);
+  }
+  &__agreement {
+    &-checkbox {
+      font-size: var(--ant-font-size);
+      line-height: 1.5;
+      color: var(--dark-88);
+    }
+  }
+  &__terms-link {
+    display: inline;
+    padding: 0;
+    color: var(--ant-blue);
+    text-decoration: underline;
+    &:hover {
+      color: var(--ant-blue-hover);
+    }
+  }
+}

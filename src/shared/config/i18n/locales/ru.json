@@ -327,5 +327,42 @@
   "userStatuses": {
     "active": "Активен",
     "inactive": "Неактивен"
+  },
+  "register": {
+    "illustration": "Иллюстрация",
+    "contacts": {
+      "title": "Добро пожаловать,\n{{name}}",
+      "subtitle": "Чтобы продолжить, примите условия\nи подтвердите номер телефона",
+      "phoneLabel": "Номер телефона",
+      "phonePlaceholder": "00 000 00 00",
+      "emailLabel": "Электронная почта",
+      "emailPlaceholder": "Ваш email",
+      "termsLink": "С условиями платформы",
+      "termsAgreement": "соглашаюсь"
+    },
+    "sms": {
+      "title": "Подтвердите номер",
+      "subtitle": "Мы отправили SMS-код на номер {{phone}}",
+      "codeLabel": "SMS-код",
+      "codePlaceholder": "Введите код"
+    },
+    "success": {
+      "title": "Ваш номер подтверждён",
+      "subtitle": "Открывается главная страница...."
+    },
+    "actions": {
+      "back": "Назад",
+      "continue": "Продолжить"
+    },
+    "termsModal": {
+      "title": "Условия платформы"
+    },
+    "validation": {
+      "phoneRequired": "Введите номер телефона",
+      "phoneInvalid": "Введите номер телефона полностью",
+      "emailInvalid": "Введите корректный email",
+      "agreed": "Примите условия платформы",
+      "smsRequired": "Введите SMS-код"
+    }
   }
 }
