@@ -250,7 +250,8 @@
     "downloadFile": "Yuklash",
     "confirm": "Tasdiqlsh",
     "more": "Batafsil",
-    "print": "Chop etish"
+    "print": "Chop etish",
+    "share": "Ulashish"
   },
   "headers": {
     "applicationId": "Ariza ID",
@@ -296,6 +297,10 @@
   "processModal": {
     "title": "Jarayon",
     "viewDetails": "Batafsil ko\u0027rish"
+  },
+  "invoiceModal": {
+    "title": "Invoys",
+    "backToMain": "Bosh sahifaga qaytish"
   },
   "technicalSpecifications": {
     "title": "Texnik shartlar",

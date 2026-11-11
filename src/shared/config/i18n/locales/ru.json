@@ -257,7 +257,8 @@
     "downloadFile": "Скачать",
     "confirm": "Подтвердить",
     "more": "Подробнее",
-    "print": "Печать"
+    "print": "Печать",
+    "share": "Поделиться"
   },
   "headers": {
     "applicationId": "ID заявки",
@@ -306,6 +307,10 @@
   "processModal": {
     "title": "Процесс",
     "viewDetails": "Подробнее"
+  },
+  "invoiceModal": {
+    "title": "Инвойс",
+    "backToMain": "Вернуться на главную"
   },
   "technicalSpecifications": {
     "title": "Технические условия",

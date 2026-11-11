@@ -39,3 +39,4 @@ export { default as IconInvoice } from './icons/icon-invoice';
 export { default as IconPen } from './icons/icon-pen';
 export { default as IconLogout } from './icons/icon-logout';
 export { default as IconPrint } from './icons/icon-print';
+export { default as IconShare } from './icons/icon-share';
