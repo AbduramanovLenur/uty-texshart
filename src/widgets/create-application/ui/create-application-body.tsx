@@ -1,8 +1,11 @@
 import { useState, type FC } from 'react';
-import { Form } from 'antd';
+import { Form, type FormProps } from 'antd';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
 import { StepList } from '../model/constants/step-list';
+import { FormFields } from '../model/constants/form-fields';
+import type { TFormValues } from '../model/types/form';
 
 import CreateApplicationSteps from './create-application-steps';
 import CreateApplicationTop from './create-application-top';
@@ -11,16 +14,20 @@ import CreateApplicationMap from './create-application-map';
 import CreateApplicationBottom from './create-application-bottom';
 
 import { skipLeaveConfirmState } from '@features/leave-confirm-modal';
+import { open as openSignApplicationModal, SignApplicationModal } from '@features/sign-application-modal';
+import { EImzo } from '@features/e-imzo';
 import { routes } from '@shared/config';
 
 import styles from './create-application-body.module.scss';
 
-const { useForm } = Form;
+const { useForm, useWatch, Item } = Form;
 
 const CreateApplicationBody: FC = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [form] = useForm();
+  const [form] = useForm<TFormValues>();
   const [step, setStep] = useState(StepList.FORM);
+  const certificate = useWatch<string | undefined>(FormFields.CERTIFICATE, form);
 
   const onChangeStep = (value: number) => {
     setStep(value);
@@ -45,8 +52,25 @@ const CreateApplicationBody: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: Record<string, unknown>) => {
+  const handleFinish = (values: TFormValues) => {
     console.log('Form submit values:', values);
+    dispatch(openSignApplicationModal());
+  };
+
+  const handleFinishFailed: NonNullable<FormProps<TFormValues>['onFinishFailed']> = ({ errorFields }) => {
+    const hasFormErrors = errorFields.some(({ name }) => name[0] !== FormFields.COORDINATES);
+
+    if (step === StepList.MAP && hasFormErrors) {
+      setStep(StepList.FORM);
+    }
+  };
+
+  const handleSelectCertificate = (value: string | undefined) => {
+    form.setFieldValue(FormFields.CERTIFICATE, value);
+  };
+
+  const handleCloseSignModal = () => {
+    form.setFieldValue(FormFields.CERTIFICATE, undefined);
   };
 
   const handleSaveDraft = () => {
@@ -71,6 +95,7 @@ const CreateApplicationBody: FC = () => {
           layout='vertical'
           preserve
           onFinish={handleFinish}
+          onFinishFailed={handleFinishFailed}
         >
           <div
             className={styles['create-application-body__step']}
@@ -84,6 +109,7 @@ const CreateApplicationBody: FC = () => {
           >
             <CreateApplicationMap isActive={step === StepList.MAP} />
           </div>
+          <Item name={FormFields.CERTIFICATE} hidden />
         </Form>
         <CreateApplicationBottom
           isLastStep={step === StepList.MAP}
@@ -93,6 +119,12 @@ const CreateApplicationBody: FC = () => {
           onSubmit={handleSubmit}
         />
       </div>
+      <SignApplicationModal onClose={handleCloseSignModal}>
+        <EImzo
+          value={certificate}
+          onChange={handleSelectCertificate}
+        />
+      </SignApplicationModal>
     </div>
   );
 };

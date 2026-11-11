@@ -3,7 +3,8 @@ import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { LanguageSwitcher } from '@features/language-switcher';
-import { EImzoAuth, MyIdAuth, OneIdAuth } from '@features/authentication';
+import { MyIdAuth, OneIdAuth } from '@features/authentication';
+import { EImzo } from '@features/e-imzo';
 
 import styles from './auth-panel.module.scss';
 
@@ -34,7 +35,7 @@ const AuthPanel: FC = () => {
           {t('authentication.authPanel.signInPrompt')}
         </Title>
 
-        <EImzoAuth />
+        <EImzo />
         <Divider
           className={styles['auth-panel__divider']}
           titlePlacement='center'

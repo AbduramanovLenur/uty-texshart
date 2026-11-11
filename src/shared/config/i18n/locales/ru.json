@@ -1,4 +1,4 @@
-﻿{
+{
   "applicationInfo": {
     "applicationNumber": "Номер заявки",
     "comment": "Примечание",
@@ -162,7 +162,10 @@
   "leaveConfirmModal": {
     "title": "Хотите выйти?",
     "description": "Заполненные вами данные в заявке будут удалены",
-    "continue": "Продолжить"
+    "continue": "Да, выйти"
+  },
+  "signApplicationModal": {
+    "title": "Подтвердите подачу заявки через E-IMZO"
   },
   "logoutConfirm": {
     "title": "Выйти из аккаунта?",

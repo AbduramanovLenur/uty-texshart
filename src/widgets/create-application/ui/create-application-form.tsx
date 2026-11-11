@@ -7,6 +7,7 @@ import { IconDownArrow } from '@shared/assets';
 import { ImageUpload } from '@features/image-upload';
 
 import { validateLocationPhotos } from '../model/lib/helpers/validators';
+import { FormFields } from '../model/constants/form-fields';
 
 import styles from './create-application-form.module.scss';
 
@@ -28,7 +29,7 @@ const CreateApplicationForm: FC = () => {
         <Item
           className={styles['create-application-form__item']}
           label={t('createApplication.form.communicationType')}
-          name='field1'
+          name={FormFields.COMMUNICATION_TYPE}
           rules={[{
             required: true,
             message: t('createApplication.form.validation.communicationType'),
@@ -44,7 +45,7 @@ const CreateApplicationForm: FC = () => {
         <Item
           className={styles['create-application-form__item']}
           label={t('createApplication.form.crossingMethod')}
-          name='field2'
+          name={FormFields.CROSSING_METHOD}
           rules={[{
             required: true,
             message: t('createApplication.form.validation.crossingMethod'),
@@ -65,7 +66,7 @@ const CreateApplicationForm: FC = () => {
             <Item
               className={styles['create-application-form__parameters-item']}
               label='Kuchlanish (kV)'
-              name='field3'
+              name={FormFields.VOLTAGE}
               rules={[{
                 required: true,
               }]}
@@ -80,7 +81,7 @@ const CreateApplicationForm: FC = () => {
             <Item
               className={styles['create-application-form__parameters-item']}
               label='Kabellar soni'
-              name='field4'
+              name={FormFields.CABLE_COUNT}
               rules={[{
                 required: true,
               }]}
@@ -93,7 +94,7 @@ const CreateApplicationForm: FC = () => {
             <Item
               className={styles['create-application-form__parameters-item']}
               label='Kabel markasi'
-              name='field5'
+              name={FormFields.CABLE_BRAND}
               rules={[{
                 required: true,
               }]}
@@ -106,7 +107,7 @@ const CreateApplicationForm: FC = () => {
             <Item
               className={styles['create-application-form__parameters-item']}
               label='Ishlarni bajarish usuli'
-              name='field6'
+              name={FormFields.WORK_METHOD}
               rules={[{
                 required: true,
               }]}
@@ -123,7 +124,7 @@ const CreateApplicationForm: FC = () => {
         <Item
           className={styles['create-application-form__item']}
           label={t('createApplication.form.projectGoal')}
-          name='field7'
+          name={FormFields.PROJECT_GOAL}
           rules={[{
             required: true,
             message: t('createApplication.form.validation.projectGoal'),
@@ -141,7 +142,7 @@ const CreateApplicationForm: FC = () => {
         <Item
           className={styles['create-application-form__item']}
           label={t('createApplication.form.locationPhotos')}
-          name='field8'
+          name={FormFields.LOCATION_PHOTOS}
           rules={[
             {
               required: true,
@@ -154,12 +155,10 @@ const CreateApplicationForm: FC = () => {
         <Item
           className={styles['create-application-form__item']}
           label={t('createApplication.form.comment')}
-          name='field9'
+          name={FormFields.COMMENT}
           rules={[
             {
-              required: true,
               whitespace: true,
-              message: t('createApplication.form.validation.comment'),
             },
           ]}
         >

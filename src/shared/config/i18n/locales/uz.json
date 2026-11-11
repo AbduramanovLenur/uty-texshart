@@ -1,4 +1,4 @@
-﻿{
+{
   "applicationInfo": {
     "applicationNumber": "Ariza raqami",
     "comment": "Izoh",
@@ -158,7 +158,10 @@
   "leaveConfirmModal": {
     "title": "Chiqmoqchimisiz?",
     "description": "Arizada siz to\u0027ldirgan ma\u0027lumotlaringiz o\u0027chib ketadi",
-    "continue": "Davom etish"
+    "continue": "Ha, chiqish"
+  },
+  "signApplicationModal": {
+    "title": "Ariza berishni e-imzo orqali tasdiqlang"
   },
   "logoutConfirm": {
     "title": "Hisobdan chiqmoqchimisiz?",
