@@ -1,323 +1,323 @@
 ﻿{
-    "applicationInfo":  {
-                            "applicationNumber":  "Номер заявки",
-                            "comment":  "Примечание",
-                            "communicationType":  "Планируемый к прокладке тип коммуникации",
-                            "crossingMethod":  "Способ прокладки",
-                            "locationPhotos":  "Фотография планируемого места прокладки коммуникаций",
-                            "projectGoal":  "Цель проекта",
-                            "technicalParameters":  "Инженерно-технические параметры"
-                        },
-    "applicationsTimeline":  {
-                                 "steps":  {
-                                               "title":  {
-                                                             "submitted":  "Заявка подана",
-                                                             "paymentDone":  "Оплата произведена",
-                                                             "applicationAccepted":  "Заявка принята",
-                                                             "forwardedToRegional":  "Направлена в региональный отдел",
-                                                             "actCreated":  "Акт сформирован",
-                                                             "actConfirmed":  "Акт подтвержден",
-                                                             "technicalConditionsIssued":  "Технические условия выданы",
-                                                             "projectDocumentsUploaded":  "Проектная документация загружена",
-                                                             "constructionPermitIssued":  "Разрешение на строительство выдано",
-                                                             "constructionStarted":  "Строительство начато",
-                                                             "constructionCompleted":  "Строительство завершено",
-                                                             "constructionActUploaded":  "Акт по строительству загружен",
-                                                             "constructionCompletionConfirmed":  "Завершение строительства подтверждено",
-                                                             "completedSuccessfully":  "Успешно завершена"
-                                                         },
-                                               "triggers":  {
-                                                                "downloadRejectionReason":  "Акт об отклонении ({{size}})",
-                                                                "downloadAct":  "Акт ({{size}})",
-                                                                "downloadTechnicalSpecs":  "Технические условия ({{size}})",
-                                                                "downloadProjectDocuments":  "Проектные документы ({{size}})",
-                                                                "downloadConstructionAct":  "Акт по завершении строительства ({{size}})"
-                                                            },
-                                               "rejects":  {
-                                                               "rejected":  "Отклонено",
-                                                               "deficienciesFound":  "В документах обнаружены недостатки",
-                                                               "expired":  "Срок действия истёк",
-                                                               "technicalConditionsNotIssued":  "Технические условия не выданы",
-                                                               "technicalConditionsDenied":  "Строительство невозможно"
-                                                           }
-                                           },
-                                 "approvals":  {
-                                                   "regionalHead":  "Начальник регионального отдела",
-                                                   "pch":  "ПЧ",
-                                                   "ech":  "ЭЧ",
-                                                   "shch":  "ШЧ",
-                                                   "applicant":  "Заявитель"
-                                               },
-                                 "pending":  "Ожидается",
-                                 "formed":  "Сформировал",
-                                 "confirmed":  "Подтвердил",
-                                 "rejected":  "Отклонил"
-                             },
-    "authentication":  {
-                           "authPanel":  {
-                                             "welcome":  "Добро пожаловать",
-                                             "signInPrompt":  "Войдите в систему, чтобы начать работу",
-                                             "or":  "Или",
-                                             "copyright":  "© 2026 Железные дороги Узбекистана Tex-Shart"
-                                         },
-                           "authPromo":  {
-                                             "slogan":  "Все процессы — в одном месте",
-                                             "name":  "Система управления Tex-Shart железных дорог Узбекистана"
-                                         },
-                           "eImzo":  {
-                                         "chooseKey":  "Выберите ключ E-IMZO",
-                                         "director":  "Директор",
-                                         "pinfl":  "ПИНФЛ",
-                                         "type":  "Тип",
-                                         "legalEntity":  "Юридическое лицо",
-                                         "individual":  "Физическое лицо",
-                                         "certificate":  "Сертификат",
-                                         "validityPeriod":  "Срок действия",
-                                         "expired":  "Истёк"
-                                     },
-                           "myId":  {
-                                        "signIn":  "Войти через MyID"
-                                    },
-                           "oneId":  {
-                                         "signIn":  "Войти через OneID"
-                                     }
-                       },
-    "createApplication":  {
-                              "bottom":  {
-                                             "cancel":  "Отмена",
-                                             "continue":  "Продолжить",
-                                             "submit":  "Отправить заявку",
-                                             "back":  "Вернуться к шагу 1"
-                                         },
-                              "form":  {
-                                           "comment":  "Примечание",
-                                           "commentPlaceholder":  "Напишите",
-                                           "communicationType":  "Планируемый к прокладке тип коммуникации",
-                                           "crossingMethod":  "Способ пересечения железной дороги",
-                                           "locationPhotos":  "Фотография планируемого места прокладки коммуникаций",
-                                           "parametersTitle":  "Инженерно-технические параметры",
-                                           "projectGoal":  "Цель прокладки коммуникации",
-                                           "selectPlaceholder":  "Выберите",
-                                           "validation":  {
-                                                              "communicationType":  "Выберите тип коммуникации",
-                                                              "crossingMethod":  "Выберите способ пересечения",
-                                                              "projectGoal":  "Выберите цель прокладки",
-                                                              "locationPhotos":  "Загрузите фото",
-                                                              "comment":  "Введите примечание",
-                                                              "coordinates":  "Укажите точку на карте"
-                                                          }
-                                       },
-                              "steps":  {
-                                            "step1":  {
-                                                          "content":  "Заполните данные заявки",
-                                                          "title":  "Шаг 1"
-                                                      },
-                                            "step2":  {
-                                                          "content":  "Укажите на карте",
-                                                          "title":  "Шаг 2"
-                                                      }
-                                        },
-                              "title":  "Создать заявку",
-                              "top":  {
-                                          "saveDraft":  "Сохранить в черновики",
-                                          "title":  "Заполните данные заявки"
-                                      }
-                          },
-    "dashboard":  {
-                      "title":  "Главная страница",
-                      "applicationDetails":  {
-                                                 "title":  "Информация о заявке",
-                                                 "process":  "Процесс",
-                                                 "details":  "Подробно"
-                                             },
-                      "recentApplications":  {
-                                                 "create":  "Новая заявка",
-                                                 "title":  "Последние заявки",
-                                                 "viewAll":  "Посмотреть все заявки"
-                                             },
-                      "statistics":  {
-                                         "draft":  "Черновик",
-                                         "accepted":  "Принята",
-                                         "forwarded":  "Передана",
-                                         "actCreated":  "Акт составлен",
-                                         "technicalConditionsIssued":  "Технические условия выданы",
-                                         "inConstruction":  "В процессе строительства",
-                                         "successful":  "Успешно",
-                                         "rejected":  "Отклонена"
-                                     }
-                  },
-    "header":  {
-                   "searchPlaceholder":  "Поиск"
-               },
-    "imageUpload":  {
-                        "add":  "Добавить фото",
-                        "dropzoneSubtitle":  "Поддерживаются форматы JPG, PNG",
-                        "dropzoneTitle":  "Нажмите сюда или перетащите изображения сюда",
-                        "remove":  "Удалить"
-                    },
-    "language":  {
-                     "uz":  "O‘zbekcha",
-                     "ru":  "Русский"
-                 },
-    "leaveConfirmModal":  {
-                              "title":  "Хотите выйти?",
-                              "description":  "Заполненные вами данные в заявке будут удалены",
-                              "continue":  "Продолжить"
-                          },
-    "logoutConfirm":  {
-                          "title":  "Выйти из аккаунта?",
-                          "description":  "Вы уверены, что хотите выйти из аккаунта?",
-                          "confirm":  "Выйти",
-                          "cancel":  "Отмена"
-                      },
-    "notifications":  {
-                          "page":  {
-                                       "title":  "Уведомления",
-                                       "markAllRead":  "Отметить все как прочитанные"
-                                   },
-                          "popover":  {
-                                          "title":  "Уведомления",
-                                          "newCount_one":  "{{count}} новое уведомление",
-                                          "newCount_few":  "{{count}} новых уведомления",
-                                          "newCount_many":  "{{count}} новых уведомлений",
-                                          "newCount_other":  "{{count}} новых уведомлений",
-                                          "viewAll":  "Посмотреть все"
-                                      }
-                      },
-    "profile":  {
-                    "page":  "Страница профиля",
-                    "company":  "Компания",
-                    "pinfl":  "ПИНФЛ",
-                    "director":  "Ф.И.О. директора",
-                    "phone":  "Контактный номер",
-                    "address":  "Адрес",
-                    "upload":  "Загрузить",
-                    "logout":  "Выйти"
-                },
-    "sidebar":  {
-                    "dashboard":  "Главная",
-                    "applications":  "Заявки",
-                    "workflow":  "Рабочий процесс",
-                    "technicalSpecs":  "Технические условия",
-                    "gisAndRegistry":  "ГИС и реестр",
-                    "internalGis":  "Внутренний ГИС",
-                    "comm_registry":  "Реестр коммуникаций",
-                    "administration":  "Администрация",
-                    "users":  "Пользователи",
-                    "roles":  "Роли",
-                    "references":  "Справочники",
-                    "regionsMtu":  "Регионы и МТУ",
-                    "settings":  "Настройки",
-                    "paymentHistory":  "История платежей"
-                },
-    "application":  {
-                        "breadcrumbs":  {
-                                            "applications":  "Мои заявки",
-                                            "details":  "Информация о заявке"
-                                        },
-                        "tabs":  {
-                                     "info":  "Информация о заявке",
-                                     "map":  "Посмотреть на карте",
-                                     "applicantInfo":  "Информация о заявителе",
-                                     "documents":  "Документы"
-                                 }
-                    },
-    "applications":  {
-                         "title":  "Мои заявки",
-                         "create":  "Создать заявку"
-                     },
-    "statuses":  {
-                     "accepted":  "Принята",
-                     "forwarded":  "Передана",
-                     "actCreated":  "Акт составлен",
-                     "technicalConditionsIssued":  "Технические условия выданы",
-                     "rejected":  "Отклонена",
-                     "draft":  "Черновик",
-                     "constructionStarted":  "Разрешение на строительство выдано",
-                     "completed":  "Завершена"
-                 },
-    "placeholders":  {
-                         "applicationId":  "Введите ID заявки",
-                         "paymentId":  "Введите ID платежа",
-                         "technicalSpecificationId":  "Введите ID техусловий",
-                         "applicant":  "Введите заявителя",
-                         "clear":  "Очистить",
-                         "search":  "Поиск",
-                         "user":  "Введите пользователя",
-                         "pinfl":  "Введите ПИНФЛ"
-                     },
-    "actions":  {
-                    "view":  "Посмотреть",
-                    "close":  "Закрыть",
-                    "download":  "Скачать",
-                    "downloadSize":  "Скачать {{size}}",
-                    "downloadFile":  "Скачать",
-                    "confirm":  "Подтвердить",
-                    "more":  "Подробнее",
-                    "print":  "Печать"
-                },
-    "headers":  {
-                    "applicationId":  "ID заявки",
-                    "paymentId":  "ID платежа",
-                    "invoice":  "Номер инвойса",
-                    "date":  "Дата",
-                    "applicant":  "Заявитель",
-                    "network":  "Инженерная сеть",
-                    "mtu":  "MTU / км, pk",
-                    "status":  "Статус",
-                    "dateUpdate":  "Дата / обновление",
-                    "action":  "Действие",
-                    "technicalSpecificationId":  "ID техусловий",
-                    "validUntil":  "Срок действия",
-                    "signedAt":  "Подписан",
-                    "user":  "Пользователь",
-                    "role":  "Роль",
-                    "userMtu":  "МТУ",
-                    "pinfl":  "ПИНФЛ",
-                    "lastLogin":  "Последний вход"
-                },
-    "summary_one":  "Найдена {{count}} заявка",
-    "summary_few":  "Найдено {{count}} заявки",
-    "summary_many":  "Найдено {{count}} заявок",
-    "summary_other":  "Найдено {{count}} заявки",
-    "incomingApplications":  {
-                                 "title":  "Входящие заявки"
-                             },
-    "paymentHistory":  {
-                           "title":  "История платежей"
-                       },
-    "userInfo":  {
-                     "title":  "Информация о заявителе",
-                     "name":  "Заявитель",
-                     "inn":  "ИНН",
-                     "director":  "Ф.И.О. руководителя",
-                     "phone":  "Контактный номер",
-                     "address":  "Адрес",
-                     "idCard":  "ID карта",
-                     "license":  "Лицензия на предпринимательскую деятельность"
-                 },
-    "userDocuments":  {
-                          "idCard":  "ID карта",
-                          "license":  "Лицензия на предпринимательскую деятельность"
-                      },
-    "processModal":  {
-                         "title":  "Процесс",
-                         "viewDetails":  "Подробнее"
-                     },
-    "technicalSpecifications":  {
-                                    "title":  "Технические условия",
-                                    "modal":  {
-                                                  "applicationNumber":  "Номер заявки",
-                                                  "signedAt":  "Подписано {{date}}",
-                                                  "validUntil":  "Действует до {{date}}"
-                                              }
-                                },
-    "users":  {
-                  "title":  "Пользователи",
-                  "create":  "Новый пользователь"
-              },
-    "userStatuses":  {
-                         "active":  "Активен",
-                         "inactive":  "Неактивен"
-                     }
+  "applicationInfo": {
+    "applicationNumber": "Номер заявки",
+    "comment": "Примечание",
+    "communicationType": "Планируемый к прокладке тип коммуникации",
+    "crossingMethod": "Способ прокладки",
+    "locationPhotos": "Фотография планируемого места прокладки коммуникаций",
+    "projectGoal": "Цель проекта",
+    "technicalParameters": "Инженерно-технические параметры"
+  },
+  "applicationsTimeline": {
+    "steps": {
+      "title": {
+        "submitted": "Заявка подана",
+        "paymentDone": "Оплата произведена",
+        "applicationAccepted": "Заявка принята",
+        "forwardedToRegional": "Направлена в региональный отдел",
+        "actCreated": "Акт сформирован",
+        "actConfirmed": "Акт подтвержден",
+        "technicalConditionsIssued": "Технические условия выданы",
+        "projectDocumentsUploaded": "Проектная документация загружена",
+        "constructionPermitIssued": "Разрешение на строительство выдано",
+        "constructionStarted": "Строительство начато",
+        "constructionCompleted": "Строительство завершено",
+        "constructionActUploaded": "Акт по строительству загружен",
+        "constructionCompletionConfirmed": "Завершение строительства подтверждено",
+        "completedSuccessfully": "Успешно завершена"
+      },
+      "triggers": {
+        "downloadRejectionReason": "Акт об отклонении ({{size}})",
+        "downloadAct": "Акт ({{size}})",
+        "downloadTechnicalSpecs": "Технические условия ({{size}})",
+        "downloadProjectDocuments": "Проектные документы ({{size}})",
+        "downloadConstructionAct": "Акт по завершении строительства ({{size}})"
+      },
+      "rejects": {
+        "rejected": "Отклонено",
+        "deficienciesFound": "В документах обнаружены недостатки",
+        "expired": "Срок действия истёк",
+        "technicalConditionsNotIssued": "Технические условия не выданы",
+        "technicalConditionsDenied": "Строительство невозможно"
+      }
+    },
+    "approvals": {
+      "regionalHead": "Начальник регионального отдела",
+      "pch": "ПЧ",
+      "ech": "ЭЧ",
+      "shch": "ШЧ",
+      "applicant": "Заявитель"
+    },
+    "pending": "Ожидается",
+    "formed": "Сформировал",
+    "confirmed": "Подтвердил",
+    "rejected": "Отклонил"
+  },
+  "authentication": {
+    "authPanel": {
+      "welcome": "Добро пожаловать",
+      "signInPrompt": "Войдите в систему, чтобы начать работу",
+      "or": "Или",
+      "copyright": "© 2026 Железные дороги Узбекистана Tex-Shart"
+    },
+    "authPromo": {
+      "slogan": "Все процессы — в одном месте",
+      "name": "Система управления Tex-Shart железных дорог Узбекистана"
+    },
+    "eImzo": {
+      "chooseKey": "Выберите ключ E-IMZO",
+      "director": "Директор",
+      "pinfl": "ПИНФЛ",
+      "type": "Тип",
+      "legalEntity": "Юридическое лицо",
+      "individual": "Физическое лицо",
+      "certificate": "Сертификат",
+      "validityPeriod": "Срок действия",
+      "expired": "Истёк"
+    },
+    "myId": {
+      "signIn": "Войти через MyID"
+    },
+    "oneId": {
+      "signIn": "Войти через OneID"
+    }
+  },
+  "createApplication": {
+    "bottom": {
+      "cancel": "Отмена",
+      "continue": "Продолжить",
+      "submit": "Отправить заявку",
+      "back": "Вернуться к шагу 1"
+    },
+    "form": {
+      "comment": "Примечание",
+      "commentPlaceholder": "Напишите",
+      "communicationType": "Планируемый к прокладке тип коммуникации",
+      "crossingMethod": "Способ пересечения железной дороги",
+      "locationPhotos": "Фотография планируемого места прокладки коммуникаций",
+      "parametersTitle": "Инженерно-технические параметры",
+      "projectGoal": "Цель прокладки коммуникации",
+      "selectPlaceholder": "Выберите",
+      "validation": {
+        "communicationType": "Выберите тип коммуникации",
+        "crossingMethod": "Выберите способ пересечения",
+        "projectGoal": "Выберите цель прокладки",
+        "locationPhotos": "Загрузите фото",
+        "comment": "Введите примечание",
+        "coordinates": "Укажите точку на карте"
+      }
+    },
+    "steps": {
+      "step1": {
+        "content": "Заполните данные заявки",
+        "title": "Шаг 1"
+      },
+      "step2": {
+        "content": "Укажите на карте",
+        "title": "Шаг 2"
+      }
+    },
+    "title": "Создать заявку",
+    "top": {
+      "saveDraft": "Сохранить в черновики",
+      "title": "Заполните данные заявки"
+    }
+  },
+  "dashboard": {
+    "title": "Главная страница",
+    "applicationDetails": {
+      "title": "Информация о заявке",
+      "process": "Процесс",
+      "details": "Подробно"
+    },
+    "recentApplications": {
+      "create": "Новая заявка",
+      "title": "Последние заявки",
+      "viewAll": "Посмотреть все заявки"
+    },
+    "statistics": {
+      "draft": "Черновик",
+      "accepted": "Принята",
+      "forwarded": "Передана",
+      "actCreated": "Акт составлен",
+      "technicalConditionsIssued": "Технические условия выданы",
+      "inConstruction": "В процессе строительства",
+      "successful": "Успешно",
+      "rejected": "Отклонена"
+    }
+  },
+  "header": {
+    "searchPlaceholder": "Поиск"
+  },
+  "imageUpload": {
+    "add": "Добавить фото",
+    "dropzoneSubtitle": "Поддерживаются форматы JPG, PNG",
+    "dropzoneTitle": "Нажмите сюда или перетащите изображения сюда",
+    "remove": "Удалить"
+  },
+  "language": {
+    "uz": "O‘zbekcha",
+    "ru": "Русский"
+  },
+  "leaveConfirmModal": {
+    "title": "Хотите выйти?",
+    "description": "Заполненные вами данные в заявке будут удалены",
+    "continue": "Продолжить"
+  },
+  "logoutConfirm": {
+    "title": "Выйти из аккаунта?",
+    "description": "Вы уверены, что хотите выйти из аккаунта?",
+    "confirm": "Выйти",
+    "cancel": "Отмена"
+  },
+  "notifications": {
+    "page": {
+      "title": "Уведомления",
+      "markAllRead": "Отметить все как прочитанные"
+    },
+    "popover": {
+      "title": "Уведомления",
+      "newCount_one": "{{count}} новое уведомление",
+      "newCount_few": "{{count}} новых уведомления",
+      "newCount_many": "{{count}} новых уведомлений",
+      "newCount_other": "{{count}} новых уведомлений",
+      "viewAll": "Посмотреть все"
+    }
+  },
+  "profile": {
+    "page": "Страница профиля",
+    "company": "Компания",
+    "pinfl": "ПИНФЛ",
+    "director": "Ф.И.О. директора",
+    "phone": "Контактный номер",
+    "address": "Адрес",
+    "upload": "Загрузить",
+    "logout": "Выйти"
+  },
+  "sidebar": {
+    "dashboard": "Главная",
+    "applications": "Заявки",
+    "workflow": "Рабочий процесс",
+    "technicalSpecs": "Технические условия",
+    "gisAndRegistry": "ГИС и реестр",
+    "internalGis": "Внутренний ГИС",
+    "comm_registry": "Реестр коммуникаций",
+    "administration": "Администрация",
+    "users": "Пользователи",
+    "roles": "Роли",
+    "references": "Справочники",
+    "regionsMtu": "Регионы и МТУ",
+    "settings": "Настройки",
+    "paymentHistory": "История платежей"
+  },
+  "application": {
+    "breadcrumbs": {
+      "applications": "Мои заявки",
+      "details": "Информация о заявке"
+    },
+    "tabs": {
+      "info": "Информация о заявке",
+      "map": "Посмотреть на карте",
+      "applicantInfo": "Информация о заявителе",
+      "documents": "Документы"
+    }
+  },
+  "applications": {
+    "title": "Мои заявки",
+    "create": "Создать заявку"
+  },
+  "statuses": {
+    "accepted": "Принята",
+    "forwarded": "Передана",
+    "actCreated": "Акт составлен",
+    "technicalConditionsIssued": "Технические условия выданы",
+    "rejected": "Отклонена",
+    "draft": "Черновик",
+    "constructionStarted": "Разрешение на строительство выдано",
+    "completed": "Завершена"
+  },
+  "placeholders": {
+    "applicationId": "Введите ID заявки",
+    "paymentId": "Введите ID платежа",
+    "technicalSpecificationId": "Введите ID техусловий",
+    "applicant": "Введите заявителя",
+    "clear": "Очистить",
+    "search": "Поиск",
+    "user": "Введите пользователя",
+    "pinfl": "Введите ПИНФЛ"
+  },
+  "actions": {
+    "view": "Посмотреть",
+    "close": "Закрыть",
+    "download": "Скачать",
+    "downloadSize": "Скачать {{size}}",
+    "downloadFile": "Скачать",
+    "confirm": "Подтвердить",
+    "more": "Подробнее",
+    "print": "Печать"
+  },
+  "headers": {
+    "applicationId": "ID заявки",
+    "paymentId": "ID платежа",
+    "invoice": "Номер инвойса",
+    "date": "Дата",
+    "applicant": "Заявитель",
+    "network": "Инженерная сеть",
+    "mtu": "MTU / км, pk",
+    "status": "Статус",
+    "dateUpdate": "Дата / обновление",
+    "action": "Действие",
+    "technicalSpecificationId": "ID техусловий",
+    "validUntil": "Срок действия",
+    "signedAt": "Подписан",
+    "user": "Пользователь",
+    "role": "Роль",
+    "userMtu": "МТУ",
+    "pinfl": "ПИНФЛ",
+    "lastLogin": "Последний вход"
+  },
+  "summary_one": "Найдена {{count}} заявка",
+  "summary_few": "Найдено {{count}} заявки",
+  "summary_many": "Найдено {{count}} заявок",
+  "summary_other": "Найдено {{count}} заявки",
+  "incomingApplications": {
+    "title": "Входящие заявки"
+  },
+  "paymentHistory": {
+    "title": "История платежей"
+  },
+  "userInfo": {
+    "title": "Информация о заявителе",
+    "name": "Заявитель",
+    "inn": "ИНН",
+    "director": "Ф.И.О. руководителя",
+    "phone": "Контактный номер",
+    "address": "Адрес",
+    "idCard": "ID карта",
+    "license": "Лицензия на предпринимательскую деятельность"
+  },
+  "userDocuments": {
+    "idCard": "ID карта",
+    "license": "Лицензия на предпринимательскую деятельность"
+  },
+  "processModal": {
+    "title": "Процесс",
+    "viewDetails": "Подробнее"
+  },
+  "technicalSpecifications": {
+    "title": "Технические условия",
+    "modal": {
+      "applicationNumber": "Номер заявки",
+      "signedAt": "Подписано {{date}}",
+      "validUntil": "Действует до {{date}}"
+    }
+  },
+  "users": {
+    "title": "Пользователи",
+    "create": "Новый пользователь"
+  },
+  "userStatuses": {
+    "active": "Активен",
+    "inactive": "Неактивен"
+  }
 }
