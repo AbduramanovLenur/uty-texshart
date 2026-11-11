@@ -314,6 +314,36 @@
     "title": "Foydalanuvchilar",
     "create": "Yangi foydalanuvchi"
   },
+  "createUserModal": {
+    "title": "Yangi foydalanuvchi qo‘shish",
+    "fields": {
+      "pinfl": "JSHSHR",
+      "pinflPlaceholder": "Foydalanuvchi JSHSHRini yozing",
+      "fullName": "Foydalanuvchi ismi-sharifi",
+      "fullNamePlaceholder": "Foydalanuvchi ismi-sharifi",
+      "position": "Lavozim",
+      "positionPlaceholder": "Foydalanuvchi lavozimi",
+      "role": "Rol",
+      "regionalDepartment": "Hududiy bo‘lim",
+      "selectPlaceholder": "Tanlang",
+      "phone": "Telefon raqam",
+      "phonePlaceholder": "Telefon raqami",
+      "email": "Email",
+      "emailPlaceholder": "Emaili",
+      "telegramNotifications": "Telegram bot xabarnomani yoqish",
+      "comment": "Izoh",
+      "commentPlaceholder": "Izoh yozing"
+    },
+    "validation": {
+      "pinflRequired": "JSHSHRni kiriting",
+      "roleRequired": "Rolni tanlang",
+      "regionalDepartmentRequired": "Hududiy bo‘limni tanlang"
+    },
+    "actions": {
+      "cancel": "Bekor qilish",
+      "confirm": "Tasdiqlash"
+    }
+  },
   "userStatuses": {
     "active": "Faol",
     "inactive": "Nofaol"
