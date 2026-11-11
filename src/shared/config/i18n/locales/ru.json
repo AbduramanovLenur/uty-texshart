@@ -324,6 +324,36 @@
     "title": "Пользователи",
     "create": "Новый пользователь"
   },
+  "createUserModal": {
+    "title": "Добавить нового пользователя",
+    "fields": {
+      "pinfl": "ПИНФЛ",
+      "pinflPlaceholder": "Введите ПИНФЛ пользователя",
+      "fullName": "Ф.И.О. пользователя",
+      "fullNamePlaceholder": "Ф.И.О. пользователя",
+      "position": "Должность",
+      "positionPlaceholder": "Должность пользователя",
+      "role": "Роль",
+      "regionalDepartment": "Региональный отдел",
+      "selectPlaceholder": "Выберите",
+      "phone": "Номер телефона",
+      "phonePlaceholder": "Номер телефона",
+      "email": "Email",
+      "emailPlaceholder": "Email",
+      "telegramNotifications": "Включить уведомления Telegram-бота",
+      "comment": "Комментарий",
+      "commentPlaceholder": "Напишите комментарий"
+    },
+    "validation": {
+      "pinflRequired": "Введите ПИНФЛ",
+      "roleRequired": "Выберите роль",
+      "regionalDepartmentRequired": "Выберите региональный отдел"
+    },
+    "actions": {
+      "cancel": "Отмена",
+      "confirm": "Подтвердить"
+    }
+  },
   "userStatuses": {
     "active": "Активен",
     "inactive": "Неактивен"

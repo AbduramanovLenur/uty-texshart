@@ -12,8 +12,8 @@
     height: 16px;
     color: var(--dark-65);
     svg {
-      width: 8px;
-      height: 8px;
+      width: 10px;
+      height: 10px;
     }
   }
   .ant-modal-header {
@@ -31,6 +31,7 @@
   }
   .ant-modal-footer {
     padding: var(--ant-padding) var(--ant-padding-lg) var(--ant-padding-md);
+    margin-top: 0;
   }
   &__footer {
     display: flex;
