@@ -258,7 +258,8 @@
     "confirm": "Подтвердить",
     "more": "Подробнее",
     "print": "Печать",
-    "share": "Поделиться"
+    "share": "Поделиться",
+    "edit": "Редактировать"
   },
   "headers": {
     "applicationId": "ID заявки",
@@ -278,7 +279,12 @@
     "role": "Роль",
     "userMtu": "МТУ",
     "pinfl": "ПИНФЛ",
-    "lastLogin": "Последний вход"
+    "lastLogin": "Последний вход",
+    "communicationTypes": "Типы коммуникаций",
+    "communicationType": "Тип коммуникации",
+    "crossingMethod": "Способ прокладки",
+    "crossingMethods": "Способы прокладки",
+    "technicalParameter": "Инженерно-технический параметр"
   },
   "summary_one": "Найдена {{count}} заявка",
   "summary_few": "Найдено {{count}} заявки",
@@ -323,6 +329,15 @@
   "users": {
     "title": "Пользователи",
     "create": "Новый пользователь"
+  },
+  "referenceData": {
+    "title": "Справочники",
+    "create": "Новая запись",
+    "tabs": {
+      "communicationTypes": "Типы коммуникаций",
+      "crossingMethods": "Способы прокладки",
+      "technicalParameters": "Инженерно-технические параметры"
+    }
   },
   "createUserModal": {
     "title": "Добавить нового пользователя",

@@ -9,6 +9,7 @@ export type {
   TRangeValue,
   TFilterDropdownControls,
   IBaseTableFilters,
+  TTableFilterState,
 } from './filter';
 export type { Role } from './role';
 export type { TStatus } from './status';

@@ -12,6 +12,7 @@ import {
   TechnicalSpecificationsPage,
   ProfilePage,
   UsersPage,
+  ReferenceDataPage,
 } from './pages';
 
 import RequireGuest from './guards/require-guest';
@@ -89,6 +90,10 @@ const router = createBrowserRouter([
           {
             path: routes.USERS,
             element: <UsersPage />,
+          },
+          {
+            path: routes.REFERENCE_DATA,
+            element: <ReferenceDataPage />,
           },
           {
             path: routes.PROFILE,
