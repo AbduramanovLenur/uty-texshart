@@ -1,47 +1,28 @@
-import { useState, type FC } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { Table, type TableProps } from 'antd';
+import { Table } from 'antd';
 import cn from 'classnames';
 
-import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/filters';
+import type { TFilterKey } from '../model/types/filters';
 import { useGetColumns } from './columns';
 import { incomingApplicationsMock } from '../model/mock';
 
 import { ViewApplicantModal, open as openViewApplicantModal } from '@features/view-applicant-modal';
 import { ViewProcessModal, open as openViewProcessModal } from '@features/view-process-modal';
 import { type IIncomingApplication } from '@entities/application';
+import { useTableFilters } from '@shared/lib';
 import { Paginator } from '@shared/ui';
-import { defaultValues } from '@shared/config';
 
 const IncomingApplicationsTable: FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const total = 125;
-  const [filters, setFilters] = useState<TTableFilters>({
-    page: defaultValues.PAGE,
-    limit: defaultValues.LIMIT,
-  });
-
-  const handleTableChange: TableProps<IIncomingApplication>['onChange'] = (
-    _,
-    nextFilters: TColumnFilters,
-    sorter,
-  ) => {
-    const activeSorter = Array.isArray(sorter) ? sorter[0] : sorter;
-
-    setFilters(({ page, limit }) => ({
-      ...nextFilters,
-      page,
-      limit,
-      sortBy: activeSorter?.order ? (activeSorter.columnKey as TFilterKey) : null,
-      sortOrder: activeSorter?.order ?? null,
-    }));
-  };
-
-  const handlePaginationChange = (page: number, limit: number) => {
-    setFilters((prev) => ({ ...prev, page, limit }));
-  };
+  const {
+    filters,
+    handleTableChange,
+    handlePaginationChange,
+  } = useTableFilters<IIncomingApplication, TFilterKey>();
 
   const handleOpenApplicantModal = (record: IIncomingApplication) => {
     dispatch(openViewApplicantModal(record.id));
