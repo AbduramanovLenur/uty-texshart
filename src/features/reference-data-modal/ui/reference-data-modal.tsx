@@ -5,13 +5,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
+import { getReferenceTypeOptions } from '../model/lib/utils/get-reference-type-options';
 import { FormFields } from '../model/constants/form-fields';
 import { ReferenceDataTypes } from '../model/constants/reference-data-types';
 import { close, stateReferenceDataModal } from '../model/store/slice';
 import type { IReferenceDataFormValues } from '../model/types/form';
 import { mockCommunicationTypeOptions, mockCrossingMethodOptions } from '../model/mock';
 
-import { IconDownArrow } from '@shared/assets';
+import { IconDownArrow, IconPlus, IconTrash } from '@shared/assets';
 
 import styles from './reference-data-modal.module.scss';
 
@@ -25,6 +26,9 @@ const ReferenceDataModal: FC = () => {
 
   const selectedReferenceType = useWatch(FormFields.REFERENCE_TYPE, form);
   const hasMultipleOptions = useWatch(FormFields.HAS_MULTIPLE_OPTIONS, form);
+
+  const isCrossingMethod = selectedReferenceType === ReferenceDataTypes.CROSSING_METHODS;
+  const isTechnicalParameter = selectedReferenceType === ReferenceDataTypes.TECHNICAL_PARAMETERS;
 
   useEffect(() => {
     if (isOpen) {
@@ -41,20 +45,7 @@ const ReferenceDataModal: FC = () => {
     form.setFieldValue(FormFields.OPTIONS, [...currentOptions, '']);
   };
 
-  const referenceTypeOptions = [
-    {
-      label: t('referenceData.tabs.communicationTypes'),
-      value: ReferenceDataTypes.COMMUNICATION_TYPES,
-    },
-    {
-      label: t('referenceData.tabs.crossingMethods'),
-      value: ReferenceDataTypes.CROSSING_METHODS,
-    },
-    {
-      label: t('referenceData.tabs.technicalParameters'),
-      value: ReferenceDataTypes.TECHNICAL_PARAMETERS,
-    },
-  ];
+  const referenceTypeOptions = getReferenceTypeOptions(t);
 
   const handleClose = () => {
     form.resetFields();
@@ -70,20 +61,17 @@ const ReferenceDataModal: FC = () => {
     handleClose();
   };
 
-  const isCrossingMethod = selectedReferenceType === ReferenceDataTypes.CROSSING_METHODS;
-  const isTechnicalParameter = selectedReferenceType === ReferenceDataTypes.TECHNICAL_PARAMETERS;
-
   return (
     <Modal
       className={cn('modal', styles['reference-data-modal'])}
       classNames={{
-        body: styles['reference-data-modal__body'],
+        body: cn(styles['reference-data-modal__body']),
       }}
       open={isOpen}
       onCancel={handleClose}
       title={t('referenceDataModal.title')}
       centered
-      width={560}
+      width={600}
       destroyOnHidden
       footer={
         <div className='modal__footer'>
@@ -152,70 +140,71 @@ const ReferenceDataModal: FC = () => {
           )}
 
           {isTechnicalParameter && (
-            <div className={styles['reference-data-modal__row']}>
-              <Item
-                label={t('referenceDataModal.fields.communicationType')}
-                name={FormFields.COMMUNICATION_TYPE}
-                rules={[
-                  {
-                    required: true,
-                    message: t('referenceDataModal.validation.communicationTypeRequired'),
-                  },
-                ]}
-              >
-                <Select
-                  className={styles['reference-data-modal__select']}
-                  size='large'
-                  options={mockCommunicationTypeOptions}
-                  placeholder={t('createUserModal.fields.selectPlaceholder')}
-                  suffixIcon={<IconDownArrow />}
-                />
-              </Item>
+            <>
+              <div className={styles['reference-data-modal__row']}>
+                <Item
+                  label={t('referenceDataModal.fields.communicationType')}
+                  name={FormFields.COMMUNICATION_TYPE}
+                  rules={[
+                    {
+                      required: true,
+                      message: t('referenceDataModal.validation.communicationTypeRequired'),
+                    },
+                  ]}
+                >
+                  <Select
+                    className={styles['reference-data-modal__select']}
+                    size='large'
+                    options={mockCommunicationTypeOptions}
+                    placeholder={t('createUserModal.fields.selectPlaceholder')}
+                    suffixIcon={<IconDownArrow />}
+                  />
+                </Item>
 
-              <Item
-                label={t('referenceDataModal.fields.crossingMethod')}
-                name={FormFields.CROSSING_METHOD}
-                rules={[
-                  {
-                    required: true,
-                    message: t('referenceDataModal.validation.crossingMethodRequired'),
-                  },
-                ]}
-              >
-                <Select
-                  className={styles['reference-data-modal__select']}
-                  size='large'
-                  options={mockCrossingMethodOptions}
-                  placeholder={t('createUserModal.fields.selectPlaceholder')}
-                  suffixIcon={<IconDownArrow />}
-                />
-              </Item>
-            </div>
+                <Item
+                  label={t('referenceDataModal.fields.crossingMethod')}
+                  name={FormFields.CROSSING_METHOD}
+                  rules={[
+                    {
+                      required: true,
+                      message: t('referenceDataModal.validation.crossingMethodRequired'),
+                    },
+                  ]}
+                >
+                  <Select
+                    className={styles['reference-data-modal__select']}
+                    size='large'
+                    options={mockCrossingMethodOptions}
+                    placeholder={t('createUserModal.fields.selectPlaceholder')}
+                    suffixIcon={<IconDownArrow />}
+                  />
+                </Item>
+              </div>
+              <div className={styles['reference-data-modal__row']}>
+                <Item
+                  label={t('referenceDataModal.fields.name')}
+                  name={FormFields.NAME}
+                >
+                  <Input
+                    size='large'
+                    placeholder={t('referenceDataModal.fields.namePlaceholder')}
+                  />
+                </Item>
+
+                <Item
+                  label={t('referenceDataModal.fields.measurementUnit')}
+                  name={FormFields.MEASUREMENT_UNIT}
+                >
+                  <Input
+                    size='large'
+                    placeholder={t('referenceDataModal.fields.measurementUnitPlaceholder')}
+                  />
+                </Item>
+              </div>
+            </>
           )}
 
-          {isTechnicalParameter ? (
-            <div className={styles['reference-data-modal__row']}>
-              <Item
-                label={t('referenceDataModal.fields.name')}
-                name={FormFields.NAME}
-              >
-                <Input
-                  size='large'
-                  placeholder={t('referenceDataModal.fields.namePlaceholder')}
-                />
-              </Item>
-
-              <Item
-                label={t('referenceDataModal.fields.measurementUnit')}
-                name={FormFields.MEASUREMENT_UNIT}
-              >
-                <Input
-                  size='large'
-                  placeholder={t('referenceDataModal.fields.measurementUnitPlaceholder')}
-                />
-              </Item>
-            </div>
-          ) : (
+          {!isTechnicalParameter && (
             <Item
               label={t('referenceDataModal.fields.name')}
               name={FormFields.NAME}
@@ -244,7 +233,7 @@ const ReferenceDataModal: FC = () => {
                   <Button
                     className={styles['reference-data-modal__add-option']}
                     type='default'
-                    icon={<PlusOutlined />}
+                    icon={<IconPlus />}
                     onClick={handleAddOption}
                   >
                     {t('referenceDataModal.actions.addOption')}
@@ -278,7 +267,7 @@ const ReferenceDataModal: FC = () => {
                               type='primary'
                               danger
                               size='large'
-                              icon={<DeleteOutlined />}
+                              icon={<IconTrash />}
                               onClick={() => remove(name)}
                             />
                           ) : (
