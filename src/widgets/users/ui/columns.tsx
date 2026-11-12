@@ -3,13 +3,14 @@ import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 
 import { FilterKeys } from '../model/constants/filter-keys';
-import type { TTableFilters } from '../model/types/filters';
+import type { TFilterKey } from '../model/types/filters';
 
 import { TableSearchFilter } from '@features/table-search-filter';
 import { UserStatusTag, type IUserTableRow } from '@entities/user';
+import type { TTableFilterState } from '@shared/types';
 import { getSortOrder, maskPinfl } from '@shared/utils';
 
-export const useGetColumns = (filters: TTableFilters): TableProps<IUserTableRow>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IUserTableRow>['columns'] => {
   const { t } = useTranslation();
 
   return [

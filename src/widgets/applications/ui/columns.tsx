@@ -1,19 +1,20 @@
 import type { TableProps } from 'antd';
 import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
+import { useTranslation } from 'react-i18next';
 
 import { FilterKeys } from '../model/constants/filter-keys';
-import type { TTableFilters } from '../model/types/filter';
+import type { TFilterKey } from '../model/types/filter';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
 import { ApplicationStatusTag, type IApplication } from '@/entities/application';
 import { routes } from '@shared/config';
+import type { TTableFilterState } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
-import { useTranslation } from 'react-i18next';
 
-export const useGetColumns = (filters: TTableFilters): TableProps<IApplication>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IApplication>['columns'] => {
   const { t } = useTranslation();
 
   return [

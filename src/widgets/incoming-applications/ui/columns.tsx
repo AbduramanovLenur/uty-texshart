@@ -4,17 +4,18 @@ import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 
 import { FilterKeys } from '../model/constants/filter-keys';
-import type { TTableFilters } from '../model/types/filters';
+import type { TFilterKey } from '../model/types/filters';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
 import { ApplicationStatusTag, type IIncomingApplication } from '@/entities/application';
 import { routes } from '@shared/config';
+import type { TTableFilterState } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
 
 export const useGetColumns = (
-  filters: TTableFilters,
+  filters: TTableFilterState<TFilterKey>,
   onApplicantClick?: (record: IIncomingApplication) => void,
   onActionClick?: (record: IIncomingApplication) => void,
 ): TableProps<IIncomingApplication>['columns'] => {

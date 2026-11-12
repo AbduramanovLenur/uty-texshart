@@ -1,27 +1,28 @@
-import { useState, type FC } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
-import { Table, type TableProps } from 'antd';
+import { Table } from 'antd';
 import cn from 'classnames';
 
-import type { TColumnFilters, TFilterKey, TTableFilters } from '../model/types/filters';
+import type { TFilterKey } from '../model/types/filters';
 import { mockTechnicalSpecifications } from '../model/mock';
 import { useGetColumns } from './columns';
 
 import { ViewApplicantModal, open as openViewApplicantModal } from '@features/view-applicant-modal';
 import { ViewTechnicalSpecificationModal, open as openViewTechnicalSpecificationModal } from '@features/view-technical-specification-modal';
 import type { ITechnicalSpecification } from '@entities/technical-specification';
-import { defaultValues } from '@shared/config';
+import { useTableFilters } from '@shared/lib';
 import { Paginator } from '@shared/ui';
 
 const TechnicalSpecificationsTable: FC = () => {
   const dispatch = useDispatch();
   const { t } = useTranslation();
   const total = 125;
-  const [filters, setFilters] = useState<TTableFilters>({
-    page: defaultValues.PAGE,
-    limit: defaultValues.LIMIT,
-  });
+  const {
+    filters,
+    handleTableChange,
+    handlePaginationChange,
+  } = useTableFilters<ITechnicalSpecification, TFilterKey>();
 
   const handleOpenApplicantModal = (record: ITechnicalSpecification) => {
     dispatch(openViewApplicantModal(record.id));
@@ -36,26 +37,6 @@ const TechnicalSpecificationsTable: FC = () => {
     handleOpenTechnicalSpecificationModal,
     handleOpenApplicantModal,
   );
-
-  const handleTableChange: TableProps<ITechnicalSpecification>['onChange'] = (
-    _,
-    nextFilters: TColumnFilters,
-    sorter,
-  ) => {
-    const activeSorter = Array.isArray(sorter) ? sorter[0] : sorter;
-
-    setFilters(({ page, limit }) => ({
-      ...nextFilters,
-      page,
-      limit,
-      sortBy: activeSorter?.order ? (activeSorter.columnKey as TFilterKey) : null,
-      sortOrder: activeSorter?.order ?? null,
-    }));
-  };
-
-  const handlePaginationChange = (page: number, limit: number) => {
-    setFilters((prev) => ({ ...prev, page, limit }));
-  };
 
   return (
     <div className={cn('table-wrapper')}>

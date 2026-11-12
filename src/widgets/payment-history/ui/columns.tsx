@@ -3,26 +3,27 @@ import { SearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import type { TTableFilters } from '../model/types/filters';
+import type { TFilterKey } from '../model/types/filters';
 import { FilterKeys } from '../model/constants/filter-keys';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
 import type { IPayment } from '@entities/payment';
 import { routes } from '@shared/config';
+import type { TTableFilterState } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 
-export const useGetColumns = (filters: TTableFilters): TableProps<IPayment>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IPayment>['columns'] => {
   const { t } = useTranslation();
 
   return [
     {
       title: t('headers.paymentId'),
-      key: FilterKeys.INVOICE_ID,
+      key: FilterKeys.PAYMENT_ID,
       width: 325,
       sorter: true,
-      sortOrder: getSortOrder(filters, FilterKeys.INVOICE_ID),
-      filteredValue: filters.invoiceId,
+      sortOrder: getSortOrder(filters, FilterKeys.PAYMENT_ID),
+      filteredValue: filters.paymentId,
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
         <TableSearchFilter
           setSelectedKeys={setSelectedKeys}
