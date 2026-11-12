@@ -19,11 +19,11 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
   return [
     {
       title: t('headers.paymentId'),
-      key: FilterKeys.INVOICE_ID,
+      key: FilterKeys.PAYMENT_ID,
       width: 325,
       sorter: true,
-      sortOrder: getSortOrder(filters, FilterKeys.INVOICE_ID),
-      filteredValue: filters.invoiceId,
+      sortOrder: getSortOrder(filters, FilterKeys.PAYMENT_ID),
+      filteredValue: filters.paymentId,
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
         <TableSearchFilter
           setSelectedKeys={setSelectedKeys}
