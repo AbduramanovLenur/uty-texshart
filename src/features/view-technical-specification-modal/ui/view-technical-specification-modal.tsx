@@ -16,9 +16,9 @@ import styles from './view-technical-specification-modal.module.scss';
 const ViewTechnicalSpecificationModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, technicalSpecificationId } = useSelector(stateViewTechnicalSpecificationModal);
+  const { isOpen, id } = useSelector(stateViewTechnicalSpecificationModal);
 
-  const techId = technicalSpecificationId || mockTechnicalSpecificationDetails.id;
+  const techId = id;
   const appId = mockTechnicalSpecificationDetails.applicationId;
   const signedDate = mockTechnicalSpecificationDetails.signedAt;
   const validUntilDate = mockTechnicalSpecificationDetails.validUntil;

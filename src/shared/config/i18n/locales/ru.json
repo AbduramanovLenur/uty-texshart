@@ -339,6 +339,28 @@
       "technicalParameters": "Инженерно-технические параметры"
     }
   },
+  "referenceDataModal": {
+    "title": "Добавить запись",
+    "fields": {
+      "referenceType": "Тип справочника",
+      "communicationType": "Выберите тип коммуникации",
+      "crossingMethod": "Выберите способ прокладки",
+      "name": "Название",
+      "namePlaceholder": "Введите название",
+      "measurementUnit": "Единица измерения",
+      "measurementUnitPlaceholder": "Единица измерения",
+      "hasMultipleOptions": "Есть несколько вариантов",
+      "optionPlaceholder": "Вариант {{index}}"
+    },
+    "validation": {
+      "referenceTypeRequired": "Выберите тип справочника",
+      "communicationTypeRequired": "Выберите тип коммуникации",
+      "crossingMethodRequired": "Выберите способ прокладки"
+    },
+    "actions": {
+      "addOption": "Добавить"
+    }
+  },
   "createUserModal": {
     "title": "Добавить нового пользователя",
     "fields": {

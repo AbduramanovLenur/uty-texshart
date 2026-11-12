@@ -1,0 +1,135 @@
+.reference-data-modal {
+  max-width: 80%;
+
+  :global {
+    .ant-modal-content,
+    .ant-modal-container {
+      display: flex;
+      flex-direction: column;
+      max-height: 80vh;
+      overflow: hidden;
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
+    padding: var(--ant-padding) var(--ant-padding-lg) !important;
+  }
+
+  &__form {
+    :global {
+      .ant-form-item {
+        margin-bottom: 0;
+      }
+
+      .ant-form-item-row > .ant-form-item-label {
+        padding: 0;
+        margin-bottom: var(--ant-margin-xxs);
+      }
+
+      .ant-form-item-label > label {
+        color: var(--dark-88);
+        font-size: var(--ant-font-size);
+        font-weight: 500;
+        line-height: 1.5;
+        height: auto;
+      }
+
+      .ant-form-item-control-input-content {
+        width: 100%;
+      }
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: var(--ant-margin);
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--ant-margin);
+  }
+
+  &__select {
+    width: 100%;
+
+    :global(.ant-select-placeholder) {
+      color: var(--dark-88);
+    }
+  }
+
+  &__checkbox {
+    font-size: var(--ant-font-size);
+    line-height: 1.5;
+    color: var(--dark-88);
+
+    &-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--ant-margin);
+    }
+
+    &-item {
+      :global {
+        .ant-form-item-control-input {
+          min-height: auto;
+        }
+      }
+    }
+  }
+
+  &__add-option {
+    font-weight: 500;
+    color: var(--dark-88);
+    border-color: var(--default-border);
+    &:global(.ant-btn .ant-btn-icon>svg) {
+      width: 14px;
+      height: 14px;
+    }
+    &:global(.ant-btn) {
+      height: 24px;
+      padding: 0 7px;
+    }
+  }
+
+  &__options {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin-xs);
+    padding: var(--ant-padding-sm);
+    border-radius: var(--ant-border-radius-lg);
+    background-color: var(--dark-04);
+  }
+
+  &__option {
+    &-row {
+      display: flex;
+      align-items: center;
+      gap: var(--ant-margin);
+    }
+    &-input {
+      flex: 1;
+    }
+    &-delete,
+    &-spacer {
+      flex-shrink: 0;
+    }
+    &-spacer {
+      width: 32px;
+      height: 32px;
+    }
+    &-delete {
+      &:global(.ant-btn-lg.ant-btn-icon-only) {
+        width: 32px;
+        height: 32px;
+        color: var(--white);
+      }
+    }
+  }
+}

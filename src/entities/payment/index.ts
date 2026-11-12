@@ -1,1 +1,1 @@
-export { type IPayment } from './model/payment';
+export { type IPayment } from './model/types/payment';

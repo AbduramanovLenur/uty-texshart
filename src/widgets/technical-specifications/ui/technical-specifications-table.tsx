@@ -25,11 +25,11 @@ const TechnicalSpecificationsTable: FC = () => {
   } = useTableFilters<ITechnicalSpecification, TFilterKey>();
 
   const handleOpenApplicantModal = (record: ITechnicalSpecification) => {
-    dispatch(openViewApplicantModal(record.id));
+    dispatch(openViewApplicantModal({ id: record.id }));
   };
 
   const handleOpenTechnicalSpecificationModal = (record: ITechnicalSpecification) => {
-    dispatch(openViewTechnicalSpecificationModal(record.id));
+    dispatch(openViewTechnicalSpecificationModal({ id: record.id }));
   };
 
   const columns = useGetColumns(

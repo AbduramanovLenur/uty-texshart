@@ -11,9 +11,9 @@ import styles from './register-terms-modal.module.scss';
 const RegisterTermsModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, documentUrl } = useSelector(stateRegisterTermsModal);
+  const { isOpen } = useSelector(stateRegisterTermsModal);
 
-  const termsUrl = documentUrl || mockPlatformTerms.documentUrl;
+  const termsUrl = mockPlatformTerms.documentUrl;
 
   const handleClose = () => {
     dispatch(close());

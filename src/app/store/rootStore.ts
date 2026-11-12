@@ -1,6 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
 import { reducer as createUserModalReducer } from '@features/create-user-modal';
+import { reducer as referenceDataModalReducer } from '@features/reference-data-modal';
 import { reducer as registerTermsModalReducer } from '@features/register-terms-modal';
 import { reducer as signApplicationModalReducer } from '@features/sign-application-modal';
 import { reducer as viewApplicantModalReducer } from '@features/view-applicant-modal';
@@ -10,6 +11,7 @@ import { reducer as viewTechnicalSpecificationModalReducer } from '@features/vie
 
 const rootReducer = combineReducers({
   createUserModalSlice: createUserModalReducer,
+  referenceDataModalSlice: referenceDataModalReducer,
   registerTermsModalSlice: registerTermsModalReducer,
   signApplicationModalSlice: signApplicationModalReducer,
   viewApplicantModalSlice: viewApplicantModalReducer,

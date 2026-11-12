@@ -14,9 +14,9 @@ import styles from './view-process-modal.module.scss';
 const ViewProcessModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, applicationId } = useSelector(stateViewProcessModal);
+  const { isOpen, id } = useSelector(stateViewProcessModal);
 
-  console.log(applicationId);
+  console.log(id);
 
   const handleClose = () => {
     dispatch(close());

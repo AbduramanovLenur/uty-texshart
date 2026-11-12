@@ -25,11 +25,11 @@ const IncomingApplicationsTable: FC = () => {
   } = useTableFilters<IIncomingApplication, TFilterKey>();
 
   const handleOpenApplicantModal = (record: IIncomingApplication) => {
-    dispatch(openViewApplicantModal(record.id));
+    dispatch(openViewApplicantModal({ id: record.id }));
   };
 
   const handleOpenProcessModal = (record: IIncomingApplication) => {
-    dispatch(openViewProcessModal(record.id));
+    dispatch(openViewProcessModal({ id: record.id }));
   };
 
   const columns = useGetColumns(filters, handleOpenApplicantModal, handleOpenProcessModal);
