@@ -251,7 +251,8 @@
     "confirm": "Tasdiqlsh",
     "more": "Batafsil",
     "print": "Chop etish",
-    "share": "Ulashish"
+    "share": "Ulashish",
+    "edit": "Tahrirlash"
   },
   "headers": {
     "applicationId": "Ariza ID",
@@ -271,7 +272,12 @@
     "role": "Roli",
     "userMtu": "MTU",
     "pinfl": "JSHSHIR",
-    "lastLogin": "Oxirgi kirish"
+    "lastLogin": "Oxirgi kirish",
+    "communicationTypes": "Kommunikatsiya turlari",
+    "communicationType": "Kommunikatsiya turi",
+    "crossingMethod": "O‘tkazish usuli",
+    "crossingMethods": "O‘tkazish usullari",
+    "technicalParameter": "Muhandislik-texnik parametr"
   },
   "summary_other": "Jami {{count}} ta ariza topildi",
   "incomingApplications": {
@@ -313,6 +319,15 @@
   "users": {
     "title": "Foydalanuvchilar",
     "create": "Yangi foydalanuvchi"
+  },
+  "referenceData": {
+    "title": "Ma’lumotnomalar",
+    "create": "Yangi ma’lumot",
+    "tabs": {
+      "communicationTypes": "Kommunikatsiya turlari",
+      "crossingMethods": "O‘tkazish usullari",
+      "technicalParameters": "Muhandislik-texnik parametrlar"
+    }
   },
   "createUserModal": {
     "title": "Yangi foydalanuvchi qo‘shish",

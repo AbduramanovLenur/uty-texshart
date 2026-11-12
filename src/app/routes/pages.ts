@@ -11,3 +11,4 @@ export const PaymentHistoryPage = lazyPage(() => import('@pages/payment-history'
 export const TechnicalSpecificationsPage = lazyPage(() => import('@pages/technical-specifications').then((module) => ({ default: module.TechnicalSpecificationsPage })));
 export const ProfilePage = lazyPage(() => import('@pages/profile').then((module) => ({ default: module.ProfilePage })));
 export const UsersPage = lazyPage(() => import('@pages/users').then((module) => ({ default: module.UsersPage })));
+export const ReferenceDataPage = lazyPage(() => import('@pages/reference-data').then((module) => ({ default: module.ReferenceDataPage })));
