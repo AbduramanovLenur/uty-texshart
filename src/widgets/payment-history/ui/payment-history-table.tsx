@@ -3,7 +3,7 @@ import type { FC } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
-import type { TFilterKey } from '../model/types/filters';
+import type { TFilterKey } from '../model/types/filter';
 import { useGetColumns } from './columns';
 import { mockPayments } from '../model/mock';
 

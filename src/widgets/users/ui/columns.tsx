@@ -3,7 +3,7 @@ import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 
 import { FilterKeys } from '../model/constants/filter-keys';
-import type { TFilterKey } from '../model/types/filters';
+import type { TFilterKey } from '../model/types/filter';
 
 import { TableSearchFilter } from '@features/table-search-filter';
 import { UserStatusTag, type IUserTableRow } from '@entities/user';
