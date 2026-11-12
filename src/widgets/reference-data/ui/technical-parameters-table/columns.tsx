@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 
 import { TechnicalParameterFilterKeys } from '../../model/constants/technical-parameter-filter-keys';
 import type { ITechnicalParameter } from '../../model/types/technical-parameter';
-import type { TTechnicalParameterTableFilters } from '../../model/types/technical-parameter-filters';
+import type { TTechnicalParameterFilterKey } from '../../model/types/technical-parameter-filters';
+
+import type { TTableFilterState } from '@shared/types';
 
 import styles from './technical-parameters-table.module.scss';
 
 export const useGetColumns = (
-  filters: TTechnicalParameterTableFilters,
+  filters: TTableFilterState<TTechnicalParameterFilterKey>,
   onStatusChange: (id: number, checked: boolean) => void,
 ): TableProps<ITechnicalParameter>['columns'] => {
   const { t } = useTranslation();

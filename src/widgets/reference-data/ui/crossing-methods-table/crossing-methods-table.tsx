@@ -1,18 +1,14 @@
-import { useState, type FC } from 'react';
+import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Table, type TableProps } from 'antd';
+import { Table } from 'antd';
 import cn from 'classnames';
 
 import type { ICrossingMethod } from '../../model/types/crossing-method';
-import type {
-  TCrossingMethodColumnFilters,
-  TCrossingMethodFilterKey,
-  TCrossingMethodTableFilters,
-} from '../../model/types/crossing-method-filters';
+import type { TCrossingMethodFilterKey } from '../../model/types/crossing-method-filters';
 import { mockCrossingMethods } from '../../model/crossing-methods-mock';
 import { useGetColumns } from './columns';
 
-import { defaultValues } from '@shared/config';
+import { useTableFilters } from '@shared/lib';
 import { Paginator } from '@shared/ui';
 
 import styles from './crossing-methods-table.module.scss';
@@ -20,36 +16,17 @@ import styles from './crossing-methods-table.module.scss';
 const CrossingMethodsTable: FC = () => {
   const { t } = useTranslation();
   const total = 125;
-  const [filters, setFilters] = useState<TCrossingMethodTableFilters>({
-    page: defaultValues.PAGE,
-    limit: defaultValues.LIMIT,
-  });
+  const {
+    filters,
+    handleTableChange,
+    handlePaginationChange,
+  } = useTableFilters<ICrossingMethod, TCrossingMethodFilterKey>();
 
   const handleStatusChange = (id: number, checked: boolean) => {
     console.log(id, checked);
   };
 
   const columns = useGetColumns(filters, handleStatusChange);
-
-  const handleTableChange: TableProps<ICrossingMethod>['onChange'] = (
-    _,
-    nextFilters: TCrossingMethodColumnFilters,
-    sorter,
-  ) => {
-    const activeSorter = Array.isArray(sorter) ? sorter[0] : sorter;
-
-    setFilters(({ page, limit }) => ({
-      ...nextFilters,
-      page,
-      limit,
-      sortBy: activeSorter?.order ? (activeSorter.columnKey as TCrossingMethodFilterKey) : null,
-      sortOrder: activeSorter?.order ?? null,
-    }));
-  };
-
-  const handlePaginationChange = (page: number, limit: number) => {
-    setFilters((prev) => ({ ...prev, page, limit }));
-  };
 
   return (
     <div className={cn(styles['crossing-methods-table'], 'table-wrapper')}>

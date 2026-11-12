@@ -3,12 +3,14 @@ import { useTranslation } from 'react-i18next';
 
 import { CommunicationTypeFilterKeys } from '../../model/constants/communication-type-filter-keys';
 import type { ICommunicationType } from '../../model/types/communication-type';
-import type { TCommunicationTypeTableFilters } from '../../model/types/communication-type-filters';
+import type { TCommunicationTypeFilterKey } from '../../model/types/communication-type-filters';
+
+import type { TTableFilterState } from '@shared/types';
 
 import styles from './communication-types-table.module.scss';
 
 export const useGetColumns = (
-  filters: TCommunicationTypeTableFilters,
+  filters: TTableFilterState<TCommunicationTypeFilterKey>,
   onStatusChange: (id: number, checked: boolean) => void,
 ): TableProps<ICommunicationType>['columns'] => {
   const { t } = useTranslation();
