@@ -1,24 +1,24 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-import type { IState } from '../types/state';
+import type { IOpenPayload, IState } from '../types/state';
 
 const initialState: IState = {
   isOpen: false,
-  invoiceUrl: null,
+  url: null,
 };
 
 const slice = createSlice({
   name: 'viewInvoiceModalSlice',
   initialState,
   reducers: {
-    open: (state, action: PayloadAction<string | null | undefined>) => {
+    open: (state, action: PayloadAction<IOpenPayload | undefined>) => {
       state.isOpen = true;
-      state.invoiceUrl = action.payload ?? null;
+      state.url = action.payload?.url ?? null;
     },
 
     close: (state) => {
       state.isOpen = false;
-      state.invoiceUrl = null;
+      state.url = null;
     },
   },
 });
@@ -26,6 +26,4 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateViewInvoiceModal = (state: {
-  viewInvoiceModalSlice: IState;
-}) => state.viewInvoiceModalSlice;
+export const stateViewInvoiceModal = (state: { viewInvoiceModalSlice: IState; }) => state.viewInvoiceModalSlice;

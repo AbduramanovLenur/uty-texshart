@@ -1,13 +1,19 @@
-import type { FC } from 'react';
+import { useState, type FC } from 'react';
 import { Button, Tabs, Typography, type TabsProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 
 import CommunicationTypesTable from './communication-types-table/communication-types-table';
 import CrossingMethodsTable from './crossing-methods-table/crossing-methods-table';
 import TechnicalParametersTable from './technical-parameters-table/technical-parameters-table';
-import { TabKeys } from '../model/constants/tab-keys';
 
+import {
+  ReferenceDataModal,
+  ReferenceDataTypes,
+  open as openReferenceDataModal,
+  type TReferenceDataType,
+} from '@features/reference-data-modal';
 import { IconPlus } from '@shared/assets';
 
 import styles from './reference-data.module.scss';
@@ -16,20 +22,30 @@ const { Title } = Typography;
 
 const ReferenceData: FC = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const [activeTab, setActiveTab] = useState<TReferenceDataType>(ReferenceDataTypes.COMMUNICATION_TYPES);
+
+  const handleOpenCreateModal = () => {
+    dispatch(openReferenceDataModal({ referenceType: activeTab }));
+  };
+
+  const handleTabChange = (key: string) => {
+    setActiveTab(key as TReferenceDataType);
+  };
 
   const items: TabsProps['items'] = [
     {
-      key: TabKeys.COMMUNICATION_TYPES,
+      key: ReferenceDataTypes.COMMUNICATION_TYPES,
       label: t('referenceData.tabs.communicationTypes'),
       children: <CommunicationTypesTable />,
     },
     {
-      key: TabKeys.CROSSING_METHODS,
+      key: ReferenceDataTypes.CROSSING_METHODS,
       label: t('referenceData.tabs.crossingMethods'),
       children: <CrossingMethodsTable />,
     },
     {
-      key: TabKeys.TECHNICAL_PARAMETERS,
+      key: ReferenceDataTypes.TECHNICAL_PARAMETERS,
       label: t('referenceData.tabs.technicalParameters'),
       children: <TechnicalParametersTable />,
     },
@@ -46,6 +62,7 @@ const ReferenceData: FC = () => {
             className={cn(styles['reference-data__create'])}
             type='primary'
             icon={<IconPlus />}
+            onClick={handleOpenCreateModal}
           >
             {t('referenceData.create')}
           </Button>
@@ -57,11 +74,13 @@ const ReferenceData: FC = () => {
               header: cn('tabs__header'),
               item: cn('tabs__item'),
             }}
-            defaultActiveKey={TabKeys.COMMUNICATION_TYPES}
+            activeKey={activeTab}
+            onChange={handleTabChange}
             items={items}
           />
         </div>
       </div>
+      <ReferenceDataModal />
     </section>
   );
 };

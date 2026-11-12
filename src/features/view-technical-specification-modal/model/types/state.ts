@@ -1,4 +1,8 @@
+export interface IOpenPayload {
+  id?: number | string | null;
+}
+
 export interface IState {
   isOpen: boolean;
-  technicalSpecificationId: string | null;
+  id: string | number | null;
 }

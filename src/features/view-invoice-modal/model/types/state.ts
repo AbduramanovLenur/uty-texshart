@@ -1,4 +1,8 @@
+export interface IOpenPayload {
+  url?: string | null;
+}
+
 export interface IState {
   isOpen: boolean;
-  invoiceUrl: string | null;
+  url: string | null;
 }

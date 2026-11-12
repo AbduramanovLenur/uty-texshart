@@ -1,24 +1,21 @@
-import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
 import type { IState } from '../types/state';
 
 const initialState: IState = {
   isOpen: false,
-  documentUrl: null,
 };
 
 const slice = createSlice({
   name: 'registerTermsModalSlice',
   initialState,
   reducers: {
-    open: (state, action: PayloadAction<string | null | undefined>) => {
+    open: (state) => {
       state.isOpen = true;
-      state.documentUrl = action.payload ?? null;
     },
 
     close: (state) => {
       state.isOpen = false;
-      state.documentUrl = null;
     },
   },
 });

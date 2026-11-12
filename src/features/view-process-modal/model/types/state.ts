@@ -1,4 +1,8 @@
+export interface IOpenPayload {
+  id?: number | string | null;
+}
+
 export interface IState {
   isOpen: boolean;
-  applicationId: number | string | null;
+  id: number | string | null;
 }

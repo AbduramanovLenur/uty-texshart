@@ -329,6 +329,28 @@
       "technicalParameters": "Muhandislik-texnik parametrlar"
     }
   },
+  "referenceDataModal": {
+    "title": "Yangi ma’lumot qo‘shish",
+    "fields": {
+      "referenceType": "Ma’lumot turi",
+      "communicationType": "Kommunikatsiya turini tanlang",
+      "crossingMethod": "O‘tkazish usulini tanlang",
+      "name": "Nomi",
+      "namePlaceholder": "Nomini yozing",
+      "measurementUnit": "O‘lchov birligi",
+      "measurementUnitPlaceholder": "O‘lchov birligi",
+      "hasMultipleOptions": "Bir nechta variantlar bor",
+      "optionPlaceholder": "Variant {{index}}"
+    },
+    "validation": {
+      "referenceTypeRequired": "Ma’lumot turini tanlang",
+      "communicationTypeRequired": "Kommunikatsiya turini tanlang",
+      "crossingMethodRequired": "O‘tkazish usulini tanlang"
+    },
+    "actions": {
+      "addOption": "Qo‘shish"
+    }
+  },
   "createUserModal": {
     "title": "Yangi foydalanuvchi qo‘shish",
     "fields": {

@@ -1,24 +1,24 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-import type { IState } from '../types/state';
+import type { IOpenPayload, IState } from '../types/state';
 
 const initialState: IState = {
   isOpen: false,
-  userId: null,
+  id: null,
 };
 
 const slice = createSlice({
   name: 'viewApplicantModalSlice',
   initialState,
   reducers: {
-    open: (state, action: PayloadAction<number | string | null>) => {
+    open: (state, action: PayloadAction<IOpenPayload | undefined>) => {
       state.isOpen = true;
-      state.userId = action.payload;
+      state.id = action.payload?.id ?? null;
     },
 
     close: (state) => {
       state.isOpen = false;
-      state.userId = null;
+      state.id = null;
     },
   },
 });
