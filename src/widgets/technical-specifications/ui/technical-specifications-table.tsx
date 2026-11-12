@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Table } from 'antd';
 import cn from 'classnames';
 
-import type { TFilterKey } from '../model/types/filters';
+import type { TFilterKey } from '../model/types/filter';
 import { mockTechnicalSpecifications } from '../model/mock';
 import { useGetColumns } from './columns';
 
