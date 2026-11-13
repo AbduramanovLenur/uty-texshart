@@ -9,11 +9,12 @@ import type { TTableFilterState } from '@shared/types';
 
 import styles from './communication-types-table.module.scss';
 
-export const useGetColumns = (
-  filters: TTableFilterState<TCommunicationTypeFilterKey>,
-  onStatusChange: (id: number, checked: boolean) => void,
-): TableProps<ICommunicationType>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TCommunicationTypeFilterKey>): TableProps<ICommunicationType>['columns'] => {
   const { t } = useTranslation();
+
+  const handleStatusChange = (id: number, checked: boolean) => {
+    console.log(id, checked);
+  };
 
   return [
     {
@@ -55,7 +56,7 @@ export const useGetColumns = (
       render: (_, record) => (
         <Switch
           defaultChecked={record.isActive}
-          onChange={(checked) => onStatusChange(record.id, checked)}
+          onChange={(checked) => handleStatusChange(record.id, checked)}
         />
       ),
     },

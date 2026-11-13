@@ -16,16 +16,13 @@ import styles from './technical-parameters-table.module.scss';
 const TechnicalParametersTable: FC = () => {
   const { t } = useTranslation();
   const total = 125;
-  const { filters, handleTableChange, handlePaginationChange } = useTableFilters<
-    ITechnicalParameter,
-    TTechnicalParameterFilterKey
-  >();
+  const {
+    filters,
+    handleTableChange,
+    handlePaginationChange,
+  } = useTableFilters<ITechnicalParameter, TTechnicalParameterFilterKey>();
 
-  const handleStatusChange = (id: number, checked: boolean) => {
-    console.log(id, checked);
-  };
-
-  const columns = useGetColumns(filters, handleStatusChange);
+  const columns = useGetColumns(filters);
 
   return (
     <div className={cn(styles['technical-parameters-table'], 'table-wrapper')}>

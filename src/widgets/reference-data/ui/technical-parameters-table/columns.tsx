@@ -9,11 +9,12 @@ import type { TTableFilterState } from '@shared/types';
 
 import styles from './technical-parameters-table.module.scss';
 
-export const useGetColumns = (
-  filters: TTableFilterState<TTechnicalParameterFilterKey>,
-  onStatusChange: (id: number, checked: boolean) => void,
-): TableProps<ITechnicalParameter>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TTechnicalParameterFilterKey>): TableProps<ITechnicalParameter>['columns'] => {
   const { t } = useTranslation();
+
+  const handleStatusChange = (id: number, checked: boolean) => {
+    console.log(id, checked);
+  };
 
   return [
     {
@@ -99,7 +100,7 @@ export const useGetColumns = (
       render: (_, record) => (
         <Switch
           checked={record.isActive}
-          onChange={(checked) => onStatusChange(record.id, checked)}
+          onChange={(checked) => handleStatusChange(record.id, checked)}
         />
       ),
     },

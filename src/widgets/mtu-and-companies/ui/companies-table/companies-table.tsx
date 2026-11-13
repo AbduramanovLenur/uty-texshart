@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Table } from 'antd';
 import cn from 'classnames';
@@ -15,7 +15,6 @@ import styles from './companies-table.module.scss';
 
 const CompaniesTable: FC = () => {
   const { t } = useTranslation();
-  const [data, setData] = useState<ICompany[]>(mockCompanies);
   const total = 125;
   const {
     filters,
@@ -23,13 +22,7 @@ const CompaniesTable: FC = () => {
     handlePaginationChange,
   } = useTableFilters<ICompany, TCompanyFilterKey>();
 
-  const handleStatusChange = (id: number, checked: boolean) => {
-    setData((prev) =>
-      prev.map((item) => (item.id === id ? { ...item, isActive: checked } : item)),
-    );
-  };
-
-  const columns = useGetColumns(filters, handleStatusChange);
+  const columns = useGetColumns(filters);
 
   return (
     <div className={cn(styles['companies-table'], 'table-wrapper')}>
@@ -45,7 +38,7 @@ const CompaniesTable: FC = () => {
               row: cn('table-body-row'),
             },
           }}
-          dataSource={data}
+          dataSource={mockCompanies}
           columns={columns}
           pagination={false}
           scroll={{ x: 'max-content' }}

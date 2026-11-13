@@ -22,11 +22,7 @@ const CommunicationTypesTable: FC = () => {
     handlePaginationChange,
   } = useTableFilters<ICommunicationType, TCommunicationTypeFilterKey>();
 
-  const handleStatusChange = (id: number, checked: boolean) => {
-    console.log(id, checked);
-  };
-
-  const columns = useGetColumns(filters, handleStatusChange);
+  const columns = useGetColumns(filters);
 
   return (
     <div className={cn(styles['communication-types-table'], 'table-wrapper')}>

@@ -9,11 +9,12 @@ import type { TTableFilterState } from '@shared/types';
 
 import styles from './crossing-methods-table.module.scss';
 
-export const useGetColumns = (
-  filters: TTableFilterState<TCrossingMethodFilterKey>,
-  onStatusChange: (id: number, checked: boolean) => void,
-): TableProps<ICrossingMethod>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TCrossingMethodFilterKey>): TableProps<ICrossingMethod>['columns'] => {
   const { t } = useTranslation();
+
+  const handleStatusChange = (id: number, checked: boolean) => {
+    console.log(id, checked);
+  };
 
   return [
     {
@@ -77,7 +78,7 @@ export const useGetColumns = (
       render: (_, record) => (
         <Switch
           checked={record.isActive}
-          onChange={(checked) => onStatusChange(record.id, checked)}
+          onChange={(checked) => handleStatusChange(record.id, checked)}
         />
       ),
     },

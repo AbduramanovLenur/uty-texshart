@@ -357,8 +357,27 @@
       "privateBranches": "Частные ветки"
     }
   },
+  "mtuAndCompaniesModal": {
+    "title": "Добавить новую запись",
+    "titleEdit": "Редактировать запись",
+    "fields": {
+      "type": "Тип данных",
+      "companyType": "Тип организации",
+      "name": "Название",
+      "namePlaceholder": "Введите название",
+      "kmPk": "Км-пк",
+      "kmPkPlaceholder": "Введите название",
+      "mtuName": "МТУ"
+    },
+    "validation": {
+      "typeRequired": "Выберите тип данных",
+      "companyTypeRequired": "Выберите тип организации",
+      "mtuRequired": "Выберите МТУ"
+    }
+  },
   "referenceDataModal": {
     "title": "Добавить запись",
+    "titleEdit": "Редактировать запись",
     "fields": {
       "referenceType": "Тип справочника",
       "communicationType": "Выберите тип коммуникации",

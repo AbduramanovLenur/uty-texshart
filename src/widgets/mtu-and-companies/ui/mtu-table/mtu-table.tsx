@@ -1,4 +1,4 @@
-import { useState, type FC } from 'react';
+import { type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Table } from 'antd';
 import cn from 'classnames';
@@ -22,11 +22,7 @@ const MtuTable: FC = () => {
     handlePaginationChange,
   } = useTableFilters<IMtu, TMtuFilterKey>();
 
-  const handleStatusChange = (id: number, checked: boolean) => {
-    console.log(id, checked);
-  };
-
-  const columns = useGetColumns(filters, handleStatusChange);
+  const columns = useGetColumns(filters);
 
   return (
     <div className={cn(styles['mtu-table'], 'table-wrapper')}>

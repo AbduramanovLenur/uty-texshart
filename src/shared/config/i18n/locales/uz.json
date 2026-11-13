@@ -347,8 +347,27 @@
       "privateBranches": "Hususiy shahobchalar"
     }
   },
+  "mtuAndCompaniesModal": {
+    "title": "Yangi ma’lumot qo‘shish",
+    "titleEdit": "Ma’lumotni tahrirlash",
+    "fields": {
+      "type": "Ma’lumot turi",
+      "companyType": "Tashkilot turi",
+      "name": "Nomi",
+      "namePlaceholder": "Nomini yozing",
+      "kmPk": "Km-pk",
+      "kmPkPlaceholder": "Nomini yozing",
+      "mtuName": "MTU"
+    },
+    "validation": {
+      "typeRequired": "Ma’lumot turini tanlang",
+      "companyTypeRequired": "Tashkilot turini tanlang",
+      "mtuRequired": "MTUni tanlang"
+    }
+  },
   "referenceDataModal": {
     "title": "Yangi ma’lumot qo‘shish",
+    "titleEdit": "Ma’lumotni tahrirlash",
     "fields": {
       "referenceType": "Ma’lumot turi",
       "communicationType": "Kommunikatsiya turini tanlang",

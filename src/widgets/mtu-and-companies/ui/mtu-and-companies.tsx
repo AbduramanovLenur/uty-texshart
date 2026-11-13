@@ -1,12 +1,18 @@
 import { useState, type FC } from 'react';
 import { Button, Tabs, Typography, type TabsProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 
 import MtuTable from './mtu-table/mtu-table';
 import CompaniesTable from './companies-table/companies-table';
 
-import { TabKeys, type TTabKey } from '../model/constants/tab-keys';
+import {
+  MtuAndCompaniesModal,
+  MtuAndCompaniesTypes,
+  open as openMtuAndCompaniesModal,
+  type TMtuAndCompaniesType,
+} from '@features/mtu-and-companies-modal';
 import { IconPlus } from '@shared/assets';
 
 import styles from './mtu-and-companies.module.scss';
@@ -15,25 +21,30 @@ const { Title } = Typography;
 
 const MtuAndCompanies: FC = () => {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState<TTabKey>(TabKeys.MTU);
+  const dispatch = useDispatch();
+  const [activeTab, setActiveTab] = useState<TMtuAndCompaniesType>(MtuAndCompaniesTypes.MTU);
+
+  const handleOpenCreateModal = () => {
+    dispatch(openMtuAndCompaniesModal({ type: activeTab }));
+  };
 
   const handleTabChange = (key: string) => {
-    setActiveTab(key as TTabKey);
+    setActiveTab(key as TMtuAndCompaniesType);
   };
 
   const items: TabsProps['items'] = [
     {
-      key: TabKeys.MTU,
+      key: MtuAndCompaniesTypes.MTU,
       label: t('mtuAndCompanies.tabs.mtu'),
       children: <MtuTable />,
     },
     {
-      key: TabKeys.COMPANIES,
+      key: MtuAndCompaniesTypes.COMPANIES,
       label: t('mtuAndCompanies.tabs.companies'),
       children: <CompaniesTable />,
     },
     {
-      key: TabKeys.PRIVATE_BRANCHES,
+      key: MtuAndCompaniesTypes.PRIVATE_BRANCHES,
       label: t('mtuAndCompanies.tabs.privateBranches'),
       children: <div className={styles['mtu-and-companies__test-page']}>Test page</div>,
     },
@@ -50,6 +61,7 @@ const MtuAndCompanies: FC = () => {
             className={cn(styles['mtu-and-companies__create'])}
             type='primary'
             icon={<IconPlus />}
+            onClick={handleOpenCreateModal}
           >
             {t('mtuAndCompanies.create')}
           </Button>
@@ -67,6 +79,7 @@ const MtuAndCompanies: FC = () => {
           />
         </div>
       </div>
+      <MtuAndCompaniesModal />
     </section>
   );
 };
