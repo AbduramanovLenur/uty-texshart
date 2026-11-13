@@ -116,7 +116,6 @@ const ReferenceDataModal: FC = () => {
             suffixIcon={<IconDownArrow />}
           />
         </Item>
-
         {isCrossingMethod && (
           <Item
             label={t('referenceDataModal.fields.communicationType')}
@@ -137,7 +136,6 @@ const ReferenceDataModal: FC = () => {
             />
           </Item>
         )}
-
         {isTechnicalParameter && (
           <>
             <div className={styles['reference-data-modal__row']}>
@@ -159,7 +157,6 @@ const ReferenceDataModal: FC = () => {
                   suffixIcon={<IconDownArrow />}
                 />
               </Item>
-
               <Item
                 label={t('referenceDataModal.fields.crossingMethod')}
                 name={FormFields.CROSSING_METHOD}
@@ -189,7 +186,6 @@ const ReferenceDataModal: FC = () => {
                   placeholder={t('referenceDataModal.fields.namePlaceholder')}
                 />
               </Item>
-
               <Item
                 label={t('referenceDataModal.fields.measurementUnit')}
                 name={FormFields.MEASUREMENT_UNIT}
@@ -202,7 +198,6 @@ const ReferenceDataModal: FC = () => {
             </div>
           </>
         )}
-
         {!isTechnicalParameter && (
           <Item
             label={t('referenceDataModal.fields.name')}
@@ -214,7 +209,6 @@ const ReferenceDataModal: FC = () => {
             />
           </Item>
         )}
-
         {isTechnicalParameter && (
           <>
             <div className={styles['reference-data-modal__checkbox-row']}>
@@ -227,7 +221,6 @@ const ReferenceDataModal: FC = () => {
                   {t('referenceDataModal.fields.hasMultipleOptions')}
                 </Checkbox>
               </Item>
-
               {hasMultipleOptions && (
                 <Button
                   className={styles['reference-data-modal__add-option']}
@@ -239,7 +232,6 @@ const ReferenceDataModal: FC = () => {
                 </Button>
               )}
             </div>
-
             {hasMultipleOptions && (
               <List
                 name={FormFields.OPTIONS}

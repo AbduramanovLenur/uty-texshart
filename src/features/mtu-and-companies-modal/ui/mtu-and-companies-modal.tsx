@@ -105,7 +105,6 @@ const MtuAndCompaniesModal: FC = () => {
             suffixIcon={<IconDownArrow />}
           />
         </Item>
-
         {isCompany && (
           <Item
             label={t('mtuAndCompaniesModal.fields.companyType')}
@@ -126,7 +125,6 @@ const MtuAndCompaniesModal: FC = () => {
             />
           </Item>
         )}
-
         <Item
           label={t('mtuAndCompaniesModal.fields.name')}
           name={FormFields.NAME}
@@ -136,7 +134,6 @@ const MtuAndCompaniesModal: FC = () => {
             placeholder={t('mtuAndCompaniesModal.fields.namePlaceholder')}
           />
         </Item>
-
         {isCompany && (
           <>
             <Item
@@ -148,7 +145,6 @@ const MtuAndCompaniesModal: FC = () => {
                 placeholder={t('mtuAndCompaniesModal.fields.kmPkPlaceholder')}
               />
             </Item>
-
             <Item
               label={t('mtuAndCompaniesModal.fields.mtuName')}
               name={FormFields.MTU_NAME}
