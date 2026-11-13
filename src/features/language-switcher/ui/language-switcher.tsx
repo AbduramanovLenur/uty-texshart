@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Segmented } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { useLanguageOptions } from '../model/config/language-options';
 
@@ -25,9 +26,9 @@ const LanguageSwitcher: FC = () => {
   return (
     <Segmented
       classNames={{
-        root: styles['language-switcher'],
-        item: styles['language-switcher__item'],
-        label: styles['language-switcher__label'],
+        root: cn(styles['language-switcher']),
+        item: cn(styles['language-switcher__item']),
+        label: cn(styles['language-switcher__label']),
       }}
       options={options}
       value={i18n.language || defaultLanguage}

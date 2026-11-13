@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Button, Modal } from 'antd';
+import cn from 'classnames';
 
 import { close, stateViewApplicantModal } from '../model/store/slice';
 
@@ -20,7 +21,7 @@ const ViewApplicantModal: FC = () => {
 
   return (
     <Modal
-      className='modal'
+      className={cn('modal')}
       open={isOpen}
       onCancel={handleClose}
       title={t('userInfo.title')}
@@ -28,9 +29,9 @@ const ViewApplicantModal: FC = () => {
       width={600}
       destroyOnHidden
       footer={
-        <div className='modal__footer'>
+        <div className={cn('modal__footer')}>
           <Button
-            className='modal__button-close'
+            className={cn('modal__button-close')}
             type='default'
             onClick={handleClose}
           >
@@ -39,7 +40,7 @@ const ViewApplicantModal: FC = () => {
         </div>
       }
     >
-      <UserInfo className={styles['view-user-modal__info']} />
+      <UserInfo className={cn(styles['view-user-modal__info'])} />
     </Modal>
   );
 };

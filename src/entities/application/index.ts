@@ -11,12 +11,7 @@ export { applicationStatusTagConfig } from './model/config/application-status';
 export type { IApplicationPreview } from './model/types/application-preview';
 export type { ITimelineStep, ITimelineApproval } from './model/types/timeline';
 export type { TApprovalStatus } from './model/types/approval-status';
-export type {
-  IApplicationStatusTagConfig,
-} from './model/types/application-status-tag';
-export type {
-  IApplication,
-  IIncomingApplication,
-} from './model/types/application';
+export type { IApplicationStatusTagConfig } from './model/types/application-status-tag';
+export type { IApplication, IIncomingApplication } from './model/types/application';
 export type { IPreviewFile } from './model/types/preview-file';
 export type { TNetworkType } from './model/types/network-type';

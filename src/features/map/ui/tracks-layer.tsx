@@ -2,12 +2,13 @@ import { useState, type FC } from 'react';
 import { GeoJSON, Popup, useMap } from 'react-leaflet';
 import type { GeoJsonObject } from 'geojson';
 import type { Layer, LeafletMouseEvent } from 'leaflet';
+import cn from 'classnames';
 
 import {
   trackHitboxStyle,
   trackLayerStyle,
 } from '../model/config/layer-styles';
-import { trackClickZoom } from '../model/constants/zoom';
+import { TRACK_CLICK_ZOOM } from '../model/constants/zoom';
 import { railwayTracksData } from '../model/data';
 import { snapToNearestRailway } from '../model/lib/utils/railway-proximity';
 import type { ITrackProperties } from '../model/types/track';
@@ -55,7 +56,7 @@ const TracksLayer: FC<IProps> = ({ onSelectPoint, readOnly = false }) => {
     }
 
     const currentZoom = map.getZoom();
-    const targetZoom = Math.max(currentZoom, trackClickZoom);
+    const targetZoom = Math.max(currentZoom, TRACK_CLICK_ZOOM);
     map.flyTo(snappedCoords, targetZoom, { duration: 0.8 });
   };
 
@@ -90,7 +91,7 @@ const TracksLayer: FC<IProps> = ({ onSelectPoint, readOnly = false }) => {
         data={railwayTracksData as GeoJsonObject}
         style={() => ({
           ...trackHitboxStyle,
-          className: styles['map__track-hitbox'],
+          className: cn(styles['map__track-hitbox']),
         })}
         onEachFeature={(feature, layer: Layer) => {
           bindTrackEvents(layer, (feature.properties || {}) as ITrackProperties);
@@ -103,7 +104,7 @@ const TracksLayer: FC<IProps> = ({ onSelectPoint, readOnly = false }) => {
           closeButton={false}
           autoPan={false}
           offset={[0, -10]}
-          className={styles['map__track-popup']}
+          className={cn(styles['map__track-popup'])}
         >
           <TrackPopup
             properties={hoveredTrack.properties}

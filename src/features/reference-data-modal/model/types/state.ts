@@ -1,12 +1,12 @@
 import type { TReferenceDataType } from './reference-data';
 
 export interface IOpenPayload {
-  referenceType?: TReferenceDataType;
+  type?: TReferenceDataType;
   id?: number | string | null;
 }
 
 export interface IState {
   isOpen: boolean;
-  referenceType: TReferenceDataType;
+  type: TReferenceDataType;
   id: number | string | null;
 }

@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { Button, Modal } from 'antd';
+import cn from 'classnames';
 
 import { close, stateViewInvoiceModal } from '../model/store/slice';
 import { mockInvoiceDetails } from '../model/mock';
@@ -47,10 +48,10 @@ const ViewInvoiceModal: FC = () => {
 
   return (
     <Modal
-      className={styles['view-invoice-modal']}
+      className={cn(styles['view-invoice-modal'])}
       classNames={{
-        wrapper: styles['view-invoice-modal__wrap'],
-        body: styles['view-invoice-modal__body'],
+        wrapper: cn(styles['view-invoice-modal__wrap']),
+        body: cn(styles['view-invoice-modal__body']),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -60,11 +61,11 @@ const ViewInvoiceModal: FC = () => {
       closable={false}
       destroyOnHidden
     >
-      <div className={styles['view-invoice-modal__wrapper']}>
-        <div className={styles['view-invoice-modal__header']}>
-          <div className={styles['view-invoice-modal__actions']}>
+      <div className={cn(styles['view-invoice-modal__wrapper'])}>
+        <div className={cn(styles['view-invoice-modal__header'])}>
+          <div className={cn(styles['view-invoice-modal__actions'])}>
             <Button
-              className={styles['view-invoice-modal__button']}
+              className={cn(styles['view-invoice-modal__button'])}
               type='default'
               icon={<IconShare />}
               onClick={handleShare}
@@ -72,7 +73,7 @@ const ViewInvoiceModal: FC = () => {
               {t('actions.share')}
             </Button>
             <Button
-              className={styles['view-invoice-modal__button']}
+              className={cn(styles['view-invoice-modal__button'])}
               type='default'
               icon={<IconPrint />}
               onClick={handlePrint}
@@ -81,17 +82,16 @@ const ViewInvoiceModal: FC = () => {
             </Button>
           </div>
           <Button
-            className={styles['view-invoice-modal__button']}
+            className={cn(styles['view-invoice-modal__button'])}
             type='default'
             onClick={handleBackToMain}
           >
             {t('invoiceModal.backToMain')}
           </Button>
         </div>
-
-        <div className={styles['view-invoice-modal__document']}>
+        <div className={cn(styles['view-invoice-modal__document'])}>
           <iframe
-            className={styles['view-invoice-modal__iframe']}
+            className={cn(styles['view-invoice-modal__iframe'])}
             src={documentUrl}
             title={t('invoiceModal.title')}
           />

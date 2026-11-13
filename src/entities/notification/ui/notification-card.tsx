@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Link } from 'react-router-dom';
+import cn from 'classnames';
 
 import type { INotificationCard } from '../model/types/notification';
 
@@ -13,25 +14,25 @@ interface IProps {
 
 const NotificationCard: FC<IProps> = ({ item }) => {
   return (
-    <div className={styles['notification-card']}>
-      <div className={styles['notification-card__wrapper']}>
-        <div className={styles['notification-card__label']}>
+    <div className={cn(styles['notification-card'])}>
+      <div className={cn(styles['notification-card__wrapper'])}>
+        <div className={cn(styles['notification-card__label'])}>
           {item.label}
         </div>
-        <div className={styles['notification-card__circle']}></div>
+        <div className={cn(styles['notification-card__circle'])}></div>
       </div>
-      <div className={styles['notification-card__description']}>
+      <div className={cn(styles['notification-card__description'])}>
         {item.description}
       </div>
-      <div className={styles['notification-card__inner']}>
+      <div className={cn(styles['notification-card__inner'])}>
         <Link
           to={routes.SINGLE_APPLICATION(item.record)}
-          className={styles['notification-card__record']}
+          className={cn(styles['notification-card__record'])}
         >
           {item.record}
         </Link>
-        <div className={styles['notification-card__decor']}></div>
-        <div className={styles['notification-card__timestamp']}>
+        <div className={cn(styles['notification-card__decor'])}></div>
+        <div className={cn(styles['notification-card__timestamp'])}>
           {item.timestamp}
         </div>
       </div>

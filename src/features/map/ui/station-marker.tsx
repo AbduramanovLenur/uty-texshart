@@ -1,8 +1,9 @@
 import type { FC } from 'react';
 import { CircleMarker, Tooltip, useMap } from 'react-leaflet';
+import cn from 'classnames';
 
 import { stationMarkerConfig } from '../model/config/markers';
-import { stationClickZoom } from '../model/constants/zoom';
+import { STATION_CLICK_ZOOM } from '../model/constants/zoom';
 import type { IStationProperties } from '../model/types/station';
 import type { ITrackProperties } from '../model/types/track';
 
@@ -30,7 +31,7 @@ const StationMarker: FC<IProps> = ({
     }
 
     const currentZoom = map.getZoom();
-    const targetZoom = Math.max(currentZoom, stationClickZoom);
+    const targetZoom = Math.max(currentZoom, STATION_CLICK_ZOOM);
     map.flyTo(position, targetZoom, { duration: 1 });
   };
 
@@ -46,7 +47,7 @@ const StationMarker: FC<IProps> = ({
       center={position}
       radius={stationMarkerConfig.defaultRadius}
       pathOptions={{
-        className: styles['map__station-marker'],
+        className: cn(styles['map__station-marker']),
         fillColor: stationMarkerConfig.fillColor,
         color: stationMarkerConfig.color,
         weight: stationMarkerConfig.weight,

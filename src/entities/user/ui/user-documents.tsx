@@ -28,14 +28,14 @@ const UserDocuments: FC<IProps> = ({ documents, className }) => {
   return (
     <div className={cn(styles['user-documents'], className)}>
       {documents?.passport && (
-        <div className={styles['user-documents__content']}>
-          <div className={styles['user-documents__top']}>
-            <Title className={styles['user-documents__title']} level={5}>
+        <div className={cn(styles['user-documents__content'])}>
+          <div className={cn(styles['user-documents__top'])}>
+            <Title className={cn(styles['user-documents__title'])} level={5}>
               {t('userDocuments.idCard')}
             </Title>
             {documents?.passport?.url && (
               <Button
-                className={styles['user-documents__file-btn']}
+                className={cn(styles['user-documents__file-btn'])}
                 icon={<IconArrowDownBracket />}
                 onClick={() => handleDownload(documents.passport.url, 'passport')}
               >
@@ -44,9 +44,9 @@ const UserDocuments: FC<IProps> = ({ documents, className }) => {
             )}
           </div>
           {documents?.passport?.previews && (
-            <ul className={styles['user-documents__list']}>
+            <ul className={cn(styles['user-documents__list'])}>
               {documents.passport.previews.map((preview) => (
-                <li key={preview.id} className={styles['user-documents__item']}>
+                <li key={preview.id} className={cn(styles['user-documents__item'])}>
                   <Image
                     src={preview.url}
                     alt={t('userDocuments.idCard')}
@@ -59,14 +59,14 @@ const UserDocuments: FC<IProps> = ({ documents, className }) => {
           )}
         </div>
       )}
-      <div className={styles['user-documents__content']}>
-        <div className={styles['user-documents__top']}>
-          <Title className={styles['user-documents__title']} level={5}>
+      <div className={cn(styles['user-documents__content'])}>
+        <div className={cn(styles['user-documents__top'])}>
+          <Title className={cn(styles['user-documents__title'])} level={5}>
             {t('userDocuments.license')}
           </Title>
           {documents?.license?.url && (
             <Button
-              className={styles['user-documents__file-btn']}
+              className={cn(styles['user-documents__file-btn'])}
               icon={<IconArrowDownBracket />}
               onClick={() => handleDownload(documents.license.url, 'passport')}
             >
@@ -75,7 +75,7 @@ const UserDocuments: FC<IProps> = ({ documents, className }) => {
           )}
         </div>
        {documents?.license?.preview && (
-         <div className={styles['user-documents__preview']}>
+         <div className={cn(styles['user-documents__preview'])}>
             <Image
               src={documents.license.preview}
               alt={t('userDocuments.license')}

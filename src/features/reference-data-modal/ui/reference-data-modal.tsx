@@ -21,7 +21,7 @@ const { Item, List, useForm, useWatch } = Form;
 const ReferenceDataModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, referenceType, id } = useSelector(stateReferenceDataModal);
+  const { isOpen, type, id } = useSelector(stateReferenceDataModal);
   const [form] = useForm<IReferenceDataFormValues>();
 
   const selectedReferenceType = useWatch(FormFields.REFERENCE_TYPE, form);
@@ -33,12 +33,12 @@ const ReferenceDataModal: FC = () => {
   useEffect(() => {
     if (isOpen) {
       form.setFieldsValue({
-        [FormFields.REFERENCE_TYPE]: referenceType,
+        [FormFields.REFERENCE_TYPE]: type,
         [FormFields.HAS_MULTIPLE_OPTIONS]: false,
         [FormFields.OPTIONS]: [''],
       });
     }
-  }, [isOpen, referenceType, form]);
+  }, [isOpen, type, form]);
 
   const handleAddOption = () => {
     const currentOptions = form.getFieldValue(FormFields.OPTIONS) ?? [];
@@ -74,16 +74,16 @@ const ReferenceDataModal: FC = () => {
       width={520}
       destroyOnHidden
       footer={
-        <div className='modal__footer'>
+        <div className={cn('modal__footer')}>
           <Button
-            className='modal__button-close'
+            className={cn('modal__button-close')}
             type='default'
             onClick={handleClose}
           >
             {t('createUserModal.actions.cancel')}
           </Button>
           <Button
-            className='modal__button-confirm'
+            className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
@@ -94,7 +94,7 @@ const ReferenceDataModal: FC = () => {
     >
       <Form
         form={form}
-        className={styles['reference-data-modal__form']}
+        className={cn(styles['reference-data-modal__form'])}
         layout='vertical'
         onFinish={handleFinish}
       >
@@ -109,7 +109,7 @@ const ReferenceDataModal: FC = () => {
           ]}
         >
           <Select
-            className={styles['reference-data-modal__select']}
+            className={cn(styles['reference-data-modal__select'])}
             size='large'
             options={referenceTypeOptions}
             placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -128,7 +128,7 @@ const ReferenceDataModal: FC = () => {
             ]}
           >
             <Select
-              className={styles['reference-data-modal__select']}
+              className={cn(styles['reference-data-modal__select'])}
               size='large'
               options={mockCommunicationTypeOptions}
               placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -138,7 +138,7 @@ const ReferenceDataModal: FC = () => {
         )}
         {isTechnicalParameter && (
           <>
-            <div className={styles['reference-data-modal__row']}>
+            <div className={cn(styles['reference-data-modal__row'])}>
               <Item
                 label={t('referenceDataModal.fields.communicationType')}
                 name={FormFields.COMMUNICATION_TYPE}
@@ -150,7 +150,7 @@ const ReferenceDataModal: FC = () => {
                 ]}
               >
                 <Select
-                  className={styles['reference-data-modal__select']}
+                  className={cn(styles['reference-data-modal__select'])}
                   size='large'
                   options={mockCommunicationTypeOptions}
                   placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -168,7 +168,7 @@ const ReferenceDataModal: FC = () => {
                 ]}
               >
                 <Select
-                  className={styles['reference-data-modal__select']}
+                  className={cn(styles['reference-data-modal__select'])}
                   size='large'
                   options={mockCrossingMethodOptions}
                   placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -176,7 +176,7 @@ const ReferenceDataModal: FC = () => {
                 />
               </Item>
             </div>
-            <div className={styles['reference-data-modal__row']}>
+            <div className={cn(styles['reference-data-modal__row'])}>
               <Item
                 label={t('referenceDataModal.fields.name')}
                 name={FormFields.NAME}
@@ -211,19 +211,19 @@ const ReferenceDataModal: FC = () => {
         )}
         {isTechnicalParameter && (
           <>
-            <div className={styles['reference-data-modal__checkbox-row']}>
+            <div className={cn(styles['reference-data-modal__checkbox-row'])}>
               <Item
-                className={styles['reference-data-modal__checkbox-item']}
+                className={cn(styles['reference-data-modal__checkbox-item'])}
                 name={FormFields.HAS_MULTIPLE_OPTIONS}
                 valuePropName='checked'
               >
-                <Checkbox className={styles['reference-data-modal__checkbox']}>
+                <Checkbox className={cn(styles['reference-data-modal__checkbox'])}>
                   {t('referenceDataModal.fields.hasMultipleOptions')}
                 </Checkbox>
               </Item>
               {hasMultipleOptions && (
                 <Button
-                  className={styles['reference-data-modal__add-option']}
+                  className={cn(styles['reference-data-modal__add-option'])}
                   type='default'
                   icon={<IconPlus />}
                   onClick={handleAddOption}
@@ -238,13 +238,13 @@ const ReferenceDataModal: FC = () => {
                 initialValue={['']}
               >
                 {(fields, { remove }) => (
-                  <div className={styles['reference-data-modal__options']}>
+                  <div className={cn(styles['reference-data-modal__options'])}>
                     {fields.map(({ key, name, ...restField }, index) => (
-                      <div key={key} className={styles['reference-data-modal__option-row']}>
+                      <div key={key} className={cn(styles['reference-data-modal__option-row'])}>
                         <Item
                           {...restField}
                           name={name}
-                          className={styles['reference-data-modal__option-input']}
+                          className={cn(styles['reference-data-modal__option-input'])}
                         >
                           <Input
                             placeholder={t('referenceDataModal.fields.optionPlaceholder', {
@@ -254,7 +254,7 @@ const ReferenceDataModal: FC = () => {
                         </Item>
                         {index > 0 ? (
                           <Button
-                            className={styles['reference-data-modal__option-delete']}
+                            className={cn(styles['reference-data-modal__option-delete'])}
                             type='primary'
                             danger
                             size='large'
@@ -263,7 +263,7 @@ const ReferenceDataModal: FC = () => {
                           />
                         ) : (
                           <span
-                            className={styles['reference-data-modal__option-spacer']}
+                            className={cn(styles['reference-data-modal__option-spacer'])}
                             aria-hidden='true'
                           />
                         )}

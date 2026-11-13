@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { Button, Badge, Popover } from 'antd';
+import cn from 'classnames';
 
 import NotificationPopover from './notification-popover';
 
@@ -11,16 +12,16 @@ const NotificationButton: FC = () => {
   return (
     <Popover
       classNames={{
-        root: styles['notification-button__popover'],
-        container: styles['notification-button__popover-container'],
+        root: cn(styles['notification-button__popover']),
+        container: cn(styles['notification-button__popover-container']),
       }}
       content={<NotificationPopover />}
       trigger='click'
       arrow={false}
       placement='bottomRight'
     >
-      <Button className={styles['notification-button']} type='default'>
-        <Badge className={styles['notification-button__badge']} count={'9'}>
+      <Button className={cn(styles['notification-button'])} type='default'>
+        <Badge className={cn(styles['notification-button__badge'])} count={'9'}>
           <IconBell />
         </Badge>
       </Button>

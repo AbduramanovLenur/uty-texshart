@@ -30,12 +30,12 @@ const ViewProcessModal: FC = () => {
       title={t('processModal.title')}
       centered
       width={560}
-      classNames={{ body: 'scrollbar' }}
+      classNames={{ body: cn('scrollbar') }}
       destroyOnHidden
       footer={
-        <div className='modal__footer'>
+        <div className={cn('modal__footer')}>
           <Button
-            className='modal__button-close'
+            className={cn('modal__button-close')}
             type='default'
             onClick={handleClose}
           >
@@ -44,7 +44,7 @@ const ViewProcessModal: FC = () => {
         </div>
       }
     >
-      <ApplicationsTimeline className={styles['view-process-modal__timeline']} />
+      <ApplicationsTimeline className={cn(styles['view-process-modal__timeline'])} />
     </Modal>
   );
 };

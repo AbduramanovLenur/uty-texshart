@@ -21,21 +21,21 @@ const ApplicationApprovals: FC<IProps> = ({ approvals, className }) => {
         const config = approvalStatusConfig[approval.status];
 
         return (
-          <div key={approval.id} className={styles['application-approvals__item']}>
-            <div className={styles['application-approvals__left']}>
-              <div className={styles['application-approvals__title']}>
+          <div key={approval.id} className={cn(styles['application-approvals__item'])}>
+            <div className={cn(styles['application-approvals__left'])}>
+              <div className={cn(styles['application-approvals__title'])}>
                 {t(approval.title, approval.title)}
               </div>
-              <div className={styles['application-approvals__person']}>
+              <div className={cn(styles['application-approvals__person'])}>
                 {approval.person}
               </div>
-              <div className={styles['application-approvals__text']}>
+              <div className={cn(styles['application-approvals__text'])}>
                 {approval.text}
               </div>
             </div>
-            <div className={styles['application-approvals__right']}>
+            <div className={cn(styles['application-approvals__right'])}>
               {config && (
-                <div className={styles[config.className]}>
+                <div className={cn(styles[config.className])}>
                   <span>
                     <config.icon />
                   </span>
@@ -44,7 +44,7 @@ const ApplicationApprovals: FC<IProps> = ({ approvals, className }) => {
                   </span>
                 </div>
               )}
-              <div className={styles['application-approvals__date']}>
+              <div className={cn(styles['application-approvals__date'])}>
                 {approval.date}
               </div>
             </div>

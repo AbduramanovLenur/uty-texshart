@@ -1,12 +1,31 @@
 export { default as Map } from './ui/map';
 
-export * from './model/types/station';
-export * from './model/types/track';
-export * from './model/types/region';
-export * from './model/types/distance';
-export * from './model/data';
-export * from './model/constants/zoom';
-export * from './model/constants/railway';
-export * from './model/config/map';
-export * from './model/config/markers';
-export * from './model/config/layer-styles';
+export { STATION_CLICK_ZOOM, TRACK_CLICK_ZOOM, FOCUS_POINT_ZOOM } from './model/constants/zoom';
+export { MAX_RAILWAY_DISTANCE_METERS } from './model/constants/railway';
+export { mapDefaultCenter, mapDefaultZoom, mapTileLayer } from './model/config/map';
+export { stationMarkerConfig, selectedMarkerConfig } from './model/config/markers';
+export {
+  trackLayerStyle,
+  trackHitboxStyle,
+  railwayRegionStyle,
+  regionLayerStyle,
+} from './model/config/layer-styles';
+export {
+  trackDistances,
+  stationDistancesMap,
+  railwayRegionsData,
+  railwayTracksData,
+  regionsData,
+  stationsData,
+  trackDistancesData,
+} from './model/data';
+
+export type { IStationProperties } from './model/types/station';
+export type { ITrackProperties } from './model/types/track';
+export type { IRailwayRegionProperties, IRegionProperties } from './model/types/region';
+export type {
+  ITrackDistanceStation,
+  ITrackDistanceGroup,
+  IMtuDistance,
+  IStationDistanceInfo,
+} from './model/types/distance';

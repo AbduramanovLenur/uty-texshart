@@ -17,44 +17,44 @@ interface IProps {
 
 const NotificationItem: FC<IProps> = ({ item }) => {
   return (
-    <div className={styles['notification-item']}>
-      <div className={styles['notification-item__date']}>
+    <div className={cn(styles['notification-item'])}>
+      <div className={cn(styles['notification-item__date'])}>
         {item.date}
       </div>
-      <ul className={styles['notification-item__collections']}>
+      <ul className={cn(styles['notification-item__collections'])}>
         {item.items.map((collection) => (
-          <li key={collection.applicationId} className={styles['notification-item__collection']}>
+          <li key={collection.applicationId} className={cn(styles['notification-item__collection'])}>
             <div className={
               cn(
                 styles['notification-item__collection-box'],
                 { [styles['is-read']]: collection.read },
               )
             }>
-              <div className={styles['notification-item__collection-content']}>
-                <div className={styles['notification-item__collection-top']}>
-                  <Title className={styles['notification-item__collection-title']} level={5}>
+              <div className={cn(styles['notification-item__collection-content'])}>
+                <div className={cn(styles['notification-item__collection-top'])}>
+                  <Title className={cn(styles['notification-item__collection-title'])} level={5}>
                     {collection.title}
                   </Title>
-                  {collection.read && <div className={styles['notification-item__collection-circle']} />}
+                  {collection.read && <div className={cn(styles['notification-item__collection-circle'])} />}
                 </div>
-                <div className={styles['notification-item__collection-description']}>
+                <div className={cn(styles['notification-item__collection-description'])}>
                   {collection.description}
                 </div>
-                <div className={styles['notification-item__collection-bottom']}>
+                <div className={cn(styles['notification-item__collection-bottom'])}>
                   <Link
-                    className={styles['notification-item__collection-link']}
+                    className={cn(styles['notification-item__collection-link'])}
                     to={routes.SINGLE_APPLICATION(collection.applicationId)}
                   >
                     {collection.applicationId}
                   </Link>
-                  <div className={styles['notification-item__collection-decor']}></div>
-                  <div className={styles['notification-item__collection-info']}>
+                  <div className={cn(styles['notification-item__collection-decor'])}></div>
+                  <div className={cn(styles['notification-item__collection-info'])}>
                     {collection.route}
                   </div>
                 </div>
               </div>
-              <div className={styles['notification-item__collection-information']}>
-                <div className={styles['notification-item__collection-information-timestamp']}>
+              <div className={cn(styles['notification-item__collection-information'])}>
+                <div className={cn(styles['notification-item__collection-information-timestamp'])}>
                   {collection.time}
                 </div>
                 <div className={

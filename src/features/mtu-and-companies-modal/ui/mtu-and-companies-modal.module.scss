@@ -1,6 +1,5 @@
 .mtu-and-companies-modal {
   max-width: 80%;
-
   :global {
     .ant-modal-content,
     .ant-modal-container {
@@ -10,14 +9,12 @@
       overflow: hidden;
     }
   }
-
   &__body {
     flex: 1 1 auto;
     min-height: 0;
     overflow-y: auto;
     padding: var(--ant-padding) var(--ant-padding-lg) !important;
   }
-
   &__form {
     display: flex;
     flex-direction: column;
@@ -42,7 +39,6 @@
       }
     }
   }
-
   &__select {
     :global(.ant-select-placeholder) {
       color: var(--dark-88);

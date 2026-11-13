@@ -1,1 +1,1 @@
-export const maxRailwayDistanceMeters = 300;
+export const MAX_RAILWAY_DISTANCE_METERS = 300;

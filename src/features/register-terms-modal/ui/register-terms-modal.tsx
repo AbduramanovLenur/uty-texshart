@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Modal } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { mockPlatformTerms } from '../model/mock';
 import { close, stateRegisterTermsModal } from '../model/store/slice';
@@ -21,9 +22,9 @@ const RegisterTermsModal: FC = () => {
 
   return (
     <Modal
-      className={styles['register-terms-modal']}
+      className={cn(styles['register-terms-modal'])}
       classNames={{
-        wrapper: styles['register-terms-modal__wrap'],
+        wrapper: cn(styles['register-terms-modal__wrap']),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -33,17 +34,17 @@ const RegisterTermsModal: FC = () => {
       closable={false}
       destroyOnHidden
     >
-      <div className={styles['register-terms-modal__wrapper']}>
-        <div className={styles['register-terms-modal__document']}>
+      <div className={cn(styles['register-terms-modal__wrapper'])}>
+        <div className={cn(styles['register-terms-modal__document'])}>
           <iframe
-            className={styles['register-terms-modal__iframe']}
+            className={cn(styles['register-terms-modal__iframe'])}
             src={termsUrl}
             title={t('register.termsModal.title')}
           />
         </div>
-        <div className={styles['register-terms-modal__footer']}>
+        <div className={cn(styles['register-terms-modal__footer'])}>
           <Button
-            className={styles['register-terms-modal__close']}
+            className={cn(styles['register-terms-modal__close'])}
             type='default'
             onClick={handleClose}
           >

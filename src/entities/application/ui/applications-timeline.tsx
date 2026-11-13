@@ -374,8 +374,8 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
 
   return (
     <div className={cn(styles['applications-timeline'], className)}>
-      <div className={styles['applications-timeline__wrapper']}>
-        <ul className={styles['applications-timeline__list']}>
+      <div className={cn(styles['applications-timeline__wrapper'])}>
+        <ul className={cn(styles['applications-timeline__list'])}>
           {timelineSteps.map((item, index) => (
             <li
               key={item.id ?? `${item.step}-${item.status}`}
@@ -384,62 +384,62 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
                 styles[statusClasses[item.status]],
               )}
             >
-              <div className={styles['applications-timeline__box']}>
-                <div className={styles['applications-timeline__indicator']}>
+              <div className={cn(styles['applications-timeline__box'])}>
+                <div className={cn(styles['applications-timeline__indicator'])}>
                   {item.status === Statuses.DONE ? (
                     <IconPrimaryCheck />
                   ) : (
-                    <div className={styles['applications-timeline__step']}>
+                    <div className={cn(styles['applications-timeline__step'])}>
                       {item.step}
                     </div>
                   )}
                   {index < timelineSteps.length - 1 && (
-                    <div className={styles['applications-timeline__line']} />
+                    <div className={cn(styles['applications-timeline__line'])} />
                   )}
                 </div>
-                <div className={styles['applications-timeline__info-wrapper']}>
+                <div className={cn(styles['applications-timeline__info-wrapper'])}>
                   <div className={cn(styles['applications-timeline__content'], { [styles['is-active']]: isAccordionOpen })}>
-                    <div className={styles['applications-timeline__overlay']}>
-                      <div className={styles['applications-timeline__title']}>
+                    <div className={cn(styles['applications-timeline__overlay'])}>
+                      <div className={cn(styles['applications-timeline__title'])}>
                         {item.title}
                       </div>
-                      <div className={styles['applications-timeline__info']}>
+                      <div className={cn(styles['applications-timeline__info'])}>
                         {item?.status === Statuses.ERROR && (
-                          <div className={styles['applications-timeline__error']}>
-                            <div className={styles['applications-timeline__error-icon']}>
+                          <div className={cn(styles['applications-timeline__error'])}>
+                            <div className={cn(styles['applications-timeline__error-icon'])}>
                               <IconXMark />
                             </div>
-                            <div className={styles['applications-timeline__error-label']}>
+                            <div className={cn(styles['applications-timeline__error-label'])}>
                               {t('applicationsTimeline.steps.rejects.rejected')}
                             </div>
                           </div>
                         )}
                         {(item.status === Statuses.PENDING || item.status === Statuses.ACTIVE) && (
-                          <div className={styles['applications-timeline__pending']}>
-                            <div className={styles['applications-timeline__pending-icon']}>
+                          <div className={cn(styles['applications-timeline__pending'])}>
+                            <div className={cn(styles['applications-timeline__pending-icon'])}>
                               <IconClock />
                             </div>
-                            <div className={styles['applications-timeline__pending-label']}>
+                            <div className={cn(styles['applications-timeline__pending-label'])}>
                               {t('applicationsTimeline.pending')}
                             </div>
                           </div>
                         )}
                         {item?.date && (
-                          <div className={styles['applications-timeline__date']}>
+                          <div className={cn(styles['applications-timeline__date'])}>
                             {item.date}
                           </div>
                         )}
                         {item?.text && (
-                          <div className={styles['applications-timeline__text']}>
+                          <div className={cn(styles['applications-timeline__text'])}>
                             {item.text}
                           </div>
                         )}
                         {item?.buttonText && (
-                          <a className={styles['applications-timeline__file']} href={item.fileUrl} download>
-                            <span className={styles['applications-timeline__file-icon']}>
+                          <a className={cn(styles['applications-timeline__file'])} href={item.fileUrl} download>
+                            <span className={cn(styles['applications-timeline__file-icon'])}>
                               <IconArrowDownBracket />
                             </span>
-                            <span className={styles['applications-timeline__file-text']}>
+                            <span className={cn(styles['applications-timeline__file-text'])}>
                               {item.buttonText}
                             </span>
                           </a>
@@ -447,22 +447,22 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
                       </div>
                     </div>
                     {(item?.approvals?.length || item?.employee) && (
-                      <div className={styles['applications-timeline__inner']}>
+                      <div className={cn(styles['applications-timeline__inner'])}>
                         {item?.employee && (
-                          <div className={styles['applications-timeline__employee']}>
+                          <div className={cn(styles['applications-timeline__employee'])}>
                             {item.employee}
                           </div>
                         )}
                         {item?.approvals?.length && (
                           <button
                             type='button'
-                            className={styles['applications-timeline__accordion-toggle']}
+                            className={cn(styles['applications-timeline__accordion-toggle'])}
                             onClick={handleAccordionToggle}
                           >
                             <span
                               className={cn(
                                 styles['applications-timeline__accordion-icon'],
-                                isAccordionOpen && styles['is-active'],
+                                { [styles['is-active']]: isAccordionOpen },
                               )}
                             >
                               <IconDownArrow />

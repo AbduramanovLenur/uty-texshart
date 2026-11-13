@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Modal, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { useLeaveConfirm } from '../model/lib/hooks/use-leave-confirm';
 import type { ILeaveConfirmModalProps } from '../model/types/props';
@@ -35,18 +36,18 @@ export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
       centered
       width={520}
       destroyOnHidden
-      className={styles['leave-confirm-modal']}
+      className={cn(styles['leave-confirm-modal'])}
       footer={
-        <div className={styles['leave-confirm-modal__actions']}>
+        <div className={cn(styles['leave-confirm-modal__actions'])}>
           <Button
-            className={styles['leave-confirm-modal__btn-leave']}
+            className={cn(styles['leave-confirm-modal__btn-leave'])}
             type='default'
             onClick={handleStay}
           >
             {displayLeaveText}
           </Button>
           <Button
-            className={styles['leave-confirm-modal__btn-continue']}
+            className={cn(styles['leave-confirm-modal__btn-continue'])}
             type='primary'
             danger
             onClick={handleLeave}
@@ -56,7 +57,7 @@ export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
         </div>
       }
     >
-      <p className={styles['leave-confirm-modal__description']}>
+      <p className={cn(styles['leave-confirm-modal__description'])}>
         {displayDescription}
       </p>
     </Modal>

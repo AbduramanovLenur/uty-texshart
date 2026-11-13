@@ -5,7 +5,7 @@ import type { IOpenPayload, IState } from '../types/state';
 
 const initialState: IState = {
   isOpen: false,
-  referenceType: ReferenceDataTypes.COMMUNICATION_TYPES,
+  type: ReferenceDataTypes.COMMUNICATION_TYPES,
   id: null,
 };
 
@@ -15,7 +15,7 @@ const slice = createSlice({
   reducers: {
     open: (state, action: PayloadAction<IOpenPayload | undefined>) => {
       state.isOpen = true;
-      state.referenceType = action.payload?.referenceType ?? ReferenceDataTypes.COMMUNICATION_TYPES;
+      state.type = action.payload?.type ?? ReferenceDataTypes.COMMUNICATION_TYPES;
       state.id = action.payload?.id ?? null;
     },
     close: (state) => {

@@ -1,5 +1,6 @@
 import type { FC, ReactNode } from 'react';
 import { Typography, Button } from 'antd';
+import cn from 'classnames';
 
 import { IconLeftChevron } from '@shared/assets';
 
@@ -14,15 +15,15 @@ interface IProps {
 
 const PageHeader: FC<IProps> = ({ onClick, children }) => {
   return (
-    <div className={styles['page-header']}>
+    <div className={cn(styles['page-header'])}>
       <Button
-        className={styles['page-header__back']}
+        className={cn(styles['page-header__back'])}
         type='default'
         onClick={onClick}
       >
         <IconLeftChevron />
       </Button>
-      <Title className={styles['page-header__title']} level={3}>
+      <Title className={cn(styles['page-header__title'])} level={3}>
         {children}
       </Title>
     </div>

@@ -62,16 +62,16 @@ const MtuAndCompaniesModal: FC = () => {
       width={520}
       destroyOnHidden
       footer={
-        <div className='modal__footer'>
+        <div className={cn('modal__footer')}>
           <Button
-            className='modal__button-close'
+            className={cn('modal__button-close')}
             type='default'
             onClick={handleClose}
           >
             {t('createUserModal.actions.cancel')}
           </Button>
           <Button
-            className='modal__button-confirm'
+            className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
@@ -82,7 +82,7 @@ const MtuAndCompaniesModal: FC = () => {
     >
       <Form
         form={form}
-        className={styles['mtu-and-companies-modal__form']}
+        className={cn(styles['mtu-and-companies-modal__form'])}
         layout='vertical'
         onFinish={handleFinish}
       >
@@ -97,7 +97,7 @@ const MtuAndCompaniesModal: FC = () => {
           ]}
         >
           <Select
-            className={styles['mtu-and-companies-modal__select']}
+            className={cn(styles['mtu-and-companies-modal__select'])}
             size='large'
             options={typeOptions}
             disabled={Boolean(id)}
@@ -117,7 +117,7 @@ const MtuAndCompaniesModal: FC = () => {
             ]}
           >
             <Select
-              className={styles['mtu-and-companies-modal__select']}
+              className={cn(styles['mtu-and-companies-modal__select'])}
               size='large'
               options={mockCompanyTypeOptions}
               placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -156,7 +156,7 @@ const MtuAndCompaniesModal: FC = () => {
               ]}
             >
               <Select
-                className={styles['mtu-and-companies-modal__select']}
+                className={cn(styles['mtu-and-companies-modal__select'])}
                 size='large'
                 options={mockMtuOptions}
                 placeholder={t('createUserModal.fields.selectPlaceholder')}

@@ -7,7 +7,6 @@
   max-height: min(973px, calc(100vh - calc(var(--ant-padding-lg) * 2)));
   display: flex;
   flex-direction: column;
-
   :global {
     .ant-modal-content,
     .ant-modal-container {
@@ -22,7 +21,6 @@
       min-height: 0;
     }
   }
-
   &__wrap {
     padding: var(--ant-padding-lg);
     overflow: hidden;
@@ -30,18 +28,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
     &::before {
       display: none;
     }
-
     :global {
       .ant-modal {
         width: 100% !important;
       }
     }
   }
-
   &__body {
     display: flex;
     flex-direction: column;
@@ -50,7 +45,6 @@
     overflow: hidden;
     height: 100%;
   }
-
   &__wrapper {
     display: flex;
     flex-direction: column;
@@ -61,7 +55,6 @@
     padding: 32px 120px;
     border-radius: var(--ant-border-radius-lg);
   }
-
   &__header {
     display: flex;
     align-items: center;
@@ -69,12 +62,10 @@
     flex-shrink: 0;
     margin-bottom: var(--ant-margin-xl);
   }
-
   &__actions {
     display: flex;
     gap: var(--ant-margin);
   }
-
   &__button {
     font-size: var(--ant-font-size-lg);
     font-weight: 500;
@@ -82,12 +73,10 @@
     height: 40px;
     border-radius: var(--ant-border-radius-lg);
     color: var(--dark-88);
-
     svg {
       width: 18px;
       height: 18px;
     }
-
     :global {
       .ant-btn-icon {
         > svg {
@@ -96,7 +85,6 @@
         }
       }
     }
-
     &:hover {
       :global {
         .ant-btn-icon {
@@ -107,7 +95,6 @@
       }
     }
   }
-
   &__document {
     flex: 1 1 auto;
     min-height: 0;
@@ -117,7 +104,6 @@
     border-radius: var(--ant-border-radius-lg);
     background-color: var(--white);
   }
-
   &__iframe {
     width: 100%;
     height: 100%;

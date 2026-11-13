@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { Button, DatePicker } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import dayjs from 'dayjs';
+import cn from 'classnames';
 
 import type { TFilterDropdownControls, TRangeValue } from '@shared/types';
 
@@ -46,14 +47,14 @@ const TableDateRangeFilter: FC<IProps> = ({
   };
 
   return (
-    <div className={styles['table-date-range-filter']}>
+    <div className={cn(styles['table-date-range-filter'])}>
       <RangePicker
-        className={styles['table-date-range-filter__picker']}
+        className={cn(styles['table-date-range-filter__picker'])}
         format={displayFormat}
         value={from && to ? [dayjs(from), dayjs(to)] : null}
         onChange={handleChange}
       />
-      <div className={styles['table-date-range-filter__buttons']}>
+      <div className={cn(styles['table-date-range-filter__buttons'])}>
         <Button onClick={handleClear} size='small'>
           {clearLabel}
         </Button>
