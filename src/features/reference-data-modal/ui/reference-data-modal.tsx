@@ -69,9 +69,9 @@ const ReferenceDataModal: FC = () => {
       }}
       open={isOpen}
       onCancel={handleClose}
-      title={t('referenceDataModal.title')}
+      title={id ? t('referenceDataModal.titleEdit') : t('referenceDataModal.title')}
       centered
-      width={600}
+      width={520}
       destroyOnHidden
       footer={
         <div className='modal__footer'>
@@ -98,193 +98,183 @@ const ReferenceDataModal: FC = () => {
         layout='vertical'
         onFinish={handleFinish}
       >
-        <div className={styles['reference-data-modal__form-wrapper']}>
+        <Item
+          label={t('referenceDataModal.fields.referenceType')}
+          name={FormFields.REFERENCE_TYPE}
+          rules={[
+            {
+              required: true,
+              message: t('referenceDataModal.validation.referenceTypeRequired'),
+            },
+          ]}
+        >
+          <Select
+            className={styles['reference-data-modal__select']}
+            size='large'
+            options={referenceTypeOptions}
+            placeholder={t('createUserModal.fields.selectPlaceholder')}
+            suffixIcon={<IconDownArrow />}
+          />
+        </Item>
+        {isCrossingMethod && (
           <Item
-            label={t('referenceDataModal.fields.referenceType')}
-            name={FormFields.REFERENCE_TYPE}
+            label={t('referenceDataModal.fields.communicationType')}
+            name={FormFields.COMMUNICATION_TYPE}
             rules={[
               {
                 required: true,
-                message: t('referenceDataModal.validation.referenceTypeRequired'),
+                message: t('referenceDataModal.validation.communicationTypeRequired'),
               },
             ]}
           >
             <Select
               className={styles['reference-data-modal__select']}
               size='large'
-              options={referenceTypeOptions}
+              options={mockCommunicationTypeOptions}
               placeholder={t('createUserModal.fields.selectPlaceholder')}
               suffixIcon={<IconDownArrow />}
             />
           </Item>
-
-          {isCrossingMethod && (
-            <Item
-              label={t('referenceDataModal.fields.communicationType')}
-              name={FormFields.COMMUNICATION_TYPE}
-              rules={[
-                {
-                  required: true,
-                  message: t('referenceDataModal.validation.communicationTypeRequired'),
-                },
-              ]}
-            >
-              <Select
-                className={styles['reference-data-modal__select']}
-                size='large'
-                options={mockCommunicationTypeOptions}
-                placeholder={t('createUserModal.fields.selectPlaceholder')}
-                suffixIcon={<IconDownArrow />}
-              />
-            </Item>
-          )}
-
-          {isTechnicalParameter && (
-            <>
-              <div className={styles['reference-data-modal__row']}>
-                <Item
-                  label={t('referenceDataModal.fields.communicationType')}
-                  name={FormFields.COMMUNICATION_TYPE}
-                  rules={[
-                    {
-                      required: true,
-                      message: t('referenceDataModal.validation.communicationTypeRequired'),
-                    },
-                  ]}
-                >
-                  <Select
-                    className={styles['reference-data-modal__select']}
-                    size='large'
-                    options={mockCommunicationTypeOptions}
-                    placeholder={t('createUserModal.fields.selectPlaceholder')}
-                    suffixIcon={<IconDownArrow />}
-                  />
-                </Item>
-
-                <Item
-                  label={t('referenceDataModal.fields.crossingMethod')}
-                  name={FormFields.CROSSING_METHOD}
-                  rules={[
-                    {
-                      required: true,
-                      message: t('referenceDataModal.validation.crossingMethodRequired'),
-                    },
-                  ]}
-                >
-                  <Select
-                    className={styles['reference-data-modal__select']}
-                    size='large'
-                    options={mockCrossingMethodOptions}
-                    placeholder={t('createUserModal.fields.selectPlaceholder')}
-                    suffixIcon={<IconDownArrow />}
-                  />
-                </Item>
-              </div>
-              <div className={styles['reference-data-modal__row']}>
-                <Item
-                  label={t('referenceDataModal.fields.name')}
-                  name={FormFields.NAME}
-                >
-                  <Input
-                    size='large'
-                    placeholder={t('referenceDataModal.fields.namePlaceholder')}
-                  />
-                </Item>
-
-                <Item
-                  label={t('referenceDataModal.fields.measurementUnit')}
-                  name={FormFields.MEASUREMENT_UNIT}
-                >
-                  <Input
-                    size='large'
-                    placeholder={t('referenceDataModal.fields.measurementUnitPlaceholder')}
-                  />
-                </Item>
-              </div>
-            </>
-          )}
-
-          {!isTechnicalParameter && (
-            <Item
-              label={t('referenceDataModal.fields.name')}
-              name={FormFields.NAME}
-            >
-              <Input
-                size='large'
-                placeholder={t('referenceDataModal.fields.namePlaceholder')}
-              />
-            </Item>
-          )}
-
-          {isTechnicalParameter && (
-            <>
-              <div className={styles['reference-data-modal__checkbox-row']}>
-                <Item
-                  className={styles['reference-data-modal__checkbox-item']}
-                  name={FormFields.HAS_MULTIPLE_OPTIONS}
-                  valuePropName='checked'
-                >
-                  <Checkbox className={styles['reference-data-modal__checkbox']}>
-                    {t('referenceDataModal.fields.hasMultipleOptions')}
-                  </Checkbox>
-                </Item>
-
-                {hasMultipleOptions && (
-                  <Button
-                    className={styles['reference-data-modal__add-option']}
-                    type='default'
-                    icon={<IconPlus />}
-                    onClick={handleAddOption}
-                  >
-                    {t('referenceDataModal.actions.addOption')}
-                  </Button>
-                )}
-              </div>
-
+        )}
+        {isTechnicalParameter && (
+          <>
+            <div className={styles['reference-data-modal__row']}>
+              <Item
+                label={t('referenceDataModal.fields.communicationType')}
+                name={FormFields.COMMUNICATION_TYPE}
+                rules={[
+                  {
+                    required: true,
+                    message: t('referenceDataModal.validation.communicationTypeRequired'),
+                  },
+                ]}
+              >
+                <Select
+                  className={styles['reference-data-modal__select']}
+                  size='large'
+                  options={mockCommunicationTypeOptions}
+                  placeholder={t('createUserModal.fields.selectPlaceholder')}
+                  suffixIcon={<IconDownArrow />}
+                />
+              </Item>
+              <Item
+                label={t('referenceDataModal.fields.crossingMethod')}
+                name={FormFields.CROSSING_METHOD}
+                rules={[
+                  {
+                    required: true,
+                    message: t('referenceDataModal.validation.crossingMethodRequired'),
+                  },
+                ]}
+              >
+                <Select
+                  className={styles['reference-data-modal__select']}
+                  size='large'
+                  options={mockCrossingMethodOptions}
+                  placeholder={t('createUserModal.fields.selectPlaceholder')}
+                  suffixIcon={<IconDownArrow />}
+                />
+              </Item>
+            </div>
+            <div className={styles['reference-data-modal__row']}>
+              <Item
+                label={t('referenceDataModal.fields.name')}
+                name={FormFields.NAME}
+              >
+                <Input
+                  size='large'
+                  placeholder={t('referenceDataModal.fields.namePlaceholder')}
+                />
+              </Item>
+              <Item
+                label={t('referenceDataModal.fields.measurementUnit')}
+                name={FormFields.MEASUREMENT_UNIT}
+              >
+                <Input
+                  size='large'
+                  placeholder={t('referenceDataModal.fields.measurementUnitPlaceholder')}
+                />
+              </Item>
+            </div>
+          </>
+        )}
+        {!isTechnicalParameter && (
+          <Item
+            label={t('referenceDataModal.fields.name')}
+            name={FormFields.NAME}
+          >
+            <Input
+              size='large'
+              placeholder={t('referenceDataModal.fields.namePlaceholder')}
+            />
+          </Item>
+        )}
+        {isTechnicalParameter && (
+          <>
+            <div className={styles['reference-data-modal__checkbox-row']}>
+              <Item
+                className={styles['reference-data-modal__checkbox-item']}
+                name={FormFields.HAS_MULTIPLE_OPTIONS}
+                valuePropName='checked'
+              >
+                <Checkbox className={styles['reference-data-modal__checkbox']}>
+                  {t('referenceDataModal.fields.hasMultipleOptions')}
+                </Checkbox>
+              </Item>
               {hasMultipleOptions && (
-                <List
-                  name={FormFields.OPTIONS}
-                  initialValue={['']}
+                <Button
+                  className={styles['reference-data-modal__add-option']}
+                  type='default'
+                  icon={<IconPlus />}
+                  onClick={handleAddOption}
                 >
-                  {(fields, { remove }) => (
-                    <div className={styles['reference-data-modal__options']}>
-                      {fields.map(({ key, name, ...restField }, index) => (
-                        <div key={key} className={styles['reference-data-modal__option-row']}>
-                          <Item
-                            {...restField}
-                            name={name}
-                            className={styles['reference-data-modal__option-input']}
-                          >
-                            <Input
-                              placeholder={t('referenceDataModal.fields.optionPlaceholder', {
-                                index: index + 1,
-                              })}
-                            />
-                          </Item>
-                          {index > 0 ? (
-                            <Button
-                              className={styles['reference-data-modal__option-delete']}
-                              type='primary'
-                              danger
-                              size='large'
-                              icon={<IconTrash />}
-                              onClick={() => remove(name)}
-                            />
-                          ) : (
-                            <span
-                              className={styles['reference-data-modal__option-spacer']}
-                              aria-hidden='true'
-                            />
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </List>
+                  {t('referenceDataModal.actions.addOption')}
+                </Button>
               )}
-            </>
-          )}
-        </div>
+            </div>
+            {hasMultipleOptions && (
+              <List
+                name={FormFields.OPTIONS}
+                initialValue={['']}
+              >
+                {(fields, { remove }) => (
+                  <div className={styles['reference-data-modal__options']}>
+                    {fields.map(({ key, name, ...restField }, index) => (
+                      <div key={key} className={styles['reference-data-modal__option-row']}>
+                        <Item
+                          {...restField}
+                          name={name}
+                          className={styles['reference-data-modal__option-input']}
+                        >
+                          <Input
+                            placeholder={t('referenceDataModal.fields.optionPlaceholder', {
+                              index: index + 1,
+                            })}
+                          />
+                        </Item>
+                        {index > 0 ? (
+                          <Button
+                            className={styles['reference-data-modal__option-delete']}
+                            type='primary'
+                            danger
+                            size='large'
+                            icon={<IconTrash />}
+                            onClick={() => remove(name)}
+                          />
+                        ) : (
+                          <span
+                            className={styles['reference-data-modal__option-spacer']}
+                            aria-hidden='true'
+                          />
+                        )}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </List>
+            )}
+          </>
+        )}
       </Form>
     </Modal>
   );

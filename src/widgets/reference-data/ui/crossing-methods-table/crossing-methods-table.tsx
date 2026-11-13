@@ -22,11 +22,7 @@ const CrossingMethodsTable: FC = () => {
     handlePaginationChange,
   } = useTableFilters<ICrossingMethod, TCrossingMethodFilterKey>();
 
-  const handleStatusChange = (id: number, checked: boolean) => {
-    console.log(id, checked);
-  };
-
-  const columns = useGetColumns(filters, handleStatusChange);
+  const columns = useGetColumns(filters);
 
   return (
     <div className={cn(styles['crossing-methods-table'], 'table-wrapper')}>

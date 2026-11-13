@@ -1,20 +1,21 @@
 import { Button, Switch, type TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 
 import { CompanyFilterKeys } from '../../model/constants/company-filter-keys';
 import type { ICompany } from '../../model/types/company';
 import type { TCompanyFilterKey } from '../../model/types/company-filter';
 import { mockCompanies } from '../../model/mock';
 
+import { MtuAndCompaniesTypes, open as openMtuAndCompaniesModal } from '@features/mtu-and-companies-modal';
+
 import type { TTableFilterState } from '@shared/types';
 
 import styles from './companies-table.module.scss';
 
-export const useGetColumns = (
-  filters: TTableFilterState<TCompanyFilterKey>,
-  onStatusChange: (id: number, checked: boolean) => void,
-): TableProps<ICompany>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TCompanyFilterKey>): TableProps<ICompany>['columns'] => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   const idFilters = Array.from(new Set(mockCompanies.map((c) => c.id))).map((id) => ({
     text: String(id),
@@ -41,6 +42,14 @@ export const useGetColumns = (
     value: mtuName,
   }));
 
+  const handleEdit = (id: number) => {
+    dispatch(openMtuAndCompaniesModal({ type: MtuAndCompaniesTypes.COMPANIES, id }));
+  };
+
+  const handleStatusChange = (id: number, checked: boolean) => {
+    console.log(id, checked);
+  };
+
   return [
     {
       title: t('headers.companyId'),
@@ -50,7 +59,6 @@ export const useGetColumns = (
       filteredValue: filters.id,
       filters: idFilters,
       filterSearch: true,
-      onFilter: (value, record) => String(record.id) === String(value),
     },
     {
       title: t('headers.companyType'),
@@ -60,7 +68,6 @@ export const useGetColumns = (
       filteredValue: filters.type,
       filters: typeFilters,
       filterSearch: true,
-      onFilter: (value, record) => record.type === value,
     },
     {
       title: t('headers.companyName'),
@@ -70,8 +77,6 @@ export const useGetColumns = (
       filteredValue: filters.name,
       filters: nameFilters,
       filterSearch: true,
-      onFilter: (value, record) =>
-        record.name.toLowerCase().includes(String(value).toLowerCase()),
     },
     {
       title: t('headers.kmPk'),
@@ -81,7 +86,6 @@ export const useGetColumns = (
       filteredValue: filters.kmPk,
       filters: kmPkFilters,
       filterSearch: true,
-      onFilter: (value, record) => record.kmPk === value,
     },
     {
       title: t('headers.mtuName'),
@@ -91,14 +95,17 @@ export const useGetColumns = (
       filteredValue: filters.mtuName,
       filters: mtuNameFilters,
       filterSearch: true,
-      onFilter: (value, record) => record.mtuName === value,
     },
     {
       title: '',
       key: 'actions',
       width: 95,
-      render: () => (
-        <Button className={styles['companies-table__edit']} type='link'>
+      render: (_, record) => (
+        <Button
+          className={styles['companies-table__edit']}
+          type='link'
+          onClick={() => handleEdit(record.id)}
+        >
           {t('actions.edit')}
         </Button>
       ),
@@ -110,7 +117,7 @@ export const useGetColumns = (
       render: (_, record) => (
         <Switch
           checked={record.isActive}
-          onChange={(checked) => onStatusChange(record.id, checked)}
+          onChange={(checked) => handleStatusChange(record.id, checked)}
         />
       ),
     },

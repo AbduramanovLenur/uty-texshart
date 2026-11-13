@@ -1,6 +1,5 @@
 .reference-data-modal {
   max-width: 80%;
-
   :global {
     .ant-modal-content,
     .ant-modal-container {
@@ -10,51 +9,40 @@
       overflow: hidden;
     }
   }
-
   &__body {
     flex: 1 1 auto;
     min-height: 0;
     overflow-y: auto;
     padding: var(--ant-padding) var(--ant-padding-lg) !important;
   }
-
   &__form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin);
     :global {
       .ant-form-item {
         margin-bottom: 0;
       }
-
       .ant-form-item-row > .ant-form-item-label {
         padding: 0;
         margin-bottom: var(--ant-margin-xxs);
       }
-
       .ant-form-item-label > label {
         color: var(--dark-88);
         font-size: var(--ant-font-size);
-        font-weight: 500;
         line-height: 1.5;
         height: auto;
       }
-
       .ant-form-item-control-input-content {
         width: 100%;
       }
     }
-
-    &-wrapper {
-      display: flex;
-      flex-direction: column;
-      gap: var(--ant-margin);
-    }
   }
-
   &__row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--ant-margin);
   }
-
   &__select {
     width: 100%;
 
@@ -62,19 +50,16 @@
       color: var(--dark-88);
     }
   }
-
   &__checkbox {
     font-size: var(--ant-font-size);
     line-height: 1.5;
     color: var(--dark-88);
-
     &-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: var(--ant-margin);
     }
-
     &-item {
       :global {
         .ant-form-item-control-input {
@@ -83,7 +68,6 @@
       }
     }
   }
-
   &__add-option {
     font-weight: 500;
     color: var(--dark-88);
@@ -97,7 +81,6 @@
       padding: 0 7px;
     }
   }
-
   &__options {
     display: flex;
     flex-direction: column;
@@ -106,7 +89,6 @@
     border-radius: var(--ant-border-radius-lg);
     background-color: var(--dark-04);
   }
-
   &__option {
     &-row {
       display: flex;

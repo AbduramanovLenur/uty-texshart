@@ -1,20 +1,29 @@
 import { Button, Switch, type TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 
 import { MtuFilterKeys } from '../../model/constants/mtu-filter-keys';
 import type { IMtu } from '../../model/types/mtu';
 import type { TMtuFilterKey } from '../../model/types/mtu-filter';
 import { mockMtus } from '../../model/mock';
 
+import { MtuAndCompaniesTypes, open as openMtuAndCompaniesModal } from '@features/mtu-and-companies-modal';
+
 import type { TTableFilterState } from '@shared/types';
 
 import styles from './mtu-table.module.scss';
 
-export const useGetColumns = (
-  filters: TTableFilterState<TMtuFilterKey>,
-  onStatusChange: (id: number, checked: boolean) => void,
-): TableProps<IMtu>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TMtuFilterKey>): TableProps<IMtu>['columns'] => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const handleEdit = (id: number) => {
+    dispatch(openMtuAndCompaniesModal({ type: MtuAndCompaniesTypes.MTU, id }));
+  };
+
+  const handleStatusChange = (id: number, checked: boolean) => {
+    console.log(id, checked);
+  };
 
   return [
     {
@@ -28,7 +37,6 @@ export const useGetColumns = (
         value: item.id,
       })),
       filterSearch: true,
-      onFilter: (value, record) => String(record.id) === String(value),
     },
     {
       title: t('headers.mtuName'),
@@ -41,15 +49,17 @@ export const useGetColumns = (
         value: item.name,
       })),
       filterSearch: true,
-      onFilter: (value, record) =>
-        record.name.toLowerCase().includes(String(value).toLowerCase()),
     },
     {
       title: '',
       key: 'actions',
       width: 200,
-      render: () => (
-        <Button className={styles['mtu-table__edit']} type='link'>
+      render: (_, record) => (
+        <Button
+          className={styles['mtu-table__edit']}
+          type='link'
+          onClick={() => handleEdit(record.id)}
+        >
           {t('actions.edit')}
         </Button>
       ),
@@ -61,7 +71,7 @@ export const useGetColumns = (
       render: (_, record) => (
         <Switch
           defaultChecked={record.isActive}
-          onChange={(checked) => onStatusChange(record.id, checked)}
+          onChange={(checked) => handleStatusChange(record.id, checked)}
         />
       ),
     },
