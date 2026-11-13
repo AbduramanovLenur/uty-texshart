@@ -1,0 +1,11 @@
+.mtu-and-companies {
+  &__test-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 200px;
+    font-size: 16px;
+    color: var(--dark-45);
+  }
+}

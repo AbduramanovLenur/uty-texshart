@@ -1,0 +1,12 @@
+.mtu-table {
+  height: 100%;
+  margin-top: var(--ant-padding);
+
+  &__edit {
+    &:global(.ant-btn) {
+      line-height: 1.5;
+      padding: 0;
+      height: auto;
+    }
+  }
+}

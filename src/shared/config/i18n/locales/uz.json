@@ -277,7 +277,16 @@
     "communicationType": "Kommunikatsiya turi",
     "crossingMethod": "O‘tkazish usuli",
     "crossingMethods": "O‘tkazish usullari",
-    "technicalParameter": "Muhandislik-texnik parametr"
+    "technicalParameter": "Muhandislik-texnik parametr",
+    "mtuId": "MTU ID",
+    "mtuName": "MTU nomi",
+    "companyId": "Tashkilot ID",
+    "companyType": "Tashkilot turi",
+    "companyName": "Tashkilot nomi",
+    "organizationId": "Tashkilot ID",
+    "organizationType": "Tashkilot turi",
+    "organizationName": "Tashkilot nomi",
+    "kmPk": "km/pk"
   },
   "summary_other": "Jami {{count}} ta ariza topildi",
   "incomingApplications": {
@@ -327,6 +336,15 @@
       "communicationTypes": "Kommunikatsiya turlari",
       "crossingMethods": "O‘tkazish usullari",
       "technicalParameters": "Muhandislik-texnik parametrlar"
+    }
+  },
+  "mtuAndCompanies": {
+    "title": "MTU va tashkilotlar",
+    "create": "Yangi ma'lumot qo'shish",
+    "tabs": {
+      "mtu": "MTU",
+      "companies": "Tashkilotlar",
+      "privateBranches": "Hususiy shahobchalar"
     }
   },
   "referenceDataModal": {
