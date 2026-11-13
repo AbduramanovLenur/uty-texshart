@@ -284,7 +284,16 @@
     "communicationType": "Тип коммуникации",
     "crossingMethod": "Способ прокладки",
     "crossingMethods": "Способы прокладки",
-    "technicalParameter": "Инженерно-технический параметр"
+    "technicalParameter": "Инженерно-технический параметр",
+    "mtuId": "ID МТУ",
+    "mtuName": "Название МТУ",
+    "companyId": "ID компании",
+    "companyType": "Тип компании",
+    "companyName": "Название компании",
+    "organizationId": "ID организации",
+    "organizationType": "Тип организации",
+    "organizationName": "Название организации",
+    "kmPk": "км/пк"
   },
   "summary_one": "Найдена {{count}} заявка",
   "summary_few": "Найдено {{count}} заявки",
@@ -337,6 +346,15 @@
       "communicationTypes": "Типы коммуникаций",
       "crossingMethods": "Способы прокладки",
       "technicalParameters": "Инженерно-технические параметры"
+    }
+  },
+  "mtuAndCompanies": {
+    "title": "МТУ и компании",
+    "create": "Добавить новую запись",
+    "tabs": {
+      "mtu": "МТУ",
+      "companies": "Компании",
+      "privateBranches": "Частные ветки"
     }
   },
   "referenceDataModal": {

@@ -14,7 +14,8 @@ export const routes = {
   USERS: '/users',
   ROLES: '/roles',
   REFERENCE_DATA: '/reference-data',
-  REGIONS_AND_MTU: '/regions-and-mtu',
+  MTU_AND_COMPANIES: '/mtu-and-companies',
+  REGIONS_AND_MTU: '/mtu-and-companies',
   SETTINGS: '/settings',
   PAYMENT_HISTORY: '/payment-history',
 } as const;

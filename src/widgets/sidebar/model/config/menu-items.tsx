@@ -89,7 +89,7 @@ export const items: TMenuGroup[] = [
                 roles: [roles.APPLICANT],
             },
             {
-                key: routes.REGIONS_AND_MTU,
+                key: routes.MTU_AND_COMPANIES,
                 label: 'sidebar.regionsMtu',
                 icon: <IconMapPin />,
                 roles: [roles.APPLICANT],
