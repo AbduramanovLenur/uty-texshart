@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { StatusCard, type IStatusCard } from '@entities/statistics';
 import {
@@ -62,9 +63,9 @@ const DashboardStatistics: FC = () => {
   ];
 
   return (
-    <ul className={styles['dashboard-statistics']}>
+    <ul className={cn(styles['dashboard-statistics'])}>
       {stats.map((item) => (
-        <li className={styles['dashboard-statistics__item']} key={item.title}>
+        <li className={cn(styles['dashboard-statistics__item'])} key={item.title}>
           <StatusCard item={item} />
         </li>
       ))}

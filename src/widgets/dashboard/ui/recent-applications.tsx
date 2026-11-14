@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Typography, Button } from 'antd';
 import { Link, useNavigate } from 'react-router-dom';
+import cn from 'classnames';
 
 import {
   ApplicationPreview,
@@ -76,29 +77,29 @@ const RecentApplications: FC = () => {
   };
 
   return (
-    <div className={styles['recent-applications']}>
-      <div className={styles['recent-applications__top']}>
-        <Title className={styles['recent-applications__title']} level={4}>
+    <div className={cn(styles['recent-applications'])}>
+      <div className={cn(styles['recent-applications__top'])}>
+        <Title className={cn(styles['recent-applications__title'])} level={4}>
           {t('dashboard.recentApplications.title')}
         </Title>
         <Button
-          className={styles['recent-applications__button']}
+          className={cn(styles['recent-applications__button'])}
           icon={<IconPlus />}
           onClick={handleCreateApplication}
         >
           {t('dashboard.recentApplications.create')}
         </Button>
       </div>
-      <ul className={styles['recent-applications__list']}>
+      <ul className={cn(styles['recent-applications__list'])}>
         {applications.map((item) => (
-          <li key={item.id} className={styles['recent-applications__item']}>
+          <li key={item.id} className={cn(styles['recent-applications__item'])}>
             <ApplicationPreview item={item} />
           </li>
         ))}
       </ul>
-      <div className={styles['recent-applications__bottom']}>
+      <div className={cn(styles['recent-applications__bottom'])}>
         <Link
-          className={styles['recent-applications__link']}
+          className={cn(styles['recent-applications__link'])}
           to={routes.APPLICATIONS}
         >
           {t('dashboard.recentApplications.viewAll')}

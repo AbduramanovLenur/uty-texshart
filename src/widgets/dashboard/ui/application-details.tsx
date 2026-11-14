@@ -29,14 +29,14 @@ const ApplicationDetails: FC = () => {
 
   return (
     <div className={cn(styles['application-details'], 'tabs')}>
-      <Title className={styles['application-details__title']} level={4}>
+      <Title className={cn(styles['application-details__title'])} level={4}>
         {t('dashboard.applicationDetails.title')}
       </Title>
       <Tabs
         classNames={{
-          root: 'tabs__root',
-          header: 'tabs__header',
-          item: 'tabs__item',
+          root: cn('tabs__root'),
+          header: cn('tabs__header'),
+          item: cn('tabs__item'),
         }}
         defaultActiveKey={TabKeys.FIRST_TAB}
         items={items}

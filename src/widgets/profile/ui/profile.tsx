@@ -27,70 +27,63 @@ const Profile: FC = () => {
 
   return (
     <section className={cn(styles['profile'], 'section')}>
-      <div className={styles['profile__inner']}>
-        <Title className={styles['profile__title']} level={3}>
+      <div className={cn(styles['profile__inner'])}>
+        <Title className={cn(styles['profile__title'])} level={3}>
           {t('profile.page')}
         </Title>
-
-        <div className={styles['profile__card']}>
-          <div className={styles['profile__body']}>
+        <div className={cn(styles['profile__card'])}>
+          <div className={cn(styles['profile__body'])}>
             <AvatarUpload
               defaultValue={PROFILE_DATA.avatarUrl}
               initials={PROFILE_DATA.initials}
             />
-
-            <div className={styles['profile__info']}>
-              <div className={styles['profile__field']}>
-                <span className={styles['profile__label']}>
+            <div className={cn(styles['profile__info'])}>
+              <div className={cn(styles['profile__field'])}>
+                <span className={cn(styles['profile__label'])}>
                   {t('profile.company')}
                 </span>
-                <span className={styles['profile__value']}>
+                <span className={cn(styles['profile__value'])}>
                   {PROFILE_DATA.companyName}
                 </span>
               </div>
-
-              <div className={styles['profile__field']}>
-                <span className={styles['profile__label']}>
+              <div className={cn(styles['profile__field'])}>
+                <span className={cn(styles['profile__label'])}>
                   {t('profile.pinfl')}
                 </span>
-                <span className={styles['profile__value']}>
+                <span className={cn(styles['profile__value'])}>
                   {PROFILE_DATA.pinfl}
                 </span>
               </div>
-
-              <div className={styles['profile__field']}>
-                <span className={styles['profile__label']}>
+              <div className={cn(styles['profile__field'])}>
+                <span className={cn(styles['profile__label'])}>
                   {t('profile.director')}
                 </span>
-                <span className={styles['profile__value']}>
+                <span className={cn(styles['profile__value'])}>
                   {PROFILE_DATA.directorName}
                 </span>
               </div>
-
-              <div className={styles['profile__field']}>
-                <span className={styles['profile__label']}>
+              <div className={cn(styles['profile__field'])}>
+                <span className={cn(styles['profile__label'])}>
                   {t('profile.phone')}
                 </span>
-                <span className={styles['profile__value']}>
+                <span className={cn(styles['profile__value'])}>
                   {PROFILE_DATA.phone}
                 </span>
               </div>
-
-              <div className={styles['profile__field']}>
-                <span className={styles['profile__label']}>
+              <div className={cn(styles['profile__field'])}>
+                <span className={cn(styles['profile__label'])}>
                   {t('profile.address')}
                 </span>
-                <span className={styles['profile__value']}>
+                <span className={cn(styles['profile__value'])}>
                   {PROFILE_DATA.address}
                 </span>
               </div>
             </div>
           </div>
         </div>
-
-        <div className={styles['profile__footer']}>
+        <div className={cn(styles['profile__footer'])}>
           <Button
-            className={styles['profile__logout-btn']}
+            className={cn(styles['profile__logout-btn'])}
             type='default'
             icon={<IconLogout />}
             onClick={confirmLogout}

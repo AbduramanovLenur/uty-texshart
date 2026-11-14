@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Steps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { getSteps } from '../model/lib/utils/get-steps';
 
@@ -21,8 +22,8 @@ const CreateApplicationSteps: FC<ICreateApplicationStepsProps> = ({
   return (
     <Steps
       classNames={{
-        root: styles['create-application-steps'],
-        item: styles['create-application-steps__item'],
+        root: cn(styles['create-application-steps']),
+        item: cn(styles['create-application-steps__item']),
       }}
       type='panel'
       current={current}

@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Tabs, type TabsProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import IncomingApplicationInformation from './incoming-application-information';
 import IncomingApplicationMap from './incoming-application-map';
@@ -36,12 +37,12 @@ const ApplicationBody: FC = () => {
   ];
 
   return (
-    <div className='tabs'>
+    <div className={cn('tabs')}>
       <Tabs
         classNames={{
-          root: 'tabs__root',
-          header: 'tabs__header',
-          item: 'tabs__item',
+          root: cn('tabs__root'),
+          header: cn('tabs__header'),
+          item: cn('tabs__item'),
         }}
         defaultActiveKey={TabKeys.FIRST_TAB}
         items={items}

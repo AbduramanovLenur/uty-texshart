@@ -1,5 +1,6 @@
 import { Button, Switch, type TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { TechnicalParameterFilterKeys } from '../../model/constants/technical-parameter-filter-keys';
 import type { ITechnicalParameter } from '../../model/types/technical-parameter';
@@ -88,7 +89,7 @@ export const useGetColumns = (filters: TTableFilterState<TTechnicalParameterFilt
       key: 'actions',
       width: 200,
       render: () => (
-        <Button className={styles['technical-parameters-table__edit']} type='link'>
+        <Button className={cn(styles['technical-parameters-table__edit'])} type='link'>
           {t('actions.edit')}
         </Button>
       ),

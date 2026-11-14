@@ -2,6 +2,7 @@ import type { TableProps } from 'antd';
 import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { FilterKeys } from '../model/constants/filter-keys';
 import type { TFilterKey } from '../model/types/filter';
@@ -25,7 +26,7 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       sorter: true,
       sortOrder: getSortOrder(filters, FilterKeys.APPLICATION_ID),
       render: (_, record) => (
-        <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.id)}>
+        <Link className={cn('table-trigger')} to={routes.SINGLE_APPLICATION(record.id)}>
           {record.id}
         </Link>
       ),
@@ -72,11 +73,11 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       key: FilterKeys.MTU,
       minWidth: 250,
       render: (_, record) => (
-        <div className='table-info'>
-          <div className='table-info-value'>
+        <div className={cn('table-info')}>
+          <div className={cn('table-info-value')}>
             {record.mtu}
           </div>
-          <div className='table-info-value'>
+          <div className={cn('table-info-value')}>
             {record.km}
           </div>
         </div>
@@ -140,11 +141,11 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
         />
       ),
       render: (_, record) => (
-        <div className='table-date'>
-          <div className='table-date-create'>
+        <div className={cn('table-date')}>
+          <div className={cn('table-date-create')}>
             {record.date}
           </div>
-          <div className='table-date-update'>
+          <div className={cn('table-date-update')}>
             <IconRetry />
             {record.updatedAt}
           </div>

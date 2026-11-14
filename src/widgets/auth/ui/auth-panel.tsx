@@ -1,6 +1,7 @@
 import { Divider, Typography } from 'antd';
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { LanguageSwitcher } from '@features/language-switcher';
 import { MyIdAuth, OneIdAuth } from '@features/authentication';
@@ -14,9 +15,9 @@ const AuthPanel: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles['auth-panel']}>
-      <div className={styles['auth-panel__top']}>
-        <div className='auth-panel__logo-project'>
+    <div className={cn(styles['auth-panel'])}>
+      <div className={cn(styles['auth-panel__top'])}>
+        <div className={cn('auth-panel__logo-project')}>
           <img
             src='/images/svg/logo-primary.svg'
             alt='logo'
@@ -27,27 +28,27 @@ const AuthPanel: FC = () => {
         </div>
         <LanguageSwitcher />
       </div>
-      <div className={styles['auth-panel__body']}>
-        <Title className={styles['auth-panel__title']} level={3}>
+      <div className={cn(styles['auth-panel__body'])}>
+        <Title className={cn(styles['auth-panel__title'])} level={3}>
           {t('authentication.authPanel.welcome')}
         </Title>
-        <Title className={styles['auth-panel__subtitle']} level={5}>
+        <Title className={cn(styles['auth-panel__subtitle'])} level={5}>
           {t('authentication.authPanel.signInPrompt')}
         </Title>
 
         <EImzo />
         <Divider
-          className={styles['auth-panel__divider']}
+          className={cn(styles['auth-panel__divider'])}
           titlePlacement='center'
         >
           {t('authentication.authPanel.or')}
         </Divider>
-        <div className={styles['auth-panel__services']}>
+        <div className={cn(styles['auth-panel__services'])}>
           <OneIdAuth />
           <MyIdAuth />
         </div>
       </div>
-      <div className={styles['auth-panel__copyright']}>
+      <div className={cn(styles['auth-panel__copyright'])}>
         {t('authentication.authPanel.copyright')}
       </div>
     </div>

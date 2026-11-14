@@ -46,7 +46,7 @@ const MtuAndCompanies: FC = () => {
     {
       key: MtuAndCompaniesTypes.PRIVATE_BRANCHES,
       label: t('mtuAndCompanies.tabs.privateBranches'),
-      children: <div className={styles['mtu-and-companies__test-page']}>Test page</div>,
+      children: <div className={cn(styles['mtu-and-companies__test-page'])}>Test page</div>,
     },
   ];
 

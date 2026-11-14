@@ -36,7 +36,7 @@ const Users: FC = () => {
             {t('actions.download')}
           </Button>
           <Button
-            className={styles['users__create']}
+            className={cn(styles['users__create'])}
             type='primary'
             icon={<IconPlus />}
             onClick={handleOpenCreateModal}

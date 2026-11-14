@@ -30,9 +30,9 @@ const ApplicationBody: FC = () => {
     <div className={cn(styles['application-body'], 'tabs')}>
       <Tabs
         classNames={{
-          root: 'tabs__root',
+          root: cn('tabs__root'),
           header: cn(styles['application-body__tabs'], 'tabs__header'),
-          item: 'tabs__item',
+          item: cn('tabs__item'),
         }}
         defaultActiveKey={TabKeys.FIRST_TAB}
         items={items}

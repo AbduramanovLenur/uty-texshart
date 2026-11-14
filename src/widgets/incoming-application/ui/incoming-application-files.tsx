@@ -9,11 +9,11 @@ import styles from './incoming-application-files.module.scss';
 
 const IncomingApplicationFiles: FC = () => {
   return (
-    <div className={styles['incoming-application-files']}>
-      <div className={styles['incoming-application-files__content']}>
+    <div className={cn(styles['incoming-application-files'])}>
+      <div className={cn(styles['incoming-application-files__content'])}>
         <ul className={cn(styles['incoming-application-files__list'], 'scrollbar')}>
           {previewFilesMock.map((file) => (
-            <li key={file.name} className={styles['incoming-application-files__item']}>
+            <li key={file.name} className={cn(styles['incoming-application-files__item'])}>
               <PreviewFile file={file} />
             </li>
           ))}

@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { Menu } from 'antd';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import type { Role, TMenuGroup } from '@shared/types';
 import { roles } from '@shared/config';
@@ -61,15 +62,15 @@ const SidebarNav: FC<IProps> = ({
   };
 
   return (
-    <nav className={styles['menu']}>
+    <nav className={cn(styles['menu'])}>
       {visibleGroups.map((group) => (
-        <div key={group.key} className={styles['menu__group']}>
-          {group.label && <span className={styles['menu__label']}>{group.label}</span>}
+        <div key={group.key} className={cn(styles['menu__group'])}>
+          {group.label && <span className={cn(styles['menu__label'])}>{group.label}</span>}
           <Menu
             classNames={{
-              root: styles['menu__list'],
-              item: styles['menu__item'],
-              itemContent: styles['menu__item-content'],
+              root: cn(styles['menu__list']),
+              item: cn(styles['menu__item']),
+              itemContent: cn(styles['menu__item-content']),
             }}
             items={group.items}
             selectedKeys={activeKey ? [String(activeKey)] : []}

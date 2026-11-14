@@ -2,6 +2,7 @@ import { useState, type FC } from 'react';
 import { Form, type FormProps } from 'antd';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
+import cn from 'classnames';
 
 import { StepList } from '../model/constants/step-list';
 import { FormFields } from '../model/constants/form-fields';
@@ -80,31 +81,31 @@ const CreateApplicationBody: FC = () => {
   };
 
   return (
-    <div className={styles['create-application-body']}>
+    <div className={cn(styles['create-application-body'])}>
       <CreateApplicationSteps
         current={step}
         onChange={onChangeStep}
       />
-      <div className={styles['create-application-body__content']}>
+      <div className={cn(styles['create-application-body__content'])}>
         <CreateApplicationTop
           onSaveDraft={handleSaveDraft}
         />
         <Form
           form={form}
-          className={styles['create-application-body__form']}
+          className={cn(styles['create-application-body__form'])}
           layout='vertical'
           preserve
           onFinish={handleFinish}
           onFinishFailed={handleFinishFailed}
         >
           <div
-            className={styles['create-application-body__step']}
+            className={cn(styles['create-application-body__step'])}
             hidden={step !== StepList.FORM}
           >
             <CreateApplicationForm />
           </div>
           <div
-            className={styles['create-application-body__step']}
+            className={cn(styles['create-application-body__step'])}
             hidden={step !== StepList.MAP}
           >
             <CreateApplicationMap isActive={step === StepList.MAP} />

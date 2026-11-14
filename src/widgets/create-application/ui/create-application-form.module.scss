@@ -89,7 +89,6 @@
       }
     }
   }
-  
   &__select {
     width: 100%;
     font-size: var(--ant-font-size-lg);
@@ -110,7 +109,6 @@
     line-height: 1.5;
     padding: 0 var(--ant-padding-sm);
     color: var(--dark-88);
-
     &::placeholder {
       color: var(--dark-45);
       font-size: var(--ant-font-size);
@@ -126,7 +124,6 @@
       line-height: 1.5;
       padding: var(--ant-padding-xs) var(--ant-padding-sm);
     }
-
     :global(.ant-input-data-count) {
       font-size: var(--ant-font-size-sm);
       color: var(--dark-45);
