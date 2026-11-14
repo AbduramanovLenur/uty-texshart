@@ -91,6 +91,7 @@ const ViewTechnicalSpecificationModal: FC = () => {
             <Button
               className={cn(styles['view-technical-specification-modal__download'])}
               type='primary'
+              size='large'
               icon={<IconDownload />}
               onClick={handleDownload}
             >
@@ -99,6 +100,7 @@ const ViewTechnicalSpecificationModal: FC = () => {
             <Button
               className={cn(styles['view-technical-specification-modal__print'])}
               type='default'
+              size='large'
               icon={<IconPrint />}
               onClick={handlePrint}
             >
@@ -108,6 +110,7 @@ const ViewTechnicalSpecificationModal: FC = () => {
           <Button
             className={cn(styles['view-technical-specification-modal__close'])}
             type='default'
+            size='large'
             onClick={handleClose}
           >
             {t('actions.close')}

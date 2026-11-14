@@ -67,6 +67,7 @@ const ViewInvoiceModal: FC = () => {
             <Button
               className={cn(styles['view-invoice-modal__button'])}
               type='default'
+              size='large'
               icon={<IconShare />}
               onClick={handleShare}
             >
@@ -75,6 +76,7 @@ const ViewInvoiceModal: FC = () => {
             <Button
               className={cn(styles['view-invoice-modal__button'])}
               type='default'
+              size='large'
               icon={<IconPrint />}
               onClick={handlePrint}
             >
@@ -84,6 +86,7 @@ const ViewInvoiceModal: FC = () => {
           <Button
             className={cn(styles['view-invoice-modal__button'])}
             type='default'
+            size='large'
             onClick={handleBackToMain}
           >
             {t('invoiceModal.backToMain')}

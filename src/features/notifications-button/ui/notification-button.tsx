@@ -20,7 +20,11 @@ const NotificationButton: FC = () => {
       arrow={false}
       placement='bottomRight'
     >
-      <Button className={cn(styles['notification-button'])} type='default'>
+      <Button
+        className={cn(styles['notification-button'])}
+        size='large'
+        type='default'
+      >
         <Badge className={cn(styles['notification-button__badge'])} count={'9'}>
           <IconBell />
         </Badge>

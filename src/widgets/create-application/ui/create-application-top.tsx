@@ -30,6 +30,7 @@ const CreateApplicationTop: FC<ICreateApplicationTopProps> = ({
         className={cn(styles['create-application-top__draft'])}
         type='default'
         icon={<IconFilePlus />}
+        size='large'
         onClick={onSaveDraft}
       >
         {t('createApplication.top.saveDraft')}

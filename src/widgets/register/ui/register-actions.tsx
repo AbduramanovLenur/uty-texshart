@@ -17,6 +17,7 @@ const RegisterActions: FC<IRegisterActionsProps> = ({ onBack }) => {
       <Button
         className={cn(styles['register-actions__button'])}
         type='default'
+        size='large'
         onClick={onBack}
       >
         {t('register.actions.back')}
@@ -24,6 +25,7 @@ const RegisterActions: FC<IRegisterActionsProps> = ({ onBack }) => {
       <Button
         className={cn(styles['register-actions__button'])}
         type='primary'
+        size='large'
         htmlType='submit'
       >
         {t('register.actions.continue')}

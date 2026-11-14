@@ -19,6 +19,7 @@ const PageHeader: FC<IProps> = ({ onClick, children }) => {
       <Button
         className={cn(styles['page-header__back'])}
         type='default'
+        size='large'
         onClick={onClick}
       >
         <IconLeftChevron />

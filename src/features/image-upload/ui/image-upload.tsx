@@ -172,6 +172,7 @@ const ImageUpload: FC<IProps> = ({
             className={cn(styles['image-upload__button'])}
             type='primary'
             htmlType='button'
+            size='large'
             icon={<IconPlusImage />}
             onClick={handleOpenFileDialog}
           >

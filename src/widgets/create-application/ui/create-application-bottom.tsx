@@ -41,6 +41,7 @@ const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
       <Button
         className={cn(styles['create-application-bottom__button-secondary'])}
         type='default'
+        size='large'
         onClick={onReset}
       >
         {currentResetText}
@@ -49,6 +50,7 @@ const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
         <Button
           className={cn(styles['create-application-bottom__button-secondary'])}
           type='default'
+          size='large'
           onClick={onBack}
         >
           {currentBackText}
@@ -59,6 +61,7 @@ const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
           className={cn(styles['create-application-bottom__button-primary'])}
           type='primary'
           loading={isLoading}
+          size='large'
           onClick={onSubmit}
         >
           {currentSubmitText}
@@ -68,6 +71,7 @@ const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
           className={cn(styles['create-application-bottom__button-primary'])}
           type='primary'
           loading={isLoading}
+          size='large'
           onClick={onNext}
         >
           {currentNextText}

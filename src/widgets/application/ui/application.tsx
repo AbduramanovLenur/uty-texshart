@@ -36,7 +36,7 @@ const Application: FC = () => {
           <PageHeader onClick={handleBack}>
             ARZ-31234123
           </PageHeader>
-          <Button className={cn(styles['application__btn'])} type='default' icon={<IconPen />}>
+          <Button className={cn(styles['application__btn'])} type='default' size='large' icon={<IconPen />}>
             {t('actions.editApplication')}
           </Button>
         </div>

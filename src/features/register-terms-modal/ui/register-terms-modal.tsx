@@ -46,6 +46,7 @@ const RegisterTermsModal: FC = () => {
           <Button
             className={cn(styles['register-terms-modal__close'])}
             type='default'
+            size='large'
             onClick={handleClose}
           >
             {t('actions.close')}
