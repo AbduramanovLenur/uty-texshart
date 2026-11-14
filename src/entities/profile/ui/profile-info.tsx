@@ -1,6 +1,7 @@
 import { type FC, type ReactNode, useEffect, useState } from 'react';
 import { Avatar, Button, Popover } from 'antd';
 import { MoreOutlined } from '@ant-design/icons';
+import cn from 'classnames';
 
 import styles from './profile-info.module.scss';
 
@@ -32,21 +33,21 @@ const ProfileInfo: FC<IProps> = ({ children }) => {
   };
 
   return (
-    <div className={styles['profile-info']}>
-      <div className={styles['profile-info__wrapper']}>
+    <div className={cn(styles['profile-info'])}>
+      <div className={cn(styles['profile-info__wrapper'])}>
         <Avatar
-          className={styles['profile-info__avatar']}
+          className={cn(styles['profile-info__avatar'])}
           src='https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png'
         />
 
-        <div className={styles['profile-info__name']}>
+        <div className={cn(styles['profile-info__name'])}>
           New World MCHJ
         </div>
       </div>
 
       <Popover
         classNames={{
-          root: styles['profile-info__popover'],
+          root: cn(styles['profile-info__popover']),
         }}
         content={
           <div onClick={handleContentClick}>
@@ -61,10 +62,10 @@ const ProfileInfo: FC<IProps> = ({ children }) => {
       >
         <Button
           type='text'
-          className={styles['profile-info__button']}
+          className={cn(styles['profile-info__button'])}
         >
           <MoreOutlined
-            className={styles['profile-info__action']}
+            className={cn(styles['profile-info__action'])}
           />
         </Button>
       </Popover>

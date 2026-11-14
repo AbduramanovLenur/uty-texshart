@@ -1,5 +1,6 @@
 import type { ChangeEvent, FC } from 'react';
 import { Input, Space } from 'antd';
+import cn from 'classnames';
 
 import { PHONE_COUNTRY_CODE } from '../model/constants/register';
 import { formatUzPhone } from '../model/lib/utils/phone';
@@ -24,7 +25,7 @@ const PhoneInput: FC<IPhoneInputProps> = ({
   };
 
   return (
-    <Space.Compact className={className} size='large' block>
+    <Space.Compact className={cn(className)} size='large' block>
       <Space.Addon>{PHONE_COUNTRY_CODE}</Space.Addon>
       <Input
         id={id}

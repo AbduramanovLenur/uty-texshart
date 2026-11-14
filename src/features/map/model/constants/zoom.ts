@@ -1,3 +1,3 @@
-export const stationClickZoom = 14;
-export const trackClickZoom = 13;
-export const focusPointZoom = 14;
+export const STATION_CLICK_ZOOM = 14;
+export const TRACK_CLICK_ZOOM = 13;
+export const FOCUS_POINT_ZOOM = 14;

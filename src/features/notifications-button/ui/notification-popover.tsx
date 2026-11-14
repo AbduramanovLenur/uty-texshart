@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import { Typography } from 'antd';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { NotificationCard } from '@/entities/notification';
 import { routes } from '@shared/config';
@@ -32,28 +33,28 @@ const NotificationPopover: FC = () => {
   const newCount = notifications.length;
 
   return (
-    <div className={styles['notification-popover']}>
-      <div className={styles['notification-popover__header']}>
-        <Title className={styles['notification-popover__title']} level={5}>
+    <div className={cn(styles['notification-popover'])}>
+      <div className={cn(styles['notification-popover__header'])}>
+        <Title className={cn(styles['notification-popover__title'])} level={5}>
           {t('notifications.popover.title')}
         </Title>
-        <div className={styles['notification-popover__count-records']}>
+        <div className={cn(styles['notification-popover__count-records'])}>
           {t('notifications.popover.newCount', { count: newCount })}
         </div>
       </div>
-      <div className={styles['notification-popover__body']}>
-        <ul className={styles['notification-popover__list']}>
+      <div className={cn(styles['notification-popover__body'])}>
+        <ul className={cn(styles['notification-popover__list'])}>
           {notifications.map((item) => (
-            <li className={styles['notification-popover__item']} key={item.id}>
+            <li className={cn(styles['notification-popover__item'])} key={item.id}>
               <NotificationCard item={item} />
             </li>
           ))}
         </ul>
       </div>
-      <div className={styles['notification-popover__bottom']}>
+      <div className={cn(styles['notification-popover__bottom'])}>
         <Link
           to={routes.NOTIFICATIONS}
-          className={styles['notification-popover__link']}
+          className={cn(styles['notification-popover__link'])}
         >
           {t('notifications.popover.viewAll')}
         </Link>

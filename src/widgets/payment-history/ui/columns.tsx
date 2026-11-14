@@ -2,6 +2,7 @@ import type { TableProps } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import type { TFilterKey } from '../model/types/filter';
 import { FilterKeys } from '../model/constants/filter-keys';
@@ -86,7 +87,7 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
         <SearchOutlined style={{ color: filtered ? 'var(--ant-blue)' : undefined }} />
       ),
       render: (_, record) => (
-        <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.idText)}>
+        <Link className={cn('table-trigger')} to={routes.SINGLE_APPLICATION(record.idText)}>
           {record.idText}
         </Link>
       ),

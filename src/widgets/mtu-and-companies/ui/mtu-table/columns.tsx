@@ -1,6 +1,7 @@
 import { Button, Switch, type TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
+import cn from 'classnames';
 
 import { MtuFilterKeys } from '../../model/constants/mtu-filter-keys';
 import type { IMtu } from '../../model/types/mtu';
@@ -56,7 +57,7 @@ export const useGetColumns = (filters: TTableFilterState<TMtuFilterKey>): TableP
       width: 200,
       render: (_, record) => (
         <Button
-          className={styles['mtu-table__edit']}
+          className={cn(styles['mtu-table__edit'])}
           type='link'
           onClick={() => handleEdit(record.id)}
         >

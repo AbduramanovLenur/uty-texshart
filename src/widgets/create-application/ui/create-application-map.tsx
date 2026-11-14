@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Form } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { Map } from '@features/map';
 
@@ -22,7 +23,7 @@ const CreateApplicationMap: FC<ICreateApplicationMapProps> = ({
 
   return (
     <Item
-      className={styles['create-application-map']}
+      className={cn(styles['create-application-map'])}
       name={FormFields.COORDINATES}
       rules={
         isActive

@@ -39,12 +39,12 @@ const IncomingApplicationsTable: FC = () => {
       <div className={cn('table-wrapper-body', 'scrollbar')}>
         <Table<IIncomingApplication>
           classNames={{
-            root: 'table',
+            root: cn('table'),
             header: {
-              cell: 'table-header-cell',
+              cell: cn('table-header-cell'),
             },
             body: {
-              row: 'table-body-row',
+              row: cn('table-body-row'),
             },
           }}
           dataSource={incomingApplicationsMock}

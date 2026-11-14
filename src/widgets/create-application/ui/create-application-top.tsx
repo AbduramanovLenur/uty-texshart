@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Typography, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { IconFilePlus } from '@shared/assets';
 
@@ -21,14 +22,15 @@ const CreateApplicationTop: FC<ICreateApplicationTopProps> = ({
   const displayTitle = title ?? t('createApplication.top.title');
 
   return (
-    <div className={styles['create-application-top']}>
-      <Title className={styles['create-application-top__label']} level={5}>
+    <div className={cn(styles['create-application-top'])}>
+      <Title className={cn(styles['create-application-top__label'])} level={5}>
         {displayTitle}
       </Title>
       <Button
-        className={styles['create-application-top__draft']}
+        className={cn(styles['create-application-top__draft'])}
         type='default'
         icon={<IconFilePlus />}
+        size='large'
         onClick={onSaveDraft}
       >
         {t('createApplication.top.saveDraft')}

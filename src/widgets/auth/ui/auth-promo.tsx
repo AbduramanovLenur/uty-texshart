@@ -1,6 +1,7 @@
 import { Typography } from 'antd';
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import styles from './auth-promo.module.scss';
 
@@ -10,8 +11,8 @@ const AuthPromo: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles['auth-promo']}>
-      <div className={styles['auth-promo__logo']}>
+    <div className={cn(styles['auth-promo'])}>
+      <div className={cn(styles['auth-promo__logo'])}>
         <img
           src='/images/svg/logo.svg'
           alt='logo'
@@ -20,8 +21,8 @@ const AuthPromo: FC = () => {
           height={74}
         />
       </div>
-      <div className={styles['auth-promo__wrapper']}>
-        <div className={styles['auth-promo__decor']}>
+      <div className={cn(styles['auth-promo__wrapper'])}>
+        <div className={cn(styles['auth-promo__decor'])}>
           <img
             src='/images/pictures/train.png'
             alt='logo'
@@ -30,10 +31,10 @@ const AuthPromo: FC = () => {
             height={462}
           />
         </div>
-        <Title level={3} className={styles['auth-promo__slogan']}>
+        <Title level={3} className={cn(styles['auth-promo__slogan'])}>
           {t('authentication.authPromo.slogan')}
         </Title>
-        <div className={styles['auth-promo__name']}>
+        <div className={cn(styles['auth-promo__name'])}>
           {t('authentication.authPromo.name')}
         </div>
       </div>

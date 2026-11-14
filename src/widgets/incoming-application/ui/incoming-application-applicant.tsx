@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import cn from 'classnames';
 
 import { userDocuments } from '../model/mock';
 
@@ -8,10 +9,10 @@ import styles from './incoming-application-applicant.module.scss';
 
 const IncomingApplicationApplicant: FC = () => {
   return (
-    <div className={styles['incoming-application-applicant']}>
-      <UserInfo className={styles['incoming-application-applicant__content']} />
+    <div className={cn(styles['incoming-application-applicant'])}>
+      <UserInfo className={cn(styles['incoming-application-applicant__content'])} />
       <UserDocuments
-        className={styles['incoming-application-applicant__content']}
+        className={cn(styles['incoming-application-applicant__content'])}
         documents={userDocuments}
       />
     </div>

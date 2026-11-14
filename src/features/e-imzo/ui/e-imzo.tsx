@@ -24,9 +24,9 @@ const EImzo: FC<IEImzoProps> = ({ className, value, onChange }) => {
       classNames={{
         root: cn(styles['e-imzo__select'], className),
         popup: {
-          root: styles['e-imzo__popup'],
-          list: styles['e-imzo__popup-list'],
-          listItem: styles['e-imzo__popup-item'],
+          root: cn(styles['e-imzo__popup']),
+          list: cn(styles['e-imzo__popup-list']),
+          listItem: cn(styles['e-imzo__popup-item']),
         },
       }}
       value={value}

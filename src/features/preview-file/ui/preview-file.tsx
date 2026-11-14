@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Button } from 'antd';
+import cn from 'classnames';
 
 import type { IPreviewFile } from '@/entities/application';
 import { IconDownload, IconFile } from '@shared/assets';
@@ -20,22 +21,22 @@ const PreviewFile: FC<IProps> = ({ file }) => {
   };
 
   return (
-    <div className={styles['preview-file']}>
-      <div className={styles['preview-file__content']}>
-        <div className={styles['preview-file__icon']}>
+    <div className={cn(styles['preview-file'])}>
+      <div className={cn(styles['preview-file__content'])}>
+        <div className={cn(styles['preview-file__icon'])}>
           <IconFile />
         </div>
-        <div className={styles['preview-file__wrapper']}>
-          <div className={styles['preview-file__name']}>
+        <div className={cn(styles['preview-file__wrapper'])}>
+          <div className={cn(styles['preview-file__name'])}>
             {file.name}
           </div>
-          <div className={styles['preview-file__info']}>
+          <div className={cn(styles['preview-file__info'])}>
             {file.extensionFile} ({file.size})
           </div>
         </div>
       </div>
       <Button
-        className={styles['preview-file__button']}
+        className={cn(styles['preview-file__button'])}
         icon={<IconDownload />}
         onClick={() => handleDownload(file.url, file.name)}
       >

@@ -29,36 +29,36 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
 
   return (
     <div className={cn(styles['user-info'], className)}>
-      <div className={styles['user-info__content']}>
-        <div className={styles['user-info__top']}>
-          <div className={styles['user-info__details']}>
-            <div className={styles['user-info__item']}>
-              <div className={styles['user-info__label']}>
+      <div className={cn(styles['user-info__content'])}>
+        <div className={cn(styles['user-info__top'])}>
+          <div className={cn(styles['user-info__details'])}>
+            <div className={cn(styles['user-info__item'])}>
+              <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.name')}
               </div>
-              <div className={styles['user-info__value']}>{data.name}</div>
+              <div className={cn(styles['user-info__value'])}>{data.name}</div>
             </div>
-            <div className={styles['user-info__item']}>
-              <div className={styles['user-info__label']}>
+            <div className={cn(styles['user-info__item'])}>
+              <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.inn')}
               </div>
-              <div className={styles['user-info__value']}>{data.inn}</div>
+              <div className={cn(styles['user-info__value'])}>{data.inn}</div>
             </div>
-            <div className={styles['user-info__item']}>
-              <div className={styles['user-info__label']}>
+            <div className={cn(styles['user-info__item'])}>
+              <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.director')}
               </div>
-              <div className={styles['user-info__value']}>{data.director}</div>
+              <div className={cn(styles['user-info__value'])}>{data.director}</div>
             </div>
-            <div className={styles['user-info__item']}>
-              <div className={styles['user-info__label']}>
+            <div className={cn(styles['user-info__item'])}>
+              <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.phone')}
               </div>
-              <div className={styles['user-info__value']}>{data.phone}</div>
+              <div className={cn(styles['user-info__value'])}>{data.phone}</div>
             </div>
           </div>
           {data.avatar && (
-            <div className={styles['user-info__avatar']}>
+            <div className={cn(styles['user-info__avatar'])}>
               <img
                 src={'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwwAgrLeCJI0TlSJUlvdwYONouSV84XprSmHGB5cUwvLuawZEtQxmIal4&s=10'}
                 alt={data.name}
@@ -70,20 +70,20 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
           )}
         </div>
 
-        <div className={styles['user-info__item']}>
-          <div className={styles['user-info__label']}>
+        <div className={cn(styles['user-info__item'])}>
+          <div className={cn(styles['user-info__label'])}>
             {t('userInfo.address')}
           </div>
-          <div className={styles['user-info__value']}>{data.address}</div>
+          <div className={cn(styles['user-info__value'])}>{data.address}</div>
         </div>
 
         {data.idCard && (
-          <div className={styles['user-info__item']}>
-            <div className={styles['user-info__label']}>
+          <div className={cn(styles['user-info__item'])}>
+            <div className={cn(styles['user-info__label'])}>
               {t('userInfo.idCard')}
             </div>
             <Button
-              className={styles['user-info__file-btn']}
+              className={cn(styles['user-info__file-btn'])}
               icon={<IconArrowDownBracket />}
               onClick={() => handleDownload(data.idCard!.url, data.idCard!.name)}
             >
@@ -93,12 +93,12 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
         )}
 
         {data.license && (
-          <div className={styles['user-info__item']}>
-            <div className={styles['user-info__label']}>
+          <div className={cn(styles['user-info__item'])}>
+            <div className={cn(styles['user-info__label'])}>
               {t('userInfo.license')}
             </div>
             <Button
-              className={styles['user-info__file-btn']}
+              className={cn(styles['user-info__file-btn'])}
               icon={<IconArrowDownBracket />}
               onClick={() => handleDownload(data.license!.url, data.license!.name)}
             >

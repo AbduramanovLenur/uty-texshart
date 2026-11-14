@@ -1,5 +1,6 @@
 import { Button, Switch, type TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { CrossingMethodFilterKeys } from '../../model/constants/crossing-method-filter-keys';
 import type { ICrossingMethod } from '../../model/types/crossing-method';
@@ -66,7 +67,7 @@ export const useGetColumns = (filters: TTableFilterState<TCrossingMethodFilterKe
       key: 'actions',
       width: 200,
       render: () => (
-        <Button className={styles['crossing-methods-table__edit']} type='link'>
+        <Button className={cn(styles['crossing-methods-table__edit'])} type='link'>
           {t('actions.edit')}
         </Button>
       ),

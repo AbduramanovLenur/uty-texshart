@@ -8,7 +8,6 @@
         padding: 0;
         margin-bottom: var(--ant-margin-xxs);
       }
-
       .ant-form-item-label > label {
         color: var(--dark-88);
         font-size: var(--ant-font-size);
@@ -16,7 +15,6 @@
         line-height: 1.5;
         height: auto;
       }
-
       .ant-form-item-control-input-content {
         width: 100%;
       }
@@ -28,21 +26,17 @@
       margin-bottom: var(--ant-margin-xs);
     }
   }
-
   &__row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--ant-margin);
   }
-
   &__select {
     width: 100%;
-
     :global(.ant-select-placeholder) {
       color: var(--dark-88);
     }
   }
-
   &__checkbox {
     &-wrapper {
       margin-bottom: var(--ant-margin);
@@ -55,7 +49,6 @@
       }
     }
   }
-  
   &__checkbox {
     font-size: var(--ant-font-size);
     line-height: 1.5;

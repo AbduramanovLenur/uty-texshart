@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Button } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import styles from './create-application-bottom.module.scss';
 
@@ -36,18 +37,20 @@ const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
   const currentBackText = backText ?? t('createApplication.bottom.back');
 
   return (
-    <div className={styles['create-application-bottom']}>
+    <div className={cn(styles['create-application-bottom'])}>
       <Button
-        className={styles['create-application-bottom__button-secondary']}
+        className={cn(styles['create-application-bottom__button-secondary'])}
         type='default'
+        size='large'
         onClick={onReset}
       >
         {currentResetText}
       </Button>
       {isLastStep && (
         <Button
-          className={styles['create-application-bottom__button-secondary']}
+          className={cn(styles['create-application-bottom__button-secondary'])}
           type='default'
+          size='large'
           onClick={onBack}
         >
           {currentBackText}
@@ -55,18 +58,20 @@ const CreateApplicationBottom: FC<ICreateApplicationBottomProps> = ({
       )}
       {isLastStep ? (
         <Button
-          className={styles['create-application-bottom__button-primary']}
+          className={cn(styles['create-application-bottom__button-primary'])}
           type='primary'
           loading={isLoading}
+          size='large'
           onClick={onSubmit}
         >
           {currentSubmitText}
         </Button>
       ) : (
         <Button
-          className={styles['create-application-bottom__button-primary']}
+          className={cn(styles['create-application-bottom__button-primary'])}
           type='primary'
           loading={isLoading}
+          size='large'
           onClick={onNext}
         >
           {currentNextText}

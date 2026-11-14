@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Tag } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { applicationStatusTagConfig } from '../model/config/application-status';
 
@@ -16,12 +17,12 @@ export const ApplicationStatusTag: FC<IProps> = ({ status, className }) => {
   const config = applicationStatusTagConfig[status];
 
   if (!config) {
-    return <Tag className={className}>{status}</Tag>;
+    return <Tag className={cn(className)}>{status}</Tag>;
   }
 
   return (
     <Tag
-      className={className}
+      className={cn(className)}
       style={{
         backgroundColor: config.bg,
         color: config.color,

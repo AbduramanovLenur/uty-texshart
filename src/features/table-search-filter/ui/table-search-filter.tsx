@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { Button, Input } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
+import cn from 'classnames';
 
 import type { TFilterDropdownControls } from '@shared/types';
 
@@ -33,15 +34,15 @@ const TableSearchFilter: FC<IProps> = ({
   };
 
   return (
-    <div className={styles['table-search-filter']}>
+    <div className={cn(styles['table-search-filter'])}>
       <Input
-        className={styles['table-search-filter__input']}
+        className={cn(styles['table-search-filter__input'])}
         placeholder={placeholder}
         value={search}
         onChange={(event) => handleChange(event.target.value)}
         onPressEnter={() => confirm()}
       />
-      <div className={styles['table-search-filter__buttons']}>
+      <div className={cn(styles['table-search-filter__buttons'])}>
         <Button onClick={handleClear} size='small'>
           {clearLabel}
         </Button>

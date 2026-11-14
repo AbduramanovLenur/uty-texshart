@@ -28,8 +28,8 @@ const CreateApplication: FC = () => {
       <div className={cn(styles['notifications__inner'], 'section-inner')}>
         <Breadcrumb
           classNames={{
-            root: 'breadcrumbs',
-            item: 'breadcrumbs__item',
+            root: cn('breadcrumbs'),
+            item: cn('breadcrumbs__item'),
           }}
           items={breadcrumbs}
         />

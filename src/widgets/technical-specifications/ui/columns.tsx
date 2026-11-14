@@ -2,6 +2,7 @@ import type { TableProps } from 'antd';
 import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { FilterKeys } from '../model/constants/filter-keys';
 import type { TFilterKey } from '../model/types/filter';
@@ -45,7 +46,7 @@ export const useGetColumns = (
       ),
       render: (_, record) => (
         <button
-          className='table-trigger'
+          className={cn('table-trigger')}
           type='button'
           onClick={() => onTechnicalSpecificationClick?.(record)}
         >
@@ -75,7 +76,7 @@ export const useGetColumns = (
         <SearchOutlined style={{ color: filtered ? 'var(--ant-blue)' : undefined }} />
       ),
       render: (_, record) => (
-        <Link className='table-trigger' to={routes.SINGLE_APPLICATION(record.applicationId)}>
+        <Link className={cn('table-trigger')} to={routes.SINGLE_APPLICATION(record.applicationId)}>
           {record.applicationId}
         </Link>
       ),
@@ -101,7 +102,7 @@ export const useGetColumns = (
       ),
       render: (_, record) => (
         <button
-          className='table-trigger'
+          className={cn('table-trigger')}
           type='button'
           onClick={() => onApplicantClick?.(record)}
         >

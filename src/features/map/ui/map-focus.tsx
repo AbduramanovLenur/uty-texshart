@@ -1,7 +1,7 @@
 import { useEffect, useRef, type FC } from 'react';
 import { useMap } from 'react-leaflet';
 
-import { focusPointZoom } from '../model/constants/zoom';
+import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
 
 interface IProps {
   coords: [number, number] | null;
@@ -33,7 +33,7 @@ const MapFocus: FC<IProps> = ({ coords }) => {
 
     if (!isSame) {
       prevCoordsRef.current = coords;
-      const targetZoom = Math.max(map.getZoom(), focusPointZoom);
+      const targetZoom = Math.max(map.getZoom(), FOCUS_POINT_ZOOM);
       map.flyTo(coords, targetZoom, { duration: 1 });
     }
   }, [coords, map]);

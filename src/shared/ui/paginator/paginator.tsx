@@ -1,5 +1,6 @@
 import { Pagination } from 'antd';
 import type { FC } from 'react';
+import cn from 'classnames';
 
 import { itemRender } from './item-render';
 
@@ -26,7 +27,7 @@ const Paginator: FC<IProps> = ({
 }) => {
   return (
     <Pagination
-      className={styles['paginator']}
+      className={cn(styles['paginator'])}
       current={page}
       total={total}
       pageSize={limit}

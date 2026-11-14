@@ -2,8 +2,7 @@ import type { Statuses } from '../constants/stutuses';
 
 import type { TApprovalStatus } from './approval-status';
 
-export type TApplicationTimelineStatus =
-  (typeof Statuses)[keyof typeof Statuses];
+export type TApplicationTimelineStatus = (typeof Statuses)[keyof typeof Statuses];
 
 export interface ITimelineApproval {
   id?: string | number;

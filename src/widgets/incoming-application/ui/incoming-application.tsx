@@ -26,8 +26,8 @@ const IncomingApplication: FC = () => {
       <div className={cn(styles['incoming-application__inner'], 'section-inner')}>
         <Breadcrumb
           classNames={{
-            root: 'breadcrumbs',
-            item: 'breadcrumbs__item',
+            root: cn('breadcrumbs'),
+            item: cn('breadcrumbs__item'),
           }}
           items={breadcrumbs}
         />

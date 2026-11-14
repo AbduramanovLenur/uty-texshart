@@ -147,7 +147,6 @@ const ImageUpload: FC<IProps> = ({
         style={{ display: 'none' }}
         onChange={handleInputChange}
       />
-
       {fileList.length === 0 ? (
         <>
           <div
@@ -159,21 +158,21 @@ const ImageUpload: FC<IProps> = ({
             onDrop={handleDrop}
             onClick={handleOpenFileDialog}
           >
-            <div className={styles['image-upload__icon']}>
+            <div className={cn(styles['image-upload__icon'])}>
               <IconUpload />
             </div>
-            <div className={styles['image-upload__title']}>
+            <div className={cn(styles['image-upload__title'])}>
               {t('imageUpload.dropzoneTitle')}
             </div>
-            <div className={styles['image-upload__subtitle']}>
+            <div className={cn(styles['image-upload__subtitle'])}>
               {t('imageUpload.dropzoneSubtitle')}
             </div>
           </div>
-
           <Button
-            className={styles['image-upload__button']}
+            className={cn(styles['image-upload__button'])}
             type='primary'
             htmlType='button'
+            size='large'
             icon={<IconPlusImage />}
             onClick={handleOpenFileDialog}
           >
@@ -181,7 +180,7 @@ const ImageUpload: FC<IProps> = ({
           </Button>
         </>
       ) : (
-        <div className={styles['image-upload__list']}>
+        <div className={cn(styles['image-upload__list'])}>
           {fileList.map((file) => {
             const isUploading = file.status === UploadStatus.UPLOADING;
             const isError = file.status === UploadStatus.ERROR;
@@ -194,27 +193,26 @@ const ImageUpload: FC<IProps> = ({
                 })}
               >
                 <img
+                  className={cn(styles['image-upload__thumb'])}
                   src={file.thumbUrl || file.url}
                   alt={file.name}
-                  className={styles['image-upload__thumb']}
+                  width={68}
+                  height={68}
                 />
-
                 {isUploading && (
-                  <div className={styles['image-upload__overlay']}>
+                  <div className={cn(styles['image-upload__overlay'])}>
                     <CircleProgress percent={file.percent ?? 0} />
                   </div>
                 )}
-
                 {isError && (
-                  <div className={styles['image-upload__overlay-error']}>
+                  <div className={cn(styles['image-upload__overlay-error'])}>
                     <span>Server...</span>
                   </div>
                 )}
-
                 {!isUploading && (
                   <button
                     type='button'
-                    className={styles['image-upload__remove']}
+                    className={cn(styles['image-upload__remove'])}
                     onClick={(e) => {
                       e.stopPropagation();
                       handleRemove(file);
@@ -227,10 +225,9 @@ const ImageUpload: FC<IProps> = ({
               </div>
             );
           })}
-
           <button
             type='button'
-            className={styles['image-upload__add']}
+            className={cn(styles['image-upload__add'])}
             onClick={handleOpenFileDialog}
             title={t('imageUpload.add')}
           >

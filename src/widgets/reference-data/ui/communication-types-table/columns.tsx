@@ -1,5 +1,6 @@
 import { Button, Switch, type TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { CommunicationTypeFilterKeys } from '../../model/constants/communication-type-filter-keys';
 import type { ICommunicationType } from '../../model/types/communication-type';
@@ -44,7 +45,7 @@ export const useGetColumns = (filters: TTableFilterState<TCommunicationTypeFilte
       key: 'actions',
       width: 200,
       render: () => (
-        <Button className={styles['communication-types-table__edit']} type='link'>
+        <Button className={cn(styles['communication-types-table__edit'])} type='link'>
           {t('actions.edit')}
         </Button>
       ),

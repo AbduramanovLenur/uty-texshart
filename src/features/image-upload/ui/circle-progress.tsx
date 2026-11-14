@@ -1,4 +1,5 @@
 import type { FC } from 'react';
+import cn from 'classnames';
 
 import styles from './circle-progress.module.scss';
 
@@ -15,7 +16,7 @@ const CircleProgress: FC<IProps> = ({ percent }) => {
   const offset = circumference - (Math.min(Math.max(percent, 0), 100) / 100) * circumference;
 
   return (
-    <div className={styles['circle-progress__wrap']}>
+    <div className={cn(styles['circle-progress__wrap'])}>
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
         <circle
           cx={size / 2}
@@ -39,7 +40,7 @@ const CircleProgress: FC<IProps> = ({ percent }) => {
           style={{ transition: 'stroke-dashoffset 0.25s ease' }}
         />
       </svg>
-      <span className={styles['circle-progress__text']}>{percent}%</span>
+      <span className={cn(styles['circle-progress__text'])}>{percent}%</span>
     </div>
   );
 };

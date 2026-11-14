@@ -6,12 +6,10 @@
   overflow-x: hidden;
   overflow-y: auto;
   overscroll-behavior: contain;
-
   &__group {
     display: flex;
     flex-direction: column;
   }
-
   &__label {
     display: block;
     font-size: var(--ant-font-size-sm);
@@ -21,7 +19,6 @@
     text-transform: uppercase;
     color: var(--dark-88);
   }
-
   &__list {
     display: flex;
     flex-direction: column;

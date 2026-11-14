@@ -14,23 +14,23 @@ interface IProps {
 const ApplicationPreview: FC<IProps> = ({ item }) => {
   return (
     <div className={cn(styles['application-preview'], { [styles['is-active']]: item?.active })}>
-      <div className={styles['application-preview__content']}>
-        <div className={styles['application-preview__image']}>
+      <div className={cn(styles['application-preview__content'])}>
+        <div className={cn(styles['application-preview__image'])}>
           <img src={item.icon} alt={item.title} loading='lazy' width={56} height={56} />
         </div>
-        <div className={styles['application-preview__information']}>
-          <div className={styles['application-preview__number']}>
+        <div className={cn(styles['application-preview__information'])}>
+          <div className={cn(styles['application-preview__number'])}>
             {item.code}
           </div>
-          <div className={styles['application-preview__label']}>
+          <div className={cn(styles['application-preview__label'])}>
             {item.title}
           </div>
-          <div className={styles['application-preview__sublabel']}>
+          <div className={cn(styles['application-preview__sublabel'])}>
             {item.subtitle}
           </div>
         </div>
       </div>
-      <button className={styles['application-preview__button']} type='button'>
+      <button className={cn(styles['application-preview__button'])} type='button'>
         <IconPrimaryRightArrow />
       </button>
     </div>

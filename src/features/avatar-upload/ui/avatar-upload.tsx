@@ -155,43 +155,45 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
         tabIndex={!hasImage ? 0 : undefined}
         aria-label={!hasImage ? t('profile.upload', 'Yuklash') : undefined}
       >
-        <div className={styles['avatar-upload__inner']}>
+        <div className={cn(styles['avatar-upload__inner'])}>
           {hasImage && currentImage ? (
             <>
               <img
                 src={currentImage}
                 alt='Profile'
-                className={styles['avatar-upload__image']}
+                className={cn(styles['avatar-upload__image'])}
+                height={84}
+                width={84}
               />
-              <div className={styles['avatar-upload__overlay']}>
+              <div className={cn(styles['avatar-upload__overlay'])}>
                 <button
                   type='button'
-                  className={styles['avatar-upload__action-btn']}
+                  className={cn(styles['avatar-upload__action-btn'])}
                   onClick={handlePreview}
                   title={t('actions.view', "Ko'rish")}
                   aria-label={t('actions.view', "Ko'rish")}
                 >
-                  <EyeOutlined className={styles['avatar-upload__action-icon']} />
+                  <EyeOutlined className={cn(styles['avatar-upload__action-icon'])} />
                 </button>
                 <button
                   type='button'
-                  className={styles['avatar-upload__action-btn']}
+                  className={cn(styles['avatar-upload__action-btn'])}
                   onClick={handleDelete}
                   title={t('actions.delete', "O'chirish")}
                   aria-label={t('actions.delete', "O'chirish")}
                 >
-                  <DeleteOutlined className={styles['avatar-upload__action-icon']} />
+                  <DeleteOutlined className={cn(styles['avatar-upload__action-icon'])} />
                 </button>
               </div>
             </>
           ) : (
             <>
-              <div className={styles['avatar-upload__initials']}>
+              <div className={cn(styles['avatar-upload__initials'])}>
                 {initials}
               </div>
-              <div className={styles['avatar-upload__hover-content']}>
-                <span className={styles['avatar-upload__plus']}>+</span>
-                <span className={styles['avatar-upload__text']}>
+              <div className={cn(styles['avatar-upload__hover-content'])}>
+                <span className={cn(styles['avatar-upload__plus'])}>+</span>
+                <span className={cn(styles['avatar-upload__text'])}>
                   {t('profile.upload', 'Yuklash')}
                 </span>
               </div>
@@ -209,13 +211,15 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
       </div>
 
       {hasImage && currentImage && (
-        <div className={styles['avatar-upload__preview']}>
+        <div className={cn(styles['avatar-upload__preview'])}>
           <Image
             src={currentImage}
             preview={{
               visible: isPreviewOpen,
               onVisibleChange: setIsPreviewOpen,
             }}
+            height={84}
+            width={84}
           />
         </div>
       )}

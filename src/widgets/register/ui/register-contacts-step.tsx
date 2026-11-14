@@ -2,6 +2,7 @@ import type { FC, MouseEvent } from 'react';
 import { Checkbox, Form, Input } from 'antd';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
 import { validateAgreement, validatePhone } from '../model/lib/helpers/validators';
@@ -33,8 +34,8 @@ const RegisterContactsStep: FC<IRegisterContactsStepProps> = ({
   };
 
   return (
-    <div className={styles['register-contacts-step']}>
-      <div className={styles['register-contacts-step__wrapper']}>
+    <div className={cn(styles['register-contacts-step'])}>
+      <div className={cn(styles['register-contacts-step__wrapper'])}>
         <Item
           label={t('register.contacts.phoneLabel')}
           name={FormFields.PHONE}
@@ -74,7 +75,7 @@ const RegisterContactsStep: FC<IRegisterContactsStepProps> = ({
       </div>
 
       <Item
-        className={styles['register-contacts-step__agreement-item']}
+        className={cn(styles['register-contacts-step__agreement-item'])}
         name={FormFields.AGREED}
         valuePropName='checked'
         rules={
@@ -87,9 +88,9 @@ const RegisterContactsStep: FC<IRegisterContactsStepProps> = ({
             : []
         }
       >
-        <Checkbox className={styles['register-contacts-step__agreement-checkbox']}>
+        <Checkbox className={cn(styles['register-contacts-step__agreement-checkbox'])}>
           <button
-            className={styles['register-contacts-step__terms-link']}
+            className={cn(styles['register-contacts-step__terms-link'])}
             type='button'
             onClick={handleTermsClick}
           >

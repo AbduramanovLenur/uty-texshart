@@ -259,7 +259,8 @@
     "more": "Подробнее",
     "print": "Печать",
     "share": "Поделиться",
-    "edit": "Редактировать"
+    "edit": "Редактировать",
+    "editApplication": "Изменить заявку"
   },
   "headers": {
     "applicationId": "ID заявки",

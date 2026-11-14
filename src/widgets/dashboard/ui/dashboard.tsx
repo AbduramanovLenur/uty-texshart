@@ -15,8 +15,8 @@ const Dashboard: FC = () => {
 
   return (
     <section className={cn(styles['dashboard'], 'section')}>
-      <div className={styles['dashboard__inner']}>
-        <Title className={styles['dashboard__title']} level={3}>
+      <div className={cn(styles['dashboard__inner'])}>
+        <Title className={cn(styles['dashboard__title'])} level={3}>
           {t('dashboard.title')}
         </Title>
         <DashboardStatistics />

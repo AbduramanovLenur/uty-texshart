@@ -1,6 +1,7 @@
 import type { TableProps } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
+import cn from 'classnames';
 
 import { FilterKeys } from '../model/constants/filter-keys';
 import type { TFilterKey } from '../model/types/filter';
@@ -21,7 +22,7 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       sorter: true,
       sortOrder: getSortOrder(filters, FilterKeys.USER),
       render: (_, record) => (
-        <button type='button' className='table-trigger'>
+        <button type='button' className={cn('table-trigger')}>
           {record.name}
         </button>
       ),

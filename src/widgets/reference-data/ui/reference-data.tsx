@@ -26,7 +26,7 @@ const ReferenceData: FC = () => {
   const [activeTab, setActiveTab] = useState<TReferenceDataType>(ReferenceDataTypes.COMMUNICATION_TYPES);
 
   const handleOpenCreateModal = () => {
-    dispatch(openReferenceDataModal({ referenceType: activeTab }));
+    dispatch(openReferenceDataModal({ type: activeTab }));
   };
 
   const handleTabChange = (key: string) => {

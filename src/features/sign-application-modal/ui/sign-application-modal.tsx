@@ -2,6 +2,7 @@ import type { FC, ReactNode } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Modal } from 'antd';
+import cn from 'classnames';
 
 import { close, stateSignApplicationModal } from '../model/store/slice';
 
@@ -30,7 +31,7 @@ const SignApplicationModal: FC<IProps> = ({
 
   return (
     <Modal
-      className={styles['sign-application-modal']}
+      className={cn(styles['sign-application-modal'])}
       open={isOpen}
       onCancel={handleClose}
       title={title ?? t('signApplicationModal.title')}
@@ -39,7 +40,7 @@ const SignApplicationModal: FC<IProps> = ({
       footer={null}
       destroyOnHidden
     >
-      <div className={styles['sign-application-modal__body']}>
+      <div className={cn(styles['sign-application-modal__body'])}>
         {children}
       </div>
     </Modal>

@@ -1,6 +1,7 @@
 import { useState, type FC } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import type { GeoJsonObject } from 'geojson';
+import cn from 'classnames';
 
 import {
   mapDefaultCenter,
@@ -11,7 +12,7 @@ import {
   railwayRegionStyle,
   regionLayerStyle,
 } from '../model/config/layer-styles';
-import { focusPointZoom } from '../model/constants/zoom';
+import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
 import { regionsData, railwayRegionsData } from '../model/data';
 import { isValidCoords } from '../model/lib/utils/is-valid-coords';
 
@@ -56,10 +57,10 @@ const Map: FC<IProps> = ({
   };
 
   const initialCenter = selectedPoint || mapDefaultCenter;
-  const initialZoom = selectedPoint ? focusPointZoom : mapDefaultZoom;
+  const initialZoom = selectedPoint ? FOCUS_POINT_ZOOM : mapDefaultZoom;
 
   return (
-    <div className={styles['map']}>
+    <div className={cn(styles['map'])}>
       <MapContainer
         center={initialCenter}
         zoom={initialZoom}

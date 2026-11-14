@@ -38,7 +38,7 @@ const CreateUserModal: FC = () => {
     <Modal
       className={cn('modal', styles['create-user-modal'])}
       classNames={{
-        body: styles['create-user-modal__body'],
+        body: cn(styles['create-user-modal__body']),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -47,16 +47,16 @@ const CreateUserModal: FC = () => {
       width={520}
       destroyOnHidden
       footer={
-        <div className='modal__footer'>
+        <div className={cn('modal__footer')}>
           <Button
-            className='modal__button-close'
+            className={cn('modal__button-close')}
             type='default'
             onClick={handleClose}
           >
             {t('createUserModal.actions.cancel')}
           </Button>
           <Button
-            className='modal__button-confirm'
+            className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
@@ -67,11 +67,11 @@ const CreateUserModal: FC = () => {
     >
       <Form
         form={form}
-        className={styles['create-user-modal__form']}
+        className={cn(styles['create-user-modal__form'])}
         layout='vertical'
         onFinish={handleFinish}
       >
-        <div className={styles['create-user-modal__form-wrapper']}>
+        <div className={cn(styles['create-user-modal__form-wrapper'])}>
           <Item
             label={t('createUserModal.fields.pinfl')}
             name={FormFields.PINFL}
@@ -121,7 +121,7 @@ const CreateUserModal: FC = () => {
             ]}
           >
             <Select
-              className={styles['create-user-modal__select']}
+              className={cn(styles['create-user-modal__select'])}
               size='large'
               placeholder={t('createUserModal.fields.selectPlaceholder')}
               suffixIcon={<IconDownArrow />}
@@ -139,14 +139,14 @@ const CreateUserModal: FC = () => {
             ]}
           >
             <Select
-              className={styles['create-user-modal__select']}
+              className={cn(styles['create-user-modal__select'])}
               size='large'
               placeholder={t('createUserModal.fields.selectPlaceholder')}
               suffixIcon={<IconDownArrow />}
             />
           </Item>
 
-          <div className={styles['create-user-modal__row']}>
+          <div className={cn(styles['create-user-modal__row'])}>
             <Item
               label={t('createUserModal.fields.phone')}
               name={FormFields.PHONE}
@@ -169,13 +169,13 @@ const CreateUserModal: FC = () => {
           </div>
         </div>
 
-        <div className={styles['create-user-modal__checkbox-wrapper']}>
+        <div className={cn(styles['create-user-modal__checkbox-wrapper'])}>
           <Item
-            className={styles['create-user-modal__checkbox-item']}
+            className={cn(styles['create-user-modal__checkbox-item'])}
             name={FormFields.TELEGRAM_NOTIFICATIONS}
             valuePropName='checked'
           >
-            <Checkbox className={styles['create-user-modal__checkbox']}>
+            <Checkbox className={cn(styles['create-user-modal__checkbox'])}>
               {t('createUserModal.fields.telegramNotifications')}
             </Checkbox>
           </Item>

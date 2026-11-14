@@ -2,6 +2,7 @@ import { useEffect, useState, type FC } from 'react';
 import { Form, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
 import { REDIRECT_DELAY_MS, REGISTER_COMPANY_NAME } from '../model/constants/register';
@@ -72,28 +73,28 @@ const Register: FC = () => {
   };
 
   return (
-    <section className={styles['register']}>
-      <div className={styles['register__inner']}>
-        <div className={styles['register__overlay']}>
-          <div className={styles['register__illustration']}></div>
+    <section className={cn(styles['register'])}>
+      <div className={cn(styles['register__inner'])}>
+        <div className={cn(styles['register__overlay'])}>
+          <div className={cn(styles['register__illustration'])}></div>
 
-          <Title className={styles['register__title']} level={3}>
+          <Title className={cn(styles['register__title'])} level={3}>
             {currentHeader.title}
           </Title>
-          <p className={styles['register__subtitle']}>
+          <p className={cn(styles['register__subtitle'])}>
             {currentHeader.subtitle}
           </p>
 
           {step !== StepList.SUCCESS && (
             <Form
               form={form}
-              className={styles['register__form']}
+              className={cn(styles['register__form'])}
               layout='vertical'
               preserve
               onFinish={handleFinish}
             >
               <div
-                className={styles['register__step']}
+                className={cn(styles['register__step'])}
                 hidden={step !== StepList.CONTACTS}
               >
                 <RegisterContactsStep
@@ -103,7 +104,7 @@ const Register: FC = () => {
               </div>
 
               <div
-                className={styles['register__step']}
+                className={cn(styles['register__step'])}
                 hidden={step !== StepList.SMS_CODE}
               >
                 <RegisterSmsStep

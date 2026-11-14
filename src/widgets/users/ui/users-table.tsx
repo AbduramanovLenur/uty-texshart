@@ -28,12 +28,12 @@ const UsersTable: FC = () => {
         <Table<IUserTableRow>
           rowKey='id'
           classNames={{
-            root: 'table',
+            root: cn('table'),
             header: {
-              cell: 'table-header-cell',
+              cell: cn('table-header-cell'),
             },
             body: {
-              row: 'table-body-row',
+              row: cn('table-body-row'),
             },
           }}
           dataSource={mockUsers}

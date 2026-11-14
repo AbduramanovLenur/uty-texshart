@@ -1,6 +1,7 @@
 import { Button, Switch, type TableProps } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useDispatch } from 'react-redux';
+import cn from 'classnames';
 
 import { CompanyFilterKeys } from '../../model/constants/company-filter-keys';
 import type { ICompany } from '../../model/types/company';
@@ -102,7 +103,7 @@ export const useGetColumns = (filters: TTableFilterState<TCompanyFilterKey>): Ta
       width: 95,
       render: (_, record) => (
         <Button
-          className={styles['companies-table__edit']}
+          className={cn(styles['companies-table__edit'])}
           type='link'
           onClick={() => handleEdit(record.id)}
         >
