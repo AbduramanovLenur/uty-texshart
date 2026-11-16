@@ -20,7 +20,7 @@ const AuthCredentials: FC = () => {
 
   const handleFinish = (values: ILoginFormValues) => {
     console.log('Login values:', values);
-    // navigate(routes.DASHBOARD);
+    navigate(routes.DASHBOARD);
   };
 
   return (
