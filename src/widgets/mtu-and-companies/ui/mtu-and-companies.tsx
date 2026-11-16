@@ -78,8 +78,8 @@ const MtuAndCompanies: FC = () => {
             items={items}
           />
         </div>
+        <MtuAndCompaniesModal />
       </div>
-      <MtuAndCompaniesModal />
     </section>
   );
 };

@@ -45,8 +45,8 @@ const Users: FC = () => {
           </Button>
         </div>
         <UsersTable />
+        <CreateUserModal />
       </div>
-      <CreateUserModal />
     </section>
   );
 };

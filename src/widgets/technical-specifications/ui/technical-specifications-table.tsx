@@ -1,42 +1,21 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useDispatch } from 'react-redux';
 import { Table } from 'antd';
 import cn from 'classnames';
 
 import type { TFilterKey } from '../model/types/filter';
-import { mockTechnicalSpecifications } from '../model/mock';
 import { useGetColumns } from './columns';
+import { mockTechnicalSpecifications } from '../model/mock';
 
-import { ViewApplicantModal, open as openViewApplicantModal } from '@features/view-applicant-modal';
-import { ViewTechnicalSpecificationModal, open as openViewTechnicalSpecificationModal } from '@features/view-technical-specification-modal';
 import type { ITechnicalSpecification } from '@entities/technical-specification';
 import { useTableFilters } from '@shared/lib';
 import { Paginator } from '@shared/ui';
 
 const TechnicalSpecificationsTable: FC = () => {
-  const dispatch = useDispatch();
   const { t } = useTranslation();
+  const { filters, handleTableChange, handlePaginationChange } = useTableFilters<ITechnicalSpecification, TFilterKey>();
+  const columns = useGetColumns(filters);
   const total = 125;
-  const {
-    filters,
-    handleTableChange,
-    handlePaginationChange,
-  } = useTableFilters<ITechnicalSpecification, TFilterKey>();
-
-  const handleOpenApplicantModal = (record: ITechnicalSpecification) => {
-    dispatch(openViewApplicantModal({ id: record.id }));
-  };
-
-  const handleOpenTechnicalSpecificationModal = (record: ITechnicalSpecification) => {
-    dispatch(openViewTechnicalSpecificationModal({ id: record.id }));
-  };
-
-  const columns = useGetColumns(
-    filters,
-    handleOpenTechnicalSpecificationModal,
-    handleOpenApplicantModal,
-  );
 
   return (
     <div className={cn('table-wrapper')}>
@@ -67,8 +46,6 @@ const TechnicalSpecificationsTable: FC = () => {
           summary={t('summary', { count: total })}
         />
       </div>
-      <ViewApplicantModal />
-      <ViewTechnicalSpecificationModal />
     </div>
   );
 };

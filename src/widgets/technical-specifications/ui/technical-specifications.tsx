@@ -3,10 +3,13 @@ import cn from 'classnames';
 import { Button, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 
+import TechnicalSpecificationsTable from './technical-specifications-table';
+
+import { ViewApplicantModal } from '@features/view-applicant-modal';
+import { ViewTechnicalSpecificationModal } from '@features/view-technical-specification-modal';
 import { IconDownload } from '@shared/assets';
 
 import styles from './technical-specifications.module.scss';
-import TechnicalSpecificationsTable from './technical-specifications-table';
 
 const { Title } = Typography;
 
@@ -29,6 +32,8 @@ const TechnicalSpecifications: FC = () => {
           </Button>
         </div>
         <TechnicalSpecificationsTable />
+        <ViewApplicantModal />
+        <ViewTechnicalSpecificationModal />
       </div>
     </section>
   );

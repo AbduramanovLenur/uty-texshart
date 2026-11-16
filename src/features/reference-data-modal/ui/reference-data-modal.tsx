@@ -1,6 +1,5 @@
 import { useEffect, type FC } from 'react';
 import { Button, Checkbox, Form, Input, Modal, Select } from 'antd';
-import { DeleteOutlined, PlusOutlined } from '@ant-design/icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';

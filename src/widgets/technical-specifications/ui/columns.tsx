@@ -3,24 +3,32 @@ import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
+import { useDispatch } from 'react-redux';
 
 import { FilterKeys } from '../model/constants/filter-keys';
 import type { TFilterKey } from '../model/types/filter';
 
+import { open as openViewApplicantModal } from '@features/view-applicant-modal';
+import { open as openViewTechnicalSpecificationModal } from '@features/view-technical-specification-modal';
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { ApplicationStatusTag } from '@entities/application';
+import { TechnicalSpecificationStatusTag } from '@entities/technical-specification';
 import type { ITechnicalSpecification } from '@entities/technical-specification';
 import { routes, Statuses } from '@shared/config';
 import type { TTableFilterState } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 
-export const useGetColumns = (
-  filters: TTableFilterState<TFilterKey>,
-  onTechnicalSpecificationClick?: (record: ITechnicalSpecification) => void,
-  onApplicantClick?: (record: ITechnicalSpecification) => void,
-): TableProps<ITechnicalSpecification>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<ITechnicalSpecification>['columns'] => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const handleOpenApplicantModal = (record: ITechnicalSpecification) => {
+    dispatch(openViewApplicantModal({ id: record.id }));
+  };
+
+  const handleOpenTechnicalSpecificationModal = (record: ITechnicalSpecification) => {
+    dispatch(openViewTechnicalSpecificationModal({ id: record.id }));
+  };
 
   return [
     {
@@ -48,7 +56,7 @@ export const useGetColumns = (
         <button
           className={cn('table-trigger')}
           type='button'
-          onClick={() => onTechnicalSpecificationClick?.(record)}
+          onClick={() => handleOpenTechnicalSpecificationModal(record)}
         >
           {record.id}
         </button>
@@ -104,7 +112,7 @@ export const useGetColumns = (
         <button
           className={cn('table-trigger')}
           type='button'
-          onClick={() => onApplicantClick?.(record)}
+          onClick={() => handleOpenApplicantModal(record)}
         >
           {record.applicant}
         </button>
@@ -127,7 +135,7 @@ export const useGetColumns = (
       ],
       filterSearch: true,
       render: (_, record) => (
-        <ApplicationStatusTag status={record.status} />
+        <TechnicalSpecificationStatusTag status={record.status} />
       ),
     },
     {

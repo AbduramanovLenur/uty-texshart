@@ -2,11 +2,13 @@ import type { TableProps } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 
 import type { TFilterKey } from '../model/types/filter';
 import { FilterKeys } from '../model/constants/filter-keys';
 
+import { open as openViewInvoiceModal } from '@features/view-invoice-modal';
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
 import type { IPayment } from '@entities/payment';
@@ -16,6 +18,11 @@ import { getSortOrder } from '@shared/utils';
 
 export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IPayment>['columns'] => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const handleOpenApplicantModal = (record: IPayment) => {
+    dispatch(openViewInvoiceModal({ id: record.idText }));
+  };
 
   return [
     {
@@ -63,7 +70,15 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
         },
       ],
       filterSearch: true,
-      render: (_, record) => record.invoiceText,
+      render: (_, record) => (
+        <button
+          className={cn('table-trigger')}
+          type='button'
+          onClick={() => handleOpenApplicantModal(record)}
+        >
+          {record.invoiceText}
+        </button>
+      ),
     },
     {
       title: t('headers.applicationId'),
