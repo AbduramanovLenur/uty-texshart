@@ -10,6 +10,7 @@ import {
   NotificationsPage,
   PaymentHistoryPage,
   TechnicalSpecificationsPage,
+  CommunicationsRegisterPage,
   ProfilePage,
   UsersPage,
   UserPage,
@@ -88,6 +89,10 @@ const router = createBrowserRouter([
           {
             path: routes.TECHNICAL_SPECIFICATIONS,
             element: <TechnicalSpecificationsPage />,
+          },
+          {
+            path: routes.COMMUNICATIONS_REGISTER,
+            element: <CommunicationsRegisterPage />,
           },
           {
             path: routes.USERS,

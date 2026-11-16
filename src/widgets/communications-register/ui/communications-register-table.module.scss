@@ -1,0 +1,13 @@
+.communications-register-table {
+  &__row--no-tech-spec {
+    background-color: var(--ant-color-error-bg);
+
+    > td {
+      background-color: var(--ant-color-error-bg);
+    }
+
+    &:hover > td {
+      background-color: var(--ant-color-error-bg) !important;
+    }
+  }
+}

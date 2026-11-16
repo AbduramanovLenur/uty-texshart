@@ -243,6 +243,7 @@
     "applicationId": "Введите ID заявки",
     "paymentId": "Введите ID платежа",
     "technicalSpecificationId": "Введите ID техусловий",
+    "communicationRegisterId": "Введите ID коммуникации",
     "applicant": "Введите заявителя",
     "clear": "Очистить",
     "search": "Поиск",
@@ -260,9 +261,11 @@
     "print": "Печать",
     "share": "Поделиться",
     "edit": "Редактировать",
-    "editApplication": "Изменить заявку"
+    "editApplication": "Изменить заявку",
+    "import": "Импорт"
   },
   "headers": {
+    "id": "ID",
     "applicationId": "ID заявки",
     "paymentId": "ID платежа",
     "invoice": "Номер инвойса",
@@ -357,6 +360,15 @@
       "email": "Email",
       "comment": "Примечание"
     }
+  },
+  "communicationsRegister": {
+    "title": "Реестр коммуникаций",
+    "create": "Новая запись",
+    "noTechnicalSpecification": "Нет техусловий",
+    "today": "Сегодня",
+    "currentWeek": "Текущая неделя",
+    "currentMonth": "Текущий месяц",
+    "currentYear": "Текущий год"
   },
   "referenceData": {
     "title": "Справочники",

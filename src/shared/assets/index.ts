@@ -41,3 +41,4 @@ export { default as IconLogout } from './icons/icon-logout';
 export { default as IconPrint } from './icons/icon-print';
 export { default as IconShare } from './icons/icon-share';
 export { default as IconTrash } from './icons/icon-trash';
+export { default as IconFromBracket } from './icons/icon-from-bracket';

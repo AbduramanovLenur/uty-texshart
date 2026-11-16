@@ -22,5 +22,8 @@
 }
 
 .ant-select .ant-select-suffix {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--dark-45);
 }
