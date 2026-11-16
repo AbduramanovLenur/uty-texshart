@@ -1,9 +1,9 @@
 import type { FC } from 'react';
 
-import { Auth } from '@widgets/auth';
+import { Auth, AuthTypes } from '@widgets/auth';
 
 const AuthPage: FC = () => {
-  return <Auth />;
+  return <Auth type={AuthTypes.SERVICES} />;
 };
 
 export default AuthPage;

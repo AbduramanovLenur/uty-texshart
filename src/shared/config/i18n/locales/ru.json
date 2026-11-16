@@ -80,6 +80,15 @@
     },
     "oneId": {
       "signIn": "Войти через OneID"
+    },
+    "login": {
+      "login": "Логин",
+      "loginPlaceholder": "Введите логин",
+      "password": "Пароль",
+      "passwordPlaceholder": "Введите пароль",
+      "submit": "Войти",
+      "loginRequired": "Введите логин",
+      "passwordRequired": "Введите пароль"
     }
   },
   "createApplication": {

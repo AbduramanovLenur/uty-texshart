@@ -76,6 +76,15 @@
     },
     "oneId": {
       "signIn": "One ID orqali kirish"
+    },
+    "login": {
+      "login": "Login",
+      "loginPlaceholder": "Loginni kiriting",
+      "password": "Parol",
+      "passwordPlaceholder": "Parolni kiriting",
+      "submit": "Kirish",
+      "loginRequired": "Loginni kiriting",
+      "passwordRequired": "Parolni kiriting"
     }
   },
   "createApplication": {

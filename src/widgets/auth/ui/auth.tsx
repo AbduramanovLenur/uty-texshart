@@ -3,15 +3,20 @@ import cn from 'classnames';
 
 import AuthPromo from './auth-promo';
 import AuthPanel from './auth-panel';
+import type { TAuthType } from '../model/types';
 
 import styles from './auth.module.scss';
 
-const Auth: FC = () => {
+interface IProps {
+  type: TAuthType;
+}
+
+const Auth: FC<IProps> = ({ type }) => {
   return (
     <section className={cn(styles['auth'])}>
       <div className={cn(styles['auth__inner'])}>
         <AuthPromo />
-        <AuthPanel />
+        <AuthPanel type={type} />
       </div>
     </section>
   );
