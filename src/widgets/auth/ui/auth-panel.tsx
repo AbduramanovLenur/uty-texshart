@@ -1,18 +1,29 @@
-import { Divider, Typography } from 'antd';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
+import { Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { LanguageSwitcher } from '@features/language-switcher';
-import { MyIdAuth, OneIdAuth } from '@features/authentication';
-import { EImzo } from '@features/e-imzo';
+import AuthServices from './auth-services';
+import AuthCredentials from './auth-credentials';
+import { AuthTypes } from '../model/constants/auth-types';
+import type { TAuthType } from '../model/types';
 
 import styles from './auth-panel.module.scss';
 
 const { Title } = Typography;
 
-const AuthPanel: FC = () => {
+interface IProps {
+  type: TAuthType;
+}
+
+const AuthPanel: FC<IProps> = ({ type }) => {
   const { t } = useTranslation();
+
+  const contentByType: Record<TAuthType, ReactNode> = {
+    [AuthTypes.SERVICES]: <AuthServices />,
+    [AuthTypes.CREDENTIALS]: <AuthCredentials />,
+  };
 
   return (
     <div className={cn(styles['auth-panel'])}>
@@ -36,17 +47,7 @@ const AuthPanel: FC = () => {
           {t('authentication.authPanel.signInPrompt')}
         </Title>
 
-        <EImzo />
-        <Divider
-          className={cn(styles['auth-panel__divider'])}
-          titlePlacement='center'
-        >
-          {t('authentication.authPanel.or')}
-        </Divider>
-        <div className={cn(styles['auth-panel__services'])}>
-          <OneIdAuth />
-          <MyIdAuth />
-        </div>
+        {contentByType[type]}
       </div>
       <div className={cn(styles['auth-panel__copyright'])}>
         {t('authentication.authPanel.copyright')}

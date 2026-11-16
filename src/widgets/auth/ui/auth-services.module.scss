@@ -1,0 +1,16 @@
+.auth-services {
+  padding-top: var(--ant-margin-xs);
+  &__divider {
+    margin: 0 0 16px !important;
+    :global(.ant-divider-inner-text) {
+      font-size: var(--ant-font-size);
+      line-height: 1.5;
+      color: var(--dark-65);
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}

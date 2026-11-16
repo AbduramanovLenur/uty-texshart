@@ -31,23 +31,10 @@
   &__subtitle {
     &:global(.ant-typography) {
       font-weight: 400;
-      margin-bottom: var(--ant-margin-xl);
+      margin-bottom: var(--ant-margin-lg);
       --ant-typography-title-margin-top: 0;
       color: var(--dark-65);
     }
-  }
-  &__divider {
-    margin: 0 0 16px !important;
-    :global(.ant-divider-inner-text) {
-      font-size: var(--ant-font-size);
-      line-height: 1.5;
-      color: var(--dark-65);
-    }
-  }
-  &__services {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
   }
   &__copyright {
     position: absolute;
