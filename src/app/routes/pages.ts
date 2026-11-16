@@ -9,6 +9,7 @@ export const CreateApplicationPage = lazyPage(() => import('@pages/create-applic
 export const NotificationsPage = lazyPage(() => import('@pages/notifications').then((module) => ({ default: module.NotificationsPage })));
 export const PaymentHistoryPage = lazyPage(() => import('@pages/payment-history').then((module) => ({ default: module.PaymentHistoryPage })));
 export const TechnicalSpecificationsPage = lazyPage(() => import('@pages/technical-specifications').then((module) => ({ default: module.TechnicalSpecificationsPage })));
+export const CommunicationsRegisterPage = lazyPage(() => import('@pages/communications-register').then((module) => ({ default: module.CommunicationsRegisterPage })));
 export const ProfilePage = lazyPage(() => import('@pages/profile').then((module) => ({ default: module.ProfilePage })));
 export const UsersPage = lazyPage(() => import('@pages/users').then((module) => ({ default: module.UsersPage })));
 export const UserPage = lazyPage(() => import('@pages/user').then((module) => ({ default: module.UserPage })));

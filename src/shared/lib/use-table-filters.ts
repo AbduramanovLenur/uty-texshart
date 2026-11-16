@@ -14,6 +14,8 @@ export const useTableFilters = <TRow, TFilterKey extends string>(initialFilters?
     ...initialFilters,
   } as TTableFilterState<TFilterKey>);
 
+  console.log('filters', filters);
+
   const handleTableChange: TableProps<TRow>['onChange'] = (
     _,
     nextFilters,

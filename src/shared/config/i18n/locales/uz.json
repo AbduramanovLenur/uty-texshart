@@ -236,6 +236,7 @@
     "applicationId": "Ariza ID raqamini kiriting",
     "paymentId": "To‘lov ID raqamini kiriting",
     "technicalSpecificationId": "Texnik shart ID raqamini kiriting",
+    "communicationRegisterId": "Kommunikatsiya ID raqamini kiriting",
     "applicant": "Arizachini kiriting",
     "clear": "Tozalash",
     "search": "Qidirish",
@@ -253,9 +254,11 @@
     "print": "Chop etish",
     "share": "Ulashish",
     "edit": "Tahrirlash",
-    "editApplication": "Arizani o‘zgartirish"
+    "editApplication": "Arizani o‘zgartirish",
+    "import": "Import"
   },
   "headers": {
+    "id": "ID",
     "applicationId": "Ariza ID",
     "paymentId": "To‘lov ID",
     "invoice": "Invoice raqami",
@@ -347,6 +350,15 @@
       "email": "Email",
       "comment": "Izoh"
     }
+  },
+  "communicationsRegister": {
+    "title": "Kommunikatsiya reestri",
+    "create": "Yangi qayd",
+    "noTechnicalSpecification": "Texshart yo‘q",
+    "today": "Bugun",
+    "currentWeek": "Joriy hafta",
+    "currentMonth": "Joriy oy",
+    "currentYear": "Joriy yil"
   },
   "referenceData": {
     "title": "Ma’lumotnomalar",

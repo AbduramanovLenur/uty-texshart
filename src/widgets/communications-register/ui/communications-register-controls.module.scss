@@ -1,0 +1,22 @@
+.communications-register-controls {
+  display: flex;
+  align-items: center;
+  gap: var(--ant-margin-xs);
+  &__checkbox {
+    font-size: var(--ant-font-size);
+    line-height: 1.5;
+    margin-right: var(--ant-margin);
+    color: var(--dark-88);
+    flex-shrink: 0;
+  }
+  &__select {
+    width: 150px;
+  }
+  &__action-btn {
+    color: var(--dark-88);
+    border: 1px solid var(--default-border);
+  }
+  &__create {
+    font-weight: 500;
+  }
+}
