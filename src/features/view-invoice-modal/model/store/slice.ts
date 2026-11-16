@@ -4,6 +4,7 @@ import type { IOpenPayload, IState } from '../types/state';
 
 const initialState: IState = {
   isOpen: false,
+  id: null,
   url: null,
 };
 
@@ -14,8 +15,8 @@ const slice = createSlice({
     open: (state, action: PayloadAction<IOpenPayload | undefined>) => {
       state.isOpen = true;
       state.url = action.payload?.url ?? null;
+      state.id = action.payload?.id ?? null;
     },
-
     close: (state) => {
       state.isOpen = false;
       state.url = null;

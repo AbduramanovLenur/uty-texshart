@@ -2,25 +2,34 @@ import type { TableProps } from 'antd';
 import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
+import { useDispatch } from 'react-redux';
 import cn from 'classnames';
 
 import { FilterKeys } from '../model/constants/filter-keys';
 import type { TFilterKey } from '../model/types/filter';
 
+import { open as openViewApplicantModal } from '@features/view-applicant-modal';
+import { open as openViewProcessModal } from '@features/view-process-modal';
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { ApplicationStatusTag, type IIncomingApplication } from '@/entities/application';
+import { ApplicationStatusTag, type IIncomingApplication } from '@entities/application';
 import { routes } from '@shared/config';
 import type { TTableFilterState } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
 
-export const useGetColumns = (
-  filters: TTableFilterState<TFilterKey>,
-  onApplicantClick?: (record: IIncomingApplication) => void,
-  onActionClick?: (record: IIncomingApplication) => void,
-): TableProps<IIncomingApplication>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IIncomingApplication>['columns'] => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const handleOpenApplicantModal = (record: IIncomingApplication) => {
+    dispatch(openViewApplicantModal({ id: record.id }));
+  };
+
+  const handleOpenProcessModal = (record: IIncomingApplication) => {
+    dispatch(openViewProcessModal({ id: record.id }));
+  };
+
   return [
     {
       title: t('headers.applicationId'),
@@ -56,7 +65,7 @@ export const useGetColumns = (
         <button
           className={cn('table-trigger')}
           type='button'
-          onClick={() => onActionClick?.(record)}
+          onClick={() => handleOpenProcessModal(record)}
         >
           {t('actions.view')}
         </button>
@@ -70,7 +79,7 @@ export const useGetColumns = (
         <button
           className={cn('table-trigger')}
           type='button'
-          onClick={() => onApplicantClick?.(record)}
+          onClick={() => handleOpenApplicantModal(record)}
         >
           {record.user}
         </button>

@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 
 import IncomingApplicationsTable from './incoming-applications-table';
 
+import { ViewApplicantModal } from '@features/view-applicant-modal';
+import { ViewProcessModal } from '@features/view-process-modal';
 import { IconDownload } from '@shared/assets';
 
 import styles from './incoming-applications.module.scss';
@@ -30,6 +32,8 @@ const IncomingApplications: FC = () => {
           </Button>
         </div>
         <IncomingApplicationsTable />
+        <ViewApplicantModal />
+        <ViewProcessModal />
       </div>
     </section>
   );

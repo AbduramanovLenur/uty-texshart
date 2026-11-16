@@ -115,9 +115,8 @@ const Register: FC = () => {
             </Form>
           )}
         </div>
+        <RegisterTermsModal />
       </div>
-
-      <RegisterTermsModal />
     </section>
   );
 };

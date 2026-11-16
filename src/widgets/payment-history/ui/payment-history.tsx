@@ -3,10 +3,12 @@ import cn from 'classnames';
 import { Button, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 
+import PaymentHistoryTable from './payment-history-table';
+
+import { ViewInvoiceModal } from '@features/view-invoice-modal';
 import { IconDownload } from '@shared/assets';
 
 import styles from './payment-history.module.scss';
-import PaymentHistoryTable from './payment-history-table';
 
 const { Title } = Typography;
 
@@ -29,6 +31,7 @@ const PaymentHistory: FC = () => {
           </Button>
         </div>
         <PaymentHistoryTable />
+        <ViewInvoiceModal />
       </div>
     </section>
   );

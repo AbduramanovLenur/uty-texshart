@@ -13,14 +13,9 @@ import { Paginator } from '@shared/ui';
 
 const PaymentHistoryTable: FC = () => {
   const { t } = useTranslation();
-  const total = 125;
-  const {
-    filters,
-    handleTableChange,
-    handlePaginationChange,
-  } = useTableFilters<IPayment, TFilterKey>();
-
+  const { filters, handleTableChange, handlePaginationChange } = useTableFilters<IPayment, TFilterKey>();
   const columns = useGetColumns(filters);
+  const total = 125;
 
   return (
     <div className={cn('table-wrapper')}>

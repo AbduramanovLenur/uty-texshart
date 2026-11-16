@@ -79,8 +79,8 @@ const ReferenceData: FC = () => {
             items={items}
           />
         </div>
+        <ReferenceDataModal />
       </div>
-      <ReferenceDataModal />
     </section>
   );
 };

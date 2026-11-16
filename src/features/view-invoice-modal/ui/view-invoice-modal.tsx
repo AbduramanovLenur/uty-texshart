@@ -18,7 +18,7 @@ const ViewInvoiceModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isOpen, url } = useSelector(stateViewInvoiceModal);
+  const { isOpen, url, id } = useSelector(stateViewInvoiceModal);
 
   const documentUrl = url || mockInvoiceDetails.documentUrl;
 
@@ -43,7 +43,7 @@ const ViewInvoiceModal: FC = () => {
 
   const handleBackToMain = () => {
     dispatch(close());
-    // navigate(routes.DASHBOARD);
+    if (!id) navigate(routes.DASHBOARD);
   };
 
   return (
