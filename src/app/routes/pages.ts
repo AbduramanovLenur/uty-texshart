@@ -11,5 +11,6 @@ export const PaymentHistoryPage = lazyPage(() => import('@pages/payment-history'
 export const TechnicalSpecificationsPage = lazyPage(() => import('@pages/technical-specifications').then((module) => ({ default: module.TechnicalSpecificationsPage })));
 export const ProfilePage = lazyPage(() => import('@pages/profile').then((module) => ({ default: module.ProfilePage })));
 export const UsersPage = lazyPage(() => import('@pages/users').then((module) => ({ default: module.UsersPage })));
+export const UserPage = lazyPage(() => import('@pages/user').then((module) => ({ default: module.UserPage })));
 export const ReferenceDataPage = lazyPage(() => import('@pages/reference-data').then((module) => ({ default: module.ReferenceDataPage })));
 export const MtuAndCompaniesPage = lazyPage(() => import('@pages/mtu-and-companies').then((module) => ({ default: module.MtuAndCompaniesPage })));

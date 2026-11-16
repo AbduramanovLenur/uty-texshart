@@ -1,0 +1,53 @@
+.user-details-card {
+  background-color: var(--white);
+  border-radius: var(--ant-border-radius-lg);
+  padding: var(--ant-padding-lg);
+  height: 100%;
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--ant-margin-xs);
+  }
+  &__title {
+    &:global(.ant-typography) {
+      margin-bottom: 0;
+      color: var(--dark-88);
+      padding: var(--ant-padding-xxs) 0;
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--ant-margin-xs);
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--ant-margin-sm);
+  }
+  &__col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin);
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin-xxs);
+  }
+  &__label,
+  &__value {
+    font-size: var(--ant-font-size);
+    line-height: 1.5;
+  }
+  &__label {
+    font-weight: 600;
+    color: var(--dark-88);
+  }
+  &__value {
+    font-weight: 400;
+    color: var(--dark-65);
+    word-break: break-word;
+  }
+}

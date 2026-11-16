@@ -11,11 +11,12 @@ const { Title } = Typography;
 interface IProps {
   onClick: () => void;
   children: ReactNode;
+  className?: string;
 }
 
-const PageHeader: FC<IProps> = ({ onClick, children }) => {
+const PageHeader: FC<IProps> = ({ onClick, children, className }) => {
   return (
-    <div className={cn(styles['page-header'])}>
+    <div className={cn(styles['page-header'], className)}>
       <Button
         className={cn(styles['page-header__back'])}
         type='default'

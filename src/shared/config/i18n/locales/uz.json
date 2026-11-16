@@ -328,7 +328,25 @@
   },
   "users": {
     "title": "Foydalanuvchilar",
-    "create": "Yangi foydalanuvchi"
+    "create": "Yangi foydalanuvchi",
+    "breadcrumbs": {
+      "users": "Foydalanuvchilar",
+      "userDetails": "Foydalanuvchi ma'lumotlari"
+    },
+    "tabs": {
+      "info": "Foydalanuvchi ma'lumotlari"
+    },
+    "card": {
+      "title": "Asosiy ma'lumotlar",
+      "pinfl": "JSHSHR",
+      "fullName": "Foydalanuvchi ismi-sharifi",
+      "phone": "Telefon",
+      "regionalDepartment": "Hududiy bo'lim",
+      "role": "Rol",
+      "position": "Lavozim",
+      "email": "Email",
+      "comment": "Izoh"
+    }
   },
   "referenceData": {
     "title": "Ma’lumotnomalar",

@@ -16,6 +16,19 @@ export interface IUserTableRow {
   lastLogin: string;
 }
 
+export interface IUserDetails {
+  id: number | string;
+  name: string;
+  pinfl: string;
+  fullName: string;
+  phone: string;
+  regionalDepartment: string;
+  role: string;
+  position: string;
+  email: string;
+  comment: string;
+}
+
 export interface IUser {
   id: number | string;
   name: string;
