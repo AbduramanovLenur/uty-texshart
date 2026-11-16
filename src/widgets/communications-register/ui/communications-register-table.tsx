@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Table } from 'antd';
+import { Table, type TableProps } from 'antd';
 import cn from 'classnames';
 
 import type { TFilterKey } from '../model/types/filter';
@@ -8,14 +8,23 @@ import { useGetColumns } from './columns';
 import { mockCommunicationsRegister } from '../model/mock';
 
 import type { ICommunicationRegister } from '@entities/communication-register';
-import { useTableFilters } from '@shared/lib';
+import type { TTableFilterState } from '@shared/types';
 import { Paginator } from '@shared/ui';
 
 import styles from './communications-register-table.module.scss';
 
-const CommunicationsRegisterTable: FC = () => {
+interface IProps {
+  filters: TTableFilterState<TFilterKey>;
+  onTableChange: TableProps<ICommunicationRegister>['onChange'];
+  onPaginationChange: (page: number, limit: number) => void;
+}
+
+const CommunicationsRegisterTable: FC<IProps> = ({
+  filters,
+  onTableChange,
+  onPaginationChange,
+}) => {
   const { t } = useTranslation();
-  const { filters, handleTableChange, handlePaginationChange } = useTableFilters<ICommunicationRegister, TFilterKey>();
   const columns = useGetColumns(filters);
   const total = 125;
 
@@ -41,7 +50,7 @@ const CommunicationsRegisterTable: FC = () => {
           columns={columns}
           pagination={false}
           scroll={{ x: 'max-content' }}
-          onChange={handleTableChange}
+          onChange={onTableChange}
         />
       </div>
       <div className={cn('table-wrapper-pagination')}>
@@ -49,7 +58,7 @@ const CommunicationsRegisterTable: FC = () => {
           total={total}
           page={filters.page}
           limit={filters.limit}
-          onChange={handlePaginationChange}
+          onChange={onPaginationChange}
           summary={t('summary', { count: total })}
         />
       </div>

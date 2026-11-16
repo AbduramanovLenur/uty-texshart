@@ -5,4 +5,6 @@ export const FilterKeys = {
   NETWORK: 'network',
   STATUS: 'status',
   DATE: 'date',
+  NO_TECHNICAL_SPECIFICATION: 'noTechnicalSpecification',
+  PERIOD: 'period',
 } as const;

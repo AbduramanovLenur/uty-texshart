@@ -1,3 +1,4 @@
+import type { Key } from 'react';
 import type { Dayjs } from 'dayjs';
 import type { FilterDropdownProps, FilterValue } from 'antd/es/table/interface';
 
@@ -14,8 +15,14 @@ export interface IBaseTableFilters<T> {
   sortOrder?: TTableSortOrder | null;
 }
 
-export type TTableFilterState<TFilterKey extends string> = IBaseTableFilters<TFilterKey> & Partial<Record<TFilterKey, FilterValue | null>>;
-
 export type TRangeValue = [Dayjs | null, Dayjs | null] | null;
+
+export type TTableFilterState<TFilterKey extends string = string> = IBaseTableFilters<TFilterKey> &
+  Partial<Record<TFilterKey, FilterValue | null>>;
+
+export type THandleFilterChange<TFilterKey extends string> = (
+  key: TFilterKey,
+  value: FilterValue | null | undefined,
+) => void;
 
 export type TFilterDropdownControls = Pick<FilterDropdownProps, TFilterDropdownKey>;

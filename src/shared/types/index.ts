@@ -10,6 +10,7 @@ export type {
   TFilterDropdownControls,
   IBaseTableFilters,
   TTableFilterState,
+  THandleFilterChange,
 } from './filter';
 export type { Role } from './role';
 export type { TStatus } from './status';

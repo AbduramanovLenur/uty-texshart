@@ -3,9 +3,11 @@ import type { TableProps } from 'antd';
 import type { FilterValue } from 'antd/es/table/interface';
 
 import { defaultValues } from '@shared/config';
-import type { TTableFilterState } from '@shared/types';
+import type { THandleFilterChange, TTableFilterState } from '@shared/types';
 
-export const useTableFilters = <TRow, TFilterKey extends string>(initialFilters?: Partial<TTableFilterState<TFilterKey>>) => {
+export const useTableFilters = <TRow, TFilterKey extends string>(
+  initialFilters?: Partial<TTableFilterState<TFilterKey>>,
+) => {
   const [filters, setFilters] = useState<TTableFilterState<TFilterKey>>({
     page: defaultValues.PAGE,
     limit: defaultValues.LIMIT,
@@ -14,7 +16,7 @@ export const useTableFilters = <TRow, TFilterKey extends string>(initialFilters?
     ...initialFilters,
   } as TTableFilterState<TFilterKey>);
 
-  console.log('filters', filters);
+  console.log(filters);
 
   const handleTableChange: TableProps<TRow>['onChange'] = (
     _,
@@ -37,10 +39,19 @@ export const useTableFilters = <TRow, TFilterKey extends string>(initialFilters?
     setFilters((prev) => ({ ...prev, page, limit }));
   };
 
+  const handleFilterChange: THandleFilterChange<TFilterKey> = (key, value) => {
+    setFilters((prev) => ({
+      ...prev,
+      page: defaultValues.PAGE,
+      [key]: value === undefined ? null : value,
+    }));
+  };
+
   return {
     filters,
     setFilters,
     handleTableChange,
     handlePaginationChange,
+    handleFilterChange,
   };
 };
