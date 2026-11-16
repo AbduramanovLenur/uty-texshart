@@ -162,7 +162,9 @@
   },
   "language": {
     "uz": "O‘zbekcha",
-    "ru": "Русский"
+    "ru": "Русский",
+    "uzShort": "O‘z",
+    "ruShort": "Ру"
   },
   "leaveConfirmModal": {
     "title": "Chiqmoqchimisiz?",

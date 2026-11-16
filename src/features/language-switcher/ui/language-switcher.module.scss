@@ -1,14 +1,25 @@
 .language-switcher {
-  border-radius: var(--ant-size-xs);
-  &:global(.ant-segmented) &__item {
-    border-radius: 6px;
-    padding: 7px 12px;
-  }
-  &:global(.ant-segmented) &__label {
-    font-size: var(--ant-font-size);
-    font-weight: 600;
-    line-height: 1.5;
-    min-height: auto;
-    padding: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--ant-margin-xs);
+  font-size: var(--ant-font-size);
+  font-weight: 500;
+  color: var(--dark-88);
+  line-height: 1.5;
+  padding: 0 12px;
+  max-width: 118px;
+  width: 100%;
+  &:global(.ant-select-single) {
+    :global(.ant-select-content) {
+      margin-inline-end: 0;
+      overflow: visible;
+      white-space: normal;
+      text-overflow: unset;
+    }
+    &:global(.ant-select-open) {
+      :global(.ant-select-content-has-value) {
+        opacity: 1;
+      }
+    }
   }
 }
