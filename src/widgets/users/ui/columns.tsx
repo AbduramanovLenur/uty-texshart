@@ -1,4 +1,5 @@
 import type { TableProps } from 'antd';
+import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
@@ -8,6 +9,7 @@ import type { TFilterKey } from '../model/types/filter';
 
 import { TableSearchFilter } from '@features/table-search-filter';
 import { UserStatusTag, type IUserTableRow } from '@entities/user';
+import { routes } from '@shared/config';
 import type { TTableFilterState } from '@shared/types';
 import { getSortOrder, maskPinfl } from '@shared/utils';
 
@@ -22,9 +24,9 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       sorter: true,
       sortOrder: getSortOrder(filters, FilterKeys.USER),
       render: (_, record) => (
-        <button type='button' className={cn('table-trigger')}>
+        <Link to={routes.SINGLE_USER(record.id)} className={cn('table-trigger')}>
           {record.name}
-        </button>
+        </Link>
       ),
       filteredValue: filters.user,
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (

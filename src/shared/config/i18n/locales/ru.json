@@ -338,7 +338,25 @@
   },
   "users": {
     "title": "Пользователи",
-    "create": "Новый пользователь"
+    "create": "Новый пользователь",
+    "breadcrumbs": {
+      "users": "Пользователи",
+      "userDetails": "Данные пользователя"
+    },
+    "tabs": {
+      "info": "Данные пользователя"
+    },
+    "card": {
+      "title": "Основные данные",
+      "pinfl": "ПИНФЛ",
+      "fullName": "ФИО пользователя",
+      "phone": "Телефон",
+      "regionalDepartment": "Региональный отдел",
+      "role": "Роль",
+      "position": "Должность",
+      "email": "Email",
+      "comment": "Примечание"
+    }
   },
   "referenceData": {
     "title": "Справочники",

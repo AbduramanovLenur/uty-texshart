@@ -1,4 +1,4 @@
-import type { IUser } from './types/user';
+import type { IUser, IUserDetails } from './types/user';
 
 export const userMock: IUser = {
   id: '1',
@@ -21,3 +21,28 @@ export const userMock: IUser = {
 };
 
 export const applicantMock = userMock;
+
+export const mockUserDetails: Record<string | number, IUserDetails> = {
+  1: {
+    id: 1,
+    name: 'Azizbek Tashkentov',
+    pinfl: '6766 7787 5566 1234 34',
+    fullName: 'Azizbek Tashkentov Ahmad o‘g‘li',
+    phone: '+99899 888 88 22',
+    regionalDepartment: 'Qarshi',
+    role: 'Hududiy bo‘lim boshlig‘i',
+    position: 'Bo‘lim boshlig‘i',
+    email: 'myemail@mail.com',
+    comment: 'Telegram: @shraxmatov',
+  },
+};
+
+export const defaultUserDetails: IUserDetails = mockUserDetails[1];
+
+export const getUserDetailsById = (id?: string | number): IUserDetails => {
+  if (id && mockUserDetails[id]) {
+    return mockUserDetails[id];
+  }
+  return defaultUserDetails;
+};
+

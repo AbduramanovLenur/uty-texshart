@@ -1,0 +1,14 @@
+.user-body {
+  &__tab {
+    max-width: 260px;
+    width: 100%;
+  }
+  &__content {
+    background-color: var(--ant-color-fill-quaternary);
+    padding: var(--ant-padding-lg);
+    border-radius: 0 0 var(--ant-border-radius-lg) var(--ant-border-radius-lg);
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+  }
+}

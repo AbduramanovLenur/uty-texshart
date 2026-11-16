@@ -12,6 +12,7 @@ import {
   TechnicalSpecificationsPage,
   ProfilePage,
   UsersPage,
+  UserPage,
   ReferenceDataPage,
   MtuAndCompaniesPage,
 } from './pages';
@@ -91,6 +92,10 @@ const router = createBrowserRouter([
           {
             path: routes.USERS,
             element: <UsersPage />,
+          },
+          {
+            path: routes.SINGLE_USER(':id'),
+            element: <UserPage />,
           },
           {
             path: routes.REFERENCE_DATA,
