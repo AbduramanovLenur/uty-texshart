@@ -1,0 +1,4 @@
+export const Permissions = {
+  APPLICATION_REJECT: 'APPLICATION_REJECT',
+  APPLICATION_FORWARD: 'APPLICATION_FORWARD',
+} as const;

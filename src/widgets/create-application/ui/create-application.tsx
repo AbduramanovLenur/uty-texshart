@@ -33,7 +33,7 @@ const CreateApplication: FC = () => {
           }}
           items={breadcrumbs}
         />
-        <PageHeader onClick={handleBack}>
+        <PageHeader className={styles['create-application__overlay']} onClick={handleBack}>
           {t('createApplication.title')}
         </PageHeader>
         <CreateApplicationBody />

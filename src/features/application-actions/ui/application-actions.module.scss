@@ -1,0 +1,38 @@
+.application-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ant-margin-sm);
+  &__btn {
+    font-weight: 500;
+    line-height: 1.5;
+    :global {
+      .ant-btn-icon {
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
+    &--reject {
+      background-color: var(--ant-red-5);
+      border-color: var(--ant-red-5);
+      color: var(--white);
+      &:hover {
+        background-color: var(--ant-red-4) !important;
+        border-color: var(--ant-red-4) !important;
+        color: var(--white) !important;
+      }
+    }
+    &--accept {
+      background-color: var(--ant-blue);
+      border-color: var(--ant-blue);
+      color: var(--white);
+
+      &:hover {
+        background-color: var(--ant-blue-hover) !important;
+        border-color: var(--ant-blue-hover) !important;
+        color: var(--white) !important;
+      }
+    }
+  }
+}
