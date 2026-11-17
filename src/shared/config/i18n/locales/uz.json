@@ -273,7 +273,9 @@
     "share": "Ulashish",
     "edit": "Tahrirlash",
     "editApplication": "Arizani o‘zgartirish",
-    "import": "Import"
+    "import": "Import",
+    "reject": "Rad etish",
+    "forwardToRegional": "Hududiy bo‘limga yo‘naltirish"
   },
   "headers": {
     "id": "ID",

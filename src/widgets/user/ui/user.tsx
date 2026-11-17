@@ -36,7 +36,7 @@ const User: FC = () => {
           items={breadcrumbs}
         />
         <div className={cn(styles['user__top'])}>
-          <PageHeader className={cn(styles['user__title'])} onClick={handleBack}>
+          <PageHeader onClick={handleBack}>
             {currentUser.name}
           </PageHeader>
         </div>

@@ -280,7 +280,9 @@
     "share": "Поделиться",
     "edit": "Редактировать",
     "editApplication": "Изменить заявку",
-    "import": "Импорт"
+    "import": "Импорт",
+    "reject": "Отклонить",
+    "forwardToRegional": "Направить в региональный отдел"
   },
   "headers": {
     "id": "ID",

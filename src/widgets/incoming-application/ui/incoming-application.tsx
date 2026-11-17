@@ -3,10 +3,17 @@ import cn from 'classnames';
 import { Breadcrumb } from 'antd';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 
 import IncomingApplicationBody from './incoming-application-body';
 import { getBreadcrumbs } from '../model/lib/utils/get-breadcrumbs';
 
+import {
+  ApplicationActions,
+  ApplicationActionKeys,
+  type TApplicationActionHandler,
+  type TApplicationActionKey,
+} from '@features/application-actions';
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
 
@@ -15,10 +22,27 @@ import styles from './incoming-application.module.scss';
 const IncomingApplication: FC = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const breadcrumbs = getBreadcrumbs(t);
+
+  const actions = [
+    { 'name': ApplicationActionKeys.FORWARD,  'key': 'employee' },
+    { 'name': ApplicationActionKeys.REJECT, 'key': 'employee' },
+  ];
 
   const handleBack = () => {
     navigate(routes.APPLICATIONS);
+  };
+
+  const actionHandlers: Partial<Record<TApplicationActionKey, TApplicationActionHandler>> = {
+    [ApplicationActionKeys.REJECT]: (key: TApplicationActionKey) => {
+      console.log(key);
+      void dispatch;
+    },
+    [ApplicationActionKeys.FORWARD]: (key: TApplicationActionKey) => {
+      console.log(key);
+      void dispatch;
+    },
   };
 
   return (
@@ -31,9 +55,12 @@ const IncomingApplication: FC = () => {
           }}
           items={breadcrumbs}
         />
-        <PageHeader onClick={handleBack}>
-          ARZ-31234123
-        </PageHeader>
+        <div className={styles['incoming-application__top']}>
+          <PageHeader onClick={handleBack}>
+            ARZ-31234123
+          </PageHeader>
+          <ApplicationActions actions={actions} handlers={actionHandlers} />
+        </div>
         <IncomingApplicationBody />
       </div>
     </section>
