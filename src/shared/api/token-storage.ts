@@ -1,4 +1,4 @@
-import { type AuthTokens } from '@shared/types';
+import { type AuthTokens } from '../types/auth';
 
 let accessToken: string | null = null;
 let refreshToken: string | null = null;
