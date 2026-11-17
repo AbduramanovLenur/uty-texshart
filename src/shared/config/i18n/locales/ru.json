@@ -241,14 +241,21 @@
     "create": "Создать заявку"
   },
   "statuses": {
-    "accepted": "Принята",
-    "forwarded": "Передана",
-    "actCreated": "Акт составлен",
-    "technicalConditionsIssued": "Технические условия выданы",
-    "rejected": "Отклонена",
     "draft": "Черновик",
-    "constructionStarted": "Разрешение на строительство выдано",
-    "completed": "Завершена"
+    "submitted": "Заявка подана",
+    "paymentDone": "Оплата произведена",
+    "accepted": "Заявка принята",
+    "forwarded": "Направлена",
+    "actCreated": "Акт составлен",
+    "actConfirmed": "Акт подтвержден",
+    "technicalConditionsIssued": "Технические условия выданы",
+    "projectDocumentsUploaded": "Проектная документация загружена",
+    "constructionPermitIssued": "Разрешение на строительство выдано",
+    "constructionStarted": "Строительство начато",
+    "constructionCompleted": "Строительство завершено",
+    "constructionActUploaded": "Акт по строительству загружен",
+    "completed": "Заявка завершена",
+    "rejected": "Отклонена"
   },
   "placeholders": {
     "applicationId": "Введите ID заявки",

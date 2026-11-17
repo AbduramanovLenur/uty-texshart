@@ -234,14 +234,21 @@
     "create": "Yangi ariza yaratish"
   },
   "statuses": {
-    "accepted": "Qabul qilindi",
+    "draft": "Qoralama",
+    "submitted": "Ariza topshirildi",
+    "paymentDone": "To‘lov qilindi",
+    "accepted": "Ariza qabul qilindi",
     "forwarded": "Yo‘naltirildi",
     "actCreated": "Dalolatnoma tuzildi",
+    "actConfirmed": "Dalolatnoma tasdiqlandi",
     "technicalConditionsIssued": "Texnik-shart berildi",
-    "rejected": "Rad etildi",
-    "draft": "Qoralama",
-    "constructionStarted": "Qurilishga ruxsat berildi",
-    "completed": "Yakunlandi"
+    "projectDocumentsUploaded": "Loyiha xujjatlari yuklandi",
+    "constructionPermitIssued": "Qurilishga ruxsat berildi",
+    "constructionStarted": "Qurilish boshlandi",
+    "constructionCompleted": "Qurilish yakunlandi",
+    "constructionActUploaded": "Qurilish dalolatnoma yuklandi",
+    "completed": "Ariza yakunlandi",
+    "rejected": "Rad etildi"
   },
   "placeholders": {
     "applicationId": "Ariza ID raqamini kiriting",

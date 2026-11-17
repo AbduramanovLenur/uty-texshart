@@ -14,3 +14,4 @@ export type {
 } from './filter';
 export type { Role } from './role';
 export type { TStatus } from './status';
+export type { IStatusTagConfig } from './status-tag';
