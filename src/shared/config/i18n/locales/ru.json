@@ -449,6 +449,36 @@
       "addOption": "Добавить"
     }
   },
+  "forwardApplicationModal": {
+    "title": "Направить в региональный отдел",
+    "fields": {
+      "regionalDepartment": "Региональный отдел",
+      "selectPlaceholder": "Выберите"
+    },
+    "validation": {
+      "regionalDepartmentRequired": "Выберите региональный отдел"
+    },
+    "actions": {
+      "cancel": "Отмена",
+      "confirm": "Подтвердить"
+    }
+  },
+  "rejectApplicationModal": {
+    "title": "Отклонить",
+    "fields": {
+      "rejectReason": "Причина отклонения",
+      "selectPlaceholder": "Выберите",
+      "comment": "Примечание",
+      "commentPlaceholder": "Напишите примечание"
+    },
+    "validation": {
+      "rejectReasonRequired": "Выберите причину отклонения"
+    },
+    "actions": {
+      "cancel": "Отмена",
+      "confirm": "Подтвердить"
+    }
+  },
   "createUserModal": {
     "title": "Добавить нового пользователя",
     "fields": {

@@ -439,6 +439,36 @@
       "addOption": "Qo‘shish"
     }
   },
+  "forwardApplicationModal": {
+    "title": "Hududiy bo‘limga yo‘naltirish",
+    "fields": {
+      "regionalDepartment": "Hududiy bo‘lim",
+      "selectPlaceholder": "Tanlang"
+    },
+    "validation": {
+      "regionalDepartmentRequired": "Hududiy bo‘limni tanlang"
+    },
+    "actions": {
+      "cancel": "Bekor qilish",
+      "confirm": "Tasdiqlash"
+    }
+  },
+  "rejectApplicationModal": {
+    "title": "Rad etish",
+    "fields": {
+      "rejectReason": "Rad etish sababi",
+      "selectPlaceholder": "Tanlang",
+      "comment": "Izoh",
+      "commentPlaceholder": "Izoh yozing"
+    },
+    "validation": {
+      "rejectReasonRequired": "Rad etish sababini tanlang"
+    },
+    "actions": {
+      "cancel": "Bekor qilish",
+      "confirm": "Tasdiqlash"
+    }
+  },
   "createUserModal": {
     "title": "Yangi foydalanuvchi qo‘shish",
     "fields": {

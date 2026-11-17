@@ -14,6 +14,14 @@ import {
   type TApplicationActionHandler,
   type TApplicationActionKey,
 } from '@features/application-actions';
+import {
+  ForwardApplicationModal,
+  open as openForwardApplicationModal,
+} from '@features/forward-application-modal';
+import {
+  RejectApplicationModal,
+  open as openRejectApplicationModal,
+} from '@features/reject-application-modal';
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
 
@@ -36,12 +44,10 @@ const IncomingApplication: FC = () => {
 
   const actionHandlers: Partial<Record<TApplicationActionKey, TApplicationActionHandler>> = {
     [ApplicationActionKeys.REJECT]: (key: TApplicationActionKey) => {
-      console.log(key);
-      void dispatch;
+      dispatch(openRejectApplicationModal({ id: 'ARZ-31234123', key }));
     },
     [ApplicationActionKeys.FORWARD]: (key: TApplicationActionKey) => {
-      console.log(key);
-      void dispatch;
+      dispatch(openForwardApplicationModal({ id: 'ARZ-31234123', key }));
     },
   };
 
@@ -62,6 +68,8 @@ const IncomingApplication: FC = () => {
           <ApplicationActions actions={actions} handlers={actionHandlers} />
         </div>
         <IncomingApplicationBody />
+        <ForwardApplicationModal />
+        <RejectApplicationModal />
       </div>
     </section>
   );

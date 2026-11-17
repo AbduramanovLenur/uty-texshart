@@ -1,0 +1,30 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ant-margin);
+  .ant-form-item-row > .ant-form-item-label {
+    padding: 0;
+    margin-bottom: var(--ant-margin-xxs);
+  }
+  .ant-form-item-label > label {
+    color: var(--dark-88);
+    font-size: var(--ant-font-size);
+    font-weight: 500;
+    line-height: 1.5;
+    height: auto;
+  }
+  .ant-form-item-control-input-content {
+    width: 100%;
+    input {
+      border: 1px solid var(--default-border);
+      &::placeholder {
+        color: var(--dark-65);
+      }
+    }
+  }
+  &-select {
+    .ant-select-placeholder {
+      color: var(--dark-88);
+    }
+  }
+}

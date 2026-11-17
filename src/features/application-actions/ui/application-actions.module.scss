@@ -5,6 +5,14 @@
   &__btn {
     font-weight: 500;
     line-height: 1.5;
+    :global {
+      .ant-btn-icon {
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+      }
+    }
     &--reject {
       background-color: var(--ant-red-5);
       border-color: var(--ant-red-5);
