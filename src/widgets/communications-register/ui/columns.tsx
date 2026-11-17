@@ -8,7 +8,9 @@ import type { TFilterKey } from '../model/types/filter';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { CommunicationRegisterStatusTag, type ICommunicationRegister } from '@entities/communication-register';
+import { type ICommunicationRegister } from '@entities/communication-register';
+import { StatusTag } from '@shared/ui';
+import { Statuses } from '@shared/config';
 import type { TTableFilterState } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 import { IconRetry } from '@shared/assets';
@@ -107,9 +109,25 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       key: FilterKeys.STATUS,
       width: 270,
       filteredValue: filters.status,
-      filters: dummyCatalogFilters,
+      filters: [
+        { text: t('statuses.draft'), value: Statuses.DRAFT },
+        { text: t('statuses.submitted'), value: Statuses.SUBMITTED },
+        { text: t('statuses.paymentDone'), value: Statuses.PAYMENT_DONE },
+        { text: t('statuses.accepted'), value: Statuses.ACCEPTED },
+        { text: t('statuses.forwarded'), value: Statuses.FORWARDED },
+        { text: t('statuses.actCreated'), value: Statuses.ACT_CREATED },
+        { text: t('statuses.actConfirmed'), value: Statuses.ACT_CONFIRMED },
+        { text: t('statuses.technicalConditionsIssued'), value: Statuses.TECHNICAL_CONDITIONS_ISSUED },
+        { text: t('statuses.projectDocumentsUploaded'), value: Statuses.PROJECT_DOCUMENTS_UPLOADED },
+        { text: t('statuses.constructionPermitIssued'), value: Statuses.CONSTRUCTION_PERMIT_ISSUED },
+        { text: t('statuses.constructionStarted'), value: Statuses.CONSTRUCTION_STARTED },
+        { text: t('statuses.constructionCompleted'), value: Statuses.CONSTRUCTION_COMPLETED },
+        { text: t('statuses.constructionActUploaded'), value: Statuses.CONSTRUCTION_ACT_UPLOADED },
+        { text: t('statuses.completed'), value: Statuses.COMPLETED },
+        { text: t('statuses.rejected'), value: Statuses.REJECTED },
+      ],
       filterSearch: true,
-      render: (_, record) => <CommunicationRegisterStatusTag status={record.status} />,
+      render: (_, record) => <StatusTag status={record.status} />,
     },
     {
       title: t('headers.dateUpdate'),

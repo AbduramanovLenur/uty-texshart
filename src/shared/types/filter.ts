@@ -1,4 +1,3 @@
-import type { Key } from 'react';
 import type { Dayjs } from 'dayjs';
 import type { FilterDropdownProps, FilterValue } from 'antd/es/table/interface';
 

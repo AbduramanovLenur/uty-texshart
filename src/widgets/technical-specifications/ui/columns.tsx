@@ -12,7 +12,7 @@ import { open as openViewApplicantModal } from '@features/view-applicant-modal';
 import { open as openViewTechnicalSpecificationModal } from '@features/view-technical-specification-modal';
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
-import { TechnicalSpecificationStatusTag } from '@entities/technical-specification';
+import { StatusTag } from '@shared/ui';
 import type { ITechnicalSpecification } from '@entities/technical-specification';
 import { routes, Statuses } from '@shared/config';
 import type { TTableFilterState } from '@shared/types';
@@ -124,18 +124,25 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       width: 160,
       filteredValue: filters.status,
       filters: [
+        { text: t('statuses.draft'), value: Statuses.DRAFT },
+        { text: t('statuses.submitted'), value: Statuses.SUBMITTED },
+        { text: t('statuses.paymentDone'), value: Statuses.PAYMENT_DONE },
         { text: t('statuses.accepted'), value: Statuses.ACCEPTED },
         { text: t('statuses.forwarded'), value: Statuses.FORWARDED },
         { text: t('statuses.actCreated'), value: Statuses.ACT_CREATED },
+        { text: t('statuses.actConfirmed'), value: Statuses.ACT_CONFIRMED },
         { text: t('statuses.technicalConditionsIssued'), value: Statuses.TECHNICAL_CONDITIONS_ISSUED },
-        { text: t('statuses.rejected'), value: Statuses.REJECTED },
-        { text: t('statuses.draft'), value: Statuses.DRAFT },
+        { text: t('statuses.projectDocumentsUploaded'), value: Statuses.PROJECT_DOCUMENTS_UPLOADED },
+        { text: t('statuses.constructionPermitIssued'), value: Statuses.CONSTRUCTION_PERMIT_ISSUED },
         { text: t('statuses.constructionStarted'), value: Statuses.CONSTRUCTION_STARTED },
+        { text: t('statuses.constructionCompleted'), value: Statuses.CONSTRUCTION_COMPLETED },
+        { text: t('statuses.constructionActUploaded'), value: Statuses.CONSTRUCTION_ACT_UPLOADED },
         { text: t('statuses.completed'), value: Statuses.COMPLETED },
+        { text: t('statuses.rejected'), value: Statuses.REJECTED },
       ],
       filterSearch: true,
       render: (_, record) => (
-        <TechnicalSpecificationStatusTag status={record.status} />
+        <StatusTag status={record.status} />
       ),
     },
     {

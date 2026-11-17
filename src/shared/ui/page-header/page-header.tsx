@@ -2,7 +2,7 @@ import type { FC, ReactNode } from 'react';
 import { Typography, Button } from 'antd';
 import cn from 'classnames';
 
-import { IconLeftChevron } from '@shared/assets';
+import IconLeftChevron from '../../assets/icons/icon-left-chevron';
 
 import styles from './page-header.module.scss';
 

@@ -3,8 +3,7 @@ import type { FC } from 'react';
 import cn from 'classnames';
 
 import { itemRender } from './item-render';
-
-import { IconDownArrow } from '@shared/assets';
+import IconDownArrow from '../../assets/icons/icon-down-arrow';
 
 import styles from './paginator.module.scss';
 

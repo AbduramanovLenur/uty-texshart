@@ -10,3 +10,5 @@ export { queries } from './constants/queries';
 export { FilterDropdownKeys } from './constants/filter-dropdown-keys';
 export { SortOrders } from './constants/sort-orders';
 export { Statuses } from './constants/statuses';
+
+export { statusTagConfig } from './settings/status-tag';

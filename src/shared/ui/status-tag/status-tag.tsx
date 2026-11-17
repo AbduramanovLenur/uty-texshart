@@ -3,18 +3,17 @@ import { Tag } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import { applicationStatusTagConfig } from '../model/config/application-status';
+import { statusTagConfig } from '../../config/settings/status-tag';
+import type { TStatus } from '../../types/status';
 
-import type { TStatus } from '@shared/types';
-
-export interface IProps {
+interface IProps {
   status: TStatus;
   className?: string;
 }
 
-export const ApplicationStatusTag: FC<IProps> = ({ status, className }) => {
+export const StatusTag: FC<IProps> = ({ status, className }) => {
   const { t } = useTranslation();
-  const config = applicationStatusTagConfig[status];
+  const config = statusTagConfig[status];
 
   if (!config) {
     return <Tag className={cn(className)}>{status}</Tag>;
@@ -34,4 +33,4 @@ export const ApplicationStatusTag: FC<IProps> = ({ status, className }) => {
   );
 };
 
-export default ApplicationStatusTag;
+export default StatusTag;

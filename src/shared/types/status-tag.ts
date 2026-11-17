@@ -1,4 +1,4 @@
-export interface ITechnicalSpecificationStatusTagConfig {
+export interface IStatusTagConfig {
   bg: string;
   color: string;
   borderColor: string;
