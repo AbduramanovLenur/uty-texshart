@@ -185,7 +185,6 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       key: FilterKeys.DATE,
       width: 200,
       sorter: true,
-      // fixed: 'right',
       sortOrder: getSortOrder(filters, FilterKeys.DATE),
       filteredValue: filters.date,
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
