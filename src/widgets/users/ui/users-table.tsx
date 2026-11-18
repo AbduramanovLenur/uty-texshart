@@ -7,7 +7,7 @@ import type { TFilterKey } from '../model/types/filter';
 import { mockUsers } from '../model/mock';
 import { useGetColumns } from './columns';
 
-import type { IUserTableRow } from '@entities/user';
+import type { IUserInfo } from '@entities/user';
 import { useTableFilters } from '@shared/lib';
 import { Paginator } from '@shared/ui';
 
@@ -18,14 +18,14 @@ const UsersTable: FC = () => {
     filters,
     handleTableChange,
     handlePaginationChange,
-  } = useTableFilters<IUserTableRow, TFilterKey>();
+  } = useTableFilters<IUserInfo, TFilterKey>();
 
   const columns = useGetColumns(filters);
 
   return (
     <div className={cn('table-wrapper')}>
       <div className={cn('table-wrapper-body', 'scrollbar')}>
-        <Table<IUserTableRow>
+        <Table<IUserInfo>
           rowKey='id'
           classNames={{
             root: cn('table'),

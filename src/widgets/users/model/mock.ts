@@ -1,6 +1,6 @@
-import { type IUserTableRow } from '@entities/user';
+import { type IUserInfo } from '@entities/user';
 
-export const mockUsers: IUserTableRow[] = [
+export const mockUsers: IUserInfo[] = [
   {
     id: '1',
     name: 'Azizbek Tashkentov',
