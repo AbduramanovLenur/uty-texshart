@@ -3,32 +3,32 @@ import type { ICompany } from './types/company';
 
 export const mockMtus: IMtu[] = [
   {
-    id: 1,
+    id: '1',
     name: 'Buxoro MTU',
     isActive: true,
   },
   {
-    id: 2,
+    id: '2',
     name: "Qo'qon MTU",
     isActive: true,
   },
   {
-    id: 3,
+    id: '3',
     name: 'Toshkent MTU',
     isActive: true,
   },
   {
-    id: 4,
+    id: '4',
     name: 'Termiz MTU',
     isActive: false,
   },
   {
-    id: 5,
+    id: '5',
     name: 'Qarshi MTU',
     isActive: true,
   },
   {
-    id: 6,
+    id: '6',
     name: "Qo'ng'irot MTU",
     isActive: true,
   },
@@ -36,7 +36,7 @@ export const mockMtus: IMtu[] = [
 
 export const mockCompanies: ICompany[] = [
   {
-    id: 1,
+    id: '1',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -44,7 +44,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 2,
+    id: '2',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -52,7 +52,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 3,
+    id: '3',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -60,7 +60,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 4,
+    id: '4',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -68,7 +68,7 @@ export const mockCompanies: ICompany[] = [
     isActive: false,
   },
   {
-    id: 5,
+    id: '5',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -76,7 +76,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 6,
+    id: '6',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -84,7 +84,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 7,
+    id: '7',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -92,7 +92,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 8,
+    id: '8',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -100,7 +100,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 9,
+    id: '9',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -108,7 +108,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 10,
+    id: '10',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',
@@ -116,7 +116,7 @@ export const mockCompanies: ICompany[] = [
     isActive: true,
   },
   {
-    id: 11,
+    id: '11',
     type: 'SHCH',
     name: "Salar temir yo'l masofasi",
     kmPk: '123-12',

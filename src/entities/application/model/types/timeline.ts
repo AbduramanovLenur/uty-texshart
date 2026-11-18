@@ -5,7 +5,7 @@ import type { TApprovalStatus } from './approval-status';
 export type TApplicationTimelineStatus = (typeof Statuses)[keyof typeof Statuses];
 
 export interface ITimelineApproval {
-  id?: string | number;
+  id?: string;
   title: string;
   person: string;
   text?: string;
@@ -14,7 +14,7 @@ export interface ITimelineApproval {
 }
 
 export interface ITimelineStep {
-  id: string | number;
+  id: string;
   step: number;
   title: string;
   status: TApplicationTimelineStatus;

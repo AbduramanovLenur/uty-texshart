@@ -1,10 +1,10 @@
 export interface IOpenPayload {
-  id?: number | string | null;
+  id?: string | null;
   key?: string | null;
 }
 
 export interface IState {
   isOpen: boolean;
-  id: number | string | null;
+  id: string | null;
   key: string | null;
 }

@@ -16,14 +16,14 @@ const NotificationPopover: FC = () => {
 
   const notifications = [
     {
-      id: 1,
+      id: '1',
       label: 'Texnik-shart berildi',
       description: 'Suv quvuri uchun texnik-shart tayyor.',
       record: 'ARZ-1345',
       timestamp: 'Bugun, 10:45',
     },
     {
-      id: 2,
+      id: '2',
       label: 'Ma’lumotlarni to‘ldirish talab etiladi',
       description: 'Arizaga kesishuv sxemasini ilova qiling.',
       record: 'ARZ-0923',

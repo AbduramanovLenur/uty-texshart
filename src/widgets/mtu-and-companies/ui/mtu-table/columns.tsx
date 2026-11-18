@@ -18,11 +18,11 @@ export const useGetColumns = (filters: TTableFilterState<TMtuFilterKey>): TableP
   const { t } = useTranslation();
   const dispatch = useDispatch();
 
-  const handleEdit = (id: number) => {
+  const handleEdit = (id: string) => {
     dispatch(openMtuAndCompaniesModal({ type: MtuAndCompaniesTypes.MTU, id }));
   };
 
-  const handleStatusChange = (id: number, checked: boolean) => {
+  const handleStatusChange = (id: string, checked: boolean) => {
     console.log(id, checked);
   };
 

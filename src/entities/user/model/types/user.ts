@@ -1,5 +1,3 @@
-import type { TUserStatus } from './user-status';
-
 export interface IUserFile {
   name: string;
   size: string;
@@ -7,17 +5,17 @@ export interface IUserFile {
 }
 
 export interface IUserTableRow {
-  id: number | string;
+  id: string;
   name: string;
   role: string;
   mtu: string;
   pinfl: string;
-  status: TUserStatus;
+  status: boolean;
   lastLogin: string;
 }
 
 export interface IUserDetails {
-  id: number | string;
+  id: string;
   name: string;
   pinfl: string;
   fullName: string;
@@ -30,7 +28,7 @@ export interface IUserDetails {
 }
 
 export interface IUser {
-  id: number | string;
+  id: string;
   name: string;
   inn: string;
   director: string;
@@ -42,7 +40,7 @@ export interface IUser {
 }
 
 export interface IUserPassportItem {
-  id: string | number;
+  id: string;
   url: string;
 }
 

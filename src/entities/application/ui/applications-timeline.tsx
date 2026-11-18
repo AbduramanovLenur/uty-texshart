@@ -40,7 +40,7 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
     //   person: "Yo'ldoshev Akrom",
     // },
     {
-      id: 1,
+      id: '1',
       title: t('applicationsTimeline.approvals.pch'),
       person: 'Ahmedov Shokir',
       text: "Salar Temiryo'l masofasi",
@@ -48,7 +48,7 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
       date: '20.01.2026',
     },
     {
-      id: 2,
+      id: '2',
       title: t('applicationsTimeline.approvals.ech'),
       person: 'Salimov Erkin',
       text: 'Toshkent signalizatsiya va aloqa masofasi',
@@ -56,14 +56,14 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
       date: '20.01.2026',
     },
     {
-      id: 2,
+      id: '2',
       title: t('applicationsTimeline.approvals.shch'),
       person: 'Temirov Aziz',
       text: 'Toshkent signalizatsiya va aloqa masofasi',
       status: ApprovalStatuses.PENDING,
     },
     {
-      id: 4,
+      id: '4',
       title: t('applicationsTimeline.approvals.applicant'),
       person: 'New World MCHJ',
       text: 'Toshkent signalizatsiya va aloqa masofasi',

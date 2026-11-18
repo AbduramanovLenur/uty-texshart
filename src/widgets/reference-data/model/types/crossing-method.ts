@@ -1,5 +1,5 @@
 export interface ICrossingMethod {
-  id: number;
+  id: string;
   crossingMethod: string;
   communicationType: string;
   isActive: boolean;

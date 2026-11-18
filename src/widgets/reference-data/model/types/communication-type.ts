@@ -1,5 +1,5 @@
 export interface ICommunicationType {
-  id: number;
+  id: string;
   name: string;
   isActive: boolean;
 }
