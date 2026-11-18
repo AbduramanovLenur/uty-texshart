@@ -19,6 +19,8 @@ interface IProps {
 const ApplicationDetails: FC<IProps> = ({ id, className }) => {
   const { t } = useTranslation();
 
+  console.log(id);
+
   const items: TabsProps['items'] = [
     {
       key: TabKeys.FIRST_TAB,
