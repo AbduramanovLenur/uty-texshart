@@ -1,4 +1,4 @@
-import type { TableProps } from 'antd';
+import { Switch, type TableProps } from 'antd';
 import { Link } from 'react-router-dom';
 import { SearchOutlined } from '@ant-design/icons';
 import { useTranslation } from 'react-i18next';
@@ -8,13 +8,17 @@ import { FilterKeys } from '../model/constants/filter-keys';
 import type { TFilterKey } from '../model/types/filter';
 
 import { TableSearchFilter } from '@features/table-search-filter';
-import { UserStatusTag, type IUserTableRow } from '@entities/user';
+import { type IUserTableRow } from '@entities/user';
 import { routes } from '@shared/config';
 import type { TTableFilterState } from '@shared/types';
 import { getSortOrder, maskPinfl } from '@shared/utils';
 
 export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IUserTableRow>['columns'] => {
   const { t } = useTranslation();
+
+  const handleStatusChange = (id: string, checked: boolean) => {
+    console.log(id, checked);
+  };
 
   return [
     {
@@ -113,7 +117,12 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       title: t('headers.status'),
       key: FilterKeys.STATUS,
       width: 165,
-      render: (_, record) => <UserStatusTag status={record.status} />,
+      render: (_, record) => (
+        <Switch
+          defaultChecked={record.status}
+          onChange={(checked) => handleStatusChange(record.id, checked)}
+        />
+      ),
       filteredValue: filters.status,
       filters: [
         {

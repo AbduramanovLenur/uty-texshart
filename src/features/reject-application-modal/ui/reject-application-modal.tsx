@@ -39,13 +39,13 @@ const RejectApplicationModal: FC = () => {
     <Modal
       className={cn('modal', styles['reject-application-modal'])}
       classNames={{
-        body: cn(styles['reject-application-modal__body']),
+        body: cn(styles['reject-application-modal__body'], 'form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
-      title={t('rejectApplicationModal.title', 'Rad etish')}
+      title={t('rejectApplicationModal.title')}
       centered
-      width={500}
+      width={520}
       destroyOnHidden
       footer={
         <div className={cn('modal__footer')}>
@@ -54,14 +54,14 @@ const RejectApplicationModal: FC = () => {
             type='default'
             onClick={handleClose}
           >
-            {t('rejectApplicationModal.actions.cancel')}
+            {t('actions.cancel')}
           </Button>
           <Button
             className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
-            {t('rejectApplicationModal.actions.confirm')}
+            {t('actions.confirm')}
           </Button>
         </div>
       }
@@ -90,7 +90,6 @@ const RejectApplicationModal: FC = () => {
             options={rejectReasonOptionsMock}
           />
         </Item>
-
         <Item
           label={t('rejectApplicationModal.fields.comment')}
           name={FormFields.COMMENT}

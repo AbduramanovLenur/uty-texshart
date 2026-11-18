@@ -64,13 +64,13 @@ const ReferenceDataModal: FC = () => {
     <Modal
       className={cn('modal', styles['reference-data-modal'])}
       classNames={{
-        body: cn(styles['reference-data-modal__body']),
+        body: cn(styles['reference-data-modal__body'], 'form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
       title={id ? t('referenceDataModal.titleEdit') : t('referenceDataModal.title')}
       centered
-      width={520}
+      width={isTechnicalParameter ? 600 : 520}
       destroyOnHidden
       footer={
         <div className={cn('modal__footer')}>
@@ -79,14 +79,14 @@ const ReferenceDataModal: FC = () => {
             type='default'
             onClick={handleClose}
           >
-            {t('createUserModal.actions.cancel')}
+            {t('actions.cancel')}
           </Button>
           <Button
             className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
-            {t('createUserModal.actions.confirm')}
+            {t('actions.confirm')}
           </Button>
         </div>
       }
@@ -216,7 +216,7 @@ const ReferenceDataModal: FC = () => {
                 name={FormFields.HAS_MULTIPLE_OPTIONS}
                 valuePropName='checked'
               >
-                <Checkbox className={cn(styles['reference-data-modal__checkbox'])}>
+                <Checkbox className={cn(styles['reference-data-modal__checkbox'], 'form-checkbox')}>
                   {t('referenceDataModal.fields.hasMultipleOptions')}
                 </Checkbox>
               </Item>

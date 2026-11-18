@@ -1,7 +1,7 @@
 import type { TNetworkType } from './network-type';
 
 export interface IApplicationPreview {
-  id: number;
+  id: string;
   code: string;
   type: TNetworkType;
   title: string;

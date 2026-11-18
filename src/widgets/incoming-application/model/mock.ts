@@ -64,11 +64,11 @@ export const userDocuments: IUserDocuments = {
     size: '3.4 MB',
     previews: [
       {
-        id: 1,
+        id: '1',
         url: 'https://commons.wikimedia.org/wiki/Special:FilePath/World_ID_card_front.jpg',
       },
       {
-        id: 2,
+        id: '2',
         url: 'https://commons.wikimedia.org/wiki/Special:FilePath/World_ID_card_back.jpg',
       },
     ],

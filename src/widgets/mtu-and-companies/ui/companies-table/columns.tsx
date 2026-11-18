@@ -43,11 +43,11 @@ export const useGetColumns = (filters: TTableFilterState<TCompanyFilterKey>): Ta
     value: mtuName,
   }));
 
-  const handleEdit = (id: number) => {
+  const handleEdit = (id: string) => {
     dispatch(openMtuAndCompaniesModal({ type: MtuAndCompaniesTypes.COMPANIES, id }));
   };
 
-  const handleStatusChange = (id: number, checked: boolean) => {
+  const handleStatusChange = (id: string, checked: boolean) => {
     console.log(id, checked);
   };
 

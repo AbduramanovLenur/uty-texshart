@@ -1,5 +1,5 @@
 export interface ITechnicalParameter {
-  id: number;
+  id: string;
   technicalParameter: string;
   crossingMethod: string;
   communicationType: string;

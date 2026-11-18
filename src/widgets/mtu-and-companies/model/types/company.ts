@@ -1,5 +1,5 @@
 export interface ICompany {
-  id: number;
+  id: string;
   type: string;
   name: string;
   kmPk: string;

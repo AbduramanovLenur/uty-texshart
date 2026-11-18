@@ -1,5 +1,5 @@
 export interface INotificationCard {
-  id: string | number;
+  id: string;
   label: string;
   description: string;
   record: string;

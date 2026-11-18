@@ -39,13 +39,13 @@ const ForwardApplicationModal: FC = () => {
     <Modal
       className={cn('modal', styles['forward-application-modal'])}
       classNames={{
-        body: cn(styles['forward-application-modal__body']),
+        body: cn(styles['forward-application-modal__body'], 'form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
-      title={t('forwardApplicationModal.title', 'Hududiy bo‘limga yo‘naltirish')}
+      title={t('forwardApplicationModal.title')}
       centered
-      width={500}
+      width={520}
       destroyOnHidden
       footer={
         <div className={cn('modal__footer')}>
@@ -54,14 +54,14 @@ const ForwardApplicationModal: FC = () => {
             type='default'
             onClick={handleClose}
           >
-            {t('forwardApplicationModal.actions.cancel')}
+            {t('actions.cancel')}
           </Button>
           <Button
             className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
-            {t('forwardApplicationModal.actions.confirm')}
+            {t('actions.confirm')}
           </Button>
         </div>
       }

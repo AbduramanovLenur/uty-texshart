@@ -13,7 +13,7 @@ export const routes = {
   INTERNAL_GIS: '/internal-gis',
   COMMUNICATIONS_REGISTER: '/communications-register',
   USERS: '/users',
-  SINGLE_USER: (id: string | number) => `${routes.USERS}/${id}`,
+  SINGLE_USER: (id: string) => `${routes.USERS}/${id}`,
   ROLES: '/roles',
   REFERENCE_DATA: '/reference-data',
   MTU_AND_COMPANIES: '/mtu-and-companies',

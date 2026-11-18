@@ -267,7 +267,9 @@
     "download": "Yuklab olish",
     "downloadSize": "Yuklab olish {{size}}",
     "downloadFile": "Yuklash",
-    "confirm": "Tasdiqlsh",
+    "confirm": "Tasdiqlash",
+    "cancel": "Bekor qilish",
+    "delete": "O‘chirish",
     "more": "Batafsil",
     "print": "Chop etish",
     "share": "Ulashish",
@@ -447,10 +449,6 @@
     },
     "validation": {
       "regionalDepartmentRequired": "Hududiy bo‘limni tanlang"
-    },
-    "actions": {
-      "cancel": "Bekor qilish",
-      "confirm": "Tasdiqlash"
     }
   },
   "rejectApplicationModal": {
@@ -463,10 +461,6 @@
     },
     "validation": {
       "rejectReasonRequired": "Rad etish sababini tanlang"
-    },
-    "actions": {
-      "cancel": "Bekor qilish",
-      "confirm": "Tasdiqlash"
     }
   },
   "createUserModal": {
@@ -493,10 +487,6 @@
       "pinflRequired": "JSHSHRni kiriting",
       "roleRequired": "Rolni tanlang",
       "regionalDepartmentRequired": "Hududiy bo‘limni tanlang"
-    },
-    "actions": {
-      "cancel": "Bekor qilish",
-      "confirm": "Tasdiqlash"
     }
   },
   "userStatuses": {

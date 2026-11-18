@@ -13,7 +13,7 @@ import styles from './technical-parameters-table.module.scss';
 export const useGetColumns = (filters: TTableFilterState<TTechnicalParameterFilterKey>): TableProps<ITechnicalParameter>['columns'] => {
   const { t } = useTranslation();
 
-  const handleStatusChange = (id: number, checked: boolean) => {
+  const handleStatusChange = (id: string, checked: boolean) => {
     console.log(id, checked);
   };
 

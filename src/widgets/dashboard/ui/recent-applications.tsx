@@ -22,7 +22,7 @@ const RecentApplications: FC = () => {
 
   const applications: IApplicationPreview[] = [
     {
-      id: 1,
+      id: '1',
       code: 'AR-2026-000008',
       type: NetworkTypes.OIL_PIPELINE,
       title: 'Neft / neft mahsulotlari quvuri',
@@ -31,7 +31,7 @@ const RecentApplications: FC = () => {
       active: true,
     },
     {
-      id: 2,
+      id: '2',
       code: 'AR-2026-000009',
       type: NetworkTypes.POWER_LINE,
       title: 'Havo elektr uzatish liniyasi',
@@ -39,7 +39,7 @@ const RecentApplications: FC = () => {
       icon: '/images/test/oil.svg',
     },
     {
-      id: 3,
+      id: '3',
       code: 'AR-2026-000012',
       type: NetworkTypes.FIBER_OPTIC,
       title: 'Optik tolali aloqa kabeli',
@@ -47,7 +47,7 @@ const RecentApplications: FC = () => {
       icon: '/images/test/oil.svg',
     },
     {
-      id: 4,
+      id: '4',
       code: 'AR-2026-000010',
       type: NetworkTypes.GAS_PIPELINE,
       title: 'Gaz quvuri',
@@ -55,7 +55,7 @@ const RecentApplications: FC = () => {
       icon: '/images/test/oil.svg',
     },
     {
-      id: 5,
+      id: '5',
       code: 'AR-2026-000011',
       type: NetworkTypes.SEWAGE_PIPELINE,
       title: 'Kanalizatsiya quvuri',
@@ -63,7 +63,7 @@ const RecentApplications: FC = () => {
       icon: '/images/test/oil.svg',
     },
     {
-      id: 6,
+      id: '6',
       code: 'AR-2026-000011',
       type: NetworkTypes.OIL_PIPELINE,
       title: 'Neft / neft mahsulotlari quvuri',

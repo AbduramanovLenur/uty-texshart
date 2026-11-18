@@ -153,7 +153,7 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
         onDrop={handleDrop}
         role={!hasImage ? 'button' : undefined}
         tabIndex={!hasImage ? 0 : undefined}
-        aria-label={!hasImage ? t('profile.upload', 'Yuklash') : undefined}
+        aria-label={!hasImage ? t('profile.upload') : undefined}
       >
         <div className={cn(styles['avatar-upload__inner'])}>
           {hasImage && currentImage ? (
@@ -170,8 +170,8 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
                   type='button'
                   className={cn(styles['avatar-upload__action-btn'])}
                   onClick={handlePreview}
-                  title={t('actions.view', "Ko'rish")}
-                  aria-label={t('actions.view', "Ko'rish")}
+                  title={t('actions.view')}
+                  aria-label={t('actions.view')}
                 >
                   <EyeOutlined className={cn(styles['avatar-upload__action-icon'])} />
                 </button>
@@ -179,8 +179,8 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
                   type='button'
                   className={cn(styles['avatar-upload__action-btn'])}
                   onClick={handleDelete}
-                  title={t('actions.delete', "O'chirish")}
-                  aria-label={t('actions.delete', "O'chirish")}
+                  title={t('actions.delete')}
+                  aria-label={t('actions.delete')}
                 >
                   <DeleteOutlined className={cn(styles['avatar-upload__action-icon'])} />
                 </button>
@@ -194,7 +194,7 @@ const AvatarUpload: FC<IAvatarUploadProps> = ({
               <div className={cn(styles['avatar-upload__hover-content'])}>
                 <span className={cn(styles['avatar-upload__plus'])}>+</span>
                 <span className={cn(styles['avatar-upload__text'])}>
-                  {t('profile.upload', 'Yuklash')}
+                  {t('profile.upload')}
                 </span>
               </div>
             </>

@@ -1,5 +1,5 @@
 export interface IMtu {
-  id: number;
+  id: string;
   name: string;
   isActive: boolean;
 }

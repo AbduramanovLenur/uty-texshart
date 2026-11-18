@@ -45,7 +45,7 @@ const CommunicationsRegisterControls: FC<IProps> = ({
   return (
     <div className={cn(styles['communications-register-controls'], className)}>
       <Checkbox
-        className={cn(styles['communications-register-controls__checkbox'])}
+        className={cn(styles['communications-register-controls__checkbox'], 'form-checkbox')}
         checked={isNoTechSpec}
         onChange={handleNoTechnicalSpecificationChange}
       >
