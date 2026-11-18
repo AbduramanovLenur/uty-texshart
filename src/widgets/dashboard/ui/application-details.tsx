@@ -11,7 +11,12 @@ import styles from './application-details.module.scss';
 
 const { Title } = Typography;
 
-const ApplicationDetails: FC = () => {
+interface IProps {
+  id?: string;
+  className?: string;
+}
+
+const ApplicationDetails: FC<IProps> = ({ id, className }) => {
   const { t } = useTranslation();
 
   const items: TabsProps['items'] = [
@@ -28,7 +33,7 @@ const ApplicationDetails: FC = () => {
   ];
 
   return (
-    <div className={cn(styles['application-details'], 'tabs')}>
+    <div className={cn(styles['application-details'], 'tabs', className)}>
       <Title className={cn(styles['application-details__title'])} level={4}>
         {t('dashboard.applicationDetails.title')}
       </Title>

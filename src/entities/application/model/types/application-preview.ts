@@ -7,5 +7,4 @@ export interface IApplicationPreview {
   title: string;
   subtitle: string;
   icon: string;
-  active?: boolean;
 }
