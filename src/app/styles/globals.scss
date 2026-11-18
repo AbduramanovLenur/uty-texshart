@@ -157,3 +157,9 @@ main {
 .padded {
   padding: var(--primary-grid-padding);
 }
+
+.create-btn {
+  &.ant-btn {
+    font-weight: 500;
+  }
+}

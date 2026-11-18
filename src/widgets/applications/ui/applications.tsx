@@ -36,7 +36,7 @@ const Applications: FC = () => {
             {t('actions.download')}
           </Button>
           <Button
-            className={cn(styles['applications__create'])}
+            className={cn(styles['applications__create'], 'create-btn')}
             type='primary'
             icon={<IconPlus />}
             onClick={handleCreateApplication}
