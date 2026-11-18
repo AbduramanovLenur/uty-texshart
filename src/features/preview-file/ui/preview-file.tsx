@@ -55,7 +55,7 @@ const PreviewFile: FC<IProps> = ({
           <Button
             className={cn(styles['preview-file__button'])}
             icon={<IconEye />}
-            onClick={() => handleDownload(file.url, file.name)}
+            onClick={handleView}
           >
             {t('actions.view')}
           </Button>

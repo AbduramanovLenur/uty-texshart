@@ -1,11 +1,13 @@
 import { Typography } from 'antd';
 import type { FC } from 'react';
+import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { userDocuments } from '../model/mock';
 
 import { PreviewFile } from '@features/preview-file';
+import { open as openViewPdfModal } from '@features/view-pdf-modal';
 import { UserInfo } from '@entities/user';
 
 import styles from './incoming-application-applicant.module.scss';
@@ -14,6 +16,11 @@ const { Title } = Typography;
 
 const IncomingApplicationApplicant: FC = () => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const handleOpenPdf = (url: string) => {
+    dispatch(openViewPdfModal({ url }));
+  };
 
   return (
     <div className={cn(styles['incoming-application-applicant'])}>
@@ -32,6 +39,7 @@ const IncomingApplicationApplicant: FC = () => {
             }}
             isDownload
             isView
+            onView={() => handleOpenPdf(userDocuments.passport.url)}
           />
         </div>
         <div className={cn(styles['incoming-application-applicant__documents-overlay'])}>
@@ -41,12 +49,13 @@ const IncomingApplicationApplicant: FC = () => {
           <PreviewFile
             file={{
               name: t('userDocuments.license'),
-              url: userDocuments.passport.url,
+              url: userDocuments.license.url,
               size: '100x100',
               extensionFile: 'PDF',
             }}
             isDownload
             isView
+            onView={() => handleOpenPdf(userDocuments.license.url)}
           />
         </div>
       </div>

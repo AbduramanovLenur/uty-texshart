@@ -60,11 +60,11 @@ export const previewFilesMock: IPreviewFile[] = [
 
 export const userDocuments: IUserDocuments = {
   passport: {
-    url: 'https://commons.wikimedia.org/wiki/Special:FilePath/World_ID_card_front.jpg',
+    url: 'https://www.rd.usda.gov/sites/default/files/pdf-sample_0.pdf',
     size: '3.4 MB',
   },
   license: {
-    url: 'https://commons.wikimedia.org/wiki/Special:FilePath/World_ID_card_front.jpg',
+    url: 'https://www.rd.usda.gov/sites/default/files/pdf-sample_0.pdf',
     size: '1.2 MB',
   },
 };
