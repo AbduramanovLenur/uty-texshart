@@ -38,7 +38,7 @@ const CreateUserModal: FC = () => {
     <Modal
       className={cn('modal', styles['create-user-modal'])}
       classNames={{
-        body: cn(styles['create-user-modal__body']),
+        body: cn(styles['create-user-modal__body'], 'form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -67,7 +67,7 @@ const CreateUserModal: FC = () => {
     >
       <Form
         form={form}
-        className={cn(styles['create-user-modal__form'])}
+        className={cn(styles['create-user-modal__form'], 'form')}
         layout='vertical'
         onFinish={handleFinish}
       >
@@ -118,7 +118,7 @@ const CreateUserModal: FC = () => {
             ]}
           >
             <Select
-              className={cn(styles['create-user-modal__select'])}
+              className={cn(styles['create-user-modal__select'], 'form-select')}
               size='large'
               placeholder={t('createUserModal.fields.selectPlaceholder')}
               suffixIcon={<IconDownArrow />}
@@ -168,7 +168,7 @@ const CreateUserModal: FC = () => {
             name={FormFields.TELEGRAM_NOTIFICATIONS}
             valuePropName='checked'
           >
-            <Checkbox className={cn(styles['create-user-modal__checkbox'])}>
+            <Checkbox className={cn(styles['create-user-modal__checkbox'], 'form-checkbox')}>
               {t('createUserModal.fields.telegramNotifications')}
             </Checkbox>
           </Item>

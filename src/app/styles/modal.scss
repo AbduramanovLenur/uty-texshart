@@ -1,5 +1,11 @@
 .modal {
-  .ant-modal-container {
+  max-width: 80%;
+  .ant-modal-container,
+  .ant-modal-content {
+    display: flex;
+    flex-direction: column;
+    max-height: 80vh;
+    overflow: hidden;
     padding: 0;
   }
   .ant-modal-close {
@@ -17,6 +23,7 @@
     }
   }
   .ant-modal-header {
+    flex-shrink: 0;
     padding: var(--ant-padding-md) var(--ant-padding-lg) var(--ant-padding-xs);
     margin-bottom: 0;
   }
@@ -27,9 +34,29 @@
     color: var(--dark-88);
   }
   .ant-modal-body {
+    flex: 1 1 auto;
+    min-height: 0;
+    overflow-y: auto;
     padding: var(--ant-padding-lg);
+    scrollbar-width: thin;
+    scrollbar-color: var(--ant-color-text-quaternary) transparent;
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--ant-color-text-quaternary);
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--ant-color-text-secondary);
+    }
   }
   .ant-modal-footer {
+    flex-shrink: 0;
     padding: var(--ant-padding) var(--ant-padding-lg) var(--ant-padding-md);
     margin-top: 0;
   }

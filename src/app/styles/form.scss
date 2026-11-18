@@ -22,9 +22,31 @@
       }
     }
   }
+  &-body {
+    padding: var(--ant-padding) var(--ant-padding-lg) !important;
+    &::-webkit-scrollbar {
+      width: 2px;
+      height: 2px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--ant-color-text-quaternary);
+      border-radius: 2px;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--ant-color-text-secondary);
+    }
+  }
   &-select {
     .ant-select-placeholder {
       color: var(--dark-88);
     }
+  }
+  &-checkbox {
+    font-size: var(--ant-font-size);
+    line-height: 1.5;
+    color: var(--dark-88);
   }
 }

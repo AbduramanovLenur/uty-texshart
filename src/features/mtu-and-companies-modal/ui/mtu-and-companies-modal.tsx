@@ -53,7 +53,7 @@ const MtuAndCompaniesModal: FC = () => {
     <Modal
       className={cn('modal', styles['mtu-and-companies-modal'])}
       classNames={{
-        body: cn(styles['mtu-and-companies-modal__body']),
+        body: cn(styles['mtu-and-companies-modal__body'], 'form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -82,7 +82,7 @@ const MtuAndCompaniesModal: FC = () => {
     >
       <Form
         form={form}
-        className={cn(styles['mtu-and-companies-modal__form'])}
+        className={cn(styles['mtu-and-companies-modal__form'], 'form')}
         layout='vertical'
         onFinish={handleFinish}
       >
@@ -97,7 +97,7 @@ const MtuAndCompaniesModal: FC = () => {
           ]}
         >
           <Select
-            className={cn(styles['mtu-and-companies-modal__select'])}
+            className={cn(styles['mtu-and-companies-modal__select'], 'form-select')}
             size='large'
             options={typeOptions}
             disabled={Boolean(id)}
@@ -117,7 +117,7 @@ const MtuAndCompaniesModal: FC = () => {
             ]}
           >
             <Select
-              className={cn(styles['mtu-and-companies-modal__select'])}
+              className={cn(styles['mtu-and-companies-modal__select'], 'form-select')}
               size='large'
               options={mockCompanyTypeOptions}
               placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -156,7 +156,7 @@ const MtuAndCompaniesModal: FC = () => {
               ]}
             >
               <Select
-                className={cn(styles['mtu-and-companies-modal__select'])}
+                className={cn(styles['mtu-and-companies-modal__select'], 'form-select')}
                 size='large'
                 options={mockMtuOptions}
                 placeholder={t('createUserModal.fields.selectPlaceholder')}

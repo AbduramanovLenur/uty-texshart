@@ -1,24 +1,6 @@
 .create-user-modal {
-  &__body {
-    padding: var(--ant-padding) var(--ant-padding-lg) !important;
-  }
   &__form {
-    :global {
-      .ant-form-item-row > .ant-form-item-label {
-        padding: 0;
-        margin-bottom: var(--ant-margin-xxs);
-      }
-      .ant-form-item-label > label {
-        color: var(--dark-88);
-        font-size: var(--ant-font-size);
-        font-weight: 500;
-        line-height: 1.5;
-        height: auto;
-      }
-      .ant-form-item-control-input-content {
-        width: 100%;
-      }
-    }
+    gap: 0;
     &-wrapper {
       display: flex;
       flex-direction: column;
@@ -31,12 +13,6 @@
     grid-template-columns: repeat(2, 1fr);
     gap: var(--ant-margin);
   }
-  &__select {
-    width: 100%;
-    :global(.ant-select-placeholder) {
-      color: var(--dark-88);
-    }
-  }
   &__checkbox {
     &-wrapper {
       margin-bottom: var(--ant-margin);
@@ -48,10 +24,5 @@
         }
       }
     }
-  }
-  &__checkbox {
-    font-size: var(--ant-font-size);
-    line-height: 1.5;
-    color: var(--dark-88);
   }
 }
