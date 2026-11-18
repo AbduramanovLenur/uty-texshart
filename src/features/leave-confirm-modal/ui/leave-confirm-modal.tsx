@@ -2,19 +2,22 @@ import type { FC } from 'react';
 import { Modal, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
+import type { BlockerFunction } from 'react-router-dom';
 
 import { useLeaveConfirm } from '../model/lib/hooks/use-leave-confirm';
-import type { ILeaveConfirmModalProps } from '../model/types/props';
 
 import styles from './leave-confirm-modal.module.scss';
 
-export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
+export interface IProps {
+  when?: boolean | BlockerFunction;
+  open?: boolean;
+  onLeave?: () => void;
+  onStay?: () => void;
+}
+
+const LeaveConfirmModal: FC<IProps> = ({
   when = true,
   open,
-  title,
-  description,
-  leaveText,
-  continueText,
   onLeave,
   onStay,
 }) => {
@@ -23,15 +26,10 @@ export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
 
   const visible = open !== undefined ? open : isBlockedOpen;
 
-  const displayTitle = title ?? t('leaveConfirmModal.title');
-  const displayDescription = description ?? t('leaveConfirmModal.description');
-  const displayLeaveText = leaveText ?? t('actions.close');
-  const displayContinueText = continueText ?? t('leaveConfirmModal.continue');
-
   return (
     <Modal
       open={visible}
-      title={displayTitle}
+      title={t('leaveConfirmModal.title')}
       onCancel={handleStay}
       centered
       width={520}
@@ -44,7 +42,7 @@ export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
             type='default'
             onClick={handleStay}
           >
-            {displayLeaveText}
+            {t('actions.close')}
           </Button>
           <Button
             className={cn(styles['leave-confirm-modal__btn-continue'])}
@@ -52,13 +50,13 @@ export const LeaveConfirmModal: FC<ILeaveConfirmModalProps> = ({
             danger
             onClick={handleLeave}
           >
-            {displayContinueText}
+            {t('leaveConfirmModal.continue')}
           </Button>
         </div>
       }
     >
       <p className={cn(styles['leave-confirm-modal__description'])}>
-        {displayDescription}
+        {t('leaveConfirmModal.description')}
       </p>
     </Modal>
   );
