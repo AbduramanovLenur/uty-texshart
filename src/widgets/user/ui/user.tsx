@@ -6,10 +6,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 
 import UserBody from './user-body';
 import { getBreadcrumbs } from '../model/lib/utils/get-breadcrumbs';
+import { mockUserDetails } from '../model/mock';
 
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
-import { getUserDetailsById } from '@entities/user';
 
 import styles from './user.module.scss';
 
@@ -19,7 +19,7 @@ const User: FC = () => {
   const { id } = useParams<{ id: string }>();
   const breadcrumbs = getBreadcrumbs(t);
 
-  const currentUser = getUserDetailsById(id);
+  console.log(id);
 
   const handleBack = () => {
     navigate(routes.USERS);
@@ -37,10 +37,10 @@ const User: FC = () => {
         />
         <div className={cn(styles['user__top'])}>
           <PageHeader onClick={handleBack}>
-            {currentUser.name}
+            {mockUserDetails.name}
           </PageHeader>
         </div>
-        <UserBody user={currentUser} />
+        <UserBody user={mockUserDetails} />
       </div>
     </section>
   );

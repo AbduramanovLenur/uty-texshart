@@ -4,7 +4,7 @@ export interface IUserFile {
   url: string;
 }
 
-export interface IUserTableRow {
+export interface IUserInfo {
   id: string;
   name: string;
   role: string;

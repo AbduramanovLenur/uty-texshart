@@ -1,12 +1,17 @@
 import type { FC } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import { Applications } from '@widgets/applications';
 import { IncomingApplications } from '@widgets/incoming-applications';
 
 const ApplicationsPage: FC = () => {
-  const userRole = 'ADMIN';
+  const [searchParams] = useSearchParams();
+  const role = searchParams.get('role');
+  const isAdmin =
+    role?.toLowerCase() === 'admin' ||
+    (searchParams.has('admin') && searchParams.get('admin') !== 'false');
 
-  if (userRole) {
+  if (isAdmin) {
     return <IncomingApplications />;
   }
 

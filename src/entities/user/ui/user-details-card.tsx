@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import type { IUserDetails } from '../model/types/user';
-import { defaultUserDetails } from '../model/mock';
+import { mockUserDetails } from '../model/mock';
 
 import styles from './user-details-card.module.scss';
 
@@ -16,7 +16,7 @@ interface IProps {
   className?: string;
 }
 
-const UserDetailsCard: FC<IProps> = ({ user = defaultUserDetails, actionSlot, className }) => {
+const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, className }) => {
   const { t } = useTranslation();
 
   return (

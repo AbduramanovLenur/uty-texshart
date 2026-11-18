@@ -8,12 +8,12 @@ import { FilterKeys } from '../model/constants/filter-keys';
 import type { TFilterKey } from '../model/types/filter';
 
 import { TableSearchFilter } from '@features/table-search-filter';
-import { type IUserTableRow } from '@entities/user';
+import { type IUserInfo } from '@entities/user';
 import { routes } from '@shared/config';
 import type { TTableFilterState } from '@shared/types';
 import { getSortOrder, maskPinfl } from '@shared/utils';
 
-export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IUserTableRow>['columns'] => {
+export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IUserInfo>['columns'] => {
   const { t } = useTranslation();
 
   const handleStatusChange = (id: string, checked: boolean) => {
