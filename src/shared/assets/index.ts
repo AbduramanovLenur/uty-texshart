@@ -43,3 +43,4 @@ export { default as IconShare } from './icons/icon-share';
 export { default as IconTrash } from './icons/icon-trash';
 export { default as IconFromBracket } from './icons/icon-from-bracket';
 export { default as IconFullRightArrow } from './icons/icon-full-right-arrow';
+export { default as IconEye } from './icons/icon-eye';

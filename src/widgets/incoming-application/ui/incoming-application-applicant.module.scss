@@ -8,7 +8,22 @@
   background-color: var(--ant-color-fill-quaternary);
   border-radius: 0 0 var(--ant-border-radius-lg) var(--ant-border-radius-lg);
   overflow: hidden;
-  &__content {
+  &__documents {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-margin-xl);
+    width: 100%;
+    background-color: var(--white);
+    padding: var(--ant-padding-lg);
     border-radius: var(--ant-border-radius-lg);
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: none;
+    &-title {
+      &:global(.ant-typography) {
+        margin-bottom: var(--ant-margin-xs);
+      }
+    }
   }
 }

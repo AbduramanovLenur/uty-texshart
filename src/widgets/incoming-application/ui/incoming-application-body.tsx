@@ -7,8 +7,9 @@ import IncomingApplicationInformation from './incoming-application-information';
 import IncomingApplicationMap from './incoming-application-map';
 import IncomingApplicationApplicant from './incoming-application-applicant';
 import IncomingApplicationFiles from './incoming-application-files';
-
 import { TabKeys } from '../model/constants/tab-keys';
+
+import styles from './incoming-application-body.module.scss';
 
 const ApplicationBody: FC = () => {
   const { t } = useTranslation();
@@ -41,7 +42,7 @@ const ApplicationBody: FC = () => {
       <Tabs
         classNames={{
           root: cn('tabs__root'),
-          header: cn('tabs__header'),
+          header: cn('tabs__header', styles['incoming-application-body__header']),
           item: cn('tabs__item'),
         }}
         defaultActiveKey={TabKeys.FIRST_TAB}
