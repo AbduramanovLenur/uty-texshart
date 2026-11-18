@@ -53,14 +53,14 @@ const CreateUserModal: FC = () => {
             type='default'
             onClick={handleClose}
           >
-            {t('createUserModal.actions.cancel')}
+            {t('actions.cancel')}
           </Button>
           <Button
             className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
-            {t('createUserModal.actions.confirm')}
+            {t('actions.confirm')}
           </Button>
         </div>
       }
@@ -87,7 +87,6 @@ const CreateUserModal: FC = () => {
               placeholder={t('createUserModal.fields.pinflPlaceholder')}
             />
           </Item>
-
           <Item
             label={t('createUserModal.fields.fullName')}
             name={FormFields.FULL_NAME}
@@ -98,7 +97,6 @@ const CreateUserModal: FC = () => {
               placeholder={t('createUserModal.fields.fullNamePlaceholder')}
             />
           </Item>
-
           <Item
             label={t('createUserModal.fields.position')}
             name={FormFields.POSITION}
@@ -109,7 +107,6 @@ const CreateUserModal: FC = () => {
               placeholder={t('createUserModal.fields.positionPlaceholder')}
             />
           </Item>
-
           <Item
             label={t('createUserModal.fields.role')}
             name={FormFields.ROLE}
@@ -127,7 +124,6 @@ const CreateUserModal: FC = () => {
               suffixIcon={<IconDownArrow />}
             />
           </Item>
-
           <Item
             label={t('createUserModal.fields.regionalDepartment')}
             name={FormFields.REGIONAL_DEPARTMENT}
@@ -145,7 +141,6 @@ const CreateUserModal: FC = () => {
               suffixIcon={<IconDownArrow />}
             />
           </Item>
-
           <div className={cn(styles['create-user-modal__row'])}>
             <Item
               label={t('createUserModal.fields.phone')}
@@ -156,7 +151,6 @@ const CreateUserModal: FC = () => {
                 placeholder={t('createUserModal.fields.phonePlaceholder')}
               />
             </Item>
-
             <Item
               label={t('createUserModal.fields.email')}
               name={FormFields.EMAIL}
@@ -168,7 +162,6 @@ const CreateUserModal: FC = () => {
             </Item>
           </div>
         </div>
-
         <div className={cn(styles['create-user-modal__checkbox-wrapper'])}>
           <Item
             className={cn(styles['create-user-modal__checkbox-item'])}
@@ -180,7 +173,6 @@ const CreateUserModal: FC = () => {
             </Checkbox>
           </Item>
         </div>
-
         <Item
           label={t('createUserModal.fields.comment')}
           name={FormFields.COMMENT}

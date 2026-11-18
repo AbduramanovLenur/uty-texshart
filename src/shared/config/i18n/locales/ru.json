@@ -275,6 +275,8 @@
     "downloadSize": "Скачать {{size}}",
     "downloadFile": "Скачать",
     "confirm": "Подтвердить",
+    "cancel": "Отмена",
+    "delete": "Удалить",
     "more": "Подробнее",
     "print": "Печать",
     "share": "Поделиться",
@@ -457,10 +459,6 @@
     },
     "validation": {
       "regionalDepartmentRequired": "Выберите региональный отдел"
-    },
-    "actions": {
-      "cancel": "Отмена",
-      "confirm": "Подтвердить"
     }
   },
   "rejectApplicationModal": {
@@ -473,10 +471,6 @@
     },
     "validation": {
       "rejectReasonRequired": "Выберите причину отклонения"
-    },
-    "actions": {
-      "cancel": "Отмена",
-      "confirm": "Подтвердить"
     }
   },
   "createUserModal": {
@@ -503,10 +497,6 @@
       "pinflRequired": "Введите ПИНФЛ",
       "roleRequired": "Выберите роль",
       "regionalDepartmentRequired": "Выберите региональный отдел"
-    },
-    "actions": {
-      "cancel": "Отмена",
-      "confirm": "Подтвердить"
     }
   },
   "userStatuses": {

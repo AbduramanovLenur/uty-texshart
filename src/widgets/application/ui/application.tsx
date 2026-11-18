@@ -24,7 +24,7 @@ const Application: FC = () => {
 
   return (
     <section className={cn(styles['application'], 'section')}>
-      <div className={cn(styles['application__inner'], 'section-inner')}>
+      <div className={cn(styles['application__inner'], 'section-single-inner')}>
         <Breadcrumb
           classNames={{
             root: cn('breadcrumbs'),

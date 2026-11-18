@@ -43,7 +43,7 @@ const ForwardApplicationModal: FC = () => {
       }}
       open={isOpen}
       onCancel={handleClose}
-      title={t('forwardApplicationModal.title', 'Hududiy bo‘limga yo‘naltirish')}
+      title={t('forwardApplicationModal.title')}
       centered
       width={500}
       destroyOnHidden
@@ -54,14 +54,14 @@ const ForwardApplicationModal: FC = () => {
             type='default'
             onClick={handleClose}
           >
-            {t('forwardApplicationModal.actions.cancel')}
+            {t('actions.cancel')}
           </Button>
           <Button
             className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
-            {t('forwardApplicationModal.actions.confirm')}
+            {t('actions.confirm')}
           </Button>
         </div>
       }

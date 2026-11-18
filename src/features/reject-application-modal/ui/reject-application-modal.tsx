@@ -43,7 +43,7 @@ const RejectApplicationModal: FC = () => {
       }}
       open={isOpen}
       onCancel={handleClose}
-      title={t('rejectApplicationModal.title', 'Rad etish')}
+      title={t('rejectApplicationModal.title')}
       centered
       width={500}
       destroyOnHidden
@@ -54,14 +54,14 @@ const RejectApplicationModal: FC = () => {
             type='default'
             onClick={handleClose}
           >
-            {t('rejectApplicationModal.actions.cancel')}
+            {t('actions.cancel')}
           </Button>
           <Button
             className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
-            {t('rejectApplicationModal.actions.confirm')}
+            {t('actions.confirm')}
           </Button>
         </div>
       }

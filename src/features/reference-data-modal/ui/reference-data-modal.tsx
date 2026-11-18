@@ -79,14 +79,14 @@ const ReferenceDataModal: FC = () => {
             type='default'
             onClick={handleClose}
           >
-            {t('createUserModal.actions.cancel')}
+            {t('actions.cancel')}
           </Button>
           <Button
             className={cn('modal__button-confirm')}
             type='primary'
             onClick={handleSubmit}
           >
-            {t('createUserModal.actions.confirm')}
+            {t('actions.confirm')}
           </Button>
         </div>
       }
