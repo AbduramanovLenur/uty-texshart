@@ -62,7 +62,7 @@ const SidebarNav: FC<IProps> = ({
   };
 
   return (
-    <nav className={cn(styles['menu'])}>
+    <nav className={cn(styles['menu'], 'scrollbar')}>
       {visibleGroups.map((group) => (
         <div key={group.key} className={cn(styles['menu__group'])}>
           {group.label && <span className={cn(styles['menu__label'])}>{group.label}</span>}

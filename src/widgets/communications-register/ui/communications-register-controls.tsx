@@ -73,7 +73,7 @@ const CommunicationsRegisterControls: FC<IProps> = ({
         {t('actions.import')}
       </Button>
       <Button
-        className={cn(styles['communications-register-controls__create'])}
+        className={cn(styles['communications-register-controls__create'], 'create-btn')}
         type='primary'
         icon={<IconPlus />}
       >

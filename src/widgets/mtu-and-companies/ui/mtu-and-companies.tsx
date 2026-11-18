@@ -43,11 +43,6 @@ const MtuAndCompanies: FC = () => {
       label: t('mtuAndCompanies.tabs.companies'),
       children: <CompaniesTable />,
     },
-    {
-      key: MtuAndCompaniesTypes.PRIVATE_BRANCHES,
-      label: t('mtuAndCompanies.tabs.privateBranches'),
-      children: <div className={cn(styles['mtu-and-companies__test-page'])}>Test page</div>,
-    },
   ];
 
   return (
@@ -58,7 +53,7 @@ const MtuAndCompanies: FC = () => {
             {t('mtuAndCompanies.title')}
           </Title>
           <Button
-            className={cn(styles['mtu-and-companies__create'])}
+            className={cn(styles['mtu-and-companies__create'], 'create-btn')}
             type='primary'
             icon={<IconPlus />}
             onClick={handleOpenCreateModal}

@@ -59,7 +59,7 @@ const ReferenceData: FC = () => {
             {t('referenceData.title')}
           </Title>
           <Button
-            className={cn(styles['reference-data__create'])}
+            className={cn(styles['reference-data__create'], 'create-btn')}
             type='primary'
             icon={<IconPlus />}
             onClick={handleOpenCreateModal}
