@@ -4,20 +4,35 @@ import { Button } from 'antd';
 import cn from 'classnames';
 
 import type { IPreviewFile } from '@/entities/application';
-import { IconDownload, IconFile } from '@shared/assets';
+import { IconDownload, IconEye, IconFile } from '@shared/assets';
 import { downloadFile } from '@shared/utils';
 
 import styles from './preview-file.module.scss';
 
 interface IProps {
   file: IPreviewFile;
+  onDownload?: () => void;
+  isDownload?: boolean;
+  onView?: () => void;
+  isView?: boolean;
 };
 
-const PreviewFile: FC<IProps> = ({ file }) => {
+const PreviewFile: FC<IProps> = ({
+  file,
+  onDownload,
+  isDownload,
+  onView,
+  isView,
+}) => {
   const { t } = useTranslation();
+
+  const handleView = () => {
+    onView?.();
+  };
 
   const handleDownload = (url: string, name: string) => {
     downloadFile(url, name);
+    onDownload?.();
   };
 
   return (
@@ -35,13 +50,26 @@ const PreviewFile: FC<IProps> = ({ file }) => {
           </div>
         </div>
       </div>
-      <Button
-        className={cn(styles['preview-file__button'])}
-        icon={<IconDownload />}
-        onClick={() => handleDownload(file.url, file.name)}
-      >
-        {t('actions.downloadFile')}
-      </Button>
+      <div className={cn(styles['preview-file__actions'])}>
+        {isView && (
+          <Button
+            className={cn(styles['preview-file__button'])}
+            icon={<IconEye />}
+            onClick={handleView}
+          >
+            {t('actions.view')}
+          </Button>
+        )}
+        {isDownload && (
+          <Button
+            className={cn(styles['preview-file__button'])}
+            icon={<IconDownload />}
+            onClick={() => handleDownload(file.url, file.name)}
+          >
+            {t('actions.downloadFile')}
+          </Button>
+        )}
+      </div>
     </div>
   );
 };

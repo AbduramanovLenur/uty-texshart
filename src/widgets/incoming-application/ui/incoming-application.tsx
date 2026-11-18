@@ -22,6 +22,7 @@ import {
   RejectApplicationModal,
   open as openRejectApplicationModal,
 } from '@features/reject-application-modal';
+import { ViewPdfModal } from '@features/view-pdf-modal';
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
 
@@ -70,6 +71,7 @@ const IncomingApplication: FC = () => {
         <IncomingApplicationBody />
         <ForwardApplicationModal />
         <RejectApplicationModal />
+        <ViewPdfModal />
       </div>
     </section>
   );

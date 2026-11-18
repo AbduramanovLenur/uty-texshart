@@ -273,7 +273,7 @@
     "more": "Batafsil",
     "print": "Chop etish",
     "share": "Ulashish",
-    "edit": "Tahrirlash",
+    "edit": "O‘zgartirish",
     "editApplication": "Arizani o‘zgartirish",
     "import": "Import",
     "reject": "Rad etish",
@@ -465,6 +465,7 @@
   },
   "createUserModal": {
     "title": "Yangi foydalanuvchi qo‘shish",
+    "titleEdit": "Foydalanuvchini tahrirlash",
     "fields": {
       "pinfl": "JSHSHR",
       "pinflPlaceholder": "Foydalanuvchi JSHSHRini yozing",

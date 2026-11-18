@@ -39,24 +39,12 @@ export interface IUser {
   avatar?: string;
 }
 
-export interface IUserPassportItem {
-  id: string;
-  url: string;
-}
-
-export interface IUserPassport {
+export interface IUserDocument {
   url: string;
   size: string;
-  previews: IUserPassportItem[];
-}
-
-export interface IUserLicense {
-  url: string;
-  size: string;
-  preview: string;
 }
 
 export interface IUserDocuments {
-  passport: IUserPassport;
-  license: IUserLicense;
+  passport: IUserDocument;
+  license: IUserDocument;
 }

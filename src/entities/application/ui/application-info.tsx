@@ -1,5 +1,6 @@
 import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Image } from 'antd';
 import cn from 'classnames';
 
 import styles from './application-info.module.scss';
@@ -67,7 +68,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
           <ul className={cn(styles['application-info__pictures'])}>
             <li className={cn(styles['application-info__picture'])}>
               <div className={cn(styles['application-info__picture-box'])}>
-                <img
+                <Image
                   src='/images/test/picture.png'
                   alt='picture'
                   loading='lazy'
@@ -78,7 +79,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
             </li>
             <li className={cn(styles['application-info__picture'])}>
               <div className={cn(styles['application-info__picture-box'])}>
-                <img
+                <Image
                   src='/images/test/picture.png'
                   alt='picture'
                   loading='lazy'
@@ -89,7 +90,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
             </li>
             <li className={cn(styles['application-info__picture'])}>
               <div className={cn(styles['application-info__picture-box'])}>
-                <img
+                <Image
                   src='/images/test/picture.png'
                   alt='picture'
                   loading='lazy'

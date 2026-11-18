@@ -13,11 +13,13 @@ const { Title } = Typography;
 interface IProps {
   user?: IUserDetails;
   actionSlot?: ReactNode;
+  children?: ReactNode;
   className?: string;
 }
 
-const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, className }) => {
+const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, children, className }) => {
   const { t } = useTranslation();
+  const action = children ?? actionSlot;
 
   return (
     <div className={cn(styles['user-details-card'], className)}>
@@ -25,9 +27,7 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, class
         <Title level={5} className={cn(styles['user-details-card__title'])}>
           {t('users.card.title')}
         </Title>
-        <div className={cn(styles['user-details-card__actions'])}>
-          {actionSlot}
-        </div>
+        {action}
       </div>
 
       <div className={cn(styles['user-details-card__grid'])}>

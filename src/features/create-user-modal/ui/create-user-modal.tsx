@@ -17,7 +17,8 @@ const { Item, useForm } = Form;
 const CreateUserModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen } = useSelector(stateCreateUserModal);
+  const { isOpen, id } = useSelector(stateCreateUserModal);
+  const hasId = !!id;
   const [form] = useForm<ICreateUserFormValues>();
 
   const handleClose = () => {
@@ -42,7 +43,7 @@ const CreateUserModal: FC = () => {
       }}
       open={isOpen}
       onCancel={handleClose}
-      title={t('createUserModal.title')}
+      title={id ? t('createUserModal.titleEdit') : t('createUserModal.title')}
       centered
       width={520}
       destroyOnHidden
@@ -85,6 +86,7 @@ const CreateUserModal: FC = () => {
             <Input
               size='large'
               placeholder={t('createUserModal.fields.pinflPlaceholder')}
+              disabled={hasId}
             />
           </Item>
           <Item
@@ -122,6 +124,7 @@ const CreateUserModal: FC = () => {
               size='large'
               placeholder={t('createUserModal.fields.selectPlaceholder')}
               suffixIcon={<IconDownArrow />}
+              disabled={hasId}
             />
           </Item>
           <Item
@@ -135,10 +138,11 @@ const CreateUserModal: FC = () => {
             ]}
           >
             <Select
-              className={cn(styles['create-user-modal__select'])}
+              className={cn(styles['create-user-modal__select'], 'form-select')}
               size='large'
               placeholder={t('createUserModal.fields.selectPlaceholder')}
               suffixIcon={<IconDownArrow />}
+              disabled={hasId}
             />
           </Item>
           <div className={cn(styles['create-user-modal__row'])}>

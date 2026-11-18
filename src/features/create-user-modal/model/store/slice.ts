@@ -1,20 +1,23 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-import type { IState } from '../types/state';
+import type { IOpenPayload, IState } from '../types/state';
 
 const initialState: IState = {
   isOpen: false,
+  id: null,
 };
 
 const slice = createSlice({
   name: 'createUserModalSlice',
   initialState,
   reducers: {
-    open: (state) => {
+    open: (state, action: PayloadAction<IOpenPayload | undefined>) => {
       state.isOpen = true;
+      state.id = action.payload?.id ?? null;
     },
     close: (state) => {
       state.isOpen = false;
+      state.id = null;
     },
   },
 });

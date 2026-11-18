@@ -5,7 +5,7 @@
   gap: var(--ant-margin);
   background-color: var(--ant-blue-1);
   border-radius: var(--ant-border-radius-lg);
-  padding: var(--ant-padding-lg) var(--ant-padding);
+  padding: var(--ant-padding);
   &__content {
     display: flex;
     align-items: center;
@@ -26,7 +26,28 @@
     line-height: 1.6;
     color: var(--dark-65)
   }
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    gap: var(--ant-padding-xs);
+  }
   &__button {
     color: var(--dark-88);
+    font-weight: 500;
+    :global {
+      .ant-btn-icon {
+        svg {
+          color: var(--dark-88);
+          transition: 0.5s;
+        }
+      }
+    }
+    &:hover {
+      :global(.ant-btn-icon) {
+        > svg {
+          color: var(--ant-btn-text-color-hover);
+        }
+      }
+    }
   }
 }
