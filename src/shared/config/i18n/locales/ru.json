@@ -383,6 +383,20 @@
       "comment": "Примечание"
     }
   },
+  "roles": {
+    "title": "Роли",
+    "create": "Новая роль",
+    "systemRole": "Системная роль",
+    "usersCount_one": "{{count}} пользователь",
+    "usersCount_few": "{{count}} пользователя",
+    "usersCount_many": "{{count}} пользователей",
+    "usersCount_other": "{{count}} пользователей",
+    "headers": {
+      "module": "Модуль",
+      "permission": "Разрешения"
+    },
+    "actions": "Действия"
+  },
   "communicationsRegister": {
     "title": "Реестр коммуникаций",
     "create": "Новая запись",

@@ -15,6 +15,7 @@ import {
   ProfilePage,
   UsersPage,
   UserPage,
+  RolesPage,
   ReferenceDataPage,
   MtuAndCompaniesPage,
 } from './pages';
@@ -106,6 +107,10 @@ const router = createBrowserRouter([
           {
             path: routes.SINGLE_USER(':id'),
             element: <UserPage />,
+          },
+          {
+            path: routes.ROLES,
+            element: <RolesPage />,
           },
           {
             path: routes.REFERENCE_DATA,

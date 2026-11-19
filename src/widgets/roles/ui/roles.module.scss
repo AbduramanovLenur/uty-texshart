@@ -1,0 +1,8 @@
+.roles {
+  &__body {
+    display: flex;
+    gap: var(--ant-margin-xs);
+    flex: 1;
+    min-height: 0;
+  }
+}
