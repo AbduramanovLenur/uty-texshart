@@ -247,6 +247,3 @@ export const roles: IRole[] = [
     updated_at: null,
   },
 ];
-
-export const mockModules = modules;
-export const mockRoles = roles;
