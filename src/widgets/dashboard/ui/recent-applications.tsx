@@ -100,7 +100,7 @@ const RecentApplications: FC<IProps> = ({ activeId, onSelect }) => {
           {t('dashboard.recentApplications.create')}
         </Button>
       </div>
-      <ul className={cn(styles['recent-applications__list'])}>
+      <ul className={cn(styles['recent-applications__list'], 'scrollbar')}>
         {applications.map((item) => (
           <li key={item.id} className={cn(styles['recent-applications__item'])}>
             <ApplicationPreview

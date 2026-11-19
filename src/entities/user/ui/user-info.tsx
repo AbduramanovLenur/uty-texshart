@@ -28,7 +28,7 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
   };
 
   return (
-    <div className={cn(styles['user-info'], className)}>
+    <div className={cn(styles['user-info'], className, 'scrollbar')}>
       <div className={cn(styles['user-info__content'])}>
         <div className={cn(styles['user-info__top'])}>
           <div className={cn(styles['user-info__details'])}>

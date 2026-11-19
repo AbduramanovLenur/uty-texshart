@@ -14,7 +14,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
 
   return (
     <div className={cn(styles['application-info'], className)}>
-      <div className={cn(styles['application-info__wrapper'])}>
+      <div className={cn(styles['application-info__wrapper'], 'scrollbar')}>
         <div className={cn(styles['application-info__item'])}>
           <div className={cn(styles['application-info__title'])}>
             {t('applicationInfo.applicationNumber')}
