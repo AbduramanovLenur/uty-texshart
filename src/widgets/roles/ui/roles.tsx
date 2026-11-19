@@ -4,8 +4,6 @@ import { Button, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import { Modules } from '@entities/profile';
-
 import { modules, roles } from '../model/mock';
 import RolesSidebar from './roles-sidebar';
 import RolePermissionsTable from './role-permissions-table';
@@ -18,14 +16,12 @@ const { Title } = Typography;
 
 const Roles: FC = () => {
   const { t } = useTranslation();
-  const initialRole = roles[0];
-  const defaultModule = modules.find((m) => m.module === Modules.APPLICATION)?.module ?? modules[0]?.module ?? '';
 
-  const [selectedRoleId, setSelectedRoleId] = useState<number>(initialRole?.id ?? 0);
-  const [selectedModuleKey, setSelectedModuleKey] = useState<string>(defaultModule);
+  const [selectedRoleId, setSelectedRoleId] = useState<number | undefined>(() => roles[0]?.id);
+  const [selectedModuleKey, setSelectedModuleKey] = useState<string | undefined>(() => modules[0]?.module);
 
-  const selectedRole = roles.find((role) => role.id === selectedRoleId) ?? roles[0];
-  const selectedModule = modules.find((mod) => mod.module === selectedModuleKey) ?? modules[0];
+  const selectedRole = roles.find((role) => role.id === selectedRoleId);
+  const selectedModule = modules.find((module) => module.module === selectedModuleKey);
 
   return (
     <section className={cn(styles['roles'], 'section')}>
@@ -45,10 +41,10 @@ const Roles: FC = () => {
         <div className={cn(styles['roles__body'])}>
           <RolesSidebar
             roles={roles}
-            selectedRoleId={selectedRole?.id ?? 0}
+            selectedRole={selectedRole}
             onSelectRole={setSelectedRoleId}
             modules={modules}
-            selectedModuleKey={selectedModule?.module ?? ''}
+            selectedModule={selectedModule}
             onSelectModule={setSelectedModuleKey}
           />
           {selectedRole && selectedModule && (

@@ -24,11 +24,3 @@ export interface IRole {
   created_at: string;
   updated_at: string | null;
 }
-
-export interface IPermissionChangePayload {
-  roleId: number | string;
-  permissionId: string;
-  moduleId: string;
-  action: string;
-  value: boolean;
-}

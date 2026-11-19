@@ -23,12 +23,6 @@
     min-height: 0;
     overflow-y: auto;
   }
-  &__action-name {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.4;
-    color: var(--dark-88);
-  }
   &__table {
     :global(.ant-table) {
       background-color: transparent;
@@ -45,7 +39,8 @@
       text-transform: uppercase;
       padding: var(--ant-padding-xs);
       border-radius: 0 !important;
-      ::after {
+      &::after,
+      &::before {
         display: none;
       }
       &:last-child {
@@ -57,7 +52,7 @@
       line-height: 1.5;
       font-weight: 400;
       color: var(--dark-88);
-      padding: var(--ant-padding-xs);
+      padding: 10px var(--ant-padding-xs);
       transition: background-color 0.15s ease;
       &:last-child {
         text-align: center;

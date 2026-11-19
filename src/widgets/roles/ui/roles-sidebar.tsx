@@ -11,24 +11,25 @@ import styles from './roles-sidebar.module.scss';
 
 interface IProps {
   roles: IRole[];
-  selectedRoleId: number;
+  selectedRole?: IRole;
   onSelectRole: (roleId: number) => void;
+
   modules: IModule[];
-  selectedModuleKey: string;
+  selectedModule?: IModule;
   onSelectModule: (moduleKey: string) => void;
 }
 
 const RolesSidebar: FC<IProps> = ({
   roles,
-  selectedRoleId,
+  selectedRole,
   onSelectRole,
+
   modules,
-  selectedModuleKey,
+  selectedModule,
   onSelectModule,
 }) => {
   const { t } = useTranslation();
-
-  const selectedRole = roles.find((r) => r.id === selectedRoleId) ?? roles[0];
+  const rolesOptions = roles.map((role) => ({ value: role.id, label: role.name }));
 
   return (
     <aside className={cn(styles['roles-sidebar'])}>
@@ -36,12 +37,9 @@ const RolesSidebar: FC<IProps> = ({
         className={cn(styles['roles-sidebar__select'])}
         size='large'
         suffixIcon={<IconDownArrow />}
-        value={selectedRoleId}
+        value={selectedRole?.id}
         onChange={onSelectRole}
-        options={roles.map((role) => ({
-          value: role.id,
-          label: role.name,
-        }))}
+        options={rolesOptions}
       />
 
       <div className={cn(styles['roles-sidebar__info'])}>
@@ -59,7 +57,7 @@ const RolesSidebar: FC<IProps> = ({
 
       <ul className={cn(styles['roles-sidebar__modules'], 'scrollbar')}>
         {modules.map((module) => {
-          const isActive = module.module === selectedModuleKey;
+          const isActive = module.module === selectedModule?.module;
 
           return (
            <li key={module.module}>
