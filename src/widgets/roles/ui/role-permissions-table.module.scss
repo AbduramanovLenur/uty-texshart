@@ -39,7 +39,8 @@
       text-transform: uppercase;
       padding: var(--ant-padding-xs);
       border-radius: 0 !important;
-      ::after {
+      &::after,
+      &::before {
         display: none;
       }
       &:last-child {

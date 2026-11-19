@@ -17,8 +17,8 @@ const { Title } = Typography;
 const Roles: FC = () => {
   const { t } = useTranslation();
 
-  const [selectedRoleId, setSelectedRoleId] = useState<number>(roles[0]!.id);
-  const [selectedModuleKey, setSelectedModuleKey] = useState<string>(modules[0]!.module);
+  const [selectedRoleId, setSelectedRoleId] = useState<number | undefined>(() => roles[0]?.id);
+  const [selectedModuleKey, setSelectedModuleKey] = useState<string | undefined>(() => modules[0]?.module);
 
   const selectedRole = roles.find((role) => role.id === selectedRoleId);
   const selectedModule = modules.find((module) => module.module === selectedModuleKey);
@@ -41,10 +41,10 @@ const Roles: FC = () => {
         <div className={cn(styles['roles__body'])}>
           <RolesSidebar
             roles={roles}
-            selectedRoleId={selectedRoleId}
+            selectedRole={selectedRole}
             onSelectRole={setSelectedRoleId}
             modules={modules}
-            selectedModuleKey={selectedModuleKey}
+            selectedModule={selectedModule}
             onSelectModule={setSelectedModuleKey}
           />
           {selectedRole && selectedModule && (
