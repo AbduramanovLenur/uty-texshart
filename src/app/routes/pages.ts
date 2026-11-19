@@ -14,5 +14,6 @@ export const CommunicationsRegisterPage = lazyPage(() => import('@pages/communic
 export const ProfilePage = lazyPage(() => import('@pages/profile').then((module) => ({ default: module.ProfilePage })));
 export const UsersPage = lazyPage(() => import('@pages/users').then((module) => ({ default: module.UsersPage })));
 export const UserPage = lazyPage(() => import('@pages/user').then((module) => ({ default: module.UserPage })));
+export const RolesPage = lazyPage(() => import('@pages/roles').then((module) => ({ default: module.RolesPage })));
 export const ReferenceDataPage = lazyPage(() => import('@pages/reference-data').then((module) => ({ default: module.ReferenceDataPage })));
 export const MtuAndCompaniesPage = lazyPage(() => import('@pages/mtu-and-companies').then((module) => ({ default: module.MtuAndCompaniesPage })));

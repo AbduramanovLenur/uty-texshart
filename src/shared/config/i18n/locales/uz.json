@@ -373,6 +373,21 @@
       "comment": "Izoh"
     }
   },
+  "roles": {
+    "title": "Rollar",
+    "create": "Yangi rol",
+    "systemRole": "Tizim roli",
+    "usersCount": "{{count}} foydalanuvchi",
+    "headers": {
+      "module": "MODUL",
+      "view": "VIEW",
+      "create": "CREATE",
+      "edit": "EDIT",
+      "delete": "DELETE",
+      "approve": "APPROVE",
+      "reject": "REJECT"
+    }
+  },
   "communicationsRegister": {
     "title": "Kommunikatsiya reestri",
     "create": "Yangi qayd",
