@@ -15,12 +15,13 @@
   }
   &__info {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--ant-margin-xs);
     margin-bottom: var(--ant-margin-lg);
     &-icon {
       display: flex;
       align-items: center;
+      margin-top: 3px;
       svg {
         flex-shrink: 0;
         width: 16px;

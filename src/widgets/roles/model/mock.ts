@@ -111,7 +111,7 @@ export const roles: IRole[] = [
     permissions_editable: true,
     user_count: 2,
     permissions: [
-      Permissions.ROLE_VIEW,
+      // Permissions.ROLE_VIEW,
       Permissions.ROLE_MANAGE,
       Permissions.USER_VIEW,
       Permissions.USER_MANAGE,
@@ -163,6 +163,7 @@ export const roles: IRole[] = [
     permissions_editable: true,
     user_count: 6,
     permissions: [
+      Permissions.ROLE_MANAGE,
       Permissions.APPLICATION_VIEW,
       Permissions.APPLICATION_ACCEPT,
       Permissions.APPLICATION_ROUTE,

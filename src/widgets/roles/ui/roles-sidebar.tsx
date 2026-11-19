@@ -22,6 +22,7 @@ const RolesSidebar: FC<IProps> = ({
   roles,
   selectedRoleId,
   onSelectRole,
+
   modules,
   selectedModuleKey,
   onSelectModule,

@@ -30,11 +30,7 @@ export const useGetColumns = (
     {
       title: t('roles.headers.module'),
       width: '50%',
-      render: (_, record) => (
-        <span className={styles['role-permissions__action-name']}>
-          {record.label}
-        </span>
-      ),
+      render: (_, record) => record.label,
     },
     {
       title: t('roles.headers.permission'),
