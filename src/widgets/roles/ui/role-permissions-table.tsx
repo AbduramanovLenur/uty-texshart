@@ -1,10 +1,8 @@
 import type { FC } from 'react';
-import { Table, Tag, Typography } from 'antd';
-import { useTranslation } from 'react-i18next';
+import { Table, Typography } from 'antd';
 import cn from 'classnames';
 
-import { mockModules } from '../model/mock';
-import type { IPermissionModule, IRole } from '../model/types/role';
+import type { IModule, IPermissionItem, IRole } from '../model/types/role';
 import { useGetColumns } from './columns';
 
 import styles from './role-permissions-table.module.scss';
@@ -13,32 +11,26 @@ const { Title } = Typography;
 
 interface IProps {
   role: IRole;
+  module: IModule;
 }
 
-const RolePermissionsTable: FC<IProps> = ({ role }) => {
-  const { t } = useTranslation();
-  const columns = useGetColumns(role);
+const RolePermissionsTable: FC<IProps> = ({ role, module }) => {
+  const columns = useGetColumns(role, module);
 
   return (
     <div className={cn(styles['role-permissions'])}>
       <div className={cn(styles['role-permissions__header'])}>
-        <Title className={cn(styles['role-permissions__title'])} level={4}>
-          {role.name}
+        <Title className={cn(styles['role-permissions__title'])} level={5}>
+          {module.name}
         </Title>
-        {role.is_system && (
-          <Tag className={cn(styles['role-permissions__badge'])}>
-            {t('roles.systemRole')}
-          </Tag>
-        )}
       </div>
       <div className={cn(styles['role-permissions__body'], 'scrollbar')}>
-        <Table<IPermissionModule>
-          rowKey='id'
+        <Table<IPermissionItem>
+          rowKey='key'
           className={cn(styles['role-permissions__table'])}
-          dataSource={mockModules}
+          dataSource={module.permissions}
           columns={columns}
           pagination={false}
-          scroll={{ x: 'max-content' }}
         />
       </div>
     </div>

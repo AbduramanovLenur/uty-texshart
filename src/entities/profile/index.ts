@@ -1,7 +1,7 @@
 export { default as ProfileInfo } from './ui/profile-info';
 
-export { Permissions, PERMISSION_LIST } from './model/constants/permissions';
-export { Actions } from './model/constants/actions';
+export { Permissions } from './model/constants/permissions';
+export { Modules } from './model/constants/modules';
 
 export type { TPermission } from './model/types/permission';
-export type { TAction } from './model/types/action';
+export type { TModule } from './model/types/module';

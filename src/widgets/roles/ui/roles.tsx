@@ -4,8 +4,10 @@ import { Button, Typography } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import { mockRoles } from '../model/mock';
-import RolesList from './roles-list';
+import { Modules } from '@entities/profile';
+
+import { modules, roles } from '../model/mock';
+import RolesSidebar from './roles-sidebar';
 import RolePermissionsTable from './role-permissions-table';
 
 import { IconPlus } from '@shared/assets';
@@ -16,9 +18,14 @@ const { Title } = Typography;
 
 const Roles: FC = () => {
   const { t } = useTranslation();
-  const [selectedRoleId, setSelectedRoleId] = useState<number>(mockRoles[0]?.id ?? 0);
+  const initialRole = roles[0];
+  const defaultModule = modules.find((m) => m.module === Modules.APPLICATION)?.module ?? modules[0]?.module ?? '';
 
-  const selectedRole = mockRoles.find((role) => role.id === selectedRoleId) ?? mockRoles[0];
+  const [selectedRoleId, setSelectedRoleId] = useState<number>(initialRole?.id ?? 0);
+  const [selectedModuleKey, setSelectedModuleKey] = useState<string>(defaultModule);
+
+  const selectedRole = roles.find((role) => role.id === selectedRoleId) ?? roles[0];
+  const selectedModule = modules.find((mod) => mod.module === selectedModuleKey) ?? modules[0];
 
   return (
     <section className={cn(styles['roles'], 'section')}>
@@ -36,12 +43,20 @@ const Roles: FC = () => {
           </Button>
         </div>
         <div className={cn(styles['roles__body'])}>
-          <RolesList
-            roles={mockRoles}
-            activeRoleId={selectedRole?.id ?? 0}
-            onSelect={setSelectedRoleId}
+          <RolesSidebar
+            roles={roles}
+            selectedRoleId={selectedRole?.id ?? 0}
+            onSelectRole={setSelectedRoleId}
+            modules={modules}
+            selectedModuleKey={selectedModule?.module ?? ''}
+            onSelectModule={setSelectedModuleKey}
           />
-          {selectedRole && <RolePermissionsTable role={selectedRole} />}
+          {selectedRole && selectedModule && (
+            <RolePermissionsTable
+              role={selectedRole}
+              module={selectedModule}
+            />
+          )}
         </div>
       </div>
     </section>

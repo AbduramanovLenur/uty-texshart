@@ -392,14 +392,10 @@
     "usersCount_many": "{{count}} пользователей",
     "usersCount_other": "{{count}} пользователей",
     "headers": {
-      "module": "МОДУЛЬ",
-      "view": "VIEW",
-      "create": "CREATE",
-      "edit": "EDIT",
-      "delete": "DELETE",
-      "approve": "APPROVE",
-      "reject": "REJECT"
-    }
+      "module": "Модуль",
+      "permission": "Разрешения"
+    },
+    "actions": "Действия"
   },
   "communicationsRegister": {
     "title": "Реестр коммуникаций",

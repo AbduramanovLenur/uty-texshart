@@ -1,6 +1,17 @@
-export const Actions = {
-  APPLICATION: 'application',
+export const Modules = {
+  ROLE: 'role',
+  USER: 'user',
+  DEPARTMENT: 'department',
   AUDIT: 'audit',
+  REFDATA: 'refdata',
+  APPLICATION: 'application',
+  ACT: 'act',
+  TERMS: 'terms',
+  PAYMENT: 'payment',
+  LETTER: 'letter',
+  CALENDAR: 'calendar',
+  REGISTRY: 'registry',
+  // Дополнительные модули
   BRANCH_CONSENT: 'branch_consent',
   CATALOG: 'catalog',
   CORRESPONDENCE: 'correspondence',
@@ -10,11 +21,8 @@ export const Actions = {
   EXPERTISE: 'expertise',
   GIS: 'gis',
   PERMISSION: 'permission',
-  REGISTRY: 'registry',
   REPORT: 'report',
-  ROLE: 'role',
   SETTINGS: 'settings',
   SLA: 'sla',
   TECHNICAL_CONDITION: 'technical_condition',
-  USER: 'user',
 } as const;

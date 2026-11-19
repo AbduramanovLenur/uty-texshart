@@ -1,30 +1,25 @@
-import { Checkbox } from 'antd';
 import type { TableProps } from 'antd';
+import { Checkbox } from 'antd';
 import { useTranslation } from 'react-i18next';
 
-import type {
-  IPermissionChangePayload,
-  IPermissionModule,
-  IRole,
-} from '../model/types/role';
+import type { IModule, IPermissionChangePayload, IPermissionItem, IRole } from '../model/types/role';
 
-import { PERMISSION_LIST } from '@entities/profile';
-import type { TAction, TPermission } from '@entities/profile';
+import styles from './role-permissions-table.module.scss';
 
-export const useGetColumns = (role: IRole): TableProps<IPermissionModule>['columns'] => {
+export const useGetColumns = (
+  role: IRole,
+  module: IModule,
+): TableProps<IPermissionItem>['columns'] => {
   const { t } = useTranslation();
 
-  const handlePermissionChange = (
-    permission: string,
-    action: TAction,
-    permissionKey: TPermission,
-    value: boolean,
-  ) => {
+  const handlePermissionChange = (permissionKey: string, value: boolean) => {
+    const action = permissionKey.includes('.') ? permissionKey.split('.')[1] : permissionKey;
+
     const payload: IPermissionChangePayload = {
       roleId: role.id,
-      permission,
+      permissionId: permissionKey,
+      moduleId: module.module,
       action,
-      permissionKey,
       value,
     };
 
@@ -34,39 +29,30 @@ export const useGetColumns = (role: IRole): TableProps<IPermissionModule>['colum
   return [
     {
       title: t('roles.headers.module'),
-      dataIndex: 'name',
-      key: 'module',
-      minWidth: 180,
+      width: '50%',
+      render: (_, record) => (
+        <span className={styles['role-permissions__action-name']}>
+          {record.label}
+        </span>
+      ),
     },
-    ...PERMISSION_LIST.map((permissionKey) => ({
-      title: t(`roles.headers.${permissionKey}`),
-      key: permissionKey,
-      align: 'center' as const,
-      width: 100,
-      render: (_: unknown, module: IPermissionModule) => {
-        if (!module.permissions.includes(permissionKey)) {
-          return null;
-        }
-
-        const permission = `${module.id}.${permissionKey}`;
-        const checked = role.permissions.includes(permission);
+    {
+      title: t('roles.headers.permission'),
+      width: '50%',
+      render: (_: unknown, record: IPermissionItem) => {
+        const checked = role.permissions.includes(record.key);
 
         return (
           <Checkbox
-            key={`${role.id}-${permission}`}
+            key={`${role.id}-${record.key}`}
             defaultChecked={checked}
             disabled={!role.permissions_editable}
             onChange={(event) =>
-              handlePermissionChange(
-                permission,
-                module.id,
-                permissionKey,
-                event.target.checked,
-              )
+              handlePermissionChange(record.key, event.target.checked)
             }
           />
         );
       },
-    })),
+    },
   ];
 };
