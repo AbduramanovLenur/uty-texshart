@@ -374,7 +374,7 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
 
   return (
     <div className={cn(styles['applications-timeline'], className)}>
-      <div className={cn(styles['applications-timeline__wrapper'])}>
+      <div className={cn(styles['applications-timeline__wrapper'], 'scrollbar')}>
         <ul className={cn(styles['applications-timeline__list'])}>
           {timelineSteps.map((item, index) => (
             <li

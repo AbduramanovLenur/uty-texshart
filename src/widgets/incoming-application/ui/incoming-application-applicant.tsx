@@ -25,7 +25,7 @@ const IncomingApplicationApplicant: FC = () => {
   return (
     <div className={cn(styles['incoming-application-applicant'])}>
       <UserInfo />
-      <div className={cn(styles['incoming-application-applicant__documents'])}>
+      <div className={cn(styles['incoming-application-applicant__documents'], 'scrollbar')}>
         <div className={cn(styles['incoming-application-applicant__documents-overlay'])}>
           <Title className={cn(styles['incoming-application-applicant__documents-title'])} level={5}>
             {t('userDocuments.idCard')}

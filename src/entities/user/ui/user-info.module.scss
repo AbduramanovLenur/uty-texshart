@@ -8,10 +8,6 @@
   height: 100%;
   min-height: 0;
   overflow-y: auto;
-  scrollbar-width: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
   &__content {
     display: flex;
     flex-direction: column;

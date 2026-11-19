@@ -27,10 +27,6 @@
     overflow-y: auto;
     flex: 1;
     min-height: 0;
-    scrollbar-width: none;
-    &::-webkit-scrollbar {
-      display: none;
-    }
   }
   &__item {
     border-bottom: 1px solid var(--border-secondary);
