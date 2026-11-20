@@ -47,12 +47,10 @@ const Roles: FC = () => {
             selectedModule={selectedModule}
             onSelectModule={setSelectedModuleKey}
           />
-          {selectedRole && selectedModule && (
-            <RolePermissionsTable
-              role={selectedRole}
-              module={selectedModule}
-            />
-          )}
+          <RolePermissionsTable
+            role={selectedRole}
+            module={selectedModule}
+          />
         </div>
       </div>
     </section>
