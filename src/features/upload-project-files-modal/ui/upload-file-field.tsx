@@ -8,6 +8,8 @@ import { IconUploadOutlined } from '@shared/assets';
 import { PreviewFile } from '@shared/ui';
 import { formatFileSize } from '@shared/utils';
 
+import { isZipFile } from '../model/lib/helpers/validators';
+
 import styles from './upload-file-field.module.scss';
 
 interface IProps {
@@ -32,9 +34,7 @@ const UploadFileField: FC<IProps> = ({ value, onChange }) => {
   };
 
   const handleBeforeUpload = (file: File) => {
-    const isZip = file.name.toLowerCase().endsWith('.zip');
-
-    if (!isZip) {
+    if (!isZipFile(file)) {
       message.error(t('uploadProjectFilesModal.validation.onlyZip'));
       return false;
     }

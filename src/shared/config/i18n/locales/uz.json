@@ -471,13 +471,10 @@
   "rejectApplicationModal": {
     "title": "Rad etish",
     "fields": {
-      "rejectReason": "Rad etish sababi",
-      "selectPlaceholder": "Tanlang",
-      "comment": "Izoh",
-      "commentPlaceholder": "Izoh yozing"
+      "file": "Rad etish dalolatnomasi"
     },
     "validation": {
-      "rejectReasonRequired": "Rad etish sababini tanlang"
+      "fileRequired": "Rad etish dalolatnomasini yuklang"
     }
   },
   "confirmActModal": {

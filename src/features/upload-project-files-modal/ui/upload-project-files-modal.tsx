@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
+import { validateZipFile } from '../model/lib/helpers/validators';
 import { close, stateUploadProjectFilesModal } from '../model/store/slice';
 import type { IUploadProjectFilesFormValues } from '../model/types/form';
 import UploadFileField from './upload-file-field';
@@ -77,13 +78,7 @@ const UploadProjectFilesModal: FC = () => {
               message: t('uploadProjectFilesModal.validation.fileRequired'),
             },
             {
-              validator: (_, value: File | null) => {
-                if (!value) return Promise.resolve();
-                if (!value.name.toLowerCase().endsWith('.zip')) {
-                  return Promise.reject(new Error(t('uploadProjectFilesModal.validation.onlyZip')));
-                }
-                return Promise.resolve();
-              },
+              validator: validateZipFile(t),
             },
           ]}
         >
