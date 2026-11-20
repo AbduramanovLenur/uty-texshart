@@ -54,4 +54,25 @@ export const actionsConfig: IApplicationActionConfig[] = [
     className: 'application-actions__btn--accept',
     allowedStatuses: [Statuses.ACCEPTED],
   },
+  {
+    key: ApplicationActionKeys.GRANT_CONSTRUCTION_PERMIT,
+    labelKey: 'actions.grantConstructionPermit',
+    icon: <IconFullRightArrow />,
+    className: 'application-actions__btn--accept',
+    allowedStatuses: [Statuses.ACCEPTED],
+  },
+  {
+    key: ApplicationActionKeys.START_CONSTRUCTION,
+    labelKey: 'actions.startConstruction',
+    icon: <IconFullRightArrow />,
+    className: 'application-actions__btn--accept',
+    allowedStatuses: [Statuses.ACCEPTED],
+  },
+  {
+    key: ApplicationActionKeys.CONFIRM_CONSTRUCTION_COMPLETION,
+    labelKey: 'actions.confirmConstructionCompletion',
+    icon: <IconBasicCheck />,
+    className: 'application-actions__btn--accept',
+    allowedStatuses: [Statuses.ACCEPTED],
+  },
 ] as const;
