@@ -289,6 +289,7 @@
     "assignEmployee": "Прикрепить сотрудника",
     "issueTechnicalSpecification": "Выдать техусловия",
     "allowConstruction": "Разрешить начало строительства",
+    "uploadProjectFiles": "Загрузить проектные документы",
     "upload": "Загрузить"
   },
   "headers": {
@@ -525,6 +526,16 @@
     },
     "validation": {
       "fileRequired": "Загрузите смету строительства"
+    }
+  },
+  "uploadProjectFilesModal": {
+    "title": "Загрузить проектные документы",
+    "fields": {
+      "file": "Проектные документы (в виде ZIP файла)"
+    },
+    "validation": {
+      "fileRequired": "Загрузите проектные документы",
+      "onlyZip": "Можно загружать файлы только в формате ZIP"
     }
   },
   "createRoleModal": {

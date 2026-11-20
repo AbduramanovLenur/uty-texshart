@@ -282,6 +282,7 @@
     "assignEmployee": "Hodim biriktirish",
     "issueTechnicalSpecification": "Texnik-shart berish",
     "allowConstruction": "Qurilish boshlashga ruxsat berish",
+    "uploadProjectFiles": "Loyiha xujjatlari yuklash",
     "upload": "Yuklash"
   },
   "headers": {
@@ -512,6 +513,16 @@
     },
     "validation": {
       "fileRequired": "Qurilish smetasini yuklang"
+    }
+  },
+  "uploadProjectFilesModal": {
+    "title": "Loyiha xujjatlari yuklash",
+    "fields": {
+      "file": "Loyiha xujjatlari (ZIP fayl ko‘rinishda)"
+    },
+    "validation": {
+      "fileRequired": "Loyiha xujjatlarini yuklang",
+      "onlyZip": "Faqat ZIP formatidagi faylni yuklash mumkin"
     }
   },
   "createRoleModal": {

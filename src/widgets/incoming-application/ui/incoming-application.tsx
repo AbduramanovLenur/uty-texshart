@@ -19,6 +19,7 @@ import { AssignEmployeeModal, open as openAssignEmployeeModal } from '@features/
 import { ConfirmActModal, open as openConfirmActModal } from '@features/confirm-act-modal';
 import { ForwardApplicationModal, open as openForwardApplicationModal } from '@features/forward-application-modal';
 import { RejectApplicationModal, open as openRejectApplicationModal } from '@features/reject-application-modal';
+import { UploadProjectFilesModal, open as openUploadProjectFilesModal } from '@features/upload-project-files-modal';
 import { UploadTechnicalSpecificationModal, open as openUploadTechnicalSpecificationModal } from '@features/upload-technical-specification-modal';
 import { ViewPdfModal } from '@features/view-pdf-modal';
 import { PageHeader } from '@shared/ui';
@@ -33,6 +34,7 @@ const IncomingApplication: FC = () => {
   const breadcrumbs = getBreadcrumbs(t);
 
   const actions = [
+    { 'name': ApplicationActionKeys.UPLOAD_PROJECT_FILES, 'key': 'employee' },
     { 'name': ApplicationActionKeys.ALLOW_CONSTRUCTION, 'key': 'employee' },
     { 'name': ApplicationActionKeys.ISSUE_TECHNICAL_SPECIFICATION, 'key': 'employee' },
     { 'name': ApplicationActionKeys.ASSIGN_EMPLOYEE, 'key': 'employee' },
@@ -64,6 +66,9 @@ const IncomingApplication: FC = () => {
     [ApplicationActionKeys.ALLOW_CONSTRUCTION]: (key: TApplicationActionKey) => {
       dispatch(openAllowConstructionModal({ id: 'ARZ-31234123', key }));
     },
+    [ApplicationActionKeys.UPLOAD_PROJECT_FILES]: (key: TApplicationActionKey) => {
+      dispatch(openUploadProjectFilesModal({ id: 'ARZ-31234123', key }));
+    },
   };
 
   return (
@@ -89,6 +94,7 @@ const IncomingApplication: FC = () => {
         <AssignEmployeeModal />
         <UploadTechnicalSpecificationModal />
         <AllowConstructionModal />
+        <UploadProjectFilesModal />
         <ViewPdfModal />
       </div>
     </section>
