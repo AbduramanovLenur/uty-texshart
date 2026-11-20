@@ -75,4 +75,11 @@ export const actionsConfig: IApplicationActionConfig[] = [
     className: 'application-actions__btn--accept',
     allowedStatuses: [Statuses.ACCEPTED],
   },
+  {
+    key: ApplicationActionKeys.UPLOAD_CONSTRUCTION_ACT,
+    labelKey: 'actions.uploadConstructionAct',
+    icon: <IconFullRightArrow />,
+    className: 'application-actions__btn--accept',
+    allowedStatuses: [Statuses.ACCEPTED],
+  },
 ] as const;

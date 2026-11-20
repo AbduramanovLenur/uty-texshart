@@ -286,6 +286,7 @@
     "grantConstructionPermit": "Qurilishga ruxsat berish",
     "startConstruction": "Qurilishni boshlangan deb belgilash",
     "confirmConstructionCompletion": "Qurilish yakunlanishi tasdiqlash",
+    "uploadConstructionAct": "Qurilishni dalolatnomasini yuklash",
     "upload": "Yuklash"
   },
   "headers": {
@@ -523,6 +524,15 @@
     "validation": {
       "fileRequired": "Loyiha xujjatlarini yuklang",
       "onlyZip": "Faqat ZIP formatidagi faylni yuklash mumkin"
+    }
+  },
+  "uploadConstructionActModal": {
+    "title": "Qurilishni dalolatnomasini yuklash",
+    "fields": {
+      "file": "Qurilishni dalolatnomasi"
+    },
+    "validation": {
+      "fileRequired": "Qurilishni dalolatnomasini yuklang"
     }
   },
   "createRoleModal": {

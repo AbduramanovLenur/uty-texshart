@@ -19,6 +19,7 @@ import { AssignEmployeeModal, open as openAssignEmployeeModal } from '@features/
 import { ConfirmActModal, open as openConfirmActModal } from '@features/confirm-act-modal';
 import { ForwardApplicationModal, open as openForwardApplicationModal } from '@features/forward-application-modal';
 import { RejectApplicationModal, open as openRejectApplicationModal } from '@features/reject-application-modal';
+import { UploadConstructionActModal, open as openUploadConstructionActModal } from '@features/upload-construction-act-modal';
 import { UploadProjectFilesModal, open as openUploadProjectFilesModal } from '@features/upload-project-files-modal';
 import { UploadTechnicalSpecificationModal, open as openUploadTechnicalSpecificationModal } from '@features/upload-technical-specification-modal';
 import { ViewPdfModal } from '@features/view-pdf-modal';
@@ -34,6 +35,7 @@ const IncomingApplication: FC = () => {
   const breadcrumbs = getBreadcrumbs(t);
 
   const actions = [
+    { 'name': ApplicationActionKeys.UPLOAD_CONSTRUCTION_ACT, 'key': 'employee' },
     { 'name': ApplicationActionKeys.CONFIRM_CONSTRUCTION_COMPLETION, 'key': 'employee' },
     { 'name': ApplicationActionKeys.START_CONSTRUCTION, 'key': 'employee' },
     { 'name': ApplicationActionKeys.GRANT_CONSTRUCTION_PERMIT, 'key': 'employee' },
@@ -72,6 +74,9 @@ const IncomingApplication: FC = () => {
     [ApplicationActionKeys.UPLOAD_PROJECT_FILES]: (key: TApplicationActionKey) => {
       dispatch(openUploadProjectFilesModal({ id: 'ARZ-31234123', key }));
     },
+    [ApplicationActionKeys.UPLOAD_CONSTRUCTION_ACT]: (key: TApplicationActionKey) => {
+      dispatch(openUploadConstructionActModal({ id: 'ARZ-31234123', key }));
+    },
     [ApplicationActionKeys.GRANT_CONSTRUCTION_PERMIT]: (key: TApplicationActionKey) => {
       console.log('Grant construction permit:', { id: 'ARZ-31234123', key });
     },
@@ -107,6 +112,7 @@ const IncomingApplication: FC = () => {
         <UploadTechnicalSpecificationModal />
         <AllowConstructionModal />
         <UploadProjectFilesModal />
+        <UploadConstructionActModal />
         <ViewPdfModal />
       </div>
     </section>
