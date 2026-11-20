@@ -199,7 +199,11 @@
     "phone": "Kontakt raqami",
     "address": "Manzil",
     "upload": "Yuklash",
-    "logout": "Chiqish"
+    "logout": "Chiqish",
+    "tabs": {
+      "info": "Profil ma'lumotlari",
+      "sessionsHistory": "Seanslar tarixi"
+    }
   },
   "sidebar": {
     "dashboard": "Asosiy sahifa",
@@ -259,7 +263,9 @@
     "clear": "Tozalash",
     "search": "Qidirish",
     "user": "Foydalanuvchini kiriting",
-    "pinfl": "JSHSHIRni kiriting"
+    "pinfl": "JSHSHIRni kiriting",
+    "time": "Vaqtni kiriting",
+    "ipAddress": "IP-manzilni kiriting"
   },
   "actions": {
     "view": "Ko‘rish",
@@ -291,10 +297,13 @@
   },
   "headers": {
     "id": "ID",
+    "number": "N",
     "applicationId": "Ariza ID",
     "paymentId": "To‘lov ID",
     "invoice": "Invoice raqami",
     "date": "Sana",
+    "time": "Vaqt",
+    "ipAddress": "IP-manzil",
     "user": "Foydalanuvchi",
     "network": "Muhandislik tarmog‘i",
     "mtu": "MTU / km, pk",
