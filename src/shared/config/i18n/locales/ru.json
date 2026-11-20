@@ -285,7 +285,8 @@
     "import": "Импорт",
     "reject": "Отклонить",
     "forwardToRegional": "Направить в региональный отдел",
-    "confirmAct": "Подтвердить акт"
+    "confirmAct": "Подтвердить акт",
+    "assignEmployee": "Прикрепить сотрудника"
   },
   "headers": {
     "id": "ID",
@@ -493,6 +494,16 @@
     "fields": {
       "comment": "Примечание",
       "commentPlaceholder": "Напишите примечание"
+    }
+  },
+  "assignEmployeeModal": {
+    "title": "Прикрепить сотрудника",
+    "fields": {
+      "employee": "Сотрудник",
+      "employeePlaceholder": "Выберите"
+    },
+    "validation": {
+      "employeeRequired": "Выберите сотрудника"
     }
   },
   "createRoleModal": {

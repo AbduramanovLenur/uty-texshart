@@ -15,6 +15,10 @@ import {
   type TApplicationActionKey,
 } from '@features/application-actions';
 import {
+  AssignEmployeeModal,
+  open as openAssignEmployeeModal,
+} from '@features/assign-employee-modal';
+import {
   ConfirmActModal,
   open as openConfirmActModal,
 } from '@features/confirm-act-modal';
@@ -39,6 +43,7 @@ const IncomingApplication: FC = () => {
   const breadcrumbs = getBreadcrumbs(t);
 
   const actions = [
+    { 'name': ApplicationActionKeys.ASSIGN_EMPLOYEE, 'key': 'employee' },
     { 'name': ApplicationActionKeys.CONFIRM_ACT, 'key': 'employee' },
     { 'name': ApplicationActionKeys.FORWARD,  'key': 'employee' },
     { 'name': ApplicationActionKeys.REJECT, 'key': 'employee' },
@@ -57,6 +62,9 @@ const IncomingApplication: FC = () => {
     },
     [ApplicationActionKeys.CONFIRM_ACT]: (key: TApplicationActionKey) => {
       dispatch(openConfirmActModal({ id: 'ARZ-31234123', key }));
+    },
+    [ApplicationActionKeys.ASSIGN_EMPLOYEE]: (key: TApplicationActionKey) => {
+      dispatch(openAssignEmployeeModal({ id: 'ARZ-31234123', key }));
     },
   };
 
@@ -80,6 +88,7 @@ const IncomingApplication: FC = () => {
         <ForwardApplicationModal />
         <RejectApplicationModal />
         <ConfirmActModal />
+        <AssignEmployeeModal />
         <ViewPdfModal />
       </div>
     </section>

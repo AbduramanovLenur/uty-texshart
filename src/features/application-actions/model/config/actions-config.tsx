@@ -26,4 +26,11 @@ export const actionsConfig: IApplicationActionConfig[] = [
     className: 'application-actions__btn--accept',
     allowedStatuses: [Statuses.ACCEPTED],
   },
+  {
+    key: ApplicationActionKeys.ASSIGN_EMPLOYEE,
+    labelKey: 'actions.assignEmployee',
+    icon: <IconFullRightArrow />,
+    className: 'application-actions__btn--accept',
+    allowedStatuses: [Statuses.ACCEPTED],
+  },
 ] as const;
