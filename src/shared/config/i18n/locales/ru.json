@@ -487,6 +487,18 @@
       "rejectReasonRequired": "Выберите причину отклонения"
     }
   },
+  "createRoleModal": {
+    "title": "Добавить новую роль",
+    "fields": {
+      "name": "Название",
+      "namePlaceholder": "Введите название роли",
+      "description": "Описание",
+      "descriptionPlaceholder": "Введите описание роли"
+    },
+    "validation": {
+      "nameRequired": "Введите название роли"
+    }
+  },
   "createUserModal": {
     "title": "Добавить нового пользователя",
     "titleEdit": "Редактировать пользователя",
