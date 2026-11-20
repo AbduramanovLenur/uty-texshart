@@ -1,4 +1,3 @@
 export const FormFields = {
-  REJECT_REASON: 'rejectReason',
-  COMMENT: 'comment',
+  FILE: 'file',
 } as const;

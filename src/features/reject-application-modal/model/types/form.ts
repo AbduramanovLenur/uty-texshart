@@ -1,4 +1,7 @@
+import type { FormFields } from '../constants/form-fields';
+
+export type TFormField = (typeof FormFields)[keyof typeof FormFields];
+
 export interface IRejectApplicationFormValues {
-  rejectReason: string;
-  comment?: string;
+  [FormFields.FILE]?: File | null;
 }

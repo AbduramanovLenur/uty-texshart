@@ -484,13 +484,10 @@
   "rejectApplicationModal": {
     "title": "Отклонить",
     "fields": {
-      "rejectReason": "Причина отклонения",
-      "selectPlaceholder": "Выберите",
-      "comment": "Примечание",
-      "commentPlaceholder": "Напишите примечание"
+      "file": "Акт об отклонении"
     },
     "validation": {
-      "rejectReasonRequired": "Выберите причину отклонения"
+      "fileRequired": "Загрузите акт об отклонении"
     }
   },
   "confirmActModal": {
