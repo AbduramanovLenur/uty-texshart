@@ -8,6 +8,7 @@ import type { IProfileSession } from '../model/types/session';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
+import { TableTimeFilter } from '@features/table-time-filter';
 import type { TTableFilterState } from '@shared/types';
 
 export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProps<IProfileSession>['columns'] => {
@@ -28,11 +29,12 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       width: 355,
       filteredValue: filters.time,
       filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
-        <TableSearchFilter
+        <TableTimeFilter
           setSelectedKeys={setSelectedKeys}
           selectedKeys={selectedKeys}
           confirm={confirm}
           clearFilters={clearFilters}
+          format='HH:mm'
           placeholder={t('placeholders.time')}
           clearLabel={t('placeholders.clear')}
           searchLabel={t('placeholders.search')}

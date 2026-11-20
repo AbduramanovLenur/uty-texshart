@@ -13,7 +13,7 @@ const { Title } = Typography;
 
 const Profile: FC = () => {
   const { t } = useTranslation();
-  const [activeTab, setActiveTab] = useState<TTabKey>(TabKeys.PROFILE_INFO);
+  const [activeTab, setActiveTab] = useState<TTabKey>(TabKeys.FIRST_TAB);
 
   const handleTabChange = (key: string) => {
     setActiveTab(key as TTabKey);
@@ -21,12 +21,12 @@ const Profile: FC = () => {
 
   const items: TabsProps['items'] = [
     {
-      key: TabKeys.PROFILE_INFO,
+      key: TabKeys.FIRST_TAB,
       label: t('profile.tabs.info'),
       children: <ProfileInformation />,
     },
     {
-      key: TabKeys.SESSIONS_HISTORY,
+      key: TabKeys.SECOND_TAB,
       label: t('profile.tabs.sessionsHistory'),
       children: <ProfileSessionsTable />,
     },
