@@ -1,5 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
+import { reducer as createRoleModalReducer } from '@features/create-role-modal';
 import { reducer as createUserModalReducer } from '@features/create-user-modal';
 import { reducer as forwardApplicationModalReducer } from '@features/forward-application-modal';
 import { reducer as mtuAndCompaniesModalReducer } from '@features/mtu-and-companies-modal';
@@ -14,6 +15,7 @@ import { reducer as viewProcessModalReducer } from '@features/view-process-modal
 import { reducer as viewTechnicalSpecificationModalReducer } from '@features/view-technical-specification-modal';
 
 const rootReducer = combineReducers({
+  createRoleModalSlice: createRoleModalReducer,
   createUserModalSlice: createUserModalReducer,
   forwardApplicationModalSlice: forwardApplicationModalReducer,
   mtuAndCompaniesModalSlice: mtuAndCompaniesModalReducer,

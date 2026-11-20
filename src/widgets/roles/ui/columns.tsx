@@ -4,10 +4,12 @@ import { useTranslation } from 'react-i18next';
 
 import type { IModule, IPermissionItem, IRole } from '../model/types/role';
 
-export const useGetColumns = (role: IRole, module: IModule): TableProps<IPermissionItem>['columns'] => {
+export const useGetColumns = (role?: IRole, module?: IModule): TableProps<IPermissionItem>['columns'] => {
   const { t } = useTranslation();
 
   const handlePermissionChange = (permission: string, value: boolean) => {
+    if (!role || !module) return;
+
     const payload = {
       roleId: role.id,
       permission,
@@ -28,13 +30,13 @@ export const useGetColumns = (role: IRole, module: IModule): TableProps<IPermiss
       title: t('roles.headers.permission'),
       width: '50%',
       render: (_, record: IPermissionItem) => {
-        const checked = role.permissions.includes(record.key);
+        const checked = Boolean(role?.permissions?.includes(record.key));
 
         return (
           <Checkbox
-            key={`${role.id}-${record.key}`}
+            key={`${role?.id}-${record.key}`}
             defaultChecked={checked}
-            disabled={!role.permissions_editable}
+            disabled={!role?.permissions_editable}
             onChange={(event) => handlePermissionChange(record.key, event.target.checked)}
           />
         );

@@ -10,8 +10,8 @@ import styles from './role-permissions-table.module.scss';
 const { Title } = Typography;
 
 interface IProps {
-  role: IRole;
-  module: IModule;
+  role?: IRole;
+  module?: IModule;
 }
 
 const RolePermissionsTable: FC<IProps> = ({ role, module }) => {
@@ -19,16 +19,18 @@ const RolePermissionsTable: FC<IProps> = ({ role, module }) => {
 
   return (
     <div className={cn(styles['role-permissions'])}>
-      <div className={cn(styles['role-permissions__header'])}>
-        <Title className={cn(styles['role-permissions__title'])} level={5}>
-          {module.name}
-        </Title>
-      </div>
+      {module && (
+        <div className={cn(styles['role-permissions__header'])}>
+          <Title className={cn(styles['role-permissions__title'])} level={5}>
+            {module.name}
+          </Title>
+        </div>
+      )}
       <div className={cn(styles['role-permissions__body'], 'scrollbar')}>
         <Table<IPermissionItem>
           rowKey='key'
           className={cn(styles['role-permissions__table'])}
-          dataSource={module.permissions}
+          dataSource={module?.permissions ?? []}
           columns={columns}
           pagination={false}
         />

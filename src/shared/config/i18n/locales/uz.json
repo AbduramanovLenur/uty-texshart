@@ -474,6 +474,18 @@
       "rejectReasonRequired": "Rad etish sababini tanlang"
     }
   },
+  "createRoleModal": {
+    "title": "Yangi rol qo'shish",
+    "fields": {
+      "name": "Nomi",
+      "namePlaceholder": "Rol nomini yozing",
+      "description": "Tavsif",
+      "descriptionPlaceholder": "Rol tavsifini yozing"
+    },
+    "validation": {
+      "nameRequired": "Rol nomini kiriting"
+    }
+  },
   "createUserModal": {
     "title": "Yangi foydalanuvchi qo‘shish",
     "titleEdit": "Foydalanuvchini tahrirlash",
