@@ -6,3 +6,4 @@ export { hasRoleAccess } from './has-role-access';
 export { downloadFile } from './download-file';
 export { printFile } from './print-file';
 export { maskPinfl } from './mask-pinfl';
+export { formatFileSize } from './format-file-size';

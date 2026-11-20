@@ -1,5 +1,6 @@
 import { combineReducers } from '@reduxjs/toolkit';
 
+import { reducer as allowConstructionModalReducer } from '@features/allow-construction-modal';
 import { reducer as assignEmployeeModalReducer } from '@features/assign-employee-modal';
 import { reducer as confirmActModalReducer } from '@features/confirm-act-modal';
 import { reducer as createRoleModalReducer } from '@features/create-role-modal';
@@ -18,6 +19,7 @@ import { reducer as viewProcessModalReducer } from '@features/view-process-modal
 import { reducer as viewTechnicalSpecificationModalReducer } from '@features/view-technical-specification-modal';
 
 const rootReducer = combineReducers({
+  allowConstructionModalSlice: allowConstructionModalReducer,
   assignEmployeeModalSlice: assignEmployeeModalReducer,
   confirmActModalSlice: confirmActModalReducer,
   createRoleModalSlice: createRoleModalReducer,

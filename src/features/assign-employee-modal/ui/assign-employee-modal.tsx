@@ -11,8 +11,6 @@ import type { IAssignEmployeeFormValues } from '../model/types/form';
 
 import { IconDownArrow } from '@shared/assets';
 
-import styles from './assign-employee-modal.module.scss';
-
 const { Item, useForm } = Form;
 
 interface IProps {
@@ -42,9 +40,9 @@ const AssignEmployeeModal: FC<IProps> = ({ onSubmit }) => {
 
   return (
     <Modal
-      className={cn('modal', styles['assign-employee-modal'])}
+      className={cn('modal')}
       classNames={{
-        body: cn(styles['assign-employee-modal__body'], 'form-body'),
+        body: cn('form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -73,7 +71,7 @@ const AssignEmployeeModal: FC<IProps> = ({ onSubmit }) => {
     >
       <Form
         form={form}
-        className={cn(styles['assign-employee-modal__form'], 'form')}
+        className={cn('form')}
         layout='vertical'
         onFinish={handleFinish}
       >
@@ -88,7 +86,7 @@ const AssignEmployeeModal: FC<IProps> = ({ onSubmit }) => {
           ]}
         >
           <Select
-            className={cn(styles['assign-employee-modal__select'], 'form-select')}
+            className={cn('form-select')}
             size='large'
             placeholder={t('assignEmployeeModal.fields.employeePlaceholder')}
             suffixIcon={<IconDownArrow />}

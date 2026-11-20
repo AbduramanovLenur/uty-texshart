@@ -9,8 +9,6 @@ import { close, stateUploadTechSpecModal } from '../model/store/slice';
 import type { IUploadTechSpecFormValues } from '../model/types/form';
 import UploadFileField from './upload-file-field';
 
-import styles from './upload-technical-specification-modal.module.scss';
-
 const { Item, useForm } = Form;
 
 const UploadTechnicalSpecificationModal: FC = () => {
@@ -35,9 +33,9 @@ const UploadTechnicalSpecificationModal: FC = () => {
 
   return (
     <Modal
-      className={cn('modal', styles['upload-technical-specification-modal'])}
+      className={cn('modal')}
       classNames={{
-        body: cn(styles['upload-technical-specification-modal__body'], 'form-body'),
+        body: cn('form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -66,7 +64,7 @@ const UploadTechnicalSpecificationModal: FC = () => {
     >
       <Form
         form={form}
-        className={cn(styles['upload-technical-specification-modal__form'], 'form')}
+        className={cn('form')}
         layout='vertical'
         onFinish={handleFinish}
       >
