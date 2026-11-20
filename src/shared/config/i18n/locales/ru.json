@@ -288,6 +288,7 @@
     "confirmAct": "Подтвердить акт",
     "assignEmployee": "Прикрепить сотрудника",
     "issueTechnicalSpecification": "Выдать техусловия",
+    "allowConstruction": "Разрешить начало строительства",
     "upload": "Загрузить"
   },
   "headers": {
@@ -515,6 +516,15 @@
     },
     "validation": {
       "fileRequired": "Загрузите техусловия"
+    }
+  },
+  "allowConstructionModal": {
+    "title": "Разрешить начало строительства",
+    "fields": {
+      "file": "Загрузите смету строительства"
+    },
+    "validation": {
+      "fileRequired": "Загрузите смету строительства"
     }
   },
   "createRoleModal": {

@@ -14,6 +14,7 @@ import {
   type TApplicationActionHandler,
   type TApplicationActionKey,
 } from '@features/application-actions';
+import { AllowConstructionModal, open as openAllowConstructionModal } from '@features/allow-construction-modal';
 import { AssignEmployeeModal, open as openAssignEmployeeModal } from '@features/assign-employee-modal';
 import { ConfirmActModal, open as openConfirmActModal } from '@features/confirm-act-modal';
 import { ForwardApplicationModal, open as openForwardApplicationModal } from '@features/forward-application-modal';
@@ -32,6 +33,7 @@ const IncomingApplication: FC = () => {
   const breadcrumbs = getBreadcrumbs(t);
 
   const actions = [
+    { 'name': ApplicationActionKeys.ALLOW_CONSTRUCTION, 'key': 'employee' },
     { 'name': ApplicationActionKeys.ISSUE_TECHNICAL_SPECIFICATION, 'key': 'employee' },
     { 'name': ApplicationActionKeys.ASSIGN_EMPLOYEE, 'key': 'employee' },
     { 'name': ApplicationActionKeys.CONFIRM_ACT, 'key': 'employee' },
@@ -59,6 +61,9 @@ const IncomingApplication: FC = () => {
     [ApplicationActionKeys.ISSUE_TECHNICAL_SPECIFICATION]: (key: TApplicationActionKey) => {
       dispatch(openUploadTechnicalSpecificationModal({ id: 'ARZ-31234123', key }));
     },
+    [ApplicationActionKeys.ALLOW_CONSTRUCTION]: (key: TApplicationActionKey) => {
+      dispatch(openAllowConstructionModal({ id: 'ARZ-31234123', key }));
+    },
   };
 
   return (
@@ -83,6 +88,7 @@ const IncomingApplication: FC = () => {
         <ConfirmActModal />
         <AssignEmployeeModal />
         <UploadTechnicalSpecificationModal />
+        <AllowConstructionModal />
         <ViewPdfModal />
       </div>
     </section>

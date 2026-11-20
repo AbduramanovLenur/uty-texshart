@@ -281,6 +281,7 @@
     "confirmAct": "Dalolatnomani tasdiqlash",
     "assignEmployee": "Hodim biriktirish",
     "issueTechnicalSpecification": "Texnik-shart berish",
+    "allowConstruction": "Qurilish boshlashga ruxsat berish",
     "upload": "Yuklash"
   },
   "headers": {
@@ -502,6 +503,15 @@
     },
     "validation": {
       "fileRequired": "Texnik-shartni yuklang"
+    }
+  },
+  "allowConstructionModal": {
+    "title": "Qurilish boshlashga ruxsat berish",
+    "fields": {
+      "file": "Qurilish smetasini yuklang"
+    },
+    "validation": {
+      "fileRequired": "Qurilish smetasini yuklang"
     }
   },
   "createRoleModal": {
