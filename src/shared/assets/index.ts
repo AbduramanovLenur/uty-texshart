@@ -46,3 +46,4 @@ export { default as IconFullRightArrow } from './icons/icon-full-right-arrow';
 export { default as IconEye } from './icons/icon-eye';
 export { default as IconBasicCheck } from './icons/icon-basic-check';
 export { default as IconUploadOutlined } from './icons/icon-upload-outlined';
+export { default as IconLog } from './icons/icon-log';

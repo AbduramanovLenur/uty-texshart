@@ -218,6 +218,7 @@
     "roles": "Rollar",
     "references": "Ma\u0027lumotnomalar",
     "regionsMtu": "Hududlar va MTU",
+    "logs": "Tizim jurnali",
     "settings": "Sozlamalar",
     "paymentHistory": "To’lovlar tarixi"
   },
@@ -331,7 +332,8 @@
     "organizationId": "Tashkilot ID",
     "organizationType": "Tashkilot turi",
     "organizationName": "Tashkilot nomi",
-    "kmPk": "km/pk"
+    "kmPk": "km/pk",
+    "details": "Details"
   },
   "summary_other": "Jami {{count}} ta ariza topildi",
   "incomingApplications": {
@@ -390,6 +392,14 @@
       "position": "Lavozim",
       "email": "Email",
       "comment": "Izoh"
+    }
+  },
+  "logs": {
+    "title": "Tizim jurnali",
+    "statuses": {
+      "view": "View",
+      "create": "Create",
+      "modify": "Modify"
     }
   },
   "roles": {

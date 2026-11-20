@@ -18,6 +18,7 @@ export const routes = {
   REFERENCE_DATA: '/reference-data',
   MTU_AND_COMPANIES: '/mtu-and-companies',
   REGIONS_AND_MTU: '/mtu-and-companies',
+  LOGS: '/logs',
   SETTINGS: '/settings',
   PAYMENT_HISTORY: '/payment-history',
 } as const;

@@ -18,6 +18,7 @@ import {
   RolesPage,
   ReferenceDataPage,
   MtuAndCompaniesPage,
+  LogsPage,
 } from './pages';
 
 import RequireGuest from './guards/require-guest';
@@ -119,6 +120,14 @@ const router = createBrowserRouter([
           {
             path: routes.MTU_AND_COMPANIES,
             element: <MtuAndCompaniesPage />,
+          },
+          {
+            path: routes.LOGS,
+            element: <LogsPage />,
+          },
+          {
+            path: '/log',
+            element: <LogsPage />,
           },
           {
             path: routes.PROFILE,

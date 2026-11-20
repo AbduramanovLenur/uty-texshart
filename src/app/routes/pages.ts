@@ -17,3 +17,4 @@ export const UserPage = lazyPage(() => import('@pages/user').then((module) => ({
 export const RolesPage = lazyPage(() => import('@pages/roles').then((module) => ({ default: module.RolesPage })));
 export const ReferenceDataPage = lazyPage(() => import('@pages/reference-data').then((module) => ({ default: module.ReferenceDataPage })));
 export const MtuAndCompaniesPage = lazyPage(() => import('@pages/mtu-and-companies').then((module) => ({ default: module.MtuAndCompaniesPage })));
+export const LogsPage = lazyPage(() => import('@pages/logs').then((module) => ({ default: module.LogsPage })));
