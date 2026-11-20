@@ -283,6 +283,9 @@
     "issueTechnicalSpecification": "Texnik-shart berish",
     "allowConstruction": "Qurilish boshlashga ruxsat berish",
     "uploadProjectFiles": "Loyiha xujjatlari yuklash",
+    "grantConstructionPermit": "Qurilishga ruxsat berish",
+    "startConstruction": "Qurilishni boshlangan deb belgilash",
+    "confirmConstructionCompletion": "Qurilish yakunlanishi tasdiqlash",
     "upload": "Yuklash"
   },
   "headers": {

@@ -290,6 +290,9 @@
     "issueTechnicalSpecification": "Выдать техусловия",
     "allowConstruction": "Разрешить начало строительства",
     "uploadProjectFiles": "Загрузить проектные документы",
+    "grantConstructionPermit": "Разрешить строительство",
+    "startConstruction": "Отметить начало строительства",
+    "confirmConstructionCompletion": "Подтвердить завершение строительства",
     "upload": "Загрузить"
   },
   "headers": {

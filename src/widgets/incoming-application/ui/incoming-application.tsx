@@ -34,6 +34,9 @@ const IncomingApplication: FC = () => {
   const breadcrumbs = getBreadcrumbs(t);
 
   const actions = [
+    { 'name': ApplicationActionKeys.CONFIRM_CONSTRUCTION_COMPLETION, 'key': 'employee' },
+    { 'name': ApplicationActionKeys.START_CONSTRUCTION, 'key': 'employee' },
+    { 'name': ApplicationActionKeys.GRANT_CONSTRUCTION_PERMIT, 'key': 'employee' },
     { 'name': ApplicationActionKeys.UPLOAD_PROJECT_FILES, 'key': 'employee' },
     { 'name': ApplicationActionKeys.ALLOW_CONSTRUCTION, 'key': 'employee' },
     { 'name': ApplicationActionKeys.ISSUE_TECHNICAL_SPECIFICATION, 'key': 'employee' },
@@ -68,6 +71,15 @@ const IncomingApplication: FC = () => {
     },
     [ApplicationActionKeys.UPLOAD_PROJECT_FILES]: (key: TApplicationActionKey) => {
       dispatch(openUploadProjectFilesModal({ id: 'ARZ-31234123', key }));
+    },
+    [ApplicationActionKeys.GRANT_CONSTRUCTION_PERMIT]: (key: TApplicationActionKey) => {
+      console.log('Grant construction permit:', { id: 'ARZ-31234123', key });
+    },
+    [ApplicationActionKeys.START_CONSTRUCTION]: (key: TApplicationActionKey) => {
+      console.log('Start construction:', { id: 'ARZ-31234123', key });
+    },
+    [ApplicationActionKeys.CONFIRM_CONSTRUCTION_COMPLETION]: (key: TApplicationActionKey) => {
+      console.log('Confirm construction completion:', { id: 'ARZ-31234123', key });
     },
   };
 

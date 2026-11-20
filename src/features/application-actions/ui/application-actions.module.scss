@@ -1,6 +1,7 @@
 .application-actions {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: var(--ant-margin-sm);
   &__btn {
     font-weight: 500;
