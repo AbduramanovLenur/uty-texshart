@@ -3,4 +3,5 @@ export const ApplicationActionKeys = {
   FORWARD: 'FORWARD',
   ROUTE: 'ROUTE',
   CONFIRM_ACT: 'CONFIRM_ACT',
+  ASSIGN_EMPLOYEE: 'ASSIGN_EMPLOYEE',
 } as const;

@@ -278,7 +278,8 @@
     "import": "Import",
     "reject": "Rad etish",
     "forwardToRegional": "Hududiy bo‘limga yo‘naltirish",
-    "confirmAct": "Dalolatnomani tasdiqlash"
+    "confirmAct": "Dalolatnomani tasdiqlash",
+    "assignEmployee": "Hodim biriktirish"
   },
   "headers": {
     "id": "ID",
@@ -480,6 +481,16 @@
     "fields": {
       "comment": "Izoh",
       "commentPlaceholder": "Izoh yozing"
+    }
+  },
+  "assignEmployeeModal": {
+    "title": "Hodim biriktirish",
+    "fields": {
+      "employee": "Hodim",
+      "employeePlaceholder": "Tanlang"
+    },
+    "validation": {
+      "employeeRequired": "Hodimni tanlang"
     }
   },
   "createRoleModal": {
