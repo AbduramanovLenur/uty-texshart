@@ -15,6 +15,10 @@ import {
   type TApplicationActionKey,
 } from '@features/application-actions';
 import {
+  ConfirmActModal,
+  open as openConfirmActModal,
+} from '@features/confirm-act-modal';
+import {
   ForwardApplicationModal,
   open as openForwardApplicationModal,
 } from '@features/forward-application-modal';
@@ -35,6 +39,7 @@ const IncomingApplication: FC = () => {
   const breadcrumbs = getBreadcrumbs(t);
 
   const actions = [
+    { 'name': ApplicationActionKeys.CONFIRM_ACT, 'key': 'employee' },
     { 'name': ApplicationActionKeys.FORWARD,  'key': 'employee' },
     { 'name': ApplicationActionKeys.REJECT, 'key': 'employee' },
   ];
@@ -49,6 +54,9 @@ const IncomingApplication: FC = () => {
     },
     [ApplicationActionKeys.FORWARD]: (key: TApplicationActionKey) => {
       dispatch(openForwardApplicationModal({ id: 'ARZ-31234123', key }));
+    },
+    [ApplicationActionKeys.CONFIRM_ACT]: (key: TApplicationActionKey) => {
+      dispatch(openConfirmActModal({ id: 'ARZ-31234123', key }));
     },
   };
 
@@ -71,6 +79,7 @@ const IncomingApplication: FC = () => {
         <IncomingApplicationBody />
         <ForwardApplicationModal />
         <RejectApplicationModal />
+        <ConfirmActModal />
         <ViewPdfModal />
       </div>
     </section>

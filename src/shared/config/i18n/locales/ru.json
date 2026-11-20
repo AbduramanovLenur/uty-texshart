@@ -284,7 +284,8 @@
     "editApplication": "Изменить заявку",
     "import": "Импорт",
     "reject": "Отклонить",
-    "forwardToRegional": "Направить в региональный отдел"
+    "forwardToRegional": "Направить в региональный отдел",
+    "confirmAct": "Подтвердить акт"
   },
   "headers": {
     "id": "ID",
@@ -485,6 +486,13 @@
     },
     "validation": {
       "rejectReasonRequired": "Выберите причину отклонения"
+    }
+  },
+  "confirmActModal": {
+    "title": "Подтвердить акт",
+    "fields": {
+      "comment": "Примечание",
+      "commentPlaceholder": "Напишите примечание"
     }
   },
   "createRoleModal": {
