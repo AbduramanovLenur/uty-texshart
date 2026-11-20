@@ -14,22 +14,11 @@ import {
   type TApplicationActionHandler,
   type TApplicationActionKey,
 } from '@features/application-actions';
-import {
-  AssignEmployeeModal,
-  open as openAssignEmployeeModal,
-} from '@features/assign-employee-modal';
-import {
-  ConfirmActModal,
-  open as openConfirmActModal,
-} from '@features/confirm-act-modal';
-import {
-  ForwardApplicationModal,
-  open as openForwardApplicationModal,
-} from '@features/forward-application-modal';
-import {
-  RejectApplicationModal,
-  open as openRejectApplicationModal,
-} from '@features/reject-application-modal';
+import { AssignEmployeeModal, open as openAssignEmployeeModal } from '@features/assign-employee-modal';
+import { ConfirmActModal, open as openConfirmActModal } from '@features/confirm-act-modal';
+import { ForwardApplicationModal, open as openForwardApplicationModal } from '@features/forward-application-modal';
+import { RejectApplicationModal, open as openRejectApplicationModal } from '@features/reject-application-modal';
+import { UploadTechnicalSpecificationModal, open as openUploadTechnicalSpecificationModal } from '@features/upload-technical-specification-modal';
 import { ViewPdfModal } from '@features/view-pdf-modal';
 import { PageHeader } from '@shared/ui';
 import { routes } from '@shared/config';
@@ -43,6 +32,7 @@ const IncomingApplication: FC = () => {
   const breadcrumbs = getBreadcrumbs(t);
 
   const actions = [
+    { 'name': ApplicationActionKeys.ISSUE_TECHNICAL_SPECIFICATION, 'key': 'employee' },
     { 'name': ApplicationActionKeys.ASSIGN_EMPLOYEE, 'key': 'employee' },
     { 'name': ApplicationActionKeys.CONFIRM_ACT, 'key': 'employee' },
     { 'name': ApplicationActionKeys.FORWARD,  'key': 'employee' },
@@ -65,6 +55,9 @@ const IncomingApplication: FC = () => {
     },
     [ApplicationActionKeys.ASSIGN_EMPLOYEE]: (key: TApplicationActionKey) => {
       dispatch(openAssignEmployeeModal({ id: 'ARZ-31234123', key }));
+    },
+    [ApplicationActionKeys.ISSUE_TECHNICAL_SPECIFICATION]: (key: TApplicationActionKey) => {
+      dispatch(openUploadTechnicalSpecificationModal({ id: 'ARZ-31234123', key }));
     },
   };
 
@@ -89,6 +82,7 @@ const IncomingApplication: FC = () => {
         <RejectApplicationModal />
         <ConfirmActModal />
         <AssignEmployeeModal />
+        <UploadTechnicalSpecificationModal />
         <ViewPdfModal />
       </div>
     </section>

@@ -10,26 +10,38 @@
     display: flex;
     align-items: center;
     gap: var(--ant-margin);
+    flex: 1;
+    min-width: 0;
   }
   &__icon {
     display: flex;
     align-items: center;
+    flex-shrink: 0;
+  }
+  &__wrapper {
+    flex: 1;
+    min-width: 0;
   }
   &__name {
     font-size: var(--ant-font-size);
     font-weight: 600;
     line-height: 1.5;
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   &__info {
     font-size: var(--ant-font-size-sm);
     font-weight: 600;
     line-height: 1.6;
-    color: var(--dark-65)
+    color: var(--dark-65);
+    word-break: break-word;
+    overflow-wrap: anywhere;
   }
   &__actions {
     display: flex;
     flex-direction: column;
     gap: var(--ant-padding-xs);
+    flex-shrink: 0;
   }
   &__button {
     color: var(--dark-88);
@@ -46,6 +58,27 @@
       :global(.ant-btn-icon) {
         > svg {
           color: var(--ant-btn-text-color-hover);
+        }
+      }
+    }
+    &--delete {
+      color: var(--ant-red-5);
+      border-color: var(--ant-red-5);
+      background-color: transparent;
+      :global(.ant-btn-icon) {
+        svg {
+          color: var(--ant-red-5);
+          transition: 0.3s;
+        }
+      }
+      &:hover {
+        color: var(--ant-red-4) !important;
+        border-color: var(--ant-red-4) !important;
+        background-color: var(--ant-red-1) !important;
+        :global(.ant-btn-icon) {
+          > svg {
+            color: var(--ant-red-4) !important;
+          }
         }
       }
     }

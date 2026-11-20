@@ -33,4 +33,11 @@ export const actionsConfig: IApplicationActionConfig[] = [
     className: 'application-actions__btn--accept',
     allowedStatuses: [Statuses.ACCEPTED],
   },
+  {
+    key: ApplicationActionKeys.ISSUE_TECHNICAL_SPECIFICATION,
+    labelKey: 'actions.issueTechnicalSpecification',
+    icon: <IconFullRightArrow />,
+    className: 'application-actions__btn--accept',
+    allowedStatuses: [Statuses.ACCEPTED],
+  },
 ] as const;

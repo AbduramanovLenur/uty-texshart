@@ -6,7 +6,7 @@ import cn from 'classnames';
 
 import { userDocuments } from '../model/mock';
 
-import { PreviewFile } from '@features/preview-file';
+import { PreviewFile } from '@shared/ui';
 import { open as openViewPdfModal } from '@features/view-pdf-modal';
 import { UserInfo } from '@entities/user';
 

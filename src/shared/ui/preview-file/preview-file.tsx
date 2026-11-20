@@ -3,26 +3,30 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'antd';
 import cn from 'classnames';
 
-import type { IPreviewFile } from '@/entities/application';
-import { IconDownload, IconEye, IconFile } from '@shared/assets';
+import type { IPreviewFile } from '@shared/types';
+import { IconDownload, IconEye, IconFile, IconTrash } from '@shared/assets';
 import { downloadFile } from '@shared/utils';
 
 import styles from './preview-file.module.scss';
 
-interface IProps {
+export interface IPreviewFileProps {
   file: IPreviewFile;
   onDownload?: () => void;
   isDownload?: boolean;
   onView?: () => void;
   isView?: boolean;
-};
+  onDelete?: () => void;
+  isDelete?: boolean;
+}
 
-const PreviewFile: FC<IProps> = ({
+const PreviewFile: FC<IPreviewFileProps> = ({
   file,
   onDownload,
   isDownload,
   onView,
   isView,
+  onDelete,
+  isDelete,
 }) => {
   const { t } = useTranslation();
 
@@ -33,6 +37,10 @@ const PreviewFile: FC<IProps> = ({
   const handleDownload = (url: string, name: string) => {
     downloadFile(url, name);
     onDownload?.();
+  };
+
+  const handleDelete = () => {
+    onDelete?.();
   };
 
   return (
@@ -67,6 +75,15 @@ const PreviewFile: FC<IProps> = ({
             onClick={() => handleDownload(file.url, file.name)}
           >
             {t('actions.downloadFile')}
+          </Button>
+        )}
+        {isDelete && (
+          <Button
+            className={cn(styles['preview-file__button'], styles['preview-file__button--delete'])}
+            icon={<IconTrash />}
+            onClick={handleDelete}
+          >
+            {t('actions.delete')}
           </Button>
         )}
       </div>

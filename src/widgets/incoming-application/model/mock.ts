@@ -1,5 +1,5 @@
 import type { IUserDocuments } from '@entities/user';
-import type { IPreviewFile } from '@/entities/application';
+import type { IPreviewFile } from '@shared/types';
 
 export const previewFilesMock: IPreviewFile[] = [
   {

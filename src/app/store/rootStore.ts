@@ -10,6 +10,7 @@ import { reducer as referenceDataModalReducer } from '@features/reference-data-m
 import { reducer as registerTermsModalReducer } from '@features/register-terms-modal';
 import { reducer as rejectApplicationModalReducer } from '@features/reject-application-modal';
 import { reducer as signApplicationModalReducer } from '@features/sign-application-modal';
+import { reducer as uploadTechSpecModalReducer } from '@features/upload-technical-specification-modal';
 import { reducer as viewApplicantModalReducer } from '@features/view-applicant-modal';
 import { reducer as viewInvoiceModalReducer } from '@features/view-invoice-modal';
 import { reducer as viewPdfModalReducer } from '@features/view-pdf-modal';
@@ -27,6 +28,7 @@ const rootReducer = combineReducers({
   registerTermsModalSlice: registerTermsModalReducer,
   rejectApplicationModalSlice: rejectApplicationModalReducer,
   signApplicationModalSlice: signApplicationModalReducer,
+  uploadTechSpecModalSlice: uploadTechSpecModalReducer,
   viewApplicantModalSlice: viewApplicantModalReducer,
   viewInvoiceModalSlice: viewInvoiceModalReducer,
   viewPdfModalSlice: viewPdfModalReducer,

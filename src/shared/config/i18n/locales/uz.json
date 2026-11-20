@@ -279,7 +279,9 @@
     "reject": "Rad etish",
     "forwardToRegional": "Hududiy bo‘limga yo‘naltirish",
     "confirmAct": "Dalolatnomani tasdiqlash",
-    "assignEmployee": "Hodim biriktirish"
+    "assignEmployee": "Hodim biriktirish",
+    "issueTechnicalSpecification": "Texnik-shart berish",
+    "upload": "Yuklash"
   },
   "headers": {
     "id": "ID",
@@ -491,6 +493,15 @@
     },
     "validation": {
       "employeeRequired": "Hodimni tanlang"
+    }
+  },
+  "uploadTechnicalSpecificationModal": {
+    "title": "Texnik-shartni yuklash",
+    "fields": {
+      "file": "Texnik-shartni yuklang"
+    },
+    "validation": {
+      "fileRequired": "Texnik-shartni yuklang"
     }
   },
   "createRoleModal": {
