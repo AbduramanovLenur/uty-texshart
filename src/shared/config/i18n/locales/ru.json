@@ -293,6 +293,7 @@
     "grantConstructionPermit": "Разрешить строительство",
     "startConstruction": "Отметить начало строительства",
     "confirmConstructionCompletion": "Подтвердить завершение строительства",
+    "uploadConstructionAct": "Загрузить акт строительства",
     "upload": "Загрузить"
   },
   "headers": {
@@ -536,6 +537,15 @@
     "validation": {
       "fileRequired": "Загрузите проектные документы",
       "onlyZip": "Можно загружать файлы только в формате ZIP"
+    }
+  },
+  "uploadConstructionActModal": {
+    "title": "Загрузить акт строительства",
+    "fields": {
+      "file": "Акт строительства"
+    },
+    "validation": {
+      "fileRequired": "Загрузите акт строительства"
     }
   },
   "createRoleModal": {

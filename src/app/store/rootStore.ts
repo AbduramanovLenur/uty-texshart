@@ -11,6 +11,7 @@ import { reducer as referenceDataModalReducer } from '@features/reference-data-m
 import { reducer as registerTermsModalReducer } from '@features/register-terms-modal';
 import { reducer as rejectApplicationModalReducer } from '@features/reject-application-modal';
 import { reducer as signApplicationModalReducer } from '@features/sign-application-modal';
+import { reducer as uploadConstructionActModalReducer } from '@features/upload-construction-act-modal';
 import { reducer as uploadProjectFilesModalReducer } from '@features/upload-project-files-modal';
 import { reducer as uploadTechSpecModalReducer } from '@features/upload-technical-specification-modal';
 import { reducer as viewApplicantModalReducer } from '@features/view-applicant-modal';
@@ -31,6 +32,7 @@ const rootReducer = combineReducers({
   registerTermsModalSlice: registerTermsModalReducer,
   rejectApplicationModalSlice: rejectApplicationModalReducer,
   signApplicationModalSlice: signApplicationModalReducer,
+  uploadConstructionActModalSlice: uploadConstructionActModalReducer,
   uploadProjectFilesModalSlice: uploadProjectFilesModalReducer,
   uploadTechSpecModalSlice: uploadTechSpecModalReducer,
   viewApplicantModalSlice: viewApplicantModalReducer,
