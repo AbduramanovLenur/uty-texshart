@@ -1,4 +1,4 @@
-import { IconFullRightArrow, IconXMark } from '@shared/assets';
+import { IconBasicCheck, IconFullRightArrow, IconXMark } from '@shared/assets';
 import { Statuses } from '@shared/config';
 
 import { ApplicationActionKeys } from '../constants/action-keys';
@@ -16,6 +16,13 @@ export const actionsConfig: IApplicationActionConfig[] = [
     key: ApplicationActionKeys.FORWARD,
     labelKey: 'actions.forwardToRegional',
     icon: <IconFullRightArrow />,
+    className: 'application-actions__btn--accept',
+    allowedStatuses: [Statuses.ACCEPTED],
+  },
+  {
+    key: ApplicationActionKeys.CONFIRM_ACT,
+    labelKey: 'actions.confirmAct',
+    icon: <IconBasicCheck />,
     className: 'application-actions__btn--accept',
     allowedStatuses: [Statuses.ACCEPTED],
   },

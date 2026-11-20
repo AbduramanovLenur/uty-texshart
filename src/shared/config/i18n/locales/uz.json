@@ -277,7 +277,8 @@
     "editApplication": "Arizani o‘zgartirish",
     "import": "Import",
     "reject": "Rad etish",
-    "forwardToRegional": "Hududiy bo‘limga yo‘naltirish"
+    "forwardToRegional": "Hududiy bo‘limga yo‘naltirish",
+    "confirmAct": "Dalolatnomani tasdiqlash"
   },
   "headers": {
     "id": "ID",
@@ -472,6 +473,13 @@
     },
     "validation": {
       "rejectReasonRequired": "Rad etish sababini tanlang"
+    }
+  },
+  "confirmActModal": {
+    "title": "Dalolatnomani tasdiqlash",
+    "fields": {
+      "comment": "Izoh",
+      "commentPlaceholder": "Izoh yozing"
     }
   },
   "createRoleModal": {
