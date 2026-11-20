@@ -225,6 +225,7 @@
     "roles": "Роли",
     "references": "Справочники",
     "regionsMtu": "Регионы и МТУ",
+    "logs": "Журнал действий",
     "settings": "Настройки",
     "paymentHistory": "История платежей"
   },
@@ -338,7 +339,8 @@
     "organizationId": "ID организации",
     "organizationType": "Тип организации",
     "organizationName": "Название организации",
-    "kmPk": "км/пк"
+    "kmPk": "км/пк",
+    "details": "Детали"
   },
   "summary_one": "Найдена {{count}} заявка",
   "summary_few": "Найдено {{count}} заявки",
@@ -400,6 +402,14 @@
       "position": "Должность",
       "email": "Email",
       "comment": "Примечание"
+    }
+  },
+  "logs": {
+    "title": "Журнал действий",
+    "statuses": {
+      "view": "View",
+      "create": "Create",
+      "modify": "Modify"
     }
   },
   "roles": {

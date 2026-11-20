@@ -7,6 +7,7 @@ import {
     IconGear,
     IconHome,
     IconInvoice,
+    IconLog,
     IconMap,
     IconMapPin,
     IconNotebook,
@@ -92,6 +93,12 @@ export const items: TMenuGroup[] = [
                 key: routes.MTU_AND_COMPANIES,
                 label: 'sidebar.regionsMtu',
                 icon: <IconMapPin />,
+                roles: [roles.APPLICANT],
+            },
+            {
+                key: routes.LOGS,
+                label: 'sidebar.logs',
+                icon: <IconLog />,
                 roles: [roles.APPLICANT],
             },
             {
