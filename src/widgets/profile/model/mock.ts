@@ -1,0 +1,81 @@
+import type { IProfileSession } from './types/session';
+
+export const profileSessionsMock: IProfileSession[] = [
+  {
+    key: '1',
+    number: 1,
+    time: '12:45',
+    date: '01.02.2026',
+    ipAddress: '192.168.1.1',
+  },
+  {
+    key: '2',
+    number: 2,
+    time: '14:30',
+    date: '01.02.2026',
+    ipAddress: '10.0.0.5',
+  },
+  {
+    key: '3',
+    number: 3,
+    time: '09:15',
+    date: '01.02.2026',
+    ipAddress: '172.16.254.3',
+  },
+  {
+    key: '4',
+    number: 4,
+    time: '11:00',
+    date: '01.02.2026',
+    ipAddress: '192.168.0.101',
+  },
+  {
+    key: '5',
+    number: 5,
+    time: '16:20',
+    date: '01.02.2026',
+    ipAddress: '10.1.1.15',
+  },
+  {
+    key: '6',
+    number: 6,
+    time: '08:50',
+    date: '01.02.2026',
+    ipAddress: '172.20.10.2',
+  },
+  {
+    key: '7',
+    number: 7,
+    time: '13:05',
+    date: '01.02.2026',
+    ipAddress: '192.168.100.200',
+  },
+  {
+    key: '8',
+    number: 8,
+    time: '17:35',
+    date: '01.02.2026',
+    ipAddress: '10.0.1.25',
+  },
+  {
+    key: '9',
+    number: 9,
+    time: '10:10',
+    date: '01.02.2026',
+    ipAddress: '172.30.0.12',
+  },
+  {
+    key: '10',
+    number: 10,
+    time: '15:25',
+    date: '01.02.2026',
+    ipAddress: '192.168.50.50',
+  },
+  {
+    key: '11',
+    number: 11,
+    time: '11:55',
+    date: '01.02.2026',
+    ipAddress: '10.10.10.10',
+  },
+];

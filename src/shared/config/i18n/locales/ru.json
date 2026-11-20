@@ -206,7 +206,11 @@
     "phone": "Контактный номер",
     "address": "Адрес",
     "upload": "Загрузить",
-    "logout": "Выйти"
+    "logout": "Выйти",
+    "tabs": {
+      "info": "Информация профиля",
+      "sessionsHistory": "История сеансов"
+    }
   },
   "sidebar": {
     "dashboard": "Главная",
@@ -266,7 +270,9 @@
     "clear": "Очистить",
     "search": "Поиск",
     "user": "Введите пользователя",
-    "pinfl": "Введите ПИНФЛ"
+    "pinfl": "Введите ПИНФЛ",
+    "time": "Введите время",
+    "ipAddress": "Введите IP-адрес"
   },
   "actions": {
     "view": "Посмотреть",
@@ -298,10 +304,13 @@
   },
   "headers": {
     "id": "ID",
+    "number": "N",
     "applicationId": "ID заявки",
     "paymentId": "ID платежа",
     "invoice": "Номер инвойса",
     "date": "Дата",
+    "time": "Время",
+    "ipAddress": "IP-адрес",
     "applicant": "Заявитель",
     "network": "Инженерная сеть",
     "mtu": "MTU / км, pk",
