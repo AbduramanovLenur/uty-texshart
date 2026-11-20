@@ -15,3 +15,4 @@ export type {
 export type { Role } from './role';
 export type { TStatus } from './status';
 export type { IStatusTagConfig } from './status-tag';
+export type { IPreviewFile } from './preview-file';

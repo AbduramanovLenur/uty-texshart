@@ -3,3 +3,5 @@ export { default as SearchInput } from './search-input/search-input';
 export { default as Paginator } from './paginator/paginator';
 export { default as PageHeader } from './page-header/page-header';
 export { default as StatusTag } from './status-tag/status-tag';
+export { default as PreviewFile } from './preview-file/preview-file';
+export type { IPreviewFileProps } from './preview-file/preview-file';

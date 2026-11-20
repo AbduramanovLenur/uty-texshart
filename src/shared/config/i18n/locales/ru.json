@@ -286,7 +286,9 @@
     "reject": "Отклонить",
     "forwardToRegional": "Направить в региональный отдел",
     "confirmAct": "Подтвердить акт",
-    "assignEmployee": "Прикрепить сотрудника"
+    "assignEmployee": "Прикрепить сотрудника",
+    "issueTechnicalSpecification": "Выдать техусловия",
+    "upload": "Загрузить"
   },
   "headers": {
     "id": "ID",
@@ -504,6 +506,15 @@
     },
     "validation": {
       "employeeRequired": "Выберите сотрудника"
+    }
+  },
+  "uploadTechnicalSpecificationModal": {
+    "title": "Загрузить техусловия",
+    "fields": {
+      "file": "Загрузите техусловия"
+    },
+    "validation": {
+      "fileRequired": "Загрузите техусловия"
     }
   },
   "createRoleModal": {

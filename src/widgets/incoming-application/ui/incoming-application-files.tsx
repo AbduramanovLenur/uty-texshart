@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 
 import { previewFilesMock } from '../model/mock';
 
-import { PreviewFile } from '@features/preview-file';
 import { open as openViewPdfModal } from '@features/view-pdf-modal';
+import { PreviewFile } from '@shared/ui';
 
 import styles from './incoming-application-files.module.scss';
 
