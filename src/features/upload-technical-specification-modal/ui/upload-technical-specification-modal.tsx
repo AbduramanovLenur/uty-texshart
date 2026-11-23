@@ -5,17 +5,18 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
-import { close, stateUploadTechSpecModal } from '../model/store/slice';
-import type { IUploadTechSpecFormValues } from '../model/types/form';
-import UploadFileField from './upload-file-field';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
+
+import { UploadFileField } from '@shared/ui';
 
 const { Item, useForm } = Form;
 
 const UploadTechnicalSpecificationModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id, key } = useSelector(stateUploadTechSpecModal);
-  const [form] = useForm<IUploadTechSpecFormValues>();
+  const { isOpen, id, key } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -26,7 +27,7 @@ const UploadTechnicalSpecificationModal: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: IUploadTechSpecFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Upload technical specification values:', { id, key, ...values });
     handleClose();
   };

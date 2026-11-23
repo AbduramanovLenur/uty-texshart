@@ -5,7 +5,7 @@ import cn from 'classnames';
 
 import { notifications } from '../model/mock';
 
-import { NotificationItem } from '@/entities/notification';
+import { NotificationItem } from '@entities/notification';
 import { IconCheck } from '@shared/assets';
 
 import styles from './notifications.module.scss';
@@ -16,14 +16,13 @@ const Notifications: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={cn(styles['notifications'], 'section')}>
-      <div className={cn(styles['notifications__inner'], 'section-inner')}>
-        <div className={cn(styles['notifications__top'])}>
-          <Title className={cn(styles['notifications__title'])} level={3}>
+    <section className={cn('section')}>
+      <div className={cn('section-inner')}>
+        <div className={cn('section-top')}>
+          <Title className={cn('section-title')} level={3}>
             {t('notifications.page.title')}
           </Title>
           <Button
-            className={cn(styles['notifications__btn'])}
             type='default'
             icon={<IconCheck />}
           >
@@ -31,9 +30,9 @@ const Notifications: FC = () => {
           </Button>
         </div>
         <div className={cn(styles['notifications__content'])}>
-          <ul className={cn(styles['notifications__list'])}>
+          <ul>
             {notifications.map((notification) => (
-              <li key={notification.date} className={cn(styles['notifications__item'])}>
+              <li key={notification.date}>
                 <NotificationItem item={notification} />
               </li>
             ))}

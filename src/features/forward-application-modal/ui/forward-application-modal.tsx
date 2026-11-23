@@ -6,20 +6,18 @@ import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
 import { regionalDepartmentOptionsMock } from '../model/mock';
-import { close, stateForwardApplicationModal } from '../model/store/slice';
-import type { IForwardApplicationFormValues } from '../model/types/form';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 
 import { IconDownArrow } from '@shared/assets';
-
-import styles from './forward-application-modal.module.scss';
 
 const { Item, useForm } = Form;
 
 const ForwardApplicationModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, key } = useSelector(stateForwardApplicationModal);
-  const [form] = useForm<IForwardApplicationFormValues>();
+  const { isOpen, key } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -30,16 +28,16 @@ const ForwardApplicationModal: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: IForwardApplicationFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Forward application form values:', { ...values, actionKey: key });
     handleClose();
   };
 
   return (
     <Modal
-      className={cn('modal', styles['forward-application-modal'])}
+      className={cn('modal')}
       classNames={{
-        body: cn(styles['forward-application-modal__body'], 'form-body'),
+        body: cn('form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -68,7 +66,7 @@ const ForwardApplicationModal: FC = () => {
     >
       <Form
         form={form}
-        className={cn(styles['forward-application-modal__form'], 'form')}
+        className={cn('form')}
         layout='vertical'
         onFinish={handleFinish}
       >
@@ -83,7 +81,7 @@ const ForwardApplicationModal: FC = () => {
           ]}
         >
           <Select
-            className={cn(styles['forward-application-modal__select'], 'form-select')}
+            className={cn('form-select')}
             size='large'
             placeholder={t('forwardApplicationModal.fields.selectPlaceholder')}
             suffixIcon={<IconDownArrow />}

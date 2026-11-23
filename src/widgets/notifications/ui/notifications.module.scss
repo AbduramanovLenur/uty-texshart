@@ -1,17 +1,4 @@
 .notifications {
-  &__top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--ant-margin);
-  }
-  &__title {
-    &:global(.ant-typography) {
-      margin-bottom: 0;
-      color: var(--dark-88);
-      margin-right: auto;
-    }
-  }
   &__content {
     flex: 1 1 auto;
     min-height: 0;

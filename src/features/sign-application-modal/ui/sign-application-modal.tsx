@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Modal } from 'antd';
 import cn from 'classnames';
 
-import { close, stateSignApplicationModal } from '../model/store/slice';
+import { close, stateModal } from '../model/store/slice';
 
 import styles from './sign-application-modal.module.scss';
 
@@ -22,7 +22,7 @@ const SignApplicationModal: FC<IProps> = ({
 }) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen } = useSelector(stateSignApplicationModal);
+  const { isOpen } = useSelector(stateModal);
 
   const handleClose = () => {
     dispatch(close());
@@ -31,7 +31,7 @@ const SignApplicationModal: FC<IProps> = ({
 
   return (
     <Modal
-      className={cn(styles['sign-application-modal'])}
+      className={cn(styles['sign-application-modal'], 'modal')}
       open={isOpen}
       onCancel={handleClose}
       title={title ?? t('signApplicationModal.title')}

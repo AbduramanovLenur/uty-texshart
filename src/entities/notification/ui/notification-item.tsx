@@ -21,7 +21,7 @@ const NotificationItem: FC<IProps> = ({ item }) => {
       <div className={cn(styles['notification-item__date'])}>
         {item.date}
       </div>
-      <ul className={cn(styles['notification-item__collections'])}>
+      <ul>
         {item.items.map((collection) => (
           <li key={collection.applicationId} className={cn(styles['notification-item__collection'])}>
             <div className={

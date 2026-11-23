@@ -13,7 +13,7 @@ interface IProps {
 
 const Auth: FC<IProps> = ({ type }) => {
   return (
-    <section className={cn(styles['auth'])}>
+    <section>
       <div className={cn(styles['auth__inner'])}>
         <AuthPromo />
         <AuthPanel type={type} />

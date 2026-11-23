@@ -1,12 +1,10 @@
 import type { FC } from 'react';
 import { Form, Input } from 'antd';
 import { useTranslation } from 'react-i18next';
-import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
 
 import RegisterActions from './register-actions';
-import styles from './register-sms-step.module.scss';
 
 const { Item } = Form;
 
@@ -22,7 +20,7 @@ const RegisterSmsStep: FC<IRegisterSmsStepProps> = ({
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles['register-sms-step'])}>
+    <div>
       <Item
         label={t('register.sms.codeLabel')}
         name={FormFields.SMS_CODE}

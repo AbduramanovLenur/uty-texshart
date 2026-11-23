@@ -24,8 +24,8 @@ const CreateApplication: FC = () => {
   };
 
   return (
-    <section className={cn(styles['create-application'], 'section')}>
-      <div className={cn(styles['create-application__inner'], 'section-single-inner')}>
+    <section className={cn('section')}>
+      <div className={cn('section-single-inner')}>
         <Breadcrumb
           classNames={{
             root: cn('breadcrumbs'),

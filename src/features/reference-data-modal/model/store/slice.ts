@@ -28,4 +28,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateReferenceDataModal = (state: { referenceDataModalSlice: IState; }) => state.referenceDataModalSlice;
+export const stateModal = (state: {
+  referenceDataModalSlice: IState;
+}) => state.referenceDataModalSlice;

@@ -2,11 +2,11 @@ import { useState, type FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
+import ApplicationApprovals from './application-approvals';
 import { Statuses } from '../model/constants/stutuses';
 import { ApprovalStatuses } from '../model/constants/approval-statuses';
 import { statusClasses } from '../model/config/status-classes';
 import type { ITimelineApproval, ITimelineStep } from '../model/types/timeline';
-import ApplicationApprovals from './application-approvals';
 
 import {
   IconArrowDownBracket,
@@ -436,10 +436,10 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
                         )}
                         {item?.buttonText && (
                           <a className={cn(styles['applications-timeline__file'])} href={item.fileUrl} download>
-                            <span className={cn(styles['applications-timeline__file-icon'])}>
+                            <span>
                               <IconArrowDownBracket />
                             </span>
-                            <span className={cn(styles['applications-timeline__file-text'])}>
+                            <span>
                               {item.buttonText}
                             </span>
                           </a>

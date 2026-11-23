@@ -35,7 +35,7 @@ const UserBody: FC<IProps> = ({ user, actionSlot, children }) => {
       <Tabs
         classNames={{
           root: cn('tabs__root'),
-          header: cn(styles['user-body__tabs'], 'tabs__header'),
+          header: cn('tabs__header'),
           item: cn(styles['user-body__tab'], 'tabs__item'),
         }}
         defaultActiveKey={TabKeys.FIRST_TAB}

@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'antd';
 import cn from 'classnames';
 
-import { userMock } from '../model/mock';
 import type { IUser } from '../model/types/user';
+import { userMock } from '../model/mock';
 
 import { IconArrowDownBracket } from '@shared/assets';
 import { downloadFile } from '@shared/utils';
@@ -32,25 +32,25 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
       <div className={cn(styles['user-info__content'])}>
         <div className={cn(styles['user-info__top'])}>
           <div className={cn(styles['user-info__details'])}>
-            <div className={cn(styles['user-info__item'])}>
+            <div>
               <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.name')}
               </div>
               <div className={cn(styles['user-info__value'])}>{data.name}</div>
             </div>
-            <div className={cn(styles['user-info__item'])}>
+            <div>
               <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.inn')}
               </div>
               <div className={cn(styles['user-info__value'])}>{data.inn}</div>
             </div>
-            <div className={cn(styles['user-info__item'])}>
+            <div>
               <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.director')}
               </div>
               <div className={cn(styles['user-info__value'])}>{data.director}</div>
             </div>
-            <div className={cn(styles['user-info__item'])}>
+            <div>
               <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.phone')}
               </div>
@@ -69,16 +69,14 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
             </div>
           )}
         </div>
-
-        <div className={cn(styles['user-info__item'])}>
+        <div>
           <div className={cn(styles['user-info__label'])}>
             {t('userInfo.address')}
           </div>
           <div className={cn(styles['user-info__value'])}>{data.address}</div>
         </div>
-
         {data.idCard && (
-          <div className={cn(styles['user-info__item'])}>
+          <div>
             <div className={cn(styles['user-info__label'])}>
               {t('userInfo.idCard')}
             </div>
@@ -91,9 +89,8 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
             </Button>
           </div>
         )}
-
         {data.license && (
-          <div className={cn(styles['user-info__item'])}>
+          <div>
             <div className={cn(styles['user-info__label'])}>
               {t('userInfo.license')}
             </div>

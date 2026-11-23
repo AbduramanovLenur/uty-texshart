@@ -5,22 +5,16 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
-import { close, stateConfirmActModal } from '../model/store/slice';
-import type { IConfirmActFormValues } from '../model/types/form';
-
-import styles from './confirm-act-modal.module.scss';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 
 const { Item, useForm } = Form;
 
-interface IProps {
-  onSubmit?: (values: IConfirmActFormValues) => void;
-}
-
-const ConfirmActModal: FC<IProps> = ({ onSubmit }) => {
+const ConfirmActModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id, key } = useSelector(stateConfirmActModal);
-  const [form] = useForm<IConfirmActFormValues>();
+  const { isOpen, id, key } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -31,17 +25,16 @@ const ConfirmActModal: FC<IProps> = ({ onSubmit }) => {
     form.submit();
   };
 
-  const handleFinish = (values: IConfirmActFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Confirm act form values:', { id, key, ...values });
-    onSubmit?.(values);
     handleClose();
   };
 
   return (
     <Modal
-      className={cn('modal', styles['confirm-act-modal'])}
+      className={cn('modal')}
       classNames={{
-        body: cn(styles['confirm-act-modal__body'], 'form-body'),
+        body: cn('form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -70,7 +63,7 @@ const ConfirmActModal: FC<IProps> = ({ onSubmit }) => {
     >
       <Form
         form={form}
-        className={cn(styles['confirm-act-modal__form'], 'form')}
+        className={cn('form')}
         layout='vertical'
         onFinish={handleFinish}
       >

@@ -16,8 +16,6 @@ import {
 } from '@features/reference-data-modal';
 import { IconPlus } from '@shared/assets';
 
-import styles from './reference-data.module.scss';
-
 const { Title } = Typography;
 
 const ReferenceData: FC = () => {
@@ -52,14 +50,14 @@ const ReferenceData: FC = () => {
   ];
 
   return (
-    <section className={cn(styles['reference-data'], 'section')}>
-      <div className={cn(styles['reference-data__inner'], 'section-inner')}>
-        <div className={cn(styles['reference-data__top'], 'section-top')}>
-          <Title className={cn(styles['reference-data__title'], 'section-title')} level={3}>
+    <section className={cn('section')}>
+      <div className={cn('section-inner')}>
+        <div className={cn('section-top')}>
+          <Title className={cn('section-title')} level={3}>
             {t('referenceData.title')}
           </Title>
           <Button
-            className={cn(styles['reference-data__create'], 'create-btn')}
+            className={cn('create-btn')}
             type='primary'
             icon={<IconPlus />}
             onClick={handleOpenCreateModal}
@@ -67,7 +65,7 @@ const ReferenceData: FC = () => {
             {t('referenceData.create')}
           </Button>
         </div>
-        <div className={cn(styles['reference-data__tabs'], 'tabs')}>
+        <div className={cn('tabs')}>
           <Tabs
             classNames={{
               root: cn('tabs__root'),

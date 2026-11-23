@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Button, Modal } from 'antd';
 import cn from 'classnames';
 
-import { close, stateViewApplicantModal } from '../model/store/slice';
+import { close, stateModal } from '../model/store/slice';
 
 import { UserInfo } from '@entities/user';
 
@@ -13,7 +13,7 @@ import styles from './view-applicant-modal.module.scss';
 const ViewApplicantModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen } = useSelector(stateViewApplicantModal);
+  const { isOpen } = useSelector(stateModal);
 
   const handleClose = () => {
     dispatch(close());

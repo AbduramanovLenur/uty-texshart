@@ -1,23 +1,32 @@
 import type { FC } from 'react';
-import { Button, message, Upload } from 'antd';
+import { Button, Upload } from 'antd';
+import type { UploadProps } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import type { IPreviewFile } from '@shared/types';
 import { IconUploadOutlined } from '@shared/assets';
-import { PreviewFile } from '@shared/ui';
 import { formatFileSize } from '@shared/utils';
-
-import { isZipFile } from '../model/lib/helpers/validators';
+import PreviewFile from '../preview-file/preview-file';
 
 import styles from './upload-file-field.module.scss';
 
-interface IProps {
+export interface IProps {
   value?: File | null;
   onChange?: (file: File | null) => void;
+  accept?: string;
+  beforeUpload?: (file: File) => boolean;
+  className?: string;
+  buttonText?: string;
 }
 
-const UploadFileField: FC<IProps> = ({ value, onChange }) => {
+export const UploadFileField: FC<IProps> = ({
+  value,
+  onChange,
+  accept,
+  beforeUpload,
+  className,
+}) => {
   const { t } = useTranslation();
 
   const previewFile: IPreviewFile | null = value
@@ -33,12 +42,10 @@ const UploadFileField: FC<IProps> = ({ value, onChange }) => {
     onChange?.(null);
   };
 
-  const handleBeforeUpload = (file: File) => {
-    if (!isZipFile(file)) {
-      message.error(t('uploadProjectFilesModal.validation.onlyZip'));
+  const handleBeforeUpload: UploadProps['beforeUpload'] = (file) => {
+    if (beforeUpload && !beforeUpload(file)) {
       return false;
     }
-
     onChange?.(file);
     return false;
   };
@@ -55,13 +62,13 @@ const UploadFileField: FC<IProps> = ({ value, onChange }) => {
 
   return (
     <Upload
-      accept='.zip,application/zip,application/x-zip-compressed'
+      accept={accept}
       beforeUpload={handleBeforeUpload}
       showUploadList={false}
       maxCount={1}
     >
       <Button
-        className={cn(styles['upload-file-field__btn'])}
+        className={cn(styles['upload-file-field__btn'], className)}
         icon={<IconUploadOutlined />}
       >
         {t('actions.upload')}

@@ -5,14 +5,14 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { mockPlatformTerms } from '../model/mock';
-import { close, stateRegisterTermsModal } from '../model/store/slice';
+import { close, stateModal } from '../model/store/slice';
 
 import styles from './register-terms-modal.module.scss';
 
 const RegisterTermsModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen } = useSelector(stateRegisterTermsModal);
+  const { isOpen } = useSelector(stateModal);
 
   const termsUrl = mockPlatformTerms.documentUrl;
 

@@ -12,8 +12,6 @@ import type { TFilterKey } from '../model/types/filter';
 import type { ICommunicationRegister } from '@entities/communication-register';
 import { useTableFilters } from '@shared/lib';
 
-import styles from './communications-register.module.scss';
-
 const { Title } = Typography;
 
 const CommunicationsRegister: FC = () => {
@@ -28,10 +26,10 @@ const CommunicationsRegister: FC = () => {
   });
 
   return (
-    <section className={cn(styles['communications-register'], 'section')}>
-      <div className={cn(styles['communications-register__inner'], 'section-inner')}>
-        <div className={cn(styles['communications-register__top'], 'section-top')}>
-          <Title className={cn(styles['communications-register__title'], 'section-title')} level={3}>
+    <section className={cn('section')}>
+      <div className={cn('section-inner')}>
+        <div className={cn('section-top')}>
+          <Title className={cn('section-title')} level={3}>
             {t('communicationsRegister.title')}
           </Title>
           <CommunicationsRegisterControls

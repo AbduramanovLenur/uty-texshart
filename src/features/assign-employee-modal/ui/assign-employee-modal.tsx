@@ -6,22 +6,18 @@ import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
 import { employeeOptionsMock } from '../model/mock';
-import { close, stateAssignEmployeeModal } from '../model/store/slice';
-import type { IAssignEmployeeFormValues } from '../model/types/form';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 
 import { IconDownArrow } from '@shared/assets';
 
 const { Item, useForm } = Form;
 
-interface IProps {
-  onSubmit?: (values: IAssignEmployeeFormValues) => void;
-}
-
-const AssignEmployeeModal: FC<IProps> = ({ onSubmit }) => {
+const AssignEmployeeModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id, key } = useSelector(stateAssignEmployeeModal);
-  const [form] = useForm<IAssignEmployeeFormValues>();
+  const { isOpen, id, key } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -32,9 +28,8 @@ const AssignEmployeeModal: FC<IProps> = ({ onSubmit }) => {
     form.submit();
   };
 
-  const handleFinish = (values: IAssignEmployeeFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Assign employee form values:', { id, key, ...values });
-    onSubmit?.(values);
     handleClose();
   };
 

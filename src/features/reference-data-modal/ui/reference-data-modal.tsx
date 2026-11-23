@@ -7,8 +7,8 @@ import cn from 'classnames';
 import { getReferenceTypeOptions } from '../model/lib/utils/get-reference-type-options';
 import { FormFields } from '../model/constants/form-fields';
 import { ReferenceDataTypes } from '../model/constants/reference-data-types';
-import { close, stateReferenceDataModal } from '../model/store/slice';
-import type { IReferenceDataFormValues } from '../model/types/form';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 import { mockCommunicationTypeOptions, mockCrossingMethodOptions } from '../model/mock';
 
 import { IconDownArrow, IconPlus, IconTrash } from '@shared/assets';
@@ -20,8 +20,8 @@ const { Item, List, useForm, useWatch } = Form;
 const ReferenceDataModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, type, id } = useSelector(stateReferenceDataModal);
-  const [form] = useForm<IReferenceDataFormValues>();
+  const { isOpen, type, id } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const selectedReferenceType = useWatch(FormFields.REFERENCE_TYPE, form);
   const hasMultipleOptions = useWatch(FormFields.HAS_MULTIPLE_OPTIONS, form);
@@ -55,16 +55,16 @@ const ReferenceDataModal: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: IReferenceDataFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log({ id, ...values });
     handleClose();
   };
 
   return (
     <Modal
-      className={cn('modal', styles['reference-data-modal'])}
+      className={cn('modal')}
       classNames={{
-        body: cn(styles['reference-data-modal__body'], 'form-body'),
+        body: cn('form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -93,7 +93,7 @@ const ReferenceDataModal: FC = () => {
     >
       <Form
         form={form}
-        className={cn(styles['reference-data-modal__form'])}
+        className={cn('form')}
         layout='vertical'
         onFinish={handleFinish}
       >
@@ -108,7 +108,7 @@ const ReferenceDataModal: FC = () => {
           ]}
         >
           <Select
-            className={cn(styles['reference-data-modal__select'])}
+            className={cn('form-select')}
             size='large'
             options={referenceTypeOptions}
             placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -127,7 +127,7 @@ const ReferenceDataModal: FC = () => {
             ]}
           >
             <Select
-              className={cn(styles['reference-data-modal__select'])}
+              className={cn('form-select')}
               size='large'
               options={mockCommunicationTypeOptions}
               placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -149,7 +149,7 @@ const ReferenceDataModal: FC = () => {
                 ]}
               >
                 <Select
-                  className={cn(styles['reference-data-modal__select'])}
+                  className={cn('form-select')}
                   size='large'
                   options={mockCommunicationTypeOptions}
                   placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -167,7 +167,7 @@ const ReferenceDataModal: FC = () => {
                 ]}
               >
                 <Select
-                  className={cn(styles['reference-data-modal__select'])}
+                  className={cn('form-select')}
                   size='large'
                   options={mockCrossingMethodOptions}
                   placeholder={t('createUserModal.fields.selectPlaceholder')}

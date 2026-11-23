@@ -44,7 +44,7 @@ const User: FC = () => {
 
   return (
     <section className={cn(styles['user'], 'section')}>
-      <div className={cn(styles['user__inner'], 'section-single-inner')}>
+      <div className={cn('section-single-inner')}>
         <Breadcrumb
           classNames={{
             root: cn('breadcrumbs'),

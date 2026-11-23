@@ -15,8 +15,6 @@ import {
 } from '@features/mtu-and-companies-modal';
 import { IconPlus } from '@shared/assets';
 
-import styles from './mtu-and-companies.module.scss';
-
 const { Title } = Typography;
 
 const MtuAndCompanies: FC = () => {
@@ -46,14 +44,14 @@ const MtuAndCompanies: FC = () => {
   ];
 
   return (
-    <section className={cn(styles['mtu-and-companies'], 'section')}>
-      <div className={cn(styles['mtu-and-companies__inner'], 'section-inner')}>
-        <div className={cn(styles['mtu-and-companies__top'], 'section-top')}>
-          <Title className={cn(styles['mtu-and-companies__title'], 'section-title')} level={3}>
+    <section className={cn('section')}>
+      <div className={cn('section-inner')}>
+        <div className={cn('section-top')}>
+          <Title className={cn('section-title')} level={3}>
             {t('mtuAndCompanies.title')}
           </Title>
           <Button
-            className={cn(styles['mtu-and-companies__create'], 'create-btn')}
+            className={cn('create-btn')}
             type='primary'
             icon={<IconPlus />}
             onClick={handleOpenCreateModal}
@@ -61,7 +59,7 @@ const MtuAndCompanies: FC = () => {
             {t('mtuAndCompanies.create')}
           </Button>
         </div>
-        <div className={cn(styles['mtu-and-companies__tabs'], 'tabs')}>
+        <div className={cn('tabs')}>
           <Tabs
             classNames={{
               root: cn('tabs__root'),

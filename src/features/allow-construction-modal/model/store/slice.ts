@@ -28,6 +28,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateAllowConstructionModal = (state: {
+export const stateModal = (state: {
   allowConstructionModalSlice: IState;
 }) => state.allowConstructionModalSlice;

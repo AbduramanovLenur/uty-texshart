@@ -12,10 +12,10 @@ interface IProps {
 const StatusCard: FC<IProps> = ({ item }) => {
   return (
     <div className={cn(styles['status-card'])}>
-      <div className={cn(styles['status-card__icon'])}>
+      <div>
         {item.icon}
       </div>
-      <div className={cn(styles['status-card__content'])}>
+      <div>
         <div className={cn(styles['status-card__title'])}>{item.title}</div>
          <div className={cn(styles['status-card__count'])}>{item.count}</div>
       </div>

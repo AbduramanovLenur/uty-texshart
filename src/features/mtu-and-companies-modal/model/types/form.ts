@@ -3,7 +3,7 @@ import type { TMtuAndCompaniesType } from './mtu-and-companies';
 
 export type TFormField = (typeof FormFields)[keyof typeof FormFields];
 
-export interface IMtuAndCompaniesFormValues {
+export interface IFormValues {
   [FormFields.TYPE]?: TMtuAndCompaniesType;
   [FormFields.COMPANY_TYPE]?: string;
   [FormFields.NAME]?: string;

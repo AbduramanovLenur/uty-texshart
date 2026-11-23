@@ -31,14 +31,14 @@ const Roles: FC = () => {
   };
 
   return (
-    <section className={cn(styles['roles'], 'section')}>
-      <div className={cn(styles['roles__inner'], 'section-inner')}>
-        <div className={cn(styles['roles__top'], 'section-top')}>
-          <Title className={cn(styles['roles__title'], 'section-title')} level={3}>
+    <section className={cn('section')}>
+      <div className={cn('section-inner')}>
+        <div className={cn('section-top')}>
+          <Title className={cn('section-title')} level={3}>
             {t('roles.title')}
           </Title>
           <Button
-            className={cn(styles['roles__create'], 'create-btn')}
+            className={cn('create-btn')}
             type='primary'
             icon={<IconPlus />}
             onClick={handleOpenCreateModal}

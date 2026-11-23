@@ -7,13 +7,11 @@
   border-radius: var(--ant-size-lg);
   padding: var(--ant-padding-lg);
   overflow-y: auto;
-
   &__inner {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   &__overlay {
     display: flex;
     flex-direction: column;
@@ -21,7 +19,6 @@
     width: 100%;
     max-width: 320px;
   }
-
   &__illustration {
     display: flex;
     align-items: center;
@@ -32,7 +29,6 @@
     background-color: #E4F3FF;
     margin-bottom: var(--ant-margin-xl);
   }
-
   &__title {
     &:global(.ant-typography) {
       margin: 0;
@@ -42,7 +38,6 @@
       margin-bottom: var(--ant-margin-xxs);
     }
   }
-
   &__subtitle {
     margin: 0;
     color: var(--dark-65);
@@ -51,14 +46,11 @@
     text-align: center;
     white-space: pre-line;
   }
-
   &__form {
     margin-top: var(--ant-margin-lg);
   }
-
   &__step {
     width: 100%;
-
     &[hidden] {
       display: none !important;
     }

@@ -29,7 +29,6 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, child
         </Title>
         {action}
       </div>
-
       <div className={cn(styles['user-details-card__grid'])}>
         <div className={cn(styles['user-details-card__col'])}>
           <div className={cn(styles['user-details-card__item'])}>
@@ -40,7 +39,6 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, child
               {user.pinfl}
             </div>
           </div>
-
           <div className={cn(styles['user-details-card__item'])}>
             <div className={cn(styles['user-details-card__label'])}>
               {t('users.card.fullName')}
@@ -49,7 +47,6 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, child
               {user.fullName}
             </div>
           </div>
-
           <div className={cn(styles['user-details-card__item'])}>
             <div className={cn(styles['user-details-card__label'])}>
               {t('users.card.phone')}
@@ -58,7 +55,6 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, child
               {user.phone}
             </div>
           </div>
-
           <div className={cn(styles['user-details-card__item'])}>
             <div className={cn(styles['user-details-card__label'])}>
               {t('users.card.regionalDepartment')}
@@ -68,7 +64,6 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, child
             </div>
           </div>
         </div>
-
         <div className={cn(styles['user-details-card__col'])}>
           <div className={cn(styles['user-details-card__item'])}>
             <div className={cn(styles['user-details-card__label'])}>
@@ -78,7 +73,6 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, child
               {user.role}
             </div>
           </div>
-
           <div className={cn(styles['user-details-card__item'])}>
             <div className={cn(styles['user-details-card__label'])}>
               {t('users.card.position')}
@@ -87,7 +81,6 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, child
               {user.position}
             </div>
           </div>
-
           <div className={cn(styles['user-details-card__item'])}>
             <div className={cn(styles['user-details-card__label'])}>
               {t('users.card.email')}
@@ -96,7 +89,6 @@ const UserDetailsCard: FC<IProps> = ({ user = mockUserDetails, actionSlot, child
               {user.email}
             </div>
           </div>
-
           <div className={cn(styles['user-details-card__item'])}>
             <div className={cn(styles['user-details-card__label'])}>
               {t('users.card.comment')}

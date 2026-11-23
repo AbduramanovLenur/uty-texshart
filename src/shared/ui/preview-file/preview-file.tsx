@@ -9,7 +9,7 @@ import { downloadFile } from '@shared/utils';
 
 import styles from './preview-file.module.scss';
 
-export interface IPreviewFileProps {
+export interface IProps {
   file: IPreviewFile;
   onDownload?: () => void;
   isDownload?: boolean;
@@ -19,7 +19,7 @@ export interface IPreviewFileProps {
   isDelete?: boolean;
 }
 
-const PreviewFile: FC<IPreviewFileProps> = ({
+const PreviewFile: FC<IProps> = ({
   file,
   onDownload,
   isDownload,

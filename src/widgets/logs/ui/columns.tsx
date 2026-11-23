@@ -5,12 +5,13 @@ import cn from 'classnames';
 
 import { FilterKeys } from '../model/constants/filter-keys';
 import { LogStatuses } from '../model/constants/log-statuses';
+import { statusTagConfig } from '../model/config/status-tag';
 import type { TFilterKey } from '../model/types/filter';
 import type { ILogItem } from '../model/types/log';
-import StatusTag from './status-tag';
 
 import { TableDateRangeFilter } from '@features/table-date-range-filter';
 import { TableSearchFilter } from '@features/table-search-filter';
+import { StatusTag } from '@shared/ui';
 import type { TTableFilterState } from '@shared/types';
 import { getSortOrder } from '@shared/utils';
 
@@ -81,7 +82,7 @@ export const useGetColumns = (filters: TTableFilterState<TFilterKey>): TableProp
       filterIcon: (filtered: boolean) => (
         <FilterFilled style={{ color: filtered ? 'var(--ant-blue)' : undefined }} />
       ),
-      render: (_, record) => <StatusTag status={record.status} />,
+      render: (_, record) => <StatusTag status={record.status} config={statusTagConfig} />,
     },
     {
       title: 'Details',

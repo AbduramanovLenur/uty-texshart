@@ -14,7 +14,7 @@ const Dashboard: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={cn(styles['dashboard'], 'section')}>
+    <section className={cn('section')}>
       <div className={cn(styles['dashboard__inner'])}>
         <Title className={cn(styles['dashboard__title'])} level={3}>
           {t('dashboard.title')}

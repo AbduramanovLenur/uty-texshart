@@ -20,8 +20,6 @@ export const userMock: IUser = {
   avatar: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=300&auto=format&fit=crop',
 };
 
-export const applicantMock = userMock;
-
 export const mockUserDetails: IUserDetails = {
   id: '1',
   name: 'Azizbek Tashkentov',

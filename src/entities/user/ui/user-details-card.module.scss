@@ -16,11 +16,6 @@
       padding: var(--ant-padding-xxs) 0;
     }
   }
-  &__actions {
-    display: flex;
-    align-items: center;
-    gap: var(--ant-margin-xs);
-  }
   &__grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

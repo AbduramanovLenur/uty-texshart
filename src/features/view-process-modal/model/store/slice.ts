@@ -25,4 +25,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateViewProcessModal = (state: { viewProcessModalSlice: IState }) => state.viewProcessModalSlice;
+export const stateModal = (state: {
+  viewProcessModalSlice: IState
+}) => state.viewProcessModalSlice;

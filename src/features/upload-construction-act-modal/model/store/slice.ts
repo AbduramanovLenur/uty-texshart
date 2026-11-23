@@ -28,6 +28,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateUploadConstructionActModal = (state: {
+export const stateModal = (state: {
   uploadConstructionActModalSlice: IState;
 }) => state.uploadConstructionActModalSlice;

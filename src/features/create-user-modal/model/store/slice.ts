@@ -25,6 +25,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateCreateUserModal = (state: {
+export const stateModal = (state: {
   createUserModalSlice: IState;
 }) => state.createUserModalSlice;

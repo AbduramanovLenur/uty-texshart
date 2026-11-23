@@ -2,8 +2,8 @@ import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import type { ITimelineApproval } from '../model/types/timeline';
 import { approvalStatusConfig } from '../model/config/approval-status';
+import type { ITimelineApproval } from '../model/types/timeline';
 
 import styles from './application-approvals.module.scss';
 
@@ -22,7 +22,7 @@ const ApplicationApprovals: FC<IProps> = ({ approvals, className }) => {
 
         return (
           <div key={approval.id} className={cn(styles['application-approvals__item'])}>
-            <div className={cn(styles['application-approvals__left'])}>
+            <div>
               <div className={cn(styles['application-approvals__title'])}>
                 {t(approval.title, approval.title)}
               </div>

@@ -5,8 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { Button, Modal } from 'antd';
 import cn from 'classnames';
 
-import { close, stateViewProcessModal } from '../model/store/slice';
-import { ApplicationsTimeline } from '@/entities/application';
+import { close, stateModal } from '../model/store/slice';
+
+import { ApplicationsTimeline } from '@entities/application';
 // import { routes } from '@shared/config';
 
 import styles from './view-process-modal.module.scss';
@@ -14,7 +15,7 @@ import styles from './view-process-modal.module.scss';
 const ViewProcessModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id } = useSelector(stateViewProcessModal);
+  const { isOpen, id } = useSelector(stateModal);
 
   console.log(id);
 
