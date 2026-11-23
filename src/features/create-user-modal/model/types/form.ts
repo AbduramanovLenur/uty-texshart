@@ -2,7 +2,7 @@ import type { FormFields } from '../constants/form-fields';
 
 export type TFormField = (typeof FormFields)[keyof typeof FormFields];
 
-export interface ICreateUserFormValues {
+export interface IFormValues {
   [FormFields.PINFL]?: string;
   [FormFields.FULL_NAME]?: string;
   [FormFields.POSITION]?: string;

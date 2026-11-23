@@ -1,3 +1,3 @@
-export interface IForwardApplicationFormValues {
+export interface IFormValues {
   regionalDepartment: string;
 }

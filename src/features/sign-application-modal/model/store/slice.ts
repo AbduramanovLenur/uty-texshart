@@ -23,4 +23,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateSignApplicationModal = (state: { signApplicationModalSlice: IState }) => state.signApplicationModalSlice;
+export const stateModal = (state: {
+  signApplicationModalSlice: IState
+}) => state.signApplicationModalSlice;

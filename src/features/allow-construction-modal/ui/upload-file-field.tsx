@@ -3,9 +3,9 @@ import { Button, Upload } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
+import { PreviewFile } from '@shared/ui';
 import type { IPreviewFile } from '@shared/types';
 import { IconUploadOutlined } from '@shared/assets';
-import { PreviewFile } from '@shared/ui';
 import { formatFileSize } from '@shared/utils';
 
 import styles from './upload-file-field.module.scss';

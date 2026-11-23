@@ -4,18 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import { FormFields } from '../model/constants/form-fields';
-import { close, stateUploadConstructionActModal } from '../model/store/slice';
-import type { IUploadConstructionActFormValues } from '../model/types/form';
 import UploadFileField from './upload-file-field';
+import { FormFields } from '../model/constants/form-fields';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 
 const { Item, useForm } = Form;
 
 const UploadConstructionActModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id, key } = useSelector(stateUploadConstructionActModal);
-  const [form] = useForm<IUploadConstructionActFormValues>();
+  const { isOpen, id, key } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -26,7 +26,7 @@ const UploadConstructionActModal: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: IUploadConstructionActFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Upload construction act values:', { id, key, ...values });
     handleClose();
   };

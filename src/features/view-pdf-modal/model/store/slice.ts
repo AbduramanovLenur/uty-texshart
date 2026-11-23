@@ -25,5 +25,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateViewPdfModal = (state: { viewPdfModalSlice: IState }) =>
-  state.viewPdfModalSlice;
+export const stateModal = (state: {
+  viewPdfModalSlice: IState
+}) => state.viewPdfModalSlice;

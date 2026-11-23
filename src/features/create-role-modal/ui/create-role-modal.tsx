@@ -5,22 +5,16 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
-import { close, stateCreateRoleModal } from '../model/store/slice';
-import type { ICreateRoleFormValues } from '../model/types/form';
-
-import styles from './create-role-modal.module.scss';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 
 const { Item, useForm } = Form;
 
-interface IProps {
-  onSubmit?: (values: ICreateRoleFormValues) => void;
-}
-
-const CreateRoleModal: FC<IProps> = ({ onSubmit }) => {
+const CreateRoleModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen } = useSelector(stateCreateRoleModal);
-  const [form] = useForm<ICreateRoleFormValues>();
+  const { isOpen } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -31,17 +25,16 @@ const CreateRoleModal: FC<IProps> = ({ onSubmit }) => {
     form.submit();
   };
 
-  const handleFinish = (values: ICreateRoleFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Create role form values:', values);
-    onSubmit?.(values);
     handleClose();
   };
 
   return (
     <Modal
-      className={cn('modal', styles['create-role-modal'])}
+      className={cn('modal')}
       classNames={{
-        body: cn(styles['create-role-modal__body'], 'form-body'),
+        body: cn('form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -70,7 +63,7 @@ const CreateRoleModal: FC<IProps> = ({ onSubmit }) => {
     >
       <Form
         form={form}
-        className={cn(styles['create-role-modal__form'], 'form')}
+        className={cn('form')}
         layout='vertical'
         onFinish={handleFinish}
       >

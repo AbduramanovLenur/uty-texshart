@@ -28,8 +28,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateUploadTechSpecModal = (state: {
+export const stateModal = (state: {
   uploadTechSpecModalSlice: IState;
 }) => state.uploadTechSpecModalSlice;
-
-export const stateUploadTechnicalSpecificationModal = stateUploadTechSpecModal;

@@ -3,8 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { Button } from 'antd';
 import cn from 'classnames';
 
-import { userMock } from '../model/mock';
 import type { IUser } from '../model/types/user';
+import { userMock } from '../model/mock';
 
 import { IconArrowDownBracket } from '@shared/assets';
 import { downloadFile } from '@shared/utils';
@@ -69,14 +69,12 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
             </div>
           )}
         </div>
-
         <div className={cn(styles['user-info__item'])}>
           <div className={cn(styles['user-info__label'])}>
             {t('userInfo.address')}
           </div>
           <div className={cn(styles['user-info__value'])}>{data.address}</div>
         </div>
-
         {data.idCard && (
           <div className={cn(styles['user-info__item'])}>
             <div className={cn(styles['user-info__label'])}>
@@ -91,7 +89,6 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
             </Button>
           </div>
         )}
-
         {data.license && (
           <div className={cn(styles['user-info__item'])}>
             <div className={cn(styles['user-info__label'])}>

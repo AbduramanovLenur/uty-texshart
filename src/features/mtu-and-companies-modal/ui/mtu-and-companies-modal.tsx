@@ -7,20 +7,18 @@ import cn from 'classnames';
 import { FormFields } from '../model/constants/form-fields';
 import { MtuAndCompaniesTypes } from '../model/constants/mtu-and-companies-types';
 import { getMtuAndCompaniesTypeOptions } from '../model/lib/utils/get-mtu-and-companies-type-options';
-import { mockCompanyTypeOptions, mockMtuOptions } from '../model/mock';
-import { close, stateMtuAndCompaniesModal } from '../model/store/slice';
-import type { IMtuAndCompaniesFormValues } from '../model/types/form';
+import { close, stateModal } from '../model/store/slice';
 import { IconDownArrow } from '@shared/assets';
-
-import styles from './mtu-and-companies-modal.module.scss';
+import type { IFormValues } from '../model/types/form';
+import { mockCompanyTypeOptions, mockMtuOptions } from '../model/mock';
 
 const { Item, useForm, useWatch } = Form;
 
 const MtuAndCompaniesModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, type, id } = useSelector(stateMtuAndCompaniesModal);
-  const [form] = useForm<IMtuAndCompaniesFormValues>();
+  const { isOpen, type, id } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const selectedType = useWatch(FormFields.TYPE, form);
   const isCompany = selectedType === MtuAndCompaniesTypes.COMPANIES;
@@ -44,16 +42,16 @@ const MtuAndCompaniesModal: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: IMtuAndCompaniesFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log({ id, ...values });
     handleClose();
   };
 
   return (
     <Modal
-      className={cn('modal', styles['mtu-and-companies-modal'])}
+      className={cn('modal')}
       classNames={{
-        body: cn(styles['mtu-and-companies-modal__body'], 'form-body'),
+        body: cn('form-body'),
       }}
       open={isOpen}
       onCancel={handleClose}
@@ -82,7 +80,7 @@ const MtuAndCompaniesModal: FC = () => {
     >
       <Form
         form={form}
-        className={cn(styles['mtu-and-companies-modal__form'], 'form')}
+        className={cn('form')}
         layout='vertical'
         onFinish={handleFinish}
       >
@@ -97,7 +95,7 @@ const MtuAndCompaniesModal: FC = () => {
           ]}
         >
           <Select
-            className={cn(styles['mtu-and-companies-modal__select'], 'form-select')}
+            className={cn('form-select')}
             size='large'
             options={typeOptions}
             disabled={Boolean(id)}
@@ -117,7 +115,7 @@ const MtuAndCompaniesModal: FC = () => {
             ]}
           >
             <Select
-              className={cn(styles['mtu-and-companies-modal__select'], 'form-select')}
+              className={cn('form-select')}
               size='large'
               options={mockCompanyTypeOptions}
               placeholder={t('createUserModal.fields.selectPlaceholder')}
@@ -156,7 +154,7 @@ const MtuAndCompaniesModal: FC = () => {
               ]}
             >
               <Select
-                className={cn(styles['mtu-and-companies-modal__select'], 'form-select')}
+                className={cn('form-select')}
                 size='large'
                 options={mockMtuOptions}
                 placeholder={t('createUserModal.fields.selectPlaceholder')}

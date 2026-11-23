@@ -26,6 +26,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateViewTechnicalSpecificationModal = (state: {
+export const stateModal = (state: {
   viewTechnicalSpecificationModalSlice: IState;
 }) => state.viewTechnicalSpecificationModalSlice;

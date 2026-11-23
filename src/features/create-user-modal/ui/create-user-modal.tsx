@@ -5,8 +5,8 @@ import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
 import { FormFields } from '../model/constants/form-fields';
-import { close, stateCreateUserModal } from '../model/store/slice';
-import type { ICreateUserFormValues } from '../model/types/form';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 
 import { IconDownArrow } from '@shared/assets';
 
@@ -17,9 +17,9 @@ const { Item, useForm } = Form;
 const CreateUserModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id } = useSelector(stateCreateUserModal);
+  const { isOpen, id } = useSelector(stateModal);
   const hasId = !!id;
-  const [form] = useForm<ICreateUserFormValues>();
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -30,7 +30,7 @@ const CreateUserModal: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: ICreateUserFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log(values);
     handleClose();
   };

@@ -2,7 +2,6 @@
   width: 76px;
   height: 40px;
   flex-shrink: 0;
-
   :global(.ant-select-selector) {
     height: 40px !important;
     border: 1px solid var(--default-border) !important;
@@ -11,14 +10,12 @@
     display: flex;
     align-items: center;
   }
-
   :global(.ant-select-selection-item) {
     font-size: var(--ant-font-size);
     font-weight: 500;
     color: var(--dark-88);
     line-height: 38px;
   }
-
   :global(.ant-select-arrow) {
     color: var(--dark-45);
   }

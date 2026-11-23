@@ -33,47 +33,4 @@
       }
     }
   }
-  &__name {
-    &:global(.ant-typography) {
-      margin-bottom: var(--ant-margin-xxs);
-      color: var(--dark-88);
-    }
-  }
-  &__information {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--ant-margin-lg);
-    &-disabled {
-      .e-imzo {
-        &__title,
-        &__value {
-          color: var(--dark-25);
-        }
-        &__status {
-          display: block;
-        }
-      }
-    }
-  }
-  &__item {
-    display: flex;
-  }
-  &__title,
-  &__value {
-    font-size: var(--ant-font-size-sm);
-    line-height: 1.6;
-  }
-  &__title {
-    color: var(--dark-100);
-  }
-  &__value {
-    color: var(--dark-65);
-  }
-  &__status {
-    display: none;
-    font-size: var(--ant-font-size-sm);
-    font-weight: 500;
-    line-height: 1.5;
-    color: var(--ant-color-error-text);
-  }
 }

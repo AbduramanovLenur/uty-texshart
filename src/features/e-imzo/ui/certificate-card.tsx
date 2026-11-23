@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import type { CertificateOption } from '../model/types/certificate-option';
 
-import styles from './e-imzo.module.scss';
+import styles from './certificate-card.module.scss';
 
 const { Title } = Typography;
 
@@ -17,56 +17,56 @@ const CertificateCard: FC<Props> = ({ option }) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles['e-imzo__label'])}>
-      <Title className={cn(styles['e-imzo__name'])} level={5}>
+    <div>
+      <Title className={cn(styles['certificate-card__name'])} level={5}>
         {option.label}
       </Title>
       <div
         className={cn(
-          styles['e-imzo__information'],
-          { [styles['e-imzo__information-disabled']]: option.disabled },
+          styles['certificate-card__information'],
+          { [styles['certificate-card__information-disabled']]: option.disabled },
         )}
       >
-        <div className={cn(styles['e-imzo__column'])}>
+        <div className={cn(styles['certificate-card__column'])}>
           {option.director && (
-            <div className={cn(styles['e-imzo__item'])}>
-              <div className={cn(styles['e-imzo__title'])}>
+            <div className={cn(styles['certificate-card__item'])}>
+              <div className={cn(styles['certificate-card__title'])}>
                 {t('authentication.eImzo.director')}:&nbsp;
               </div>
-              <div className={cn(styles['e-imzo__value'])}>{option.director}</div>
+              <div className={cn(styles['certificate-card__value'])}>{option.director}</div>
             </div>
           )}
-          <div className={cn(styles['e-imzo__item'])}>
-            <div className={cn(styles['e-imzo__title'])}>
+          <div className={cn(styles['certificate-card__item'])}>
+            <div className={cn(styles['certificate-card__title'])}>
               {t('authentication.eImzo.pinfl')}:&nbsp;
             </div>
-            <div className={cn(styles['e-imzo__value'])}>{option.pinfl}</div>
+            <div className={cn(styles['certificate-card__value'])}>{option.pinfl}</div>
           </div>
-          <div className={cn(styles['e-imzo__item'])}>
-            <div className={cn(styles['e-imzo__title'])}>
+          <div className={cn(styles['certificate-card__item'])}>
+            <div className={cn(styles['certificate-card__title'])}>
               {t('authentication.eImzo.type')}:&nbsp;
             </div>
-            <div className={cn(styles['e-imzo__value'])}>
+            <div className={cn(styles['certificate-card__value'])}>
               {t(`authentication.eImzo.${option.type}`)}
             </div>
           </div>
         </div>
-        <div className={cn(styles['e-imzo__column'])}>
+        <div className={cn(styles['certificate-card__column'])}>
           {option.certificate && (
-            <div className={cn(styles['e-imzo__item'])}>
-              <div className={cn(styles['e-imzo__title'])}>
+            <div className={cn(styles['certificate-card__item'])}>
+              <div className={cn(styles['certificate-card__title'])}>
                 {t('authentication.eImzo.certificate')}:&nbsp;
               </div>
-              <div className={cn(styles['e-imzo__value'])}>{option.certificate}</div>
+              <div className={cn(styles['certificate-card__value'])}>{option.certificate}</div>
             </div>
           )}
-          <div className={cn(styles['e-imzo__item'])}>
-            <div className={cn(styles['e-imzo__title'])}>
+          <div className={cn(styles['certificate-card__item'])}>
+            <div className={cn(styles['certificate-card__title'])}>
               {t('authentication.eImzo.validityPeriod')}:&nbsp;
             </div>
-            <div className={cn(styles['e-imzo__value'])}>{option.validityPeriod}</div>
+            <div className={cn(styles['certificate-card__value'])}>{option.validityPeriod}</div>
           </div>
-          <div className={cn(styles['e-imzo__status'])}>
+          <div className={cn(styles['certificate-card__status'])}>
             ({t('authentication.eImzo.expired')})
           </div>
         </div>

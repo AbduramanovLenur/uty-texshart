@@ -3,7 +3,7 @@ import type { TReferenceDataType } from './reference-data';
 
 export type TFormField = (typeof FormFields)[keyof typeof FormFields];
 
-export interface IReferenceDataFormValues {
+export interface IFormValues {
   [FormFields.REFERENCE_TYPE]?: TReferenceDataType;
   [FormFields.COMMUNICATION_TYPE]?: string;
   [FormFields.CROSSING_METHOD]?: string;

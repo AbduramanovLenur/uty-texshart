@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { Button, Modal } from 'antd';
 import cn from 'classnames';
 
-import { close, stateViewTechnicalSpecificationModal } from '../model/store/slice';
+import { close, stateModal } from '../model/store/slice';
 import { mockTechnicalSpecificationDetails } from '../model/mock';
 
 import { IconDownload, IconPrint } from '@shared/assets';
@@ -17,7 +17,7 @@ import styles from './view-technical-specification-modal.module.scss';
 const ViewTechnicalSpecificationModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id } = useSelector(stateViewTechnicalSpecificationModal);
+  const { isOpen, id } = useSelector(stateModal);
 
   const techId = id;
   const appId = mockTechnicalSpecificationDetails.applicationId;

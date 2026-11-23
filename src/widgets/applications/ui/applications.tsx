@@ -22,8 +22,8 @@ const Applications: FC = () => {
   };
 
   return (
-    <section className={cn(styles['applications'], 'section')}>
-      <div className={cn(styles['applications__inner'], 'section-inner')}>
+    <section className={cn('section')}>
+      <div className={cn('section-inner')}>
         <div className={cn(styles['applications__top'])}>
           <Title className={cn(styles['applications__title'])} level={3}>
             {t('applications.title')}
@@ -36,7 +36,7 @@ const Applications: FC = () => {
             {t('actions.download')}
           </Button>
           <Button
-            className={cn(styles['applications__create'], 'create-btn')}
+            className={cn('create-btn')}
             type='primary'
             icon={<IconPlus />}
             onClick={handleCreateApplication}

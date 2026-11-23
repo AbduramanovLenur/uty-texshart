@@ -28,5 +28,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateMtuAndCompaniesModal = (state: { mtuAndCompaniesModalSlice: IState; }) =>
-  state.mtuAndCompaniesModalSlice;
+export const stateModal = (state: {
+  mtuAndCompaniesModalSlice: IState;
+}) => state.mtuAndCompaniesModalSlice;

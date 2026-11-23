@@ -11,7 +11,6 @@ export const Modules = {
   LETTER: 'letter',
   CALENDAR: 'calendar',
   REGISTRY: 'registry',
-  // Дополнительные модули
   BRANCH_CONSENT: 'branch_consent',
   CATALOG: 'catalog',
   CORRESPONDENCE: 'correspondence',

@@ -15,7 +15,7 @@ import cn from 'classnames';
 
 import styles from './avatar-upload.module.scss';
 
-export interface IAvatarUploadProps {
+export interface IProps {
   value?: string | null;
   defaultValue?: string | null;
   onChange?: (value: string | null) => void;
@@ -23,7 +23,7 @@ export interface IAvatarUploadProps {
   className?: string;
 }
 
-const AvatarUpload: FC<IAvatarUploadProps> = ({
+const AvatarUpload: FC<IProps> = ({
   value,
   defaultValue = null,
   onChange,

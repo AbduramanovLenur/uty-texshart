@@ -4,18 +4,18 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import { FormFields } from '../model/constants/form-fields';
-import { close, stateAllowConstructionModal } from '../model/store/slice';
-import type { IAllowConstructionFormValues } from '../model/types/form';
 import UploadFileField from './upload-file-field';
+import { FormFields } from '../model/constants/form-fields';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 
 const { Item, useForm } = Form;
 
 const AllowConstructionModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id, key } = useSelector(stateAllowConstructionModal);
-  const [form] = useForm<IAllowConstructionFormValues>();
+  const { isOpen, id, key } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -26,7 +26,7 @@ const AllowConstructionModal: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: IAllowConstructionFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Allow construction values:', { id, key, ...values });
     handleClose();
   };

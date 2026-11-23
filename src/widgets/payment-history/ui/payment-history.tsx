@@ -8,22 +8,20 @@ import PaymentHistoryTable from './payment-history-table';
 import { ViewInvoiceModal } from '@features/view-invoice-modal';
 import { IconDownload } from '@shared/assets';
 
-import styles from './payment-history.module.scss';
-
 const { Title } = Typography;
 
 const PaymentHistory: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <section className={cn(styles['payment-history'], 'section')}>
-      <div className={cn(styles['payment-history__inner'], 'section-inner')}>
-        <div className={cn(styles['payment-history__top'], 'section-top')}>
-          <Title className={cn(styles['payment-history__title'], 'section-title')} level={3}>
+    <section className={cn('section')}>
+      <div className={cn('section-inner')}>
+        <div className={cn('section-top')}>
+          <Title className={cn('section-title')} level={3}>
             {t('paymentHistory.title')}
           </Title>
           <Button
-            className={cn(styles['payment-history__download'], 'section-btn-download')}
+            className={cn('section-btn-download')}
             type='default'
             icon={<IconDownload />}
           >

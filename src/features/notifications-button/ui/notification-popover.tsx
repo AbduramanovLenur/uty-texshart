@@ -30,7 +30,6 @@ const NotificationPopover: FC = () => {
       timestamp: 'Bugun, 09:30',
     },
   ];
-  const newCount = notifications.length;
 
   return (
     <div className={cn(styles['notification-popover'])}>
@@ -39,7 +38,7 @@ const NotificationPopover: FC = () => {
           {t('notifications.popover.title')}
         </Title>
         <div className={cn(styles['notification-popover__count-records'])}>
-          {t('notifications.popover.newCount', { count: newCount })}
+          {t('notifications.popover.newCount', { count: notifications.length })}
         </div>
       </div>
       <div className={cn(styles['notification-popover__body'])}>

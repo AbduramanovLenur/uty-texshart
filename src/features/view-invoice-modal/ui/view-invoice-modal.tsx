@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { Button, Modal } from 'antd';
 import cn from 'classnames';
 
-import { close, stateViewInvoiceModal } from '../model/store/slice';
+import { close, stateModal } from '../model/store/slice';
 import { mockInvoiceDetails } from '../model/mock';
 
 import { IconPrint, IconShare } from '@shared/assets';
@@ -18,7 +18,7 @@ const ViewInvoiceModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { isOpen, url, id } = useSelector(stateViewInvoiceModal);
+  const { isOpen, url, id } = useSelector(stateModal);
 
   const documentUrl = url || mockInvoiceDetails.documentUrl;
 

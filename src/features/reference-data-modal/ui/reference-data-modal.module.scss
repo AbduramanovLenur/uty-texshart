@@ -1,49 +1,8 @@
 .reference-data-modal {
-  max-width: 80%;
-  :global {
-    .ant-modal-content,
-    .ant-modal-container {
-      display: flex;
-      flex-direction: column;
-      max-height: 80vh;
-      overflow: hidden;
-    }
-  }
-  &__form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--ant-margin);
-    :global {
-      .ant-form-item {
-        margin-bottom: 0;
-      }
-      .ant-form-item-row > .ant-form-item-label {
-        padding: 0;
-        margin-bottom: var(--ant-margin-xxs);
-      }
-      .ant-form-item-label > label {
-        color: var(--dark-88);
-        font-size: var(--ant-font-size);
-        font-weight: 500;
-        line-height: 1.5;
-        height: auto;
-      }
-      .ant-form-item-control-input-content {
-        width: 100%;
-      }
-    }
-  }
   &__row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--ant-margin);
-  }
-  &__select {
-    width: 100%;
-
-    :global(.ant-select-placeholder) {
-      color: var(--dark-88);
-    }
   }
   &__checkbox {
     &-row {

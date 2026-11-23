@@ -9,8 +9,6 @@ import UsersTable from './users-table';
 import { CreateUserModal, open as openCreateUserModal } from '@features/create-user-modal';
 import { IconDownload, IconPlus } from '@shared/assets';
 
-import styles from './users.module.scss';
-
 const { Title } = Typography;
 
 const Users: FC = () => {
@@ -22,21 +20,21 @@ const Users: FC = () => {
   };
 
   return (
-    <section className={cn(styles['users'], 'section')}>
-      <div className={cn(styles['users__inner'], 'section-inner')}>
-        <div className={cn(styles['users__top'], 'section-top')}>
-          <Title className={cn(styles['users__title'], 'section-title')} level={3}>
+    <section className={cn('section')}>
+      <div className={cn('section-inner')}>
+        <div className={cn('section-top')}>
+          <Title className={cn('section-title')} level={3}>
             {t('users.title')}
           </Title>
           <Button
-            className={cn(styles['users__download'], 'section-btn-download')}
+            className={cn('section-btn-download')}
             type='default'
             icon={<IconDownload />}
           >
             {t('actions.download')}
           </Button>
           <Button
-            className={cn(styles['users__create'], 'create-btn')}
+            className={cn('create-btn')}
             type='primary'
             icon={<IconPlus />}
             onClick={handleOpenCreateModal}

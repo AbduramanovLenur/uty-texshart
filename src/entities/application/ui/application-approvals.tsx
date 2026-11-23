@@ -2,8 +2,8 @@ import type { FC } from 'react';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import type { ITimelineApproval } from '../model/types/timeline';
 import { approvalStatusConfig } from '../model/config/approval-status';
+import type { ITimelineApproval } from '../model/types/timeline';
 
 import styles from './application-approvals.module.scss';
 

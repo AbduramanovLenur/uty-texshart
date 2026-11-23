@@ -4,19 +4,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
+import UploadFileField from './upload-file-field';
 import { FormFields } from '../model/constants/form-fields';
 import { validateZipFile } from '../model/lib/helpers/validators';
-import { close, stateUploadProjectFilesModal } from '../model/store/slice';
-import type { IUploadProjectFilesFormValues } from '../model/types/form';
-import UploadFileField from './upload-file-field';
+import { close, stateModal } from '../model/store/slice';
+import type { IFormValues } from '../model/types/form';
 
 const { Item, useForm } = Form;
 
 const UploadProjectFilesModal: FC = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  const { isOpen, id, key } = useSelector(stateUploadProjectFilesModal);
-  const [form] = useForm<IUploadProjectFilesFormValues>();
+  const { isOpen, id, key } = useSelector(stateModal);
+  const [form] = useForm<IFormValues>();
 
   const handleClose = () => {
     form.resetFields();
@@ -27,7 +27,7 @@ const UploadProjectFilesModal: FC = () => {
     form.submit();
   };
 
-  const handleFinish = (values: IUploadProjectFilesFormValues) => {
+  const handleFinish = (values: IFormValues) => {
     console.log('Upload project files values:', { id, key, ...values });
     handleClose();
   };

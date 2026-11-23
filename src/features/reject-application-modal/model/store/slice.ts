@@ -28,4 +28,6 @@ const slice = createSlice({
 export const { open, close } = slice.actions;
 export const reducer = slice.reducer;
 
-export const stateRejectApplicationModal = (state: { rejectApplicationModalSlice: IState }) => state.rejectApplicationModalSlice;
+export const stateModal = (state: {
+  rejectApplicationModalSlice: IState
+}) => state.rejectApplicationModalSlice;
