@@ -4,10 +4,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import UploadFileField from './upload-file-field';
 import { FormFields } from '../model/constants/form-fields';
 import { close, stateModal } from '../model/store/slice';
 import type { IFormValues } from '../model/types/form';
+
+import { UploadFileField } from '@shared/ui';
 
 const { Item, useForm } = Form;
 

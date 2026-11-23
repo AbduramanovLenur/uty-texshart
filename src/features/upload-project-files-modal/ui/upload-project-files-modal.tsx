@@ -1,14 +1,15 @@
 import type { FC } from 'react';
-import { Button, Form, Modal } from 'antd';
+import { Button, Form, message, Modal } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import UploadFileField from './upload-file-field';
 import { FormFields } from '../model/constants/form-fields';
-import { validateZipFile } from '../model/lib/helpers/validators';
+import { isZipFile, validateZipFile } from '../model/lib/helpers/validators';
 import { close, stateModal } from '../model/store/slice';
 import type { IFormValues } from '../model/types/form';
+
+import { UploadFileField } from '@shared/ui';
 
 const { Item, useForm } = Form;
 
@@ -82,7 +83,16 @@ const UploadProjectFilesModal: FC = () => {
             },
           ]}
         >
-          <UploadFileField />
+          <UploadFileField
+            accept='.zip,application/zip,application/x-zip-compressed'
+            beforeUpload={(file) => {
+              if (!isZipFile(file)) {
+                message.error(t('uploadProjectFilesModal.validation.onlyZip'));
+                return false;
+              }
+              return true;
+            }}
+          />
         </Item>
       </Form>
     </Modal>
