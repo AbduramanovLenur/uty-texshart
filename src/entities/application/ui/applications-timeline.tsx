@@ -436,10 +436,10 @@ const ApplicationsTimeline: FC<IProps> = ({ className }) => {
                         )}
                         {item?.buttonText && (
                           <a className={cn(styles['applications-timeline__file'])} href={item.fileUrl} download>
-                            <span className={cn(styles['applications-timeline__file-icon'])}>
+                            <span>
                               <IconArrowDownBracket />
                             </span>
-                            <span className={cn(styles['applications-timeline__file-text'])}>
+                            <span>
                               {item.buttonText}
                             </span>
                           </a>

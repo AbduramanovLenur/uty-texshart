@@ -65,7 +65,7 @@ const DashboardStatistics: FC = () => {
   return (
     <ul className={cn(styles['dashboard-statistics'])}>
       {stats.map((item) => (
-        <li className={cn(styles['dashboard-statistics__item'])} key={item.title}>
+        <li key={item.title}>
           <StatusCard item={item} />
         </li>
       ))}

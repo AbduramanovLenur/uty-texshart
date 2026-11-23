@@ -15,7 +15,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
   return (
     <div className={cn(styles['application-info'], className)}>
       <div className={cn(styles['application-info__wrapper'], 'scrollbar')}>
-        <div className={cn(styles['application-info__item'])}>
+        <div>
           <div className={cn(styles['application-info__title'])}>
             {t('applicationInfo.applicationNumber')}
           </div>
@@ -23,7 +23,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
             ARZ-31234123
           </div>
         </div>
-        <div className={cn(styles['application-info__item'])}>
+        <div>
           <div className={cn(styles['application-info__title'])}>
             {t('applicationInfo.communicationType')}
           </div>
@@ -31,7 +31,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
             Havo elektr uzatish liniyasi
           </div>
         </div>
-        <div className={cn(styles['application-info__item'])}>
+        <div>
           <div className={cn(styles['application-info__title'])}>
             {t('applicationInfo.crossingMethod')}
           </div>
@@ -39,34 +39,34 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
             Temir yo'l izlari ostidan
           </div>
         </div>
-        <div className={cn(styles['application-info__item'])}>
+        <div>
           <div className={cn(styles['application-info__title'])}>
             {t('applicationInfo.technicalParameters')}
           </div>
           <ul className={cn(styles['application-info__list'])}>
-            <li className={cn(styles['application-info__item'])}>
+            <li>
               <div className={cn(styles['application-info__value'])}>
                 Kuchlanish -8 000 kV
               </div>
             </li>
-            <li className={cn(styles['application-info__item'])}>
+            <li>
               <div className={cn(styles['application-info__value'])}>
                 Izdan eng past nuqtagacha balandlik - 20 m
               </div>
             </li>
-            <li className={cn(styles['application-info__item'])}>
+            <li>
               <div className={cn(styles['application-info__value'])}>
                 Tayanchdan izning o'qigacha masofa - 140 m
               </div>
             </li>
           </ul>
         </div>
-        <div className={cn(styles['application-info__item'])}>
+        <div>
           <div className={cn(styles['application-info__title'])}>
             {t('applicationInfo.locationPhotos')}
           </div>
           <ul className={cn(styles['application-info__pictures'])}>
-            <li className={cn(styles['application-info__picture'])}>
+            <li>
               <div className={cn(styles['application-info__picture-box'])}>
                 <Image
                   src='/images/test/picture.png'
@@ -77,7 +77,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
                 />
               </div>
             </li>
-            <li className={cn(styles['application-info__picture'])}>
+            <li>
               <div className={cn(styles['application-info__picture-box'])}>
                 <Image
                   src='/images/test/picture.png'
@@ -88,7 +88,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
                 />
               </div>
             </li>
-            <li className={cn(styles['application-info__picture'])}>
+            <li>
               <div className={cn(styles['application-info__picture-box'])}>
                 <Image
                   src='/images/test/picture.png'
@@ -101,7 +101,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
             </li>
           </ul>
         </div>
-        <div className={cn(styles['application-info__item'])}>
+        <div>
           <div className={cn(styles['application-info__title'])}>
             {t('applicationInfo.projectGoal')}
           </div>
@@ -109,7 +109,7 @@ const ApplicationInfo: FC<IProps> = ({ className }) => {
             Elektr ta’minotini yaxshilash
           </div>
         </div>
-        <div className={cn(styles['application-info__item'])}>
+        <div>
           <div className={cn(styles['application-info__title'])}>
             {t('applicationInfo.comment')}
           </div>

@@ -38,7 +38,6 @@ const LeaveConfirmModal: FC<IProps> = ({
       footer={
         <div className={cn(styles['leave-confirm-modal__actions'])}>
           <Button
-            className={cn(styles['leave-confirm-modal__btn-leave'])}
             type='default'
             onClick={handleStay}
           >

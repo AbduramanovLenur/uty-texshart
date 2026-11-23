@@ -52,7 +52,6 @@ const RegisterContactsStep: FC<IRegisterContactsStepProps> = ({
         >
           <PhoneInput placeholder={t('register.contacts.phonePlaceholder')} />
         </Item>
-
         <Item
           label={t('register.contacts.emailLabel')}
           name={FormFields.EMAIL}
@@ -73,9 +72,7 @@ const RegisterContactsStep: FC<IRegisterContactsStepProps> = ({
           />
         </Item>
       </div>
-
       <Item
-        className={cn(styles['register-contacts-step__agreement-item'])}
         name={FormFields.AGREED}
         valuePropName='checked'
         rules={
@@ -100,7 +97,6 @@ const RegisterContactsStep: FC<IRegisterContactsStepProps> = ({
           {t('register.contacts.termsAgreement')}
         </Checkbox>
       </Item>
-
       <RegisterActions onBack={onBack} />
     </div>
   );

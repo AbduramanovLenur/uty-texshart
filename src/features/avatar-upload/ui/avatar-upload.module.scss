@@ -12,8 +12,7 @@
   justify-content: center;
   flex-shrink: 0;
   transition: border-color 0.2s ease, background-color 0.2s ease;
-  &--empty,
-  &--unloaded {
+  &--empty {
     border: 1px solid var(--border-secondary);
     cursor: pointer;
     &:hover,
@@ -29,8 +28,7 @@
       }
     }
   }
-  &--uploaded,
-  &--has-image {
+  &--uploaded {
     border: 1px solid var(--border-secondary);
     &:hover {
       #{$root}__overlay {
@@ -130,8 +128,7 @@
   &__action-icon {
     color: var(--white);
   }
-  &__preview,
-  &__preview-hidden {
+  &__preview {
     display: none;
   }
 }

@@ -27,7 +27,7 @@ const CertificateCard: FC<Props> = ({ option }) => {
           { [styles['certificate-card__information-disabled']]: option.disabled },
         )}
       >
-        <div className={cn(styles['certificate-card__column'])}>
+        <div>
           {option.director && (
             <div className={cn(styles['certificate-card__item'])}>
               <div className={cn(styles['certificate-card__title'])}>
@@ -51,7 +51,7 @@ const CertificateCard: FC<Props> = ({ option }) => {
             </div>
           </div>
         </div>
-        <div className={cn(styles['certificate-card__column'])}>
+        <div>
           {option.certificate && (
             <div className={cn(styles['certificate-card__item'])}>
               <div className={cn(styles['certificate-card__title'])}>

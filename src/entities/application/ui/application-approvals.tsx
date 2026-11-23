@@ -22,7 +22,7 @@ const ApplicationApprovals: FC<IProps> = ({ approvals, className }) => {
 
         return (
           <div key={approval.id} className={cn(styles['application-approvals__item'])}>
-            <div className={cn(styles['application-approvals__left'])}>
+            <div>
               <div className={cn(styles['application-approvals__title'])}>
                 {t(approval.title, approval.title)}
               </div>

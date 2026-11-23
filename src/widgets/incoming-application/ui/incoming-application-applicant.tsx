@@ -26,7 +26,7 @@ const IncomingApplicationApplicant: FC = () => {
     <div className={cn(styles['incoming-application-applicant'])}>
       <UserInfo />
       <div className={cn(styles['incoming-application-applicant__documents'], 'scrollbar')}>
-        <div className={cn(styles['incoming-application-applicant__documents-overlay'])}>
+        <div>
           <Title className={cn(styles['incoming-application-applicant__documents-title'])} level={5}>
             {t('userDocuments.idCard')}
           </Title>
@@ -42,7 +42,7 @@ const IncomingApplicationApplicant: FC = () => {
             onView={() => handleOpenPdf(userDocuments.passport.url)}
           />
         </div>
-        <div className={cn(styles['incoming-application-applicant__documents-overlay'])}>
+        <div>
           <Title className={cn(styles['incoming-application-applicant__documents-title'])} level={5}>
             {t('userDocuments.license')}
           </Title>

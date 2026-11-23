@@ -42,7 +42,7 @@ const NotificationPopover: FC = () => {
         </div>
       </div>
       <div className={cn(styles['notification-popover__body'])}>
-        <ul className={cn(styles['notification-popover__list'])}>
+        <ul>
           {notifications.map((item) => (
             <li className={cn(styles['notification-popover__item'])} key={item.id}>
               <NotificationCard item={item} />

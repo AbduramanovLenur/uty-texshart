@@ -26,7 +26,7 @@ const ApplicationPreview: FC<IProps> = ({ item, isActive, onClick }) => {
         <div className={cn(styles['application-preview__image'])}>
           <img src={item.icon} alt={item.title} loading='lazy' width={56} height={56} />
         </div>
-        <div className={cn(styles['application-preview__information'])}>
+        <div>
           <div className={cn(styles['application-preview__number'])}>
             {item.code}
           </div>

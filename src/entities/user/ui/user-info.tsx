@@ -32,25 +32,25 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
       <div className={cn(styles['user-info__content'])}>
         <div className={cn(styles['user-info__top'])}>
           <div className={cn(styles['user-info__details'])}>
-            <div className={cn(styles['user-info__item'])}>
+            <div>
               <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.name')}
               </div>
               <div className={cn(styles['user-info__value'])}>{data.name}</div>
             </div>
-            <div className={cn(styles['user-info__item'])}>
+            <div>
               <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.inn')}
               </div>
               <div className={cn(styles['user-info__value'])}>{data.inn}</div>
             </div>
-            <div className={cn(styles['user-info__item'])}>
+            <div>
               <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.director')}
               </div>
               <div className={cn(styles['user-info__value'])}>{data.director}</div>
             </div>
-            <div className={cn(styles['user-info__item'])}>
+            <div>
               <div className={cn(styles['user-info__label'])}>
                 {t('userInfo.phone')}
               </div>
@@ -69,14 +69,14 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
             </div>
           )}
         </div>
-        <div className={cn(styles['user-info__item'])}>
+        <div>
           <div className={cn(styles['user-info__label'])}>
             {t('userInfo.address')}
           </div>
           <div className={cn(styles['user-info__value'])}>{data.address}</div>
         </div>
         {data.idCard && (
-          <div className={cn(styles['user-info__item'])}>
+          <div>
             <div className={cn(styles['user-info__label'])}>
               {t('userInfo.idCard')}
             </div>
@@ -90,7 +90,7 @@ const UserInfo: FC<IProps> = ({ user, className }) => {
           </div>
         )}
         {data.license && (
-          <div className={cn(styles['user-info__item'])}>
+          <div>
             <div className={cn(styles['user-info__label'])}>
               {t('userInfo.license')}
             </div>
