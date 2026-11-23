@@ -1,21 +1,26 @@
-import type { FC } from 'react';
 import { Tag } from 'antd';
 import { useTranslation } from 'react-i18next';
 import cn from 'classnames';
 
-import { statusTagConfig } from '../../config/settings/status-tag';
+import { statusTagConfig as defaultStatusTagConfig } from '../../config/settings/status-tag';
+import type { IStatusTagConfig } from '../../types/status-tag';
 import type { TStatus } from '../../types/status';
 
-interface IProps {
-  status: TStatus;
+interface IProps<T extends string | number = TStatus> {
+  status: T;
+  config?: Record<T, IStatusTagConfig>;
   className?: string;
 }
 
-export const StatusTag: FC<IProps> = ({ status, className }) => {
+export const StatusTag = <T extends string | number = TStatus>({
+  status,
+  config = defaultStatusTagConfig as unknown as Record<T, IStatusTagConfig>,
+  className,
+}: IProps<T>) => {
   const { t } = useTranslation();
-  const config = statusTagConfig[status];
+  const itemConfig = config?.[status];
 
-  if (!config) {
+  if (!itemConfig) {
     return <Tag className={cn(className)}>{status}</Tag>;
   }
 
@@ -23,12 +28,12 @@ export const StatusTag: FC<IProps> = ({ status, className }) => {
     <Tag
       className={cn(className)}
       style={{
-        backgroundColor: config.bg,
-        color: config.color,
-        border: `1px solid ${config.borderColor}`,
+        backgroundColor: itemConfig.bg,
+        color: itemConfig.color,
+        border: `1px solid ${itemConfig.borderColor}`,
       }}
     >
-      {t(config.labelKey)}
+      {t(itemConfig.labelKey)}
     </Tag>
   );
 };
