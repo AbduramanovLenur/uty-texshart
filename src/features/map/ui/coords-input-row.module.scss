@@ -1,0 +1,9 @@
+.coords-input-row {
+  display: flex;
+  gap: var(--ant-margin-xs);
+
+  &__locate-btn {
+    padding: 0 16px;
+    font-weight: 500;
+  }
+}

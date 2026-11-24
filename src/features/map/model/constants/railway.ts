@@ -1,1 +1,0 @@
-export const MAX_RAILWAY_DISTANCE_METERS = 300;

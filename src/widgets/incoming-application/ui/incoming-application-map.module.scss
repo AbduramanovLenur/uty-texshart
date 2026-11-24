@@ -2,5 +2,9 @@
   padding: var(--ant-padding-lg);
   background-color: var(--ant-color-fill-quaternary);
   height: 100%;
+  // min-height: 620px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   border-radius: 0 0 var(--ant-border-radius-lg) var(--ant-border-radius-lg);
 }

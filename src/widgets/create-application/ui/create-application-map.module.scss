@@ -26,9 +26,9 @@
       font-size: var(--ant-font-size, 14px);
     }
   }
-  &:global(.ant-form-item-has-error) {
-    [class*='map'] {
-      border: 1px solid var(--ant-color-error);
-    }
-  }
+  // &:global(.ant-form-item-has-error) {
+  //   :global(.ant-form-item-control-input-content) > div:first-child {
+  //     border: 1px solid var(--ant-color-error);
+  //   }
+  // }
 }

@@ -1,13 +1,15 @@
-import { stationsData, railwayTracksData } from '../../data';
+import { railwayTracksData } from '../../data';
+import type { ITrackProperties } from '../../types/track';
+import type { IClosestSegmentPoint, ISnapResult } from '../../types/snap';
 
 const latToMeters = 111139;
 
-function getClosestPointOnSegment(
+export function getClosestPointOnSegment(
   point: [number, number],
   a: [number, number],
   b: [number, number],
   lngToMeters: number,
-): { closest: [number, number]; distanceSq: number } {
+): IClosestSegmentPoint {
   const [pLat, pLng] = point;
   const [aLat, aLng] = a;
   const [bLat, bLng] = b;
@@ -41,28 +43,16 @@ function getClosestPointOnSegment(
   };
 }
 
-export function snapToNearestRailway(
+export function findNearestRailwaySnap(
   coords: [number, number],
-): [number, number] {
-  const [lat, lng] = coords;
-
+): ISnapResult {
+  const [lat] = coords;
   const radLat = (lat * Math.PI) / 180;
   const lngToMeters = latToMeters * Math.cos(radLat);
 
   let minDistanceSq = Number.POSITIVE_INFINITY;
   let nearestCoords: [number, number] = coords;
-
-  for (const station of stationsData.features) {
-    const [stLng, stLat] = station.geometry.coordinates;
-    const dx = (lng - stLng) * lngToMeters;
-    const dy = (lat - stLat) * latToMeters;
-    const distSq = dx * dx + dy * dy;
-
-    if (distSq < minDistanceSq) {
-      minDistanceSq = distSq;
-      nearestCoords = [stLat, stLng];
-    }
-  }
+  let nearestTrack: ITrackProperties | null = null;
 
   for (const track of railwayTracksData.features) {
     const multiLine = track.geometry.coordinates;
@@ -82,10 +72,25 @@ export function snapToNearestRailway(
         if (distanceSq < minDistanceSq) {
           minDistanceSq = distanceSq;
           nearestCoords = closest;
+          nearestTrack = (track.properties || {}) as ITrackProperties;
         }
       }
     }
   }
 
-  return nearestCoords;
+  const distanceMeters = Math.round(
+    Number.isFinite(minDistanceSq) ? Math.sqrt(minDistanceSq) : 0,
+  );
+
+  return {
+    snappedCoords: nearestCoords,
+    distanceMeters,
+    nearestTrack,
+  };
+}
+
+export function snapToNearestRailway(
+  coords: [number, number],
+): [number, number] {
+  return findNearestRailwaySnap(coords).snappedCoords;
 }
