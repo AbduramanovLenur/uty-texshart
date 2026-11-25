@@ -11,11 +11,13 @@ import MapClickHandler from './map-click-handler';
 import MapResizeHandler from './map-resize-handler';
 import MapPanel from './map-panel';
 
-import { mapDefaultCenter, mapDefaultZoom, mapMaxZoom, mapTileLayer } from '../model/config/map';
+import { mapDefaultCenter, mapDefaultZoom, mapMaxZoom, mapTileLayers } from '../model/config/map';
+import { MapTileType } from '../model/constants/map-tile-type';
 import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
 import { isValidCoords } from '../model/lib/utils/is-valid-coords';
 import { snapToNearestRailway } from '../model/lib/utils/railway-proximity';
 import { getRailwayPointInfo } from '../model/lib/utils/get-railway-point-info';
+import type { TMapTileType } from '../model/types/map-type';
 
 import 'leaflet/dist/leaflet.css';
 import styles from './map.module.scss';
@@ -35,12 +37,13 @@ const Map: FC<IProps> = ({
   onChange,
   readOnly = false,
 }) => {
-  const [internalPoint, setInternalPoint] = useState<[number, number] | null>(
-    defaultValue,
-  );
-  const [rawClickPoint, setRawClickPoint] = useState<[number, number] | null>(
-    defaultValue,
-  );
+  const [internalTileType, setInternalTileType] = useState<TMapTileType>(MapTileType.STREET);
+  const [internalPoint, setInternalPoint] = useState<[number, number] | null>(defaultValue);
+  const [rawClickPoint, setRawClickPoint] = useState<[number, number] | null>(defaultValue);
+
+  const handleTileTypeChange = (nextType: TMapTileType) => {
+    setInternalTileType(nextType);
+  };
 
   const rawPoint = value !== undefined ? value : internalPoint;
   const selectedPoint = isValidCoords(rawPoint) ? rawPoint : null;
@@ -71,6 +74,8 @@ const Map: FC<IProps> = ({
   const initialCenter = selectedPoint || mapDefaultCenter;
   const initialZoom = selectedPoint ? FOCUS_POINT_ZOOM : mapDefaultZoom;
 
+  const activeTileConfig = mapTileLayers[internalTileType];
+
   return (
     <div id={id} className={styles['map']}>
       <MapContainer
@@ -86,10 +91,12 @@ const Map: FC<IProps> = ({
         style={{ width: '100%', height: '100%' }}
       >
         <TileLayer
-          attribution={mapTileLayer.attribution}
-          url={mapTileLayer.url}
-          maxZoom={mapTileLayer.maxZoom}
-          maxNativeZoom={mapTileLayer.maxNativeZoom}
+          key={internalTileType}
+          attribution={activeTileConfig.attribution}
+          url={activeTileConfig.url}
+          subdomains={activeTileConfig.subdomains ?? 'abc'}
+          maxZoom={activeTileConfig.maxZoom}
+          maxNativeZoom={activeTileConfig.maxNativeZoom}
         />
         <MapResizeHandler />
         <MapFocus coords={selectedPoint} />
@@ -111,6 +118,8 @@ const Map: FC<IProps> = ({
         selectedCoords={selectedPoint}
         pointInfo={pointInfo}
         onApplyManualCoords={handleApplyManualCoords}
+        tileType={internalTileType}
+        onChangeTileType={handleTileTypeChange}
       />
     </div>
   );
