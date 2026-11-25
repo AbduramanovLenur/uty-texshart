@@ -648,6 +648,7 @@
     }
   },
   "map": {
+    "allRegions": "Все регионы",
     "schema": "Схема",
     "street": "Улица",
     "satellite": "Спутник",

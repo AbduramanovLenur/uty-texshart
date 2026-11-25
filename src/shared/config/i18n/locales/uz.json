@@ -635,6 +635,7 @@
     }
   },
   "map": {
+    "allRegions": "Barcha hududlar",
     "schema": "Sxema",
     "street": "Ko'cha",
     "satellite": "Suniy yo'ldosh",

@@ -5,8 +5,10 @@ import cn from 'classnames';
 
 import CoordsInputRow from './coords-input-row';
 import MapTypeSegmented from './map-type-segmented';
+import MapRegionSelect from './map-region-select';
 import type { IRailwayPointInfo } from '../model/types/point-info';
 import type { TMapTileType } from '../model/types/map-type';
+import type { IRegionOption } from '../model/types/region-option';
 import { formatCoords } from '../model/lib/utils/format-coords';
 import { getCoordsKey } from '../model/lib/utils/get-coords-key';
 
@@ -22,6 +24,9 @@ interface IProps {
   onApplyManualCoords: (coords: [number, number]) => void;
   tileType: TMapTileType;
   onChangeTileType: (tileType: TMapTileType) => void;
+  selectedRegion?: string;
+  onChangeRegion?: (regionId?: string) => void;
+  regionOptions?: IRegionOption[];
 }
 
 const MapPanel: FC<IProps> = ({
@@ -31,6 +36,9 @@ const MapPanel: FC<IProps> = ({
   onApplyManualCoords,
   tileType,
   onChangeTileType,
+  selectedRegion,
+  onChangeRegion,
+  regionOptions,
 }) => {
   const { t } = useTranslation();
 
@@ -53,6 +61,15 @@ const MapPanel: FC<IProps> = ({
           value={tileType}
           onChange={onChangeTileType}
         />
+
+        {!readOnly && (
+          <MapRegionSelect
+            value={selectedRegion}
+            onChange={onChangeRegion}
+            options={regionOptions}
+          />
+          )
+        }
 
         <div className={cn(styles['map-panel__header'])}>
           <span className={cn(styles['map-panel__label'])}>

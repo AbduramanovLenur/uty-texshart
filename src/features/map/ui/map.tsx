@@ -7,11 +7,13 @@ import RegionsLayer from './regions-layer';
 import RailwayRegionsLayer from './railway-regions-layer';
 import SelectedMarker from './selected-marker';
 import MapFocus from './map-focus';
+import MapRegionFocus from './map-region-focus';
 import MapClickHandler from './map-click-handler';
 import MapResizeHandler from './map-resize-handler';
 import MapPanel from './map-panel';
 
 import { mapDefaultCenter, mapDefaultZoom, mapMaxZoom, mapTileLayers } from '../model/config/map';
+import { defaultRegionOptions } from '../model/config/region-options';
 import { MapTileType } from '../model/constants/map-tile-type';
 import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
 import { isValidCoords } from '../model/lib/utils/is-valid-coords';
@@ -37,16 +39,22 @@ const Map: FC<IProps> = ({
   onChange,
   readOnly = false,
 }) => {
-  const [internalTileType, setInternalTileType] = useState<TMapTileType>(MapTileType.STREET);
   const [internalPoint, setInternalPoint] = useState<[number, number] | null>(defaultValue);
   const [rawClickPoint, setRawClickPoint] = useState<[number, number] | null>(defaultValue);
+  const [internalTileType, setInternalTileType] = useState<TMapTileType>(MapTileType.STREET);
+  const [selectedRegion, setSelectedRegion] = useState<string | undefined>(undefined);
 
   const handleTileTypeChange = (nextType: TMapTileType) => {
     setInternalTileType(nextType);
   };
 
+  const activeRegionOption = defaultRegionOptions.find((opt) => opt.value === selectedRegion);
   const rawPoint = value !== undefined ? value : internalPoint;
   const selectedPoint = isValidCoords(rawPoint) ? rawPoint : null;
+
+  const handleRegionChange = (regionId?: string) => {
+    setSelectedRegion(regionId);
+  };
 
   const handleSelectPoint = (
     coordinates: [number, number],
@@ -94,12 +102,18 @@ const Map: FC<IProps> = ({
           key={internalTileType}
           attribution={activeTileConfig.attribution}
           url={activeTileConfig.url}
-          subdomains={activeTileConfig.subdomains ?? 'abc'}
+          subdomains={activeTileConfig.subdomains}
           maxZoom={activeTileConfig.maxZoom}
           maxNativeZoom={activeTileConfig.maxNativeZoom}
         />
         <MapResizeHandler />
         <MapFocus coords={selectedPoint} />
+        <MapRegionFocus
+          bounds={activeRegionOption?.bounds}
+          center={activeRegionOption?.center}
+          zoom={activeRegionOption?.zoom}
+          selectedRegion={selectedRegion}
+        />
         <MapClickHandler
           onSelectPoint={handleSelectPoint}
           readOnly={readOnly}
@@ -120,6 +134,9 @@ const Map: FC<IProps> = ({
         onApplyManualCoords={handleApplyManualCoords}
         tileType={internalTileType}
         onChangeTileType={handleTileTypeChange}
+        selectedRegion={selectedRegion}
+        onChangeRegion={handleRegionChange}
+        regionOptions={defaultRegionOptions}
       />
     </div>
   );
