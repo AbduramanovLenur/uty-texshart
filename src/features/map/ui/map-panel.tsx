@@ -9,6 +9,7 @@ import MapRegionSelect from './map-region-select';
 import type { IRailwayPointInfo } from '../model/types/point-info';
 import type { TMapTileType } from '../model/types/map-type';
 import type { IRegionOption } from '../model/types/region-option';
+import type { TCoordinates } from '../model/types/coordinates';
 import { formatCoords } from '../model/lib/utils/format-coords';
 import { getCoordsKey } from '../model/lib/utils/get-coords-key';
 
@@ -19,9 +20,9 @@ import styles from './map-panel.module.scss';
 
 interface IProps {
   readOnly?: boolean;
-  selectedCoords?: [number, number] | null;
+  selectedCoords?: TCoordinates | null;
   pointInfo: IRailwayPointInfo | null;
-  onApplyManualCoords: (coords: [number, number]) => void;
+  onApplyManualCoords: (coords: TCoordinates) => void;
   tileType: TMapTileType;
   onChangeTileType: (tileType: TMapTileType) => void;
   selectedRegion?: string;

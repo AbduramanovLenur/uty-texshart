@@ -3,12 +3,13 @@ import { Input, Button, message } from 'antd';
 import { useTranslation } from 'react-i18next';
 
 import { parseCoords } from '../model/lib/utils/parse-coords';
+import type { TCoordinates } from '../model/types/coordinates';
 
 import styles from './coords-input-row.module.scss';
 
 interface IProps {
   initialValue: string;
-  onApplyManualCoords: (coords: [number, number]) => void;
+  onApplyManualCoords: (coords: TCoordinates) => void;
 }
 
 const CoordsInputRow: FC<IProps> = ({

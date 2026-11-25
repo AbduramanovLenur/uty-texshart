@@ -1,6 +1,7 @@
 import { COORDINATES_PATTERN } from '../../constants/coordinates';
+import type { TCoordinates } from '../../types/coordinates';
 
-export const parseCoords = (value: string): [number, number] | null => {
+export const parseCoords = (value: string): TCoordinates | null => {
   const match = value.match(COORDINATES_PATTERN);
   if (!match) {
     return null;

@@ -5,9 +5,10 @@ import type { LeafletMouseEvent } from 'leaflet';
 import { TRACK_CLICK_ZOOM } from '../model/constants/zoom';
 import { flyToCoords } from '../model/lib/utils/fly-to';
 import { snapToNearestRailway } from '../model/lib/utils/railway-proximity';
+import type { TCoordinates } from '../model/types/coordinates';
 
 interface IProps {
-  onSelectPoint?: (coords: [number, number], rawCoords?: [number, number]) => void;
+  onSelectPoint?: (coords: TCoordinates, rawCoords?: TCoordinates) => void;
   readOnly?: boolean;
 }
 
@@ -18,7 +19,7 @@ const MapClickHandler: FC<IProps> = ({ onSelectPoint, readOnly = false }) => {
         return;
       }
 
-      const rawCoords: [number, number] = [latlng.lat, latlng.lng];
+      const rawCoords: TCoordinates = [latlng.lat, latlng.lng];
       const snappedCoords = snapToNearestRailway(rawCoords);
 
       onSelectPoint(snappedCoords, rawCoords);

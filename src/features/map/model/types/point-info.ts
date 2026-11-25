@@ -1,3 +1,5 @@
+import type { TCoordinates } from './coordinates';
+
 export interface INearestStationInfo {
   name: string;
   km: number;
@@ -14,8 +16,8 @@ export interface ISelectedPointKmInfo {
 }
 
 export interface IRailwayPointInfo {
-  coordinates: [number, number];
-  rawCoordinates?: [number, number] | null;
+  coordinates: TCoordinates;
+  rawCoordinates?: TCoordinates | null;
   dmsString: string;
   distanceFromClickMeters: number;
   trackName?: string | null;

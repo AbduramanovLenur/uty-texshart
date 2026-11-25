@@ -1,8 +1,9 @@
 import type { FeatureCollection, Geometry } from 'geojson';
 import type { IRegionOption } from '../../types/region-option';
 import type { IRegionFeatureProperties } from '../../types/region';
+import type { TCoordinates } from '../../types/coordinates';
 
-const getGeometryBounds = (geometry: Geometry): [[number, number], [number, number]] | undefined => {
+const getGeometryBounds = (geometry: Geometry): [TCoordinates, TCoordinates] | undefined => {
   let minLng = Infinity;
   let maxLng = -Infinity;
   let minLat = Infinity;

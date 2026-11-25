@@ -1,3 +1,5 @@
+import type { PointTuple } from 'leaflet';
+
 export const stationMarkerConfig = {
   defaultRadius: 5.5,
   hoverRadius: 7.5,
@@ -9,9 +11,9 @@ export const stationMarkerConfig = {
 
 export const selectedPinMarkerConfig = {
   iconUrl: '/images/svg/marker.svg',
-  iconSize: [36, 44] as [number, number],
-  iconAnchor: [18, 44] as [number, number],
-  popupAnchor: [0, -44] as [number, number],
+  iconSize: [36, 44] as PointTuple,
+  iconAnchor: [18, 44] as PointTuple,
+  popupAnchor: [0, -44] as PointTuple,
 };
 
 export const selectedPointTrackDotConfig = {

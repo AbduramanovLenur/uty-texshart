@@ -1,7 +1,8 @@
 import { MapTileType } from '../constants/map-tile-type';
 import type { IMapTileConfig, TMapTileType } from '../types/map-type';
+import type { TCoordinates } from '../types/coordinates';
 
-export const mapDefaultCenter: [number, number] = [41.3775, 64.5853];
+export const mapDefaultCenter: TCoordinates = [41.3775, 64.5853];
 export const mapDefaultZoom = 6;
 export const mapMaxZoom = 19;
 
@@ -31,5 +32,3 @@ export const mapTileLayers: Record<TMapTileType, IMapTileConfig> = {
     maxNativeZoom: 18,
   },
 };
-
-export const mapTileLayer = mapTileLayers[MapTileType.STREET];

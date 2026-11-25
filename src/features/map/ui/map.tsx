@@ -20,15 +20,17 @@ import { isValidCoords } from '../model/lib/utils/is-valid-coords';
 import { snapToNearestRailway } from '../model/lib/utils/railway-proximity';
 import { getRailwayPointInfo } from '../model/lib/utils/get-railway-point-info';
 import type { TMapTileType } from '../model/types/map-type';
+import type { TCoordinates } from '../model/types/coordinates';
 
 import 'leaflet/dist/leaflet.css';
 import styles from './map.module.scss';
+import { defaultStationsWithKm } from '../model/config/stations';
 
 interface IProps {
   id?: string;
-  value?: [number, number] | null;
-  defaultValue?: [number, number] | null;
-  onChange?: (coordinates: [number, number]) => void;
+  value?: TCoordinates | null;
+  defaultValue?: TCoordinates | null;
+  onChange?: (coordinates: TCoordinates) => void;
   readOnly?: boolean;
 }
 
@@ -39,8 +41,8 @@ const Map: FC<IProps> = ({
   onChange,
   readOnly = false,
 }) => {
-  const [internalPoint, setInternalPoint] = useState<[number, number] | null>(defaultValue);
-  const [rawClickPoint, setRawClickPoint] = useState<[number, number] | null>(defaultValue);
+  const [internalPoint, setInternalPoint] = useState<TCoordinates | null>(defaultValue);
+  const [rawClickPoint, setRawClickPoint] = useState<TCoordinates | null>(defaultValue);
   const [internalTileType, setInternalTileType] = useState<TMapTileType>(MapTileType.STREET);
   const [selectedRegion, setSelectedRegion] = useState<string | undefined>(undefined);
 
@@ -57,8 +59,8 @@ const Map: FC<IProps> = ({
   };
 
   const handleSelectPoint = (
-    coordinates: [number, number],
-    rawCoords?: [number, number],
+    coordinates: TCoordinates,
+    rawCoords?: TCoordinates,
   ) => {
     if (!isValidCoords(coordinates)) {
       return;
@@ -73,11 +75,11 @@ const Map: FC<IProps> = ({
     onChange?.(coordinates);
   };
 
-  const handleApplyManualCoords = (coords: [number, number]) => {
+  const handleApplyManualCoords = (coords: TCoordinates) => {
     handleSelectPoint(snapToNearestRailway(coords), coords);
   };
 
-  const pointInfo = selectedPoint ? getRailwayPointInfo(selectedPoint, rawClickPoint) : null;
+  const pointInfo = selectedPoint ? getRailwayPointInfo(selectedPoint, defaultStationsWithKm, rawClickPoint) : null;
 
   const initialCenter = selectedPoint || mapDefaultCenter;
   const initialZoom = selectedPoint ? FOCUS_POINT_ZOOM : mapDefaultZoom;
@@ -106,6 +108,16 @@ const Map: FC<IProps> = ({
           maxZoom={activeTileConfig.maxZoom}
           maxNativeZoom={activeTileConfig.maxNativeZoom}
         />
+
+        <RegionsLayer />
+        <RailwayRegionsLayer />
+        <TracksLayer />
+        <StationsLayer
+          stations={defaultStationsWithKm}
+          onSelectPoint={handleSelectPoint}
+          readOnly={readOnly}
+        />
+
         <MapResizeHandler />
         <MapFocus coords={selectedPoint} />
         <MapRegionFocus
@@ -118,13 +130,7 @@ const Map: FC<IProps> = ({
           onSelectPoint={handleSelectPoint}
           readOnly={readOnly}
         />
-        <RegionsLayer />
-        <RailwayRegionsLayer />
-        <TracksLayer />
-        <StationsLayer
-          onSelectPoint={handleSelectPoint}
-          readOnly={readOnly}
-        />
+
         {selectedPoint && <SelectedMarker position={selectedPoint} />}
       </MapContainer>
       <MapPanel

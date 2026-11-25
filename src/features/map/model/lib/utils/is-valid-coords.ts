@@ -1,6 +1,8 @@
+import type { TCoordinates } from '../../types/coordinates';
+
 export const isValidCoords = (
   coords: unknown,
-): coords is [number, number] => {
+): coords is TCoordinates => {
   return (
     Array.isArray(coords) &&
     coords.length === 2 &&

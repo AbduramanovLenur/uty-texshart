@@ -1,32 +1,12 @@
-import { stationsData } from '../../data';
-import type { IStationProperties, IStationWithKm } from '../../types/station';
+import type { IStationWithKm } from '../../types/station';
 import type { INearestStationInfo, IRailwayPointInfo, ISelectedPointKmInfo } from '../../types/point-info';
+import type { TCoordinates } from '../../types/coordinates';
 import { findNearestRailwaySnap } from './railway-proximity';
 import { formatDms } from './format-dms';
 
-const stationsWithKm: IStationWithKm[] = stationsData.features.flatMap(
-  (feature) => {
-    const props = feature.properties as IStationProperties;
-    const oqiKm = Number(props.oqi_km);
-
-    if (
-      props.oqi_km === null ||
-      props.oqi_km === undefined ||
-      Number.isNaN(oqiKm) ||
-      feature.geometry?.coordinates?.length !== 2
-    ) {
-      return [];
-    }
-
-    const [lng, lat] = feature.geometry.coordinates;
-
-    return [{ props, oqi_km: oqiKm, lat, lng }];
-  },
-);
-
 function getDistanceMeters(
-  [lat1, lon1]: [number, number],
-  [lat2, lon2]: [number, number],
+  [lat1, lon1]: TCoordinates,
+  [lat2, lon2]: TCoordinates,
 ): number {
   const R = 6371000;
   const dLat = ((lat2 - lat1) * Math.PI) / 180;
@@ -90,13 +70,14 @@ function getPointKmInfo(
 }
 
 export function getRailwayPointInfo(
-  coords: [number, number],
-  rawCoords?: [number, number] | null,
+  coords: TCoordinates,
+  stations: IStationWithKm[],
+  rawCoords?: TCoordinates | null,
 ): IRailwayPointInfo {
   const { snappedCoords, nearestTrack } = findNearestRailwaySnap(coords);
   const clickPoint = rawCoords || coords;
 
-  const nearestStations = stationsWithKm
+  const nearestStations = stations
     .map((station) => ({
       ...station,
       distMeters: getDistanceMeters(snappedCoords, [station.lat, station.lng]),
