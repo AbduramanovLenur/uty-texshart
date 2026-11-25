@@ -1,0 +1,27 @@
+.map-type-segmented {
+  width: 100%;
+  margin-bottom: var(--ant-margin);
+  background-color: var(--page-bc);
+  padding: 2px;
+  border-radius: var(--ant-border-radius);
+
+  :global {
+    .ant-segmented-group {
+      gap: 2px;
+    }
+
+    .ant-segmented-item {
+      font-size: var(--ant-font-size-lg);
+      font-weight: 400;
+      line-height: 1.5;
+      color: var(--dark-25);
+
+      &-selected {
+        color: var(--dark-88);
+        background-color: var(--white);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.06);
+        border-radius: var(--ant-border-radius);
+      }
+    }
+  }
+}

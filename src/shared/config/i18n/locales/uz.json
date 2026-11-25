@@ -635,6 +635,9 @@
     }
   },
   "map": {
+    "schema": "Sxema",
+    "street": "Ko'cha",
+    "satellite": "Suniy yo'ldosh",
     "selectedPoint": "Belgilangan nuqta",
     "locate": "Joylash",
     "copied": "Koordinatalar nusxalandi",

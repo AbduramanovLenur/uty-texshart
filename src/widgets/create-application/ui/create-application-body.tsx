@@ -4,15 +4,15 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import cn from 'classnames';
 
-import { StepList } from '../model/constants/step-list';
-import { FormFields } from '../model/constants/form-fields';
-import type { IFormValues } from '../model/types/form';
-
 import CreateApplicationSteps from './create-application-steps';
 import CreateApplicationTop from './create-application-top';
 import CreateApplicationForm from './create-application-form';
 import CreateApplicationMap from './create-application-map';
 import CreateApplicationBottom from './create-application-bottom';
+
+import { StepList } from '../model/constants/step-list';
+import { FormFields } from '../model/constants/form-fields';
+import type { IFormValues } from '../model/types/form';
 
 import { skipLeaveConfirmState } from '@features/leave-confirm-modal';
 import { open as openSignApplicationModal, SignApplicationModal } from '@features/sign-application-modal';
@@ -21,7 +21,7 @@ import { routes } from '@shared/config';
 
 import styles from './create-application-body.module.scss';
 
-const { useForm, useWatch, Item } = Form;
+const { useForm, useWatch } = Form;
 
 const CreateApplicationBody: FC = () => {
   const dispatch = useDispatch();
@@ -110,7 +110,6 @@ const CreateApplicationBody: FC = () => {
           >
             <CreateApplicationMap isActive={step === StepList.MAP} />
           </div>
-          <Item name={FormFields.CERTIFICATE} hidden />
         </Form>
         <CreateApplicationBottom
           isLastStep={step === StepList.MAP}
