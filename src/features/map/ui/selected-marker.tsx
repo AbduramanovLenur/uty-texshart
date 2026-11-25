@@ -8,6 +8,7 @@ import {
 } from '../model/config/markers';
 import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
 import { flyToCoords } from '../model/lib/utils/fly-to';
+import type { TCoordinates } from '../model/types/coordinates';
 
 const customPinIcon = L.icon({
   iconUrl: selectedPinMarkerConfig.iconUrl,
@@ -24,7 +25,7 @@ const trackDotPathOptions = {
 };
 
 interface IProps {
-  position: [number, number];
+  position: TCoordinates;
 }
 
 const SelectedMarker: FC<IProps> = ({ position }) => {

@@ -1,3 +1,5 @@
+import type { TCoordinates } from '../../types/coordinates';
+
 function toDms(deg: number, isLat: boolean): string {
   const absolute = Math.abs(deg);
   const degrees = Math.floor(absolute);
@@ -12,7 +14,7 @@ function toDms(deg: number, isLat: boolean): string {
   return `${degrees}°${formattedMinutes}'${formattedSeconds}"${direction}`;
 }
 
-export function formatDms(coords: [number, number]): string {
+export function formatDms(coords: TCoordinates): string {
   const [lat, lng] = coords;
   return `${toDms(lat, true)} ${toDms(lng, false)}`;
 }

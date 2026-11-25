@@ -1,8 +1,9 @@
 import type { Map as LeafletMap } from 'leaflet';
+import type { TCoordinates } from '../../types/coordinates';
 
 export function flyToCoords(
   map: LeafletMap,
-  coords: [number, number],
+  coords: TCoordinates,
   minZoom: number,
   duration: number,
 ): void {

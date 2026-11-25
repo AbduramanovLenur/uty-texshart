@@ -1,12 +1,13 @@
 import type { ITrackProperties } from './track';
+import type { TCoordinates } from './coordinates';
 
 export interface IClosestSegmentPoint {
-  closest: [number, number];
+  closest: TCoordinates;
   distanceSq: number;
 }
 
 export interface ISnapResult {
-  snappedCoords: [number, number];
+  snappedCoords: TCoordinates;
   distanceMeters: number;
   nearestTrack: ITrackProperties | null;
 }

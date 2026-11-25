@@ -4,14 +4,15 @@ import { useMap } from 'react-leaflet';
 import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
 import { flyToCoords } from '../model/lib/utils/fly-to';
 import { isValidCoords } from '../model/lib/utils/is-valid-coords';
+import type { TCoordinates } from '../model/types/coordinates';
 
 interface IProps {
-  coords: [number, number] | null;
+  coords: TCoordinates | null;
 }
 
 const MapFocus: FC<IProps> = ({ coords }) => {
   const map = useMap();
-  const prevCoordsRef = useRef<[number, number] | null>(null);
+  const prevCoordsRef = useRef<TCoordinates | null>(null);
 
   useEffect(() => {
     if (!isValidCoords(coords)) {

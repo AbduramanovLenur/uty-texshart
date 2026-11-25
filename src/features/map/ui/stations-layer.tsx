@@ -1,29 +1,26 @@
 import type { FC } from 'react';
 
-import { stationsData } from '../model/data';
+import type { IStationWithKm } from '../model/types/station';
+import type { TCoordinates } from '../model/types/coordinates';
 
 import StationMarker from './station-marker';
 
 interface IProps {
-  onSelectPoint?: (coords: [number, number]) => void;
-  readOnly?: boolean;
+  stations: IStationWithKm[];
+  onSelectPoint: (coords: TCoordinates) => void;
+  readOnly: boolean;
 }
 
-const stationMarkers = stationsData.features.map((feature, index) => {
-  const [lng, lat] = feature.geometry.coordinates;
-
-  return {
-    key: `${feature.properties.esr || 'station'}-${index}`,
-    position: [lat, lng] as [number, number],
-  };
-});
-
-const StationsLayer: FC<IProps> = ({ onSelectPoint, readOnly = false }) => (
+const StationsLayer: FC<IProps> = ({
+  stations,
+  onSelectPoint,
+  readOnly = false,
+}) => (
   <>
-    {stationMarkers.map(({ key, position }) => (
+    {stations.map(station => (
       <StationMarker
-        key={key}
-        position={position}
+        key={station.props.esr}
+        position={[station.lat, station.lng]}
         onSelectPoint={onSelectPoint}
         readOnly={readOnly}
       />

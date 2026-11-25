@@ -1,13 +1,14 @@
 import { railwayTracksData } from '../../data';
 import type { ITrackProperties } from '../../types/track';
 import type { IClosestSegmentPoint, ISnapResult } from '../../types/snap';
+import type { TCoordinates } from '../../types/coordinates';
 
 const latToMeters = 111139;
 
 export function getClosestPointOnSegment(
-  point: [number, number],
-  a: [number, number],
-  b: [number, number],
+  point: TCoordinates,
+  a: TCoordinates,
+  b: TCoordinates,
   lngToMeters: number,
 ): IClosestSegmentPoint {
   const [pLat, pLng] = point;
@@ -43,15 +44,13 @@ export function getClosestPointOnSegment(
   };
 }
 
-export function findNearestRailwaySnap(
-  coords: [number, number],
-): ISnapResult {
+export function findNearestRailwaySnap(coords: TCoordinates): ISnapResult {
   const [lat] = coords;
   const radLat = (lat * Math.PI) / 180;
   const lngToMeters = latToMeters * Math.cos(radLat);
 
   let minDistanceSq = Number.POSITIVE_INFINITY;
-  let nearestCoords: [number, number] = coords;
+  let nearestCoords: TCoordinates = coords;
   let nearestTrack: ITrackProperties | null = null;
 
   for (const track of railwayTracksData.features) {
@@ -89,8 +88,6 @@ export function findNearestRailwaySnap(
   };
 }
 
-export function snapToNearestRailway(
-  coords: [number, number],
-): [number, number] {
+export function snapToNearestRailway(coords: TCoordinates): TCoordinates {
   return findNearestRailwaySnap(coords).snappedCoords;
 }

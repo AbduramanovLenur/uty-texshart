@@ -5,22 +5,33 @@ import cn from 'classnames';
 
 import CoordsInputRow from './coords-input-row';
 import MapTypeSegmented from './map-type-segmented';
+import MapRegionSelect from './map-region-select';
+import MapLayerFilters from './map-layer-filters';
 import type { IRailwayPointInfo } from '../model/types/point-info';
 import type { TMapTileType } from '../model/types/map-type';
+import type { IRegionOption } from '../model/types/region-option';
+import type { TCoordinates } from '../model/types/coordinates';
+import type { IMapLayerFilters } from '../model/types/layer-filters';
 import { formatCoords } from '../model/lib/utils/format-coords';
 import { getCoordsKey } from '../model/lib/utils/get-coords-key';
 
 import { IconFiles, IconRailwayTrack } from '@shared/assets';
+import { copyToClipboard } from '@shared/utils';
 
 import styles from './map-panel.module.scss';
 
 interface IProps {
   readOnly?: boolean;
-  selectedCoords?: [number, number] | null;
+  selectedCoords?: TCoordinates | null;
   pointInfo: IRailwayPointInfo | null;
-  onApplyManualCoords: (coords: [number, number]) => void;
+  onApplyManualCoords: (coords: TCoordinates) => void;
   tileType: TMapTileType;
   onChangeTileType: (tileType: TMapTileType) => void;
+  selectedRegion?: string;
+  onChangeRegion?: (regionId?: string) => void;
+  regionOptions?: IRegionOption[];
+  layerFilters?: IMapLayerFilters;
+  onChangeLayerFilters?: (filters: IMapLayerFilters) => void;
 }
 
 const MapPanel: FC<IProps> = ({
@@ -30,6 +41,11 @@ const MapPanel: FC<IProps> = ({
   onApplyManualCoords,
   tileType,
   onChangeTileType,
+  selectedRegion,
+  onChangeRegion,
+  regionOptions,
+  layerFilters,
+  onChangeLayerFilters,
 }) => {
   const { t } = useTranslation();
 
@@ -38,7 +54,7 @@ const MapPanel: FC<IProps> = ({
       return;
     }
 
-    navigator.clipboard.writeText(formatCoords(selectedCoords));
+    copyToClipboard(formatCoords(selectedCoords));
     message.success(t('map.copied'));
   };
 
@@ -52,6 +68,20 @@ const MapPanel: FC<IProps> = ({
           value={tileType}
           onChange={onChangeTileType}
         />
+
+        {!readOnly && (
+          <>
+            <MapRegionSelect
+              value={selectedRegion}
+              onChange={onChangeRegion}
+              options={regionOptions}
+            />
+            <MapLayerFilters
+              value={layerFilters}
+              onChange={onChangeLayerFilters}
+            />
+          </>
+        )}
 
         <div className={cn(styles['map-panel__header'])}>
           <span className={cn(styles['map-panel__label'])}>

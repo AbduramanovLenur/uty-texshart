@@ -648,6 +648,10 @@
     }
   },
   "map": {
+    "allRegions": "Все регионы",
+    "railwayRegions": "Железнодорожные регионы ({{count}})",
+    "regions": "Границы областей ({{count}})",
+    "stationsAndStops": "Станции и остановочные пункты",
     "schema": "Схема",
     "street": "Улица",
     "satellite": "Спутник",

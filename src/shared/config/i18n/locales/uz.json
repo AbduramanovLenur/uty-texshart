@@ -635,6 +635,10 @@
     }
   },
   "map": {
+    "allRegions": "Barcha hududlar",
+    "railwayRegions": "Temir yo'l hududlari ({{count}})",
+    "regions": "Viloyat chegaralari ({{count}})",
+    "stationsAndStops": "Stansiya va bekatlar",
     "schema": "Sxema",
     "street": "Ko'cha",
     "satellite": "Suniy yo'ldosh",

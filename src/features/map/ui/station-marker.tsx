@@ -4,6 +4,7 @@ import { CircleMarker, useMap } from 'react-leaflet';
 import { stationMarkerConfig } from '../model/config/markers';
 import { STATION_CLICK_ZOOM } from '../model/constants/zoom';
 import { flyToCoords } from '../model/lib/utils/fly-to';
+import type { TCoordinates } from '../model/types/coordinates';
 
 import styles from './map.module.scss';
 
@@ -16,8 +17,8 @@ const stationPathOptions = {
 };
 
 interface IProps {
-  position: [number, number];
-  onSelectPoint?: (coords: [number, number]) => void;
+  position: TCoordinates;
+  onSelectPoint?: (coords: TCoordinates) => void;
   readOnly?: boolean;
 }
 
