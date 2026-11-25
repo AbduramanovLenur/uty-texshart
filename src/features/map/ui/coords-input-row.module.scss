@@ -1,6 +1,7 @@
 .coords-input-row {
   display: flex;
   gap: var(--ant-margin-xs);
+  margin-bottom: var(--ant-margin);
 
   &__locate-btn {
     padding: 0 16px;

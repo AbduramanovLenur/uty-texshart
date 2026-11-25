@@ -570,4 +570,13 @@
       stroke="currentColor"
     />
   </symbol>
+  <symbol id="icon-railway-track" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect width="16" height="4" fill="#0A0A0A" fill-opacity="0.15"/>
+    <rect y="9" width="16" height="4" fill="#0A0A0A" fill-opacity="0.15"/>
+    <rect y="18" width="16" height="4" fill="#0A0A0A" fill-opacity="0.15"/>
+    <rect y="27" width="16" height="4" fill="#0A0A0A" fill-opacity="0.15"/>
+    <rect y="36" width="16" height="4" fill="#0A0A0A" fill-opacity="0.15"/>
+    <rect y="45" width="16" height="4" fill="#0A0A0A" fill-opacity="0.15"/>
+    <rect y="54" width="16" height="4" fill="#0A0A0A" fill-opacity="0.15"/>
+  </symbol>
 </svg>

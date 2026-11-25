@@ -7,7 +7,7 @@ import type { IRailwayPointInfo } from '../model/types/point-info';
 import { formatCoords } from '../model/lib/utils/format-coords';
 import { getCoordsKey } from '../model/lib/utils/get-coords-key';
 
-import { IconFiles } from '@shared/assets';
+import { IconFiles, IconRailwayTrack } from '@shared/assets';
 
 import styles from './map-panel.module.scss';
 
@@ -17,23 +17,6 @@ interface IProps {
   pointInfo: IRailwayPointInfo | null;
   onApplyManualCoords: (coords: [number, number]) => void;
 }
-
-const RailwayTrackIcon: FC = () => (
-  <svg
-    width='18'
-    height='36'
-    viewBox='0 0 18 36'
-    fill='none'
-    xmlns='http://www.w3.org/2000/svg'
-  >
-    <line x1='4' y1='0' x2='4' y2='36' stroke='#CBD5E1' strokeWidth='2' />
-    <line x1='14' y1='0' x2='14' y2='36' stroke='#CBD5E1' strokeWidth='2' />
-    <line x1='2' y1='6' x2='16' y2='6' stroke='#94A3B8' strokeWidth='1.5' />
-    <line x1='2' y1='14' x2='16' y2='14' stroke='#94A3B8' strokeWidth='1.5' />
-    <line x1='2' y1='22' x2='16' y2='22' stroke='#94A3B8' strokeWidth='1.5' />
-    <line x1='2' y1='30' x2='16' y2='30' stroke='#94A3B8' strokeWidth='1.5' />
-  </svg>
-);
 
 const MapPanel: FC<IProps> = ({
   readOnly = false,
@@ -106,11 +89,11 @@ const MapPanel: FC<IProps> = ({
             {(pointInfo.topStation || pointInfo.bottomStation) && (
               <div className={styles['map-panel__station-card']}>
                 <div className={styles['map-panel__track-axis']}>
-                  {pointInfo.topStation && <RailwayTrackIcon />}
+                  {pointInfo.topStation && <IconRailwayTrack />}
                   {pointInfo.pointKmInfo && (
                     <div className={styles['map-panel__point-dot']} />
                   )}
-                  {pointInfo.bottomStation && <RailwayTrackIcon />}
+                  {pointInfo.bottomStation && <IconRailwayTrack />}
                 </div>
 
                 <div className={styles['map-panel__station-content']}>

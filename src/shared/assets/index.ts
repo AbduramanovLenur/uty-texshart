@@ -48,3 +48,4 @@ export { default as IconBasicCheck } from './icons/icon-basic-check';
 export { default as IconUploadOutlined } from './icons/icon-upload-outlined';
 export { default as IconLog } from './icons/icon-log';
 export { default as IconFiles } from './icons/icon-files';
+export { default as IconRailwayTrack } from './icons/icon-railway-track';
