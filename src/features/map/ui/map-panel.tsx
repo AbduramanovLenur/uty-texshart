@@ -11,6 +11,7 @@ import { formatCoords } from '../model/lib/utils/format-coords';
 import { getCoordsKey } from '../model/lib/utils/get-coords-key';
 
 import { IconFiles, IconRailwayTrack } from '@shared/assets';
+import { copyToClipboard } from '@shared/utils';
 
 import styles from './map-panel.module.scss';
 
@@ -38,7 +39,7 @@ const MapPanel: FC<IProps> = ({
       return;
     }
 
-    navigator.clipboard.writeText(formatCoords(selectedCoords));
+    copyToClipboard(formatCoords(selectedCoords));
     message.success(t('map.copied'));
   };
 
