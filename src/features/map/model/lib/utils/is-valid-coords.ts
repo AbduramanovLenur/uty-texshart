@@ -4,9 +4,6 @@ export const isValidCoords = (
   return (
     Array.isArray(coords) &&
     coords.length === 2 &&
-    typeof coords[0] === 'number' &&
-    typeof coords[1] === 'number' &&
-    !Number.isNaN(coords[0]) &&
-    !Number.isNaN(coords[1])
+    coords.every((coord) => typeof coord === 'number' && Number.isFinite(coord))
   );
 };

@@ -1,11 +1,27 @@
 import type { FC } from 'react';
-import { CircleMarker, useMap } from 'react-leaflet';
-import cn from 'classnames';
+import { Marker, CircleMarker, useMap } from 'react-leaflet';
+import L from 'leaflet';
 
-import { selectedMarkerConfig } from '../model/config/markers';
+import {
+  selectedPinMarkerConfig,
+  selectedPointTrackDotConfig,
+} from '../model/config/markers';
 import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
+import { flyToCoords } from '../model/lib/utils/fly-to';
 
-import styles from './map.module.scss';
+const customPinIcon = L.icon({
+  iconUrl: selectedPinMarkerConfig.iconUrl,
+  iconSize: selectedPinMarkerConfig.iconSize,
+  iconAnchor: selectedPinMarkerConfig.iconAnchor,
+  popupAnchor: selectedPinMarkerConfig.popupAnchor,
+});
+
+const trackDotPathOptions = {
+  fillColor: selectedPointTrackDotConfig.fillColor,
+  color: selectedPointTrackDotConfig.color,
+  weight: selectedPointTrackDotConfig.weight,
+  fillOpacity: selectedPointTrackDotConfig.fillOpacity,
+};
 
 interface IProps {
   position: [number, number];
@@ -15,26 +31,23 @@ const SelectedMarker: FC<IProps> = ({ position }) => {
   const map = useMap();
 
   const handleClick = () => {
-    map.flyTo(position, Math.max(map.getZoom(), FOCUS_POINT_ZOOM), {
-      duration: 1,
-    });
+    flyToCoords(map, position, FOCUS_POINT_ZOOM, 0.8);
   };
 
   return (
-    <CircleMarker
-      center={position}
-      radius={selectedMarkerConfig.radius}
-      pathOptions={{
-        className: cn(styles['map__selected-marker']),
-        fillColor: selectedMarkerConfig.fillColor,
-        color: selectedMarkerConfig.color,
-        weight: selectedMarkerConfig.weight,
-        fillOpacity: selectedMarkerConfig.fillOpacity,
-      }}
-      eventHandlers={{
-        click: handleClick,
-      }}
-    />
+    <>
+      <Marker
+        position={position}
+        icon={customPinIcon}
+        eventHandlers={{ click: handleClick }}
+      />
+      <CircleMarker
+        center={position}
+        radius={selectedPointTrackDotConfig.radius}
+        pathOptions={trackDotPathOptions}
+        eventHandlers={{ click: handleClick }}
+      />
+    </>
   );
 };
 

@@ -633,5 +633,22 @@
       "agreed": "Platforma shartlariga rozilik bildiring",
       "smsRequired": "SMS kodni kiriting"
     }
+  },
+  "map": {
+    "selectedPoint": "Belgilangan nuqta",
+    "locate": "Joylash",
+    "copied": "Koordinatalar nusxalandi",
+    "emptyPointTitle": "Nuqta belgilanmagan",
+    "emptyPointDescription": "Xaritadan nuqtani tanlang yoki koordinatalarni kiriting",
+    "coordinatesPlaceholder": "Masalan: 39.215561, 65.217753",
+    "trackName": "Yo'l nomi",
+    "gauge": "Iz kengligi",
+    "railwayRegion": "Temir yo'l hududi",
+    "regionAndDistrict": "Viloyat, tuman/shaxar",
+    "distanceFromClick": "Bosilgan joydan",
+    "snappedToTrack": "izga yopishtirildi",
+    "osmTrack": "OSM yo'l",
+    "centerLine": "o'qi",
+    "invalidCoordinates": "Noto'g'ri koordinatalar formati"
   }
 }

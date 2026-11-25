@@ -646,5 +646,22 @@
       "agreed": "Примите условия платформы",
       "smsRequired": "Введите SMS-код"
     }
+  },
+  "map": {
+    "selectedPoint": "Выбранная точка",
+    "locate": "Найти",
+    "copied": "Координаты скопированы",
+    "emptyPointTitle": "Точка не выбрана",
+    "emptyPointDescription": "Выберите точку на карте или введите координаты",
+    "coordinatesPlaceholder": "Например: 39.215561, 65.217753",
+    "trackName": "Название пути",
+    "gauge": "Ширина колеи",
+    "railwayRegion": "Железнодорожный регион",
+    "regionAndDistrict": "Область, район/город",
+    "distanceFromClick": "От точки клика",
+    "snappedToTrack": "привязано к пути",
+    "osmTrack": "Путь OSM",
+    "centerLine": "ось",
+    "invalidCoordinates": "Неверный формат координат"
   }
 }

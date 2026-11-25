@@ -1,32 +1,27 @@
 import { useState, type FC } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
-import type { GeoJsonObject } from 'geojson';
-import cn from 'classnames';
-
-import {
-  mapDefaultCenter,
-  mapDefaultZoom,
-  mapTileLayer,
-} from '../model/config/map';
-import {
-  railwayRegionStyle,
-  regionLayerStyle,
-} from '../model/config/layer-styles';
-import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
-import { regionsData, railwayRegionsData } from '../model/data';
-import { isValidCoords } from '../model/lib/utils/is-valid-coords';
+import { MapContainer, TileLayer } from 'react-leaflet';
 
 import TracksLayer from './tracks-layer';
 import StationsLayer from './stations-layer';
+import RegionsLayer from './regions-layer';
+import RailwayRegionsLayer from './railway-regions-layer';
 import SelectedMarker from './selected-marker';
 import MapFocus from './map-focus';
 import MapClickHandler from './map-click-handler';
 import MapResizeHandler from './map-resize-handler';
+import MapPanel from './map-panel';
 
-import styles from './map.module.scss';
+import { mapDefaultCenter, mapDefaultZoom, mapMaxZoom, mapTileLayer } from '../model/config/map';
+import { FOCUS_POINT_ZOOM } from '../model/constants/zoom';
+import { isValidCoords } from '../model/lib/utils/is-valid-coords';
+import { snapToNearestRailway } from '../model/lib/utils/railway-proximity';
+import { getRailwayPointInfo } from '../model/lib/utils/get-railway-point-info';
+
 import 'leaflet/dist/leaflet.css';
+import styles from './map.module.scss';
 
 interface IProps {
+  id?: string;
   value?: [number, number] | null;
   defaultValue?: [number, number] | null;
   onChange?: (coordinates: [number, number]) => void;
@@ -34,6 +29,7 @@ interface IProps {
 }
 
 const Map: FC<IProps> = ({
+  id,
   value,
   defaultValue = null,
   onChange,
@@ -42,65 +38,80 @@ const Map: FC<IProps> = ({
   const [internalPoint, setInternalPoint] = useState<[number, number] | null>(
     defaultValue,
   );
+  const [rawClickPoint, setRawClickPoint] = useState<[number, number] | null>(
+    defaultValue,
+  );
 
   const rawPoint = value !== undefined ? value : internalPoint;
   const selectedPoint = isValidCoords(rawPoint) ? rawPoint : null;
 
-  const handleSelectPoint = (coordinates: [number, number]) => {
+  const handleSelectPoint = (
+    coordinates: [number, number],
+    rawCoords?: [number, number],
+  ) => {
     if (!isValidCoords(coordinates)) {
       return;
     }
+
+    setRawClickPoint(rawCoords ?? coordinates);
+
     if (value === undefined) {
       setInternalPoint(coordinates);
     }
+
     onChange?.(coordinates);
   };
+
+  const handleApplyManualCoords = (coords: [number, number]) => {
+    handleSelectPoint(snapToNearestRailway(coords), coords);
+  };
+
+  const pointInfo = selectedPoint ? getRailwayPointInfo(selectedPoint, rawClickPoint) : null;
 
   const initialCenter = selectedPoint || mapDefaultCenter;
   const initialZoom = selectedPoint ? FOCUS_POINT_ZOOM : mapDefaultZoom;
 
   return (
-    <div className={cn(styles['map'])}>
+    <div id={id} className={styles['map']}>
       <MapContainer
         center={initialCenter}
         zoom={initialZoom}
+        maxZoom={mapMaxZoom}
+        preferCanvas
         scrollWheelZoom
         dragging
         zoomControl
+        doubleClickZoom
+        touchZoom
         style={{ width: '100%', height: '100%' }}
       >
         <TileLayer
           attribution={mapTileLayer.attribution}
           url={mapTileLayer.url}
+          maxZoom={mapTileLayer.maxZoom}
+          maxNativeZoom={mapTileLayer.maxNativeZoom}
         />
-
         <MapResizeHandler />
         <MapFocus coords={selectedPoint} />
         <MapClickHandler
           onSelectPoint={handleSelectPoint}
           readOnly={readOnly}
         />
-
-        <GeoJSON
-          data={regionsData as GeoJsonObject}
-          style={() => regionLayerStyle}
-        />
-        <GeoJSON
-          data={railwayRegionsData as GeoJsonObject}
-          style={() => railwayRegionStyle}
-        />
-
-        <TracksLayer
-          onSelectPoint={handleSelectPoint}
-          readOnly={readOnly}
-        />
+        <RegionsLayer />
+        <RailwayRegionsLayer />
+        <TracksLayer />
         <StationsLayer
           onSelectPoint={handleSelectPoint}
           readOnly={readOnly}
         />
-
         {selectedPoint && <SelectedMarker position={selectedPoint} />}
       </MapContainer>
+      <MapPanel
+        readOnly={readOnly}
+        selectedCoords={selectedPoint}
+        pointInfo={pointInfo}
+        onApplyManualCoords={handleApplyManualCoords}
+      />
     </div>
   );
 };

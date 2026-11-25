@@ -5,23 +5,21 @@ const MapResizeHandler: FC = () => {
   const map = useMap();
 
   useEffect(() => {
-    const triggerInvalidate = () => {
-      map.invalidateSize();
-    };
+    const invalidate = () => map.invalidateSize();
 
-    triggerInvalidate();
+    invalidate();
 
     const container = map.getContainer();
-    let observer: ResizeObserver | null = null;
+    const observer =
+      typeof ResizeObserver === 'undefined'
+        ? null
+        : new ResizeObserver(invalidate);
 
-    if (typeof ResizeObserver !== 'undefined' && container) {
-      observer = new ResizeObserver(() => {
-        triggerInvalidate();
-      });
+    if (observer && container) {
       observer.observe(container);
     }
 
-    const timer = setTimeout(triggerInvalidate, 200);
+    const timer = setTimeout(invalidate, 200);
 
     return () => {
       clearTimeout(timer);

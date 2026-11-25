@@ -1,18 +1,21 @@
 import type { FC } from 'react';
-import cn from 'classnames';
 
 import { Map } from '@features/map';
 
 import styles from './incoming-application-map.module.scss';
 
-const TEST_COORDINATES: [number, number] = [41.294663, 69.120467];
+const DEFAULT_APPLICATION_COORDINATES: [number, number] = [
+  39.215561, 65.217753,
+];
 
-const IncomingApplicationMap: FC = () => {
-  return (
-    <div className={cn(styles['incoming-application-map'])}>
-      <Map defaultValue={TEST_COORDINATES} readOnly />
-    </div>
-  );
-};
+interface IProps {
+  coordinates?: [number, number] | null;
+}
+
+const IncomingApplicationMap: FC<IProps> = ({ coordinates = DEFAULT_APPLICATION_COORDINATES }) => (
+  <div className={styles['incoming-application-map']}>
+    <Map defaultValue={coordinates} readOnly />
+  </div>
+);
 
 export default IncomingApplicationMap;
