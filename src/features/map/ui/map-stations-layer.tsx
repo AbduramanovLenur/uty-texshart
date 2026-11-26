@@ -23,10 +23,14 @@ const MapStationsLayer: FC<IProps> = ({ onSelectPoint, readOnly = false }) => {
     return null;
   }
 
+  const handleSelectPoint = (coords: TCoordinates) => {
+    onSelectPoint?.(coords);
+  };
+
   return (
     <StationsLayer
       stations={defaultStationsWithKm}
-      onSelectPoint={onSelectPoint}
+      onSelectPoint={handleSelectPoint}
       readOnly={readOnly}
     />
   );
