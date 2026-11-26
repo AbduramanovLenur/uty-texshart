@@ -12,7 +12,7 @@ const AuthPromo: FC = () => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles['auth-promo'])}>
+    <div className={cn(styles['auth-promo'], 'scrollbar')}>
       <div className={cn(styles['auth-promo__logo'])}>
         <img
           src='/images/svg/logo.svg'

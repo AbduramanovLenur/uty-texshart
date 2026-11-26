@@ -5,6 +5,29 @@
   padding: 32px;
   color: var(--ant-color-bg-elevated);
   border-radius: var(--ant-size-lg);
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--ant-color-text-quaternary) transparent;
+
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--ant-color-text-quaternary);
+    border-radius: 4px;
+
+    &:hover {
+      background: var(--ant-color-text-secondary);
+    }
+  }
+
   &__logo {
     position: absolute;
     top: 32px;
@@ -16,12 +39,14 @@
     align-items: center;
     justify-content: center;
     margin: auto;
+    width: 100%;
   }
   &__decor {
     margin-bottom: var(--ant-margin-xl);
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 
     img,
     iframe {
