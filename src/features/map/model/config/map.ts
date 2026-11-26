@@ -8,12 +8,12 @@ export const mapMaxZoom = 19;
 
 export const mapTileLayers: Record<TMapTileType, IMapTileConfig> = {
   [MapTileType.SCHEMA]: {
-    url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+    url: 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
     attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-    subdomains: 'abcd',
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Tiles style by <a href="https://www.hotosm.org/" target="_blank">Humanitarian OpenStreetMap Team</a> hosted by <a href="https://openstreetmap.fr/" target="_blank">OSM France</a>',
+    subdomains: 'abc',
     maxZoom: mapMaxZoom,
-    maxNativeZoom: 18,
+    maxNativeZoom: 19,
   },
   [MapTileType.STREET]: {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
@@ -21,7 +21,7 @@ export const mapTileLayers: Record<TMapTileType, IMapTileConfig> = {
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     subdomains: 'abc',
     maxZoom: mapMaxZoom,
-    maxNativeZoom: 18,
+    maxNativeZoom: 19,
   },
   [MapTileType.SATELLITE]: {
     url: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
@@ -29,6 +29,6 @@ export const mapTileLayers: Record<TMapTileType, IMapTileConfig> = {
       '&copy; <a href="https://www.esri.com/">Esri</a>, Maxar, Earthstar Geographics',
     subdomains: 'abc',
     maxZoom: mapMaxZoom,
-    maxNativeZoom: 18,
+    maxNativeZoom: 17,
   },
 };
