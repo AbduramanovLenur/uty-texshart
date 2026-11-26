@@ -19,7 +19,12 @@
   }
   &__decor {
     margin-bottom: var(--ant-margin-xl);
-    img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img,
+    iframe {
       mix-blend-mode: multiply;
     }
   }
