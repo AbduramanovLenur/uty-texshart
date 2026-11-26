@@ -6,27 +6,6 @@
   background-color: var(--ant-color-bg-container);
   padding: 48px 92px 32px;
   min-height: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
-  scrollbar-width: thin;
-  scrollbar-color: var(--ant-color-text-quaternary) transparent;
-
-  &::-webkit-scrollbar {
-    width: 4px;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--ant-color-text-quaternary);
-    border-radius: 4px;
-
-    &:hover {
-      background: var(--ant-color-text-secondary);
-    }
-  }
 
   &__top {
     display: flex;
