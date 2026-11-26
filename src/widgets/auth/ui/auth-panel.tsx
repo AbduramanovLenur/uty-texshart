@@ -26,7 +26,7 @@ const AuthPanel: FC<IProps> = ({ type }) => {
   };
 
   return (
-    <div className={cn(styles['auth-panel'])}>
+    <div className={cn(styles['auth-panel'], 'scrollbar')}>
       <div className={cn(styles['auth-panel__top'])}>
         <div className={cn('auth-panel__logo-project')}>
           <img
