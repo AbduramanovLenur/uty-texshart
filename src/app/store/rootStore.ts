@@ -19,6 +19,7 @@ import { reducer as viewInvoiceModalReducer } from '@features/view-invoice-modal
 import { reducer as viewPdfModalReducer } from '@features/view-pdf-modal';
 import { reducer as viewProcessModalReducer } from '@features/view-process-modal';
 import { reducer as viewTechnicalSpecificationModalReducer } from '@features/view-technical-specification-modal';
+import { reducer as mapReducer } from '@features/map';
 
 const rootReducer = combineReducers({
   allowConstructionModalSlice: allowConstructionModalReducer,
@@ -40,6 +41,7 @@ const rootReducer = combineReducers({
   viewPdfModalSlice: viewPdfModalReducer,
   viewProcessModalSlice: viewProcessModalReducer,
   viewTechnicalSpecificationModalSlice: viewTechnicalSpecificationModalReducer,
+  mapSlice: mapReducer,
 });
 
 export default rootReducer;

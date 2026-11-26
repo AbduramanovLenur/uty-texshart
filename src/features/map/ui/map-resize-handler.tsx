@@ -1,10 +1,14 @@
 import { useEffect, type FC } from 'react';
 import { useMap } from 'react-leaflet';
 
+import { mapMaxZoom } from '../model/config/map';
+
 const MapResizeHandler: FC = () => {
   const map = useMap();
 
   useEffect(() => {
+    map.setMaxZoom(mapMaxZoom);
+
     const invalidate = () => map.invalidateSize();
 
     invalidate();

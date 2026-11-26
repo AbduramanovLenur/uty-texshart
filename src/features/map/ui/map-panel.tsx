@@ -1,6 +1,7 @@
 import type { FC } from 'react';
 import { message, Button } from 'antd';
 import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import cn from 'classnames';
 
 import CoordsInputRow from './coords-input-row';
@@ -12,8 +13,14 @@ import type { TMapTileType } from '../model/types/map-type';
 import type { IRegionOption } from '../model/types/region-option';
 import type { TCoordinates } from '../model/types/coordinates';
 import type { IMapLayerFilters } from '../model/types/layer-filters';
+import type { IState } from '../model/types/state';
 import { formatCoords } from '../model/lib/utils/format-coords';
 import { getCoordsKey } from '../model/lib/utils/get-coords-key';
+import {
+  setTileType,
+  setSelectedRegion,
+  setLayerFilters,
+} from '../model/store/slice';
 
 import { IconFiles, IconRailwayTrack } from '@shared/assets';
 import { copyToClipboard } from '@shared/utils';
@@ -25,13 +32,7 @@ interface IProps {
   selectedCoords?: TCoordinates | null;
   pointInfo: IRailwayPointInfo | null;
   onApplyManualCoords: (coords: TCoordinates) => void;
-  tileType: TMapTileType;
-  onChangeTileType: (tileType: TMapTileType) => void;
-  selectedRegion?: string;
-  onChangeRegion?: (regionId?: string) => void;
-  regionOptions?: IRegionOption[];
-  layerFilters?: IMapLayerFilters;
-  onChangeLayerFilters?: (filters: IMapLayerFilters) => void;
+  regionOptions: IRegionOption[];
 }
 
 const MapPanel: FC<IProps> = ({
@@ -39,15 +40,31 @@ const MapPanel: FC<IProps> = ({
   selectedCoords,
   pointInfo,
   onApplyManualCoords,
-  tileType,
-  onChangeTileType,
-  selectedRegion,
-  onChangeRegion,
   regionOptions,
-  layerFilters,
-  onChangeLayerFilters,
 }) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+
+  const { tileType, selectedRegion, layerFilters } = useSelector(
+    (state: { mapSlice: IState }) => ({
+      tileType: state.mapSlice.tileType,
+      selectedRegion: state.mapSlice.selectedRegion,
+      layerFilters: state.mapSlice.layerFilters,
+    }),
+    shallowEqual,
+  );
+
+  const handleTileTypeChange = (nextType: TMapTileType) => {
+    dispatch(setTileType(nextType));
+  };
+
+  const handleRegionChange = (regionId?: string) => {
+    dispatch(setSelectedRegion(regionId));
+  };
+
+  const handleLayerFiltersChange = (filters: IMapLayerFilters) => {
+    dispatch(setLayerFilters(filters));
+  };
 
   const handleCopy = () => {
     if (!selectedCoords) {
@@ -66,19 +83,19 @@ const MapPanel: FC<IProps> = ({
       <div className={cn(styles['map-panel__overlay'])}>
         <MapTypeSegmented
           value={tileType}
-          onChange={onChangeTileType}
+          onChange={handleTileTypeChange}
         />
 
         {!readOnly && (
           <>
             <MapRegionSelect
               value={selectedRegion}
-              onChange={onChangeRegion}
+              onChange={handleRegionChange}
               options={regionOptions}
             />
             <MapLayerFilters
               value={layerFilters}
-              onChange={onChangeLayerFilters}
+              onChange={handleLayerFiltersChange}
             />
           </>
         )}
