@@ -24,7 +24,7 @@ const FORBIDDEN_LAYERS = {
 };
 
 export default defineConfig([
-  globalIgnores(['dist']),
+  globalIgnores(['dist', '.agents']),
   {
     files: ['**/*.{ts,tsx,js,jsx}'],
     extends: [
